@@ -40,6 +40,8 @@
     <link rel="stylesheet" href="/customCSS/foremost_style.css">
     <link rel="stylesheet" href="/customCSS/foremoststyles_jo.css">
     <link rel="stylesheet" href="/customCSS/navbar_styles.css">
+    <link rel="stylesheet" href="/customCSS/footer_styles.css">
+
 
 
     <!-- Material icon -->
