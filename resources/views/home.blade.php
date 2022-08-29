@@ -15,7 +15,7 @@
         <section
             class="container mt-5 d-flex flex-flow justify-content-center align-items-center block-display-tab section-top">
             <div class="archware-content-text archwarejo-width-bottom-head pt-2">
-                <h2 style="font-weight: 700; font-size: 50px; line-height: 58px; color: #040856;" class="text-title-mobile">
+                <h2 class="big-title text-title-mobile">
                     We offer Premium eye care solutions
                 </h2>
                 <p class="pt-3 text-body-mobile archware-text-justify"

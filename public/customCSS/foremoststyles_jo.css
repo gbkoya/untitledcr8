@@ -24,3 +24,10 @@
 @media (max-width: 414px) {
 
 }
+
+.big-title {
+    font-weight: 700 !important;
+    font-size: 50px;
+    line-height: 58px;
+    color: #000000;
+}
