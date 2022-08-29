@@ -1,266 +1,26 @@
-.navbar-nav li:hover > ul.dropdown-menu {
-    display: block;
-}
-.dropdown-submenu {
-    position:relative;
-}
-.dropdown-submenu > .dropdown-menu {
-    top: 0;
-    left: 100%;
-    margin-top:-6px;
-}
-
-/* rotate caret on hover */
-.dropdown-menu > li > a:hover:after {
-    text-decoration: underline;
-    transform: rotate(-90deg);
-}
-
-
-/*
-
-ll
-ll
-
-*/
 @media (min-width: 1198px) {
-    .block-display-tab {
-        display: flex !important;
-    }
 
-    .archwarejo-width-bottom-head {
-        width: 43%;
-    }
-
-    .archwarejo-width-top-head {
-        width: 57%;
-    }
-
-    .archwarejo-width-top {
-        width: 41%;
-    }
-    .archwarejo-width-bottom {
-        width: 59%;
-    }
-
-    .archwarejo-image-fully-bottom {
-        margin-bottom: -48px;
-    }
-
-    .middle-content-padding-right {
-        padding-right: 7em;
-    }
-
-    .padding-left-desktop {
-        padding-left: 2em !important;
-    }
 }
 
 @media (max-width: 1320px) {
 }
 
 @media (max-width: 1198px) {
-    .block-display-tab {
-        display: block !important;
-    }
-    .image-width-tab {
-        width: 100%;
-    }
 
-    .experience-body-mobile {
-        background: #1f3f95 !important;
-        padding: 0.5rem !important;
-    }
-    .experience-body-with-pix-mobile {
-        background: none !important;
-        border-radius: unset !important;
-    }
-    .image-padding-buttom {
-        padding: unset !important;
-    }
 }
 
 @media (max-width: 990px) {
-    .section-top {
-        display: flex !important;
-        flex-direction: column-reverse !important;
-        padding: 1em;
-    }
-    .section-top > .archware-text-justify {
-        margin-right: auto;
-    }
 
-    .small-mobile-long-button {
-        width: unset !important;
-        padding: 0.4em !important;
-    }
-    .experience-body-mobile {
-        background: #08090a !important;
-        padding: 0.5rem !important;
-    }
-    .experience-body-with-pix-mobile {
-        background: none !important;
-        border-radius: unset !important;
-    }
-    .image-padding-buttom {
-        padding: unset !important;
-    }
 }
 
 @media (max-width: 769px) {
-    .mobile-padding {
-        padding: 0.15rem !important;
-    }
-    .inner-padding {
-        padding: 0.25rem !important;
-    }
 
-    .card-height-mobile {
-        height: 34em !important;
-    }
-
-    .image-min-height-mobile {
-        height: 14em;
-    }
 }
 
 @media (max-width: 576px) {
-    .text-title-mobile {
-        font-size: 30px !important;
-        line-height: 38px !important;
-    }
-    .text-body-mobile {
-        font-size: 15px !important;
-        line-height: 20px !important;
-    }
-    .text-label-mobile {
-        font-size: 1.2em !important;
-        line-height: 38px !important;
-    }
-    .experience-body-mobile {
-        background: #1f3f95 !important;
-        padding: 0.5rem !important;
-    }
-    .experience-body-with-pix-mobile {
-        background: none !important;
-        border-radius: unset !important;
-    }
-    .image-padding-buttom {
-        padding: unset !important;
-    }
-
-    .text-white-header {
-        font-size: 1.37rem !important;
-    }
-    .text-white-paragraph {
-        margin-top: 0.2em !important;
-    }
-
-    .archware-card-padding-left {
-        padding-left: 0.2rem !important;
-        justify-content: left !important;
-    }
-    .archware-card-paragraph-padding {
-        padding: 0.3em !important;
-        text-align: left !important;
-    }
-    .archware-card-title {
-        padding: 0.1em !important;
-        text-align: left !important;
-    }
-    .remove-shadow-mobile{
-        box-shadow: none !important;
-        transition: none !important;
-        scale: unset !important ;
-    }
-    .lettalk-mobile {
-        display: table-cell !important;
-        padding: .5em;
-    }
-    .large-button-mobile {
-        background: #040856 !important;
-        border-radius: 4px !important;
-        font-weight: unset !important;
-        font-size: unset !important;
-        line-height: unset !important;
-        height: unset !important;
-        color:#FFFFFF;
-        margin-left: unset !important;
-        margin-right: unset !important;
-        width: unset !important;
-        padding: 0.4em !important;
-    }
 
 }
 
 @media (max-width: 414px) {
-}
 
-.text-white-header {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 2.1875rem;
-    line-height: 42px;
-    color: #ffffff;
-    margin-top: 0.2rem;
-}
-
-.text-white-paragraph {
-    margin-top: 1.5rem;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 172%;
-    color: #ffffff;
-}
-
-.archware-text-justify {
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-.archware-content-text {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 172%;
-    color: rgba(4, 8, 86, 0.7);
-    padding-top: 0.5em;
-}
-
-.small-mobile-long-button {
-    width: unset !important;
-    padding: 0.4em !important;
-}
-
-.text-label-large-screen {
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 72px;
-    color: #0D2158;
-    text-align:center;
-}
-
-.archware-button-default {
-    background: #1F3F95;
-    border-radius: 4px;
-    border:none;
-    width:312px;
-    color:#FFFFFF
-}
-
-.move-left-wall {
-    padding-left: initial !important;
-}
-
-.large-button-mobile {
-    max-width: 220px;
-    height: 137px;
-    background: #040856;
-    border: none;
-    font-weight: 700;
-    font-size: 39px;
-    line-height: 38px;
-    color: #ffffff;
-    margin-left: auto;
-    margin-right: 0;
 }
