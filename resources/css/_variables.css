@@ -1,0 +1,9 @@
+ :root{
+    /* TYPEFACE */
+    --font-family: 'inter', sans-serif;
+    --heading-text: 3.3125rem;
+
+    /* COLOUR */
+    --dominant-color: green;
+    --button-color: #f58634;
+ }

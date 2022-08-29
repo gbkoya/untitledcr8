@@ -1,11 +1,53 @@
+@import "../../resources/css/_variables.css";
+
 /* Nav text Start*/
 .navbar-scroll .navbar-toggler-icon,
 .navbar-scroll .navbar-brand {
   color: #fff;
 }
-
+/* 
 ul li a {
-    color: #1F3F95!important;
+   
+   color: #000000!important;
+   font-style: normal;
+font-weight: 400;
+font-size: 18.24px;
+line-height: 22px;
+} */
+
+.archware-nav-title{
+    color: #000000!important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 22px;
+}
+
+nav button[type="button"]{
+    /* width: 131.08px; */
+    padding: .875rem 1rem;
+    height: auto;
+    background: #F58634;
+    border-radius: 4.7179px;
+    border: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 18px;
+    color: #FFFFFF;
+
+}
+nav button[type="button"]{
+    margin-right: 2rem;
+}
+
+.right-nav{
+    margin-left: 19%;
+    margin-top: 1rem;
+}
+
+.button-wrapper{
+    margin-left: 1.5rem;
 }
 
 /* Hide the light logo by default */
