@@ -37,11 +37,9 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-    <link rel="stylesheet" href="/customCSS/archware_style.css">
-    <link rel="stylesheet" href="/customCSS/archwarestyles_gb.css">
-    <link rel="stylesheet" href="/customCSS/archwarestyles_jo.css">
+    <link rel="stylesheet" href="/customCSS/foremost_style.css">
+    <link rel="stylesheet" href="/customCSS/foremoststyles_jo.css">
     <link rel="stylesheet" href="/customCSS/navbar_styles.css">
-    <link rel="stylesheet" href="/customCSS/pms_styles.css">
 
 
     <!-- Material icon -->

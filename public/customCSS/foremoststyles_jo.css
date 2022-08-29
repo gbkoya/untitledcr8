@@ -1,0 +1,48 @@
+@media (min-width: 1198px) {
+
+}
+
+@media (max-width: 1320px) {
+}
+
+@media (max-width: 1198px) {
+
+}
+
+@media (max-width: 990px) {
+
+}
+
+@media (max-width: 769px) {
+
+}
+
+@media (max-width: 576px) {
+
+}
+
+@media (max-width: 414px) {
+
+}
+
+.big-title {
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 67.52px;
+    color: #000000;
+    text-transform: capitalize;
+}
+
+.orange-color {
+    color: #F58634;
+}
+.text-black-paragraph {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28.5px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.eyecare-image-section {
+    background-image: url("../customImages/about-us\ background.png");
+}
