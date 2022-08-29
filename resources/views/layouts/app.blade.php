@@ -10,8 +10,8 @@
 
     <meta name="google-site-verification" content="QMYalbMERpysCPLNASiQrKU0nrVzvD4uhKrIRADWipA"/>
     <meta http-equiv="content-language" content="en">
-    <meta name="author" content="Archware">
-    <meta name="generator" content="Archware">
+    <meta name="author" content="Foremost">
+    <meta name="generator" content="Foremost">
     <meta name="description" content="@yield('description')">
     <meta property="article:published_time" content="@yield('published_time')">
     <meta property="article:section" content="@yield('article:section')">
@@ -26,10 +26,10 @@
     <meta property="og:locale" content="en_GB"/>
     {{-- <meta property="og:image" content="@yield('image')"/> --}}
     <meta property="og:image" content="/customImages/logo.png"/>
-    <meta property="og:site_name" content="Archware"/>
+    <meta property="og:site_name" content="Foremost"/>
 
 
-    <title>@yield('title', 'Archware')</title>
+    <title>@yield('title', 'Foremost')</title>
 
     <!-- Fonts -->
     <!-- <link rel="dns-prefetch" href="//fonts.gstatic.com"> -->
