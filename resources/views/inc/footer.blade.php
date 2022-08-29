@@ -1,12 +1,8 @@
 
-<section>
+<section class="footer-section" style=" height: auto;">
     <div class="">
 
-        <footer class="text-center text-white" style="background-color: #3F5675;">
-
-            
-
-            <hr>
+        <footer class="text-center text-white" style="">
 
             <section class="container mt-5 p-4">
 
@@ -101,30 +97,32 @@
 
                 <section class="m-3">
                     <form>
-                        <div class="row d-flex justify-content-center">
-
-                            <div class="TopHeader" style=" width:70%">
-                                <div class="InputBox">
-                                    <input type="search" placeholder="Enter your email" id="SearchInput" style="background-color: #1f3f95; color:white;">
-                                    <div class="col-auto">
-                                        <button type="submit" class="btn btn-outline-light mb-4 footer_submit_button" style="font-weight: 700;font-size: 13px;line-height: 16px;align-items: center;text-align: center;">
-                                            Submit
-                                        </button>
-                                    </div>
-                                    <ul class="SearchResult" id="SearchResult"></ul>
-                                </div>
-                            </div>
+                        <div class="row d-flex input-wrapper justify-content-center">
+                       <input type="search"
+                       placeholder="Subscribe Now"
+                       />
+                       <img 
+                       class="img-fluid search-image"
+                       src="{{ asset('customImages/arrow-right.png') }}"/>
+                        </div>
 
                         </div>
 
                     </form>
+                    <hr class="footer-divider">
+                    <div class="text-center bottom-copy">
+                        <h5>
+                            <span>Cookie Setting</span>
+                            <span>Privacy Policy</span>
+                            <span>CA Notice</span>
+                            <span>Terms of Service</span>
+                        </h5>
+                        <h6>
+                            @2022 Foremost Eye Clinic. All rights reserved
+                        </h6>
+                    </div>
                 </section>
             </div>
-
-            <div class="text-center pb-5 mt-5">
-                © Archware Technologies International Limited 2022. All Rights Reserved.
-            </div>
-
         </footer>
 
     </div>
