@@ -1,14 +1,12 @@
+// @import "/src/variables.scss";
+@import "../../resources/sass/variables";
+
 * {
     font-family: 'inter', sans-serif;
     margin: 0;
     padding: 0;
 }
 
-.archware-nav-title{
-    color: #1F3F95;
-    font-size: 16px;
-    font-weight: 500;
-}
 
 /* Hide the mobile hero in desktop screen */
 .mobile-hero{
