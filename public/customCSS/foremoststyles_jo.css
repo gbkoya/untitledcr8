@@ -7,7 +7,7 @@
 }
 
 .orange-color {
-    color: #F58634;
+    color: #f58634;
 }
 .text-black-paragraph {
     font-weight: 500;
@@ -20,28 +20,23 @@
     background-image: url("../customImages/about-us\ background.png");
 }
 
-
-
 .navbar-nav li:hover > ul.dropdown-menu {
     display: block;
 }
 .dropdown-submenu {
-    position:relative;
+    position: relative;
 }
 .dropdown-submenu > .dropdown-menu {
     top: 0;
     left: 100%;
-    margin-top:-6px;
-
+    margin-top: -6px;
 }
 
 /* rotate caret on hover */
 .dropdown-menu > li > a:hover:after {
     text-decoration: underline;
     transform: rotate(-90deg);
-
 }
-
 
 /*
 
@@ -119,7 +114,7 @@ ll
 
     .small-mobile-long-button {
         width: unset !important;
-        padding: .5em 1.5em .5em 1.5em !important;
+        padding: 0.5em 1.5em 0.5em 1.5em !important;
     }
     .experience-body-mobile {
         background: #08090a !important;
@@ -132,7 +127,6 @@ ll
     .image-padding-buttom {
         padding: unset !important;
     }
-
 }
 
 @media (max-width: 769px) {
@@ -200,14 +194,14 @@ ll
         padding: 0.1em !important;
         text-align: left !important;
     }
-    .remove-shadow-mobile{
+    .remove-shadow-mobile {
         box-shadow: none !important;
         transition: none !important;
         scale: unset !important ;
     }
     .lettalk-mobile {
         display: table-cell !important;
-        padding: .5em;
+        padding: 0.5em;
     }
     .large-button-mobile {
         background: #040856 !important;
@@ -216,19 +210,36 @@ ll
         font-size: unset !important;
         line-height: unset !important;
         height: unset !important;
-        color:#FFFFFF;
+        color: #ffffff;
         margin-left: unset !important;
         margin-right: unset !important;
         width: unset !important;
-        padding: .5em 1.5em .5em 1.5em !important;
+        padding: 0.5em 1.5em 0.5em 1.5em !important;
     }
-
 }
 
 @media (max-width: 414px) {
 }
 
-.text-top-about-us{
+.foremost-card-title {
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 120.5%;
+    letter-spacing: -1px;
+    text-transform: capitalize;
+    color: #6b809b;
+}
+.foremost-card-body {
+    text-align: left;
+    margin-bottom: auto;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+    letter-spacing: 0.01em;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.text-top-about-us {
     font-style: normal;
     font-weight: 700;
     font-size: 53px;
@@ -270,23 +281,23 @@ ll
 
 .small-mobile-long-button {
     width: unset !important;
-    padding: .5em 1.5em .5em 1.5em !important;
+    padding: 0.5em 1.5em 0.5em 1.5em !important;
 }
 
 .text-label-large-screen {
     font-weight: 600;
     font-size: 30px;
     line-height: 72px;
-    color: #0D2158;
-    text-align:center;
+    color: #0d2158;
+    text-align: center;
 }
 
 .archware-button-default {
-    background: #F58634;
+    background: #f58634;
     border-radius: 5em;
-    border:none;
-    width:312px;
-    color:#FFFFFF
+    border: none;
+    width: 312px;
+    color: #ffffff;
 }
 
 .move-left-wall {
