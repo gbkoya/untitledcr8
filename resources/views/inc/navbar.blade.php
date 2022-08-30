@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0" id="navMain">
     <div class="container-fluid">
-        <a class="navbar-brand colored-logo" href="#!" style="margin-left: 4%;">
+        <a class="navbar-brand colored-logo" href="/" style="margin-left: 4%;">
             <img src="{{ asset('customImages/Logo.png') }}">
         </a>
-        <a class="navbar-brand light-logo" href="#!" style="margin-left: 7%;">
+        <a class="navbar-brand light-logo" href="/" style="margin-left: 7%;">
             <img src="{{ asset('customImages/Archware-logo-light-variation.svg') }}">
         </a>
         <!-- HAMBURGER -->
@@ -24,21 +24,21 @@
                     <a class="nav-link archware-nav-title" href="/">Home</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link archware-nav-title" style="scroll-behavior: smooth;" href="/#aboutus">About
+                    <a class="nav-link archware-nav-title" style="scroll-behavior: smooth;" href="/about">About
                         Us</a>
                 </li>
                 
                 <li class="nav-item px-3">
-                    <a class="nav-link archware-nav-title" href="/subsidiaries">Services</a>
+                    <a class="nav-link archware-nav-title" href="#">Services</a>
                 </li>
                 <!-- <li class="nav-item px-3">
                     <a class="nav-link archware-nav-title" href="/services">Services</a>
                 </li> -->
                 <li class="nav-item px-3">
-                    <a class="nav-link archware-nav-title" href="/join-us">Contact Us</a>
+                    <a class="nav-link archware-nav-title" href="#">Contact Us</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link archware-nav-title" href="/join-us">Blog</a>
+                    <a class="nav-link archware-nav-title" href="#">Blog</a>
                 </li>
             
                 <li class="button-wrapper">
@@ -64,7 +64,7 @@
 
     const triggerNav = (event) => {
         // console.log(event);
-        if (window.scrollY >= 100) {
+        if (window.scrollY >= 50) {
             //    console.log('You have passed the nav bottom!')
             // console.log(event);
             getNav.classList.add('navbar-trigger');
