@@ -12,50 +12,165 @@
 @section('content')
 
     <div style=" background-image: url(../customImages/Group68.png)" class="mt-5">
-        <section
-            class="container mt-5 d-flex flex-flow justify-content-center align-items-center">
+        <section class="container mt-5 d-flex flex-flow justify-content-center align-items-center">
             <div class="pt-2">
                 <h2 class="big-title text-title-mobile">
                     We offer Premium <span class="orange-color">eye care</span> solutions
                 </h2>
                 <p class="pt-3 text-black-paragraph">
-                    Foremost Eye Clinic is a leading provider of optometry services. With friendly and experienced optometrists,
+                    Foremost Eye Clinic is a leading provider of optometry services. With friendly and experienced
+                    optometrists,
                     we provide a comprehensive range of eye care services.
                 </p>
+                <a href="#" class="py-3">
+                    <button class="small-mobile-long-button archware-button-default">
+                        Get Started
+                    </button>
+                </a>
             </div>
             <div class="archwarejo-width-top-head">
-                <img class="img-fluid" src="/customImages/We offer Premium.png">
+                <img class="img-fluid" src="/customImages/testimg.png">
+
+                <div class="pb-3">
+                    <a class="m-1 btn btn-outline-light" href="#!" role="button"><img class="img-fluid search-image"
+                            src="http://127.0.0.1:8000/customImages/arrow-right.png">Modern Eye Clinic</a>
+
+                    <a class="m-1 btn btn-outline-light" href="#!" role="button"><img class="img-fluid search-image"
+                            src="http://127.0.0.1:8000/customImages/arrow-right.png">Expert Personnel</a>
+
+                    <a class="m-1 btn btn-outline-light" href="#!" role="button"><img class="img-fluid search-image"
+                            src="http://127.0.0.1:8000/customImages/arrow-right.png">Discounted Eye checkups</a>
+
+                    <a class="m-1 btn btn-outline-light" href="#!" role="button"><img class="img-fluid search-image"
+                            src="http://127.0.0.1:8000/customImages/arrow-right.png">24 Hour Hotline</a>
+                </div>
             </div>
         </section>
     </div>
 
-    <section class="container mt-5 d-flex flex-flow flex-wrap justify-content-center align-items-center eyecare-image-section"
-        style="border-radius: 20px 20px;">
+
+    <section
+        class="mt-5 d-flex flex-flow flex-wrap justify-content-center align-items-center
+                block-display-tab experience-body-with-pix-mobile eyecare-image-section">
         <div class="archwarejo-width-top">
-            <img class="img-fluid" src="/customImages/doctor smiley thumb.png">
+            <img class="img-fluid image-width-tab p-5 archwarejo-image-fully-bottom image-padding-buttom"
+                src="/customImages/doctor smiley thumb.png">
         </div>
-        <div class="">
-            <h2 class="">Our Experience</h2>
-            <p class="">
-                Our team of e-commerce web design experts will help you
-                every step of the way to bring your vision to life with precise
-                planning and execution to present an attractive display of
-                your products to your customers and improve your sales.
+        <div
+            class="archware-text-justify archware-content-text archwarejo-width-bottom
+                middle-content-padding-right experience-body-mobile">
+            <h2 class="text-top-about-us">About Us</h2>
+            <p class="text-white-paragraph">
+                Foremost Eye Clinic is one of the most prestigious eye care centers in Africa. We offer innovative eye care
+                solutions, and quality services to our clients through cutting-edge technologies and excellent service
+                delivery. thereby enhancing their long-term vision and productivity.
             </p>
-            <p class="">
-                Our goal is to create an e-commerce website that is fast, and
-                functional to keep your customers returning and converting
-                from their first visit. All you have to do is let us know your
-                goals, and we'll do the research for you.
+            <p class="text-white-paragraph">
+                We offer a complete range of treatments including vision correction surgeries, comprehensive eye
+                examinations, health awareness programs, contact lens services, and many more.
             </p>
-            <p class="">
-                Our job isn't finished once your site is launched. We will also
-                maintain and optimise your website, keeping it up to date
-                and functioning so that you can get the most out of your new
-                e-commerce website development.
+            <p class="text-white-paragraph">
+                Our optometrists and ophthalmic assistants are experts in their fields, possessing many years of experience
+                in the field of eye care, thus enabling us to provide patients with the highest quality of care in a
+                cost-effective manner.
             </p>
+            <p class="text-white-paragraph">
+                At Foremost eye clinic, our goal is to provide comprehensive vision care services while ensuring that the
+                best possible vision can be achieved by our patients.
+            </p>
+
+            <a href="#" class="py-3">
+                <button class="small-mobile-long-button archware-button-default">
+                    Read More
+                </button>
+            </a>
         </div>
     </section>
+
+
+
+
+    <section class="my-3 py-3">
+        <div class="container justify-content-center">
+            <div class="row">
+                <p class="text-label-mobile"
+                    style="font-weight: 600;font-size: 30px;line-height: 72px;color: #0D2158; text-align:center">
+                    Ready To Deploy Our Account & Expenses Management System?
+                </p>
+                <a href="/contacts" class="py-3" style="text-align:center;">
+                    <button class="small-mobile-long-button archware-button-default">
+                        Let's Discuss
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container mt-5">
+        <div class="p-5 row mobile-padding">
+
+            <div class="col-lg-4 p-3 inner-padding">
+                <div class="card card-height-mobile"
+                    style="border-radius: 20px; box-shadow: 0 5px 10px #e6e6e6; height: 37em;">
+                    <img src="/customImages/testimg.png" class="card-img-top" alt="...">
+                    <div
+                        class="archware-card-padding-left card-body d-flex justify-content-center align-items-center flex-wrap p-4">
+                        <div class="pt-1 text-title-mobile archware-card-title"
+                            style="font-weight: 700; font-size:26px; line-height: 40.3px; color: #0D2158; text-align: center;">
+                            Visual Screening
+                        </div>
+                        <p class="archware-card-paragraph-padding card-text archware-text-dull"
+                            style="color: #0d2158; font-size: 15px; text-align: center; margin-bottom: auto;">
+                            We offer vision screening services that are reliable and accurate, using the latest technology.
+                            With our visual screening services, you can be sure that you're getting the best care for your
+                            eyes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 p-3 inner-padding">
+                <div class="card card-height-mobile"
+                    style="border-radius: 20px; box-shadow: 0 5px 10px #e6e6e6; height: 37em;">
+                    <img src="/customImages/testimg.png" class="card-img-top" alt="...">
+                    <div
+                        class="archware-card-padding-left card-body d-flex justify-content-center align-items-center flex-wrap p-4">
+                        <div class="pt-1 text-title-mobile archware-card-title"
+                            style="font-weight: 700; font-size:26px; line-height: 40.3px; color: #0D2158; text-align: center;">
+                            Comprehensive Eye Examination
+                        </div>
+                        <p class="archware-card-paragraph-padding card-text archware-text-dull"
+                            style="color: #0d2158; font-size: 15px; text-align: center; margin-bottom: auto;">
+                            A comprehensive eye examination is a perfect way to ensure that your vision is at its best. Our
+                            team of experts will evaluate everything from your prescription to the health of your eyes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 p-3 inner-padding">
+                <div class="card card-height-mobile"
+                    style="border-radius: 20px; box-shadow: 0 5px 10px #e6e6e6; height: 37em;">
+                    <img src="/customImages/testimg.png" class="card-img-top" alt="...">
+                    <div
+                        class="archware-card-padding-left card-body d-flex justify-content-center align-items-center flex-wrap p-4">
+                        <div class="pt-1 text-title-mobile archware-card-title"
+                            style="font-weight: 700; font-size:26px; line-height: 40.3px; color: #0D2158; text-align: center;">
+                            Cataract Surgery
+                        </div>
+                        <p class="archware-card-paragraph-padding card-text archware-text-dull"
+                            style="color: #0d2158; font-size: 15px; text-align: center; margin-bottom: auto;">
+                            We specialise in Cataract Surgery and our services are second to none. We use the latest
+                            technologies and our highly skilled Ophthalmologists will have you see clearly in no time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
 
 
 
