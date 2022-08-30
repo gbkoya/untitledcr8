@@ -130,7 +130,7 @@ ul li a:nth-child(2) {
     margin-left: 5px;
 }
 @media (max-width: 1200px) {
-    .nav > .nav-btn {
+    /* .nav > .nav-btn {
         display: inline-block;
         position: absolute;
         right: 0px;
@@ -192,7 +192,7 @@ ul li a:nth-child(2) {
     }
     .nav {
         margin: 10px;
-    }
+    } */
 }
 /* RESPONSIVE STYLES */
 @media(max-width: 990px){
