@@ -1,21 +1,23 @@
+/* HERO SECTION STYLES */
 .hero-section{
  background-image: url("../customImages/heroImage.png"); 
  background-size: cover;
  background-repeat: no-repeat;
  width: 100%;
- height: 90vh;
+ height: auto;
  margin-top: 3rem;
+ padding: 11rem 0 10rem 5rem;
+
 }
 
 .hero-section-copy{
-    padding: 11rem 0 0 4rem;
 }
 
 .hero-section-copy h1{
     font-style: normal;
     font-weight: 800;
     font-size: 4rem;
-    line-height: 105%;
+    line-height: 109%;
     letter-spacing: -3px;
     text-transform: capitalize;
     color: #FFFFFF;
@@ -26,8 +28,65 @@
     font-style: normal;
     font-weight: 400;
     font-size: 1.5rem;
-    line-height: 2.25rem;
+    line-height: 2.45rem;
     letter-spacing: 0.01em;
     color: #FFFFFF;
     margin-top: 1rem;
 }
+/* END OF HERO SECTION STYLES */
+
+/* VISION AND MISSION STATEMENT STYLE */
+    .vision-container{
+        margin-top: 5rem;
+    }
+
+    .vision-right{
+        margin: 2.5rem 0 0 4rem;
+    }
+
+    .vision-wrapper{
+        max-width: 75rem;
+        margin: 0 auto;
+        height: 710px;
+        background: #6B809B;
+        box-shadow: 0px 21.8462px 24.5769px rgba(0, 0, 0, 0.05);
+        border-radius: 14.219px;
+    }
+
+    .vis-statement h2, .core-val h2, .miss-statement h2{
+        font-style: normal;
+        font-weight: 700;
+        font-size: 2.5rem;
+        line-height: 120.5%;
+        text-transform: capitalize;
+        color: #FFFFFF;
+
+    }
+
+    .vis-statement p, .core-val ul li{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.1rem;
+        line-height: 1.825rem;
+        letter-spacing: 0.01em;
+        /* color: rgba(255, 255, 255, 0.6); */
+        color: #fff
+    }
+
+    .miss-statement, .core-val{
+        margin-top: 2.875rem;
+    }
+
+    .miss-statement p {
+        width: 34.81rem;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.1rem;
+        line-height: 1.825rem;
+        letter-spacing: 0.01em;
+        /* color: rgba(255, 255, 255, 0.6); */
+        color: #fff;
+        text-align: justify;
+    }
+
+/* END OF VISION AND MISSION STATEMENT STYLE */

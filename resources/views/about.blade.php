@@ -22,6 +22,38 @@
             </p>
         </div>
      </section>
+    {{-- END OF HERO SECTION --}}
+    
+    {{-- VISION AND MISSION STATEMENT  --}}
+     <section class="container-fluid vision-container">
+      <div class="vision-wrapper d-flex flex-row flex-wrap">
+        <img class="img-fluid" src="/customImages/doctor-vision.png" alt="doctorVisionImage">
+        <div class="vision-right">
+            <div class="vis-statement">
+                <h2>Vision Statement</h2>
+                <p>To become a FOREMOST  eye health services provider in Africa.</p>
+            </div>
+            <div class="miss-statement">
+                <h2>Mission Statement</h2>
+                <p>We provide innovative eye health services to Africans through
+                     cutting edge technologies and excellent service delivery 
+                     thereby enhancing their long-term vision  and productivity.</p>
+            </div>
+            <div class="core-val">
+                <h2>Our Core Values</h2>
+                <ul>
+                    <li>Value Creation</li>
+                    <li>Empathy</li>
+                    <li>Innovation</li>
+                    <li>Excellence</li>
+                    <li>Resilience</li>
+                </ul>
+            </div>
+        </div>
+      </div>
+     </section>
+    {{-- END OF VISION AND MISSION STATEMENT  --}}
+
 
     </main>
     <body>
