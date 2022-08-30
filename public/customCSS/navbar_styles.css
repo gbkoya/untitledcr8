@@ -5,15 +5,6 @@
 .navbar-scroll .navbar-brand {
   color: #fff;
 }
-/* 
-ul li a {
-   
-   color: #000000!important;
-   font-style: normal;
-font-weight: 400;
-font-size: 18.24px;
-line-height: 22px;
-} */
 
 .archware-nav-title{
     color: #000000!important;
@@ -21,9 +12,28 @@ line-height: 22px;
     font-weight: 400;
     font-size: 1rem;
     line-height: 22px;
+    position: relative;
 }
 
-nav button[type="button"]{
+.archware-nav-title:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #F58634;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  .archware-nav-title:hover:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+nav .buy-button{
     /* width: 131.08px; */
     padding: .875rem 1rem;
     height: auto;
@@ -66,7 +76,11 @@ nav button[type="button"]{
 }
 
 .navbar-trigger{
-    background: #1F3F95;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.17);
+    /* box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25); */
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.1s;
 }
 
 /* Nav Dropdown styles */
@@ -79,20 +93,6 @@ nav button[type="button"]{
     display: none;
 }
 
-.nav > .nav-header > .nav-title {
-    display: inline-block;
-    margin-left: 149px;
-}
-
-.nav > .nav-btn {
-    display: none;
-}
-
-.nav > .nav-links {
-    display: inline;
-    float: right;
-    font-size: 18px;
-}
 .nav > .nav-links > ul li a {
     display: block;
     padding: 0 8px;
@@ -100,20 +100,6 @@ nav button[type="button"]{
     line-height: 40px;
     font-size: 18px;
     text-decoration: none;
-}
-
-.nav > .nav-links > ul {
-    margin-left: 165px;
-    padding: 0;
-    margin-top: 5px;
-    list-style: none;
-    position: relative;
-}
-.nav > .nav-links > ul li {
-    display: inline-block;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 21px;
 }
 
 .nav > #nav-check {
@@ -130,69 +116,7 @@ ul li a:nth-child(2) {
     margin-left: 5px;
 }
 @media (max-width: 1200px) {
-    .nav > .nav-btn {
-        display: inline-block;
-        position: absolute;
-        right: 0px;
-        top: 0px;
-    }
-    .nav > .nav-btn > label {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        padding: 13px;
-    }
-    .nav > .nav-btn > label:hover,
-    .nav #nav-check:checked ~ .nav-btn > label {
-        background-color: rgba(0, 0, 0, 0.3);
-    }
-    .nav > .nav-btn > label > span {
-        display: block;
-        width: 25px;
-        height: 10px;
-        border-top: 2px solid rgba(4, 8, 86, 0.7);
-    }
-    .nav > .nav-links {
-        position: absolute;
-        display: block;
-        width: 100%;
-        background-color: rgb(231, 233, 238);
-        height: 0px;
-        transition: all 0.3s ease-in;
-        overflow-y: hidden;
-        top: 50px;
-        left: 0px;
-    }
-    .nav > .nav-links > ul li a {
-        display: block;
-        width: 100%;
-    }
-    /*   */
-    .nav > .nav-links > ul li {
-        display: block;
-        margin-bottom: 20px;
-        padding: 0;
-        background-color: rgb(231, 233, 238);
-    }
-    .nav > .nav-links > ul li a {
-        margin-top: -10px;
-        margin-left: 0%;
-    }
-    .btnnav {
-        margin-left: 0%;
-    }
-
-    /*   */
-    .nav > #nav-check:not(:checked) ~ .nav-links {
-        height: 0px;
-    }
-    .nav > #nav-check:checked ~ .nav-links {
-        height: calc(20vh - 25px);
-        overflow-y: auto;
-    }
-    .nav {
-        margin: 10px;
-    }
+   
 }
 /* RESPONSIVE STYLES */
 @media(max-width: 990px){

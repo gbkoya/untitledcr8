@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0" id="navMain">
     <div class="container-fluid">
-        <a class="navbar-brand colored-logo" href="#!" style="margin-left: 7%;">
+        <a class="navbar-brand colored-logo" href="/" style="margin-left: 4%;">
             <img src="{{ asset('customImages/Logo.png') }}">
         </a>
-        <a class="navbar-brand light-logo" href="#!" style="margin-left: 7%;">
+        <a class="navbar-brand light-logo" href="/" style="margin-left: 7%;">
             <img src="{{ asset('customImages/Archware-logo-light-variation.svg') }}">
         </a>
         <!-- HAMBURGER -->
@@ -19,30 +19,30 @@
         </button>
 
         <div class="collapse navbar-collapse right-nav" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto nav-links-a" style="margin-left: 8%;">
+            <ul class="navbar-nav me-auto nav-links-a" style="margin-left: 12%;">
                 <li class="nav-item px-3">
                     <a class="nav-link archware-nav-title" href="/">Home</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link archware-nav-title" style="scroll-behavior: smooth;" href="/#aboutus">About
+                    <a class="nav-link archware-nav-title" style="scroll-behavior: smooth;" href="/about">About
                         Us</a>
                 </li>
                 
                 <li class="nav-item px-3">
-                    <a class="nav-link archware-nav-title" href="/subsidiaries">Services</a>
+                    <a class="nav-link archware-nav-title" href="#">Services</a>
                 </li>
                 <!-- <li class="nav-item px-3">
                     <a class="nav-link archware-nav-title" href="/services">Services</a>
                 </li> -->
                 <li class="nav-item px-3">
-                    <a class="nav-link archware-nav-title" href="/join-us">Contact Us</a>
+                    <a class="nav-link archware-nav-title" href="#">Contact Us</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link archware-nav-title" href="/join-us">Blog</a>
+                    <a class="nav-link archware-nav-title" href="#">Blog</a>
                 </li>
             
                 <li class="button-wrapper">
-                    <button type="button">
+                    <button type="button" class="buy-button">
                         <img
                         src="{{ asset('customImages/buyIcon.png') }}"
                         />
@@ -57,14 +57,14 @@
 
 
 <!-- THE SCRIPT TO CONTROL THE STATE OF THE NAVBAR -->
-{{-- <script type="text/javascript">
+<script type="text/javascript">
     const getNav = document.querySelector('#navMain');
     const topOfNav = getNav.offsetTop;
 
 
     const triggerNav = (event) => {
         // console.log(event);
-        if (window.scrollY >= topOfNav) {
+        if (window.scrollY >= 50) {
             //    console.log('You have passed the nav bottom!')
             // console.log(event);
             getNav.classList.add('navbar-trigger');
@@ -99,4 +99,4 @@
         }
     }
     window.addEventListener('scroll', triggerNav);
-</script> --}}
+</script>
