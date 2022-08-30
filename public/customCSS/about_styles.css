@@ -33,6 +33,13 @@
     color: #FFFFFF;
     margin-top: 1rem;
 }
+
+/* Responsive style */
+@media(max-width: 414px){
+    .hero-section-copy h1{
+        font-size: 3rem;
+    }
+}
 /* END OF HERO SECTION STYLES */
 
 /* VISION AND MISSION STATEMENT STYLE */
@@ -78,7 +85,7 @@
     }
 
     .miss-statement p {
-        width: 34.81rem;
+        max-width: 34.81rem;
         font-style: normal;
         font-weight: 400;
         font-size: 1.1rem;
@@ -89,9 +96,30 @@
         text-align: justify;
     }
 
+    /* Responsive style */
+    @media(max-width: 414px){
+        .vision-right{
+            margin-left: 0;
+        }
+        .vision-wrapper{
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .vis-statement h2, .core-val h2, .miss-statement h2{
+            font-size: 1.5rem;
+            text-align: left!important;
+        }
+        .miss-statement p{
+            font-size: .87rem;
+        }
+        .vis-statement p, .core-val ul li{
+            font-size: .87rem;
+        }
+    }
+
 /* END OF VISION AND MISSION STATEMENT STYLE */
 
-/* PROOF OF WORK */
+/* PROOF OF WORK SECTION */
 .proof-of-work{
     width: 100%!important;
     height: auto;
@@ -113,14 +141,14 @@
  }
 
  .proof-of-work .customers{
-    padding-right: 5rem;
+    /* padding-right: 5rem; */
  }
 
  .proof-of-work .web h1,
  .proof-of-work .customers h1{
     font-style: normal;
     font-weight: 700;
-    font-size: 3.125rem;
+    font-size: 3rem;
     line-height: 61px;
     text-align: center;
     color: #BDBDBD;
@@ -130,7 +158,7 @@
  .proof-of-work .customers p{
     font-style: normal;
     font-weight: 500;
-    font-size: 1.375rem;
+    font-size: 1.3rem;
     line-height: 172%;
     /* identical to box height, or 38px */
     letter-spacing: -0.01em;
