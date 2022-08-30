@@ -1,15 +1,20 @@
 .footer-section{
     background-color: #3F5675;
     height: auto!important;
+    padding: 2rem 0;
 }
 .footer-section .input-wrapper{
     position: relative;
 }
 
 .footer-section .search-image{
-    width: 21.34px;
+    /* width: 21.34px; */
+    max-width: 3.085rem;
     height: 17.36px;
     position: absolute;
+    top: 30%;
+    right: 26%;
+    cursor: pointer;
 }
 
 .footer-section form input[type="search"]{
@@ -37,6 +42,24 @@
     margin-top: 2.8rem;
 }
 
-.bottom-copy span:nth-child(1){
+.bottom-copy h5, .bottom-copy h6{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 26px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+}
+
+.bottom-copy h5{
+    max-width: 32rem;
+    margin: 0 auto;
+}
+
+.bottom-copy span:nth-child(-1n + 3){
     border-right: .2rem solid #FFFFFF;
+    padding-right: .875rem;
+}
+.bottom-copy h6{
+    margin-top: .8rem;
 }

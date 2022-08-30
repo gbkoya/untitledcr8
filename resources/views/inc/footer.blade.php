@@ -1,8 +1,8 @@
 
-<section class="footer-section" style=" height: auto;">
-    <div class="">
+{{-- <section class="footer-section" style=" height: auto;"> --}}
+    {{-- <div class=""> --}}
 
-        <footer class="text-center text-white" style="">
+        <footer class="text-center footer-section text-white" style="">
 
             <section class="container mt-5 p-4">
 
@@ -111,7 +111,7 @@
                     </form>
                     <hr class="footer-divider">
                     <div class="text-center bottom-copy">
-                        <h5>
+                        <h5 class="d-flex flex-row flex-wrap justify-content-evenly">
                             <span>Cookie Setting</span>
                             <span>Privacy Policy</span>
                             <span>CA Notice</span>
@@ -125,5 +125,5 @@
             </div>
         </footer>
 
-    </div>
-</section>
+    {{-- </div> --}}
+{{-- </section> --}}
