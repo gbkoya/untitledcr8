@@ -29,7 +29,7 @@
                 </a>
             </div>
             <div class="archwarejo-width-top-head">
-                <img class="img-fluid" src="/customImages/testimg.png">
+                <img class="img-fluid" src="/customImages/We offer Premium.png">
 
                 <div class="pb-3">
                     <a class="m-1 btn btn-outline-light" href="#!" role="button"><img class="img-fluid search-image"
@@ -88,8 +88,6 @@
     </section>
 
 
-
-
     <section class="my-3 py-3">
         <div class="container justify-content-center">
             <div class="row">
@@ -106,71 +104,48 @@
         </div>
     </section>
 
-    <div class="container mt-5">
-        <div class="p-5 row mobile-padding">
 
-            <div class="col-lg-4 p-3 inner-padding">
-                <div class="card card-height-mobile"
-                    style="border-radius: 20px; box-shadow: 0 5px 10px #e6e6e6; height: 37em;">
-                    <img src="/customImages/testimg.png" class="card-img-top" alt="...">
-                    <div
-                        class="archware-card-padding-left card-body d-flex justify-content-center align-items-center flex-wrap p-4">
-                        <div class="pt-1 text-title-mobile archware-card-title"
-                            style="font-weight: 700; font-size:26px; line-height: 40.3px; color: #0D2158; text-align: center;">
-                            Visual Screening
-                        </div>
-                        <p class="archware-card-paragraph-padding card-text archware-text-dull"
-                            style="color: #0d2158; font-size: 15px; text-align: center; margin-bottom: auto;">
-                            We offer vision screening services that are reliable and accurate, using the latest technology.
-                            With our visual screening services, you can be sure that you're getting the best care for your
-                            eyes.
-                        </p>
+    <section class="container-fluid mt-3 pt-5">
+        <div class="d-flex flex-row flex-wrap justify-content-center">
+            <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
+                <img src="/customImages/testimg.png" class="card-img-top" alt="...">
+                <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
+                    <div class="pt-1 foremost-card-title">
+                        Visual Screening
                     </div>
+                    <p class="pt-3 foremost-card-body">
+                        We offer vision screening services that are reliable and accurate, using the latest technology.
+                        With our visual screening services, you can be sure that you're getting the best care for your
+                        eyes.
+                    </p>
                 </div>
             </div>
-
-            <div class="col-lg-4 p-3 inner-padding">
-                <div class="card card-height-mobile"
-                    style="border-radius: 20px; box-shadow: 0 5px 10px #e6e6e6; height: 37em;">
-                    <img src="/customImages/testimg.png" class="card-img-top" alt="...">
-                    <div
-                        class="archware-card-padding-left card-body d-flex justify-content-center align-items-center flex-wrap p-4">
-                        <div class="pt-1 text-title-mobile archware-card-title"
-                            style="font-weight: 700; font-size:26px; line-height: 40.3px; color: #0D2158; text-align: center;">
-                            Comprehensive Eye Examination
-                        </div>
-                        <p class="archware-card-paragraph-padding card-text archware-text-dull"
-                            style="color: #0d2158; font-size: 15px; text-align: center; margin-bottom: auto;">
-                            A comprehensive eye examination is a perfect way to ensure that your vision is at its best. Our
-                            team of experts will evaluate everything from your prescription to the health of your eyes.
-                        </p>
+            <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
+                <img src="/customImages/testimg.png" class="card-img-top" alt="...">
+                <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
+                    <div class="pt-1 foremost-card-title">
+                        Comprehensive Eye Examination
                     </div>
+                    <p class="pt-3 foremost-card-body">
+                        A comprehensive eye examination is a perfect way to ensure that your vision is at its best. Our
+                        team of experts will evaluate everything from your prescription to the health of your eyes.
+                    </p>
                 </div>
             </div>
-
-            <div class="col-lg-4 p-3 inner-padding">
-                <div class="card card-height-mobile"
-                    style="border-radius: 20px; box-shadow: 0 5px 10px #e6e6e6; height: 37em;">
-                    <img src="/customImages/testimg.png" class="card-img-top" alt="...">
-                    <div
-                        class="archware-card-padding-left card-body d-flex justify-content-center align-items-center flex-wrap p-4">
-                        <div class="pt-1 text-title-mobile archware-card-title"
-                            style="font-weight: 700; font-size:26px; line-height: 40.3px; color: #0D2158; text-align: center;">
-                            Cataract Surgery
-                        </div>
-                        <p class="archware-card-paragraph-padding card-text archware-text-dull"
-                            style="color: #0d2158; font-size: 15px; text-align: center; margin-bottom: auto;">
-                            We specialise in Cataract Surgery and our services are second to none. We use the latest
-                            technologies and our highly skilled Ophthalmologists will have you see clearly in no time.
-                        </p>
+            <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
+                <img src="/customImages/testimg.png" class="card-img-top" alt="...">
+                <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
+                    <div class="pt-1 foremost-card-title">
+                        Cataract Surgery
                     </div>
+                    <p class="pt-3 foremost-card-body">
+                        We specialise in Cataract Surgery and our services are second to none. We use the latest
+                        technologies and our highly skilled Ophthalmologists will have you see clearly in no time.
+                    </p>
                 </div>
             </div>
-
         </div>
-    </div>
-
-
+    </section>
 
 
 
