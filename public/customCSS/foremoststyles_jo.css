@@ -6,9 +6,56 @@
     text-transform: capitalize;
 }
 
-.orange-color {
-    color: #f58634;
+.medium-title {
+    color: #000000;
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 53px;
+    line-height: 120.5%;
+    text-align: center;
 }
+
+.medium-subtitle {
+    font-weight: 500;
+    font-size: 22.6181px;
+    line-height: 120.5%;
+    text-align: center;
+}
+
+.orange-rule {
+    border-top: 5px solid #f58634;
+    border-radius: 20px;
+    opacity: 100%;
+    width: 80px;
+}
+.gray-rule {
+    border-top: 5px solid #d9d9d9;
+    border-radius: 20px;
+    opacity: 100%;
+    width: 80px;
+}
+
+.text-gray-underline {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 120.5%;
+    text-decoration-line: underline;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.display-beside {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 20em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.orange-color {
+    color: #f58634 !important;
+}
+
 .text-black-paragraph {
     font-weight: 500;
     font-size: 20px;
@@ -23,9 +70,11 @@
 .navbar-nav li:hover > ul.dropdown-menu {
     display: block;
 }
+
 .dropdown-submenu {
     position: relative;
 }
+
 .dropdown-submenu > .dropdown-menu {
     top: 0;
     left: 100%;
@@ -60,6 +109,7 @@ ll
     .archwarejo-width-top {
         width: 41%;
     }
+
     .archwarejo-width-bottom {
         width: 59%;
     }
@@ -85,6 +135,7 @@ ll
     .block-display-tab {
         display: block !important;
     }
+
     .image-width-tab {
         width: 100%;
     }
@@ -93,10 +144,12 @@ ll
         background: #6b809b !important;
         padding: 0.5rem !important;
     }
+
     .experience-body-with-pix-mobile {
         background: none !important;
         border-radius: unset !important;
     }
+
     .image-padding-buttom {
         padding: unset !important;
     }
@@ -108,6 +161,7 @@ ll
         flex-direction: column-reverse !important;
         padding: 1em;
     }
+
     .section-top > .archware-text-justify {
         margin-right: auto;
     }
@@ -116,14 +170,17 @@ ll
         width: unset !important;
         padding: 0.5em 1.5em 0.5em 1.5em !important;
     }
+
     .experience-body-mobile {
         background: #08090a !important;
         padding: 0.5rem !important;
     }
+
     .experience-body-with-pix-mobile {
         background: none !important;
         border-radius: unset !important;
     }
+
     .image-padding-buttom {
         padding: unset !important;
     }
@@ -133,6 +190,7 @@ ll
     .mobile-padding {
         padding: 0.15rem !important;
     }
+
     .inner-padding {
         padding: 0.25rem !important;
     }
@@ -151,22 +209,27 @@ ll
         font-size: 30px !important;
         line-height: 38px !important;
     }
+
     .text-body-mobile {
         font-size: 15px !important;
         line-height: 20px !important;
     }
+
     .text-label-mobile {
         font-size: 1.2em !important;
         line-height: 38px !important;
     }
+
     .experience-body-mobile {
         background: #6b809b !important;
         padding: 0.5rem !important;
     }
+
     .experience-body-with-pix-mobile {
         background: none !important;
         border-radius: unset !important;
     }
+
     .image-padding-buttom {
         padding: unset !important;
     }
@@ -178,6 +241,7 @@ ll
     .text-white-header {
         font-size: 1.37rem !important;
     }
+
     .text-white-paragraph {
         margin-top: 0.2em !important;
     }
@@ -186,23 +250,28 @@ ll
         padding-left: 0.2rem !important;
         justify-content: left !important;
     }
+
     .archware-card-paragraph-padding {
         padding: 0.3em !important;
         text-align: left !important;
     }
+
     .archware-card-title {
         padding: 0.1em !important;
         text-align: left !important;
     }
+
     .remove-shadow-mobile {
         box-shadow: none !important;
         transition: none !important;
-        scale: unset !important ;
+        scale: unset !important;
     }
+
     .lettalk-mobile {
         display: table-cell !important;
         padding: 0.5em;
     }
+
     .large-button-mobile {
         background: #040856 !important;
         border-radius: 4px !important;
@@ -221,6 +290,23 @@ ll
 @media (max-width: 414px) {
 }
 
+.foremost-blog-read-more {
+    font-weight: 600;
+    font-size: 19.31px;
+    line-height: 23px;
+    text-decoration-line: underline;
+    color: #f58634;
+}
+
+.foremost-blog-title {
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 128.5%;
+    letter-spacing: -1px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
 .foremost-card-title {
     font-weight: 700;
     font-size: 27px;
@@ -229,6 +315,7 @@ ll
     text-transform: capitalize;
     color: #6b809b;
 }
+
 .foremost-card-body {
     text-align: left;
     margin-bottom: auto;
@@ -298,6 +385,17 @@ ll
     border: none;
     width: 312px;
     color: #ffffff;
+}
+
+.foremost-button-border {
+    background: #f58634;
+    border-radius: 0.4em;
+    border: none;
+    color: #ffffff;
+}
+
+.need-glass-back-img {
+    background-image: url("../customImages/eye-glass-shop.jpg") !important;
 }
 
 .move-left-wall {

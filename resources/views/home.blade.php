@@ -87,28 +87,22 @@
         </div>
     </section>
 
-
     <section class="my-3 py-3">
         <div class="container justify-content-center">
             <div class="row">
-                <p class="text-label-mobile"
-                    style="font-weight: 600;font-size: 30px;line-height: 72px;color: #0D2158; text-align:center">
-                    Ready To Deploy Our Account & Expenses Management System?
-                </p>
-                <a href="/contacts" class="py-3" style="text-align:center;">
-                    <button class="small-mobile-long-button archware-button-default">
-                        Let's Discuss
-                    </button>
-                </a>
+                <h2 class="medium-title text-title-mobile">
+                    Our Services
+                </h2>
+                <p class="orange-color medium-subtitle">What We Offer</p>
             </div>
         </div>
     </section>
 
 
-    <section class="container-fluid mt-3 pt-5">
+    <section class="container-fluid mt-2 pt-2">
         <div class="d-flex flex-row flex-wrap justify-content-center">
             <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
-                <img src="/customImages/testimg.png" class="card-img-top" alt="...">
+                <img src="/customImages/screening.png" class="card-img-top" alt="...">
                 <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Visual Screening
@@ -121,7 +115,7 @@
                 </div>
             </div>
             <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
-                <img src="/customImages/testimg.png" class="card-img-top" alt="...">
+                <img src="/customImages/eye exam.png" class="card-img-top" alt="...">
                 <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Comprehensive Eye Examination
@@ -133,7 +127,7 @@
                 </div>
             </div>
             <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
-                <img src="/customImages/testimg.png" class="card-img-top" alt="...">
+                <img src="/customImages/cataract.png" class="card-img-top" alt="...">
                 <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Cataract Surgery
@@ -146,6 +140,105 @@
             </div>
         </div>
     </section>
+
+    <section class="my-3 py-3">
+        <div class="container justify-content-center">
+            <div class="row">
+
+                <a href="/contacts" class="py-3" style="text-align:center;">
+                    <button class="small-mobile-long-button archware-button-default">
+                        Read More
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid hero-section need-glass-back-img">
+        <div class="hero-section-copy">
+            <h1>Need glasses fast?</h1>
+            <p>
+                Get single-vision prescription glasses in 3-5 business days with new Fast Frame
+            </p>
+
+            <button type="button" class="small-mobile-long-button foremost-button-border">
+                <img src="{{ asset('customImages/buyIcon.png') }}" />
+                Buy Now
+            </button>
+        </div>
+    </section>
+
+
+    <section class="my-3 py-3">
+        <div class="container justify-content-center">
+            <div class="row">
+                <h2 class="medium-title text-title-mobile">
+                    Our Blog
+                </h2>
+                <p class="orange-color medium-subtitle">What you should know about your eye health</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid mt-2 pt-2">
+        <div class="d-flex flex-row flex-wrap justify-content-center">
+            <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
+                <img src="/customImages/few tips.png" class="card-img-top" alt="...">
+                <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
+                    <div class="pt-1 foremost-blog-title">
+                        7 things you should know before picking a new pair of glasses
+                    </div>
+                    <p class="pt-3 foremost-card-body">
+                        Here are a few tips and tricks to help you find the right pair of glasses
+                    </p>
+                    <div class="pt-3 foremost-blog-read-more">
+                        Read more
+                    </div>
+                </div>
+            </div>
+            <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
+                <img src="/customImages/few tips 2.png" class="card-img-top" alt="...">
+                <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
+                    <div class="pt-1 foremost-blog-title">
+                        7 things you should know before picking a new pair of glasses
+                    </div>
+                    <p class="pt-3 foremost-card-body">
+                        Here are a few tips and tricks to help you find the right pair of glasses
+                    </p>
+                    <div class="pt-3 foremost-blog-read-more">
+                        Read more
+                    </div>
+                </div>
+            </div>
+            <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
+                <img src="/customImages/color blindness.png" class="card-img-top" alt="...">
+                <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
+                    <div class="pt-1 foremost-blog-title">
+                        Colour blindness explained! these facts will shock you
+                    </div>
+                    <p class="pt-3 foremost-card-body">
+                        Here are a few tips and tricks to help you find the right pair of glasses
+                    </p>
+                    <div class="pt-3 foremost-blog-read-more">
+                        Read more
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="my-3 py-3">
+        <div class="container justify-content-center">
+            <div class="row">
+                <div class="display-beside">
+                    <hr class="container orange-rule"/>
+                    <hr class="container gray-rule"/>
+                    <hr class="container gray-rule"/>
+                </div>
+                <p class="text-gray-underline">View All</p>
+            </div>
+        </div>
+    </div>
 
 
 
