@@ -1,6 +1,10 @@
 @import "../../resources/css/_variables.css";
 
 /* Nav text Start*/
+nav{
+    padding: 1rem 0!important;
+}
+
 .navbar-scroll .navbar-toggler-icon,
 .navbar-scroll .navbar-brand {
   color: #fff;
@@ -10,7 +14,7 @@
     color: #000000!important;
     font-style: normal;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: .875rem;
     line-height: 22px;
     position: relative;
 }
