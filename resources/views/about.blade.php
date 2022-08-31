@@ -78,7 +78,6 @@
     <!-- END OF PROOF OF WORK -->
 
     {{-- WHY CHOOSE US SECTION --}}
-    {{-- <section class="container-fluid why-choose"> --}}
     <section class="container-fluid why-choose-parent">
         <img class="img-fluid side-logo" src="/customImages/sidelogo.png" alt="SideLogo">
         <div class=" d-flex flex-ro flex-wrap justify-content-between align-items-center why-wrapper">
@@ -97,13 +96,45 @@
                    our excellent services.
                 </p>
             </div>
-            {{-- <div> --}}
         <img class="img-fluid why-choose-right-image" src="/customImages/doctor-background.png" alt="doctor image with yellow background here">
-            {{-- </div>     --}}
     </div>
     </section>
-    {{-- </section> --}}
     {{-- END OF WHY CHOOSE US SECTION --}}
+
+    {{-- WORKFORCE SECTION --}}
+     <section class="container-fluid workforce">
+        <div>
+            <div class="text-center">
+                <h6>Our Workforce</h6>
+                <h1>Our Highly Qualified Professionals</h1>
+            </div>
+
+            {{-- Avatars --}}
+        <div class="d-sm-flex flex-sm-wrap flex-sm-row align-items-center justify-content-evenly avatars">
+                <div class="avatar-child">
+                <img src="/customImages/docAdebayo.png" alt="doctor adebayo"/>
+                <h3>Dr. Adebayo</h2>
+                <p>Medical Director<br>Foremost Eye Clinic</p>
+                </div>
+                <div class="avatar-child">
+                <img src="/customImages/docoyeniyi.png" alt="Pharm. Oyeniyi"/>
+                <h3>Pharm. Oyeniyi</h2>
+                <p>Medical Director<br>Foremost Eye Clinic</p>
+                </div>
+                <div class="avatar-child">
+                <img src="/customImages/docAmara.png" alt="Doctor Amara"/>
+                <h3>Dr. Amara</h2>
+                <p>Medical Director<br>Foremost Eye Clinic</p>
+                </div>
+                <div class="avatar-child">
+                <img src="/customImages/docJohnson.png" alt="doctor Johnson"/>
+                <h3>Dr. Johnson</h2>
+                <p>Medical Director<br>Foremost Eye Clinic</p>
+                </div>
+            </div>
+        </div>
+     </section>
+    {{-- END OF WORKFORCE SECTION --}}
 
     </main>
     <body>

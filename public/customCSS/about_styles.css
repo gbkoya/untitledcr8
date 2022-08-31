@@ -204,6 +204,7 @@
 }
 
 .why-choose-parent{
+    margin-top: 6rem;
     position: relative;
     padding-left: 0!important;
 }
@@ -222,5 +223,55 @@
 .why-wrapper .why-choose-right-image{
     margin-right: -.9%;
 }
-
 /* END OF WHY CHOOSE US SECTION */
+
+/* WORK FORCE SECTION */
+.workforce {
+    height: auto;
+    background: #6B809B;
+    padding: 8rem 0;
+}
+
+.workforce h6{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 31px;
+    color: #FFFFFF;
+}
+
+.workforce h1{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3.3125rem;
+    line-height: 64px;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+}
+
+.avatars{
+    margin-top: 3.3125rem;
+}
+
+
+.avatar-child h3{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 120%;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: .9rem;
+}
+
+.avatar-child p{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.0625rem;
+    line-height: 150%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+
+}
+/* END OF WORK FORCE SECTION */
