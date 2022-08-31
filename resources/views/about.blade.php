@@ -210,25 +210,18 @@
                 {{-- <h1 class="px-3" style="font-weight: 700;font-size: 35px;letter-spacing: -0.02222em;color: #040856;">
                     Contact Us</h1> --}}
              <h3>Book an appointment</h3>
-                <h6 class="h6x-3" style="font-weight: 400;font-size: 16px;color: rgba(4, 8, 86, 0.7);">We'd like to handle
-                    your
-                    business</p>
+                <h6 class="h6x-3" style="font-weight: 400;font-size: 16px;color: rgba(4, 8, 86, 0.7);">We'd like to take care of your 
+                eye health</p>
 
 
                 <form id="sendData">
                     <div class="row px-3 pt-2">
-                        <div class="col-sm first-name">
-                            <label style="font-weight: 500;font-size: 14px;color: #040856 ">First Name</label>
+                        <div class="first-name">
+                            <label style="font-weight: 500;font-size: 14px;color: #040856 ">Name</label>
                             <input type="text" id="Firstname" class="input-style"  required
                                 style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA;" placeholder="">
                         </div>
-                        <div class="col-sm last-name">
-                            <label style="font-weight: 500;font-size: 14px;color: #040856">Last Name</label>
-                            <input id="Lastname" required type="text"
-                                style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA" placeholder="">
-                        </div>
-                    </div>
-
+    
                     <div class="px-3 pt-2">
                         <label style="font-weight: 500;font-size: 14px;color: #040856">Email address</label>
                         <input id="Email" required class="section6-form4"

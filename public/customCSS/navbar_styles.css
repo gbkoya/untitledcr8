@@ -18,6 +18,10 @@ nav{
     line-height: 22px;
     position: relative;
 }
+/* .archware-nav-title:active {
+    color: forestgreen!important;
+    text-decoration-color: hotpink!important;
+} */
 
 .archware-nav-title:after {
     content: '';
