@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 /* HERO SECTION STYLES */
 .hero-section{
  background-image: url("../customImages/heroImage.png"); 
@@ -172,4 +177,50 @@
 .why-choose{
     margin-top: 6rem;
 }
+.why-choose-left{
+    max-width: 40rem;
+}
+.why-choose-left h1{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3.3125rem;
+    line-height: 64px;
+    letter-spacing: -0.03em;
+    color: #6B809B;    
+}
+.why-choose-left p {
+    max-width: 100%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 163.5%;
+    /* or 35px */
+    color: rgba(0, 0, 0, 0.4);
+    text-align: justify;
+}
+
+.why-choose .side-logo{
+    /* z-index: -1 */
+}
+
+.why-choose-parent{
+    position: relative;
+    padding-left: 0!important;
+}
+
+.why-wrapper{
+    width: 100%;
+    padding-left: 6rem;
+}
+
+.side-logo{
+    position: absolute;
+    z-index: -1000;
+    top: 8rem;
+}
+
+.why-wrapper .why-choose-right-image{
+    margin-right: -.9%;
+}
+
 /* END OF WHY CHOOSE US SECTION */

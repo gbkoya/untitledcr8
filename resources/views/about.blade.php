@@ -78,11 +78,31 @@
     <!-- END OF PROOF OF WORK -->
 
     {{-- WHY CHOOSE US SECTION --}}
-    <section class="container-fluid why-choose">
-    <div>
-        <div><img src="/customImages/sidelogo.png" alt="SideLogo"></div>
+    {{-- <section class="container-fluid why-choose"> --}}
+    <section class="container-fluid why-choose-parent">
+        <img class="img-fluid side-logo" src="/customImages/sidelogo.png" alt="SideLogo">
+        <div class=" d-flex flex-ro flex-wrap justify-content-between align-items-center why-wrapper">
+            <div class="why-choose-left">
+                <h1>Why Choose Us?</h1>
+                <p>At Foremost Eye Clinic, we guarantee maximum satisfaction
+                     and an invaluable experience. We recognize that the eyes
+                      require specialized care, which is why we offer personalized 
+                      and tailored solutions designed to meet our patient’s needs.
+                </p>
+                <p>We carry out Advanced Diagnostic Tests with modernized
+                     technology and laboratory equipment, to ensure our patients
+                     get first-hand treatment. 
+               </p>
+               <p>Schedule an appointment with our doctors today and enjoy
+                   our excellent services.
+                </p>
+            </div>
+            {{-- <div> --}}
+        <img class="img-fluid why-choose-right-image" src="/customImages/doctor-background.png" alt="doctor image with yellow background here">
+            {{-- </div>     --}}
     </div>
     </section>
+    {{-- </section> --}}
     {{-- END OF WHY CHOOSE US SECTION --}}
 
     </main>
