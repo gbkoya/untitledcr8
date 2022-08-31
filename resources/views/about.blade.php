@@ -76,10 +76,14 @@
         </div>
     </section>
     <!-- END OF PROOF OF WORK -->
-    {{-- PROOF OF WORK SECTION --}}
 
-
-    {{-- END OF PROOF OF WORK SECTION --}}
+    {{-- WHY CHOOSE US SECTION --}}
+    <section class="container-fluid why-choose">
+    <div>
+        <div><img src="/customImages/sidelogo.png" alt="SideLogo"></div>
+    </div>
+    </section>
+    {{-- END OF WHY CHOOSE US SECTION --}}
 
     </main>
     <body>
