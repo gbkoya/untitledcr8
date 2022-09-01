@@ -142,60 +142,204 @@
         <h1>Testimonials</h1>
         <h6>What Do People Have To Say About Us? </h6>
     </div>
-    {{-- First --}}
-    <div class="d-sm-flex flex-sm-row flex-sm-wrap justify-content-center testimonial-body">
-        <div class="first-testimonial">
-            <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
-            <div class="testimonial-content">
-                <p class="body-copy">
-                    Excellent service & follow-up on treatment 
-                    by staff and Doctor
-                </p>
-                <div class="d-flex flex-row justify-content-end">
-                <p class="author">
-                    . David Anelm
-                </p>
-            </div>
+      <!-- THE CAROUSEL -->
+      <div id="demoTwo" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demoTwo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#demoTwo" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#demoTwo" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+            <!-- First slide -->
+            <div class="carousel-item active">
+                <div class="d-sm-flex flex-sm-row flex-sm-wrap justify-content-center testimonial-body">
+                    {{-- First --}}
+                        <div class="first-testimonial">
+                            <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                            <div class="testimonial-content">
+                                <p class="body-copy">
+                                    Excellent service & follow-up on treatment 
+                                    by staff and Doctor
+                                </p>
+                                <div class="d-flex flex-row justify-content-end">
+                                <p class="author">
+                                    . David Anelm
+                                </p>
+                            </div>
+                            </div>
+                
+                        </div>
+                        {{-- Second --}}
+                            <div class="first-testimonial">
+                                <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                                <div class="testimonial-content">
+                                    <p class="body-copy">
+                                        I love my prescribed contact lens and how they were patient with
+                                         me choosing my preferred color. My vision is crystal clear and
+                                          the lens is so fashionable.
+                                    </p>
+                                    <div class="d-flex flex-row justify-content-end">
+                                    <p class="author">
+                                        . Abraham Oluwatuyi
+                                    </p>
+                                </div>
+                                </div>
+                    
+                            </div>
+                        {{-- Third --}}
+                          {{-- Second --}}
+                          <div class="first-testimonial">
+                            <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                            <div class="testimonial-content">
+                                <p class="body-copy">
+                                    They have a conducive environment and friendly 
+                                    staff. I love their customer service and I highly 
+                                    recommend them.
+                                </p>
+                                <div class="d-flex flex-row justify-content-end">
+                                <p class="author">
+                                    . Obadiah Anthony
+                                </p>
+                            </div>
+                            </div>
+                
+                        </div>
+                        
+                    </div>
+
+                <!-- End of review card -->
             </div>
 
-        </div>
-        {{-- Second --}}
-            <div class="first-testimonial">
-                <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
-                <div class="testimonial-content">
-                    <p class="body-copy">
-                        I love my prescribed contact lens and how they were patient with
-                         me choosing my preferred color. My vision is crystal clear and
-                          the lens is so fashionable.
-                    </p>
-                    <div class="d-flex flex-row justify-content-end">
-                    <p class="author">
-                        . Abraham Oluwatuyi
-                    </p>
-                </div>
-                </div>
-    
+            <!-- Second slide -->
+            <div class="carousel-item">
+                <div class="d-sm-flex flex-sm-row flex-sm-wrap justify-content-center testimonial-body">
+                    {{-- First --}}
+                        <div class="first-testimonial">
+                            <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                            <div class="testimonial-content">
+                                <p class="body-copy">
+                                    Excellent service & follow-up on treatment 
+                                    by staff and Doctor
+                                </p>
+                                <div class="d-flex flex-row justify-content-end">
+                                <p class="author">
+                                    . David Anelm
+                                </p>
+                            </div>
+                            </div>
+                
+                        </div>
+                        {{-- Second --}}
+                            <div class="first-testimonial">
+                                <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                                <div class="testimonial-content">
+                                    <p class="body-copy">
+                                        I love my prescribed contact lens and how they were patient with
+                                         me choosing my preferred color. My vision is crystal clear and
+                                          the lens is so fashionable.
+                                    </p>
+                                    <div class="d-flex flex-row justify-content-end">
+                                    <p class="author">
+                                        . Abraham Oluwatuyi
+                                    </p>
+                                </div>
+                                </div>
+                    
+                            </div>
+                        {{-- Third --}}
+                          {{-- Second --}}
+                          <div class="first-testimonial">
+                            <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                            <div class="testimonial-content">
+                                <p class="body-copy">
+                                    They have a conducive environment and friendly 
+                                    staff. I love their customer service and I highly 
+                                    recommend them.
+                                </p>
+                                <div class="d-flex flex-row justify-content-end">
+                                <p class="author">
+                                    . Obadiah Anthony
+                                </p>
+                            </div>
+                            </div>
+                
+                        </div>
+                        
+                    </div>
             </div>
-        {{-- Third --}}
-          {{-- Second --}}
-          <div class="first-testimonial">
-            <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
-            <div class="testimonial-content">
-                <p class="body-copy">
-                    They have a conducive environment and friendly 
-                    staff. I love their customer service and I highly 
-                    recommend them.
-                </p>
-                <div class="d-flex flex-row justify-content-end">
-                <p class="author">
-                    . Obadiah Anthony
-                </p>
-            </div>
+            <!-- Third slide -->
+            <div class="carousel-item">
+                <div class="d-sm-flex flex-sm-row flex-sm-wrap justify-content-center testimonial-body">
+                    {{-- First --}}
+                        <div class="first-testimonial">
+                            <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                            <div class="testimonial-content">
+                                <p class="body-copy">
+                                    Excellent service & follow-up on treatment 
+                                    by staff and Doctor
+                                </p>
+                                <div class="d-flex flex-row justify-content-end">
+                                <p class="author">
+                                    . David Anelm
+                                </p>
+                            </div>
+                            </div>
+                
+                        </div>
+                        {{-- Second --}}
+                            <div class="first-testimonial">
+                                <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                                <div class="testimonial-content">
+                                    <p class="body-copy">
+                                        I love my prescribed contact lens and how they were patient with
+                                         me choosing my preferred color. My vision is crystal clear and
+                                          the lens is so fashionable.
+                                    </p>
+                                    <div class="d-flex flex-row justify-content-end">
+                                    <p class="author">
+                                        . Abraham Oluwatuyi
+                                    </p>
+                                </div>
+                                </div>
+                    
+                            </div>
+                        {{-- Third --}}
+                          {{-- Second --}}
+                          <div class="first-testimonial">
+                            <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                            <div class="testimonial-content">
+                                <p class="body-copy">
+                                    They have a conducive environment and friendly 
+                                    staff. I love their customer service and I highly 
+                                    recommend them.
+                                </p>
+                                <div class="d-flex flex-row justify-content-end">
+                                <p class="author">
+                                    . Obadiah Anthony
+                                </p>
+                            </div>
+                            </div>
+                
+                        </div>
+                        
+                    </div>
             </div>
 
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demoTwo" data-bs-slide="prev">
+                <!-- <span class="carousel-control-prev-icon" style="color: blue;"></span> -->
+                <img class="img-fluid" src="{{ asset('customImages/Vector.svg') }}">
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demoTwo" data-bs-slide="next">
+                <img class="img-fluid" src="{{ asset('customImages/Vector (1).svg') }}">
+                <!-- <span class="carousel-control-next-icon"></span> -->
+            </button>
         </div>
-        
-    </div>
+
+</section>
+<!-- End OF CAROUSEL -->
      </section>
 
     {{--END OF TESTIMONIALS SECTION --}}
