@@ -64,7 +64,7 @@
     margin-right: 6rem;
 }
 @media only screen and (max-width: 768px) {
-    h1 {
+    .errorpage-h1 {
         font-size: 6.5rem;
         margin-left: 2.5rem;
         margin-bottom: 5rem;
@@ -93,7 +93,7 @@
         margin-left: 2.5rem;
         margin-top: 13rem;
     }
-    img {
+    .errorpage-img {
         float: right;
         height: 35vh;
         padding-left: 3rem;
