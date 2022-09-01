@@ -450,6 +450,17 @@
 }
 
 @media(max-width: 480px){
+/* Hero section responsive */
+.hero-section-copy{
+    padding-left: 0!important;
+    margin-top: -5rem;
+}
+.hero-section-copy h1{
+    font-size: 3rem!important;
+    text-align: left!important;
+}
+
+
     .contact-information-colum{
         display: none;
     }
