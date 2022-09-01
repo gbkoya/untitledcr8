@@ -43,6 +43,8 @@
     <link rel="stylesheet" href="/customCSS/about_styles.css">
     <link rel="stylesheet" href="/customCSS/footer_styles.css">
     <link rel="stylesheet" href="/customCSS/login_ik.css">
+    <link rel="stylesheet" href="/customCSS/kellystyle.css">
+    <link rel="stylesheet" href="/customCSS/gallerystyle.css">
 
 
 
@@ -55,6 +57,8 @@
 
     <script src="/js/app.js"></script>
     <script src="/customJS/jquery.js"></script>
+    <script src="/customJS/velocity.min.js"></script>
+    <script src="/customJS/galleryscript.js"></script>
 
 </head>
 <body>
