@@ -328,10 +328,10 @@
             </div>
 
             <!-- Left and right controls/icons -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#demoTwo" data-bs-slide="prev">
+            {{-- <button class="carousel-control-prev" type="button" data-bs-target="#demoTwo" data-bs-slide="prev">
                 <!-- <span class="carousel-control-prev-icon" style="color: blue;"></span> -->
                 <img class="img-fluid" src="{{ asset('customImages/Vector.svg') }}">
-            </button>
+            </button> --}}
             <button class="carousel-control-next" type="button" data-bs-target="#demoTwo" data-bs-slide="next">
                 <img class="img-fluid" src="{{ asset('customImages/Vector (1).svg') }}">
                 <!-- <span class="carousel-control-next-icon"></span> -->
@@ -340,7 +340,7 @@
 
 </section>
 <!-- End OF CAROUSEL -->
-     </section>
+     {{-- </section> --}}
 
     {{--END OF TESTIMONIALS SECTION --}}
 
