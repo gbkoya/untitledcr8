@@ -20,3 +20,16 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 });
+
+
+
+
+// This route would soon be removed as its for testing purpose
+Route::get('/404', function () {
+    return view('errors.404');
+});
+
+// This is a permanent route and must always be the last route
+Route::fallback(function () {
+    return view("errors.404");
+});
