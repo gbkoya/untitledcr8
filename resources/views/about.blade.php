@@ -142,135 +142,278 @@
         <h1>Testimonials</h1>
         <h6>What Do People Have To Say About Us? </h6>
     </div>
-    {{-- First --}}
-    <div class="d-sm-flex flex-sm-row flex-sm-wrap justify-content-center testimonial-body">
-        <div class="first-testimonial">
-            <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
-            <div class="testimonial-content">
-                <p class="body-copy">
-                    Excellent service & follow-up on treatment 
-                    by staff and Doctor
-                </p>
-                <div class="d-flex flex-row justify-content-end">
-                <p class="author">
-                    . David Anelm
-                </p>
-            </div>
+      <!-- THE CAROUSEL -->
+      <div id="demoTwo" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demoTwo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#demoTwo" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#demoTwo" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+            <!-- First slide -->
+            <div class="carousel-item active">
+                <div class="d-sm-flex flex-sm-row flex-sm-wrap justify-content-center testimonial-body">
+                    {{-- First --}}
+                        <div class="first-testimonial">
+                            <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                            <div class="testimonial-content">
+                                <p class="body-copy">
+                                    Excellent service & follow-up on treatment 
+                                    by staff and Doctor
+                                </p>
+                                <div class="d-flex flex-row justify-content-end">
+                                <p class="author">
+                                    . David Anelm
+                                </p>
+                            </div>
+                            </div>
+                
+                        </div>
+                        {{-- Second --}}
+                            <div class="first-testimonial">
+                                <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                                <div class="testimonial-content">
+                                    <p class="body-copy">
+                                        I love my prescribed contact lens and how they were patient with
+                                         me choosing my preferred color. My vision is crystal clear and
+                                          the lens is so fashionable.
+                                    </p>
+                                    <div class="d-flex flex-row justify-content-end">
+                                    <p class="author">
+                                        . Abraham Oluwatuyi
+                                    </p>
+                                </div>
+                                </div>
+                    
+                            </div>
+                        {{-- Third --}}
+                          {{-- Second --}}
+                          <div class="first-testimonial">
+                            <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                            <div class="testimonial-content">
+                                <p class="body-copy">
+                                    They have a conducive environment and friendly 
+                                    staff. I love their customer service and I highly 
+                                    recommend them.
+                                </p>
+                                <div class="d-flex flex-row justify-content-end">
+                                <p class="author">
+                                    . Obadiah Anthony
+                                </p>
+                            </div>
+                            </div>
+                
+                        </div>
+                        
+                    </div>
+
+                <!-- End of review card -->
             </div>
 
-        </div>
-        {{-- Second --}}
-            <div class="first-testimonial">
-                <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
-                <div class="testimonial-content">
-                    <p class="body-copy">
-                        I love my prescribed contact lens and how they were patient with
-                         me choosing my preferred color. My vision is crystal clear and
-                          the lens is so fashionable.
-                    </p>
-                    <div class="d-flex flex-row justify-content-end">
-                    <p class="author">
-                        . Abraham Oluwatuyi
-                    </p>
-                </div>
-                </div>
-    
+            <!-- Second slide -->
+            <div class="carousel-item">
+                <div class="d-sm-flex flex-sm-row flex-sm-wrap justify-content-center testimonial-body">
+                    {{-- First --}}
+                        <div class="first-testimonial">
+                            <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                            <div class="testimonial-content">
+                                <p class="body-copy">
+                                    Excellent service & follow-up on treatment 
+                                    by staff and Doctor
+                                </p>
+                                <div class="d-flex flex-row justify-content-end">
+                                <p class="author">
+                                    . David Anelm
+                                </p>
+                            </div>
+                            </div>
+                
+                        </div>
+                        {{-- Second --}}
+                            <div class="first-testimonial">
+                                <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                                <div class="testimonial-content">
+                                    <p class="body-copy">
+                                        I love my prescribed contact lens and how they were patient with
+                                         me choosing my preferred color. My vision is crystal clear and
+                                          the lens is so fashionable.
+                                    </p>
+                                    <div class="d-flex flex-row justify-content-end">
+                                    <p class="author">
+                                        . Abraham Oluwatuyi
+                                    </p>
+                                </div>
+                                </div>
+                    
+                            </div>
+                        {{-- Third --}}
+                          {{-- Second --}}
+                          <div class="first-testimonial">
+                            <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                            <div class="testimonial-content">
+                                <p class="body-copy">
+                                    They have a conducive environment and friendly 
+                                    staff. I love their customer service and I highly 
+                                    recommend them.
+                                </p>
+                                <div class="d-flex flex-row justify-content-end">
+                                <p class="author">
+                                    . Obadiah Anthony
+                                </p>
+                            </div>
+                            </div>
+                
+                        </div>
+                        
+                    </div>
             </div>
-        {{-- Third --}}
-          {{-- Second --}}
-          <div class="first-testimonial">
-            <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
-            <div class="testimonial-content">
-                <p class="body-copy">
-                    They have a conducive environment and friendly 
-                    staff. I love their customer service and I highly 
-                    recommend them.
-                </p>
-                <div class="d-flex flex-row justify-content-end">
-                <p class="author">
-                    . Obadiah Anthony
-                </p>
-            </div>
+            <!-- Third slide -->
+            <div class="carousel-item">
+                <div class="d-sm-flex flex-sm-row flex-sm-wrap justify-content-center testimonial-body">
+                    {{-- First --}}
+                        <div class="first-testimonial">
+                            <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                            <div class="testimonial-content">
+                                <p class="body-copy">
+                                    Excellent service & follow-up on treatment 
+                                    by staff and Doctor
+                                </p>
+                                <div class="d-flex flex-row justify-content-end">
+                                <p class="author">
+                                    . David Anelm
+                                </p>
+                            </div>
+                            </div>
+                
+                        </div>
+                        {{-- Second --}}
+                            <div class="first-testimonial">
+                                <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                                <div class="testimonial-content">
+                                    <p class="body-copy">
+                                        I love my prescribed contact lens and how they were patient with
+                                         me choosing my preferred color. My vision is crystal clear and
+                                          the lens is so fashionable.
+                                    </p>
+                                    <div class="d-flex flex-row justify-content-end">
+                                    <p class="author">
+                                        . Abraham Oluwatuyi
+                                    </p>
+                                </div>
+                                </div>
+                    
+                            </div>
+                        {{-- Third --}}
+                          {{-- Second --}}
+                          <div class="first-testimonial">
+                            <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                            <div class="testimonial-content">
+                                <p class="body-copy">
+                                    They have a conducive environment and friendly 
+                                    staff. I love their customer service and I highly 
+                                    recommend them.
+                                </p>
+                                <div class="d-flex flex-row justify-content-end">
+                                <p class="author">
+                                    . Obadiah Anthony
+                                </p>
+                            </div>
+                            </div>
+                
+                        </div>
+                        
+                    </div>
             </div>
 
+            <!-- Left and right controls/icons -->
+            {{-- <button class="carousel-control-prev" type="button" data-bs-target="#demoTwo" data-bs-slide="prev">
+                <!-- <span class="carousel-control-prev-icon" style="color: blue;"></span> -->
+                <img class="img-fluid" src="{{ asset('customImages/Vector.svg') }}">
+            </button> --}}
+            <button class="carousel-control-next" type="button" data-bs-target="#demoTwo" data-bs-slide="next">
+                <img class="img-fluid" src="{{ asset('customImages/Vector (1).svg') }}">
+                <!-- <span class="carousel-control-next-icon"></span> -->
+            </button>
         </div>
-        
-    </div>
-     </section>
+
+</section>
+<!-- End OF CAROUSEL -->
+     {{-- </section> --}}
 
     {{--END OF TESTIMONIALS SECTION --}}
 
-    {{-- CONTACT US SECTION --}}
-    <section class="container-fluid contact-us-wrapper">
+     <!-- CONTACT US SECTION -->
+     <section class="container-fluid contact-us-wrapper" style=" margin-bottom: 9%">
         <div class="text-center">
             <h1>Contact Us</h1>
         </div>
         <div class="row contact-form-section">
-            <div class="col-md-7 col-sm-6 pt-5 px-3">
-                {{-- <h1 class="px-3" style="font-weight: 700;font-size: 35px;letter-spacing: -0.02222em;color: #040856;">
-                    Contact Us</h1> --}}
-             <h3>Book an appointment</h3>
-                <h6 class="h6x-3" style="font-weight: 400;font-size: 16px;color: rgba(4, 8, 86, 0.7);">We'd like to handle
-                    your
-                    business</p>
+            <div class="col-md-7 col-sm-6 pt-5 contact-form-section-child">
+                
+                <h3>Book Appointment</h3>
+                <h6>We'd like to take care of your 
+                eye health</h6>
 
 
                 <form id="sendData">
-                    <div class="row px-3 pt-2">
-                        <div class="col-sm first-name">
-                            <label style="font-weight: 500;font-size: 14px;color: #040856 ">First Name</label>
-                            <input type="text" id="Firstname" class="input-style"  required
-                                style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA;" placeholder="">
+                    <div class="row pt-2">
+                        <div class="input-contact-wrapper">
+                            <label class="contact-label">Name</label><br>
+                            <input type="text" id="name" class="input-style"  required
+                                style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA;" placeholder="Full Name">
                         </div>
-                        <div class="col-sm last-name">
-                            <label style="font-weight: 500;font-size: 14px;color: #040856">Last Name</label>
-                            <input id="Lastname" required type="text"
-                                style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA" placeholder="">
-                        </div>
+                    
                     </div>
 
-                    <div class="px-3 pt-2">
-                        <label style="font-weight: 500;font-size: 14px;color: #040856">Email address</label>
-                        <input id="Email" required class="section6-form4"
+                    <div class="mt-4 input-contact-wrapper">
+                        <label class="contact-label">Email</label><br>
+                        <input id="email" required class="input-style"
                             style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA" type="email"
-                            placeholder="hello@dummie.com">
+                            placeholder="Enter email address">
                     </div>
-                    <div class="px-3 pt-2">
-                        <label style="font-weight: 500;font-size: 14px;color: #040856">Service you are interested
-                            in</label>
-                        <input id="Services" required class="section6-form4"
-                            style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA" type="text"
-                            placeholder="e.g. Web Development">
+                    <div class="input-contact-wrapper mt-4">
+                        <label class="contact-label">Phone Number</label><br>
+                        <input id="phonenumber" required class="input-style"
+                            style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA" type="tel"
+                            placeholder="Enter phone number">
                     </div>
-                    <div class="px-3 pt-2">
-                        <label name="helpnote" style="font-weight: 500;font-size: 14px;color: #040856">What can we
-                            help you with?
-                        </label>
-                        <textarea id="Message" required class="form-control" id="exampleFormControlTextarea1" placeholder="Your Message"
-                            style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA" rows="5"></textarea>
-
+                    <div class="input-contact-wrapper mt-4">
+                        <label name="helpnote" class="contact-label">Date
+                        </label><br>
+                        <input id="date" required class="input-style"
+                        style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA" type="date"
+                        placeholder="Enter phone number">
                     </div>
-                    <div class="text-end pt-3 px-3">
-                        <button type="submit" class="my-4"
-                            style=" width: 155px;height: 40px;background: #F58634; border: none;
-                        box-shadow: 0px 4px 7px -1px rgba(0, 0, 0, 0.11), 0px 2px 4px -1px rgba(0, 0, 0, 0.07);
-                        border-radius: 8px;font-weight: 500;font-size: 12px;line-height: 12px;align-items: right;
-                        text-align: center; color: #ffffff;">Submit</button>
+                    <div class= "input-contact-wrapper mt-4">
+                        <label name="helpnote" class="contact-label">What can we help you with?
+                        </label><br>
+                        <select id="message" required class="input-style"
+                        style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA" type="date"
+                        placeholder="Enter phone number">
+                        <option value="Comprehensive Eye Examination">Comprehensive Eye Examination</option>
+                        <option value="Glaucoma Workup And Management">Glaucoma Workup And Management</option>
+                        </select>
+                    </div>
+                    <div class="pt-3">
+                        <button type="submit" class="my-4 contact-button"
+                            >Book Appointment</button>
                     </div>
                 </form>
             </div>
 
-            <div class="col-md-5 col-sm-6 contact-information-colum"
-                style=" background-image: url(../customImages/Backgroundcard.svg);  background-repeat: no-repeat; background-size: 160%; height:inherit">
+            <div class="col-md-5 col-sm-6 contact-information-column"
+               >
                 <div class="sec6itext">
                     <div class="mx-5 mt-5 pt-5">
                         <h1 class="mt-5 pt-4" style="font-weight: 700;font-size: 30px;color: #FFFFFF;">Contact
                             Information<h1>
-                                <p class="pt-3" style="font-weight: 400;font-size: 16px;color: #FFFFFF;">Fill up the
-                                    form and our Team will get back to you within 24
-                                    hours.</p>
+                            <h6 style="color: #ffff; line-height: 130%"> Fill up the
+                                form and our Team will get back to you within 24
+                                hours.</h6>
                     </div>
-                    <div class="pt-3 mx-5">
+                    <div class=" mx-5" style="margin-top: 2rem">
                         <p><img class=info_arch1 src="{{ asset('customImages/Phone Icon.svg') }}" alt="">
                             <a style="font-weight: 400;font-size: 14px;color: #FFFFFF;">+2347031778450, +2348121738381</a>
                         </p>
@@ -284,7 +427,7 @@
                                 Village, Lagos</a>
                         </p>
                         <p>
-                        <p class="pt-4"><img class="px-2" src="/customImages/White.svg')">
+                        <p class="pt-4"><img class="px-2" src="{{ asset('customImages/White.svg') }}">
                             <img class="px-2" src="{{ asset('customImages/White (1).svg') }}">
                             <img class="px-2" src="{{ asset('customImages/White (2).svg') }}">
                             <img class="px-2" src="{{ asset('customImages/White (3).svg') }}">
@@ -295,8 +438,7 @@
             </div>
         </div>
         </div>
-     </section>
-    {{-- END OF CONTACT US SECTION --}}
+        <!-- END OF CONTACT US SECTION -->
 
     </main>
     <body>
@@ -329,5 +471,73 @@
         } 
    
         window.addEventListener('scroll', triggerCounter);
+
+
+    // CONTACT API INTEGRATION HERE
+    document.getElementById('sendData').addEventListener('submit', handleSumbit);
+
+function handleSumbit(event) {
+    event.preventDefault();
+
+    // Get all the input field and store them in their unique variable each
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let phonenumber = document.getElementById('phonenumber').value;
+    let date = document.getElementById('date').value;
+    let message = document.getElementById('message').value;
+
+    let contactData = {
+        name,
+        email,
+        phonenumber,
+        date,
+        message
+    }
+    // alert(JSON.stringify(contactData));
+    // alert(`${firstName} and ${lastName}`);
+    console.log(contactData);
+    isLoading = true;
+
+    function handleErrors(response) {
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+        return response;
+    }
+    fetch("http://127.0.0.1:8000/api/contactus/message", {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(contactData)
+        })
+        .then(handleErrors)
+        .then(response => {
+            console.log("ok")
+            Swal.fire({
+                icon: 'success',
+                title: 'Message sent, We will get back shortly!',
+                showConfirmButton: false,
+                timer: 1500,
+
+            })
+            let res = document.getElementById("sendData");
+            res.reset();
+        })
+        .catch(error => {
+            console.log(error, 'wrong')
+            Swal.fire({
+                icon: 'error',
+                title: 'Message not sent, something went wrong!',
+                showConfirmButton: false,
+                timer: 1500,
+
+            })
+
+        });
+
+}
+        // END OF CONTACT API INTEGRATION
     </script>
 @endsection
