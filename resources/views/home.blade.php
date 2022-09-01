@@ -231,14 +231,144 @@
         <div class="container justify-content-center">
             <div class="row">
                 <div class="display-beside">
-                    <hr class="container orange-rule"/>
-                    <hr class="container gray-rule"/>
-                    <hr class="container gray-rule"/>
+                    <hr class="container orange-rule" />
+                    <hr class="container gray-rule" />
+                    <hr class="container gray-rule" />
                 </div>
                 <p class="text-gray-underline">View All</p>
             </div>
         </div>
     </div>
+
+    {{-- Custom Gallery for Foremost start --}}
+    <section class="my-3 py-3">
+        <div class="container justify-content-center">
+            <div class="row">
+                <h2 class="medium-title text-title-mobile">
+                    Our Gallery
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid mt-2 pt-2">
+        <div class="d-flex flex-row flex-wrap justify-content-center">
+            <div class="slider-body">
+
+                <div class="slider" id="slider">
+                    <div class="slide" id="slide-left">
+                        <div class="slide-holder">
+                            <div class="slide-bg bg-previous"></div>
+                            <div class="slide-bg bg-current"></div>
+                            <div class="slide-bg bg-next"></div>
+                        </div>
+                    </div>
+                    <div class="slide" id="slide-center">
+                        <div class="slide-holder">
+                            <div class="slide-bg bg-previous"></div>
+                            <div class="slide-bg bg-current"></div>
+                            <div class="slide-bg bg-next"></div>
+                        </div>
+                    </div>
+                    <div class="slide" id="slide-right">
+                        <div class="slide-holder">
+                            <div class="slide-bg bg-previous"></div>
+                            <div class="slide-bg bg-current"></div>
+                            <div class="slide-bg bg-next"></div>
+                        </div>
+                    </div>
+                </div>
+                <a class="arrow" href="" id="left-arrow">
+                    <i class="fab fa-arrow-circle-o-left"></i>
+                </a>
+                <a class="arrow" href="" id="right-arrow">
+                    <i class="fab fa-arrow-circle-o-right"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="my-3 py-3">
+        <div class="container justify-content-center">
+            <div class="row">
+                <div class="gallery-rule">
+                    <hr class="container gray-rule" />
+                    <hr class="container orange-rule" />
+                    <hr class="container gray-rule" />
+                    <hr class="container gray-rule" />
+                    <hr class="container gray-rule" />
+                    <hr class="container gray-rule" />
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- Custom Gallery for Foremost end --}}
+
+
+    {{-- TESTIMONIALS SECTION --}}
+    <section class="testimonial container-fluid">
+        <div class="text-center">
+            <h1>Testimonials</h1>
+            <h6>What Do People Have To Say About Us? </h6>
+        </div>
+        {{-- First --}}
+        <div class="d-sm-flex flex-sm-row flex-sm-wrap justify-content-center testimonial-body">
+            <div class="first-testimonial">
+                <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                <div class="testimonial-content">
+                    <p class="body-copy">
+                        Excellent service & follow-up on treatment
+                        by staff and Doctor
+                    </p>
+                    <div class="d-flex flex-row justify-content-end">
+                        <p class="author">
+                            . David Anelm
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            {{-- Second --}}
+            <div class="first-testimonial">
+                <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                <div class="testimonial-content">
+                    <p class="body-copy">
+                        I love my prescribed contact lens and how they were patient with
+                        me choosing my preferred color. My vision is crystal clear and
+                        the lens is so fashionable.
+                    </p>
+                    <div class="d-flex flex-row justify-content-end">
+                        <p class="author">
+                            . Abraham Oluwatuyi
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            {{-- Third --}}
+            {{-- Second --}}
+            <div class="first-testimonial">
+                <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                <div class="testimonial-content">
+                    <p class="body-copy">
+                        They have a conducive environment and friendly
+                        staff. I love their customer service and I highly
+                        recommend them.
+                    </p>
+                    <div class="d-flex flex-row justify-content-end">
+                        <p class="author">
+                            . Obadiah Anthony
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    {{-- END OF TESTIMONIALS SECTION --}}
 
 
 

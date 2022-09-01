@@ -52,6 +52,14 @@
     margin-right: auto;
 }
 
+.gallery-rule {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 40em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .orange-color {
     color: #f58634 !important;
 }
