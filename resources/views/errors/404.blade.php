@@ -14,7 +14,7 @@
         <div class="errorpage-container">
             <div class="text">
                 <div>
-                    <h1 class="errorpage-h1">404</h1>
+                    <h1 class="errorpage-h1">404 Something</h1>
                 </div>
                 <div class="ptags">
                     <b>
