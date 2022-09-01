@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::post('contactus/message', [App\Http\Controllers\ContactusController::class, 'store'])->name('contact.message');
