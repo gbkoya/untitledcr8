@@ -200,70 +200,76 @@
 
     {{--END OF TESTIMONIALS SECTION --}}
 
-    {{-- CONTACT US SECTION --}}
-    <section class="container-fluid contact-us-wrapper">
+     <!-- CONTACT US SECTION -->
+     <section class="container-fluid contact-us-wrapper" style=" margin-bottom: 9%">
         <div class="text-center">
             <h1>Contact Us</h1>
         </div>
         <div class="row contact-form-section">
-            <div class="col-md-7 col-sm-6 pt-5 px-3">
-                {{-- <h1 class="px-3" style="font-weight: 700;font-size: 35px;letter-spacing: -0.02222em;color: #040856;">
-                    Contact Us</h1> --}}
-             <h3>Book an appointment</h3>
-                <h6 class="h6x-3" style="font-weight: 400;font-size: 16px;color: rgba(4, 8, 86, 0.7);">We'd like to take care of your 
-                eye health</p>
+            <div class="col-md-7 col-sm-6 pt-5 contact-form-section-child">
+                
+                <h3>Book Appointment</h3>
+                <h6>We'd like to take care of your 
+                eye health</h6>
 
 
                 <form id="sendData">
-                    <div class="row px-3 pt-2">
-                        <div class="first-name">
-                            <label style="font-weight: 500;font-size: 14px;color: #040856 ">Name</label>
+                    <div class="row pt-2">
+                        <div class="input-contact-wrapper">
+                            <label class="contact-label">Name</label><br>
                             <input type="text" id="Firstname" class="input-style"  required
-                                style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA;" placeholder="">
+                                style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA;" placeholder="Full Name">
                         </div>
-    
-                    <div class="px-3 pt-2">
-                        <label style="font-weight: 500;font-size: 14px;color: #040856">Email address</label>
-                        <input id="Email" required class="section6-form4"
-                            style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA" type="email"
-                            placeholder="hello@dummie.com">
+                    
                     </div>
-                    <div class="px-3 pt-2">
-                        <label style="font-weight: 500;font-size: 14px;color: #040856">Service you are interested
-                            in</label>
-                        <input id="Services" required class="section6-form4"
-                            style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA" type="text"
-                            placeholder="e.g. Web Development">
-                    </div>
-                    <div class="px-3 pt-2">
-                        <label name="helpnote" style="font-weight: 500;font-size: 14px;color: #040856">What can we
-                            help you with?
-                        </label>
-                        <textarea id="Message" required class="form-control" id="exampleFormControlTextarea1" placeholder="Your Message"
-                            style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA" rows="5"></textarea>
 
+                    <div class="mt-4 input-contact-wrapper">
+                        <label class="contact-label">Email</label><br>
+                        <input id="Email" required class="input-style"
+                            style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA" type="email"
+                            placeholder="Enter email address">
                     </div>
-                    <div class="text-end pt-3 px-3">
-                        <button type="submit" class="my-4"
-                            style=" width: 155px;height: 40px;background: #F58634; border: none;
-                        box-shadow: 0px 4px 7px -1px rgba(0, 0, 0, 0.11), 0px 2px 4px -1px rgba(0, 0, 0, 0.07);
-                        border-radius: 8px;font-weight: 500;font-size: 12px;line-height: 12px;align-items: right;
-                        text-align: center; color: #ffffff;">Submit</button>
+                    <div class="input-contact-wrapper mt-4">
+                        <label class="contact-label">Phone Number</label><br>
+                        <input id="Services" required class="input-style"
+                            style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA" type="tel"
+                            placeholder="Enter phone number">
+                    </div>
+                    <div class="input-contact-wrapper mt-4">
+                        <label name="helpnote" class="contact-label">Date
+                        </label><br>
+                        <input id="Services" required class="input-style"
+                        style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA" type="date"
+                        placeholder="Enter phone number">
+                    </div>
+                    <div class= "input-contact-wrapper mt-4">
+                        <label name="helpnote" class="contact-label">What can we help you with?
+                        </label><br>
+                        <select id="Services" required class="input-style"
+                        style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA" type="date"
+                        placeholder="Enter phone number">
+                        <option value="">Comprehensive Eye Examination</option>
+                        <option value="">Glaucoma Workup And Management</option>
+                        </select>
+                    </div>
+                    <div class="pt-3">
+                        <button type="submit" class="my-4 contact-button"
+                            >Book Appointment</button>
                     </div>
                 </form>
             </div>
 
-            <div class="col-md-5 col-sm-6 contact-information-colum"
-                style=" background-image: url(../customImages/Backgroundcard.svg);  background-repeat: no-repeat; background-size: 160%; height:inherit">
+            <div class="col-md-5 col-sm-6 contact-information-column"
+               >
                 <div class="sec6itext">
                     <div class="mx-5 mt-5 pt-5">
                         <h1 class="mt-5 pt-4" style="font-weight: 700;font-size: 30px;color: #FFFFFF;">Contact
                             Information<h1>
-                                <p class="pt-3" style="font-weight: 400;font-size: 16px;color: #FFFFFF;">Fill up the
-                                    form and our Team will get back to you within 24
-                                    hours.</p>
+                            <h6 style="color: #ffff; line-height: 130%"> Fill up the
+                                form and our Team will get back to you within 24
+                                hours.</h6>
                     </div>
-                    <div class="pt-3 mx-5">
+                    <div class=" mx-5" style="margin-top: 2rem">
                         <p><img class=info_arch1 src="{{ asset('customImages/Phone Icon.svg') }}" alt="">
                             <a style="font-weight: 400;font-size: 14px;color: #FFFFFF;">+2347031778450, +2348121738381</a>
                         </p>
@@ -277,7 +283,7 @@
                                 Village, Lagos</a>
                         </p>
                         <p>
-                        <p class="pt-4"><img class="px-2" src="/customImages/White.svg')">
+                        <p class="pt-4"><img class="px-2" src="{{ asset('customImages/White.svg') }}">
                             <img class="px-2" src="{{ asset('customImages/White (1).svg') }}">
                             <img class="px-2" src="{{ asset('customImages/White (2).svg') }}">
                             <img class="px-2" src="{{ asset('customImages/White (3).svg') }}">
@@ -288,8 +294,7 @@
             </div>
         </div>
         </div>
-     </section>
-    {{-- END OF CONTACT US SECTION --}}
+        <!-- END OF CONTACT US SECTION -->
 
     </main>
     <body>
