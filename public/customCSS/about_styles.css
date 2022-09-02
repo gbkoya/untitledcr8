@@ -360,6 +360,9 @@
 
 /* Responsive style */
 @media(max-width: 414px){
+    .workforce h1{
+        font-size: 3rem;
+    }
     .avatars{
         display: flex;
         flex-direction: column;
@@ -436,6 +439,17 @@
     text-align: center;
     color: #000000;
 }
+
+/* Responsive style */
+ @media(max-width: 414px){
+    .testimonial h1{
+        font-size: 3rem;
+    }
+    .testimonial h6{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+ }
 /* END OF TESTIMONIAL SECTION */
 
 /* CONTACT US SECTION */
