@@ -39,12 +39,7 @@
     margin-top: 1rem;
 }
 
-/* Responsive style */
-@media(max-width: 414px){
-    .hero-section-copy h1{
-        font-size: 3rem;
-    }
-}
+
 /* END OF HERO SECTION STYLES */
 
 /* VISION AND MISSION STATEMENT STYLE */
@@ -102,26 +97,79 @@
     }
 
     /* Responsive style */
+    /* mobile screen */
     @media(max-width: 414px){
-        .vision-right{
-            margin-left: 0;
-        }
-        .vision-wrapper{
+        .hero-section{
             padding-left: 1rem;
             padding-right: 1rem;
+        }
+
+        .hero-section-copy{
+            padding-left: 0;
+            margin-top: -7.5rem;
+        }
+
+        .hero-section-copy h1{
+            font-size: 2.5rem;
+            text-align: left;
+            line-height: 150%;
+            letter-spacing: -1px;
+        }
+
+        .hero-section-copy p{
+            font-size: 1.3rem;
+            text-align: left;
+            letter-spacing: -1px;
+        }
+
+        .vision-right{
+            margin-left: 0;
+            padding: 1rem;
+        }
+        .vision-wrapper{
+           
         }
         .vis-statement h2, .core-val h2, .miss-statement h2{
             font-size: 1.5rem;
             text-align: left!important;
         }
         .miss-statement p{
-            font-size: .87rem;
+            font-size: 1rem;
         }
         .vis-statement p, .core-val ul li{
-            font-size: .87rem;
+            font-size: 1rem;
         }
     }
 
+    @media(min-width: 0px) and (max-width: 360px){
+        .hero-section{
+            width: 100%!important;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+
+        .hero-section-copy h1{
+            font-size: 2.2rem;
+            text-align: left;
+        }
+
+        .hero-section-copy p{
+            letter-spacing: -1px;
+            justify-content: center;
+        }
+    }
+
+    @media(width: 280px){
+        .hero-section{
+            width: 100%;
+        }
+    }
+
+    /* Ipad screen */
+    @media(min-width: 601px) and (max-width: 1098px){
+
+    }
 /* END OF VISION AND MISSION STATEMENT STYLE */
 
 /* PROOF OF WORK SECTION */
@@ -451,14 +499,14 @@
 
 @media(max-width: 480px){
 /* Hero section responsive */
-.hero-section-copy{
+/* .hero-section-copy{
     padding-left: 0!important;
     margin-top: -5rem;
 }
 .hero-section-copy h1{
     font-size: 3rem!important;
     text-align: left!important;
-}
+} */
 
 
     .contact-information-colum{
