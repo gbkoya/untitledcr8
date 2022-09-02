@@ -59,19 +59,19 @@
         <div class="d-sm-flex flex-wrap proof-of-work-child justify-content-around">
             <div class="web">
                 <h1 class="incrementTimer" akhi="5">0</h1>
-                <p>Intercontinental <br>Clinics</p>
+                <p>Intercontinental Clinics</p>
             </div>
             <div class="web">
                 <h1 class="incrementTimer" akhi="50">0</h1>
-                <p>Experienced<br> Specialists</p>
+                <p>Experienced Specialists</p>
             </div>
             <div class="customers">
                 <h1 class="incrementTimer" akhi="100">0</h1>
-                <p>Happy <br>customers</p>
+                <p>Happy customers</p>
             </div>
             <div class="customers">
                 <h1 class="incrementTimer" akhi="24">0</h1>
-                <p>Hours <br>Open</p>
+                <p>Hours Open</p>
             </div>
         </div>
     </section>

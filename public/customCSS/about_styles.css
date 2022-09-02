@@ -137,7 +137,17 @@
             font-size: 1rem;
         }
         .vis-statement p, .core-val ul li{
-            font-size: 1rem;
+            font-size: .875rem;
+        }
+        
+        /* Web responsive */
+        .proof-of-work .web h1,
+        .proof-of-work .customers h1{
+           font-size: 2rem!important;
+        }
+        .proof-of-work .web p,
+        .proof-of-work .customers p{
+            font-size: 1.2rem!important;
         }
     }
 
@@ -162,13 +172,23 @@
 
     @media(width: 280px){
         .hero-section{
-            width: 100%;
+            /* width: 100%; */
         }
     }
 
     /* Ipad screen */
     @media(min-width: 601px) and (max-width: 1098px){
-
+        .vision-wrapper img{
+            width: 100%;
+        }
+        .proof-of-work-child{
+            width: 100%!important;
+            /* justify-content: space-between!important; */
+        }
+        .proof-of-work .web,  .proof-of-work .customers {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
     }
 /* END OF VISION AND MISSION STATEMENT STYLE */
 
