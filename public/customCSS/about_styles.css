@@ -554,7 +554,7 @@
   }
 
 .input-contact-wrapper{
-    width: 80%;
+    width: 95%;
 }
 
 .contact-button{
@@ -627,6 +627,11 @@
         /* width: 100!important; */
     }
 
+}
+@media(min-width: 601px) and (max-width: 1098px){
+    .contact-information-column h1{
+        line-height: 2rem;
+    }
 }
 /* END OF CONTACT US SECTION */
 /* END OF CONTACT US SECTION */
