@@ -8,17 +8,17 @@
     $right_arrow.click(function(e) {
       e.preventDefault();
       $('.slide-holder').velocity('finish');
-      animate_next('#slide-right');
-      animate_next('#slide-center', 175);
-      return animate_next('#slide-left', 350);
+      animate_next('#gallery-slide-right');
+      animate_next('#gallery-slide-center', 175);
+      return animate_next('#gallery-slide-left', 350);
     });
 
     $left_arrow.click(function(e) {
       e.preventDefault();
       $('.slide-holder').velocity('finish');
-      animate_previous('#slide-left');
-      animate_previous('#slide-center', 175);
-      return animate_previous('#slide-right', 350);
+      animate_previous('#gallery-slide-left');
+      animate_previous('#gallery-slide-center', 175);
+      return animate_previous('#gallery-slide-right', 350);
     });
 
     animate_next = function(selector, delay, cb) {

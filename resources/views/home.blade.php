@@ -252,7 +252,7 @@
     </section>
 
     <section class="container-fluid mt-2 pt-2">
-        <div class="d-flex flex-row flex-wrap justify-content-center">
+        {{-- <div class="d-flex flex-row flex-wrap justify-content-center"> --}}
             <div class="slider-body">
 
                 <div class="slider" id="slider">
@@ -286,7 +286,7 @@
                 </a>
             </div>
 
-        </div>
+        {{-- </div> --}}
     </section>
 
     <div class="my-3 py-3">
