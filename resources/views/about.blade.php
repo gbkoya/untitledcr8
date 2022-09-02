@@ -105,8 +105,8 @@
      <section class="container-fluid workforce">
         <div>
             <div class="text-center">
-                <h6>Our Workforce</h6>
-                <h1>Our Highly Qualified Professionals</h1>
+                <h1>Our Workforce</h1>
+                <h6>Our Highly Qualified Professionals</h6>
             </div>
 
             {{-- Avatars --}}

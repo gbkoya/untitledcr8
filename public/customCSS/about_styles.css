@@ -357,6 +357,22 @@
     text-align: center;
     color: rgba(255, 255, 255, 0.7);
 }
+
+/* Responsive style */
+@media(max-width: 414px){
+    .avatars{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media(min-width: 601px) and (max-width: 1098px){
+   .avatar-child{
+        padding: 1rem!important;
+    }
+}
+
+
+
 /* END OF WORK FORCE SECTION */
 
 /* TESTIMONIAL SECTION */
