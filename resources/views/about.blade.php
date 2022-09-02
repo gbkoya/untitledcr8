@@ -8,7 +8,7 @@
 @section('url', 'www.archwareltd.com')
 @section('image'){{ asset('customImages/Logo.svg') }}@stop
 @section('content')
-     
+
    <body>
     <main>
      {{-- HERO SECTION --}}
@@ -23,7 +23,7 @@
         </div>
      </section>
     {{-- END OF HERO SECTION --}}
-    
+
     {{-- VISION AND MISSION STATEMENT  --}}
      <section class="container-fluid vision-container">
       <div class="vision-wrapper d-flex flex-row flex-wrap">
@@ -36,7 +36,7 @@
             <div class="miss-statement">
                 <h2>Mission Statement</h2>
                 <p>We provide innovative eye health services to Africans through
-                     cutting edge technologies and excellent service delivery 
+                     cutting edge technologies and excellent service delivery
                      thereby enhancing their long-term vision  and productivity.</p>
             </div>
             <div class="core-val">
@@ -85,12 +85,12 @@
                 <h1>Why Choose Us?</h1>
                 <p>At Foremost Eye Clinic, we guarantee maximum satisfaction
                      and an invaluable experience. We recognize that the eyes
-                      require specialized care, which is why we offer personalized 
+                      require specialized care, which is why we offer personalized
                       and tailored solutions designed to meet our patient’s needs.
                 </p>
                 <p>We carry out Advanced Diagnostic Tests with modernized
                      technology and laboratory equipment, to ensure our patients
-                     get first-hand treatment. 
+                     get first-hand treatment.
                </p>
                <p>Schedule an appointment with our doctors today and enjoy
                    our excellent services.
@@ -160,7 +160,7 @@
                             <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
                             <div class="testimonial-content">
                                 <p class="body-copy">
-                                    Excellent service & follow-up on treatment 
+                                    Excellent service & follow-up on treatment
                                     by staff and Doctor
                                 </p>
                                 <div class="d-flex flex-row justify-content-end">
@@ -169,7 +169,7 @@
                                 </p>
                             </div>
                             </div>
-                
+
                         </div>
                         {{-- Second --}}
                             <div class="first-testimonial">
@@ -186,7 +186,7 @@
                                     </p>
                                 </div>
                                 </div>
-                    
+
                             </div>
                         {{-- Third --}}
                           {{-- Second --}}
@@ -194,8 +194,8 @@
                             <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
                             <div class="testimonial-content">
                                 <p class="body-copy">
-                                    They have a conducive environment and friendly 
-                                    staff. I love their customer service and I highly 
+                                    They have a conducive environment and friendly
+                                    staff. I love their customer service and I highly
                                     recommend them.
                                 </p>
                                 <div class="d-flex flex-row justify-content-end">
@@ -204,9 +204,9 @@
                                 </p>
                             </div>
                             </div>
-                
+
                         </div>
-                        
+
                     </div>
 
                 <!-- End of review card -->
@@ -220,7 +220,7 @@
                             <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
                             <div class="testimonial-content">
                                 <p class="body-copy">
-                                    Excellent service & follow-up on treatment 
+                                    Excellent service & follow-up on treatment
                                     by staff and Doctor
                                 </p>
                                 <div class="d-flex flex-row justify-content-end">
@@ -229,7 +229,7 @@
                                 </p>
                             </div>
                             </div>
-                
+
                         </div>
                         {{-- Second --}}
                             <div class="first-testimonial">
@@ -246,7 +246,7 @@
                                     </p>
                                 </div>
                                 </div>
-                    
+
                             </div>
                         {{-- Third --}}
                           {{-- Second --}}
@@ -254,8 +254,8 @@
                             <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
                             <div class="testimonial-content">
                                 <p class="body-copy">
-                                    They have a conducive environment and friendly 
-                                    staff. I love their customer service and I highly 
+                                    They have a conducive environment and friendly
+                                    staff. I love their customer service and I highly
                                     recommend them.
                                 </p>
                                 <div class="d-flex flex-row justify-content-end">
@@ -264,9 +264,9 @@
                                 </p>
                             </div>
                             </div>
-                
+
                         </div>
-                        
+
                     </div>
             </div>
             <!-- Third slide -->
@@ -277,7 +277,7 @@
                             <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
                             <div class="testimonial-content">
                                 <p class="body-copy">
-                                    Excellent service & follow-up on treatment 
+                                    Excellent service & follow-up on treatment
                                     by staff and Doctor
                                 </p>
                                 <div class="d-flex flex-row justify-content-end">
@@ -286,7 +286,7 @@
                                 </p>
                             </div>
                             </div>
-                
+
                         </div>
                         {{-- Second --}}
                             <div class="first-testimonial">
@@ -303,7 +303,7 @@
                                     </p>
                                 </div>
                                 </div>
-                    
+
                             </div>
                         {{-- Third --}}
                           {{-- Second --}}
@@ -311,8 +311,8 @@
                             <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
                             <div class="testimonial-content">
                                 <p class="body-copy">
-                                    They have a conducive environment and friendly 
-                                    staff. I love their customer service and I highly 
+                                    They have a conducive environment and friendly
+                                    staff. I love their customer service and I highly
                                     recommend them.
                                 </p>
                                 <div class="d-flex flex-row justify-content-end">
@@ -321,9 +321,9 @@
                                 </p>
                             </div>
                             </div>
-                
+
                         </div>
-                        
+
                     </div>
             </div>
 
@@ -351,9 +351,9 @@
         </div>
         <div class="row contact-form-section">
             <div class="col-md-7 col-sm-6 pt-5 contact-form-section-child">
-                
+
                 <h3>Book Appointment</h3>
-                <h6>We'd like to take care of your 
+                <h6>We'd like to take care of your
                 eye health</h6>
 
 
@@ -364,7 +364,7 @@
                             <input type="text" id="name" class="input-style"  required
                                 style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA;" placeholder="Full Name">
                         </div>
-                    
+
                     </div>
 
                     <div class="mt-4 input-contact-wrapper">
@@ -468,8 +468,8 @@
             }else{
                 return;
             }
-        } 
-   
+        }
+
         window.addEventListener('scroll', triggerCounter);
 
 
