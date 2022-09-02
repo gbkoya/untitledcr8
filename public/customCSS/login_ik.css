@@ -1,4 +1,38 @@
-.Chinese{
+.log{ background-image: url(../customImages/login.png);
+     background-repeat:no-repeat;
+    background-size:cover ;
+     align-items:center}
+
+.king{
+    background: #FFFFFF;
+    border-radius: 5.22082px;
+}
+.login{
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 34px;
+    color: #000000;
+    text-align:center;
+}
+.form-control{
     height: 83px;
-        left: 1.34px;top: 0px;background: #FAFAFA;border-radius: 17.7143px; border:none
+        left: 1.34px;top: 0px;background: #FAFAFA;border-radius: 17.7143px; border:none;
+        height: 83px;
+        left: 1.34px;top: 0px;background: #FAFAFA;border-radius: 17.7143px;border:none;
+}
+.gin{
+    margin-left:-50px";
+}
+.check{
+    border: 3.93287px solid #F58634;border-radius: 9.4389px;width: 31.46px;height: 31.46px;
+}
+.Rememeber {
+    font-weight: 600;font-size: 16px;line-height: 20px;text-align: center;letter-spacing: 0.04em;color: #3D3D3D;
+}
+.button{
+    width: 360px;
+    height: 56px;
+    background: #F58634;
+    border-radius: 30px;
+    border:none;
 }
