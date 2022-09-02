@@ -45,7 +45,8 @@
     height: 20em;
 }
 
-.slide {
+/* Add a J prefix to the slide */
+.j-slide {
     float: left;
     position: relative;
     width: 33.33333%;
