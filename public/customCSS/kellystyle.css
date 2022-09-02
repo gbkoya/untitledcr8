@@ -1,7 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap");
-* {
-    font-family: sans-serif;
+
+@media only screen and (max-width: 768px) {
+    .errorpage-h1 {
+        font-size: 6.5rem;
+        margin-left: 2.5rem;
+        margin-bottom: 5rem;
+    }
+    .firstp {
+        margin-left: 2.5rem;
+        position: absolute;
+        top: 173px;
+    }
+    .secondp {
+        position: absolute;
+        width: 350px;
+        height: 60px;
+        left: 25px;
+        top: 280px;
+        font-size: 16px;
+    }
+    .home {
+        border-radius: 40px;
+        width: 175px;
+        height: 39px;
+        background-color: #f58634;
+        border: none;
+        font-size: 1rem;
+        color: white;
+        margin-left: 2.5rem;
+        margin-top: 13rem;
+    }
+    .errorpage-img {
+        float: right;
+        height: 35vh;
+        padding-left: 3rem;
+    }
 }
+
+
 .errorpage-body {
     background-color: #dadfe5;
     background-image: url("../customImages/background.png") !important;
@@ -63,39 +99,243 @@
     justify-content: space-between;
     margin-right: 6rem;
 }
-@media only screen and (max-width: 768px) {
-    h1 {
-        font-size: 6.5rem;
-        margin-left: 2.5rem;
-        margin-bottom: 5rem;
-    }
-    .firstp {
-        margin-left: 2.5rem;
-        position: absolute;
-        top: 173px;
-    }
-    .secondp {
-        position: absolute;
-        width: 350px;
-        height: 60px;
-        left: 25px;
-        top: 280px;
-        font-size: 16px;
-    }
-    .home {
-        border-radius: 40px;
-        width: 175px;
-        height: 39px;
-        background-color: #f58634;
-        border: none;
-        font-size: 1rem;
-        color: white;
-        margin-left: 2.5rem;
-        margin-top: 13rem;
-    }
-    img {
-        float: right;
-        height: 35vh;
-        padding-left: 3rem;
-    }
+
+.FirstDiv{
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)), url(/customImages/FirstImg.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+.FirstH1{
+    color: #FFFFFF;
+    font-family: Inter;
+    font-size: 68px;
+    font-weight: 600;
+    line-height: 80px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    height: 240px;
+    width: 700.6990966796875px;
+    left: 92px;
+    top: 202px;
+    border-radius: nullpx;
+    padding-top: 202px;
+    padding-left: 92px;
+}
+
+.FirstButton{
+    background: #F58634;
+    color: #FFFFFF;
+    margin-top: 83px;
+    margin-left: 92px;
+    margin-bottom: 141px;
+    border-radius: 5px;
+    width: 155px;
+    height: 57px;
+    border: none;
+    font-weight: 600;
+    font-size: 17.8924px;
+}
+
+.FirstSection{
+    margin-top: 110px;
+    margin-left: 92px;
+    margin-right: 72px;
+    box-shadow: 0px 18.1217px 20.3869px rgba(0, 0, 0, 0.05);
+    border-radius: 11.7948px;
+}
+
+/* .next2{
+    padding-top:110px;
+    padding-left: 92px;
+    margin-right: 78px;
+} */
+
+.eye{
+   border-radius: 15px 0px 0px 15px;
+}
+
+.next2{
+    display: flex;
+    box-shadow: 0px 18.1217px 20.3869px rgba(0, 0, 0, 0.10);
+}
+.eyetext{
+    padding-top: 62.2px;
+    padding-left: 30.91px;
+    color: #6B809BCC;
+    font-size:28.24px ;
+    font-family: 'Inter', sans-serif;
+}
+
+.secondtext{
+    margin-top: 1rem;
+    font-style: normal;
+    font-size: 14.1194px;
+    letter-spacing: 0.01em;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.thirdtext{
+    width: 781.17px;
+    font-size: 17.6493px;
+    height: 69px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-top: 17.3px;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+.read{
+    background-color: #F58634;
+    color: #FFFFFF;
+    padding: 7.06px 57.18px;
+    border: none;
+    border-radius: 4.41231px;
+    font-size: 15.7894px;
+}
+.everything{
+    padding-top:110px;
+    padding-left: 92px;
+    margin-right: 78px;
+}
+
+.activeNumberButton{
+    background-color: #F58634;
+    border-radius: 7.24893px;
+    margin-top: 123.97px;
+    margin-left: 262px;
+    color: #FFFFFF;
+    border: none;
+    width: 65.24px;
+    height: 57.99px;
+    font-weight: 500;
+    font-size: 28.9957px;
+}
+
+.numberButton,
+.numberButton1,
+.numberButton2,
+.numberButton3,
+.numberButton4,
+.numberButton5,
+.numberButton6,
+.numberButton7,
+.numberButton8,
+.numberButton9,
+.numberButton0{
+    background: rgba(107, 128, 155, 0.8);
+    color: #FFFFFF;
+    margin-left: 17.4px;
+    border: none;
+    border-radius: 7.24893px;
+    width: 65.24px;
+    height: 57.99px;
+    font-weight: 500;
+    font-size: 28.9957px;
+    letter-spacing: 0.04em;
+}
+
+.dotts{
+    font-weight: 700;
+    font-size: 28.9957px;
+    letter-spacing: 0.04em;
+    color: #6B809B;
+    margin-left: 64.8rem; 
+    margin-top: -2rem;
+}
+.nextButton{
+    width: 118.88px;
+    height: 57.99px;
+    background: rgba(107, 128, 155, 0.8);
+    padding-left: 40.78px;
+    padding-right: 26.1px;
+    border: none;
+    border-radius: 7.24893px;
+    color: #FFFFFF;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+    font-size: 21.7468px;
+    margin-left: 29px;
+}
+
+.buttons{
+    padding-bottom: 260.01px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* page1 */
+    .FirstH1{
+        font-size: 35px;
+        line-height: 45px;
+        text-align: left;
+        padding-top: 220px;
+        padding-left: 62px;
+        justify-content: center;
+        margin-left: 5rem;
+    }
+    .FirstButton{
+        margin-top: 1px;
+        margin-left: 62px;
+        border-radius: 5px;
+        width: 105px;
+        height: 40px;
+        font-size: 12px;
+        margin-left: 9rem;
+    }
+    .next2{
+        flex-direction: column;
+        height: 50rem;
+        border-radius: 1.1rem;
+    }
+    .FirstDiv{
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)), url(/customImages/FirstImg.jpg);
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        justify-content: center;
+    }
+    .thirdtext{
+        width: 18rem;
+    }
+
+    .read{
+        margin-top: 7rem;
+    }
+    .eye{
+        border-radius: 15px 15px 0px 0px;
+    }
+    .numberButton4,
+    .numberButton5,
+    .numberButton6,
+    .numberButton7,
+    .numberButton8,
+    .numberButton9,
+    .numberButton0{
+        display: none;
+    }
+    .numberButton1,
+    .numberButton2,
+    .numberButton3,
+    .numberButton3{
+        width: 45px;
+        height: 45px;
+    }
+    .activeNumberButton{
+        width: 45px;
+        height: 45px;
+    }
+    .nextButton{
+        padding: 0;
+        font-size: 17px;
+        width: 75px;
+        height: 45px;
+    }
+    .buttons{
+        margin-left: -15rem;
+        display: inline-block;
+    }
+    
+    
+
+  }
