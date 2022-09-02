@@ -20,14 +20,11 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 });
+Route::get('/blog', function () {
+    return view('blog.first_blog');
+});
 
 
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/signin', function () {
-    return view('signin');
-});
 
 
 // This route would soon be removed as its for testing purpose
