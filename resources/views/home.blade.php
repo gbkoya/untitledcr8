@@ -253,6 +253,7 @@
 
     <section class="container-fluid mt-2 pt-2">
         {{-- <div class="d-flex flex-row flex-wrap justify-content-center"> --}}
+<<<<<<< HEAD
         <div class="slider-body">
 
             <div class="slider" id="slider">
@@ -275,6 +276,31 @@
                         <div class="slide-bg bg-previous"></div>
                         <div class="slide-bg bg-current"></div>
                         <div class="slide-bg bg-next"></div>
+=======
+            <div class="slider-body">
+                <div class="slider" id="slider">
+                {{-- Changed the slide to "j-slide from this div block" --}}
+                    <div class="j-slide" id="slide-left"> 
+                        <div class="slide-holder">
+                            <div class="slide-bg bg-previous"></div>
+                            <div class="slide-bg bg-current"></div>
+                            <div class="slide-bg bg-next"></div>
+                        </div>
+                    </div>
+                    <div class="j-slide" id="slide-center">
+                        <div class="slide-holder">
+                            <div class="slide-bg bg-previous"></div>
+                            <div class="slide-bg bg-current"></div>
+                            <div class="slide-bg bg-next"></div>
+                        </div>
+                    </div>
+                    <div class="j-slide" id="slide-right">
+                        <div class="slide-holder">
+                            <div class="slide-bg bg-previous"></div>
+                            <div class="slide-bg bg-current"></div>
+                            <div class="slide-bg bg-next"></div>
+                        </div>
+>>>>>>> 5166815799e30af6ca8fad0d7b0a85bbe0064d0e
                     </div>
                 </div>
             </div>
