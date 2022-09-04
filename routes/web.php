@@ -23,6 +23,15 @@ Route::get('/about', function () {
 Route::get('/blog', function () {
     return view('blog.first_blog');
 });
+Route::get('/login', function () {
+    return view('login');
+});
+Route::get('/signin', function () {
+    return view('signin');
+});
+Route::get('/details1', function () {
+    return view('details1');
+});
 
 
 

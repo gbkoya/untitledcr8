@@ -253,38 +253,38 @@
 
     <section class="container-fluid mt-2 pt-2">
         {{-- <div class="d-flex flex-row flex-wrap justify-content-center"> --}}
-            <div class="slider-body">
+        <div class="slider-body">
 
-                <div class="slider" id="slider">
-                    <div class="slide" id="slide-left">
-                        <div class="slide-holder">
-                            <div class="slide-bg bg-previous"></div>
-                            <div class="slide-bg bg-current"></div>
-                            <div class="slide-bg bg-next"></div>
-                        </div>
-                    </div>
-                    <div class="slide" id="slide-center">
-                        <div class="slide-holder">
-                            <div class="slide-bg bg-previous"></div>
-                            <div class="slide-bg bg-current"></div>
-                            <div class="slide-bg bg-next"></div>
-                        </div>
-                    </div>
-                    <div class="slide" id="slide-right">
-                        <div class="slide-holder">
-                            <div class="slide-bg bg-previous"></div>
-                            <div class="slide-bg bg-current"></div>
-                            <div class="slide-bg bg-next"></div>
-                        </div>
+            <div class="slider" id="slider">
+                <div class="slide" id="slide-left">
+                    <div class="slide-holder">
+                        <div class="slide-bg bg-previous"></div>
+                        <div class="slide-bg bg-current"></div>
+                        <div class="slide-bg bg-next"></div>
                     </div>
                 </div>
-                <a class="arrow" href="" id="left-arrow">
-                    <i class="fab fa-arrow-circle-o-left"></i>
-                </a>
-                <a class="arrow" href="" id="right-arrow">
-                    <i class="fab fa-arrow-circle-o-right"></i>
-                </a>
+                <div class="slide" id="slide-center">
+                    <div class="slide-holder">
+                        <div class="slide-bg bg-previous"></div>
+                        <div class="slide-bg bg-current"></div>
+                        <div class="slide-bg bg-next"></div>
+                    </div>
+                </div>
+                <div class="slide" id="slide-right">
+                    <div class="slide-holder">
+                        <div class="slide-bg bg-previous"></div>
+                        <div class="slide-bg bg-current"></div>
+                        <div class="slide-bg bg-next"></div>
+                    </div>
+                </div>
             </div>
+            <a class="arrow" href="" id="left-arrow">
+                <i class="fab fa-arrow-circle-o-left"></i>
+            </a>
+            <a class="arrow" href="" id="right-arrow">
+                <i class="fab fa-arrow-circle-o-right"></i>
+            </a>
+        </div>
 
         {{-- </div> --}}
     </section>
