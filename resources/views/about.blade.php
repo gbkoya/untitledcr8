@@ -105,8 +105,8 @@
      <section class="container-fluid workforce">
         <div>
             <div class="text-center">
-                <h6>Our Workforce</h6>
-                <h1>Our Highly Qualified Professionals</h1>
+                <h1>Our Workforce</h1>
+                <h6>Our Highly Qualified Professionals</h6>
             </div>
 
             {{-- Avatars --}}
@@ -154,7 +154,7 @@
         <div class="carousel-inner">
             <!-- First slide -->
             <div class="carousel-item active">
-                <div class="d-sm-flex flex-sm-row flex-sm-wrap justify-content-center testimonial-body">
+                <div class="d-sm-flex flex-sm-row flex-sm-wrap justify-content-center align-items-center testimonial-body">
                     {{-- First --}}
                         <div class="first-testimonial">
                             <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
@@ -347,7 +347,7 @@
      <!-- CONTACT US SECTION -->
      <section class="container-fluid contact-us-wrapper" style=" margin-bottom: 9%">
         <div class="text-center">
-            <h1>Contact Us</h1>
+            <h1 class="e-contact-heading">Contact Us</h1>
         </div>
         <div class="row contact-form-section">
             <div class="col-md-7 col-sm-6 pt-5 contact-form-section-child">
@@ -389,11 +389,19 @@
                     <div class= "input-contact-wrapper mt-4">
                         <label name="helpnote" class="contact-label">What can we help you with?
                         </label><br>
-                        <select id="message" required class="input-style"
+                        <select id="message" required class="input-style e-contact-select"
                         style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA" type="date"
                         placeholder="Enter phone number">
                         <option value="Comprehensive Eye Examination">Comprehensive Eye Examination</option>
                         <option value="Glaucoma Workup And Management">Glaucoma Workup And Management</option>
+                        <option value="Pediatrics– Eye Care for Children">Pediatrics– Eye Care for Children</option>
+                        <option value="Pre-and-post Operative Eye Care">Pre-and-post Operative Eye Care</option>
+                        <option value="Environmental and Occupational Vision">Environmental and Occupational Vision</option>
+                        <option value="Geriatrics– Eye Care for the Elderly">Geriatrics– Eye Care for the Elderly</option>
+                        <option value="Specialty Contact Lens">Specialty Contact Lens</option>
+                        <option value="Dry Eye Treatment">Dry Eye Treatment</option>
+                        <option value="Chalazion Excision">Chalazion Excision</option>
+
                         </select>
                     </div>
                     <div class="pt-3">
@@ -441,7 +449,7 @@
         <!-- END OF CONTACT US SECTION -->
 
     </main>
-    <body>
+</body>
 
     <script type="text/javascript">
      const counters = document.querySelectorAll('.incrementTimer');
