@@ -6,6 +6,11 @@
     text-transform: capitalize;
 }
 
+.box-shadow {
+    box-shadow:13px 13px 13px #e0e0e0;
+    border: none;
+}
+
 .medium-title {
     color: #000000;
     text-transform: capitalize;
