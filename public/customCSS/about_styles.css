@@ -98,7 +98,7 @@
 
     /* Responsive style */
     /* mobile screen */
-    @media(max-width: 414px){
+    @media(max-width: 540px){
         .hero-section{
             padding-left: 1rem;
             padding-right: 1rem;
@@ -177,7 +177,7 @@
     }
 
     /* Ipad screen */
-    @media(min-width: 601px) and (max-width: 1098px){
+    @media(min-width: 540px) and (max-width: 1098px){
         .vision-wrapper img{
             width: 100%;
         }
@@ -295,7 +295,7 @@
     margin-right: -.9%;
 }
 
-@media(max-width: 414px){
+@media(max-width: 540px){
     .why-wrapper{
         padding-left: 1rem;
         padding-right: 1rem;
@@ -375,7 +375,7 @@
 }
 
 /* Responsive style */
-@media(max-width: 414px){
+@media(max-width: 540px){
     .workforce h1{
         font-size: 3rem;
     }
@@ -464,6 +464,13 @@
     .testimonial h6{
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+ }
+
+ @media(min-width: 440px) and (max-width: 550px){
+    .testimonial-body{
+        flex-direction: column!important;
+        padding-left: 15%!important;
     }
  }
 /* END OF TESTIMONIAL SECTION */
@@ -583,7 +590,7 @@
     border-radius: 0px 15px 15px 0px;
 }
 
-@media(max-width: 480px){
+@media(max-width: 540px){
 
     .contact-information-column{
         display: none!important;

@@ -154,7 +154,7 @@
         <div class="carousel-inner">
             <!-- First slide -->
             <div class="carousel-item active">
-                <div class="d-sm-flex flex-sm-row flex-sm-wrap justify-content-center testimonial-body">
+                <div class="d-sm-flex flex-sm-row flex-sm-wrap justify-content-center align-items-center testimonial-body">
                     {{-- First --}}
                         <div class="first-testimonial">
                             <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
