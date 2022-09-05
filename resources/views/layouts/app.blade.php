@@ -15,7 +15,7 @@
     <meta name="description" content="@yield('description')">
     <meta property="article:published_time" content="@yield('published_time')">
     <meta property="article:section" content="@yield('article:section')">
-    <link rel="icon" href="/customImages/Logo.svg" type="image/x-icon">
+    <link rel="icon" href="/customImages/Logo.png" type="image/x-icon">
     <meta property="article:tag" content="@yield('title')" />
     <meta property="og:description" content="@yield('description')"/>
     <meta property="og:title" content="@yield('title')"/>
@@ -29,7 +29,7 @@
     <meta property="og:site_name" content="Foremost"/>
 
 
-    <title>@yield('title', 'Foremost')</title>
+    <title>@yield('title', 'Foremost - Africa\'s Most Innovative Eye Clinic')</title>
 
     <!-- Fonts -->
     <!-- <link rel="dns-prefetch" href="//fonts.gstatic.com"> -->
