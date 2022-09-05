@@ -20,6 +20,11 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 });
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 Route::get('/blog', function () {
     return view('blog.first_blog');
 });
@@ -27,6 +32,8 @@ Route::get('/blog', function () {
 Route::get('/test', function () {
     return view('errors.test');
 });
+
+
 
 
 // This route would soon be removed as its for testing purpose

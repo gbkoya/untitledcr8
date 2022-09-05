@@ -70,3 +70,18 @@
         right: 5%;
     }
 }
+
+/* Ipad screen */
+@media(min-width: 540px) and (max-width: 912px){
+    .footer-section .search-image{
+        /* width: 21.34px; */
+        right: 5%;
+    }
+}
+
+@media(min-width: 912px) and (max-width: 1280px){
+    .footer-section .search-image{
+        /* width: 21.34px; */
+        right: 20%;
+    }
+}
