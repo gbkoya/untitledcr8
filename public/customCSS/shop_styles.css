@@ -1,0 +1,14 @@
+/* SHOP MEN STYLES */
+/* Hero sction */
+.shop-hero{
+    background-image: url("../customImages/shop-men-hero.png"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    margin-top: 3rem;
+    padding: 11rem 0 10rem 5rem;
+}
+/* End of hero section */
+
+/* END OF SHOP MEN STYLES */
