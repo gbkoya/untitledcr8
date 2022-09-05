@@ -142,11 +142,16 @@ ul li a:nth-child(2) {
     }
     .colored-logo, .light-logo{
         margin-left: 0!important;
+        width: 40%;
     }
 }
 
 @media(max-width: 414px){
     .dropdown-style{
         width: 100%!important;
+    }
+    .hamburger-mobile{
+        display: block;
+        margin-right: 3%!important;
     }
 }

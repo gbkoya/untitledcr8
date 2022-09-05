@@ -482,6 +482,7 @@
     color: #000000;
 
 }
+
 .contact-form-section{
     max-width: 75.625rem;
     /* height: 669px; */
@@ -543,6 +544,9 @@
 /* input[tye="date"]::-webkit-calendar-picker-indicator {
     filter: invert(100%);
   } */
+.e-contact-select{
+    /* padding-right: 16px!important;    */
+    }
 
   select, select option {
     font-style: normal;

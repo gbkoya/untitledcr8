@@ -1,17 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0" id="navMain">
     <div class="container-fluid">
         <a class="navbar-brand colored-logo" href="/" style="margin-left: 4%;">
-            <img src="{{ asset('customImages/Logo.png') }}">
+            <img class="img-fluid" src="{{ asset('customImages/Logo.png') }}">
         </a>
-        <a class="navbar-brand light-logo" href="/" style="margin-left: 7%;">
+        {{-- <a class="navbar-brand light-logo" href="/" style="margin-left: 7%;">
             <img src="{{ asset('customImages/Archware-logo-light-variation.svg') }}">
-        </a>
+        </a> --}}
         <!-- HAMBURGER -->
-        <button class="navbar-toggler hamburger-icon hamburger-desktop" type="button" data-bs-toggle="collapse"
+        {{-- <button class="navbar-toggler hamburger-icon hamburger-desktop" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
-        </button>
+        </button> --}}
         <button class="navbar-toggler hamburger-icon hamburger-mobile" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation" >

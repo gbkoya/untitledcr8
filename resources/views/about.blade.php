@@ -389,11 +389,19 @@
                     <div class= "input-contact-wrapper mt-4">
                         <label name="helpnote" class="contact-label">What can we help you with?
                         </label><br>
-                        <select id="message" required class="input-style"
+                        <select id="message" required class="input-style e-contact-select"
                         style="padding: 10px;opacity:70%;border: 1px solid #D2D6DA" type="date"
                         placeholder="Enter phone number">
                         <option value="Comprehensive Eye Examination">Comprehensive Eye Examination</option>
                         <option value="Glaucoma Workup And Management">Glaucoma Workup And Management</option>
+                        <option value="Pediatrics– Eye Care for Children">Pediatrics– Eye Care for Children</option>
+                        <option value="Pre-and-post Operative Eye Care">Pre-and-post Operative Eye Care</option>
+                        <option value="Environmental and Occupational Vision">Environmental and Occupational Vision</option>
+                        <option value="Geriatrics– Eye Care for the Elderly">Geriatrics– Eye Care for the Elderly</option>
+                        <option value="Specialty Contact Lens">Specialty Contact Lens</option>
+                        <option value="Dry Eye Treatment">Dry Eye Treatment</option>
+                        <option value="Chalazion Excision">Chalazion Excision</option>
+
                         </select>
                     </div>
                     <div class="pt-3">

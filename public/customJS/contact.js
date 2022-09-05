@@ -4,7 +4,7 @@ document.getElementById('sendData').addEventListener('submit', handleSumbit);
 
 function handleSumbit(event) {
     event.preventDefault();
-
+ 
     // Get all the input field and store them in their unique variable each
     let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;
