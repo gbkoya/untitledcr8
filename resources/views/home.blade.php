@@ -26,8 +26,23 @@
                     </button>
                 </a>
             </div>
+
             <div class="archwarejo-width-top-head">
                 <img class="img-fluid image-width-tab image-min-height-mobile" src="/customImages/We offer Premium.png">
+                <div class="">
+                    <div class="container justify-content-center">
+                        <div class="row">
+                            <div class="gallery-rule">
+                                <hr class="container gray-rule" />
+                                <hr class="container orange-rule" />
+                                <hr class="container gray-rule" />
+                                <hr class="container gray-rule" />
+                                <hr class="container gray-rule" />
+                                <hr class="container gray-rule" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
@@ -122,7 +137,7 @@
 
     <section class="container-fluid mt-2 pt-2">
         <div class="d-flex flex-row flex-wrap justify-content-center">
-            <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
+            <div class="card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
                 <img src="/customImages/screening.png" class="card-img-top" alt="...">
                 <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
@@ -135,7 +150,7 @@
                     </p>
                 </div>
             </div>
-            <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
+            <div class="card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
                 <img src="/customImages/eye exam.png" class="card-img-top" alt="...">
                 <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
@@ -147,7 +162,7 @@
                     </p>
                 </div>
             </div>
-            <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
+            <div class="card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
                 <img src="/customImages/cataract.png" class="card-img-top" alt="...">
                 <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
@@ -203,7 +218,7 @@
 
     <section class="container-fluid mt-2 pt-2">
         <div class="d-flex flex-row flex-wrap justify-content-center">
-            <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
+            <div class="card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
                 <img src="/customImages/few tips.png" class="card-img-top" alt="...">
                 <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-blog-title">
@@ -217,7 +232,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
+            <div class="card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
                 <img src="/customImages/few tips 2.png" class="card-img-top" alt="...">
                 <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-blog-title">
@@ -231,7 +246,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
+            <div class="card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
                 <img src="/customImages/color blindness.png" class="card-img-top" alt="...">
                 <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-blog-title">
