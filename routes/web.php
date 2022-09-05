@@ -23,8 +23,13 @@ Route::get('/about', function () {
 Route::get('/blog', function () {
     return view('blog.first_blog');
 });
-Route::get('/login', function () {
-    return view('login');
+
+Route::get('/first-service', function () {
+    return view('services.first_service');
+});
+
+Route::get('/test', function () {
+    return view('errors.test');
 });
 Route::get('/signin', function () {
     return view('signin');

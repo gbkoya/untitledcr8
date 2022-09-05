@@ -63,3 +63,10 @@
 .bottom-copy h6{
     margin-top: .8rem;
 }
+
+@media(max-width: 375px){
+    .footer-section .search-image{
+        /* width: 21.34px; */
+        right: 5%;
+    }
+}
