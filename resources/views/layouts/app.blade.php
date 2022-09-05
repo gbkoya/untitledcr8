@@ -59,6 +59,7 @@
     <script src="/customJS/jquery.js"></script>
     <script src="/customJS/velocity.min.js"></script>
     <script src="/customJS/galleryscript.js"></script>
+    <script src="/customJS/contact.js"></script>
 
 </head>
 <body>
