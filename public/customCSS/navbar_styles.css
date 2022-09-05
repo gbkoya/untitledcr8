@@ -74,7 +74,7 @@ nav button[type="button"]{
 }
 
 .nav-link-text{
-    color: white!important;
+    color: #000000!important;
 }
 
 /* Color of the navbar AFTER scroll */
@@ -144,6 +144,17 @@ ul li a:nth-child(2) {
         margin-left: 0!important;
         width: 40%;
     }
+    .right-nav{
+        margin-left: 0;
+    }
+    .button-wrapper{
+        margin-left: 1rem;
+    }
+    nav{
+        background: #FFFFFF;
+        /* box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05); */
+        /* transition: all 0.1s; */
+    }
 }
 
 @media(max-width: 414px){
@@ -154,4 +165,8 @@ ul li a:nth-child(2) {
         display: block;
         margin-right: 3%!important;
     }
+
+.right-nav{
+    margin-left: 0;
+}
 }

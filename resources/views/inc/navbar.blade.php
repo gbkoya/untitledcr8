@@ -58,9 +58,13 @@
 
 <!-- THE SCRIPT TO CONTROL THE STATE OF THE NAVBAR -->
 <script type="text/javascript">
+    // Declare and store all variables globally
     const getNav = document.querySelector('#navMain');
     const topOfNav = getNav.offsetTop;
-
+    const logoManipulation = document.querySelector('.light-logo');
+    const normalLogo = document.querySelector('.colored-logo');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navDrop = document.querySelector('.nav-drop');
 
     const triggerNav = (event) => {
         // console.log(event);
@@ -69,18 +73,6 @@
             // console.log(event);
             getNav.classList.add('navbar-trigger');
             // console.log(navLinks);
-            const logoManipulation = document.querySelector('.light-logo');
-            const normalLogo = document.querySelector('.colored-logo');
-            const navLinks = document.querySelectorAll('.nav-link');
-            const navDrop = document.querySelector('.nav-drop');
-            const normalButton = document.querySelector('#normal-button');
-            const changedButton = document.querySelector('#changed-button');
-
-            // Hide button on scroll
-            normalButton.style.display = 'none';
-            changedButton.style.display = 'block'
-
-            // Change the colours of the nav link text to white
             Array.from(navLinks).map((nav) => {
                 // console.log(nav);
                 nav.classList.add('nav-link-text');
@@ -92,10 +84,6 @@
 
         } else {
             getNav.classList.remove('navbar-trigger');
-
-            // Display normal button on a scroll to the top
-            normalButton.style.display = 'block';
-            changedButton.style.display = 'none'
         }
     }
     window.addEventListener('scroll', triggerNav);
