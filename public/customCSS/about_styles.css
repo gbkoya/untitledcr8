@@ -177,7 +177,7 @@
     }
 
     /* Ipad screen */
-    @media(min-width: 540px) and (max-width: 1098px){
+    @media(min-width: 540px) and (max-width: 900px){
         .vision-wrapper img{
             width: 100%;
         }
@@ -193,6 +193,28 @@
             width: 100%!important;
         }
     }
+
+    /* Next hub screen */
+    @media(min-width: 900px) and (max-width: 1105px){
+        .vision-wrapper{
+            flex-wrap: nowrap!important;
+        }
+        .vision-wrapper img{
+            width: 50%!important;
+        }
+        .proof-of-work-child{
+            width: 100%!important;
+            /* justify-content: space-between!important; */
+        }
+        .proof-of-work .web,  .proof-of-work .customers {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .vision-right{
+            width: 50%!important;
+        }
+    }
+    /* End of Next hub screen */
 /* END OF VISION AND MISSION STATEMENT STYLE */
 
 /* PROOF OF WORK SECTION */
@@ -296,6 +318,10 @@
 }
 
 @media(max-width: 540px){
+    .why-choose-parent{
+        margin-top: 4rem;
+        padding-bottom: 3rem;
+    }
     .why-wrapper{
         padding-left: 1rem;
         padding-right: 1rem;
@@ -310,7 +336,7 @@
         display: none;
     }
 }
-@media(min-width: 601px) and (max-width: 1098px){
+@media(min-width: 601px) and (max-width: 900px){
     .why-choose-right-image{
         display: none!important;
     }
@@ -323,6 +349,27 @@
         margin-left: -2rem;
     }
 }
+
+/* Next hub screen */
+    /* Next hub screen */
+    @media(min-width: 900px) and (max-width: 1280px){
+        .why-choose-right-image{
+            display: none!important;
+        }
+
+        .why-choose-left{
+            max-width: 100%!important;
+        }
+
+        .why-wrapper{
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .why-choose-parent{
+            padding: 1rem 0 4rem 0;
+        }
+    }
 /* END OF WHY CHOOSE US SECTION */
 
 /* WORK FORCE SECTION */
@@ -376,6 +423,10 @@
 
 /* Responsive style */
 @media(max-width: 540px){
+    .workforce{
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
     .workforce h1{
         font-size: 3rem;
     }
@@ -384,7 +435,7 @@
         flex-direction: column;
     }
 }
-@media(min-width: 601px) and (max-width: 1098px){
+@media(min-width: 601px) and (max-width: 900px){
    .avatar-child{
         padding: 1rem!important;
     }
@@ -639,7 +690,7 @@
     }
 
 }
-@media(min-width: 601px) and (max-width: 1098px){
+@media(min-width: 601px) and (max-width: 900px){
     .contact-information-column h1{
         line-height: 2rem;
     }
