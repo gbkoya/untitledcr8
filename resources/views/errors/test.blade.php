@@ -51,9 +51,11 @@
             </div>
             <a class="j-gallery-arrow" href="#" id="j-gallery-left-arrow">
                 <i class="fa-solid fa-arrow-left"></i>
+                <span>left</span>
             </a>
             <a class="j-gallery-arrow" href="#" id="j-gallery-right-arrow">
                 <i class="fa-solid fa-arrow-right"></i>
+                <span>right</span>
             </a>
         </div>
 

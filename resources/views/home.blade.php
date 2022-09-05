@@ -12,6 +12,31 @@
 @section('content')
 
     <div style=" background-image: url(../customImages/Group68.png)" class="mt-5">
+        <section
+            class="container mt-5 d-flex flex-flow flex-wrap justify-content-center align-items-center block-display-tab section-top">
+            <div class="archware-content-text archwarejo-width-bottom-head pt-2">
+                <h2 class="big-title text-title-mobile">
+                    We offer Premium <span class="orange-color">eye care</span> solutions
+                </h2>
+                <p class="pt-3 text-black-paragraph">
+                    Foremost Eye Clinic is a leading provider of optometry services. With friendly and experienced
+                    optometrists,
+                    we provide a comprehensive range of eye care services.
+                </p>
+                <a href="#" class="py-3">
+                    <button class="small-mobile-long-button archware-button-default">
+                        Get Started
+                    </button>
+                </a>
+            </div>
+            <div class="archwarejo-width-top-head">
+                <img class="img-fluid image-width-tab image-min-height-mobile" src="/customImages/We offer Premium.png">
+            </div>
+        </section>
+    </div>
+
+    {{--
+    <div style=" background-image: url(../customImages/Group68.png)" class="mt-5">
         <section class="container mt-5 d-flex flex-flow justify-content-center align-items-center">
             <div class="pt-2">
                 <h2 class="big-title text-title-mobile">
@@ -47,6 +72,7 @@
             </div>
         </section>
     </div>
+    --}}
 
 
     <section
