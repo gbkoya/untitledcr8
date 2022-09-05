@@ -32,6 +32,10 @@ Route::get('/signin', function () {
 Route::get('/details1', function () {
     return view('details1');
 });
+Route::get('/details2', function () {
+    return view('details2');
+});
+
 
 
 
