@@ -15,7 +15,7 @@
             </h1>
             <p>
                 With advanced technology and expertise, we offer a
-                wide range of services for all your eye-related needs.
+                wide range of services for all your eye-related needs
             </p>
         </div>
     </section>
