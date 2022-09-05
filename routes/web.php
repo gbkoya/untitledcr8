@@ -49,7 +49,9 @@ Route::get('/details1', function () {
 Route::get('/details2', function () {
     return view('details2');
 });
-
+Route::get('/login', function () {
+    return view('login');
+});
 
 
 
