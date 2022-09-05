@@ -29,6 +29,10 @@ Route::get('/blog', function () {
     return view('blog.first_blog');
 });
 
+Route::get('/first-service', function () {
+    return view('services.first_service');
+});
+
 Route::get('/test', function () {
     return view('errors.test');
 });
