@@ -27,7 +27,7 @@
                     <a class="nav-link archware-nav-title" style="scroll-behavior: smooth;" href="/about">About
                         Us</a>
                 </li>
-                
+
                 <li class="nav-item px-3">
                     <a class="nav-link archware-nav-title" href="#">Services</a>
                 </li>
@@ -40,7 +40,7 @@
                 <li class="nav-item px-3">
                     <a class="nav-link archware-nav-title" href="#">Blog</a>
                 </li>
-            
+
                 <li class="button-wrapper">
                     <button type="button" class="buy-button">
                         <img
@@ -50,7 +50,7 @@
                     </button>
                 </li>
             </ul>
-          
+
         </div>
     </div>
 </nav>
