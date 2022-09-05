@@ -45,6 +45,8 @@
     <link rel="stylesheet" href="/customCSS/login_ik.css">
     <link rel="stylesheet" href="/customCSS/kellystyle.css">
     <link rel="stylesheet" href="/customCSS/gallerystyle.css">
+    <link rel="stylesheet" href="/customCSS/shop_styles.css">
+
 
 
 

@@ -35,7 +35,7 @@
                     <a class="nav-link archware-nav-title" href="/services">Services</a>
                 </li> -->
                 <li class="nav-item px-3">
-                    <a class="nav-link archware-nav-title" href="#">Contact Us</a>
+                    <a class="nav-link archware-nav-title" href="/contact">Contact Us</a>
                 </li>
                 <li class="nav-item px-3">
                     <a class="nav-link archware-nav-title" href="#">Blog</a>

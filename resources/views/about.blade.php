@@ -449,7 +449,7 @@
         <!-- END OF CONTACT US SECTION -->
 
     </main>
-    <body>
+</body>
 
     <script type="text/javascript">
      const counters = document.querySelectorAll('.incrementTimer');
