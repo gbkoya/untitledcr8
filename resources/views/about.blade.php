@@ -59,19 +59,19 @@
         <div class="d-sm-flex flex-wrap proof-of-work-child justify-content-around">
             <div class="web">
                 <h1 class="incrementTimer" akhi="5">0</h1>
-                <p>Intercontinental <br>Clinics</p>
+                <p>Intercontinental Clinics</p>
             </div>
             <div class="web">
                 <h1 class="incrementTimer" akhi="50">0</h1>
-                <p>Experienced<br> Specialists</p>
+                <p>Experienced Specialists</p>
             </div>
             <div class="customers">
                 <h1 class="incrementTimer" akhi="100">0</h1>
-                <p>Happy <br>customers</p>
+                <p>Happy customers</p>
             </div>
             <div class="customers">
                 <h1 class="incrementTimer" akhi="24">0</h1>
-                <p>Hours <br>Open</p>
+                <p>Hours Open</p>
             </div>
         </div>
     </section>
@@ -105,8 +105,8 @@
      <section class="container-fluid workforce">
         <div>
             <div class="text-center">
-                <h6>Our Workforce</h6>
-                <h1>Our Highly Qualified Professionals</h1>
+                <h1>Our Workforce</h1>
+                <h6>Our Highly Qualified Professionals</h6>
             </div>
 
             {{-- Avatars --}}
@@ -347,7 +347,7 @@
      <!-- CONTACT US SECTION -->
      <section class="container-fluid contact-us-wrapper" style=" margin-bottom: 9%">
         <div class="text-center">
-            <h1>Contact Us</h1>
+            <h1 class="e-contact-heading">Contact Us</h1>
         </div>
         <div class="row contact-form-section">
             <div class="col-md-7 col-sm-6 pt-5 contact-form-section-child">

@@ -39,12 +39,7 @@
     margin-top: 1rem;
 }
 
-/* Responsive style */
-@media(max-width: 414px){
-    .hero-section-copy h1{
-        font-size: 3rem;
-    }
-}
+
 /* END OF HERO SECTION STYLES */
 
 /* VISION AND MISSION STATEMENT STYLE */
@@ -102,26 +97,102 @@
     }
 
     /* Responsive style */
+    /* mobile screen */
     @media(max-width: 414px){
-        .vision-right{
-            margin-left: 0;
-        }
-        .vision-wrapper{
+        .hero-section{
             padding-left: 1rem;
             padding-right: 1rem;
+        }
+
+        .hero-section-copy{
+            padding-left: 0;
+            margin-top: -7.5rem;
+        }
+
+        .hero-section-copy h1{
+            font-size: 2.5rem;
+            text-align: left;
+            line-height: 150%;
+            letter-spacing: -1px;
+        }
+
+        .hero-section-copy p{
+            font-size: 1.3rem;
+            text-align: left;
+            letter-spacing: -1px;
+        }
+
+        .vision-right{
+            margin-left: 0;
+            padding: 1rem;
+        }
+        .vision-wrapper{
+           
         }
         .vis-statement h2, .core-val h2, .miss-statement h2{
             font-size: 1.5rem;
             text-align: left!important;
         }
         .miss-statement p{
-            font-size: .87rem;
+            font-size: 1rem;
         }
         .vis-statement p, .core-val ul li{
-            font-size: .87rem;
+            font-size: .875rem;
+        }
+        
+        /* Web responsive */
+        .proof-of-work .web h1,
+        .proof-of-work .customers h1{
+           font-size: 2rem!important;
+        }
+        .proof-of-work .web p,
+        .proof-of-work .customers p{
+            font-size: 1.2rem!important;
         }
     }
 
+    @media(min-width: 0px) and (max-width: 360px){
+        .hero-section{
+            width: 100%!important;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+
+        .hero-section-copy h1{
+            font-size: 2.2rem;
+            text-align: left;
+        }
+
+        .hero-section-copy p{
+            letter-spacing: -1px;
+            justify-content: center;
+        }
+    }
+
+    @media(width: 280px){
+        .hero-section{
+            /* width: 100%; */
+        }
+    }
+
+    /* Ipad screen */
+    @media(min-width: 601px) and (max-width: 1098px){
+        .vision-wrapper img{
+            width: 100%;
+        }
+        .proof-of-work-child{
+            width: 100%!important;
+            /* justify-content: space-between!important; */
+        }
+        .proof-of-work .web,  .proof-of-work .customers {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .vision-right{
+            width: 100%!important;
+        }
+    }
 /* END OF VISION AND MISSION STATEMENT STYLE */
 
 /* PROOF OF WORK SECTION */
@@ -223,6 +294,35 @@
 .why-wrapper .why-choose-right-image{
     margin-right: -.9%;
 }
+
+@media(max-width: 414px){
+    .why-wrapper{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .why-choose-left h1 {
+        font-size: 3rem;
+    }
+    .why-choose-left p {
+        font-size: 1rem;
+    }
+    .why-choose-parent img{
+        display: none;
+    }
+}
+@media(min-width: 601px) and (max-width: 1098px){
+    .why-choose-right-image{
+        display: none!important;
+    }
+    .why-wrapper{
+        /* flex-direction: column!important;
+        justify-content: center!important;
+        align-items: center!important; */
+    }
+    .why-choose-left{
+        margin-left: -2rem;
+    }
+}
 /* END OF WHY CHOOSE US SECTION */
 
 /* WORK FORCE SECTION */
@@ -273,6 +373,25 @@
     text-align: center;
     color: rgba(255, 255, 255, 0.7);
 }
+
+/* Responsive style */
+@media(max-width: 414px){
+    .workforce h1{
+        font-size: 3rem;
+    }
+    .avatars{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media(min-width: 601px) and (max-width: 1098px){
+   .avatar-child{
+        padding: 1rem!important;
+    }
+}
+
+
+
 /* END OF WORK FORCE SECTION */
 
 /* TESTIMONIAL SECTION */
@@ -336,6 +455,17 @@
     text-align: center;
     color: #000000;
 }
+
+/* Responsive style */
+ @media(max-width: 414px){
+    .testimonial h1{
+        font-size: 3rem;
+    }
+    .testimonial h6{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+ }
 /* END OF TESTIMONIAL SECTION */
 
 /* CONTACT US SECTION */
@@ -424,7 +554,7 @@
   }
 
 .input-contact-wrapper{
-    width: 80%;
+    width: 95%;
 }
 
 .contact-button{
@@ -450,23 +580,19 @@
 }
 
 @media(max-width: 480px){
-/* Hero section responsive */
-.hero-section-copy{
-    padding-left: 0!important;
-    margin-top: -5rem;
-}
-.hero-section-copy h1{
-    font-size: 3rem!important;
-    text-align: left!important;
-}
 
-
-    .contact-information-colum{
-        display: none;
+    .contact-information-column{
+        display: none!important;
     }
+    
     .contact-us-wrapper{
         margin-top: 8rem!important;
         margin-bottom: 6rem!important;
+    }
+
+    .contact-us-wrapper .e-contact-heading{
+        font-size: 3rem!important;
+        margin-top: -2rem;
     }
     .contact-form-section{
         /* max-width: 1210px;
@@ -478,6 +604,13 @@
         /* margin-left: 1rem;
         margin-right: 1rem; */
     }
+
+    .contact-form-section-child h3{
+        line-height: 110%!important;
+        /* letter-spacing: 5em; */
+    }
+
+    
     /* .contact-form-section form{
         padding-left: 1.1rem!important;
     } */
@@ -494,6 +627,11 @@
         /* width: 100!important; */
     }
 
+}
+@media(min-width: 601px) and (max-width: 1098px){
+    .contact-information-column h1{
+        line-height: 2rem;
+    }
 }
 /* END OF CONTACT US SECTION */
 /* END OF CONTACT US SECTION */

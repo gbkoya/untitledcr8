@@ -64,7 +64,7 @@
 
     const triggerNav = (event) => {
         // console.log(event);
-        if (window.scrollY >= 50) {
+        if (window.scrollY >= 30) {
             //    console.log('You have passed the nav bottom!')
             // console.log(event);
             getNav.classList.add('navbar-trigger');
