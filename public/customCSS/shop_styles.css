@@ -15,10 +15,10 @@
     width: 100%;
     /* padding: 1rem 0; */
     background: rgba(255, 255, 255, 0.1);
-}
+} 
 
 .search-wrapper{
-    width: 495px;
+    width: 30.95rem;
     height: 62px;
     position: relative;
 }
@@ -101,19 +101,232 @@ input[type="search"]::placeholder{
     color: #FFFFFF;
 }
 
-.shop-hero h1{
+.buy-button-shop{
+    padding: .9rem 1.7rem;
+    height: auto;
+    background: #F58634;
+    border-radius: 4.7179px;
+    border: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 18px;
+    color: #FFFFFF;
+    margin-top: 2rem;
+}
+
+.e-shop-copy {
+    margin-top: 9rem;
+    margin-left: 5rem;
+}
+.e-shop-copy h1{
     font-style: normal;
     font-weight: 800;
-    font-size: 64px;
-    line-height: 64px;
+    font-size: 4rem;
+    line-height: 4.8rem;
     letter-spacing: -0.03em;
     text-transform: capitalize;
     color: #FFFFFF;
-    width: 753px;
-    height: 192px;
-    margin-left: 5rem;
-    margin-top: 9rem;
+    max-width: 47rem;
+}
+
+.e-shop-copy p {
+    max-width: 55.75rem;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 31px;
+    letter-spacing: 0.01em;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    margin-top: 2rem;
 }
 /* End of hero section */
 
+/* Glass section */
+.glass-section{
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    background: rgba(217, 217, 217, 0.3);
+}
+
+.glass-wrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+/* End of glass section */
+
+/* Store card section */
+.store-wrapper{
+    margin-top: 2rem;
+    padding: 0 6rem;
+}
+
+.store-heading{
+
+}
+
+.store-heading h1{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.5rem;
+    line-height: 60px;
+    color: #000000;
+}
+
+.sort-wrapper{
+    width: 29rem;
+}
+
+.sort-wrapper label{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.875rem;
+    line-height: 45px;
+    color: #000000;
+}
+
+.sort-wrapper select{
+    width: 18.875rem;
+    height: auto;
+    padding: .8rem .2rem;
+    background: #FFFFFF;
+    border: 1px solid #B9B9B9;
+        border-radius: 5px;
+}
+
+.shop-card{
+    max-width: 18.65rem;
+    height: 59vh;
+    background: #FFFFFF;
+    box-shadow: 0px 20px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+.shop-card-heading{
+    margin: .5rem .8rem;
+}
+
+.shop-card-heading h4{
+    max-width: 19.75rem;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.125rem;
+    line-height: 140%;
+    /* or 25px */
+    color: #6B809B;
+}
+
+.shop-card-heading p[data="date-updated"]{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 180%;
+    letter-spacing: -0.01em;
+    color: #6B809B;
+}
+
+.shop-card-heading li{
+    list-style-type: none;
+}
+
+.shop-card-heading .star-rating{
+    margin-top: 1.3rem;
+}
+
+.shop-card-heading .star-rating img{
+    padding: 0 .5rem;
+}
+
+.shop-card-heading .star-rating span{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 180%;
+    letter-spacing: -0.01em;
+    color: #6B809B;
+}
+
+.price{
+
+}
+ 
+.price .price-child p:nth-child(1){
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 180%;
+    letter-spacing: -0.01em;
+    color: #6B809B;
+}
+
+.price .price-child p:nth-child(2){
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1rem;
+    text-decoration: line-through;
+    line-height: 180%;
+    letter-spacing: -0.01em;
+    color: #6B809B;
+    margin-left: .5rem;
+}
+
+.shop-card-button{
+    padding: .7rem 1rem;
+    height: auto;
+    background: #F58634;
+    border-radius: 4.7179px;
+    border: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+/* Paginated button */
+.pagination-button-wrapper{
+    width: 30%;
+    margin: 5rem auto;
+}
+
+.paginated-first-button{
+    background: #F58634;
+    border-radius: 7.24893px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2rem;
+    border: none;
+    color: #FFFFFF;
+    padding: .2rem 1.2rem;
+}
+
+.second{
+    background: rgba(107, 128, 155, 0.8)!important;
+}
+
+.pill-button{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 31px;
+    /* identical to box height */
+    color: #000000;    
+}
+
+.nav-but{}
+
+/* .nav-pill-head-wrapper{
+    width: 90%!important;
+} */
+
+.nav-but > .active > button { 
+    background-color: yellow!important; 
+}
+
+/* RESPONSIVENESS */
+@media(max-width: 414px){
+
+}
+/* End of store card section */
 /* END OF SHOP MEN STYLES */
