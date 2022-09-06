@@ -37,6 +37,10 @@ Route::get('/first-service', function () {
     return view('services.first_service');
 });
 
+Route::get('/second-service', function () {
+    return view('services.second_service');
+});
+
 Route::get('/first-blog-post', function () {
     return view('blog_post.first_blog_post');
 });
