@@ -170,3 +170,10 @@ ul li a:nth-child(2) {
     margin-left: 0;
 }
 }
+
+/* Large screen size responsive style */
+@media screen and (min-width: 1600px){
+    .right-nav{
+        margin-left: 35%;
+    }
+}
