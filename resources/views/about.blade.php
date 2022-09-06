@@ -14,7 +14,7 @@
      {{-- HERO SECTION --}}
      <section class="container-fluid hero-section">
         {{-- <img src="customImages/heroImage.png" alt="heroImage"> --}}
-        <div class="hero-section-copy">
+        <div class="hero-section-copy container-xxl">
             <h1>Your Experience is<br> Our Top Priority</h1>
             <p>We are focused on providing cutting-edge eye
                 healthcare services to suit the expanding demands
