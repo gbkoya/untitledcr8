@@ -15,10 +15,10 @@
     width: 100%;
     /* padding: 1rem 0; */
     background: rgba(255, 255, 255, 0.1);
-}
+} 
 
 .search-wrapper{
-    width: 495px;
+    width: 30.95rem;
     height: 62px;
     position: relative;
 }
@@ -101,19 +101,59 @@ input[type="search"]::placeholder{
     color: #FFFFFF;
 }
 
-.shop-hero h1{
+.buy-button-shop{
+    padding: .9rem 1.7rem;
+    height: auto;
+    background: #F58634;
+    border-radius: 4.7179px;
+    border: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 18px;
+    color: #FFFFFF;
+    margin-top: 2rem;
+}
+
+.e-shop-copy {
+    margin-top: 9rem;
+    margin-left: 5rem;
+}
+.e-shop-copy h1{
     font-style: normal;
     font-weight: 800;
-    font-size: 64px;
-    line-height: 64px;
+    font-size: 4rem;
+    line-height: 4.8rem;
     letter-spacing: -0.03em;
     text-transform: capitalize;
     color: #FFFFFF;
-    width: 753px;
-    height: 192px;
-    margin-left: 5rem;
-    margin-top: 9rem;
+    max-width: 47rem;
+}
+
+.e-shop-copy p {
+    max-width: 55.75rem;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 31px;
+    letter-spacing: 0.01em;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    margin-top: 2rem;
 }
 /* End of hero section */
 
+/* Glass section */
+.glass-section{
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    background: rgba(217, 217, 217, 0.3);
+}
+
+.glass-wrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+/* End of glass section */
 /* END OF SHOP MEN STYLES */

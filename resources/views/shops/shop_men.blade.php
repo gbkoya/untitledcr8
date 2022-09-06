@@ -10,13 +10,13 @@
 @section('content')
 
 <body>
-{{-- <main> --}}
+<main>
 {{-- HERO SECTION --}}
 <section class="container-fluid shop-hero">
 {{-- Sub nav --}}
 <nav class="d-flex flex-row flex-wrap container-fluid justify-content-evenly">
 {{-- <div class="d-flex flex-row"> --}}
-<div class="row d-flex search-wrapper ">
+<div class="row d-flex search-wrapper">
     <input type="search"
     placeholder="Search for eyewear, lenses and frames"
     />
@@ -38,13 +38,36 @@
 {{-- </div>  --}}
 </nav>
 
-<h1>The Largest Online Store
-    for  Glasses and Contact
-    Lenses.</h1>
+<div class="e-shop-copy">
+    <h1>The Largest Online Store
+        for  Glasses and Contact
+        Lenses.</h1>
+    <p>
+        We provide thousands of prescription eyeglasses and 
+        contact lenses to our customers monthly.
+    </p>
+    <button type="button" class="buy-button-shop">
+        <img
+        src="{{ asset('customImages/buyIcon.png') }}"
+        />
+        Buy Now
+    </button>
+</div>
 </section>
-
 {{-- END OF HERO SECTION --}}
-{{-- </main> --}}
+
+{{-- GLASS SECTION AFTER HERO --}}
+<section class="glass-section container-fluid">
+    <div class="glass-wrapper d-flex flex-wrap flex-row justify-content-between">
+        <img src="{{asset('customImages/emojione_glasses.png')}}" alt="emoji glass"/>
+        <img src="{{asset('customImages/fluent_glasses-20-filled.png')}}" alt="Fluent glass"/>
+        <img src="{{asset('customImages/fxemoji_glasses.png')}}" alt="emoji glasses"/>
+        <img src="{{asset('customImages/openmoji_glasses.png')}}" alt="open emoji">
+        <img src="{{asset('customImages/icon-park_glasses-one.png')}}" alt="icon park glasses">
+    </div>
+</section>
+{{-- END OF THE GLASS SECTION AFTER HERO --}}
+</main>
 
 <script type="text/javascript">
     </script>
