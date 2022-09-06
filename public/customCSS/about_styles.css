@@ -39,6 +39,12 @@
     margin-top: 1rem;
 }
 
+/* Large screen size responsive style */
+@media screen and (min-width: 1400px){
+    
+}
+/* End of large screen size */
+
 
 /* END OF HERO SECTION STYLES */
 
@@ -370,6 +376,13 @@
             padding: 1rem 0 4rem 0;
         }
     }
+
+/* Large screen size responsive style */
+@media screen and (min-width: 1400px){
+     .why-choose-left{
+            max-width: 60%!important;
+        }
+}
 /* END OF WHY CHOOSE US SECTION */
 
 /* WORK FORCE SECTION */

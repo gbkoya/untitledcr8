@@ -7,7 +7,112 @@
     width: 100%;
     height: auto;
     margin-top: 3rem;
-    padding: 11rem 0 10rem 5rem;
+    padding: 0 0 10rem 0;
+}
+
+/* Breadcrumb */
+.shop-hero nav {
+    width: 100%;
+    /* padding: 1rem 0; */
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.search-wrapper{
+    width: 495px;
+    height: 62px;
+    position: relative;
+}
+
+.search-shop-image{
+    /* width: 21.34px; */
+    max-width: 3.085rem;
+    height: 17.36px;
+    position: absolute;
+    cursor: pointer;
+    left: 88%;
+    top: 35%;
+}
+
+input[type="search"]{
+    /* width: 90%!important; */
+    max-width: 41.4375rem;
+    height: 62px;
+    border-radius: 5px;
+}
+
+input[type="search"]::placeholder{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 147.9%;
+    color: rgba(107, 128, 155, 0.6);
+}
+
+.button-wrapper a .login{
+    /* height: 44px; */
+    padding: .9rem 1.5rem;
+    background: #6B809B;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FDFDFD;
+    border: none;
+}
+.button-wrapper a .signup{
+    padding: .9rem 1.5rem;
+    color: #6B809B;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 19px;
+    text-align: center;
+    background: #FDFDFD;
+    border: none;
+}
+
+.button-wrapper a .try-it{
+    padding: .9rem 1.5rem;
+    color: #6B809B;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 19px;
+    text-align: center;
+    background: #FDFDFD;
+    border: none;
+    text-transform: capitalize;
+}
+
+.shop-button{
+    padding: .4rem 1.5rem;
+    height: auto;
+    background: #F58634;
+    border-radius: 4.7179px;
+    border: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+.shop-hero h1{
+    font-style: normal;
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 64px;
+    letter-spacing: -0.03em;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    width: 753px;
+    height: 192px;
+    margin-left: 5rem;
+    margin-top: 9rem;
 }
 /* End of hero section */
 
