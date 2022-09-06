@@ -378,7 +378,7 @@
     }
 
 /* Large screen size responsive style */
-@media screen and (min-width: 1400px){
+@media screen and (min-width: 1500px){
      .why-choose-left{
             max-width: 60%!important;
         }
