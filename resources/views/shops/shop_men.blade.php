@@ -86,13 +86,13 @@
 {{-- The tabs pills nav --}}
 <div class="">
     <ul class="nav nav-pills nav-pill-head-wrapper mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
-        <li class="nav-item nav-pill-change" role="presentation">
+        <li class="nav-item nav-but" role="presentation">
           <button class="nav-link pill-button active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Men</button>
         </li>
         <li class="nav-item nav-but" role="presentation">
           <button class="nav-link pill-button" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Women</button>
         </li>
-        <li class="nav-item" role="presentation">
+        <li class="nav-item nav-but" role="presentation">
           <button class="nav-link pill-button" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Kids</button>
         </li>
       </ul>

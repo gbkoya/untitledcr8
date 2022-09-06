@@ -25,7 +25,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/shop-men', function () {
+Route::get('/shop', function () {
     return view('shops.shop_men');
 });
 
