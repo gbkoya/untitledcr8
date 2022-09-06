@@ -20,94 +20,12 @@
         </div>
     </section>
 
-    <div class="container mx-auto mt-4">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://foremost-website.herokuapp.com/customImages/Comprehensive%20Eye%20Examination.png"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">
-                            Measure your visual acuity by undergoing the appropriate eye examination to determine the strength
-                            of your sight at a distance. A comprehensive eye examination is a perfect way to ensure that your
-                            vision is at its best. Our team of experts will evaluate everything from your prescription to the
-                            health of your eyes.
-                        </p>
-                        <a href="#" class="btn mr-2"><i class="fas fa-link"></i> Visit Site</a>
-                        <a href="#" class="btn"><i class="fab fa-github"></i> Github</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://foremost-website.herokuapp.com/customImages/Comprehensive%20Eye%20Examination.png"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
-                        <a href="#" class="btn btn-primary mr-2"><i class="fas fa-link"></i> Visit Site</a>
-                        <a href="#" class="btn btn-primary"><i class="fab fa-github"></i> Github</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://foremost-website.herokuapp.com/customImages/Comprehensive%20Eye%20Examination.png"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
-                        <a href="#" class="btn mr-2"><i class="fas fa-link"></i> Visit Site</a>
-                        <a href="#" class="btn"><i class="fab fa-github"></i> Github</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://foremost-website.herokuapp.com/customImages/Comprehensive%20Eye%20Examination.png"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
-                        <a href="#" class="btn mr-2"><i class="fas fa-link"></i> Visit Site</a>
-                        <a href="#" class="btn"><i class="fab fa-github"></i> Github</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://foremost-website.herokuapp.com/customImages/Comprehensive%20Eye%20Examination.png"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
-                        <a href="#" class="btn mr-2"><i class="fas fa-link"></i> Visit Site</a>
-                        <a href="#" class="btn"><i class="fab fa-github"></i> Github</a>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-
     <section class="container-fluid mt-2 pt-2">
         <div class="d-flex flex-row flex-wrap justify-content-center">
 
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
                 <img src="/customImages/Comprehensive Eye Examination.png" class="card-img-top" alt="...">
-                <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
+                <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Comprehensive Eye Examination
                     </div>
@@ -126,7 +44,7 @@
             </div>
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
                 <img src="/customImages/Glaucoma Workup and Management.png" class="card-img-top" alt="...">
-                <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
+                <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Glaucoma Workup and Management
                     </div>
@@ -143,8 +61,8 @@
                 </div>
             </div>
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
-                <img src="/customImages/Comprehensive Eye Examination.png" class="card-img-top" alt="...">
-                <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
+                <img src="/customImages/Pediatrics– Eye Care for Children.png" class="card-img-top" alt="...">
+                <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Pediatrics- Eye Care for Children
                     </div>
@@ -161,8 +79,8 @@
                 </div>
             </div>
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
-                <img src="/customImages/Comprehensive Eye Examination.png" class="card-img-top" alt="...">
-                <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
+                <img src="/customImages/Pre-and-post Operative.png" class="card-img-top" alt="...">
+                <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Pre-and-post Operative Eye Care
                     </div>
@@ -178,8 +96,8 @@
                 </div>
             </div>
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
-                <img src="/customImages/Comprehensive Eye Examination.png" class="card-img-top" alt="...">
-                <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
+                <img src="/customImages/Environmental and Occupational Vision.png" class="card-img-top" alt="...">
+                <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Environmental and Occupational Vision
                     </div>
@@ -196,8 +114,8 @@
                 </div>
             </div>
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
-                <img src="/customImages/Comprehensive Eye Examination.png" class="card-img-top" alt="...">
-                <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
+                <img src="/customImages/Geriatrics– Eye Care for the Elderly.png" class="card-img-top" alt="...">
+                <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Geriatrics- Eye Care for the Elderly
                     </div>
@@ -213,8 +131,8 @@
                 </div>
             </div>
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
-                <img src="/customImages/Comprehensive Eye Examination.png" class="card-img-top" alt="...">
-                <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
+                <img src="/customImages/Specialty Contact Lens.png" class="card-img-top" alt="...">
+                <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Specialty Contact Lens
                     </div>
@@ -230,8 +148,8 @@
                 </div>
             </div>
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
-                <img src="/customImages/Comprehensive Eye Examination.png" class="card-img-top" alt="...">
-                <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
+                <img src="/customImages/Dry Eye Treatment.png" class="card-img-top" alt="...">
+                <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Dry Eye Treatment
                     </div>
@@ -247,8 +165,8 @@
                 </div>
             </div>
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
-                <img src="/customImages/Comprehensive Eye Examination.png" class="card-img-top" alt="...">
-                <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
+                <img src="/customImages/Chalazion Excision.png" class="card-img-top" alt="...">
+                <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Chalazion Excision
                     </div>
