@@ -6,6 +6,10 @@
     text-transform: capitalize;
 }
 
+.zero-padding {
+    padding: 0px !important;
+}
+
 .box-shadow {
     box-shadow:3px 3px 8px #e0e0e0;
     border: none;
