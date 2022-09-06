@@ -185,7 +185,7 @@
 
 
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
-                <img src="/customImages/Chalazion Excision.png" class="card-img-top" alt="...">
+                <img src="/customImages/Glaucoma Surgery.png" class="card-img-top" alt="...">
                 <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Glaucoma Surgery
@@ -204,7 +204,7 @@
                 </div>
             </div>
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
-                <img src="/customImages/Chalazion Excision.png" class="card-img-top" alt="...">
+                <img src="/customImages/Pterygium Surgery.png" class="card-img-top" alt="...">
                 <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Pterygium Surgery
@@ -222,7 +222,7 @@
                 </div>
             </div>
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
-                <img src="/customImages/Chalazion Excision.png" class="card-img-top" alt="...">
+                <img src="/customImages/Low Vision.png" class="card-img-top" alt="...">
                 <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Low Vision
@@ -240,7 +240,7 @@
                 </div>
             </div>
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
-                <img src="/customImages/Chalazion Excision.png" class="card-img-top" alt="...">
+                <img src="/customImages/Dry Eye Examination.png" class="card-img-top" alt="...">
                 <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Dry Eye Examination
@@ -258,7 +258,7 @@
                 </div>
             </div>
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
-                <img src="/customImages/Chalazion Excision.png" class="card-img-top" alt="...">
+                <img src="/customImages/Spectacle Dispensing.png" class="card-img-top" alt="...">
                 <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Spectacle Dispensing
@@ -276,7 +276,7 @@
                 </div>
             </div>
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
-                <img src="/customImages/Chalazion Excision.png" class="card-img-top" alt="...">
+                <img src="/customImages/Laser Surgery.png" class="card-img-top" alt="...">
                 <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Laser Surgery
@@ -294,7 +294,7 @@
                 </div>
             </div>
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
-                <img src="/customImages/Chalazion Excision.png" class="card-img-top" alt="...">
+                <img src="/customImages/Digital Eye Health.png" class="card-img-top" alt="...">
                 <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Digital Eye Health
@@ -311,7 +311,7 @@
                 </div>
             </div>
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
-                <img src="/customImages/Chalazion Excision.png" class="card-img-top" alt="...">
+                <img src="/customImages/Glaucoma Surgery.png" class="card-img-top" alt="...">
                 <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Cataract Surgery
@@ -328,7 +328,7 @@
                 </div>
             </div>
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
-                <img src="/customImages/Chalazion Excision.png" class="card-img-top" alt="...">
+                <img src="/customImages/Eye Disease Education.png" class="card-img-top" alt="...">
                 <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Eye Disease Education
@@ -345,7 +345,7 @@
                 </div>
             </div>
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
-                <img src="/customImages/Chalazion Excision.png" class="card-img-top" alt="...">
+                <img src="/customImages/Health Awareness Programs.png" class="card-img-top" alt="...">
                 <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Health Awareness Programs
@@ -362,7 +362,7 @@
                 </div>
             </div>
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
-                <img src="/customImages/Chalazion Excision.png" class="card-img-top" alt="...">
+                <img src="/customImages/Visual Screening.png" class="card-img-top" alt="...">
                 <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Visual Screening
@@ -379,7 +379,7 @@
                 </div>
             </div>
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
-                <img src="/customImages/Chalazion Excision.png" class="card-img-top" alt="...">
+                <img src="/customImages/Contact Lens Services.png" class="card-img-top" alt="...">
                 <div class="card-body archware-card-padding-left d-flex align-items-center flex-wrap p-4">
                     <div class="pt-1 foremost-card-title">
                         Contact Lens Services
