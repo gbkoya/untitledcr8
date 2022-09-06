@@ -25,13 +25,15 @@
             <div class="mx-5">
                 <button type="button" class="small-mobile-long-button foremost-button-border"
                     style="color:
-                    #FFF; background:#6B809B;">
+                #FFF; background:#6B809B;">
                     Login
                 </button>
-                <button type="button" class="small-mobile-long-button foremost-button-border" style="color:#6B809B; background: #FFFFFF;">
+                <button type="button" class="small-mobile-long-button foremost-button-border"
+                    style="color:#6B809B; background: #FFFFFF;">
                     Sign up
                 </button>
-                <button type="button" class="small-mobile-long-button foremost-button-border" style="color:#6B809B; background: #FFFFFF;">
+                <button type="button" class="small-mobile-long-button foremost-button-border"
+                    style="color:#6B809B; background: #FFFFFF;">
                     TRY IT ON
                 </button>
             </div>
@@ -53,37 +55,35 @@
                 <button type="button" class="small-mobile-long-button foremost-button-border" style="font-color:#6B809B">
                     TRY IT ON
                 </button>
-
-                
             </div>
 
 
 
             <div class="text-details col">
                 ₦4,999 <br>
-                <div class="price-details pb-6" > N9,000</div>
+                <div class="price-details pb-6"> N9,000</div>
 
                 <div class="container-fluid col">
-                    <button type="button" style="width: 603px;
-                    background: #F58634;
-                    border-radius: 5px;
-                    color:#FFFF">
+                    <button type="button"
+                        style="width: 603px;
+                background: #F58634;
+                color:#FFFF">
                         <img src="{{ asset('customImages/buyIcon.png') }}" class='pt-3 px-3'style="float: left">
-                        ADD TO CART
+                        ADDED!
                     </button>
                 </div>
                 <div class="details12">
                     <div
-                    style="
-                    font-family: 'Poppins';
-                    font-style: normal;
-                    
-                    font-size: 20px;
-                    line-height: 30px;
-                                    
-                    
-                    color: rgba(107, 128, 155, 0.8);
-                    ">
+                        style="
+                font-family: 'Poppins';
+                font-style: normal;
+                
+                font-size: 20px;
+                line-height: 30px;
+                                
+                
+                color: rgba(107, 128, 155, 0.8);
+                ">
                         Details <br>
                     </div>
 
@@ -98,40 +98,29 @@
         </div>
 
     </section>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <section class="container mt-5">
+        <div class="d-flex flex-row pt-5">
+            <div class="pt-5">
+                <button type="button" class="small-mobile-long-button foremost-button-border  "
+                    style="color:#6B809B; background: rgba(0, 0, 0, 0.2);font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;">
+                    BACK
+                </button>
+            </div>
+            <div>
+                <button type="button" class="small-mobile-long-button foremost-button-border  "
+                    style="color:#FFFF;font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 140%; background: #F58634;
+        border-radius: 5px; position:absolute; top:712px ;left:1000px">
+                    VIEW CART
+                </button>
+            </div>
+        </div>
+    </section>
 @endsection

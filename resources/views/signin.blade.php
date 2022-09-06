@@ -21,18 +21,23 @@
   <h2 class="login">Create Account</h2>
     <form class=" px-5">
       <div class="form-group d-flex pt-4">
-        <span class="mt-4 pt-1"><img src="{{asset('customImages/Vector(4).png')}}" alt="" > </span>
+        <div class="d-flex" style="background-color: #f3efef"; margin-top="10%" >
+        <span class="mt-4 pt-1"><img src="{{asset('customImages/Vector (5).png')}}" alt="" > </span>
         <input type="email" class="form-control" placeholder="Full Name" >
       </div>
+      </div>
       <div class="form-group d-flex pt-4">
+        <div class="d-flex" style="background-color: #f3efef"; margin-top="10%" >
         <span class="mt-4 pt-1"><img src="{{asset('customImages/Vector (2).png')}}" alt="" > </span>
-        <input type="email" class="form-control" placeholder="Email">
+        <input type="email" class="form-control" placeholder="Email" >
+      </div>
       </div>
 
       <div class="form-group d-flex pt-4">
-      <span class="mt-4 pt-1"><img src="{{asset('customImages/Vector (1).png')}}" alt="" > </span>
-        <input type="email" class="gin form-control" placeholder="Create Password" >
-        <span class="mt-4 pt-1"><img src="{{asset('customImages/Vector.png')}}" alt=""> </span>
+        <div class="d-flex" style="background-color: #f3efef"; margin-top="10%" >
+        <span class="mt-4 pt-1"><img src="{{asset('customImages/Vector (1).png')}}" alt="" > </span>
+        <input type="email" class="form-control" placeholder="Create Password" >
+      </div>
       </div>
       
       <div class="mb-3 form-check pt-4">
@@ -42,7 +47,8 @@
         </div>
       </div>
       <div class="row justify-content-center py-5">
-        <button type="submit" class="button btn btn-primary">Create Account</button>
+        <button type="submit" class="button btn btn-primary">Create Account</button> 
+        <button type="submit" class="button btn btn-primary mt-5">SIgn In</button>
       </div>
     </form>
 </div>

@@ -18,17 +18,20 @@
 <div class=" my-5 py-5">
 <div class="container col-md my-5 py-5 king">
   
-  <h2 class="login" >Log In</h2>
+  <h2 class="login " >Log In</h2>
     <form class=" px-5">
-      <div class="form-group d-flex pt-4">
+      <div class=" d-flex pt-4 ">
+        <div class="d-flex" style="background-color: #f3efef";  margin-top="10%;" >
         <span class="mt-4 pt-1"><img src="{{asset('customImages/Vector (2).png')}}" alt="" > </span>
         <input type="email" class="form-control" placeholder="Email" >
       </div>
+      </div>
 
-      <div class="form-group d-flex pt-4">
-      <span class="mt-4 pt-1"><img src="{{asset('customImages/Vector (1).png')}}" alt="" > </span>
-        <input type="email" class=" gin form-control" placeholder="Password" >
-        <span class="mt-4 pt-1"><img src="{{asset('customImages/Vector.png')}}" alt="" > </span>
+      <div class=" d-flex pt-4">
+        <div class="d-flex" style="background-color: #f3efef"; margin-top="10%" >
+        <span class="mt-4 pt-1"><img src="{{asset('customImages/Vector (1).png')}}" alt="" > </span>
+        <input type="email" class="form-control" placeholder="Password" >
+      </div>
       </div>
       
       <div class="mb-3 form-check pt-4">
