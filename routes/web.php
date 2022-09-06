@@ -44,6 +44,20 @@ Route::get('/first-blog-post', function () {
 Route::get('/test', function () {
     return view('errors.test');
 });
+Route::get('/signin', function () {
+    return view('signin');
+});
+Route::get('/details1', function () {
+    return view('details1');
+});
+Route::get('/details2', function () {
+    return view('details2');
+});
+Route::get('/login', function () {
+    return view('login');
+});
+
+
 
 
 
