@@ -29,7 +29,7 @@
                 </li>
 
                 <li class="nav-item px-3">
-                    <a class="nav-link archware-nav-title" href="#">Services</a>
+                    <a class="nav-link archware-nav-title" href="/first-service">Services</a>
                 </li>
                 <!-- <li class="nav-item px-3">
                     <a class="nav-link archware-nav-title" href="/services">Services</a>
@@ -38,7 +38,7 @@
                     <a class="nav-link archware-nav-title" href="/contact">Contact Us</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link archware-nav-title" href="#">Blog</a>
+                    <a class="nav-link archware-nav-title" href="/blog">Blog</a>
                 </li>
 
                 <li class="button-wrapper">
