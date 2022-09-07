@@ -28,13 +28,22 @@
             <a href=""><button class="login" type="button">Log In</button></a>
             <a href=""><button class="signup" type="button">Sign Up</button></a>
            <a href=""><button class="try-it" type="button">Try it On</button></a>
+           
         </div>
+            {{-- <button type="button" class="">
+                <img
+                src="{{ asset('customImages/buyIcon.png') }}"
+                />
+                CART
+            </button> --}}
+            <li class="right-nav-button-shop-wrapper">
             <button type="button" class="shop-button">
                 <img
                 src="{{ asset('customImages/buyIcon.png') }}"
                 />
                 CART
             </button>
+        </li>
 {{-- </div>  --}}
 </nav>
 

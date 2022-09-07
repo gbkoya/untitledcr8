@@ -88,8 +88,12 @@ input[type="search"]::placeholder{
     text-transform: capitalize;
 }
 
+.right-nav-button-shop-wrapper{
+    list-style-type: none;
+}
+
 .shop-button{
-    padding: .4rem 1.5rem;
+    padding: .9rem 1.7rem;
     height: auto;
     background: #F58634;
     border-radius: 4.7179px;
@@ -99,6 +103,7 @@ input[type="search"]::placeholder{
     font-size: 0.9375rem;
     line-height: 18px;
     color: #FFFFFF;
+    /* margin-top: 2rem; */
 }
 
 .buy-button-shop{
