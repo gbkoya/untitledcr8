@@ -170,7 +170,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-5">
         <a class="navbar-brand" href="#">
-            <i class="fad fa-star-of-david mr-2" style="color: rgb(255, 255, 50);"></i>Strange Shop
+            <i class="fad fa-star-of-david mr-2" style="color: rgb(255, 255, 50);"></i>Foremost test cart
         </a>
     </nav>
 
