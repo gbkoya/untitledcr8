@@ -1,69 +1,76 @@
 .log{ background-image: url(../customImages/login.png);
-     background-repeat:no-repeat;
-    background-size:cover ;
-     align-items:center;
-     
-    }
+   background-repeat:no-repeat;
+  background-size:cover ;
+   align-items:center;
+   
+  }
 
 .king{
-    background: #FFFFFF;
-    border-radius: 5.22082px;
+  background: #FFFFFF;
+  border-radius: 5.22082px;
 }
 .login{
-    font-weight: 500;
-    font-size: 28px;
-    line-height: 34px;
-    color: #000000;
-    text-align:center;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 34px;
+  color: #000000;
+  text-align:center;
 }
-.form-control{
-    height: 83px;
-    width: 400px;
-      background: #f3efef;
+.form-control-ika{
+height: 83px;
+background: #f3efef;
 display: flex;
 flex-direction: row;
 align-items: center;
-
-
-
+display: block;
+width: 100%;
+padding: 0.375rem 0.75rem;
+font-size: 16px;
+font-weight: 400;
+line-height: 1.6;
+color: #212529;
+outline: none;
+border: none;
+border-radius: 0.25rem;
 
 }
+
+
+
+
+
 .gin{
-    margin-left:50px;
+  margin-left:50px;
 }
 .check{
-    border: 3.93287px solid #F58634;border-radius: 9.4389px;width: 31.46px;height: 31.46px;
+  border: 3.93287px solid #F58634;border-radius: 9.4389px;width: 31.46px;height: 31.46px;
 }
-.Rememeber {
-    font-weight: 600;font-size: 16px;line-height: 20px;text-align: center;letter-spacing: 0.04em;color: #3D3D3D;
+.Remember {
+font-weight: 600;
+font-size: 18.7396px;
+line-height: 20px;
+text-align: center;
+letter-spacing: 0.04em;
+color: #3D3D3D;
+
 }
-.button{
-    width: 360px;
-    height: 56px;
-    background: #F58634;
-    border-radius: 30px;
-    border:none;
+.button-ika{
+  max-width: 360px;
+  height: 56px;
+  background: #F58634;
+  border-radius: 30px;
+  border:none;
+  color: #ffffff;
 }
-.det{
-    background: rgba(0, 0, 0, 0.1);;
-     background-repeat:no-repeat;
-    
-width: 1512px;
-height: 110px;
-left: 0px;
-top: 20px;
+.search-background{
+background: rgba(0, 0, 0, 0.1);;
+background-repeat:no-repeat;
+/* height: 110px; */
 }
 .details-search{
-    
-    background: #FFFFFF;
-    border-radius: 5px;
-
-
-
-
-
-
-
+  
+  background: #FFFFFF;
+  border-radius: 5px;
 width: 495px;
 height: 62px;
 left: 14px;
@@ -74,7 +81,7 @@ position:relative ;
 
 }
 .search1{
-    font-style: normal;
+  font-style: normal;
 font-weight: 600;
 font-size: 18px;
 line-height: 147.9%;
@@ -83,23 +90,23 @@ color: rgba(107, 128, 155, 0.6);
 
 }
 .details-login{
-    background: #6B809B;
-    border-radius: 5px;
-    
+  background: #6B809B;
+  border-radius: 5px;
+  
 }
 .arrow{
-    position: absolute;
+  position: absolute;
 left: 90.54%;
 right: 6.24%;
 top: 38%;
 bottom: 34%;
 }
 .buu{
-    display: flex;
-    position: absolute;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 padding: 12px 24px;
 gap: 10px;
 left: 300px;
@@ -117,7 +124,7 @@ background: #FFFFFF;
 border-radius: 5px;
 }
 .login-button{
-    flex-direction: row;
+  flex-direction: row;
 justify-content: center;
 align-items: center;
 padding: 12px 24px;
@@ -131,22 +138,22 @@ top: 31px;
 
 }
 .signup-button{
-    background: #FFFFFF;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 12px 24px;
-    gap: 10px;
-    color: #6B809B;
-    width: 108px;
+  background: #FFFFFF;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 10px;
+  color: #6B809B;
+  width: 108px;
 height: 44px;
 left: -1px;
 top: 31px;
-    
+  
 }
 .tryiton-button{
-    box-sizing: border-box;
-    color: #6B809B;
+  box-sizing: border-box;
+  color: #6B809B;
 
 
 width: 127px;
@@ -161,7 +168,7 @@ border-radius: 5px;
 
 }
 .cart-button{
-    flex-direction: row;
+  flex-direction: row;
 justify-content: center;
 align-items: center;
 padding: 12.3062px 15.9981px;
@@ -183,10 +190,10 @@ height: 296px;
 
 
 border-radius: 5px;
-    
+  
 }
 .text-details{
-    left: 4.44%;
+  left: 4.44%;
 right: 80.62%;
 top: 12.65%;
 bottom: 77.47%;
@@ -212,25 +219,25 @@ background: #F58634;
 border-radius: 5px;
 }
 .cart{
-   
-    left: 5.98%;
-    right: 6.42%;
-    top: 12.7%;
-    bottom: 8.53%;
+ 
+  left: 5.98%;
+  right: 6.42%;
+  top: 12.7%;
+  bottom: 8.53%;
 
 background: #130404;
 }
 .cart2{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    color: #FFFFFF;
-    
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  color: #FFFFFF;
+  
 
 }
 .details12{
-    width: 601px;
+  width: 601px;
 height: 182px;
 left: 35px;
 top: 259px;
@@ -261,7 +268,7 @@ color: #6B809B;
 
 }
 .price-details{
-    left: 5.18%;
+  left: 5.18%;
 right: 87.13%;
 top: 19.57%;
 bottom: 75.1%;
@@ -280,13 +287,32 @@ color: rgba(0, 0, 0, 0.3);
 
 }
 @media (max-width:990px) {
-    .log{
-       align-items: center;
+  .log{
+     align-items: center;
 
-    }
-    .king{
-        margin: auto !important;
-        padding: auto !important;
-    }
-    
+  }
+  .king{
+      margin: auto !important;
+      padding: auto !important;
+  }
+.button-ika{
+  align-items: center !important;
+  width: 300px !important;
+}
+.Remember{
+  font-size: medium !important;
+}
+.search-box-ika{
+  margin: auto !important;
+}
+.details-sect-right-ika{
+  margin: auto !important;
+  padding: auto !important;
+}
+
+.image-size-middle-ika{
+max-width: 600px !important;
+max-height: 700px !important;
+}
+  
 }
