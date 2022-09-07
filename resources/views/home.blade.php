@@ -20,7 +20,7 @@
                     optometrists,
                     we provide a comprehensive range of eye care services.
                 </p>
-                <a href="#" class="py-3">
+                <a href="/first-service" class="py-3">
                     <button class="small-mobile-long-button archware-button-default">
                         Get Started
                     </button>
@@ -115,7 +115,7 @@
                 best possible vision can be achieved by our patients.
             </p>
 
-            <a href="#" class="py-3">
+            <a href="/about" class="py-3">
                 <button class="small-mobile-long-button archware-button-default">
                     Read More
                 </button>
@@ -181,7 +181,7 @@
         <div class="container justify-content-center">
             <div class="row">
 
-                <a href="/contacts" class="py-3" style="text-align:center;">
+                <a href="/first-service" class="py-3" style="text-align:center;">
                     <button class="small-mobile-long-button archware-button-default">
                         Read More
                     </button>
@@ -197,10 +197,12 @@
                 Get single-vision prescription glasses in 3-5 business days with new Fast Frame
             </p>
 
+            <a href="/shop">
             <button type="button" class="small-mobile-long-button foremost-button-border">
                 <img src="{{ asset('customImages/buyIcon.png') }}" />
                 Buy Now
             </button>
+            </a>
         </div>
     </section>
 
