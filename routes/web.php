@@ -30,18 +30,14 @@ Route::get('/shop', function () {
 });
 
 Route::get('/blog', function () {
-    return view('blog.first_blog');
+    return view('blog.blog');
 });
 
 Route::get('/first-service', function () {
     return view('services.first_service');
 });
 
-Route::get('/second-service', function () {
-    return view('services.second_service');
-});
-
-Route::get('/first-blog-post', function () {
+Route::get('/blog-post', function () {
     return view('blog_post.first_blog_post');
 });
 
@@ -63,6 +59,13 @@ Route::get('/login', function () {
 
 
 
+Route::get('/cart', function () {
+    return view('checkout1.checkout1');
+});
+
+Route::get('/checkout1', function () {
+    return view('checkout2.checkout2');
+});
 
 
 
