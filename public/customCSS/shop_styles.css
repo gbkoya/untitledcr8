@@ -18,8 +18,8 @@
 } 
 
 .search-wrapper{
-    width: 30.95rem;
-    height: 62px;
+    width: 35%;
+    /* height: 62px; */
     position: relative;
 }
 
@@ -33,14 +33,14 @@
     top: 35%;
 }
 
-input[type="search"]{
+.search-wrapper input[type="search"]{
     /* width: 90%!important; */
     max-width: 41.4375rem;
     height: 62px;
     border-radius: 5px;
 }
 
-input[type="search"]::placeholder{
+.search-wrapper input[type="search"]::placeholder{
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
@@ -88,8 +88,12 @@ input[type="search"]::placeholder{
     text-transform: capitalize;
 }
 
+.right-nav-button-shop-wrapper{
+    list-style-type: none;
+}
+
 .shop-button{
-    padding: .4rem 1.5rem;
+    padding: .9rem 1.7rem;
     height: auto;
     background: #F58634;
     border-radius: 4.7179px;
@@ -99,6 +103,7 @@ input[type="search"]::placeholder{
     font-size: 0.9375rem;
     line-height: 18px;
     color: #FFFFFF;
+    /* margin-top: 2rem; */
 }
 
 .buy-button-shop{
@@ -176,7 +181,7 @@ input[type="search"]::placeholder{
 }
 
 .sort-wrapper{
-    width: 29rem;
+    width: 40%;
 }
 
 .sort-wrapper label{
@@ -326,7 +331,43 @@ input[type="search"]::placeholder{
 
 /* RESPONSIVENESS */
 @media(max-width: 414px){
+    .search-wrapper{
+        width: 100%;
+        padding: .8rem;
+    }
+    .search-shop-image {
+        left: 84%;
+        top: 40%;
+    }
+    .search-wrapper input[type="search"]::placeholder{
+        font-size: 1rem;
+    }
+    .button-wrapper{
+        width: 100%!important;
+        display: flex!important;
+        flex-direction: row!important;
+    }
+    .button-wrapper a .login{
+        
+    }
+    .e-shop-copy{
+        margin-left: 0;
+    }
+}
+
+/* Ipad screen */
+@media(min-width: 540px) and (max-width: 900px){
 
 }
+
+ /* Next hub screen */
+ @media(min-width: 900px) and (max-width: 1280px){
+
+ }
+
+ /* Large Screens */
+ @media screen and (min-width: 1500px){
+
+ }
 /* End of store card section */
 /* END OF SHOP MEN STYLES */
