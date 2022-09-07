@@ -37,6 +37,10 @@ Route::get('/first-service', function () {
     return view('services.first_service');
 });
 
+Route::get('/second-service', function () {
+    return view('services.second_service');
+});
+
 Route::get('/blog-post', function () {
     return view('blog_post.first_blog_post');
 });
@@ -56,8 +60,6 @@ Route::get('/details2', function () {
 Route::get('/login', function () {
     return view('login');
 });
-
-
 
 Route::get('/cart', function () {
     return view('checkout1.checkout1');
