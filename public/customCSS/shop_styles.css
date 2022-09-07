@@ -107,7 +107,7 @@
 }
 
 .buy-button-shop{
-    padding: .9rem 1.7rem;
+    padding: .9rem 2.2rem;
     height: auto;
     background: #F58634;
     border-radius: 4.7179px;
@@ -133,6 +133,7 @@
     text-transform: capitalize;
     color: #FFFFFF;
     max-width: 47rem;
+    text-align: justify;
 }
 
 .e-shop-copy p {
@@ -145,6 +146,8 @@
     text-transform: capitalize;
     color: #FFFFFF;
     margin-top: 2rem;
+    text-align: justify;
+
 }
 /* End of hero section */
 
@@ -198,7 +201,7 @@
     padding: .8rem .2rem;
     background: #FFFFFF;
     border: 1px solid #B9B9B9;
-        border-radius: 5px;
+    border-radius: 5px;
 }
 
 .shop-card{
@@ -342,16 +345,63 @@
     .search-wrapper input[type="search"]::placeholder{
         font-size: 1rem;
     }
-    .button-wrapper{
+    .but-wrapper-mobile{
+        margin-top: 1rem;
         width: 100%!important;
         display: flex!important;
-        flex-direction: row!important;
+        flex-direction: column!important;
+        align-items: center!important;
+        margin: 0 auto!important;
     }
-    .button-wrapper a .login{
-        
+    .signup, .try-it{
+        margin-top: .7rem;
+    }
+    .shop-button{
+        margin-top: .7rem!important;
     }
     .e-shop-copy{
         margin-left: 0;
+        padding: 0 .8rem;
+        margin-top: 2rem;
+    }
+    .e-shop-copy h1{
+        font-size: 2.5rem;
+        text-align: left;
+        line-height: 4rem;
+    }
+    .e-shop-copy p {
+        font-size: 1.2rem;
+        text-align: left;
+    }
+    .buy-button-shop{
+        padding: .9rem 1.5rem;
+    }
+    .sort-wrapper{
+        width: 100%;
+    }
+    .sort-wrapper select{
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .eb-tab{
+        margin-top: 2rem;
+    }
+    .pagination-button-wrapper{
+        width: 70%;
+    }
+    .second-mobile{
+        margin-top: 3rem!important;
+    }
+    /* Shop men, women tabs style */
+    .shop-card{
+        margin-top: 2rem;
+        height: auto;
+        padding-bottom: 1rem;
+    }
+    .store-heading h1{
+        font-size: 2.5rem;
+        text-align: center;
+        font-weight: 600;
     }
 }
 
