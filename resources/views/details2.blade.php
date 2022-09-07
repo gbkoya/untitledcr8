@@ -84,7 +84,7 @@
                     rerum facilis est et expedita 
                 </div>
                 <div class="mt-4"><button class="mt-5" style="width: 318px;height: 60px;background: #f58634;border-radius: 5px;font-weight: 700;
-                font-size: 20px;line-height: 140%;color: #ffffff; float:right">VIEW CART</button></div>
+                font-size: 20px;line-height: 140%;color: #ffffff; float:right">VIEW CARTs</button></div>
 
             </div>
         </div>
