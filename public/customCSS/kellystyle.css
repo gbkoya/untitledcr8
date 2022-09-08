@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap");
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .errorpage-h1 {
         font-size: 6.5rem;
         margin-left: 2.5rem;
@@ -265,7 +265,7 @@
     padding-bottom: 260.01px;
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
     /* page1 */
     .FirstH1{
         font-size: 35px;
@@ -446,7 +446,7 @@ margin-top: 157.94px;
     margin-left: 2rem;
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .blogpost_firstimg{
         width: 28rem;
         margin-left: 0.7rem;
@@ -494,7 +494,7 @@ margin-top: 157.94px;
     }
 }
 
-/* @media only screen and (max-width: 960px) {
+@media (max-width: 960px) {
     .blogpost_firstimg{
         width: 47rem;
         margin-left: 0.7rem;
@@ -526,7 +526,7 @@ margin-top: 157.94px;
         flex-direction: column;
         margin-left: 5rem;
     }
-} */
+}
 
 
 .formost-cart-first-div{
@@ -816,4 +816,158 @@ width: 226.15px;
     padding-right: 221px;
     text-align: center;
     
+}
+/* Responsiveness */
+@media(max-width: 414px){
+    .FirstDiv{
+        width: 42rem;
+    }
+
+    .next2{
+        width: 30rem;
+    }
+
+    .read-kella-blog{
+        margin-top: 5rem;
+    }
+    body{
+        width: 42rem;
+    }
+}
+
+/* Ipad screen */
+@media(min-width: 540px) and (max-width: 900px){
+    .FirstDiv{
+        width: 43rem;
+    }
+
+    .next2{
+        width: 34rem;
+        margin-left: -1rem;
+    }
+
+    .read-kella-blog{
+        margin-top: 5rem;
+    }
+
+    .thirdtext{
+        width: 30rem;
+    }
+
+    body{
+        width: 43rem;
+    }
+}
+ /* Next hub screen */
+ @media(min-width: 900px) and (max-width: 1280px){
+    .FirstDiv{
+        width: 53rem;
+    }
+
+    .next2{
+        flex-direction: column;
+        height: 50rem;
+        border-radius: 1.1rem;
+        margin-left: 4rem;
+        margin-top: 5rem;
+    }
+
+    .eye{
+        border-radius: 15px 15px 0px 0px;
+    }
+
+    .activeNumberButton,
+    .numberButton2,
+    .numberButton3,
+    .numberButton3{
+        width: 45px;
+        height: 45px;
+        margin-bottom: -5rem;
+    }
+
+    .numberButton4,
+    .numberButton5,
+    .numberButton6,
+    .numberButton7,
+    .numberButton8,
+    .numberButton9,
+    .numberButton0{
+        display: none;
+    }
+
+    .nextButton{
+        padding: 0;
+        font-size: 17px;
+        width: 75px;
+        height: 45px;
+        margin-left: 40rem;
+        float: right;
+        margin-top: -2.5rem;
+        margin-right: -2rem;
+    }
+
+    .dotts{
+        display: none;
+    }
+    body{
+        width: 53rem;
+    }
+}
+ /* Large Screens */
+ @media screen and (min-width: 1500px){
+    .FirstDiv{
+        width: 88.3rem;
+    }
+
+    .next2{
+        margin-left: -4rem;
+        width: 85rem;
+    }
+
+    .buttons{
+        margin-left: -12rem;
+    }
+
+    body{
+        width: 88.3rem;
+    }
+}
+
+@media (max-width:990px) {
+    .FirstDiv{
+        width: 61.9rem;
+    }
+
+    .thirdtext{
+        width: 35rem;
+    }
+
+    .read-kella-blog{
+        margin-top: 3rem;
+    }
+
+    .next2{
+        height: 50rem;
+    }
+
+    body{
+        width: 61.9rem;
+    }
+}
+
+@media (max-width:3200px) {
+    .FirstDiv{
+        width: 98.8rem;
+    }
+
+    .next2{
+        width: 94.8rem;
+    }
+
+    body{
+        width: 98.8rem;
+    }
+    .buttons{
+        margin-left: 0.1rem;
+    }
 }
