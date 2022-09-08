@@ -206,7 +206,8 @@
 
 .shop-card{
     max-width: 18.65rem;
-    height: 59vh;
+    height: auto;
+    padding-bottom: 1rem;
     background: #FFFFFF;
     box-shadow: 0px 20px 24px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
