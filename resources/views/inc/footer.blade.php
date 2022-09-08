@@ -39,16 +39,16 @@
 
                         <ul class="list-unstyled mb-0 fw-lighter">
                             <li class="pb-2">
-                                <a href="#!" class="text-white text-decoration-none" style="font-size:medium;">Vision</a>
+                                <a href="/about" class="text-white text-decoration-none" style="font-size:medium;">Vision</a>
                             </li>
                             <li class="pb-2">
-                                <a href="#!" class="text-white text-decoration-none" style="font-size:medium;">Mission</a>
+                                <a href="/about" class="text-white text-decoration-none" style="font-size:medium;">Mission</a>
                             </li>
                             <li class="pb-2">
-                                <a href="#!" class="text-white text-decoration-none" style="font-size:medium;">Facilities</a>
+                                <a href="/about" class="text-white text-decoration-none" style="font-size:medium;">Facilities</a>
                             </li>
                             <li class="pb-2">
-                                <a href="#!" class="text-white text-decoration-none" style="font-size:medium;">Workforce</a>
+                                <a href="/about" class="text-white text-decoration-none" style="font-size:medium;">Workforce</a>
                             </li>
                          
                         </ul>

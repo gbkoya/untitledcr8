@@ -33,6 +33,10 @@ Route::get('/blog', function () {
     return view('blog.blog');
 });
 
+Route::get('/try-it', function () {
+    return view('tryit');
+});
+
 Route::get('/first-service', function () {
     return view('services.first_service');
 });

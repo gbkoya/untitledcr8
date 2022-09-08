@@ -24,10 +24,10 @@
     class="img-fluid search-shop-image"
     src="{{ asset('customImages/arrow-right.png') }}"/>
         </div>   
-        <div class="d-sm-flex flex-sm-row align-items-center flex-wrap button-wrapper">
+        <div class="d-sm-flex flex-sm-row align-items-center flex-wrap button-wrapper but-wrapper-mobile">
             <a href=""><button class="login" type="button">Log In</button></a>
             <a href=""><button class="signup" type="button">Sign Up</button></a>
-           <a href=""><button class="try-it" type="button">Try it On</button></a>
+           <a href="/try-it"><button class="try-it" type="button">Try it On</button></a>
         </div>
             {{-- <button type="button" class="">
                 <img
@@ -92,7 +92,7 @@
 </section>
 
 {{-- The tabs pills nav --}}
-<div class="">
+<div class="eb-tab">
     <ul class="nav nav-pills nav-pill-head-wrapper mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
         <li class="nav-item nav-but" role="presentation">
           <button class="nav-link pill-button active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Men</button>
@@ -335,10 +335,10 @@
                             4
                         </button>
                         ...
-                        <button class="paginated-first-button second" type="button">
+                        <button class="paginated-first-button second second-mobile" type="button">
                             10
                         </button>
-                        <button class="paginated-first-button second" type="button">
+                        <button class="paginated-first-button second second-mobile" type="button ">
                             Next
                         </button>
                     </div>   

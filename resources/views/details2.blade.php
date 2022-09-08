@@ -11,7 +11,9 @@ landscape.')
 
 @section('content')
 
+
 <!-- search part -->
+
 <div>
     <section class="container-fluid search-background mt-5">
         <div class="container-fluid">
@@ -39,11 +41,13 @@ landscape.')
                         border-radius: 5px;font-weight: 500;font-size: 16px;line-height: 19px;
                         text-align: center;color: #ffffff;">
                         <img src="{{ asset('customImages/buyIcon.png') }}" class='mx-1'>
+
                         CART</button>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- end of search part -->
 
     <section class="container pt-5">
@@ -83,7 +87,7 @@ landscape.')
                 <div style="margin-top:-15px;font-weight: 300;font-size: 15px;line-height: 180%;letter-spacing: -0.01em;color: rgba(0, 0, 0, 0.3);">
                     N9,000
                 </div>
-
+                
 
                 <button class="mt-4" type="button" style="width: 100%;height: 56px;border-radius: 5px;
                 background: #F58634;font-weight: 600;font-size: 20px;line-height: 24px;
@@ -101,6 +105,7 @@ landscape.')
                 </div>
                 <div class="mt-4"><button class="mt-5" style="width: 318px;height: 60px;background: #f58634;border-radius: 5px;font-weight: 700;
                 font-size: 20px;line-height: 140%;color: #ffffff; float:right">VIEW CARTs</button></div>
+
 
             </div>
         </div>
