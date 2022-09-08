@@ -26,7 +26,7 @@
                 <p>How Much Do You Know About Pink Eye?</p>
                 <p class="secondtext">August 2022</p>
                 <p class="thirdtext">Have you ever had pink eye? Conjunctivitis is the inflammation of the conjunctiva, the outer layer of tissue covering the surface of the eyes and the inside of the eyelids....</p>
-                <button class="read">READ MORE</button>
+                <button class="read-kella-blog">READ MORE</button>
             </div>
             </div>
             <!-- 1 -->
@@ -36,7 +36,7 @@
                     <p>How Much Do You Know About Pink Eye?</p>
                     <p class="secondtext">August 2022</p>
                     <p class="thirdtext">Have you ever had pink eye? Conjunctivitis is the inflammation of the conjunctiva, the outer layer of tissue covering the surface of the eyes and the inside of the eyelids....</p>
-                    <button class="read">READ MORE</button>
+                    <button class="read-kella-blog">READ MORE</button>
                 </div>
                 </div> 
                 <!-- 2 -->
@@ -46,7 +46,7 @@
                         <p>How Much Do You Know About Pink Eye?</p>
                         <p class="secondtext">August 2022</p>
                         <p class="thirdtext">Have you ever had pink eye? Conjunctivitis is the inflammation of the conjunctiva, the outer layer of tissue covering the surface of the eyes and the inside of the eyelids....</p>
-                        <button class="read">READ MORE</button>
+                        <button class="read-kella-blog">READ MORE</button>
                     </div>
                     </div>
                     <!-- 3 -->
@@ -57,7 +57,7 @@
                             <p>How Much Do You Know About Pink Eye?</p>
                             <p class="secondtext">August 2022</p>
                             <p class="thirdtext">Have you ever had pink eye? Conjunctivitis is the inflammation of the conjunctiva, the outer layer of tissue covering the surface of the eyes and the inside of the eyelids....</p>
-                            <button class="read">READ MORE</button>
+                            <button class="read-kella-blog">READ MORE</button>
                         </div>
                         </div>
                         <!-- 5 -->
@@ -68,7 +68,7 @@
                                 <p>How Much Do You Know About Pink Eye?</p>
                                 <p class="secondtext">August 2022</p>
                                 <p class="thirdtext">Have you ever had pink eye? Conjunctivitis is the inflammation of the conjunctiva, the outer layer of tissue covering the surface of the eyes and the inside of the eyelids....</p>
-                                <button class="read">READ MORE</button>
+                                <button class="read-kella-blog">READ MORE</button>
                             </div>
                             </div>
                             <!-- 6 -->
@@ -79,7 +79,7 @@
                                     <p>How Much Do You Know About Pink Eye?</p>
                                     <p class="secondtext">August 2022</p>
                                     <p class="thirdtext">Have you ever had pink eye? Conjunctivitis is the inflammation of the conjunctiva, the outer layer of tissue covering the surface of the eyes and the inside of the eyelids....</p>
-                                    <button class="read">READ MORE</button>
+                                    <button class="read-kella-blog">READ MORE</button>
                                 </div>
                                 </div>
                                 <!-- 7 -->
