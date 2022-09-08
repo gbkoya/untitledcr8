@@ -1,0 +1,9 @@
+*{
+    font-family: "inter", sans-serif;
+}
+
+ .e-try-nav{
+    background: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-top: 4rem;
+}

@@ -25,7 +25,7 @@
                     <button class="mx-2" style="margin-top:35px; width: 95px;height: 44px;left: 5px;top: 31px;background: #6B809B;border-radius: 5px;
                         justify-content: center;align-items: center;padding: 12px 24px;gap: 10px;font-weight: 500;font-size: 16px;line-height: 19px;
                         text-align: center;color: #FDFDFD;">Login</button>
-                    <button class="mx-2" style="justify-content: center;align-items: center;padding: 12px 24px;gap: 10px;width: 108px;
+                    <button class="mx-2" style="justify-content: center;align-items: center;padding: 12px 24px;gap: 10px;width: 120px;
                         height: 44px;background: #FFFFFF;border: 1px solid #1F3F95;border-radius: 5px;font-weight: 500;font-size: 16px;line-height: 19px;
                         text-align: center;color: #6B809B;;">Sign Up </button>
                     <button class="mx-2" style="width: 127px;height: 44px;background: #FFFFFF;border: 1px solid #1F3F95;
@@ -60,7 +60,7 @@
             </div>
 
 
-            <div class="col-lg-7 mx-5 mt-5 details-sect-right-ika">
+            <div class="col-lg-6 mx-5 mt-5 details-sect-right-ika">
                 <div  class="pt-4" style="font-weight: 600;font-size: 28px;line-height: 180%;letter-spacing: -0.01em;color: #6B809B;">
                     ₦4,999
                 </div>
