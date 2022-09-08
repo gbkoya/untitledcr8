@@ -110,6 +110,16 @@ ll
 ll
 
 */
+
+/* Final fix style */
+.about-us-margin{
+    margin-top: 6.5rem;
+}
+.glass-margin{
+    margin-top: 6rem!important;
+}
+/* End of final fix style */
+
 @media (min-width: 1198px) {
     .block-display-tab {
         display: flex !important;
