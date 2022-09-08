@@ -12,8 +12,8 @@
 <body>
 <main>
    {{-- Sub nav --}}
-   <section class="shop-hero">
-       <nav class="d-flex flex-row align-items-center flex-wrap container-fluid justify-content-evenly">
+   {{-- <section class="e-try-hero container-fluid"> --}}
+       <nav class="d-flex flex-row align-items-center flex-wrap container-fluid justify-content-evenly e-try-nav">
            {{-- <div class="d-flex flex-row"> --}}
            <div class="row d-sm-flex search-wrapper">
                <input type="search"
@@ -44,7 +44,7 @@
                    </li>
            {{-- </div>  --}}
            </nav>
-   </section>
+   {{-- </section> --}}
 </main>
 {{-- END OF STORE CARD SECTION --}}
 <script type="text/javascript">

@@ -14,72 +14,72 @@
         {{-- Start --}}
         <div class="FirstDiv">
             <h1 class="FirstH1">The Effects Of<br> Screen Use On My<br>Child</h1>
-            <button class="FirstButton">READ MORE</button>
+            <button class="FirstButton" style="margin-top: 14rem">READ MORE</button>
         </div>
         <!-- End of First Div -->
     
         <!-- Second div -->
         <div class="everything">
             <div class="next2">
-            <img src="/customImages/Frame 75.png" class="eye">
+            <img src="/customImages/Frame 75 new.png" class="eye">
             <div class="eyetext">
                 <p>How Much Do You Know About Pink Eye?</p>
                 <p class="secondtext">August 2022</p>
                 <p class="thirdtext">Have you ever had pink eye? Conjunctivitis is the inflammation of the conjunctiva, the outer layer of tissue covering the surface of the eyes and the inside of the eyelids....</p>
-                <button class="read">READ MORE</button>
+                <button class="read-kella-blog">READ MORE</button>
             </div>
             </div>
             <!-- 1 -->
             <div class="next2" style="margin-top: 65.97px;">
-                <img src="/customImages/Frame 75.png" class="eye">
+                <img src="/customImages/Frame 75 new.png" class="eye">
                 <div class="eyetext">
                     <p>How Much Do You Know About Pink Eye?</p>
                     <p class="secondtext">August 2022</p>
                     <p class="thirdtext">Have you ever had pink eye? Conjunctivitis is the inflammation of the conjunctiva, the outer layer of tissue covering the surface of the eyes and the inside of the eyelids....</p>
-                    <button class="read">READ MORE</button>
+                    <button class="read-kella-blog">READ MORE</button>
                 </div>
                 </div> 
                 <!-- 2 -->
                 <div class="next2" style="margin-top: 65.97px;">
-                    <img src="/customImages/Frame 75.png" class="eye">
+                    <img src="/customImages/Frame 75 new.png" class="eye">
                     <div class="eyetext">
                         <p>How Much Do You Know About Pink Eye?</p>
                         <p class="secondtext">August 2022</p>
                         <p class="thirdtext">Have you ever had pink eye? Conjunctivitis is the inflammation of the conjunctiva, the outer layer of tissue covering the surface of the eyes and the inside of the eyelids....</p>
-                        <button class="read">READ MORE</button>
+                        <button class="read-kella-blog">READ MORE</button>
                     </div>
                     </div>
                     <!-- 3 -->
     
                     <div class="next2" style="margin-top: 65.97px;">
-                        <img src="/customImages/Frame 75.png" class="eye">
+                        <img src="/customImages/Frame 75 new.png" class="eye">
                         <div class="eyetext">
                             <p>How Much Do You Know About Pink Eye?</p>
                             <p class="secondtext">August 2022</p>
                             <p class="thirdtext">Have you ever had pink eye? Conjunctivitis is the inflammation of the conjunctiva, the outer layer of tissue covering the surface of the eyes and the inside of the eyelids....</p>
-                            <button class="read">READ MORE</button>
+                            <button class="read-kella-blog">READ MORE</button>
                         </div>
                         </div>
                         <!-- 5 -->
     
                         <div class="next2" style="margin-top: 65.97px;">
-                            <img src="/customImages/Frame 75.png" class="eye">
+                            <img src="/customImages/Frame 75 new.png" class="eye">
                             <div class="eyetext">
                                 <p>How Much Do You Know About Pink Eye?</p>
                                 <p class="secondtext">August 2022</p>
                                 <p class="thirdtext">Have you ever had pink eye? Conjunctivitis is the inflammation of the conjunctiva, the outer layer of tissue covering the surface of the eyes and the inside of the eyelids....</p>
-                                <button class="read">READ MORE</button>
+                                <button class="read-kella-blog">READ MORE</button>
                             </div>
                             </div>
                             <!-- 6 -->
     
                             <div class="next2" style="margin-top: 65.97px;">
-                                <img src="/customImages/Frame 75.png" class="eye">
+                                <img src="/customImages/Frame 75 new.png" class="eye">
                                 <div class="eyetext">
                                     <p>How Much Do You Know About Pink Eye?</p>
                                     <p class="secondtext">August 2022</p>
                                     <p class="thirdtext">Have you ever had pink eye? Conjunctivitis is the inflammation of the conjunctiva, the outer layer of tissue covering the surface of the eyes and the inside of the eyelids....</p>
-                                    <button class="read">READ MORE</button>
+                                    <button class="read-kella-blog">READ MORE</button>
                                 </div>
                                 </div>
                                 <!-- 7 -->
