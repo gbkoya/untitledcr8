@@ -7,3 +7,50 @@
     width: 100%;
     margin-top: 4rem;
 }
+.i-try-head{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 54px;
+    /* identical to box height */
+    
+    
+    color: #000000;
+    align-items: center;
+    text-align: center;
+    
+}
+.i-try-img{
+background: rgba(189, 189, 189, 0.2);
+border-radius: 5px;
+
+
+}
+.i-try-head2{
+width: 675px;
+height: 54px;
+left: 292px;
+top: 407px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 36px;
+line-height: 54px;
+
+color: #000000;
+justify-content: center;
+
+
+}
+.i-try-button{
+ background: #F58634;
+border-radius: 40px;
+padding: 0.5rem 1rem;
+color: #ffff;
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 36px;
+}
