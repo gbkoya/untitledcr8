@@ -1,4 +1,7 @@
 /* SHOP MEN STYLES */
+*{
+    font-family: 'inter', sans-serif;
+}
 /* Hero sction */
 .shop-hero{
     background-image: url("../customImages/shop-men-hero.png"); 

@@ -46,6 +46,9 @@
     <link rel="stylesheet" href="/customCSS/kellystyle.css">
     <link rel="stylesheet" href="/customCSS/gallerystyle.css">
     <link rel="stylesheet" href="/customCSS/shop_styles.css">
+    <link rel="stylesheet" href="/customCSS/shop_styles.css">
+    <link rel="stylesheet" href="/customCSS/tryit_styles.css">
+
 
 
 
