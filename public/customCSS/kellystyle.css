@@ -186,14 +186,15 @@
     line-height: 25px;
 }
 
-.read{
+.read-kella-blog{
     background-color: #F58634;
     color: #FFFFFF;
     padding: 7.06px 57.18px;
     border: none;
     border-radius: 4.41231px;
     font-size: 15.7894px;
-    margin-top: 10rem;
+    margin-top: 1rem;
+    background-color: #F58634;
 }
 .everything{
     padding-top:110px;
@@ -300,8 +301,8 @@
         width: 18rem;
     }
 
-    .read{
-        margin-top: -1rem;
+    .read-kella-blog{
+        margin-bottom: 3rem;
     }
     .eye{
         border-radius: 15px 15px 0px 0px;
@@ -775,6 +776,7 @@ width: 226.15px;
   }
 
   .k-label{
+  /*label {
     /*blue*/
     border:1px solid #F58634;
     color: #000000;
@@ -785,8 +787,7 @@ width: 226.15px;
   
   label:hover,
   input[type="radio"]:checked+label {
-    /*green*/
-    background-color: #F58634;
+   background-color: #F58634;
     color: #FFFFFF;
   }
   
