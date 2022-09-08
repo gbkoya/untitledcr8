@@ -40,7 +40,7 @@
                 <img
                 src="{{ asset('customImages/buyIcon.png') }}"
                 />
-                CART
+               ADD
             </button>
         </li>
 {{-- </div>  --}}
@@ -126,7 +126,7 @@
                                 <img
                                 src="{{ asset('customImages/buyIcon.png') }}"
                                 />
-                                CART
+                                ADD
                             </button>
                         </div>
                     </div>
@@ -149,7 +149,7 @@
                                 <img
                                 src="{{ asset('customImages/buyIcon.png') }}"
                                 />
-                                CART
+                               ADD
                             </button>
                         </div>
                     </div>
@@ -172,7 +172,7 @@
                                 <img
                                 src="{{ asset('customImages/buyIcon.png') }}"
                                 />
-                                CART
+                               ADD
                             </button>
                         </div>
                     </div>
@@ -195,7 +195,7 @@
                                 <img
                                 src="{{ asset('customImages/buyIcon.png') }}"
                                 />
-                                CART
+                               ADD
                             </button>
                         </div>
                     </div>
@@ -245,7 +245,7 @@
                                 <img
                                 src="{{ asset('customImages/buyIcon.png') }}"
                                 />
-                                CART
+                               ADD
                             </button>
                         </div>
                     </div>
@@ -268,7 +268,7 @@
                                 <img
                                 src="{{ asset('customImages/buyIcon.png') }}"
                                 />
-                                CART
+                               ADD
                             </button>
                         </div>
                     </div>
@@ -291,7 +291,7 @@
                                 <img
                                 src="{{ asset('customImages/buyIcon.png') }}"
                                 />
-                                CART
+                               ADD
                             </button>
                         </div>
                     </div>
@@ -314,7 +314,7 @@
                                 <img
                                 src="{{ asset('customImages/buyIcon.png') }}"
                                 />
-                                CART
+                               ADD
                             </button>
                         </div>
                     </div>
@@ -364,7 +364,7 @@
                                 <img
                                 src="{{ asset('customImages/buyIcon.png') }}"
                                 />
-                                CART
+                               ADD
                             </button>
                         </div>
                     </div>
@@ -387,7 +387,7 @@
                                 <img
                                 src="{{ asset('customImages/buyIcon.png') }}"
                                 />
-                                CART
+                               ADD
                             </button>
                         </div>
                     </div>
@@ -410,7 +410,7 @@
                                 <img
                                 src="{{ asset('customImages/buyIcon.png') }}"
                                 />
-                                CART
+                               ADD
                             </button>
                         </div>
                     </div>
@@ -433,7 +433,7 @@
                                 <img
                                 src="{{ asset('customImages/buyIcon.png') }}"
                                 />
-                                CART
+                                ADD
                             </button>
                         </div>
                     </div>

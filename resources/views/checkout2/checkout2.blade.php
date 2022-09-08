@@ -33,9 +33,9 @@
         <div class="row">
 <div class="column">
 <input type="radio" name="groupA" id="T35"  class="pickup-checkout1" />
-<label for="T35" @onclick="() => UpdateTheChart(11)" class="pickuplabel-checkout1">Pick Up</label>
+<label class="k-label" for="T35" @onclick="() => UpdateTheChart(11)" class="pickuplabel-checkout1">Pick Up</label>
 <input type="radio" name="groupA" id="T36"  class="delivery-checkout1" />
-<label for="T36" @onclick="() => UpdateTheChart(12)"  class="deliverylabel-checkout1">Delivery</label>
+<label class="k-label" for="T36" @onclick="() => UpdateTheChart(12)"  class="deliverylabel-checkout1">Delivery</label>
 </div>
 </div>
 <!--  -->

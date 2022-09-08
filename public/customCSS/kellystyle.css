@@ -771,9 +771,14 @@ width: 226.15px;
     flex-direction: column;
   }
   
+  label {
+
+  }
+
+  .k-label{
   /*label {
     /*blue*/
-/*border:1px solid #F58634;
+    border:1px solid #F58634;
     color: #000000;
     cursor: pointer;
     font-weight: bold;
@@ -782,10 +787,9 @@ width: 226.15px;
   
   label:hover,
   input[type="radio"]:checked+label {
-    /*green*/
-   /* background-color: #F58634;
+   background-color: #F58634;
     color: #FFFFFF;
-  }*/
+  }
   
   input[type="radio"] {
     display: none;

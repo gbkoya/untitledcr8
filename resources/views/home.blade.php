@@ -86,7 +86,7 @@
 
 
     <section
-        class="mt-5 d-flex flex-flow flex-wrap justify-content-center align-items-center
+        class="about-us-margin d-flex flex-flow flex-wrap justify-content-center align-items-center
                 block-display-tab experience-body-with-pix-mobile eyecare-image-section">
         <div class="archwarejo-width-top">
             <img class="img-fluid image-width-tab p-5 archwarejo-image-fully-bottom image-padding-buttom"
@@ -123,7 +123,7 @@
         </div>
     </section>
 
-    <section class="my-3 py-3">
+    <section class="about-us-margin">
         <div class="container justify-content-center">
             <div class="row">
                 <h2 class="medium-title text-title-mobile">
@@ -190,7 +190,7 @@
         </div>
     </section>
 
-    <section class="container-fluid hero-section need-glass-back-img">
+    <section class="container-fluid hero-section glass-margin need-glass-back-img">
         <div class="hero-section-copy">
             <h1>Need glasses fast?</h1>
             <p>
@@ -207,7 +207,7 @@
     </section>
 
 
-    <section class="my-3 py-3">
+    <section class="about-us-margin">
         <div class="container justify-content-center">
             <div class="row">
                 <h2 class="medium-title text-title-mobile">
@@ -279,7 +279,7 @@
     </div>
 
     {{-- Custom Gallery for Foremost start --}}
-    <section class="my-3 py-3">
+    <section class="glass-margin">
         <div class="container justify-content-center">
             <div class="row">
                 <h2 class="medium-title text-title-mobile">
@@ -345,7 +345,7 @@
 
 
     {{-- TESTIMONIALS SECTION --}}
-    <section class="testimonial container-fluid">
+    <section class="testimonial about-us-margin container-fluid">
         <div class="text-center">
             <h1>Testimonials</h1>
             <h6>What Do People Have To Say About Us? </h6>
