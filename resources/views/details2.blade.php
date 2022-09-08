@@ -52,12 +52,12 @@ landscape.')
 
     <!-- end of search part -->
 
-    <!--<section class="d-flex flex-row flex-wrap container pt-5">
+<!--<section class="d-flex flex-row flex-wrap container pt-5">
         <div class=" col-lg-5">
             <div class="col">
 
                 <!-- carousel -->
-        <!--        <div>
+<!--        <div>
                     <div class="slideshow-container">
                         <div class="mySlides fade">
                             <img class="img-fluid image-size-middle-ika" src="{{ asset('customImages/Frame 93.png') }}" alt="">
@@ -117,7 +117,7 @@ landscape.')
                 </div>
             </div>
             <!-- carousel -->
-           <!-- <div class="pt-4" style="font-weight: 700;font-size: 24px;line-height: 140%;color: #6B809B;">
+<!-- <div class="pt-4" style="font-weight: 700;font-size: 24px;line-height: 140%;color: #6B809B;">
                 Anti blu ray radiation, computer glasses</div>
             <button class="mt-3" style="font-weight: 500;font-size: 16px;line-height: 19px;color: #FFFFFF;
                 width: 119px;height: 45px;background: #F58634;border-radius: 5px;"> TRY IT ON</button>

@@ -49,6 +49,14 @@ Route::get('/blog-post', function () {
     return view('blog_post.first_blog_post');
 });
 
+Route::get('/pay-with-card', function () {
+    return view('pay-with-card');
+});
+
+Route::get('/checkout3', function () {
+    return view('checkout3');
+});
+
 Route::get('/test', function () {
     return view('errors.test');
 });
