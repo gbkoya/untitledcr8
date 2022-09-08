@@ -771,6 +771,10 @@ width: 226.15px;
   }
   
   label {
+
+  }
+
+  .k-label{
     /*blue*/
     border:1px solid #F58634;
     color: #000000;
