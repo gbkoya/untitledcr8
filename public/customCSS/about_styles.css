@@ -16,6 +16,7 @@
 }
 
 .hero-section-copy{
+    margin: 0 auto;
 }
 
 .hero-section-copy h1{
@@ -29,7 +30,7 @@
 }
 
 .hero-section-copy p{
-    max-width: 37.8125rem;
+    /* max-width: 37.8125rem; */
     font-style: normal;
     font-weight: 400;
     font-size: 1.5rem;

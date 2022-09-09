@@ -58,13 +58,15 @@
     class="e-abouts-home-right">
     <h2 class="text-top-about-us">About Us</h2>
     <p class="text-white-paragraph">
-        Foremost Eye Clinic is one of the most prestigious eye care centers in Africa. We offer innovative eye care
-        solutions, and quality services to our clients through cutting-edge technologies and excellent service
-        delivery. thereby enhancing their long-term vision and productivity.
+        Foremost International Eye Clinic is one of the most prestigious eye care centers in Africa.
+         We offer innovative eye care solutions, and quality services to our clients through cutting-edge 
+         technologies and excellent service delivery. thereby enhancing their long-term vision and
+        productivity.
     </p>
     <p class="text-white-paragraph">
-        We offer a complete range of treatments including vision correction surgeries, comprehensive eye
-        examinations, health awareness programs, contact lens services, and many more.
+        We offer a complete range of treatments including vision correction surgeries,
+         comprehensive eye examinations, 
+        health awareness programs, contact lens services, and many more.
     </p>
     <p class="text-white-paragraph">
         Our optometrists and ophthalmic assistants are experts in their fields, possessing many years of experience
@@ -154,14 +156,14 @@
     
         {{-- NEED GLASS SECTION --}}
         <section class="container-fluid hero-section glass-margin need-glass-back-img">
-            <div class="hero-section-copy">
+            <div class="hero-section-copy text-center">
                 <h1>Need glasses fast?</h1>
                 <p>
-                    Get single-vision prescription glasses in 3-5 business days with new Fast Frame
+                    Get the Best Single Vision Prescription Glasses in 3-5 Business Days at an Affordable Rate.
                 </p>
     
                 <a href="/shop">
-                <button type="button" class="small-mobile-long-button foremost-button-border">
+                <button type="button" class="small-mobile-long-button button-margin-top foremost-button-border">
                     <img src="{{ asset('customImages/buyIcon.png') }}" />
                     Buy Now
                 </button>
@@ -240,6 +242,47 @@
                 </div>
             </div>
         </div>
+
+        {{-- Custom Gallery for Foremost start --}}
+        {{-- <section class="container-fluid"> --}}
+                        {{-- <h2 class="medium-title text-title-mobile">
+                            Our Gallery
+                        </h2> --}}
+
+
+                            {{-- <div class="j-gallery-slider d-flex" id="slider">
+                                <div class="j-gallery-slide" id="j-gallery-slide-left">
+                                    <div class="j-gallery-slide-holder">
+                                        <div class="j-gallery-slide-bg j-gallery-bg-previous"></div>
+                                        <div class="j-gallery-slide-bg j-gallery-bg-current"></div>
+                                        <div class="j-gallery-slide-bg j-gallery-bg-next"></div>
+                                    </div>
+                                </div>
+                                <div class="j-gallery-slide" id="j-gallery-slide-center">
+                                    <div class="j-gallery-slide-holder">
+                                        <div class="j-gallery-slide-bg j-gallery-bg-previous"></div>
+                                        <div class="j-gallery-slide-bg j-gallery-bg-current"></div>
+                                        <div class="j-gallery-slide-bg j-gallery-bg-next"></div>
+                                    </div>
+                                </div>
+                                <div class="j-gallery-slide" id="j-gallery-slide-right">
+                                    <div class="j-gallery-slide-holder">
+                                        <div class="j-gallery-slide-bg j-gallery-bg-previous"></div>
+                                        <div class="j-gallery-slide-bg j-gallery-bg-current"></div>
+                                        <div class="j-gallery-slide-bg j-gallery-bg-next"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="j-gallery-arrow" href="#" id="j-gallery-left-arrow">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </a>
+                            <a class="j-gallery-arrow" href="#" id="j-gallery-right-arrow">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a> --}}
+                        {{-- </div> --}}
+        {{-- </section> --}}
+  
+
     
   {{-- TESTIMONIALS SECTION --}}
   <section class="testimonial glass-margin container-fluid">
