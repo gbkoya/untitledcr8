@@ -761,7 +761,7 @@ width: 226.15px;
 }
 
 /* start here */
-.row {
+/* .row {
     display: flex;
     gap: 1rem;
   }
@@ -769,7 +769,7 @@ width: 226.15px;
   .column {
     display: flex;
     flex-direction: column;
-  }
+  } */
   
   label {
 
