@@ -817,3 +817,13 @@ width: 226.15px;
     text-align: center;
     
 }
+
+/* Iphone or mobile */
+@media(max-width: 400px){
+
+}
+
+/* Ipad */
+@media(min-width: 600px) and (max-width: 900px){
+    
+}
