@@ -14,7 +14,7 @@
      {{-- HERO SECTION --}}
      <section class="container-fluid hero-section">
         {{-- <img src="customImages/heroImage.png" alt="heroImage"> --}}
-        <div class="hero-section-copy container-xxl col-lg-7" style="text-align:center;">
+        <div class="hero-section-copy container-xxl col-lg-7" style="">
             <h1>Your Experience is<br> Our Top Priority</h1>
             <p>We are focused on providing world class eye care services through the deployment
                 of cutting edge technologies and empathetic but highly professional workforce 
@@ -335,7 +335,7 @@
                 <img class="img-fluid" src="{{ asset('customImages/Vector.svg') }}">
             </button> --}}
             <button class="carousel-control-next" type="button" data-bs-target="#demoTwo" data-bs-slide="next">
-                <img class="img-fluid" src="{{ asset('customImages/Vector (1).svg') }}">
+                <img class="img-fluid" src="{{ asset('customImages/testimonial-right-arrow.png') }}">
                 <!-- <span class="carousel-control-next-icon"></span> -->
             </button>
         </div>

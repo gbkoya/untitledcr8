@@ -10,26 +10,17 @@
 @section('image'){{ asset('customImages/Logo.svg') }}@stop
 
 @section('content')
-   <!-- First Div -->
-   <div class="FirstDiv-kell">
-    <h1 class="FirstH1-kell">The Effects Of<br> Screen Use On My<br>Child</h1>
-    <button class="FirstButton-kell">READ MORE</button>
-</div>
-<!-- End of First Div -->
+<body>
+       <!-- First Div -->
+       <div class="FirstDiv-kell">
+        <h1 class="FirstH1-kell">The Effects Of<br> Screen Use On My<br>Child</h1>
+        <button class="FirstButton-kell">READ MORE</button>
+    </div>
+    <!-- End of First Div -->
 
-<!-- Second div -->
-<div class="everything-kell">
-    <div class="next2">
-    <img src="Frame 75.png" class="eye">
-    <div class="eyetext">
-        <p>How Much Do You Know About Pink Eye?</p>
-        <p class="secondtext">August 2022</p>
-        <p class="thirdtext-kell">Have you ever had pink eye? Conjunctivitis is the inflammation of the conjunctiva, the outer layer of tissue covering the surface of the eyes and the inside of the eyelids....</p>
-        <button class="read-more-kell">READ MORE</button>
-    </div>
-    </div>
-    <!-- 1 -->
-    <div class="next2" style="margin-top: 65.97px;">
+    <!-- Second div -->
+    <div class="everything-kell">
+        <div class="next2">
         <img src="Frame 75.png" class="eye">
         <div class="eyetext">
             <p>How Much Do You Know About Pink Eye?</p>
@@ -37,8 +28,8 @@
             <p class="thirdtext-kell">Have you ever had pink eye? Conjunctivitis is the inflammation of the conjunctiva, the outer layer of tissue covering the surface of the eyes and the inside of the eyelids....</p>
             <button class="read-more-kell">READ MORE</button>
         </div>
-        </div> 
-        <!-- 2 -->
+        </div>
+        <!-- 1 -->
         <div class="next2" style="margin-top: 65.97px;">
             <img src="Frame 75.png" class="eye">
             <div class="eyetext">
@@ -47,9 +38,8 @@
                 <p class="thirdtext-kell">Have you ever had pink eye? Conjunctivitis is the inflammation of the conjunctiva, the outer layer of tissue covering the surface of the eyes and the inside of the eyelids....</p>
                 <button class="read-more-kell">READ MORE</button>
             </div>
-            </div>
-            <!-- 3 -->
-
+            </div> 
+            <!-- 2 -->
             <div class="next2" style="margin-top: 65.97px;">
                 <img src="Frame 75.png" class="eye">
                 <div class="eyetext">
@@ -59,7 +49,7 @@
                     <button class="read-more-kell">READ MORE</button>
                 </div>
                 </div>
-                <!-- 5 -->
+                <!-- 3 -->
 
                 <div class="next2" style="margin-top: 65.97px;">
                     <img src="Frame 75.png" class="eye">
@@ -70,7 +60,7 @@
                         <button class="read-more-kell">READ MORE</button>
                     </div>
                     </div>
-                    <!-- 6 -->
+                    <!-- 5 -->
 
                     <div class="next2" style="margin-top: 65.97px;">
                         <img src="Frame 75.png" class="eye">
@@ -81,25 +71,37 @@
                             <button class="read-more-kell">READ MORE</button>
                         </div>
                         </div>
-                        <!-- 7 -->
+                        <!-- 6 -->
 
-                        <div class="buttons-kell">
-                            <button class="activeNumberButton">1</button>
-                            <button class="numberButton2">2</button>
-                            <button class="numberButton3">3</button>
-                            <button class="numberButton4">4</button>
-                            <button class="numberButton5">5</button>
-                            <button class="numberButton6">6</button>
-                            <button class="numberButton7">7</button>
-                            <button class="numberButton8">8</button>
-                            <button class="numberButton9">9</button> 
-                            <button class="numberButton0" style="margin-left: 49.29px;">50</button>
-                            <button class="nextButton">Next</button>   
-                            <p class="dotts">...</p>                            
-                        </div>
+                        <div class="next2" style="margin-top: 65.97px;">
+                            <img src="Frame 75.png" class="eye">
+                            <div class="eyetext">
+                                <p>How Much Do You Know About Pink Eye?</p>
+                                <p class="secondtext">August 2022</p>
+                                <p class="thirdtext-kell">Have you ever had pink eye? Conjunctivitis is the inflammation of the conjunctiva, the outer layer of tissue covering the surface of the eyes and the inside of the eyelids....</p>
+                                <button class="read-more-kell">READ MORE</button>
+                            </div>
+                            </div>
+                            <!-- 7 -->
 
-    </div>
-<!-- End of Second Div -->
+                            <div class="buttons-kell">
+                                <button class="activeNumberButton">1</button>
+                                <button class="numberButton2">2</button>
+                                <button class="numberButton3">3</button>
+                                <button class="numberButton4">4</button>
+                                <button class="numberButton5">5</button>
+                                <button class="numberButton6">6</button>
+                                <button class="numberButton7">7</button>
+                                <button class="numberButton8">8</button>
+                                <button class="numberButton9">9</button> 
+                                <button class="numberButton0" style="margin-left: 49.29px;">50</button>
+                                <button class="nextButton">Next</button>   
+                                <p class="dotts">...</p>                            
+                            </div>
+
+        </div>
+    <!-- End of Second Div -->
+</body>
 
     <script type="text/javascript"></script>
 

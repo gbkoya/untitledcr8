@@ -242,45 +242,6 @@
                 </div>
             </div>
         </div>
-
-        {{-- Custom Gallery for Foremost start --}}
-        {{-- <section class="container-fluid"> --}}
-                        {{-- <h2 class="medium-title text-title-mobile">
-                            Our Gallery
-                        </h2> --}}
-
-
-                            {{-- <div class="j-gallery-slider d-flex" id="slider">
-                                <div class="j-gallery-slide" id="j-gallery-slide-left">
-                                    <div class="j-gallery-slide-holder">
-                                        <div class="j-gallery-slide-bg j-gallery-bg-previous"></div>
-                                        <div class="j-gallery-slide-bg j-gallery-bg-current"></div>
-                                        <div class="j-gallery-slide-bg j-gallery-bg-next"></div>
-                                    </div>
-                                </div>
-                                <div class="j-gallery-slide" id="j-gallery-slide-center">
-                                    <div class="j-gallery-slide-holder">
-                                        <div class="j-gallery-slide-bg j-gallery-bg-previous"></div>
-                                        <div class="j-gallery-slide-bg j-gallery-bg-current"></div>
-                                        <div class="j-gallery-slide-bg j-gallery-bg-next"></div>
-                                    </div>
-                                </div>
-                                <div class="j-gallery-slide" id="j-gallery-slide-right">
-                                    <div class="j-gallery-slide-holder">
-                                        <div class="j-gallery-slide-bg j-gallery-bg-previous"></div>
-                                        <div class="j-gallery-slide-bg j-gallery-bg-current"></div>
-                                        <div class="j-gallery-slide-bg j-gallery-bg-next"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="j-gallery-arrow" href="#" id="j-gallery-left-arrow">
-                                <i class="fa-solid fa-arrow-left"></i>
-                            </a>
-                            <a class="j-gallery-arrow" href="#" id="j-gallery-right-arrow">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a> --}}
-                        {{-- </div> --}}
-        {{-- </section> --}}
   
 
     {{-- GALLERY SECTION --}}

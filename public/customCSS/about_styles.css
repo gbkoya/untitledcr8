@@ -17,6 +17,7 @@
 
 .hero-section-copy{
     margin: 0 auto;
+    text-align: center;
 }
 
 .hero-section-copy h1{
@@ -24,7 +25,7 @@
     font-weight: 800;
     font-size: 4rem;
     line-height: 109%;
-    letter-spacing: -3px;
+    /* letter-spacing: 5px; */
     text-transform: capitalize;
     color: #FFFFFF;
 }
@@ -336,7 +337,7 @@
         padding-right: 1rem;
     }
     .why-choose-left h1 {
-        font-size: 3rem;
+        font-size: 2.25rem;
     }
     .why-choose-left p {
         font-size: 1rem;
@@ -444,11 +445,20 @@
         padding-bottom: 4rem;
     }
     .workforce h1{
-        font-size: 3rem;
+        font-size: 2.25rem;
+    }
+    .workforce h6{
+        font-size: 1.2rem;
     }
     .avatars{
         display: flex;
         flex-direction: column;
+    }
+    .avatar-child h3{
+        font-size: 1.2rem;
+    }
+    .avatar-child p{
+        font-size: 1rem;
     }
 }
 @media(min-width: 601px) and (max-width: 900px){
