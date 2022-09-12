@@ -5,11 +5,11 @@
    
   }
 
-.king{
+.i-login-backg{
   background: #FFFFFF;
   border-radius: 5.22082px;
 }
-.login{
+.i-login-head{
   font-weight: 500;
   font-size: 28px;
   line-height: 34px;
@@ -50,13 +50,11 @@ border-radius: 0.25rem;
 
 
 
-.gin{
-  margin-left:50px;
-}
-.check{
+
+.i-login-check{
   border: 3.93287px solid #F58634;border-radius: 9.4389px;width: 31.46px;height: 31.46px;
 }
-.Remember {
+.i-login-remember {
 font-weight: 600;
 font-size: 18.7396px;
 line-height: 20px;
@@ -68,7 +66,7 @@ border: none;
 .Remember:hover{
     background-color: #F58634 !important;
 }
-.button-ika{
+.i-login-button{
     max-width: 360px;
     height: 56px;
     background: #F58634;
@@ -396,10 +394,9 @@ max-height: 700px !important;
     transition: background-color 0.6s ease;
   }
   
-  .active, .dot:hover {
-    background-color: #717171;
-  }
-  
+  /* .active, .dot:hover { */
+    /* background-color: #717171; */
+  /* } */
   /* Fading animation */
   .fade {
     animation-name: fade;
@@ -410,3 +407,22 @@ max-height: 700px !important;
     from {opacity: 1}
     to {opacity: 0.6}
   }
+
+
+
+
+
+
+
+
+  /* gbolahan */
+  @media (max-width:990px) {
+    .small-screen-font{
+      font-size: 15px !important;
+    }
+
+    .small-screen-font-big{
+      font-size: 23px !important;
+    }
+  }
+  

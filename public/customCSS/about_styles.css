@@ -17,6 +17,7 @@
 
 .hero-section-copy{
     margin: 0 auto;
+    text-align: center;
 }
 
 .hero-section-copy h1{
@@ -24,7 +25,7 @@
     font-weight: 800;
     font-size: 4rem;
     line-height: 109%;
-    letter-spacing: -3px;
+    /* letter-spacing: 5px; */
     text-transform: capitalize;
     color: #FFFFFF;
 }
@@ -107,25 +108,24 @@
     /* mobile screen */
     @media(max-width: 540px){
         .hero-section{
-            padding-left: 1rem;
-            padding-right: 1rem;
+            padding: 3rem 1rem;
         }
 
         .hero-section-copy{
-            padding-left: 0;
-            margin-top: -7.5rem;
+            /* padding-left: 0; */
+            text-align: center!important;
         }
 
         .hero-section-copy h1{
             font-size: 2.5rem;
-            text-align: left;
+            text-align: center;
             line-height: 150%;
             letter-spacing: -1px;
         }
 
         .hero-section-copy p{
             font-size: 1.3rem;
-            text-align: left;
+            text-align: center;
             letter-spacing: -1px;
         }
 
@@ -185,6 +185,9 @@
 
     /* Ipad screen */
     @media(min-width: 540px) and (max-width: 900px){
+        .hero-section{
+            padding: 3rem 1rem;
+                }
         .vision-wrapper img{
             width: 100%;
         }
@@ -334,7 +337,7 @@
         padding-right: 1rem;
     }
     .why-choose-left h1 {
-        font-size: 3rem;
+        font-size: 2.25rem;
     }
     .why-choose-left p {
         font-size: 1rem;
@@ -442,11 +445,20 @@
         padding-bottom: 4rem;
     }
     .workforce h1{
-        font-size: 3rem;
+        font-size: 2.25rem;
+    }
+    .workforce h6{
+        font-size: 1.2rem;
     }
     .avatars{
         display: flex;
         flex-direction: column;
+    }
+    .avatar-child h3{
+        font-size: 1.2rem;
+    }
+    .avatar-child p{
+        font-size: 1rem;
     }
 }
 @media(min-width: 601px) and (max-width: 900px){
@@ -524,11 +536,12 @@
 /* Responsive style */
  @media(max-width: 414px){
     .testimonial h1{
-        font-size: 3rem;
+        font-size: 2.25rem;
     }
     .testimonial h6{
         padding-left: 1rem;
         padding-right: 1rem;
+        font-size: 1.3rem;
     }
  }
 
@@ -542,6 +555,7 @@
 /* CONTACT US SECTION */
 .contact-us-wrapper{
     margin-top: 6rem;
+    margin-bottom: 6rem;
 }
 
 .contact-us-wrapper h1{
@@ -666,7 +680,7 @@
     }
 
     .contact-us-wrapper .e-contact-heading{
-        font-size: 3rem!important;
+        font-size: 2.25rem!important;
         margin-top: -2rem;
     }
     .contact-form-section{
@@ -682,6 +696,7 @@
 
     .contact-form-section-child h3{
         line-height: 110%!important;
+        font-size: 1.8rem;
         /* letter-spacing: 5em; */
     }
 
