@@ -20,3 +20,23 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::post('contactus/message', [App\Http\Controllers\ContactusController::class, 'store'])->name('contact.message');
+
+Route::post('subscribe', [App\Http\Controllers\ContactusController::class, 'subscribe'])->name('subscribe');
+
+Route::post('/auth/register', [AuthController::class, 'createUser']);
+Route::post('/auth/login', [AuthController::class, 'loginUser'])->name('login');
+
+Route::get('auth/google', [GoogleSocialiteController::class, 'redirectToGoogle']);
+Route::get('callback/google', [GoogleSocialiteController::class, 'handleCallback']);
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/me', function (Request $request) {
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Your name is: '.auth()->user()->name
+        ], 200);
+    });
+
+    Route::post('/auth/logout', [AuthController::class, 'logout']);
+});
