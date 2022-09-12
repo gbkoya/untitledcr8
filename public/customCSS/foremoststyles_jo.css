@@ -79,10 +79,59 @@
     line-height: 28.5px;
     color: rgba(0, 0, 0, 0.5);
 }
-
-.eyecare-image-section {
+/* ABOUT US SECTION */
+.e-aboutus-home {
     background-image: url("../customImages/about-us\ background.png");
+    height: auto;
+    padding-right: 6rem;
 }
+
+.e-aboutus-home .e-abouts-home-right{
+    max-width: 35rem;
+}
+.e-aboutus-img{
+    width: 40%;
+    margin-left: -2rem;
+}
+
+/* Mobile responsive */
+@media(max-width: 414px){
+    .e-aboutus-img{
+        display: none;
+    }
+    .e-aboutus-home .e-abouts-home-right{
+        width: 100%;
+    }
+    .e-aboutus-home .e-abouts-home-right h2{
+        font-size: 2.5rem!important;
+    }
+    .e-aboutus-home .e-abouts-home-right p{
+
+    }
+    .e-aboutus-home{
+        padding: 1rem;
+    }
+}
+
+/* Ipad screen */
+@media(min-width: 500px) and (max-width: 900px){
+    .e-aboutus-img{
+        display: none;
+    }
+    .e-aboutus-home .e-abouts-home-right{
+        width: 100%!important;
+    }
+    .e-aboutus-home{
+        padding: 1rem!important;
+    }
+    .e-abouts-home-right p{
+        font-size: 1rem;
+        text-align: justify!important;
+    }
+}
+/* END OF ABOUT US SECTION */
+
+
 
 .navbar-nav li:hover > ul.dropdown-menu {
     display: block;
@@ -110,6 +159,16 @@ ll
 ll
 
 */
+
+/* Final fix style */
+.about-us-margin{
+    margin-top: 6.5rem;
+}
+.glass-margin{
+    margin-top: 6rem!important;
+}
+/* End of final fix style */
+
 @media (min-width: 1198px) {
     .block-display-tab {
         display: flex !important;
@@ -430,4 +489,9 @@ ll
     color: #ffffff;
     margin-left: auto;
     margin-right: 0;
+}
+
+/* FINAL FIX EBUKA CSS */
+.button-margin-top{
+    margin-top: 2rem;
 }
