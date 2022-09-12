@@ -13,11 +13,11 @@ landscape.')
 
 
 
-<div class="log card justify-content-center mt-5">
+<div class="login-ik card justify-content-center mt-5">
   <div class="container my-5 py-5">
-    <div class="container col-lg-5 col-md-7 my-5 py-5 king">
+    <div class="container col-lg-5 col-md-7 my-5 py-5 i-login-backg">
 
-      <h2 class="login">Log In</h2>
+      <h2 class="i-login-head">Log In</h2>
       <form>
         <div class="mb-3 pt-5 px-3">
           <div class="d-flex" style="background-color: #f3efef" ; margin-top="10%">
@@ -35,13 +35,13 @@ landscape.')
 
         <div class="mb-3 form-check pt-4">
           <div class="d-flex flex-row justify-content-center">
-            <input type="checkbox" class="check form-check-input" id="exampleCheck1"> </input>
-            <label class="Remember form-check-label pt-2 px-2" for="exampleCheck1">Remember Me</label>
+            <input type="checkbox" class="i-login-check form-check-input" id="exampleCheck1"> </input>
+            <label class="i-login-remember form-check-label pt-2 px-2" for="exampleCheck1">Remember Me</label>
           </div>
         </div>
         <div class="row justify-content-center py-5">
           
-          <button type="submit" class="button-ika ">SIgn In</button>
+          <button type="submit" class="i-login-button ">SIgn In</button>
         </div>
       </form>
     </div>

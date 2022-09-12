@@ -24,30 +24,27 @@ landscape.')
                     <input type="text" style="height: 62px;font-weight: 600;font-size: 18px;line-height: 147.9%;color: rgba(107, 128, 155, 0.6);width:100%; border:none;outline:none" placeholder="Search for eyewear, lenses and frames" id="exampleInputPassword1">
                     <span class="pt-3  px-4"><img src="{{asset('customImages/arrow-right.png')}}" alt=""> </span>
                 </div>
-
-                <div class="col-md-4">
-                    <button class="mx-2" style="margin-top:35px; width: 95px;height: 44px;left: 5px;top: 31px;background: #6B809B;border-radius: 5px;
-                        justify-content: center;align-items: center;padding: 12px 24px;gap: 10px;font-weight: 500;font-size: 16px;line-height: 19px;
-                        text-align: center;color: #FDFDFD;">Login</button>
-                    <button class="mx-2" style="justify-content: center;align-items: center;padding: 12px 24px;gap: 10px;width: 120px;
-                        height: 44px;background: #FFFFFF;border: 1px solid #1F3F95;border-radius: 5px;font-weight: 500;font-size: 16px;line-height: 19px;
-                        text-align: center;color: #6B809B;;">Sign Up </button>
-                    <button class="mx-2" style="width: 127px;height: 44px;background: #FFFFFF;border: 1px solid #1F3F95;
-                        border-radius: 5px;font-weight: 500;font-size: 16px;line-height: 19px;
-                        text-align: center;color: #6B809B;">
-                        TRY IT ON</button>
+                <div class="d-sm-flex flex-sm-row align-items-center flex-wrap button-wrapper but-wrapper-mobile">
+                    <a href=""><button class="login" type="button">Log In</button></a>
+                    <a href=""><button class="signup" type="button">Sign Up</button></a>
+                    <a href=""><button class="try-it" type="button">Try it On</button></a>
                 </div>
-
-                <div class="col-md-2">
-                    <button class="pt-1" style="margin-top:35px; width: 123px;height: 51px;background: #F58634;border:none;
-                        border-radius: 5px;font-weight: 500;font-size: 16px;line-height: 19px;
-                        text-align: center;color: #ffffff;">
-                        <img src="{{ asset('customImages/buyIcon.png') }}" class='mx-1'>
-
-                        CART</button>
-                </div>
-            </div>
-        </div>
+                {{-- <button type="button" class="">
+                           <img
+                           src="{{ asset('customImages/buyIcon.png') }}"
+                           />
+                           CART
+                       </button> --}}
+                <li class="right-nav-button-shop-wrapper">
+                    <button type="button" class="shop-button">
+                        <img src="{{ asset('customImages/buyIcon.png') }}" />
+                        CART
+                    </button>
+                </li>
+                {{-- </div> --}}
+            </nav>
+            {{-- </section> --}}
+        </main>
     </section>
 
     <!-- end of search part -->
@@ -57,7 +54,11 @@ landscape.')
             <div class="col">
 
                 <!-- carousel -->
+<<<<<<< HEAD
+        <div>
+=======
        <div>
+>>>>>>> 8c9c10513a3ad812aadbd464048b03dd038e5ed2
                     <div class="slideshow-container">
                         <div class="mySlides fade">
                             <img class="img-fluid image-size-middle-ika" src="{{ asset('customImages/Frame 93.png') }}" alt="">
