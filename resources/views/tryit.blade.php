@@ -56,8 +56,8 @@
             </div>
         
         
-            <div class="container justify-content-center d-flex flex-row">
-                <h2>See what you look like in our product!</h2>
+            <div class=" i-try-see container justify-content-center d-flex flex-row">
+                <p>See what you look like in our product!</p>
             </div>
        
         

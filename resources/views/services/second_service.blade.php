@@ -30,10 +30,10 @@
                         Comprehensive Eye Examination
                     </div>
                     <p class="pt-3 foremost-card-body">
-                        Measure your visual acuity by undergoing the appropriate eye examination to determine the strength
-                        of your sight at a distance. A comprehensive eye examination is a perfect way to ensure that your
-                        vision is at its best. Our team of experts will evaluate everything from your prescription to the
-                        health of your eyes.
+                        Measure your visual acuity by undergoing an appropriate eye examination to determine the strength of
+                        your sight at a distance. A comprehensive eye examination is a perfect
+                        way to ensure that your vision is at its best. Our team of experts will evaluate everything from
+                        your prescription to the health of your eyes.
                     </p>
                     <a href="#" class="pt-5 pb-3">
                         <button class="small-mobile-long-button archware-button-default">
@@ -50,8 +50,8 @@
                     </div>
                     <p class="pt-3 foremost-card-body">
                         We offer a full range of Glaucoma Workup and Management services to help you better manage your
-                        condition. We work with you to develop a personalized plan that fits your unique needs and
-                        requirements.
+                        condition. We work with you to develop a personalized plan that fits your
+                        unique needs and requirements.
                     </p>
                     <a href="#" class="pt-5 pb-3">
                         <button class="small-mobile-long-button archware-button-default">
@@ -67,9 +67,10 @@
                         Pediatrics- Eye Care for Children
                     </div>
                     <p class="pt-3 foremost-card-body">
-                        Eye Care for Children Pediatric eye care is important to ensure that your child's vision is healthy
+                        Eye Care for Children: Pediatric eye care is important to ensure that your child’s vision is healthy
                         and developing correctly. Our doctors are experienced in providing pediatric eye care services, and
-                        we're committed to helping your child reach his/her fullest potential.
+                        they are committed to helping your child reach his/her fullest
+                        potential.
                     </p>
                     <a href="#" class="pt-5 pb-3">
                         <button class="small-mobile-long-button archware-button-default">
@@ -85,8 +86,8 @@
                         Pre-and-post Operative Eye Care
                     </div>
                     <p class="pt-3 foremost-card-body">
-                        Whether you're looking for Pre-operative or Post-operative care, our team of experts is here to
-                        help. We'll work with you to ensure that you receive the best directives on proper eye maintenance.
+                        Whether you’re looking for Pre-operative or Post-operative care, our team of experts is here to
+                        help. We’ll work with you to ensure that you receive the best directives on proper eye maintenance.
                     </p>
                     <a href="#" class="pt-5 pb-3">
                         <button class="small-mobile-long-button archware-button-default">
@@ -102,9 +103,10 @@
                         Environmental and Occupational Vision
                     </div>
                     <p class="pt-3 foremost-card-body">
-                        See the world more clearly with our Environmental and Occupational Vision services. We offer
-                        comprehensive eye exams to ensure that you're seeing your best. We also offer a wide range of lenses
-                        and other vision correction options to suit your needs at work or in your everyday life.
+                        Protect your vision and preserve its wellness with our Environmental and Occupational
+                        Vision services. We offer comprehensive eye exams to ensure that you’re seeing your best. We also
+                        offer a wide range of lenses and other vision correction options to suit your needs at work or in
+                        your everyday life.
                     </p>
                     <a href="#" class="pt-5 pb-3">
                         <button class="small-mobile-long-button archware-button-default">
@@ -120,8 +122,8 @@
                         Geriatrics- Eye Care for the Elderly
                     </div>
                     <p class="pt-3 foremost-card-body">
-                        For the elderly, we offer geriatrics-eye care. Our team of specialists is committed to assisting
-                        everyone with age-related vision issues in receiving the appropriate therapy.
+                        For the elderly: we offer geriatrics-eye care. Our team of specialists is committed to assisting
+                        everyone with age-related vision issues to receive appropriate therapy.
                     </p>
                     <a href="#" class="pt-5 pb-3">
                         <button class="small-mobile-long-button archware-button-default">
@@ -154,8 +156,8 @@
                         Dry Eye Treatment
                     </div>
                     <p class="pt-3 foremost-card-body">
-                        Be guided on the appropriate eye drops, masks, and ointment used to unclog oil glands and restore
-                        moisture to your eyes.
+                        Receive proper guide on the appropriate eye drops, masks, and ointment to be used to unclog oil
+                        glands and restore moisture to your eyes.
                     </p>
                     <a href="#" class="pt-5 pb-3">
                         <button class="small-mobile-long-button archware-button-default">
@@ -171,8 +173,8 @@
                         Chalazion Excision
                     </div>
                     <p class="pt-3 foremost-card-body">
-                        We offer our chalazion excision service to remove the eyelid lesion causing this condition. We also
-                        offer the necessary pre-surgical and post-operative care.
+                        We offer our chalazion excision service to remove the eyelid lesion causing this
+                        condition. We also offer the necessary pre-surgical and post-operative care.
                     </p>
                     <a href="#" class="pt-5 pb-3">
                         <button class="small-mobile-long-button archware-button-default">
@@ -191,10 +193,10 @@
                         Glaucoma Surgery
                     </div>
                     <p class="pt-3 foremost-card-body">
-                        Reduce intraocular pressure by scrutinizing your eyes using laser treatment or other surgical
-                        methods to detect and remove clogs that damage the optic nerve. Our surgeons are experienced in
-                        performing Glaucoma Surgery and will work with you to develop a treatment plan that is right for
-                        you.
+                        Our team of experts will help to reduce intraocular pressure by scrutinizing your eyes using laser
+                        treatment or other surgical methods to detect and remove clogs that damage the optic nerve. Our
+                        surgeons are experienced in performing Glaucoma Surgery and will work with you to develop a
+                        treatment plan that is right for you.
                     </p>
                     <a href="#" class="pt-5 pb-3">
                         <button class="small-mobile-long-button archware-button-default">
@@ -211,7 +213,7 @@
                     </div>
                     <p class="pt-3 foremost-card-body">
                         Pterygium surgery can correct severe conjunctival overgrowth that covers the cornea and impairs
-                        vision. We perform pterygium surgery using the latest techniques and technology. Our experienced
+                        vision. We perform pterygium surgery using the latest techniques and technologies. Our experienced
                         surgeons will work with you to ensure you get the best results.
                     </p>
                     <a href="#" class="pt-5 pb-3">
@@ -228,9 +230,10 @@
                         Low Vision
                     </div>
                     <p class="pt-3 foremost-card-body">
-                        If you're struggling to see clearly, our low vision services can help. We offer a variety of
+                        If you’re struggling to see clearly, our low vision services can help. We offer a variety of
                         services that helps improve your vision, including vision therapy, low vision rehabilitation, and
-                        more. With our help, you can regain your independence and live your life to the fullest.
+                        more. With access to our unbeatable services, you can regain your independence and live your life to
+                        the fullest.
                     </p>
                     <a href="#" class="pt-5 pb-3">
                         <button class="small-mobile-long-button archware-button-default">
@@ -246,9 +249,10 @@
                         Dry Eye Examination
                     </div>
                     <p class="pt-3 foremost-card-body">
-                        At Foremost Eye Clinic, we carry out Dry Eye Examination services to help you see better and achieve
-                        optimal eye health. Our examination helps to identify dry eye disease and its severity, allowing us
-                        to provide the best possible treatment for you.
+                        At Foremost International Eye Clinic, Dry Eye Examination services are carried out to help our
+                        patients see better and achieve optimal eye health. The examination helps to identify dry eye
+                        disease and evaluate its severity and enable our specialists to provide
+                        the best in class treatment to the relief of our patients.
                     </p>
                     <a href="#" class="pt-5 pb-3">
                         <button class="small-mobile-long-button archware-button-default">
@@ -264,9 +268,9 @@
                         Spectacle Dispensing
                     </div>
                     <p class="pt-3 foremost-card-body">
-                        With our Spectacle Dispensing service, you can be sure to get the perfect fit for your prescription.
-                        We also offer a wide range of lens options to choose from, so you can find the perfect match for
-                        your vision needs.
+                        With our Spectacle Dispensing service, patients can be sure to get the perfect fit for their
+                        prescription at affordable costs. We also offer a wide range of lens options to choose from, so you
+                        can find the perfect match for your vision needs.
                     </p>
                     <a href="#" class="pt-5 pb-3">
                         <button class="small-mobile-long-button archware-button-default">
@@ -282,9 +286,9 @@
                         Laser Surgery
                     </div>
                     <p class="pt-3 foremost-card-body">
-                        At Foremost Eye clinic, we use the latest and most advanced technology to correct your vision. If
-                        you're looking for a safe and effective way to improve your vision, our laser surgery services can
-                        help restore and protect your vision.
+                        At Foremost International Eye Clinic, we use the latest and most advanced technologies to correct
+                        and protect your vision. If you’re looking for a safe and effective way to improve your vision, our
+                        laser surgery services can help restore and protect your vision.
                     </p>
                     <a href="#" class="pt-5 pb-3">
                         <button class="small-mobile-long-button archware-button-default">
@@ -300,8 +304,9 @@
                         Digital Eye Health
                     </div>
                     <p class="pt-3 foremost-card-body">
-                        With so much time spent in front of screens, it's more important than ever to take care of your
-                        vision. We'll help you keep your eyes healthy and get the most out of your screen time.
+                        With so much time spent in front of screens, it’s now more important than ever to take care of your
+                        vision. Our highly professional staff will help you keep your eyes healthy and get the most out of
+                        your screen time.
                     </p>
                     <a href="#" class="pt-5 pb-3">
                         <button class="small-mobile-long-button archware-button-default">
@@ -317,8 +322,9 @@
                         Cataract Surgery
                     </div>
                     <p class="pt-3 foremost-card-body">
-                        We specialise in Cataract Surgery and our services are second to none. We use the latest
-                        technologies and our highly skilled Ophthalmologists will have you seeing clearly in no time.
+                        At Foremost, we specialize in Cataract Surgery and ancillary care. Our services are world class. We
+                        use latest technologies and our reputable specialists are ever ready to help and support your
+                        recovery process.
                     </p>
                     <a href="#" class="pt-5 pb-3">
                         <button class="small-mobile-long-button archware-button-default">
@@ -334,8 +340,9 @@
                         Eye Disease Education
                     </div>
                     <p class="pt-3 foremost-card-body">
-                        We provide detailed information about specific eye diseases, their symptoms, and treatment options.
-                        We also offer support and resources for patients dealing with eye disease.
+                        We provide offer adequate information on specific eye diseases, their symptoms, and treatment
+                        options. We also offer support and resources for patients dealing with eye
+                        disease.
                     </p>
                     <a href="#" class="pt-5 pb-3">
                         <button class="small-mobile-long-button archware-button-default">
@@ -351,8 +358,8 @@
                         Health Awareness Programs
                     </div>
                     <p class="pt-3 foremost-card-body">
-                        Our specialists are ready to put you through detailed and well-enlightened programs on the need for
-                        consciousness in your daily health activities.
+                        Our specialists are ready to educate and put you through detailed and well structured programs to
+                        create consciousness in your daily health activities.
                     </p>
                     <a href="#" class="pt-5 pb-3">
                         <button class="small-mobile-long-button archware-button-default">
@@ -368,14 +375,14 @@
                         Visual Screening
                     </div>
                     <p class="pt-3 foremost-card-body">
-                        We offer vision screening services that are reliable and accurate, using the latest technology. With
-                        our visual screening services, you can be sure that you're getting the best care for your eyes.
-                    </p>
-                    <a href="#" class="pt-5 pb-3">
-                        <button class="small-mobile-long-button archware-button-default">
-                            Schedule an appointment
-                        </button>
-                    </a>
+                        We offer vision screening services that are reliable and accurate with the use of latest
+                        technologies. With our visual screening services, you can be sure that you’re getting the
+                        best care for your eyes.
+                        <a href="#" class="pt-5 pb-3">
+                            <button class="small-mobile-long-button archware-button-default">
+                                Schedule an appointment
+                            </button>
+                        </a>
                 </div>
             </div>
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
@@ -385,9 +392,9 @@
                         Contact Lens Services
                     </div>
                     <p class="pt-3 foremost-card-body">
-                        Do you need to order contact lenses? We offer a variety of contact lens services, including
-                        ordering, fitting and more. Our experienced doctors are here to help you find the perfect lens for
-                        your needs.
+                        Do you need to order contact lenses? We offer a variety of contact lens services,
+                        including ordering, fitting and more. Our experienced doctors are here to help you find
+                        the perfect lens for your needs.
                     </p>
                     <a href="#" class="pt-5 pb-3">
                         <button class="small-mobile-long-button archware-button-default">
