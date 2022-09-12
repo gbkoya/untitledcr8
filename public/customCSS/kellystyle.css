@@ -1,0 +1,197 @@
+*{
+    font-family: 'inter', sans-serif;
+    margin: 0;
+
+}
+.error-body{
+    background-color: #dadfe5;
+    background-image: url(background.png);
+    padding-bottom: 8.5%;
+    padding-top: 6%;
+    width: 100%;
+}
+.error-h1{
+    font-size: 1200%;
+    color: #6b809b;
+    margin-left: 33%;
+    margin-bottom: 30%;
+}
+
+.kell-firstp{
+    font-size: 300%;
+    margin-left: 33%;
+    font-weight: 3rem;
+    padding-bottom: 30%;
+    margin-top: -20%;
+}
+
+.kell-secondp{
+    position: absolute;
+width: 30%;
+height: 6%;
+left: 7.5%;
+top: 60%;
+font-style: normal;
+font-weight: 100;
+font-size: 150%;
+line-height: 136.8%;
+color: #000000;
+}
+
+.kell-home{
+    border-radius: 40px;
+    width:70%;
+    background-color: #f58634;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    margin-left: 35%;
+    margin-top: 40%;
+    padding-bottom: 4%;
+    padding-top: 4%;
+}
+.ufo-kell{
+    float: right;
+    margin-top: -6%;
+    width: 100%;
+    
+}
+.container-kell{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 3%;
+}
+@media(min-width: 0px) and (max-width: 1024px){
+    .kell-secondp{
+        margin-top: -20%;
+        margin-left: 3%;
+    }
+
+    .error-body{
+        padding-bottom: 70%;
+    }
+
+    .container-kell{
+        margin-top: 20%;
+    }
+
+}
+
+@media(min-width: 0px) and (max-width: 768px){
+    .kell-secondp{
+        margin-top: -9%;
+        margin-left: 6%;
+    }
+
+    .ufo-kell{
+        margin-top: 20%;
+    }
+
+    .error-body{
+        padding-bottom: 31%;
+    }
+}
+
+@media(min-width: 0px) and (max-width: 375px){
+    .error-body{
+        padding-bottom: 66.2%;
+    }
+
+    .error-h1{
+        margin-left: 5%;
+        font-size: 600%;
+    }
+
+    .kell-firstp{
+        margin-left: 3%;
+    }
+
+    .kell-secondp{
+        margin-top: -50%;
+        margin-left: -3%;
+        width: 50%;
+    }
+
+    .kell-home{
+        margin-top: 90%;
+        margin-left: 10%;
+        width: 130%;
+    }
+}
+
+@media(min-width: 0px) and (max-width: 414px){
+    .error-h1{
+        margin-left: 10%;
+        font-size: 500%;
+    }
+
+    .kell-firstp{
+        margin-top: -30%;
+        margin-left: 10%;
+    }
+
+    .kell-secondp{
+        margin-top: -20%;
+        margin-left: -1%;
+        width: 50%;
+    }
+
+    .kell-home{
+        margin-top: 90%;
+        margin-left: 10%;
+        width: 106%;
+        padding-top: 3%;
+    }
+
+    .ufo-kell{
+        margin-top: 1%;
+    }
+
+    .container-kell{
+        margin-top: 40%;
+    }
+
+    .error-body{
+        padding-bottom: 29%;
+    }
+}
+
+@media(min-width: 0px) and (max-width: 375px){
+    .error-body{
+        padding-bottom: 20.5%;
+    }
+}
+
+@media(min-width: 0px) and (max-width: 320px){
+    .error-h1{
+        margin-left: 10%;
+        font-size: 500%;
+        margin-top: -50%;
+    }
+
+    .kell-secondp{
+        margin-top: -40%;
+    }
+
+    .kell-home{
+        margin-top: 120%;
+    }
+    
+    .ufo-kell{
+        margin-top: -50%;
+    }
+
+    .error-body{
+        padding-bottom: 11%;
+    }
+}
+
+@media(min-width: 0px) and (max-width: 411px){
+    .kell-home{
+        margin-top: 120%;
+    }
+
+    .error-body{
+        padding-bottom: 36.5%;
+    }
+}
