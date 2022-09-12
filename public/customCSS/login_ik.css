@@ -394,10 +394,17 @@ max-height: 700px !important;
     transition: background-color 0.6s ease;
   }
   
+<<<<<<< HEAD
  /* .active, .dot:hover {
     background-color: #717171;
   }
   */
+=======
+  /* .active, .dot:hover { */
+    /* background-color: #717171; */
+  /* } */
+  
+>>>>>>> 8c9c10513a3ad812aadbd464048b03dd038e5ed2
   /* Fading animation */
   .fade {
     animation-name: fade;
@@ -408,3 +415,22 @@ max-height: 700px !important;
     from {opacity: 1}
     to {opacity: 0.6}
   }
+
+
+
+
+
+
+
+
+  /* gbolahan */
+  @media (max-width:990px) {
+    .small-screen-font{
+      font-size: 15px !important;
+    }
+
+    .small-screen-font-big{
+      font-size: 23px !important;
+    }
+  }
+  

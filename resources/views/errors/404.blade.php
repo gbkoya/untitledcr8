@@ -10,6 +10,7 @@
 @section('image'){{ asset('customImages/Logo.svg') }}@stop
 
 @section('content')
+
     <div class="errorpage-body">
         <div class="errorpage-container">
             <div class="text">
