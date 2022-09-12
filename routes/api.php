@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\GoogleSocialiteController;
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -40,3 +43,14 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::post('/auth/logout', [AuthController::class, 'logout']);
 });
+
+
+Route::get('/product-list', [ProductController::class, 'index']);
+
+Route::post('/add-product', [ProductController::class, 'store_product']);
+
+
+Route::post('/product/edit-product/{product:id}', [ProductController::class, 'edit_product'])->name('edit_product');
+
+
+
