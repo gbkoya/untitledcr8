@@ -263,6 +263,9 @@ ll
     .image-padding-buttom {
         padding: unset !important;
     }
+    .remove-shadow-mobile{
+        margin-top: 1rem;
+    }
 }
 
 @media (max-width: 769px) {
@@ -344,6 +347,7 @@ ll
         box-shadow: none !important;
         transition: none !important;
         scale: unset !important;
+        margin-top: 1rem;
     }
 
     .lettalk-mobile {
