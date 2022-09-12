@@ -107,25 +107,24 @@
     /* mobile screen */
     @media(max-width: 540px){
         .hero-section{
-            padding-left: 1rem;
-            padding-right: 1rem;
+            padding: 3rem 1rem;
         }
 
         .hero-section-copy{
-            padding-left: 0;
-            margin-top: -7.5rem;
+            /* padding-left: 0; */
+            text-align: center!important;
         }
 
         .hero-section-copy h1{
             font-size: 2.5rem;
-            text-align: left;
+            text-align: center;
             line-height: 150%;
             letter-spacing: -1px;
         }
 
         .hero-section-copy p{
             font-size: 1.3rem;
-            text-align: left;
+            text-align: center;
             letter-spacing: -1px;
         }
 
@@ -185,6 +184,9 @@
 
     /* Ipad screen */
     @media(min-width: 540px) and (max-width: 900px){
+        .hero-section{
+            padding: 3rem 1rem;
+                }
         .vision-wrapper img{
             width: 100%;
         }
@@ -524,11 +526,12 @@
 /* Responsive style */
  @media(max-width: 414px){
     .testimonial h1{
-        font-size: 3rem;
+        font-size: 2.25rem;
     }
     .testimonial h6{
         padding-left: 1rem;
         padding-right: 1rem;
+        font-size: 1.3rem;
     }
  }
 
@@ -667,7 +670,7 @@
     }
 
     .contact-us-wrapper .e-contact-heading{
-        font-size: 3rem!important;
+        font-size: 2.25rem!important;
         margin-top: -2rem;
     }
     .contact-form-section{
@@ -683,6 +686,7 @@
 
     .contact-form-section-child h3{
         line-height: 110%!important;
+        font-size: 1.8rem;
         /* letter-spacing: 5em; */
     }
 
