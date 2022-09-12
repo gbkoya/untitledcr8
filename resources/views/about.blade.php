@@ -14,11 +14,11 @@
      {{-- HERO SECTION --}}
      <section class="container-fluid hero-section">
         {{-- <img src="customImages/heroImage.png" alt="heroImage"> --}}
-        <div class="hero-section-copy container-xxl">
+        <div class="hero-section-copy container-xxl col-lg-7" style="text-align:center;">
             <h1>Your Experience is<br> Our Top Priority</h1>
-            <p>We are focused on providing cutting-edge eye
-                healthcare services to suit the expanding demands
-                 of local, international, and cross-border markets.
+            <p>We are focused on providing world class eye care services through the deployment
+                of cutting edge technologies and empathetic but highly professional workforce 
+                that put your mind to rest.
             </p>
         </div>
      </section>
@@ -31,13 +31,13 @@
         <div class="vision-right">
             <div class="vis-statement">
                 <h2>Vision Statement</h2>
-                <p>To become a FOREMOST  eye health services provider in Africa.</p>
+                <p>To become a FOREMOST eye health service provider in Africa.</p>
             </div>
             <div class="miss-statement">
                 <h2>Mission Statement</h2>
-                <p>We provide innovative eye health services to Africans through
-                     cutting edge technologies and excellent service delivery
-                     thereby enhancing their long-term vision  and productivity.</p>
+                <p>We provide innovative eye health services to Africans through 
+                    cutting edge technologies and excellent service delivery, thereby enhancing 
+                    their long-term vision and productivity.</p>
             </div>
             <div class="core-val">
                 <h2>Our Core Values</h2>
@@ -83,17 +83,19 @@
         <div class=" d-flex flex-ro flex-wrap justify-content-between align-items-center why-wrapper">
             <div class="why-choose-left">
                 <h1>Why Choose Us?</h1>
-                <p>At Foremost Eye Clinic, we guarantee maximum satisfaction
-                     and an invaluable experience. We recognize that the eyes
-                      require specialized care, which is why we offer personalized
-                      and tailored solutions designed to meet our patient’s needs.
-                </p>
-                <p>We carry out Advanced Diagnostic Tests with modernized
-                     technology and laboratory equipment, to ensure our patients
-                     get first-hand treatment.
-               </p>
-               <p>Schedule an appointment with our doctors today and enjoy
-                   our excellent services.
+                <p>At Foremost International Eye Clinic, we guarantee maximum satisfaction and an invaluable 
+                    experience. We recognize that the vision requires specialized and quality care. Therefore we 
+                    offer personalized and tailored care services to meet our patients’unique needs and expectations.</p>
+
+                <p>We carry out Advanced Diagnostic Tests using the latest technology and ultra-modern laboratory 
+                    equipment to ensure our patients get first class treatment with maximum comfort and top-level 
+                    precision.</p>
+
+                <p>We have a team of highly experienced specialists (ophthalmologists and optometrists) who are top 
+                    rated professionals in quality eye care services delivery.></p>
+
+                <p>We enjoin you to schedule an appointment with our doctors today to have a taste of our
+                    unbeatable eye care services.
                 </p>
             </div>
         <img class="img-fluid why-choose-right-image" src="/customImages/doctor-background.png" alt="doctor image with yellow background here">
