@@ -42,12 +42,14 @@
                 </li>
 
                 <li class="button-wrapper">
-                    <button type="button" class="buy-button">
-                        <img
-                        src="{{ asset('customImages/buyIcon.png') }}"
-                        />
-                        Buy Now
-                    </button>
+                    <a href="/shop">
+                        <button type="button" class="buy-button">
+                            <img
+                            src="{{ asset('customImages/buyIcon.png') }}"
+                            />
+                            Buy Now
+                        </button>
+                    </a>
                 </li>
             </ul>
 

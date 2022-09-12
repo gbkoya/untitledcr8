@@ -242,48 +242,80 @@
                 </div>
             </div>
         </div>
-
-        {{-- Custom Gallery for Foremost start --}}
-        {{-- <section class="container-fluid"> --}}
-                        {{-- <h2 class="medium-title text-title-mobile">
-                            Our Gallery
-                        </h2> --}}
-
-
-                            {{-- <div class="j-gallery-slider d-flex" id="slider">
-                                <div class="j-gallery-slide" id="j-gallery-slide-left">
-                                    <div class="j-gallery-slide-holder">
-                                        <div class="j-gallery-slide-bg j-gallery-bg-previous"></div>
-                                        <div class="j-gallery-slide-bg j-gallery-bg-current"></div>
-                                        <div class="j-gallery-slide-bg j-gallery-bg-next"></div>
-                                    </div>
-                                </div>
-                                <div class="j-gallery-slide" id="j-gallery-slide-center">
-                                    <div class="j-gallery-slide-holder">
-                                        <div class="j-gallery-slide-bg j-gallery-bg-previous"></div>
-                                        <div class="j-gallery-slide-bg j-gallery-bg-current"></div>
-                                        <div class="j-gallery-slide-bg j-gallery-bg-next"></div>
-                                    </div>
-                                </div>
-                                <div class="j-gallery-slide" id="j-gallery-slide-right">
-                                    <div class="j-gallery-slide-holder">
-                                        <div class="j-gallery-slide-bg j-gallery-bg-previous"></div>
-                                        <div class="j-gallery-slide-bg j-gallery-bg-current"></div>
-                                        <div class="j-gallery-slide-bg j-gallery-bg-next"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="j-gallery-arrow" href="#" id="j-gallery-left-arrow">
-                                <i class="fa-solid fa-arrow-left"></i>
-                            </a>
-                            <a class="j-gallery-arrow" href="#" id="j-gallery-right-arrow">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a> --}}
-                        {{-- </div> --}}
-        {{-- </section> --}}
   
 
-    
+    {{-- GALLERY SECTION --}}
+     <section class="gallery-section">
+        <h1 class="text-center">Our Gallery</h1>
+        <!-- THE CAROUSEL -->
+        <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators gallery-indicator">
+              <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+   
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+              <!-- First slide -->
+              <div class="carousel-item active">
+                  {{-- First galery view --}}
+                  <section class="container-fluid d-sm-flex flex-sm-row flex-wrap justify-content-center" style="margin-top: 2rem">
+                      <div class="e-gallery-left e-hover-change">
+              
+                      </div>
+                      <div class="e-gallery-middle e-hover-change">
+                          
+                      </div>
+                      <div class="e-gallery-right e-hover-change">
+                          
+                      </div>
+                   </section>
+              </div>
+   
+              <!-- Second slide -->
+              <div class="carousel-item">
+                  <section class="container-fluid d-sm-flex flex-sm-row flex-wrap justify-content-center" style="margin-top: 2rem">
+                      <div class="e-gallery-left e-hover-change">
+              
+                      </div>
+                      <div class="e-gallery-middle e-hover-change">
+                          
+                      </div>
+                      <div class="e-gallery-right e-hover-change">
+                          
+                      </div>
+                   </section>
+              </div>
+              <!-- Third slide -->
+              <div class="carousel-item">
+                  <section class="container-fluid d-sm-flex flex-sm-row flex-wrap justify-content-center" style="margin-top: 2rem">
+                      <div class="e-gallery-left e-hover-change">
+              
+                      </div>
+                      <div class="e-gallery-middle e-hover-change">
+                          
+                      </div>
+                      <div class="e-gallery-right e-hover-change">
+                          
+                      </div>
+                   </section>
+              </div>
+   
+              <!-- Left and right controls/icons -->
+              {{-- <button class="carousel-control-prev" type="button" data-bs-target="#demoTwo" data-bs-slide="prev">
+                  <!-- <span class="carousel-control-prev-icon" style="color: blue;"></span> -->
+                  <img class="img-fluid" src="{{ asset('customImages/Vector.svg') }}">
+              </button> --}}
+              <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+                  <img class="img-fluid" src="{{ asset('customImages/arrow-carousel-right.png') }}">
+                  <!-- <span class="carousel-control-next-icon"></span> -->
+              </button>
+          </div>
+  
+     </section>
+    {{-- END OF GALLERY SECTION --}}
+
   {{-- TESTIMONIALS SECTION --}}
   <section class="testimonial glass-margin container-fluid">
     <div class="text-center">
@@ -481,7 +513,7 @@
                 <img class="img-fluid" src="{{ asset('customImages/Vector.svg') }}">
             </button> --}}
             <button class="carousel-control-next" type="button" data-bs-target="#demoTwo" data-bs-slide="next">
-                <img class="img-fluid" src="{{ asset('customImages/Vector (1).svg') }}">
+                <img class="img-fluid" src="{{ asset('customImages/testimonial-right-arrow.png') }}">
                 <!-- <span class="carousel-control-next-icon"></span> -->
             </button>
         </div>

@@ -394,17 +394,9 @@ max-height: 700px !important;
     transition: background-color 0.6s ease;
   }
   
-<<<<<<< HEAD
- /* .active, .dot:hover {
-    background-color: #717171;
-  }
-  */
-=======
   /* .active, .dot:hover { */
     /* background-color: #717171; */
   /* } */
-  
->>>>>>> 8c9c10513a3ad812aadbd464048b03dd038e5ed2
   /* Fading animation */
   .fade {
     animation-name: fade;
