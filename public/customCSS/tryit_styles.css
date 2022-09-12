@@ -24,6 +24,7 @@
 .i-try-img{
 background: rgba(189, 189, 189, 0.2);
 border-radius: 5px;
+width: 1230px;
 
 
 }
@@ -54,3 +55,27 @@ font-weight: 500;
 font-size: 24px;
 line-height: 36px;
 }
+
+.i-try-see{
+    font-size: 30px;
+}
+
+@media (max-width: 990px) {
+.i-try-img{
+    align-items: center;
+    max-width: fit-content!important;
+    
+}
+.i-try-head{
+    align-items: center;
+}
+.i-try-button{
+    align-items: center;
+    font-size: medium;
+}
+.i-try-see{
+    font-size: medium !important;
+}
+
+}
+    

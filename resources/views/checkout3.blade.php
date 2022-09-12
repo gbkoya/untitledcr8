@@ -55,7 +55,7 @@ landscape.')
         <div class="container pt-5 col-lg-10 d-flex flex-wrap justify-content-center">
             <img class="" src="{{ asset('customImages/Frame 106.png') }}" />
 
-            <div class="px-2" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color: rgba(107, 128, 155, 0.8);">
+            <div class="px-2 small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color: rgba(107, 128, 155, 0.8);">
                 Anti blu ray radiation,<br> computer glasses</div>
 
             <!-- <input style="height: 47px;" type="numbers" class="form-control" id="exampleInputPassword1" placeholder=""> -->
@@ -74,24 +74,24 @@ landscape.')
 
             </form>
 
-            <div class="pt-2" style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">₦4,999</div>
+            <div class="pt-2 small-screen-font" style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">₦4,999</div>
         </div>
 
         <div class="my-5" style="border: 1px solid rgba(0, 0, 0, 0.5);"></div>
 
-        <div class="container col-lg-10 d-flex justify-content-between">
-            <div class="pt-2" style="font-weight: 500;font-size: 20px;line-height: 30px;color: #6B809B;">Price</div>
-            <div style="font-weight: 500;font-size: 24px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">₦4,999</div>
+        <div class="container col-lg-10 d-flex justify-content-between small-screen-font">
+            <div class="pt-2 small-screen-font" style="font-weight: 500;font-size: 20px;line-height: 30px;color: #6B809B;">Price</div>
+            <div class="small-screen-font" style="font-weight: 500;font-size: 24px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">₦4,999</div>
         </div>
 
 
-        <div class="container col-lg-10 d-flex justify-content-between">
-            <div class="pt-2" style="font-weight: 500;font-size: 20px;line-height: 30px;color: #6B809B;">Delivery fee</div>
-            <div style="font-weight: 500;font-size: 24px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">₦500</div>
+        <div class="container col-lg-10 d-flex justify-content-between small-screen-font">
+            <div class="pt-2 small-screen-font" style="font-weight: 500;font-size: 20px;line-height: 30px;color: #6B809B;">Delivery fee</div>
+            <div class="small-screen-font" small-screen-font style="font-weight: 500;font-size: 24px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">₦500</div>
         </div>
-        <div class="container col-lg-10 d-flex justify-content-between">
+        <div class="container col-lg-10 d-flex justify-content-between small-screen-font">
             <div class="pt-3" style="font-weight: 500;font-size: 20px;line-height: 30px;color: #6B809B;">Total Price</div>
-            <div style="font-weight: 500;font-size: 32px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8)">₦5,499</div>
+            <div class="small-screen-font-big" style="font-weight: 500;font-size: 32px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8)">₦5,499</div>
         </div>
         <div class="mt-5 pt-5"></div>
     </div>
@@ -99,14 +99,14 @@ landscape.')
 
     <div class="container col-lg-10 d-flex justify-content-between">
         <div class=" py-3 pb-5">
-            <button style="background: rgba(0, 0, 0, 0.2);border-radius: 4.67259px;font-weight: 700;font-size: 18.6904px;
-                line-height: 140%;color: #6B809B; padding: 0.8em 3em;">Back
+            <button class="small-mobile-long-button small-screen-font" style="background: rgba(0, 0, 0, 0.2);border-radius: 4.67259px;font-weight: 700;font-size: 18.6904px;
+                line-height: 140%;color: #6B809B; padding: 0.8em 3em; border:none">Back
 
             </button>
         </div>
         <div class=" py-3  pb-5">
-            <button style="background: #F58634;border-radius: 4.67259px;font-weight: 700;font-size: 18.6904px;
-                line-height: 140%;color: #ffffff; padding: 0.8em 3em; float:right">Pay with Card
+            <button class="small-mobile-long-button small-screen-font" style="background: #F58634;border-radius: 4.67259px;font-weight: 700;font-size: 18.6904px;
+                line-height: 140%;color: #ffffff; padding: 0.8em 3em; float:right; border:none">Pay with Card
 
             </button>
         </div>
