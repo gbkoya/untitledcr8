@@ -493,7 +493,7 @@
     {{--END OF TESTIMONIALS SECTION --}}
 
     <!-- CONTACT US SECTION -->
-    <section class="container-fluid contact-us-wrapper" style=" margin-bottom: 6rem; margin-top: 6rem;">
+    <section class="container-fluid contact-us-wrapper">
         <div class="text-center">
             <h1 class="e-contact-heading">Contact Us</h1>
         </div>
