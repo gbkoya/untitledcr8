@@ -8,8 +8,8 @@
 
 @section('content')
 
-    <section class="container-fluid hero-section need-glass-back-img">
-        <div class="hero-section-copy">
+    <section class="container-fluid hero-section e-service-section need-glass-back-img">
+        <div class="service-hero-copy">
             <h1>
                 Delivering Optimal Eye Care Services
             </h1>
@@ -22,7 +22,7 @@
         </div>
     </section>
 
-    <section class="container-fluid mt-2 pt-2">
+    <section class="container-fluid glass-margin">
         <div class="d-flex flex-row flex-wrap justify-content-center">
 
             <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
