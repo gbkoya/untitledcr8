@@ -80,6 +80,9 @@ Route::get('/cart', function () {
 Route::get('/checkout1', function () {
     return view('checkout2.checkout2');
 });
+Route::get('/checkout2', function () {
+    return view('2ndcheckout');
+});
 
 
 
