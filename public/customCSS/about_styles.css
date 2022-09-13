@@ -41,6 +41,44 @@
     margin-top: 1rem;
 }
 
+.e-service-section{
+    background-image: url("../customImages/heroImage.png"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    margin-top: 3rem;
+    padding: 11rem 0 10rem 0;
+}
+
+.service-hero-copy{
+    max-width: 50rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.service-hero-copy h1{
+    font-style: normal;
+    font-weight: 800;
+    font-size: 4rem;
+    line-height: 109%;
+    /* letter-spacing: 5px; */
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+
+.service-hero-copy p{
+    /* max-width: 37.8125rem; */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 2.45rem;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+    margin-top: 1rem;
+}
+/* SERVICES PAGE */
+
 /* Large screen size responsive style */
 @media screen and (min-width: 1400px){
     
