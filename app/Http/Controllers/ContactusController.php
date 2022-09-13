@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Notifications\ContactusMessage;
+use App\Notifications\Contactusdata;
+use Exception;
+use NewsLetter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Validator;
@@ -16,7 +18,7 @@ class ContactusController extends Controller
             // 'phonenumber' => 'string',
             'email' => 'required|email',
             // 'date' => 'required',
-            'message' => 'required',
+            'data' => 'required',
         ]);
 
 
@@ -29,20 +31,57 @@ class ContactusController extends Controller
             ], 500);
         }
 
-        $message = [
+        $data = [
             'name' => $request->name,
             'email' => $request->email,
             'phonenumber' => $request->phonenumber,
             'date' => $request->date,
-            'message' => $request->message,
+            'data' => $request->data,
         ];
 
-        Notification::route('mail', 'Info@arcwaretechgroup.com')->notify(new ContactusMessage($message));
+        Notification::route('mail', 'Info@arcwaretechgroup.com')->notify(new Contactusdata($data));
 
         return response()->json([
             'success' => True,
-            'data' => 'Message submitted',
+            'data' => 'data submitted',
         ], 200);
 
+    }
+
+    public function subscribe (Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+        ]);
+
+
+        if ($validator->fails())
+        {
+            $error = $validator->errors()->toArray();
+            return response()->json([
+                'errors' => $error,
+                'data' => 'Something went wrong',
+            ], 500);
+        }
+        $subscribed_email = $request->email;
+
+        try {
+            if (NewsLetter::isSubscribed($subscribed_email)) {
+                return response()->json([
+                    'error' => 'Email already subscribed',
+                ], 401);
+            } else {
+                NewsLetter::subscribe($subscribed_email);
+                return response()->json([
+                    'success' => True,
+                    'data' => 'Email subscribed',
+                ], 200);
+            }
+        } catch (Exception $e) {
+            return response()->json([
+                'errors' => $e,
+                'data' => 'Something went wrong',
+            ], 500);
+        }
     }
 }
