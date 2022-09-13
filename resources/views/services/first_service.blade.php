@@ -14,8 +14,10 @@
                 Delivering Optimal Eye Care Services
             </h1>
             <p>
-                With advanced technology and expertise, we offer a
-                wide range of services for all your eye-related needs
+                With ultra-modern technology, world class expertise 
+                and a suite of innovative eye care services, we are
+                 poised to exceed your expectations at Foremost International 
+                 Eye Clinic.
             </p>
         </div>
     </section>
