@@ -125,7 +125,10 @@
 
 .e-shop-copy {
     margin-top: 9rem;
-    margin-left: 5rem;
+    /* margin-left: 5rem; */
+}
+.e-shop-copy .e-shop-copy-child{
+    margin: 0 auto!important;
 }
 .e-shop-copy h1{
     font-style: normal;
@@ -135,12 +138,16 @@
     letter-spacing: -0.01em;
     text-transform: capitalize;
     color: #FFFFFF;
-    max-width: 47rem;
-    text-align: left;
+    /* max-width: 47rem; */
+    /* text-align: center!important; */
+}
+
+.shop-top-hero{
+    margin-top: 5rem;
 }
 
 .e-shop-copy p {
-    max-width: 55.75rem;
+    /* max-width: 55.75rem; */
     font-style: normal;
     font-weight: 400;
     font-size: 1.5rem;
@@ -149,7 +156,7 @@
     text-transform: capitalize;
     color: #FFFFFF;
     margin-top: 2rem;
-    text-align: justify;
+    /* text-align: justify; */
 
 }
 /* End of hero section */

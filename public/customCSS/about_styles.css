@@ -557,7 +557,7 @@
     font-weight: 500;
     font-size: 1.2rem;
     line-height: 25px;
-    text-align: center;
+    text-align: left;
     letter-spacing: 0.01em;
     color: rgba(0, 0, 0, 0.5);
 }
@@ -580,6 +580,9 @@
         padding-left: 1rem;
         padding-right: 1rem;
         font-size: 1.3rem;
+    }
+    .testimonial-mobile{
+        display: none;
     }
  }
 

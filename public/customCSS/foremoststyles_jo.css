@@ -111,6 +111,9 @@
     .e-aboutus-home{
         padding: 1rem;
     }
+    .text-black-paragraph{
+        text-align: left;
+    }
 }
 
 /* Ipad screen */
@@ -282,7 +285,7 @@ ll
     }
 
     .image-min-height-mobile {
-        height: 14em;
+        /* height: 14em; */
     }
 }
 
@@ -368,6 +371,13 @@ ll
         width: unset !important;
         padding: 0.5em 1.5em 0.5em 1.5em !important;
     }
+    .service-hero-copy h1{
+        font-size: 2.5rem!important;
+        line-height: 125%!important;
+    }
+    .service-hero-copy p{
+        font-size: 1.2rem!important;
+    }
 }
 
 @media (max-width: 414px) {
@@ -402,12 +412,15 @@ ll
 
 .foremost-card-body {
     text-align: left;
-    margin-bottom: auto;
+    /* margin-bottom: auto; */
+    margin-top: 1rem;
+    margin-bottom: 3rem;
     font-weight: 500;
     font-size: 17px;
     line-height: 25px;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.04em;
     color: rgba(0, 0, 0, 0.5);
+    min-height: 12rem;
 }
 
 .text-top-about-us {
@@ -502,4 +515,19 @@ ll
 /* FINAL FIX EBUKA CSS */
 .button-margin-top{
     margin-top: 2rem;
+}
+
+.e-shedule-button{
+    padding-left: 1rem;
+    bottom: 1rem;
+    position: absolute;
+}
+
+.e-service-card{
+    position: relative!important;
+    padding-bottom: 1rem!important;
+}
+
+.e-card-body{
+    padding: 1rem;
 }

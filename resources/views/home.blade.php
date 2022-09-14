@@ -352,7 +352,7 @@
 
                         </div>
                         {{-- Second --}}
-                            <div class="first-testimonial">
+                            <div class="first-testimonial testimonial-mobile">
                                 <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
                                 <div class="testimonial-content">
                                     <p class="body-copy">
@@ -368,9 +368,9 @@
                                 </div>
 
                             </div>
-                        {{-- Third --}}
+                        {{-- Third --}} 
                           {{-- Second --}}
-                          <div class="first-testimonial">
+                          <div class="first-testimonial testimonial-mobile">
                             <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
                             <div class="testimonial-content">
                                 <p class="body-copy">
@@ -396,7 +396,7 @@
             <div class="carousel-item">
                 <div class="d-sm-flex flex-sm-row flex-sm-wrap justify-content-center testimonial-body">
                     {{-- First --}}
-                        <div class="first-testimonial">
+                        <div class="first-testimonial testimonial-mobile">
                             <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
                             <div class="testimonial-content">
                                 <p class="body-copy">
@@ -430,7 +430,7 @@
                             </div>
                         {{-- Third --}}
                           {{-- Second --}}
-                          <div class="first-testimonial">
+                          <div class="first-testimonial testimonial-mobile">
                             <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
                             <div class="testimonial-content">
                                 <p class="body-copy">
@@ -453,7 +453,7 @@
             <div class="carousel-item">
                 <div class="d-sm-flex flex-sm-row flex-sm-wrap justify-content-center testimonial-body">
                     {{-- First --}}
-                        <div class="first-testimonial">
+                        <div class="first-testimonial testimonial-mobile">
                             <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
                             <div class="testimonial-content">
                                 <p class="body-copy">
@@ -469,7 +469,7 @@
 
                         </div>
                         {{-- Second --}}
-                            <div class="first-testimonial">
+                            <div class="first-testimonial testimonial-mobile">
                                 <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
                                 <div class="testimonial-content">
                                     <p class="body-copy">

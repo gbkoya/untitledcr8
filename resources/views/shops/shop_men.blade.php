@@ -45,22 +45,23 @@
         </li>
 {{-- </div>  --}}
 </nav>
-
-<div class="e-shop-copy">
-    <h1>The Largest Online Store
-        for  Glasses and Contact
-        Lenses.</h1>
-    <p>
-        We provide thousands of prescription eyeglasses and 
-        contact lenses to our customers monthly.
-    </p>
-    <button type="button" class="buy-button-shop">
-        <img
-        src="{{ asset('customImages/buyIcon.png') }}"
-        />
-        Buy Now
-    </button>
-</div>
+<div class="service-hero-copy shop-top-hero">
+            <h1>
+                The Largest Online Store
+            for  Glasses and Contact
+            Lenses.
+            </h1>
+            <p>
+                We provide thousands of prescription eyeglasses and 
+                contact lenses to our customers monthly.
+            </p>
+            <button type="button" class="buy-button-shop">
+                <img
+                src="{{ asset('customImages/buyIcon.png') }}"
+                />
+                Buy Now
+            </button>
+        </div>
 </section>
 {{-- END OF HERO SECTION --}}
 
@@ -78,7 +79,7 @@
 </main>
 
 {{-- STORE CARD SECTION --}}
-<section class="container-fluid store-wrapper">
+<section class="container-fluid store-wrapper glass-margin">
     <header class="d-flex flex-wrap flex-row justify-content-between align-items-center store-heading">
         <h1>Discover our store</h1>
         <div class="sort-wrapper d-flex flex-row flex-wrap align-items-center justify-content-evenly">
