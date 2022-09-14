@@ -46,7 +46,7 @@
                 </a>
                 </div>
             </div>
-            <div class="mt-4 card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
+            <div class="mt-4 card e-service-card col-lg-3 mx-3 remove-shadow-mobile box-shadow">
                 <img src="/customImages/Comprehensive Eye Examination.png" class="card-img-top" alt="...">
                 <div class="e-card-body archware-card-padding-left d-flex  flex-wrap">
                     <div class=" foremost-card-title">
@@ -57,6 +57,9 @@
                         condition. We work with you to develop a personalized plan that fits your unique needs and
                         requirements.
                     </p>
+                </div>
+                <div class="e-shedule-button d-flex flex-row justify-content-start"> 
+            
                 </div>
                 <div class="e-shedule-button d-flex flex-row justify-content-start"> 
                     <a href="#" class="">
@@ -209,7 +212,7 @@
         <div class="container justify-content-center">
             <div class="row">
 
-                <a href="/contacts" class="py-3" style="text-align:center;">
+                <a href="/second-service" class="py-3" style="text-align:center;">
                     <button class="small-mobile-long-button archware-button-default">
                         Show More
                     </button>
