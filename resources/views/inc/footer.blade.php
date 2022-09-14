@@ -15,9 +15,9 @@
                 </h5>
 
                 <ul class="list-unstyled mb-0">
-                    <li class="pb-3 footer-aboutus" style="font-size:medium;">
-                        Foremost Eye Clinic is dedicated to acquiring innovative eye<br>
-                        health services to meet the growing demands of local,<br>
+                    <li class="pb-3 e-footer-about" style="font-size:medium;">
+                        Foremost Eye Clinic is dedicated to acquiring innovative eye
+                        health services to meet the growing demands of local,
                         cross-border, and global-markets.
                     </li>
                 </ul>
@@ -33,7 +33,7 @@
             </div>
 
 
-            <div class="pages" style="text-align: initial; flex-direction:column">
+            <div class="e-footer-pages" style="text-align: initial; flex-direction:column">
                 <h5 class="pb-3 fw-bold" style="font-size: 20px;">About Us</h5>
 
                 <ul class="list-unstyled mb-0 fw-lighter">
@@ -55,7 +55,7 @@
 
 
 
-            <div class="pages" style="text-align: initial">
+            <div class="e-footer-pages" style="text-align: initial">
                 <h5 class="pb-3 fw-bold" style="font-size: 20px;">Services</h5>
 
                 <ul class="list-unstyled mb-0 fw-lighter">
