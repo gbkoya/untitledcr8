@@ -339,10 +339,18 @@
     width: 90%!important;
 } */
 
-.nav-but > .active > button { 
+/* .nav-but > .active > button { 
     background-color: yellow!important; 
-}
+} */
 
+.nav-pills .nav-link.active{
+    color: #fff;
+    /* width: 80%; */
+    padding: 0 2.5rem;
+    height: 7vh;
+    background: #6B809B;
+    border-radius: 80px;
+}
 /* RESPONSIVENESS */
 @media(max-width: 414px){
     .search-wrapper{

@@ -82,6 +82,9 @@
     .e-footer-pages{
         margin-top: 2rem;
     }
+    .footer-section form input[type="search"]{
+        width: 100%!important;
+    }
 }
 
 /* Ipad screen */

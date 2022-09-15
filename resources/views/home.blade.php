@@ -187,46 +187,56 @@
             <div class="d-flex flex-row flex-wrap justify-content-center">
                 <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
                     <img src="/customImages/few tips.png" class="card-img-top" alt="...">
-                    <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
-                        <div class="pt-1 foremost-blog-title">
+                    <div class="e-card-body archware-card-padding-left d-flex flex-wrap">
+                        <div class="foremost-blog-title">
                             7 things you should know before picking a new pair of glasses
                         </div>
-                        <p class="pt-3 foremost-card-body">
+                        <p class="foremost-card-body">
                             Here are a few tips and tricks to help you find the right pair of glasses
                         </p>
-                        <div class="pt-3 foremost-blog-read-more">
-                            Read more
-                        </div>
                     </div>
+                    <div class="e-shedule-button d-flex flex-row justify-content-start"> 
+                        <a href="" class="foremost-blog-read-more">
+                            Read more
+                    </a>
+                    </div> 
+    
                 </div>
                 <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
                     <img src="/customImages/few tips 2.png" class="card-img-top" alt="...">
-                    <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
-                        <div class="pt-1 foremost-blog-title">
+                    <div class="e-card-body archware-card-padding-left d-flex flex-wrap">
+                        <div class="foremost-blog-title">
                             7 things you should know before picking a new pair of glasses
                         </div>
-                        <p class="pt-3 foremost-card-body">
+                        <p class="foremost-card-body">
                             Here are a few tips and tricks to help you find the right pair of glasses
                         </p>
-                        <div class="pt-3 foremost-blog-read-more">
-                            Read more
-                        </div>
                     </div>
+                    <div class="e-shedule-button d-flex flex-row justify-content-start"> 
+                        <a href="" class="foremost-blog-read-more">
+                            Read more
+                    </a>
+                    </div> 
                 </div>
+
+
                 <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
-                    <img src="/customImages/color blindness.png" class="card-img-top" alt="...">
-                    <div class="archware-card-padding-left d-flex align-items-center flex-wrap p-4">
-                        <div class="pt-1 foremost-blog-title">
+                    <img src="/customImages/few tips 2.png" class="card-img-top" alt="...">
+                    <div class="e-card-body archware-card-padding-left d-flex flex-wrap">
+                        <div class="foremost-blog-title">
                             Colour blindness explained! these facts will shock you
                         </div>
-                        <p class="pt-3 foremost-card-body">
+                        <p class="foremost-card-body">
                             Here are a few tips and tricks to help you find the right pair of glasses
                         </p>
-                        <div class="pt-3 foremost-blog-read-more">
-                            Read more
-                        </div>
                     </div>
+                    <div class="e-shedule-button d-flex flex-row justify-content-start"> 
+                        <a href="" class="foremost-blog-read-more">
+                            Read more
+                    </a>
+                    </div> 
                 </div>
+
             </div>
         </section>
     
@@ -629,6 +639,75 @@
         <!-- END OF CONTACT US SECTION -->
 
     </main>
+
+    <script type="text/javascript">
+     // CONTACT API INTEGRATION HERE
+     document.getElementById('sendData').addEventListener('submit', handleSumbit);
+
+    function handleSumbit(event) {
+    event.preventDefault();
+
+    // Get all the input field and store them in their unique variable each
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let phonenumber = document.getElementById('phonenumber').value;
+    let date = document.getElementById('date').value;
+    let message = document.getElementById('message').value;
+
+    let contactData = {
+        name,
+        email,
+        phonenumber,
+        date,
+        message
+    }
+    // alert(JSON.stringify(contactData));
+    // alert(`${firstName} and ${lastName}`);
+    console.log(contactData);
+    isLoading = true;
+
+    function handleErrors(response) {
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+        return response;
+    }
+    fetch("http://127.0.0.1:8000/api/contactus/message", {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(contactData)
+        })
+        .then(handleErrors)
+        .then(response => {
+            console.log("ok")
+            Swal.fire({
+                icon: 'success',
+                title: 'Message sent, We will get back shortly!',
+                showConfirmButton: false,
+                timer: 1500,
+
+            })
+            let res = document.getElementById("sendData");
+            res.reset();
+        })
+        .catch(error => {
+            console.log(error, 'wrong')
+            Swal.fire({
+                icon: 'error',
+                title: 'Message not sent, something went wrong!',
+                showConfirmButton: false,
+                timer: 1500,
+
+            })
+
+        });
+
+}
+        // END OF CONTACT API INTEGRATION
+    </script>
 </body>
   
 
