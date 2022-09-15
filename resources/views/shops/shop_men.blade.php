@@ -25,8 +25,8 @@
     src="{{ asset('customImages/arrow-right.png') }}"/>
         </div>   
         <div class="d-sm-flex flex-sm-row align-items-center flex-wrap button-wrapper but-wrapper-mobile">
-            <a href=""><button class="login" type="button">Log In</button></a>
-            <a href=""><button class="signup" type="button">Sign Up</button></a>
+            <a href="/login"><button class="login" type="button">Log In</button></a>
+            <a href="/signup"><button class="signup" type="button">Sign Up</button></a>
            <a href="/try-it"><button class="try-it" type="button">Try it On</button></a>
         </div>
             {{-- <button type="button" class="">

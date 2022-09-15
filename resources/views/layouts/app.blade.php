@@ -64,6 +64,7 @@
   <script src="/customJS/galleryscript.js"></script>
   <script src="/customJS/contact.js"></script>
   <script src="/customJS/telephoneinput.js"></script>
+  <script src="/customJS/signupscript.js"></script>
 
 </head>
 

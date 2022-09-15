@@ -10,17 +10,18 @@ landscape.')
 @section('image'){{ asset('customImages/Logo.svg') }}@stop
 
 @section('content')
-
+<body>
+  
 <div class="log card justify-content-center mt-5">
   <div class="container my-5 py-5">
     <div class="container col-lg-5 col-md-7 my-5 py-5 king">
 
       <h2 class="login">Create Account</h2>
-      <form>
+      <form id="signupData">
         <div class="mb-3 pt-5 px-3">
-          <div class="d-flex" style="background-color: #f3efef" ; margin-top="10%">
+          <div class="d-flex" style="background-color: #f3efef"; margin-top="10%">
             <span class="mt-4 pt-1 px-2"><img src="{{asset('customImages/Vector(5).png')}}" alt=""> </span>
-            <input type="email" class="form-control-ika" id="exampleInputEmail1" placeholder="Full Name" aria-describedby="emailHelp">
+            <input type="email" id="fullname" class="form-control-ika" id="exampleInputEmail1" placeholder="Full Name" aria-describedby="emailHelp">
           </div>
         </div>
 
@@ -45,13 +46,83 @@ landscape.')
           </div>
         </div>
         <div class="row justify-content-center py-5">
-
-          <button type="submit" class="button-ika ">SIgn In</button>
+          <button type="submit" class="button-ika ">Create Account</button>
         </div>
       </form>
     </div>
   </div>
 </div>
+
+
+<script src="text/javascript">
+
+//  SIGNUP API INTEGRATION
+ document.getElementById('signupData').addEventListener('submit', handleSignup);
+
+function handleSignup(event) {
+event.preventDefault();
+
+// Get all the input field and store them in their unique variable each
+let name = document.getElementById('name').value;
+let email = document.getElementById('email').value;
+let phonenumber = document.getElementById('phonenumber').value;
+let date = document.getElementById('date').value;
+let message = document.getElementById('message').value;
+
+let contactData = {
+    name,
+    email,
+    phonenumber,
+    date,
+    message
+}
+// alert(JSON.stringify(contactData));
+// alert(`${firstName} and ${lastName}`);
+console.log(contactData);
+isLoading = true;
+
+function handleErrors(response) {
+    if (!response.ok) {
+        throw Error(response.statusText);
+    }
+    return response;
+}
+fetch("http://127.0.0.1:8000/api/auth/register", {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(contactData)
+        })
+        .then(handleErrors)
+        .then(response => {
+            console.log("ok")
+            Swal.fire({
+                icon: 'success',
+                title: 'Message sent, We will get back shortly!',
+                showConfirmButton: false,
+                timer: 1500,
+
+            })
+            let res = document.getElementById("sendData");
+            res.reset();
+        })
+        .catch(error => {
+            console.log(error, 'wrong')
+            Swal.fire({
+                icon: 'error',
+                title: 'Message not sent, something went wrong!',
+                showConfirmButton: false,
+                timer: 1500,
+
+            })
+
+        });
+</script>
+
+{{-- END OF API INTEGRATION --}}
+</body>
 
 
 @endsection
