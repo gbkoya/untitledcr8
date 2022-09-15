@@ -61,7 +61,10 @@
            <div class="mt-5"> <img src="/customImages/Frame 76.png" alt="" style="width:100% "></div>
            <br>
             <p class="blogpost-text">How to combat digital eye strain</p>
+            <br>
+            <br>
             <p class="blogpost-aug">August 2022</p>
+            <br>
             <p class="blogpost-text2">
                 "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
                 atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
@@ -119,7 +122,7 @@
                     </div>
         </div>
         <br>
-        <div><button type="submit" class="i-blog-button brind">BACK TO BLOG</button></div>
+        <div class="brind py-5"><button type="submit" class="i-blogend-button">BACK TO BLOG</button></div>
 
     </section>
 
