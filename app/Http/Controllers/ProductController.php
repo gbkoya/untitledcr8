@@ -51,7 +51,7 @@ class ProductController extends Controller
 
         return response()->json([
             'status' => true,
-            'message' => 'Product created'
+            'message' => 'Product added'
         ], 200);
     }
 
@@ -66,8 +66,20 @@ class ProductController extends Controller
 
         $product->update($request->all());
 
-        return redirect()->route('products.index')
-                        ->with('success','Product updated successfully');
+        return response()->json([
+            'status' => true,
+            'message' => 'Product updated'
+        ], 200);
+    }
+
+    public function delete_product(Product $product)
+    {
+        $product->delete();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Product deleted'
+        ], 200);
     }
 
 }
