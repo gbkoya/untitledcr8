@@ -1,0 +1,90 @@
+*{
+    font-family: "inter", sans-serif;
+}
+
+
+.blogpost-img{
+
+
+height: 448px;
+left: 94px;
+top: 228px;
+border-radius: 16.4645px;
+}
+
+.red{
+    background-color: blueviolet;
+}
+.blogpost-text{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 64px;
+line-height: 117.5%;
+
+
+text-transform: capitalize;
+
+color: #6B809B;
+}
+.blogpost-text2{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 54px;
+
+
+letter-spacing: 0.01em;
+
+color: rgba(0, 0, 0, 0.7);
+
+
+}
+.blogpost-aug{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 28.9332px;
+line-height: 23px;
+
+
+letter-spacing: 0.01em;
+
+color: rgba(0, 0, 0, 0.3)
+}
+.blogpost_eyeimg{
+width: 90%;
+
+
+border-radius: 4.10353px;
+
+}
+.readmore_text1{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 28.2388px;
+line-height: 105.5%;
+
+
+text-transform: capitalize;
+
+color: rgba(107, 128, 155, 0.8);
+
+}
+.i-blog-button{
+    max-width: 360px;
+    height: 36px;
+    background: #F58634;
+    border-radius: 30px;
+    border:none;
+    color: #ffffff;
+    
+}
+.brind{
+   
+}
+.logost{
+    justify-content: center;
+}

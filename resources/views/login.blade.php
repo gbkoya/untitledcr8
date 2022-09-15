@@ -35,7 +35,7 @@ landscape.')
 
         <div class="mb-3 form-check pt-4">
           <div class="d-flex flex-row justify-content-center">
-            <input type="checkbox" class="i-login-check form-check-input" id="exampleCheck1"> </input>
+            <input type="checkbox" class="i-login-check form-check-input" id="exampleCheck1"> <input>
             <label class="i-login-remember form-check-label pt-2 px-2" for="exampleCheck1">Remember Me</label>
           </div>
         </div>
