@@ -80,9 +80,21 @@ color: rgba(107, 128, 155, 0.8);
     border-radius: 30px;
     border:none;
     color: #ffffff;
-    
+    padding: 7.0597px 18.5317px;
+gap: 8.82px;
+}
+.i-blogend-button{
+    max-width: 400px;
+    height: 50px;
+    background: #F58634;
+    border-radius: 30px;
+    border:none;
+    color: #ffffff;
+    padding: 7.0597px 18.5317px;
+gap: 8.82px;
 }
 .brind{
+    text-align: center;
    
 }
 .logost{
