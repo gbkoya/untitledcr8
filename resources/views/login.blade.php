@@ -22,13 +22,14 @@ landscape.')
           <div class="mb-3 pt-5 px-3">
             <div class="d-flex" style="background-color: #f3efef; padding-left: 1rem;" >
               <span class="mt-4 pt-1 px-2"><img src="{{asset('customImages/Vector (2).png')}}" alt=""> </span>
-              <input type="email" class="form-control-ika" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp"/>
+              <input type="email" class="form-control-ika" id="email" placeholder="Email" aria-describedby="emailHelp"
+              required/>
             </div>
           </div>
           <div class="mb-3 pt-3 px-3">
             <div class="d-flex" style="background-color: #f3efef; padding-left: 1rem;" >
               <span class="mt-4 pt-1 px-2"><img src="{{asset('customImages/Vector (1).png')}}" alt=""> </span>
-              <input type="password" id="password" class="form-control-ika" placeholder="Enter Password" id="exampleInputPassword1"/>
+              <input type="password" id="password" class="form-control-ika" placeholder="Enter Password" required/>
               <span class="mt-4 pt-1 px-4"><img src="{{asset('customImages/Vector.png')}}" alt=""> </span>
             </div>
           </div>
@@ -56,22 +57,16 @@ landscape.')
     event.preventDefault();
     
     // Get all the input field and store them in their unique variable each
-    let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;
-    let phonenumber = document.getElementById('phonenumber').value;
-    let date = document.getElementById('date').value;
-    let message = document.getElementById('message').value;
+    let password = document.getElementById('password').value;
     
-    let contactData = {
-        name,
+    let loginData = {
         email,
-        phonenumber,
-        date,
-        message
+        password,
     }
     // alert(JSON.stringify(contactData));
     // alert(`${firstName} and ${lastName}`);
-    console.log(contactData);
+    console.log(loginData);
     isLoading = true;
     
     function handleErrors(response) {
@@ -86,7 +81,7 @@ landscape.')
                 'Accept': 'application/json, text/plain, */*',
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(contactData)
+            body: JSON.stringify(loginData)
         })
         .then(handleErrors)
         .then(response => {
