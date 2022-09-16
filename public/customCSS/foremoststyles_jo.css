@@ -486,7 +486,7 @@ ll
 
 .foremost-button-border {
     background: #f58634;
-    border-radius: 0.4em;
+    border-radius: 25px;
     border: none;
     color: #ffffff;
 }
