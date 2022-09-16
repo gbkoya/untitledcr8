@@ -424,5 +424,9 @@ max-height: 700px !important;
     .small-screen-font-big{
       font-size: 23px !important;
     }
+
+    .payment-forms{
+      width: 100% !important;
+    }
   }
   
