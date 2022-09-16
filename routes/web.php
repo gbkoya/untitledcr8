@@ -74,11 +74,11 @@ Route::get('/login', function () {
 });
 
 Route::get('/cart', function () {
-    return view('checkout1.checkout1');
+    return view('cart.cart');
 });
 
 Route::get('/checkout1', function () {
-    return view('checkout2.checkout2');
+    return view('checkout1.checkout1');
 });
 Route::get('/checkout2', function () {
     return view('2ndcheckout');
