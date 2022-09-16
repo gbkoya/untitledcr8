@@ -20,26 +20,25 @@ landscape.')
         <h2 class="i-login-head">Log In</h2>
         <form>
           <div class="mb-3 pt-5 px-3">
-            <div class="d-flex" style="background-color: #f3efef" ; margin-top="10%">
+            <div class="d-flex" style="background-color: #f3efef; padding-left: 1rem;" >
               <span class="mt-4 pt-1 px-2"><img src="{{asset('customImages/Vector (2).png')}}" alt=""> </span>
-              <input type="email" class="form-control-ika" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp">
+              <input type="email" class="form-control-ika" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp"/>
             </div>
           </div>
           <div class="mb-3 pt-3 px-3">
-            <div class="d-flex" style="background-color: #f3efef" ; margin-top="10%">
+            <div class="d-flex" style="background-color: #f3efef; padding-left: 1rem;" >
               <span class="mt-4 pt-1 px-2"><img src="{{asset('customImages/Vector (1).png')}}" alt=""> </span>
-              <input type="password" class="form-control-ika" placeholder="Create Password" id="exampleInputPassword1">
+              <input type="password" id="password" class="form-control-ika" placeholder="Enter Password" id="exampleInputPassword1"/>
               <span class="mt-4 pt-1 px-4"><img src="{{asset('customImages/Vector.png')}}" alt=""> </span>
             </div>
           </div>
-  
           <div class="mb-3 form-check pt-4">
             <div class="d-flex flex-row justify-content-center">
-              <input type="checkbox" class="i-login-check form-check-input" id="exampleCheck1"> </input>
+              <input type="checkbox" class="i-login-check form-check-input" id="exampleCheck1"/>
               <label class="i-login-remember form-check-label pt-2 px-2" for="exampleCheck1">Remember Me</label>
             </div>
           </div>
-          <div class="row justify-content-center py-5">
+          <div class="row i-login-button-mobile justify-content-center py-5">
             
             <button type="submit" class="i-login-button ">SIgn In</button>
           </div>
