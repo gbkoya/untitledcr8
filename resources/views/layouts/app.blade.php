@@ -50,6 +50,7 @@
   <link rel="stylesheet" href="/customCSS/shop_styles.css">
   <link rel="stylesheet" href="/customCSS/tryit_styles.css">
   <link rel="stylesheet" href="{{ asset('customCSS/teleinput.css') }}">
+  <link rel="stylesheet" href="/customCSS/blogpost_styles.css">
 
   <!-- Material icon -->
   <link href="/css/material-icons.min.css" rel="stylesheet">
@@ -64,6 +65,7 @@
   <script src="/customJS/galleryscript.js"></script>
   <script src="/customJS/contact.js"></script>
   <script src="/customJS/telephoneinput.js"></script>
+  <script src="/customJS/signupscript.js"></script>
 
 </head>
 

@@ -60,8 +60,8 @@ Route::get('/checkout3', function () {
 Route::get('/test', function () {
     return view('errors.test');
 });
-Route::get('/signin', function () {
-    return view('signin');
+Route::get('/signup', function () {
+    return view('signup');
 });
 Route::get('/details1', function () {
     return view('details1');

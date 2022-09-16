@@ -3,8 +3,14 @@
     height: auto!important;
     padding: 2rem 0;
 }
+
 .footer-section .input-wrapper{
     position: relative;
+}
+
+.e-footer-about{
+    max-width: 28rem;
+    text-align: justify;
 }
 
 .footer-section .search-image{
@@ -68,6 +74,16 @@
     .footer-section .search-image{
         /* width: 21.34px; */
         right: 5%;
+    }
+    .e-footer-about{
+        text-align: left;
+        width: 100%;
+    }
+    .e-footer-pages{
+        margin-top: 2rem;
+    }
+    .footer-section form input[type="search"]{
+        width: 100%!important;
     }
 }
 

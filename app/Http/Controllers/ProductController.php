@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -23,14 +24,25 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'image' => 'required',
+            'image' => 'image|nullable|max:5120',
             'price' => 'required',
             'description' => 'required',
         ]);
 
+        if ($request->hasFile('image')) {
+            $fileNameWithExt    = $request->file('image')->getClientOriginalName();
+            $filename           = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extension          = $request->file('image')->getClientOriginalExtension();
+            $fileNameToStore    = 'foremost_'.$filename.'_'.time().'.'.$extension;
+            $img                = \Image::make( $request->file('image'))->encode('jpg', 30);
+            Storage::put('public/image/'.$fileNameToStore, $img->__toString());
+        } else {
+            $fileNameToStore = "noimage.jpg";
+        }
+
         Product::create(
             [
-                'image'  => $request->image,
+                'image'  => $fileNameToStore,
                 'name' => $request->name,
                 'price' => $request->price,
                 'description' => $request->description,
@@ -39,7 +51,7 @@ class ProductController extends Controller
 
         return response()->json([
             'status' => true,
-            'message' => 'Product created'
+            'message' => 'Product added'
         ], 200);
     }
 
@@ -54,8 +66,20 @@ class ProductController extends Controller
 
         $product->update($request->all());
 
-        return redirect()->route('products.index')
-                        ->with('success','Product updated successfully');
+        return response()->json([
+            'status' => true,
+            'message' => 'Product updated'
+        ], 200);
+    }
+
+    public function delete_product(Product $product)
+    {
+        $product->delete();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Product deleted'
+        ], 200);
     }
 
 }
