@@ -53,9 +53,9 @@
 
 .button-wrapper a .login{
     /* height: 44px; */
-    padding: .9rem 1.5rem;
+    padding: .9rem 2rem;
     background: #6B809B;
-    border-radius: 5px;
+    border-radius: 25px;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -65,9 +65,9 @@
     border: none;
 }
 .button-wrapper a .signup{
-    padding: .9rem 1.5rem;
+    padding: .9rem 2rem;
     color: #6B809B;
-    border-radius: 5px;
+    border-radius: 25px;
     font-style: normal;
     font-weight: 500;
     font-size: 1rem;
@@ -78,9 +78,9 @@
 }
 
 .button-wrapper a .try-it{
-    padding: .9rem 1.5rem;
+    padding: .9rem 2rem;
     color: #6B809B;
-    border-radius: 5px;
+    border-radius: 25px;
     font-style: normal;
     font-weight: 500;
     font-size: 1rem;
@@ -96,10 +96,10 @@
 }
 
 .shop-button{
-    padding: .9rem 1.7rem;
+    padding: .9rem 2rem;
     height: auto;
     background: #F58634;
-    border-radius: 4.7179px;
+    border-radius: 25px;
     border: none;
     font-style: normal;
     font-weight: 600;
@@ -113,7 +113,7 @@
     padding: .9rem 2.2rem;
     height: auto;
     background: #F58634;
-    border-radius: 4.7179px;
+    border-radius: 25px;
     border: none;
     font-style: normal;
     font-weight: 600;
@@ -291,10 +291,10 @@
 }
 
 .shop-card-button{
-    padding: .7rem 1rem;
+    padding: .7rem 1.3rem;
     height: auto;
     background: #F58634;
-    border-radius: 4.7179px;
+    border-radius: 25px;
     border: none;
     font-style: normal;
     font-weight: 600;

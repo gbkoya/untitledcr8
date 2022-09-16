@@ -43,10 +43,10 @@ nav{
 
 nav .buy-button{
     /* width: 131.08px; */
-    padding: .875rem 1rem;
+    padding: .875rem 1.5rem;
     height: auto;
     background: #F58634;
-    border-radius: 4.7179px;
+    border-radius: 25px;
     border: none;
     font-style: normal;
     font-weight: 600;

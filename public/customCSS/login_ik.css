@@ -1,8 +1,9 @@
 .login-ik{ background-image: url(../customImages/login.png);
    background-repeat:no-repeat;
-  background-size:cover ;
+   background-size:cover ;
    align-items:center;
-   
+   width: 100%;
+
   }
 
 .i-login-backg{
@@ -299,6 +300,11 @@ color: rgba(0, 0, 0, 0.3);
 
 }
 @media (max-width:990px) {
+  .i-login-button-mobile{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .log{
      align-items: center;
 
@@ -430,3 +436,19 @@ max-height: 700px !important;
     }
   }
   
+
+  /* Ebuka fix */
+  .sign-button{
+    width: 480px;
+    height: 56px;
+    background: #F58634;
+    border: 0.5px solid #FFFFFF;
+    border-radius: 25px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+  }
