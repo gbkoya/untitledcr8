@@ -58,21 +58,8 @@ landscape.')
             <div class="px-2 small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color: rgba(107, 128, 155, 0.8);">
                 Anti blu ray radiation,<br> computer glasses</div>
 
-            <!-- <input style="height: 47px;" type="numbers" class="form-control" id="exampleInputPassword1" placeholder=""> -->
-            <form action="#">
-
-                <select class="mx-5" name="values" class="" style="height: 47px; padding-right: 250px; ">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                </select>
-
-            </form>
+             <input style="height: 47px;" type="number" class="form-control" id="exampleInputPassword1" placeholder="">
+            
 
             <div class="pt-2 small-screen-font" style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">₦4,999</div>
         </div>
