@@ -42,7 +42,7 @@
     </main>
 
     <section class="container">
-        <h2 style="text-align: center;"><b>Payment</b></h2>
+        <h2 style="text-align: center;"><b>Delivery Location</b></h2>
 
         <div class=" container d-flex flex-row justify-content-between  pt-4 col-lg-10">
             <img class="m" src="{{ asset('customImages/Group 188.png') }}" />
@@ -52,20 +52,24 @@
         </div>
 
         <div class="container card my-5 col-md-10">
-            <div class="px-5 justify-content-center">
-                <form class="px-5">
-                    <div class="form-group col-lg-9 mt-5">
+            <div class="d-flex flex justify-content-center col-lg">
+                <form class="">
+                    <div class="form-group col-lg- mt-5">
+                        <div>
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        </div>
+
+                        <input class="payment-forms"
+                        style="border: 1.14951px solid #D2D6DA;border-radius: 5.74757px;height: 46px; width:446px"
+                         type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                             placeholder="hello@dummie.org">
                     </div>
-                    <div class="form-group col-lg-9 mt-5">
+                    <div class="form-group col-lg- mt-5">
                         <label for="exampleInputPassword1">Phone Number</label>
                         <div class="d-flex">
-                            <input
-                                style="border: 1.14951px solid #D2D6DA;border-radius: 5.74757px;height: 46px; max-width:9095px"
-                                class="" name="phone" type="text" class="form-control" id="phone"
-                                placeholder="">
+                            <input class="payment-forms"
+                                style="border: 1.14951px solid #D2D6DA;border-radius: 5.74757px;height: 46px; width:446px"
+                                class="" name="phone" type="text" class="" id="phone" placeholder="01234567">
 
 
 
@@ -73,9 +77,12 @@
                     </div>
                     <div class="form-group col-lg-11 mt-5">
                         <label for="exampleInputEmail1">What’s your address?</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        <input class="payment-forms"
+                        style="border: 1.14951px solid #D2D6DA;border-radius: 5.74757px;height: 46px; width:597px"
+                        type="text" class="form-control" id="exampleInputEmail1" aria-describedby=""
                             placeholder="">
                     </div>
+                    <div class="pt-5"></div>
 
                 </form>
             </div>
