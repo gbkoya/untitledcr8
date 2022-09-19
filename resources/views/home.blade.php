@@ -17,7 +17,7 @@
                         We offer Premium <span class="orange-color">eye care</span> solutions
                     </h2>
                     <p class="pt-3 text-black-paragraph">
-                        Foremost Eye Clinic is a leading provider of optometry services. With friendly and experienced
+                        Foremost International Eye Clinic is a leading provider of optometry services. With friendly and experienced
                         optometrists,
                         we provide a comprehensive range of eye care services.
                     </p>

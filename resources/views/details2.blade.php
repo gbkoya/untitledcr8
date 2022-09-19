@@ -15,14 +15,16 @@ landscape.')
 
 
 <!-- search part -->
-
 <div>
     <section class="container-fluid search-background mt-5">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="search-box-ika d-flex col-md-4 my-4 mx-5" style="background: #FFFFFF;border-radius: 5px;" ; margin-top="10%">
-                    <input type="text" style="height: 62px;font-weight: 600;font-size: 18px;line-height: 147.9%;color: rgba(107, 128, 155, 0.6);width:100%; border:none;outline:none" placeholder="Search for eyewear, lenses and frames" id="exampleInputPassword1">
-                    <span class="pt-3  px-4"><img src="{{asset('customImages/arrow-right.png')}}" alt=""> </span>
+        <main>
+            {{-- Sub nav --}}
+            {{-- <section class="e-try-hero container-fluid"> --}}
+            <nav class="d-flex flex-row align-items-center flex-wrap container-fluid justify-content-evenly e-try-nav">
+                {{-- <div class="d-flex flex-row"> --}}
+                <div class="row d-sm-flex search-wrapper">
+                    <input type="search" placeholder="Search for eyewear, lenses and frames" />
+                    <img class="img-fluid search-shop-image" src="{{ asset('customImages/arrow-right.png') }}" />
                 </div>
                 <div class="d-sm-flex flex-sm-row align-items-center flex-wrap button-wrapper but-wrapper-mobile">
                     <a href=""><button class="login" type="button">Log In</button></a>
@@ -46,19 +48,14 @@ landscape.')
             {{-- </section> --}}
         </main>
     </section>
+<!-- end of search part -->
 
-    <!-- end of search part -->
-
-<section class="d-flex flex-row flex-wrap container pt-5">
+ <section class="d-flex flex-row flex-wrap container pt-5">
         <div class=" col-lg-5">
             <div class="col">
 
                 <!-- carousel -->
-<<<<<<< HEAD
         <div>
-=======
-       <div>
->>>>>>> 8c9c10513a3ad812aadbd464048b03dd038e5ed2
                     <div class="slideshow-container">
                         <div class="mySlides fade">
                             <img class="img-fluid image-size-middle-ika" src="{{ asset('customImages/Frame 93.png') }}" alt="">
@@ -80,7 +77,7 @@ landscape.')
                         <span class="dot" onclick="currentSlide(2)"></span>
                         <span class="dot" onclick="currentSlide(3)"></span>
                     </div>
-
+                    
                     <script>
                         let slideIndex = 1;
                         showSlides(slideIndex);
