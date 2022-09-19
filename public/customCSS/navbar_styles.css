@@ -14,9 +14,12 @@ nav{
     color: #000000!important;
     font-style: normal;
     font-weight: 400;
-    font-size: .875rem;
+    font-size: .83rem;
     line-height: 22px;
     position: relative;
+}
+.archware-nav-title-drop{
+    font-size: .83rem!important;
 }
 /* .archware-nav-title:active {
     color: forestgreen!important;
@@ -60,7 +63,7 @@ nav button[type="button"]{
 }
 
 .right-nav{
-    margin-left: 24%;
+    margin-left: 22%;
     margin-top: 1rem;
 }
 

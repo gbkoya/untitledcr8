@@ -18,6 +18,14 @@ landscape.')
       <div class="container col-lg-5 col-md-7 my-5 py-5 i-login-backg">
   
         <h2 class="i-login-head">Log In</h2>
+        <div class="d-flex flex-sm-row flex-sm-wrap justify-content-evenly" style="margin-top: 1rem">
+          <a class="ml-1 btn" href="{{ url('auth/facebook') }}" style="margin-top: 0px !important;background: #F58634; width: 40%; color: #ffffff;padding: .7rem .2rem; border-radius: 25px;" id="btn-fblogin">
+            <i class="fab fa-facebook" aria-hidden="true"></i> Login with Facebook
+          </a>
+          <a class="ml-1 btn" href="{{ url('auth/facebook') }}" style="margin-top: 0px !important;background: #F58634; width: 40%; color: #ffffff; padding: .7rem; .2rem; border-radius: 25px;" id="btn-fblogin">
+            <i class="fab fa-google" aria-hidden="true"></i> Login with Google
+        </a>
+        </div>
         <form>
           <div class="mb-3 pt-5 px-3">
             <div class="d-flex" style="background-color: #f3efef; padding-left: 1rem;" >
