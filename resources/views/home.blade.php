@@ -30,7 +30,7 @@
     
                 <div class="archwarejo-width-top-head">
                     <img class="img-fluid image-width-tab image-min-height-mobile" src="/customImages/We offer Premium.png">
-                    <div class="">
+                    {{-- <div class="">
                         <div class="container justify-content-center">
                             <div class="row">
                                 <div class="gallery-rule">
@@ -43,13 +43,31 @@
                                 </div>
                             </div>
                         </div>
+                    </div> --}}
+                    <div class="e-our-offer d-sm-flex flex-row align-items-center justify-content-evenly">
+                        <div class="e-our-offer-child d-flex flex-column align-items-center justify-content-center">
+                            <img class="img-fluid" src="/customImages/eye-cleaner.png" alt="Eye clinic image">
+                            <p>Modern Eye Clinic</p>
+                        </div>
+                        <div class="e-our-offer-child d-flex flex-column justify-content-center align-items-center">
+                            <img class="img-fluid" src="/customImages/personnel.png" alt="Eye clinic image">
+                            <p>Expert Personnel</p>
+                        </div>
+                        <div class="e-our-offer-discount justify-content-center d-flex flex-column align-items-center">
+                            <img class="img-fluid" src="/customImages/eye-check.png" alt="Eye check image">
+                            <p>Discounted Eye checkups</p>
+                        </div>
+                        <div class="e-our-offer-child d-flex justify-content-center flex-column align-items-center">
+                            <img class="img-fluid" src="/customImages/hotline.png" alt="Eye check image">
+                            <p>24 Hour Hotline</p>
+                        </div>
                     </div>
                 </div>
             </section>
         </div>
     
         {{-- ABOUT US SECTION --}}
-       <section class="container-fluid d-flex flex-row flex-wrap justify-content-between align-items-center about-us-margin e-aboutus-home">
+       <section class="container-fluid d-flex flex-row flex-wrap justify-content-between align-items-center e-aboutus-home">
         <div class="e-aboutus-img">
             <img class="img-fluid"
             src="/customImages/doctor smiley thumb.png"/>  
