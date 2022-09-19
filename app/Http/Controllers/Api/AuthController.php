@@ -16,6 +16,55 @@ class AuthController extends Controller
      * @param Request $request
      * @return User
      */
+
+
+    /**
+        * @OA\Post(
+        * path="/api/auth/register",
+        * operationId="CreateUser",
+        * tags={"Create User"},
+        * summary="User Register",
+        * description="Add new user to the system",
+        *     @OA\RequestBody(
+        *         @OA\JsonContent(),
+        *         @OA\MediaType(
+        *            mediaType="multipart/form-data",
+        *            @OA\Schema(
+        *               type="object",
+        *               required={"firstname","lastname", "email", "password"},
+        *               @OA\Property(property="firstname", type="text"),
+        *               @OA\Property(property="lastname", type="text"),
+        *               @OA\Property(property="email", type="email"),
+        *               @OA\Property(property="password", type="password")
+        *            ),
+        *        ),
+        *    ),
+        *      @OA\Response(
+        *          response=201,
+        *          description="Register Successfully",
+        *          @OA\JsonContent()
+        *       ),
+        *      @OA\Response(
+        *          response=200,
+        *          description="User Created Successfully",
+        *          @OA\JsonContent()
+        *       ),
+        *      @OA\Response(
+        *          response=422,
+        *          description="Unprocessable Entity",
+        *          @OA\JsonContent()
+        *       ),
+        *      @OA\Response(
+        *          response=500,
+        *          description="Error page",
+        *          @OA\JsonContent()
+        *       ),
+        *      @OA\Response(response=400, description="Bad request"),
+        *      @OA\Response(response=404, description="Resource Not Found"),
+        * )
+    */
+
+
     public function createUser(Request $request)
     {
         try {
@@ -63,6 +112,45 @@ class AuthController extends Controller
      * @param Request $request
      * @return User
      */
+
+    /**
+        * @OA\Post(
+        * path="/auth/login",
+        * operationId="authLogin",
+        * tags={"Login"},
+        * summary="User Login",
+        * description="Login Existing User",
+        *     @OA\RequestBody(
+        *         @OA\JsonContent(),
+        *         @OA\MediaType(
+        *            mediaType="multipart/form-data",
+        *            @OA\Schema(
+        *               type="object",
+        *               required={"email", "password"},
+        *               @OA\Property(property="email", type="email"),
+        *               @OA\Property(property="password", type="password")
+        *            ),
+        *        ),
+        *    ),
+        *      @OA\Response(
+        *          response=201,
+        *          description="Login Successfully",
+        *          @OA\JsonContent()
+        *       ),
+        *      @OA\Response(
+        *          response=200,
+        *          description="Login Successfully",
+        *          @OA\JsonContent()
+        *       ),
+        *      @OA\Response(
+        *          response=422,
+        *          description="Unprocessable Entity",
+        *          @OA\JsonContent()
+        *       ),
+        *      @OA\Response(response=400, description="Bad request"),
+        *      @OA\Response(response=404, description="Resource Not Found"),
+        * )
+    */
     public function loginUser(Request $request)
     {
         try {
@@ -104,14 +192,19 @@ class AuthController extends Controller
         }
     }
 
+    /**
+        * @OA\Post(
+        * path="/auth/logout",
+        * operationId="authLogout",
+        * tags={"Logout"},
+        * summary="Logout user",
+        * description="User must be logged in to get to this route",
+        * @OA\Response(response=200, description="User logged out"),
+        * )
+    */
     public function logout()
     {
         Auth::user()->tokens()->delete();
-        // auth()->user()->tokens()->delete();
-
-        // return [
-        //     'message' => 'Tokens Revoked'
-        // ];
         return response()->json([
             'status' => TRUE,
             'message' => 'Tokens Revoked',
