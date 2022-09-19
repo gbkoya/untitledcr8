@@ -84,6 +84,7 @@
     background-image: url("../customImages/about-us\ background.png");
     height: auto;
     padding-right: 6rem;
+    padding-top: 4rem;
 }
 
 .e-aboutus-home .e-abouts-home-right{
@@ -269,6 +270,9 @@ ll
     .remove-shadow-mobile{
         margin-top: 1rem;
     }
+    .e-our-offer{
+        display: none!important;
+    }
 }
 
 @media (max-width: 769px) {
@@ -377,6 +381,9 @@ ll
     }
     .service-hero-copy p{
         font-size: 1.2rem!important;
+    }
+    .e-our-offer{
+        display: none;
     }
 }
 
@@ -530,4 +537,42 @@ ll
 
 .e-card-body{
     padding: 1rem;
+}
+
+.archwarejo-width-top-head{
+    position: relative;
+}
+
+.e-our-offer{
+    width: 100%;
+    height: auto;
+    padding: .8rem 0;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4.70588px rgba(0, 0, 0, 0.25);
+    border-radius: 117.647px;
+    position: absolute;
+    top: 90%;
+    right: 5%
+}
+
+.e-our-offer-child p{
+    max-width: 5.5rem;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 125%;
+    text-align: center;
+    margin-top: .4rem;
+    color: #000000;
+}
+
+.e-our-offer-discount p {
+    max-width: 7.5rem;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 125%;
+    text-align: center;
+    color: #000000;
+    margin-top: .3rem;
 }

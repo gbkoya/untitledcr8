@@ -19,7 +19,7 @@
         </button>
 
         <div class="collapse navbar-collapse right-nav" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto nav-links-a" style="margin-left: 12%;">
+            <ul class="navbar-nav me-auto nav-links-a" style="">
                 <li class="nav-item px-3">
                     <a class="nav-link archware-nav-title" href="/">Home</a>
                 </li>
@@ -40,6 +40,21 @@
                 <li class="nav-item px-3">
                     <a class="nav-link archware-nav-title" href="/blog">Blog</a>
                 </li>
+                {{-- <li class="nav-item px-3">
+
+                    <a class="nav-link archware-nav-title" href="/login">Login</a>
+                </li> --}}
+                <div class="dropdown" style="margin: 0 .6rem">
+                    <li class="dropdown-toggle nav-item" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer; font-size: .83rem">
+                      Hello! Sign in<br>
+                      Account
+                    </li>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item archware-nav-title-drop" href="/login">Login</a></li>
+                      <li><a class="dropdown-item archware-nav-title-drop" href="/signup">Create account</a></li>
+                      <li><a class="dropdown-item archware-nav-title-drop" href="#">Orders</a></li>
+                    </ul>
+                  </div>
 
                 <li class="button-wrapper">
                     <a href="/shop">

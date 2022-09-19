@@ -18,6 +18,14 @@ landscape.')
       <div class="container col-lg-5 col-md-7 my-5 py-5 i-login-backg">
   
         <h2 class="i-login-head">Create Account</h2>
+        <div class="d-flex flex-sm-row flex-sm-wrap justify-content-evenly" style="margin-top: 1rem">
+          <a class="ml-1 btn" href="{{ url('auth/facebook') }}" style="margin-top: 0px !important;background: #F58634; width: 40%; color: #ffffff;padding: .7rem .2rem; border-radius: 25px;" id="btn-fblogin">
+            <i class="fab fa-facebook" aria-hidden="true"></i> Login with Facebook
+          </a>
+          <a class="ml-1 btn" href="{{ url('auth/facebook') }}" style="margin-top: 0px !important;background: #F58634; width: 40%; color: #ffffff; padding: .7rem; .2rem; border-radius: 25px;" id="btn-fblogin">
+            <i class="fab fa-google" aria-hidden="true"></i> Login with Google
+        </a>
+        </div>
         <form>
           <div class="mb-3 pt-2 px-3" style="border-radius: 20px;">
             <div class="d-flex" style="background-color: #f3efef; margin-top: 10%; padding-left: 1rem;">
@@ -43,11 +51,15 @@ landscape.')
           </div>
           <div class="mb-3 pt-3 px-3">
             <div class="d-flex" style="background-color: #f3efef; padding-left: 1rem;" >
-              <span class="mt-4 pt-1 px-2"><img src="{{asset('customImages/Vector (1).png')}}" alt=""> </span>
-              <input type="password" id="password" class="form-control-ika" placeholder="Enter Password (Min. 8 characters)" id="exampleInputPassword1" required
+              <span class="mt-4 pt-1 px-2">
+                <img src="{{asset('customImages/Vector (1).png')}}" alt=""> 
+              </span>
+              <input type="text" id="password" class="form-control-ika" placeholder="Enter Password (Min. 8 characters)" id="exampleInputPassword1" required
               pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
                    title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number."/>
-              <span class="mt-4 pt-1 px-4"><img src="{{asset('customImages/Vector.png')}}" alt=""> </span>
+              <span id="e-hide" class="e-toggle-icon e-toggle-hide mt-4 pt-1 px-4"><img onclick="showPassword()" class="img-fluid" src="{{asset('customImages/Vector.png')}}" alt="hide image"/> </span>
+              <span id="e-display" class="e-toggle-icon mt-4 pt-1 px-4"><img onclick="hidePassword()"  class="img-fluid" src="{{asset('customImages/password.png')}}" alt="show image"/></span>
+
             </div>
           </div>
   
@@ -68,6 +80,24 @@ landscape.')
 
   <script src="text/javascript">
   
+
+        // Toggle password display
+        let display = document.getElementById('e-display');
+
+
+        function hidePassword(){
+        let hide = document.getElementById('e-hide');
+          alert('show!');
+          hide.display = 'none'
+        }
+
+        function showPassword(){
+          alert('hide!');
+        }
+
+        // hide.addEventListener('onclick', hidePassword());
+        // display.addEventListener('onclick', showPassword());
+
   //  SIGNUP API INTEGRATION
    document.getElementById('signupData').addEventListener('submit', handleSignup);
   
@@ -131,6 +161,9 @@ landscape.')
   
           });
         }
+
+       
+  
   </script>
 {{-- END OF API INTEGRATION --}}
 

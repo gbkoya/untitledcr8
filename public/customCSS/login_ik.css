@@ -452,3 +452,11 @@ max-height: 700px !important;
     letter-spacing: 0.04em;
     color: #FFFFFF;
   }
+
+  .e-toggle-icon img{
+    cursor: pointer;
+  }
+
+  .e-toggle-hide{
+    display: none;
+  }
