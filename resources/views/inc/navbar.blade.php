@@ -19,7 +19,7 @@
         </button>
 
         <div class="collapse navbar-collapse right-nav" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto nav-links-a" style="margin-left: 12%;">
+            <ul class="navbar-nav me-auto nav-links-a" style="">
                 <li class="nav-item px-3">
                     <a class="nav-link archware-nav-title" href="/">Home</a>
                 </li>
@@ -39,6 +39,9 @@
                 </li>
                 <li class="nav-item px-3">
                     <a class="nav-link archware-nav-title" href="/blog">Blog</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link archware-nav-title" href="/login">Login</a>
                 </li>
 
                 <li class="button-wrapper">
