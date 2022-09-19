@@ -34,7 +34,6 @@ Route::get('callback/google', [GoogleSocialiteController::class, 'handleCallback
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/me', function (Request $request) {
-
         return response()->json([
             'status' => true,
             'message' => 'Your name is: '.auth()->user()->name
@@ -44,7 +43,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/auth/logout', [AuthController::class, 'logout']);
 });
 
-
+// Product api here
 Route::get('/product-list', [ProductController::class, 'index']);
 
 Route::post('/add-product', [ProductController::class, 'store_product']);
