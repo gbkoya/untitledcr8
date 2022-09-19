@@ -356,7 +356,7 @@
                         Cataract Surgery
                     </div>
                     <p class="foremost-card-body">
-                        At Foremost, we specialize in Cataract Surgery and ancillary care. Our services are world class. We
+                        At Foremost International, we specialize in Cataract Surgery and ancillary care. Our services are world class. We
                         use latest technologies and our reputable specialists are ever ready to help and support your
                         recovery process.
                     </p>
