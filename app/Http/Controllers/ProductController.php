@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Productcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -15,11 +16,30 @@ class ProductController extends Controller
             'status' => true,
             'message' => 'Faker data soon...'
         ], 200);
-
-        return view('products.index',compact('products'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
+
+    public function getProductByCategory($category)
+    {
+        switch ($category) {
+            case 'shopmen':
+                $response_variable = 'shopmen';
+                break;
+            case 'shopwomen':
+                $response_variable = 'shopwomen';
+                break;
+            case 'shopkids':
+                $response_variable = 'shopkids';
+                break;
+        }
+        $products = Productcategory::where('category', $category)->with(['products'])->paginate(24);
+        return response()->json([
+            'status' => true,
+            $response_variable => $products
+        ], 200);
+    }
+
+    /*
     public function store_product (Request $request)
     {
         $request->validate([
@@ -53,6 +73,65 @@ class ProductController extends Controller
             'status' => true,
             'message' => 'Product added'
         ], 200);
+    }
+    */
+
+    public function storeProduct (Request $request) {
+        $request->validate([
+            'name'              => 'required',
+            'imagedirectory'   => 'image|nullable|max:5120',
+            'product_price'     => 'required',
+        ]);
+
+        $product = new Product();
+        $product->name = $request -> name;
+        $product->quantityinstock = $request -> quantityinstock;
+        $product->productcategory_id = $request -> productcategory_id;
+        $product->status = $request -> status;
+        $product->save();
+
+        $product->productprices()->create([
+            'product_id' => $product->id,
+            'product_price' => $request-> product_price
+        ]);
+        $product->productfeatures()->create([
+            'product_id' => $product->id,
+            'features' => $request->features,
+        ]);
+
+        if ($request->hasFile('imagedirectory')) {
+            $fileNameWithExt    = $request->file('imagedirectory')->getClientOriginalName();
+            $filename           = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extension          = $request->file('imagedirectory')->getClientOriginalExtension();
+            $imagedirectory     = 'foremost_'.$filename.'_'.time().'.'.$extension;
+            $img                = \Image::make( $request->file('imagedirectory'))->encode('jpg', 30);
+            Storage::put('public/product_image/'.$imagedirectory, $img->__toString());
+        } else {
+            $imagedirectory = "noimage.jpg";
+        }
+
+        if ($request->hasFile('imagedirectory')) {
+            $fileNameWithExt    = $request->file('imagedirectory')->getClientOriginalName();
+            $filename           = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extension          = $request->file('imagedirectory')->getClientOriginalExtension();
+            $thumbnaildirectory = 'foremost_'.$filename.'_'.time().'.'.$extension;
+            $img                = \Image::make( $request->file('imagedirectory'))->encode('jpg', 30);
+            Storage::put('public/thumbnail_image/'.$thumbnaildirectory, $img->__toString());
+        } else {
+            $thumbnaildirectory = "noimage.jpg";
+        }
+
+        $product->productimages()->create([
+            'product_id' => $product->id,
+            'imagedirectory' => $imagedirectory,
+            'thumbnaildirectory' => $thumbnaildirectory
+        ]);
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Product added'
+        ], 200);
+
     }
 
     public function edit_product(Request $request, Product $product)
