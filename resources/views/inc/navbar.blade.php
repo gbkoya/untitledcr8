@@ -44,7 +44,7 @@
 
                     <a class="nav-link archware-nav-title" href="/login">Login</a>
                 </li> --}}
-                <div class="dropdown" style="margin: 0 .6rem">
+                <div class="dropdown e-drop-nav" style="margin: 0 1.3rem">
                     <li class="dropdown-toggle nav-item" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer; font-size: .83rem">
                       Hello! Sign in<br>
                       Account
