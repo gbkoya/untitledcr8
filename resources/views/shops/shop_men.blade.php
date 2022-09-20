@@ -94,7 +94,7 @@
 
 {{-- The tabs pills nav --}}
 <div class="eb-tab">
-    <ul class="nav nav-pills nav-pill-head-wrapper mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
+    <ul class="nav nav-pills nav-pill-head-wrapper mb-3 d-md-flex justify-content-center align-items-center" id="pills-tab" role="tablist">
         <li class="nav-item nav-but" role="presentation">
           <button class="nav-link pill-button active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Men</button>
         </li>

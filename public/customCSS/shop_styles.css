@@ -539,5 +539,10 @@
         padding-bottom: 1rem;
     }
  }
+
+ /* Large screen size responsive style */
+@media screen and (min-width: 1750px){
+  
+}
 /* End of store card section */
 /* END OF SHOP MEN STYLES */

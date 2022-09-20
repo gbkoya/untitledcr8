@@ -14,9 +14,12 @@ nav{
     color: #000000!important;
     font-style: normal;
     font-weight: 400;
-    font-size: .875rem;
+    font-size: .83rem;
     line-height: 22px;
     position: relative;
+}
+.archware-nav-title-drop{
+    font-size: .83rem!important;
 }
 /* .archware-nav-title:active {
     color: forestgreen!important;
@@ -60,7 +63,7 @@ nav button[type="button"]{
 }
 
 .right-nav{
-    margin-left: 24%;
+    margin-left: 22%;
     margin-top: 1rem;
 }
 
@@ -149,11 +152,16 @@ ul li a:nth-child(2) {
     }
     .button-wrapper{
         margin-left: 1rem;
+        margin-top: 1rem;
     }
     nav{
         background: #FFFFFF;
         /* box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05); */
         /* transition: all 0.1s; */
+    }
+    .e-drop-nav{
+        margin-left: 1rem!important;
+        margin-top: .5rem!important;
     }
 }
 
@@ -169,6 +177,7 @@ ul li a:nth-child(2) {
 .right-nav{
     margin-left: 0;
 }
+
 }
 
 /* Large screen size responsive style */
