@@ -42,13 +42,13 @@ landscape.')
 </main>
 
 <section class="container">
-    <h2 style="text-align: center;"><b>Payment</b></h2>
+    <h2 class="font-bg-gb" style="text-align: center;"><b>Payment</b></h2>
 
     <div class=" container d-flex flex-row justify-content-between  pt-4">
         <img class="m" src="{{ asset('customImages/Group 188.png') }}" />
-        <img class="" src="{{ asset('customImages/Group 189.png') }}" />
-        <img class="" src="{{ asset('customImages/Group 190.png') }}" />
-        <img class="" src="{{ asset('customImages/Group 191.png') }}" />
+        <img class="" src="{{ asset('customImages/Group 189b.png') }}" />
+        <img class="" src="{{ asset('customImages/Group 190b.png') }}" />
+        <img class="" src="{{ asset('customImages/Group 191b.png') }}" />
     </div>
 
     <div class="container card mt-5 col-lg-9">
@@ -74,8 +74,8 @@ landscape.')
                 </div>
             </div>
 
-            <button class="my-5 verify-btn" style="width:fit-content;height: 54px;background: #F58634;border-radius: 5.80596px;padding: 13px 38px;font-weight: 600;
-                        font-size: 18.4594px;line-height: 28px;color: #FFFFFF; float: right; margin-right: -100px;">
+            <button class="my-5 font-sm-gb btn-sm-gb" style="background: #F58634;border-radius: 5.80596px;padding: 13px 38px;font-weight: 600;
+                        font-size: 18.4594px;line-height: 28px;color: #FFFFFF; float: right; border:none; padding: 0.8rem 3rem">
                         VERIFY
             </button>
 
@@ -85,8 +85,8 @@ landscape.')
     </div>
 
     <div class="container col-lg-7 py-3 pb-5">
-        <button style="background: rgba(0, 0, 0, 0.2);border-radius: 4.67259px;font-weight: 700;font-size: 18.6904px;
-                line-height: 140%;color: #6B809B; padding: 0.8em 3em;">Back
+        <button class="font-sm-gb btn-sm-gb" style="background: rgba(0, 0, 0, 0.2);border-radius: 4.67259px;font-weight: 700;font-size: 18.6904px;
+                line-height: 140%;color: #6B809B; padding: 0.8em 3em; border:none">Back
 
         </button>
     </div>

@@ -434,6 +434,17 @@ max-height: 700px !important;
     .payment-forms{
       width: 100% !important;
     }
+
+    .font-sm-gb{
+      font-size: 1rem !important;
+    }
+    .btn-sm-gb{
+      padding: 0.5rem 1.5rem !important;
+    }
+
+    .font-bg-gb{
+      font-size: 2.5rem !important;
+    }
   }
   
 

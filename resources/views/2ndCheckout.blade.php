@@ -46,8 +46,8 @@
 
         <div class=" container d-flex flex-row justify-content-between  pt-4 col-lg-10">
             <img class="m" src="{{ asset('customImages/Group 188.png') }}" />
-            <img class="" src="{{ asset('customImages/Group 189.png') }}" />
-            <img class="" src="{{ asset('customImages/Group 190.png') }}" />
+            <img class="" src="{{ asset('customImages/Group 189b.png') }}" />
+            <img class="" src="{{ asset('customImages/Group 190b.png') }}" />
             <img class="" src="{{ asset('customImages/Group 191.png') }}" />
         </div>
 
