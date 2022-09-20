@@ -12,7 +12,7 @@ landscape.')
 @section('content')
 
 
-<section class="pt-5" style="  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)), url(FirstImg.jpg);">
+<section class="mt-5 pt-5 img-fluid" style="  background-image: url(../customImages/carousel.png);">
     <div class="container  pt-5">
         <div class="container">
             <h2 style="font-weight: 600;font-size: 68.2222px;line-height: 117.2%;letter-spacing: -0.01em;text-transform: capitalize;
@@ -155,19 +155,45 @@ landscape.')
     </div>
 </div>
 
-<div class="buttons-kell">
-    <button class="activeNumberButton container">1</button>
-    <button class="numberButton2">2</button>
-    <button class="numberButton3">3</button>
-    <button class="numberButton4">4</button>
-    <button class="numberButton5">5</button>
-    <button class="numberButton6">6</button>
-    <button class="numberButton7">7</button>
-    <button class="numberButton8">8</button>
-    <button class="numberButton9">9</button>
-    <button class="numberButton0" style="margin-left: 49.29px;">50</button>
-    <button class="nextButton">Next</button>
-    <p class="dotts">...</p>
+
+
+<div class="container d-flex flex-row flex-wrap justify-content-evenly mt-5">
+    <div class="col-md-7 d-flex flex-wrap justify-content-evenly justify-content-center">
+        <button class="paginated-first-button" type="button">
+            1
+        </button>
+        <button class="paginated-first-button" type="button">
+            2
+        </button>
+        <button class="paginated-first-button second" type="button">
+            3
+        </button>
+        <button class="paginated-first-button second" type="button">
+            4
+        </button>
+        <button class="paginated-first-button second" type="button">
+            5
+        </button>
+        <button class="paginated-first-button second" type="button">
+            6
+        </button>
+        <button class="paginated-first-button second" type="button">
+            7
+        </button>
+        <button class="paginated-first-button second" type="button">
+            8
+        </button>
+        <button class="paginated-first-button second" type="button">
+            9
+        </button>
+        ...
+        <button class="paginated-first-button second" type="button">
+            50
+        </button>
+        <button class="paginated-first-button second" type="button">
+            Next
+        </button>
+    </div>
 </div>
 
 

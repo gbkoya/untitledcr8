@@ -52,7 +52,51 @@ landscape.')
     </div>
 
     <div class="container card my-5 col-md-10">
-      <div class="d-flex flex-row justify-content-between">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Item(s)</th>
+            <th scope="col"style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Quantity</th>
+            <th scope="col"style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Price </th>
+            <th scope="col"style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;"></th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr style="margin-top: 70px;">
+            <td>
+              <div class="d-flex">
+                <div>
+                  <img class="img-fluid" src="{{ asset('customImages/Frame 106.png') }}" />
+                </div>
+                <div style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color: rgba(107, 128, 155, 0.8);">
+                  Anti blu ray radiation,<br> computer glasses
+                </div>
+              </div>
+            </td>
+            <td>
+              <form>
+
+                <input style="height: 47px;" type="number" min="1" class="form-control" id="exampleInputPassword1" placeholder="1">
+
+              </form>
+            </td>
+            <td class="pt-3" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color: rgba(107, 128, 155, 0.8);">₦4,999</td>
+            <td><div><img class="img-fluid pt-2" src="{{ asset('customImages/trash vector.png') }}" alt=""></div></td>
+            
+          </tr>
+          </div>
+        </tbody>
+      </table>
+      <div class="d-flex my-3" style="margin-left: auto; margin-right:10%">
+      <div class="pt-2" style="font-weight: 500;
+      font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">Total Price:</div>
+      <div class="pt-2 px-2 small-screen-font" style="font-weight: 500;
+      font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">₦4,999</div>
+      </div>
+    </div>
+    </div>
+    <!--  <div class="d-flex flex-row justify-content-between">
         <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Item(s)</div>
         <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Quantity</div>
         <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Price </div>
@@ -76,22 +120,24 @@ landscape.')
 
         </form>
 
-        <div class="pt-2 small-screen-font" style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">₦4,999</div>
+        <div class="pt-2 small-screen-font" style="font-weight: 500;font-size: 20px;line-height: 180%;
+        letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">₦4,999</div>
 
         <div><img class="img-fluid" src="{{ asset('customImages/trash vector.png') }}" alt=""></div>
       </div>
       <div class="d-flex align-items-end container" style="text-align: right;">
-      <div>Total Price:</div>
-      <div class="pt-2 small-screen-font" style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">₦4,999</div>
+      <div class="pt-2">Total Price:</div>
+      <div class="pt-2 small-screen-font" style="font-weight: 500;
+      font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">₦4,999</div>
       </div>
 
 
 
 
-    </div>
-   
+    </div>-->
 
-    <div class="container col-lg-10 d-flex justify-content-between">
+
+    <div class="container col-lg-9 d-flex justify-content-between">
       <div class=" py-3 pb-5">
         <button class="small-mobile-long-button small-screen-font" style="background: rgba(0, 0, 0, 0.2);border-radius: 4.67259px;font-weight: 700;font-size: 18.6904px;
                 line-height: 140%;color: #6B809B; padding: 0.8em 3em; border:none">Continue Shopping

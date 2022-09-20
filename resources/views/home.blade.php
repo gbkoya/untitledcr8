@@ -9,7 +9,7 @@
 @section('content')
 <body>
     <main>
-        <div style=" background-image: url(../customImages/Group68.png)" class="mt-5">
+        <div style=" background-image: url()" class="mt-5">
             <section
                 class="container mt-5 d-flex flex-flow flex-wrap justify-content-center align-items-center block-display-tab section-top">
                 <div class="archware-content-text archwarejo-width-bottom-head pt-2">

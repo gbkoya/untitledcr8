@@ -53,7 +53,7 @@ landscape.')
                 <div class="pt-4" style="font-weight: 700;font-size: 24px;line-height: 140%;color: #6B809B;">
                 Anti blu ray radiation, computer glasses</div>
                 <button class="mt-3" style="font-weight: 500;font-size: 16px;line-height: 19px;color: #FFFFFF;
-                width: 119px;height: 45px;background: #F58634;border-radius: 5px;"> TRY IT ON</button>
+                width: 119px;height: 45px;background: #F58634;border-radius: 5px; border:none"> TRY IT ON</button>
             </div>
             <div class="col-lg-6 mx-5 mt-5 details-sect-right-ika">
                 <div  class="pt-4" style="font-weight: 600;font-size: 28px;line-height: 180%;letter-spacing: -0.01em;color: #6B809B;">
@@ -66,8 +66,8 @@ landscape.')
 
                 <button class="mt-4" type="button" style="width: 100%;height: 56px;border-radius: 5px;
                 background: #F58634;font-weight: 600;font-size: 20px;line-height: 24px;
-                color:#FFFF">
-                    <img src="{{ asset('customImages/buyIcon.png') }}" class='pt-1 px-3' style="float: left">
+                color:#FFFF; border: none">
+                    <img src="{{ asset('customImages/buyIcon.png') }}" class='pt-1 px-3' style="float: left;">
                     ADD TO CART
                 </button>
 
