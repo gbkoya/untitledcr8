@@ -95,6 +95,11 @@
     margin-left: -2rem;
 }
 
+/* Home page style */
+.e-margin-top{
+    padding-top: 5rem!important;
+}
+
 /* Mobile responsive */
 @media(max-width: 414px){
     .e-aboutus-img{

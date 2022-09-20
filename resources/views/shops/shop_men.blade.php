@@ -109,7 +109,7 @@
       {{-- men content here --}}
       <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-            <div class="d-flex flex-row flex-wrap justify-content-evenly">
+            <div class="d-flex flex-row flex-wrap justify-content-evenly productsData">
                 <div class=" shop-card">
                     <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
                     <div class="shop-card-heading">
@@ -467,6 +467,104 @@
 </div>
 {{-- END OF STORE CARD SECTION --}}
 <script type="text/javascript">
+    // Mock data
+    const products = [
+        {
+            id: 0,
+            name: "item-1",
+            price: 29.99,
+            instock: 100,
+            description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+            product_category: "men"
+            imgSrc: "./img/t1.png",
+        },
+        {
+            id: 1,
+            name: "item-2",
+            price: 24.99,
+            instock: 43,
+            description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+            imgSrc: "./img/t2.png",
+            product_category: "men"
+        },
+        {
+            id: 2,
+            name: "item-3",
+            price: 19.99,
+            instock: 10,
+            description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+            imgSrc: "./img/t3.png",
+            product_category: "women"
+        },
+        {
+            id: 3,
+            name: "T-shirt 4",
+            price: 25.99,
+            instock: 5,
+            description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+            imgSrc: "./img/t4.png",
+            product_category: "kids"
+        },
+        {
+            id: 4,
+            name: "T-shirt 5",
+            price: 29.99,
+            instock: 4,
+            description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+            imgSrc: "./img/t5.png",
+            product_category: "women"
+        },
+        {
+            id: 5,
+            name: "T-shirt 6",
+            price: 39.99,
+            instock: 40,
+            description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+            imgSrc: "./img/t6.png",
+            product_category: "kids"
+        },
+        ];
+
+        // The logic to get and display
+        const productItems = document.querySelector('.productsData');
+        // alert(products)
+        function renderProducts(){
+            alert(products);
+            products.forEach((product) => {
+                productItems.innerHTML += `
+                    <div class="shop-card">
+                    <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
+                    <div class="shop-card-heading">
+                        <div>
+                            <h4>${product.name}</h4>
+                            <p data="date-updated">Updated July 2022</p>
+                        </div>
+                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                            <div class="price-child d-flex flex-row">
+                                <p>N4,999</p>
+                                <p>N9,000</p>
+                            </div>
+                            <button type="button" class="shop-card-button">
+                                <img
+                                src="{{ asset('customImages/buyIcon.png') }}"
+                                />
+                                ADD
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                `;
+        });
+        }
+        window.addEventlistener('scroll',  renderProducts)
+        // renderProducts();
     </script>
 </body>
 

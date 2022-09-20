@@ -9,9 +9,9 @@
 @section('content')
 <body>
     <main>
-        <div style=" background-image: url(../customImages/Group68.png)" class="mt-5">
+        <div style=" background-image: url(../customImages/Group68.png); background: #DEE3E9" class="mt-5">
             <section
-                class="container mt-5 d-flex flex-flow flex-wrap justify-content-center align-items-center block-display-tab section-top">
+                class="container d-flex flex-flow flex-wrap justify-content-center align-items-center e-margin-top block-display-tab section-top">
                 <div class="archware-content-text archwarejo-width-bottom-head pt-2">
                     <h2 class="big-title text-title-mobile">
                         We offer Premium <span class="orange-color">eye care</span> solutions
