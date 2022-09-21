@@ -199,7 +199,53 @@
 </body>
 
     <script type="text/javascript">
-    
+    // API integration to get all products in the database
+     const getAllProducts = (event) => {
+          event.preventDefault();
+      
+          // alert(JSON.stringify(contactData));
+          // alert(`${firstName} and ${lastName}`);
+          isLoading = true;
+      
+          function handleErrors(response) {
+              if (!response.ok) {
+                  throw Error(response.statusText);
+              }
+              return response;
+          }
+          fetch(`${APP_URL}/contactus/message`, {
+                  method: 'GET',
+                  headers: {
+                      'Accept': 'application/json, text/plain, */*',
+                      'content-type': 'application/json'
+                  }
+              })
+              .then(handleErrors)
+              .then(response => {
+                //   console.log("ok")
+                  Swal.fire({
+                      icon: 'success',
+                      title: 'Products retrieved successfully!',
+                      showConfirmButton: false,
+                      timer: 1500,
+      
+                  })
+                  let res = document.getElementById("sendData");
+                  res.reset();
+              })
+              .catch(error => {
+                  console.log(error, 'wrong')
+                  Swal.fire({
+                      icon: 'error',
+                      title: 'Failed to retrieve products!',
+                      showConfirmButton: false,
+                      timer: 1500,
+      
+                  })
+      
+              });
+      
+      }
        // The logic to get and display
        const productItems = document.querySelector('.productsData');
        const productItemsWomen = document.querySelector('.productsDataWomen');
@@ -289,6 +335,7 @@
             menProducts.forEach((product) => {
                 // console.log(product);
                 productItems.innerHTML += `
+                <a class="e-card-link" href="/details1">
                     <div class="shop-card">
                     <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
                     <div class="shop-card-heading">
@@ -311,6 +358,7 @@
                         </div>
                     </div>
                 </div>
+            </a>
                 `;
         });
 
@@ -318,6 +366,7 @@
         womenProducts.forEach((product) => {
                 // console.log(product);
                 productItemsWomen.innerHTML += `
+                <a href="/details1" class="e-card-link">
                     <div class="shop-card">
                     <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
                     <div class="shop-card-heading">
@@ -340,14 +389,15 @@
                         </div>
                     </div>
                 </div>
+                    </a>
                 `;
         });
-
 
         // KIDS
         kidsProducts.forEach((product) => {
                 // console.log(product);
                 productItemsKids.innerHTML += `
+                <a href="/details1" class="e-card-link">
                     <div class="shop-card">
                     <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
                     <div class="shop-card-heading">
@@ -369,7 +419,8 @@
                             </button>
                         </div>
                     </div>
-                </div>
+                </div>   
+                </a>
                 `;
         });
         }

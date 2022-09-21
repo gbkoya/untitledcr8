@@ -352,6 +352,10 @@
     background: #6B809B;
     border-radius: 80px;
 }
+
+.e-card-link{
+    text-decoration: none;
+}
 /* RESPONSIVENESS */
 @media(max-width: 414px){
     .search-wrapper{
