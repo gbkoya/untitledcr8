@@ -84,3 +84,56 @@ landscape.')
     </section>
 </div>
 @endsection
+
+<script type="text/javascript">
+
+// API INTEGRATION TO GET A SINCLE PRODUCT
+ const getProduct = (event, id) => {
+          event.preventDefault();
+      
+          // alert(JSON.stringify(contactData));
+          // alert(`${firstName} and ${lastName}`);
+          console.log(contactData);
+          isLoading = true;
+      
+          function handleErrors(response) {
+              if (!response.ok) {
+                  throw Error(response.statusText);
+              }
+              return response;
+          }
+          fetch(`${APP_URL}/contactus/message`, {
+                  method: 'GET',
+                  headers: {
+                      'Accept': 'application/json, text/plain, */*',
+                      'content-type': 'application/json'
+                  },
+                //   body: JSON.stringify(contactData)
+              })
+              .then(handleErrors)
+              .then(response => {
+                  console.log("ok")
+                  Swal.fire({
+                      icon: 'success',
+                      title: 'Products created!',
+                      showConfirmButton: false,
+                      timer: 1500,
+      
+                  })
+                  let res = document.getElementById("sendData");
+                  res.reset();
+              })
+              .catch(error => {
+                  console.log(error, 'wrong')
+                  Swal.fire({
+                      icon: 'error',
+                      title: 'Failed to create product, something went wrong!',
+                      showConfirmButton: false,
+                      timer: 1500,
+      
+                  })
+      
+              });
+      
+      }
+</script>
