@@ -199,7 +199,7 @@
 </body>
 
     <script type="text/javascript">
-    // API integration to get all products in the database
+    // API integration to get all products from the database
      const getAllProducts = (event) => {
           event.preventDefault();
       
