@@ -47,7 +47,7 @@
 </nav>
 <div class="service-hero-copy shop-top-hero">
             <h1>
-                The Largest Online Store
+            The Largest Online Store
             for  Glasses and Contact
             Lenses.
             </h1>
@@ -138,98 +138,8 @@
 
         {{-- Women content here --}}
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-            <div class="d-flex flex-row flex-wrap justify-content-evenly">
-                <div class=" shop-card">
-                    <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>Anti blue ray radiation, computer glasses</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <button type="button" class="shop-card-button">
-                                <img
-                                src="{{ asset('customImages/buyIcon.png') }}"
-                                />
-                               ADD
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class=" shop-card">
-                    <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>Anti blue ray radiation, computer glasses</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <button type="button" class="shop-card-button">
-                                <img
-                                src="{{ asset('customImages/buyIcon.png') }}"
-                                />
-                               ADD
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class=" shop-card">
-                    <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>Anti blue ray radiation, computer glasses</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <button type="button" class="shop-card-button">
-                                <img
-                                src="{{ asset('customImages/buyIcon.png') }}"
-                                />
-                               ADD
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class=" shop-card">
-                    <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>Anti blue ray radiation, computer glasses</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <button type="button" class="shop-card-button">
-                                <img
-                                src="{{ asset('customImages/buyIcon.png') }}"
-                                />
-                               ADD
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <div class="d-flex flex-row flex-wrap justify-content-evenly productsDataWomen">
+               
             </div> 
                     {{-- Paginated button --}}
                     <div class="d-flex flex-row flex-wrap justify-content-evenly pagination-button-wrapper">
@@ -257,98 +167,8 @@
 
         {{-- Kids content here --}}
         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-            <div class="d-flex flex-row flex-wrap justify-content-evenly">
-                <div class=" shop-card">
-                    <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>Anti blue ray radiation, computer glasses</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <button type="button" class="shop-card-button">
-                                <img
-                                src="{{ asset('customImages/buyIcon.png') }}"
-                                />
-                               ADD
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class=" shop-card">
-                    <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>Anti blue ray radiation, computer glasses</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <button type="button" class="shop-card-button">
-                                <img
-                                src="{{ asset('customImages/buyIcon.png') }}"
-                                />
-                               ADD
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class=" shop-card">
-                    <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>Anti blue ray radiation, computer glasses</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <button type="button" class="shop-card-button">
-                                <img
-                                src="{{ asset('customImages/buyIcon.png') }}"
-                                />
-                               ADD
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class=" shop-card">
-                    <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>Anti blue ray radiation, computer glasses</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <button type="button" class="shop-card-button">
-                                <img
-                                src="{{ asset('customImages/buyIcon.png') }}"
-                                />
-                                ADD
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <div class="d-flex flex-row flex-wrap justify-content-evenly productsDatakids">
+               
             </div>
                     {{-- Paginated button --}}
                     <div class="d-flex flex-row flex-wrap justify-content-evenly pagination-button-wrapper">
@@ -379,10 +199,12 @@
 </body>
 
     <script type="text/javascript">
-     
-
+    
        // The logic to get and display
        const productItems = document.querySelector('.productsData');
+       const productItemsWomen = document.querySelector('.productsDataWomen');
+       const productItemsKids = document.querySelector('.productsDatakids') 
+
        const products= [
              {
                 id: 0,
@@ -391,7 +213,7 @@
                 instock : 4,
                 description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
                 imgSrc: "./img/t5.png",
-                product_category: "Men"
+                product_category: "men"
              },
              {
                 id: 1,
@@ -446,9 +268,86 @@
 
         // alert(JSON.stringify(products));
         function renderProducts(){
-            alert(JSON.stringify(products));
-            products.forEach((product) => {
+            // alert(JSON.stringify(products));
+
+            // Get men data
+            const menProducts = products.filter(menProduct => menProduct.product_category === "men"
+            );
+            console.log(menProducts);
+
+            // Get women data
+            const womenProducts = products.filter(womenProduct => womenProduct.product_category === "women");
+            console.log(womenProducts);
+
+            // Get Kids data
+            const kidsProducts = products.filter(kidProduct => kidProduct.product_category === "kids");
+            console.log(kidsProducts);
+
+
+            
+            // MEN
+            menProducts.forEach((product) => {
+                // console.log(product);
                 productItems.innerHTML += `
+                    <div class="shop-card">
+                    <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
+                    <div class="shop-card-heading">
+                        <div>
+                            <h4>${product.name}</h4>
+                            <p data="date-updated">Updated July 2022</p>
+                        </div>
+                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                            <div class="price-child d-flex flex-row">
+                                <p>N4,999</p>
+                                <p>N9,000</p>
+                            </div>
+                            <button type="button" class="shop-card-button">
+                                <img
+                                src="{{ asset('customImages/buyIcon.png') }}"
+                                />
+                                ADD
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                `;
+        });
+
+        // WOMEN
+        womenProducts.forEach((product) => {
+                // console.log(product);
+                productItemsWomen.innerHTML += `
+                    <div class="shop-card">
+                    <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
+                    <div class="shop-card-heading">
+                        <div>
+                            <h4>${product.name}</h4>
+                            <p data="date-updated">Updated July 2022</p>
+                        </div>
+                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                            <div class="price-child d-flex flex-row">
+                                <p>N4,999</p>
+                                <p>N9,000</p>
+                            </div>
+                            <button type="button" class="shop-card-button">
+                                <img
+                                src="{{ asset('customImages/buyIcon.png') }}"
+                                />
+                                ADD
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                `;
+        });
+
+
+        // KIDS
+        kidsProducts.forEach((product) => {
+                // console.log(product);
+                productItemsKids.innerHTML += `
                     <div class="shop-card">
                     <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
                     <div class="shop-card-heading">
