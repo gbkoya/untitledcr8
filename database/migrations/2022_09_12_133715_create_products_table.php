@@ -18,7 +18,6 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->integer('quantityinstock')->nullable();
             $table->enum('status', array('available', 'unavailable'));
-            $table->text('description')->nullable();
             $table->foreignId('productcategory_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
