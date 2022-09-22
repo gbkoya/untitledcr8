@@ -108,12 +108,12 @@
 
       {{-- men content here --}}
       <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-            <div class="d-flex flex-row flex-wrap justify-content-evenly productsData">
+        <div class="tab-pane card-paginat fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="d-flex flex-row flex-wrap justify-content-evenly productsData" id="paginated-list" data-current-page="1" aria-live="polite">
                
             </div>
             {{-- Paginated button --}}
-            <div class="d-flex flex-row flex-wrap justify-content-evenly pagination-button-wrapper">
+            {{-- <div class="d-flex flex-row flex-wrap justify-content-evenly pagination-button-wrapper">
                 <button class="paginated-first-button" type="button">
                     1
                 </button>
@@ -133,7 +133,20 @@
                 <button class="paginated-first-button second" type="button">
                     Next
                 </button>
-            </div>
+            </div> --}}
+            <nav class="pagination-container">
+                <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+                  &lt;
+                </button>
+            
+                <div id="pagination-numbers">
+            
+                </div>
+            
+                <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+                  &gt;
+                </button>
+              </nav>
         </div>
 
         {{-- Women content here --}}
@@ -268,11 +281,120 @@
                 instock : 4,
                 description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
                 imgSrc: "./img/t5.png",
+                product_category: "men"
+             }, {
+                id: 2,
+                name: "Item-3",
+                price: 29,
+                instock : 4,
+                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+                imgSrc: "./img/t5.png",
+                product_category: "men"
+             }, {
+                id: 3,
+                name: "Item-4",
+                price: 29,
+                instock : 4,
+                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+                imgSrc: "./img/t5.png",
+                product_category: "men"
+             }, {
+                id: 4,
+                name: "Item-5",
+                price: 29,
+                instock : 4,
+                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+                imgSrc: "./img/t5.png",
+                product_category: "men"
+             }, {
+                id: 5,
+                name: "Item-6",
+                price: 29,
+                instock : 4,
+                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+                imgSrc: "./img/t5.png",
+                product_category: "men"
+             }, {
+                id: 6,
+                name: "Item-7",
+                price: 29,
+                instock : 4,
+                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+                imgSrc: "./img/t5.png",
+                product_category: "men"
+             }, {
+                id: 7,
+                name: "Item-8",
+                price: 29,
+                instock : 4,
+                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+                imgSrc: "./img/t5.png",
+                product_category: "men"
+             }, {
+                id: 8,
+                name: "Item-9",
+                price: 29,
+                instock : 4,
+                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+                imgSrc: "./img/t5.png",
+                product_category: "men"
+             }, {
+                id: 9,
+                name: "Item-10",
+                price: 29,
+                instock : 4,
+                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+                imgSrc: "./img/t5.png",
+                product_category: "men"
+             },
+             {
+                id: 10,
+                name: "Item-11",
+                price: 29,
+                instock : 4,
+                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+                imgSrc: "./img/t5.png",
+                product_category: "men"
+             },
+             {
+                id: 11,
+                name: "Item-12",
+                price: 29,
+                instock : 4,
+                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+                imgSrc: "./img/t5.png",
+                product_category: "men"
+             },
+             {
+                id: 12,
+                name: "Item-13",
+                price: 29,
+                instock : 4,
+                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+                imgSrc: "./img/t5.png",
+                product_category: "men"
+             },
+             {
+                id: 13,
+                name: "Item-14",
+                price: 29,
+                instock : 4,
+                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+                imgSrc: "./img/t5.png",
                 product_category: "Women"
              },
              {
-            id: 2,
-            name: "item-3",
+                id: 14,
+                name: "Item-15",
+                price: 29,
+                instock : 4,
+                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+                imgSrc: "./img/t5.png",
+                product_category: "men"
+             },
+             {
+            id: 15,
+            name: "item-16",
             price: 19.99,
             instock: 10,
             description:
@@ -281,7 +403,7 @@
             product_category: "women"
         },
         {
-            id: 3,
+            id: 16,
             name: "T-shirt 4",
             price: 25.99,
             instock: 5,
@@ -291,7 +413,7 @@
             product_category: "kids"
         },
         {
-            id: 4,
+            id: 17,
             name: "T-shirt 5",
             price: 29.99,
             instock: 4,
@@ -301,7 +423,7 @@
             product_category: "women"
         },
         {
-            id: 5,
+            id: 18,
             name: "T-shirt 6",
             price: 39.99,
             instock: 40,
@@ -314,6 +436,7 @@
 
         // alert(JSON.stringify(products));
         function renderProducts(){
+            
             // alert(JSON.stringify(products));
 
             // Get men data
@@ -335,8 +458,8 @@
             menProducts.forEach((product) => {
                 // console.log(product);
                 productItems.innerHTML += `
-                <a class="e-card-link" href="/details1">
-                    <div class="shop-card">
+                
+                    <div class="shop-card e-card-link cardClick">
                     <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
                     <div class="shop-card-heading">
                         <div>
@@ -353,12 +476,11 @@
                                 <img
                                 src="{{ asset('customImages/buyIcon.png') }}"
                                 />
-                                ADD
+                                View
                             </button>
                         </div>
                     </div>
                 </div>
-            </a>
                 `;
         });
 
@@ -366,7 +488,7 @@
         womenProducts.forEach((product) => {
                 // console.log(product);
                 productItemsWomen.innerHTML += `
-                <a href="/details1" class="e-card-link">
+                <a href="/details" class="e-card-link">
                     <div class="shop-card">
                     <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
                     <div class="shop-card-heading">
@@ -384,7 +506,7 @@
                                 <img
                                 src="{{ asset('customImages/buyIcon.png') }}"
                                 />
-                                ADD
+                                View
                             </button>
                         </div>
                     </div>
@@ -397,7 +519,7 @@
         kidsProducts.forEach((product) => {
                 // console.log(product);
                 productItemsKids.innerHTML += `
-                <a href="/details1" class="e-card-link">
+                <a href="/details" class="e-card-link">
                     <div class="shop-card">
                     <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
                     <div class="shop-card-heading">
@@ -415,7 +537,7 @@
                                 <img
                                 src="{{ asset('customImages/buyIcon.png') }}"
                                 />
-                                ADD
+                                View
                             </button>
                         </div>
                     </div>
@@ -423,6 +545,130 @@
                 </a>
                 `;
         });
+
+        // Get the item ID and redirect to the details page
+        const menCards = document.querySelectorAll(".cardClick");
+        menCards.forEach(card=>{
+            card.addEventListener('click', function(event){
+                window.location.href = "/details"
+                console.log(event.target);
+            //    let menP = JSON.stringify(menProducts);
+
+            const found = menProducts.find((card, id) => card.id !== id);
+            // alert(JSON.stringify(found));
+
+                // menProducts.find((card, i)=>{
+                //     alert(JSON.stringify(card))
+                //     if(card.id === id)
+                //     card[index] = card
+                //     alert(JSON.stringify(card.id));
+
+                // })
+            })
+        })
+
+
+// PAGINATION SCRIPT HERE
+const paginationNumbers = document.getElementById("pagination-numbers");
+const paginatedList = document.getElementById("paginated-list");
+const listItems = paginatedList.querySelectorAll(".productsData");
+const nextButton = document.getElementById("next-button");
+const prevButton = document.getElementById("prev-button");
+
+const paginationLimit = 10;
+const pageCount = Math.ceil(listItems.length / paginationLimit);
+let currentPage = 1;
+
+const disableButton = (button) => {
+  button.classList.add("disabled");
+  button.setAttribute("disabled", true);
+};
+
+const enableButton = (button) => {
+  button.classList.remove("disabled");
+  button.removeAttribute("disabled");
+};
+
+const handlePageButtonsStatus = () => {
+  if (currentPage === 1) {
+    disableButton(prevButton);
+  } else {
+    enableButton(prevButton);
+  }
+
+  if (pageCount === currentPage) {
+    disableButton(nextButton);
+  } else {
+    enableButton(nextButton);
+  }
+};
+
+const handleActivePageNumber = () => {
+  document.querySelectorAll(".pagination-number").forEach((button) => {
+    button.classList.remove("active");
+    const pageIndex = Number(button.getAttribute("page-index"));
+    if (pageIndex == currentPage) {
+      button.classList.add("active");
+    }
+  });
+};
+
+const appendPageNumber = (index) => {
+  const pageNumber = document.createElement("button");
+  pageNumber.className = "pagination-number";
+  pageNumber.innerHTML = index;
+  pageNumber.setAttribute("page-index", index);
+  pageNumber.setAttribute("aria-label", "Page " + index);
+
+  paginationNumbers.appendChild(pageNumber);
+};
+
+const getPaginationNumbers = () => {
+  for (let i = 1; i <= pageCount; i++) {
+    appendPageNumber(i);
+  }
+};
+
+const setCurrentPage = (pageNum) => {
+  currentPage = pageNum;
+
+  handleActivePageNumber();
+  handlePageButtonsStatus();
+  
+  const prevRange = (pageNum - 1) * paginationLimit;
+  const currRange = pageNum * paginationLimit;
+
+  listItems.forEach((item, index) => {
+    item.classList.add("hidden");
+    if (index >= prevRange && index < currRange) {
+      item.classList.remove("hidden");
+    }
+  });
+};
+
+window.addEventListener("load", () => {
+  getPaginationNumbers();
+  setCurrentPage(1);
+
+  prevButton.addEventListener("click", () => {
+    setCurrentPage(currentPage - 1);
+  });
+
+  nextButton.addEventListener("click", () => {
+    setCurrentPage(currentPage + 1);
+  });
+
+  document.querySelectorAll(".pagination-number").forEach((button) => {
+    const pageIndex = Number(button.getAttribute("page-index"));
+
+    if (pageIndex) {
+      button.addEventListener("click", () => {
+        setCurrentPage(pageIndex);
+      });
+    }
+  });
+});
+         
         }
         renderProducts();
           </script>

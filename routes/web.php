@@ -63,7 +63,7 @@ Route::get('/test', function () {
 Route::get('/signup', function () {
     return view('signup');
 });
-Route::get('/details1', function () {
+Route::get('/details', function () {
     return view('details1');
 });
 Route::get('/details2', function () {
