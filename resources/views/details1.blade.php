@@ -87,7 +87,7 @@ landscape.')
 
 <script type="text/javascript">
 
-// API INTEGRATION TO GET A SINCLE PRODUCT
+// API INTEGRATION TO GET A SINCLE SHOP PRODUCT
  const getProduct = (event, id) => {
           event.preventDefault();
       
