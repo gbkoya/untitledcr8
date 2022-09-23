@@ -150,61 +150,45 @@
         </div>
 
         {{-- Women content here --}}
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+        <div class="tab-pane fade card-paginat" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
             <div class="d-flex flex-row flex-wrap justify-content-evenly productsDataWomen">
                
             </div> 
-                    {{-- Paginated button --}}
-                    <div class="d-flex flex-row flex-wrap justify-content-evenly pagination-button-wrapper">
-                        <button class="paginated-first-button" type="button">
-                            1
+                    {{-- Paginated here --}}
+                    <nav class="pagination-container">
+                        <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+                          &lt;
                         </button>
-                        <button class="paginated-first-button" type="button">
-                            2
+                    
+                        <div id="pagination-numbers">
+                    
+                        </div>
+                    
+                        <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+                          &gt;
                         </button>
-                        <button class="paginated-first-button second" type="button">
-                            3
-                        </button>
-                        <button class="paginated-first-button second" type="button">
-                            4
-                        </button>
-                        ...
-                        <button class="paginated-first-button second second-mobile" type="button">
-                            10
-                        </button>
-                        <button class="paginated-first-button second second-mobile" type="button ">
-                            Next
-                        </button>
-                    </div>   
+                      </nav>
         </div>
 
         {{-- Kids content here --}}
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+        <div class="tab-pane fade card-paginat" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
             <div class="d-flex flex-row flex-wrap justify-content-evenly productsDatakids">
                
             </div>
                     {{-- Paginated button --}}
-                    <div class="d-flex flex-row flex-wrap justify-content-evenly pagination-button-wrapper">
-                        <button class="paginated-first-button" type="button">
-                            1
+                    <nav class="pagination-container">
+                        <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+                          &lt;
                         </button>
-                        <button class="paginated-first-button" type="button">
-                            2
+                    
+                        <div id="pagination-numbers">
+                    
+                        </div>
+                    
+                        <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+                          &gt;
                         </button>
-                        <button class="paginated-first-button second" type="button">
-                            3
-                        </button>
-                        <button class="paginated-first-button second" type="button">
-                            4
-                        </button>
-                        ...
-                        <button class="paginated-first-button second" type="button">
-                            10
-                        </button>
-                        <button class="paginated-first-button second" type="button">
-                            Next
-                        </button>
-                    </div>
+                    </nav>
         </div>
       </div>
 </div>
@@ -488,8 +472,7 @@
         womenProducts.forEach((product) => {
                 // console.log(product);
                 productItemsWomen.innerHTML += `
-                <a href="/details" class="e-card-link">
-                    <div class="shop-card">
+                    <div class="shop-card e-card-link cardClick">
                     <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
                     <div class="shop-card-heading">
                         <div>
@@ -511,7 +494,6 @@
                         </div>
                     </div>
                 </div>
-                    </a>
                 `;
         });
 
@@ -519,8 +501,7 @@
         kidsProducts.forEach((product) => {
                 // console.log(product);
                 productItemsKids.innerHTML += `
-                <a href="/details" class="e-card-link">
-                    <div class="shop-card">
+                    <div class="shop-card e-card-link cardClick">
                     <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
                     <div class="shop-card-heading">
                         <div>
@@ -542,7 +523,6 @@
                         </div>
                     </div>
                 </div>   
-                </a>
                 `;
         });
 
