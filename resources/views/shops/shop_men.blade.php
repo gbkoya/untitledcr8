@@ -440,10 +440,11 @@
             
             // MEN
             menProducts.forEach((product) => {
+                // alert(product.id)
                 // console.log(product);
                 productItems.innerHTML += `
                 
-                    <div class="shop-card e-card-link cardClick">
+                    <div class="shop-card e-card-link cardClick" data-id=${product.id}>
                     <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
                     <div class="shop-card-heading">
                         <div>
@@ -472,7 +473,7 @@
         womenProducts.forEach((product) => {
                 // console.log(product);
                 productItemsWomen.innerHTML += `
-                    <div class="shop-card e-card-link cardClick">
+                    <div class="shop-card e-card-link cardClick" data-id=${product.id}>
                     <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
                     <div class="shop-card-heading">
                         <div>
@@ -501,7 +502,7 @@
         kidsProducts.forEach((product) => {
                 // console.log(product);
                 productItemsKids.innerHTML += `
-                    <div class="shop-card e-card-link cardClick">
+                    <div class="shop-card e-card-link cardClick" data-id=${product.id}>
                     <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
                     <div class="shop-card-heading">
                         <div>
@@ -527,25 +528,21 @@
         });
 
         // Get the item ID and redirect to the details page
-        const menCards = document.querySelectorAll(".cardClick");
-        menCards.forEach(card=>{
-            card.addEventListener('click', function(event){
-                window.location.href = "/details"
-                console.log(event.target);
-            //    let menP = JSON.stringify(menProducts);
+        function getItemID(event){
+            const menCards = document.querySelectorAll(".cardClick");
+            menCards.forEach(card =>{
+                card.addEventListener('click', ()=>{
+                    let cardId = card.getAttribute("data-id");
+                    // localSorage.setItem('productId', cardId);
+                    localStorage.setItem('product_id', cardId);
+                     window.location.href = "/details"
+                    // console.log(cardId);
 
-            const found = menProducts.find((card, id) => card.id !== id);
-            // alert(JSON.stringify(found));
-
-                // menProducts.find((card, i)=>{
-                //     alert(JSON.stringify(card))
-                //     if(card.id === id)
-                //     card[index] = card
-                //     alert(JSON.stringify(card.id));
-
-                // })
+                })
             })
-        })
+
+        }
+        getItemID();
 
 
 // PAGINATION SCRIPT HERE
