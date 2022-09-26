@@ -12,7 +12,11 @@ landscape.')
 @section('content')
   
 <body>
-  
+  {{-- The loading spinner --}}
+  <div class="loader-container">
+    <div class="spinner"></div>
+  </div>
+
   <div class="login-ik card justify-content-center mt-5">
     <div class="container my-5 py-5">
       <div class="container col-lg-5 col-md-7 my-5 py-5 i-login-backg">
@@ -26,7 +30,7 @@ landscape.')
             <i class="fab fa-google" aria-hidden="true"></i> Login with Google
         </a>
         </div>
-        <form>
+        <form id="signupForm">
           <div class="mb-3 pt-2 px-3" style="border-radius: 20px;">
             <div class="d-flex" style="background-color: #f3efef; margin-top: 10%; padding-left: 1rem;">
               <span class="mt-4 pt-1 px-2" style="border-radius: 20px"><img src="{{asset('customImages/Vector(5).png')}}" alt=""> </span>
@@ -78,9 +82,8 @@ landscape.')
     </div>
   </div>
 
-  <script src="text/javascript">
+  <script type="text/javascript">
   
-
         // Toggle password display
         let display = document.getElementById('e-display');
 
@@ -95,32 +98,43 @@ landscape.')
           alert('hide!');
         }
 
+        // Hide and show a loder logic
+        const loaderContainer = document.querySelector('.loader-container');
+
+        const displayLoading = () => {
+        loaderContainer.style.display = 'block';
+        };
+
+        const hideLoading = () => {
+            loaderContainer.style.display = 'none';
+        };
         // hide.addEventListener('onclick', hidePassword());
         // display.addEventListener('onclick', showPassword());
 
   //  SIGNUP API INTEGRATION
-   document.getElementById('signupData').addEventListener('submit', handleSignup);
-  
+   document.getElementById('signupForm').addEventListener('submit', handleSignup);
+   let res = document.getElementById("signupForm");
+
   function handleSignup(event) {
   event.preventDefault();
+  displayLoading();
+
   
   // Get all the input field and store them in their unique variable each
   let firstname = document.getElementById('firstname').value;
   let lastname = document.getElementById('lastname').value;
   let email = document.getElementById('email').value;
   let password = document.getElementById('password').value;
-  
+
   let userData = {
       firstname,
       lastname,
       email,
-      date,
       password
   }
   // alert(JSON.stringify(contactData));
   // alert(`${firstName} and ${lastName}`);
-  console.log(user);
-  isLoading = true;
+  console.log(userData);
   
   function handleErrors(response) {
       if (!response.ok) {
@@ -128,41 +142,42 @@ landscape.')
       }
       return response;
   }
-  fetch("http://127.0.0.1:8000/api/auth/register", {
+  fetch("https://foremosteyeclinic.com/api/auth/register", {
               method: 'POST',
               headers: {
                   'Accept': 'application/json, text/plain, */*',
                   'content-type': 'application/json'
               },
-              body: JSON.stringify(user)
+              body: JSON.stringify(userData)
           })
           .then(handleErrors)
           .then(response => {
-              console.log("ok")
+              // console.log("ok")
+              hideLoading();
               Swal.fire({
                   icon: 'success',
-                  title: 'Message sent, We will get back shortly!',
+                  title: 'Account created successfully! Login',
                   showConfirmButton: false,
-                  timer: 1500,
+                  timer: 2000,
   
               })
-              let res = document.getElementById("sendData");
               res.reset();
+              window.location.href = "/login"
           })
           .catch(error => {
               console.log(error, 'wrong')
+              res.reset();
+              hideLoading();
               Swal.fire({
                   icon: 'error',
-                  title: 'Message not sent, something went wrong!',
+                  title: 'Failed to create account. Try again!',
                   showConfirmButton: false,
                   timer: 1500,
-  
+
               })
   
           });
-        }
-
-       
+        }   
   
   </script>
 {{-- END OF API INTEGRATION --}}

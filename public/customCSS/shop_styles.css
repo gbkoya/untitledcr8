@@ -222,7 +222,7 @@
     box-shadow: 0px 20px 24px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     margin-top: 2rem;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 .shop-card-heading{
     margin: .5rem .8rem;
@@ -303,6 +303,7 @@
     font-size: 0.9375rem;
     line-height: 18px;
     color: #FFFFFF;
+    /* position: absolute; */
 }
 
 /* Paginated button */
