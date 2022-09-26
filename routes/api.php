@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\GoogleSocialiteController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -43,10 +44,13 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/auth/logout', [AuthController::class, 'logout']);
 });
 
-// Product api here
-Route::get('/product-list', [ProductController::class, 'index']);
-
+// Product api for user
 Route::get('/product-category/{product:category}', [ProductController::class, 'getProductByCategory']);
+Route::get('/product-details-show/{product:id}', [ProductController::class, 'getProductById']);
+// Route::get('/product-add-to-cart/{product:id}', [ProductController::class, 'addToCart']);
+
+// Product api here for admin
+Route::get('/product-list', [ProductController::class, 'index']);
 
 // Route::post('/add-product', [ProductController::class, 'store_product']);
 
@@ -56,5 +60,10 @@ Route::post('/store-product', [ProductController::class, 'storeProduct']);
 Route::post('/product/edit-product/{product:id}', [ProductController::class, 'edit_product'])->name('edit_product');
 Route::post('/product/delete-product/{product:id}', [ProductController::class, 'delete_product'])->name('delete_product');
 
-
+// Cart section
+Route::get('cart-items', [CartController::class, 'cartList'])->name('cart.list');
+Route::post('add-to-cart', [CartController::class, 'addToCart'])->name('cart.store');
+Route::post('update-cart/{id}', [CartController::class, 'updateCart'])->name('cart.update');
+Route::post('remove-item/{id}', [CartController::class, 'removeCart'])->name('cart.remove');
+Route::post('clear-cart', [CartController::class, 'clearAllCart'])->name('cart.clear');
 
