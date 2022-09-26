@@ -12,9 +12,11 @@ landscape.')
 @section('content')
   
 <body>
+  {{-- The loading spinner --}}
   <div class="loader-container">
     <div class="spinner"></div>
   </div>
+
   <div class="login-ik card justify-content-center mt-5">
     <div class="container my-5 py-5">
       <div class="container col-lg-5 col-md-7 my-5 py-5 i-login-backg">
@@ -133,7 +135,6 @@ landscape.')
   // alert(JSON.stringify(contactData));
   // alert(`${firstName} and ${lastName}`);
   console.log(userData);
-  isLoading = true;
   
   function handleErrors(response) {
       if (!response.ok) {

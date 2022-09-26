@@ -12,7 +12,11 @@ landscape.')
 @section('content')
 
 <body>
-  
+  {{-- The loading spinner --}}
+  <div class="loader-container">
+    <div class="spinner"></div>
+  </div>
+
   <div class="login-ik card justify-content-center mt-5">
     <div class="container my-5 py-5">
       <div class="container col-lg-5 col-md-7 my-5 py-5 i-login-backg">
@@ -26,7 +30,7 @@ landscape.')
             <i class="fab fa-google" aria-hidden="true"></i> Login with Google
         </a>
         </div>
-        <form>
+        <form id="loginForm">
           <div class="mb-3 pt-5 px-3">
             <div class="d-flex" style="background-color: #f3efef; padding-left: 1rem;" >
               <span class="mt-4 pt-1 px-2"><img src="{{asset('customImages/Vector (2).png')}}" alt=""> </span>
@@ -56,14 +60,27 @@ landscape.')
     </div>
   </div>
 
-  <script src="text/javascript">
+  <script type="text/javascript">
 
     //  LOGIN API INTEGRATION
-     document.getElementById('signupData').addEventListener('submit', handleSignup);
-    
-    function handleSignup(event) {
+     document.getElementById('loginForm').addEventListener('submit', handleLogin);
+     let res = document.getElementById("loginForm");
+
+     // Hide and show a loder logic
+     const loaderContainer = document.querySelector('.loader-container');
+
+    const displayLoading = () => {
+    loaderContainer.style.display = 'block';
+    };
+
+    const hideLoading = () => {
+        loaderContainer.style.display = 'none';
+    };
+
+    function handleLogin(event){
     event.preventDefault();
-    
+    displayLoading();
+
     // Get all the input field and store them in their unique variable each
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
@@ -83,7 +100,7 @@ landscape.')
         }
         return response;
     }
-    fetch("http://127.0.0.1:8000/api/auth/login", {
+    fetch("https://foremosteyeclinic.com/api/auth/login", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
@@ -93,25 +110,28 @@ landscape.')
         })
         .then(handleErrors)
         .then(response => {
-            console.log("ok")
+            // console.log("ok")
+            hideLoading();
+
             Swal.fire({
                 icon: 'success',
-                title: 'Message sent, We will get back shortly!',
+                title: 'Successfully Login!',
                 showConfirmButton: false,
-                timer: 1500,
+                timer: 2000,
 
             })
-            let res = document.getElementById("sendData");
             res.reset();
+            hideLoading();
+
+            window.location.href = "/shop"
         })
         .catch(error => {
             console.log(error, 'wrong')
             Swal.fire({
                 icon: 'error',
-                title: 'Message not sent, something went wrong!',
+                title: 'Failed to login. Incorrect email or passord!',
                 showConfirmButton: false,
-                timer: 1500,
-
+                timer: 2000,
             })
 
         });
