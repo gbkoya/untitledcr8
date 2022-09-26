@@ -37,7 +37,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/me', function (Request $request) {
         return response()->json([
             'status' => true,
-            'message' => 'Your name is: '.auth()->user()->name
+            'message' => 'Your name is: '.auth()->user()->first_name
         ], 200);
     });
 
