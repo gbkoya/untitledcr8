@@ -40,7 +40,7 @@
                 <img
                 src="{{ asset('customImages/buyIcon.png') }}"
                 />
-               ADD
+               CART <span class="total-items-in-cart">0</span>
             </button>
         </li>
 {{-- </div>  --}}
@@ -196,6 +196,30 @@
 </body>
 
     <script type="text/javascript">
+    // Global variable declaration
+      const totalItemsInCartEl = document.querySelector(".total-items-in-cart");
+      const menCards = document.querySelectorAll(".cardClick");
+
+        // ADD TO CART LOGIC
+        let cart = JSON.parse(localStorage.getItem("CART")) || [];
+        const addToCart = () =>{
+           // check if prodcut already exist in cart
+           console.log("working");
+        // if (cart.some((item) => item.id === id)) {
+        //   changeNumberOfUnits("plus", id);
+        // } else {
+        //   const item = menCards.find((product) => product.id === id);
+
+        //   cart.push({
+        //     ...item,
+        //     numberOfUnits: 1,
+        //   });
+        // }
+
+        // updateCart();
+        }
+        // END OF ADD TO CART LOGIC
+
     // API integration to get all products from the database
      const getAllProducts = (event) => {
           event.preventDefault();
@@ -445,7 +469,12 @@
                 productItems.innerHTML += `
                 
                     <div class="shop-card e-card-link cardClick" data-id=${product.id}>
-                    <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
+                    <a href="/details">
+                      <img class="img-fluid
+                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                      "
+                       src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
+                    </a>
                     <div class="shop-card-heading">
                         <div>
                             <h4>${product.name}</h4>
@@ -457,12 +486,15 @@
                                 <p>N4,999</p>
                                 <p>N9,000</p>
                             </div>
-                            <button type="button" class="shop-card-button">
-                                <img
-                                src="{{ asset('customImages/buyIcon.png') }}"
-                                />
-                                View
-                            </button>
+                            <div onclick="addToCart()">
+                              
+                              <button type="button" class="shop-card-button">
+                                  <img
+                                  src="{{ asset('customImages/buyIcon.png') }}"
+                                  />
+                                  Add
+                              </button>
+                              </div>
                         </div>
                     </div>
                 </div>
@@ -474,7 +506,9 @@
                 // console.log(product);
                 productItemsWomen.innerHTML += `
                     <div class="shop-card e-card-link cardClick" data-id=${product.id}>
-                    <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
+                    <img class="img-fluid
+                    data-bs-toggle="tooltip" data-bs-placement="top" title="View details
+                    " src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
                     <div class="shop-card-heading">
                         <div>
                             <h4>${product.name}</h4>
@@ -490,7 +524,7 @@
                                 <img
                                 src="{{ asset('customImages/buyIcon.png') }}"
                                 />
-                                View
+                                Add
                             </button>
                         </div>
                     </div>
@@ -503,7 +537,11 @@
                 // console.log(product);
                 productItemsKids.innerHTML += `
                     <div class="shop-card e-card-link cardClick" data-id=${product.id}>
-                    <img class="img-fluid" src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
+                    <a href="/details">  
+                    <img class="img-fluid
+                    data-bs-toggle="tooltip" data-bs-placement="top" title="View details
+                    " src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
+                    </a>
                     <div class="shop-card-heading">
                         <div>
                             <h4>${product.name}</h4>
@@ -519,7 +557,7 @@
                                 <img
                                 src="{{ asset('customImages/buyIcon.png') }}"
                                 />
-                                View
+                                Add
                             </button>
                         </div>
                     </div>
@@ -529,13 +567,12 @@
 
         // Get the item ID and redirect to the details page
         function getItemID(event){
-            const menCards = document.querySelectorAll(".cardClick");
             menCards.forEach(card =>{
                 card.addEventListener('click', ()=>{
                     let cardId = card.getAttribute("data-id");
                     // localSorage.setItem('productId', cardId);
                     localStorage.setItem('product_id', cardId);
-                     window.location.href = "/details"
+                    //  window.location.href = "/details"
                     // console.log(cardId);
 
                 })
