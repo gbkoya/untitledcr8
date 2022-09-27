@@ -8,6 +8,26 @@ use Illuminate\Support\Facades\Validator;
 
 class CartController extends Controller
 {
+
+    /**
+        * @OA\Post(
+        * path="/api/cart-items",
+        * operationId="cartList",
+        * tags={"Cart list"},
+        * summary="Cart items",
+        * description="List all the products someone have added his cart. Does not store these details in the DB, rather it stores it on the users browser",
+        *      @OA\Response(
+        *          response=200,
+        *          description="Returns all products a user currently have in their cart",
+        *          @OA\JsonContent()
+        *       ),
+        *      @OA\Response(
+        *          response=500,
+        *          description="error: Error message",
+        *          @OA\JsonContent()
+        *       ),
+        * )
+    */
     public function cartList()
     {
         try {
@@ -24,6 +44,39 @@ class CartController extends Controller
         }
     }
 
+    /**
+        * @OA\Post(
+        * path="/api/add-to-cart",
+        * operationId="addToCart",
+        * tags={"Add to cart"},
+        * summary="Add a product to cart",
+        * description="Add a product to cart. Product id needs to be passed",
+        *     @OA\RequestBody(
+        *         @OA\JsonContent(),
+        *         @OA\MediaType(
+        *            mediaType="multipart/form-data",
+        *            @OA\Schema(
+        *               type="object",
+        *               required={"product_id","name", "price", "quantity"},
+        *               @OA\Property(property="name", type="text"),
+        *               @OA\Property(property="price", type="number"),
+        *               @OA\Property(property="quantity", type="number"),
+        *               @OA\Property(property="imagedirectory", type="file"),
+        *            ),
+        *        ),
+        *    ),
+        *      @OA\Response(
+        *          response=200,
+        *          description="Product added to cart successfully!",
+        *          @OA\JsonContent()
+        *       ),
+        *      @OA\Response(
+        *          response=500,
+        *          description="Unable to add to cart: Error message",
+        *          @OA\JsonContent()
+        *       ),
+        * )
+    */
     public function addToCart(Request $request)
     {
         try {
@@ -57,7 +110,7 @@ class CartController extends Controller
             ]);
             return response()->json([
                 'status' => true,
-                'message' => 'Product is Added to Cart Successfully !'
+                'message' => 'Product added to cart successfully!'
             ], 200);
         } catch (Exception $e) {
             return response()->json([
@@ -67,6 +120,42 @@ class CartController extends Controller
         }
     }
 
+    /**
+        * @OA\Post(
+        * path="/api/update-cart/[id]",
+        * operationId="updateCart",
+        * tags={"Update cart"},
+        * summary="Update a product in the cart",
+        * description="To update a product in the cart, you need to pass the product_id. [For the user]",
+        *     @OA\RequestBody(
+        *         @OA\JsonContent(),
+        *         @OA\MediaType(
+        *            mediaType="multipart/form-data",
+        *            @OA\Schema(
+        *               type="object",
+        *               required={"product_id", "price", "quantity"},
+        *               @OA\Property(property="price", type="number"),
+        *               @OA\Property(property="quantity", type="number"),
+        *            ),
+        *        ),
+        *    ),
+        *      @OA\Response(
+        *          response=200,
+        *          description="Product cart is updated successfully!",
+        *          @OA\JsonContent()
+        *       ),
+        *      @OA\Response(
+        *          response=400,
+        *          description="important field missing: error with field names",
+        *          @OA\JsonContent()
+        *       ),
+        *      @OA\Response(
+        *          response=500,
+        *          description="Unable to update cart: Error message",
+        *          @OA\JsonContent()
+        *       ),
+        * )
+    */
     public function updateCart(Request $request)
     {
         try {
@@ -88,7 +177,7 @@ class CartController extends Controller
             \Cart::update(
                 $request->id,
                 [
-                    // 'price' => '20',
+                    'price' => $request->price,
                     'quantity' => [
                         'relative' => false,
                         'value' => $request->quantity
@@ -98,7 +187,7 @@ class CartController extends Controller
 
             return response()->json([
                 'status' => true,
-                'message' => 'Product Cart is Updated Successfully !'
+                'message' => 'Product cart is updated successfully!'
             ], 200);
         } catch (Exception $e) {
             return response()->json([
@@ -108,13 +197,32 @@ class CartController extends Controller
         }
     }
 
+    /**
+        * @OA\Post(
+        * path="/api/remove-item/[id]",
+        * operationId="removeCart",
+        * tags={"Remove cart"},
+        * summary="Remove an existing product from the cart",
+        * description="User removes a previously added product from his cart, you need to pass the product_id. [For the user]",
+        *      @OA\Response(
+        *          response=200,
+        *          description="Product removed from cart",
+        *          @OA\JsonContent()
+        *       ),
+        *      @OA\Response(
+        *          response=500,
+        *          description="Unable to remove product from cart: Error message",
+        *          @OA\JsonContent()
+        *       ),
+        * )
+    */
     public function removeCart(Request $request)
     {
         try {
             \Cart::remove($request->id);
             return response()->json([
                 'status' => true,
-                'message' => 'Product removed from Cart'
+                'message' => 'Product removed from cart'
             ], 200);
         } catch (Exception $e) {
             return response()->json([
@@ -124,6 +232,25 @@ class CartController extends Controller
         }
     }
 
+    /**
+        * @OA\Post(
+        * path="/api/clear-cart",
+        * operationId="clearAllCart",
+        * tags={"Clear buyer cart"},
+        * summary="Remove all existing product from buyer cart",
+        * description="Remove / clear all the product a user previously added to his cart. [For the user]",
+        *      @OA\Response(
+        *          response=200,
+        *          description="Cart cleared!",
+        *          @OA\JsonContent()
+        *       ),
+        *      @OA\Response(
+        *          response=500,
+        *          description="Unable to clear cart: Error message",
+        *          @OA\JsonContent()
+        *       ),
+        * )
+    */
     public function clearAllCart()
     {
         try {
@@ -136,7 +263,7 @@ class CartController extends Controller
         } catch (Exception $e) {
             return response()->json([
                 'status' => FALSE,
-                'error' => 'Unable to remove product from cart: ' . $e->getMessage(),
+                'error' => 'Unable to clear cart: ' . $e->getMessage(),
             ], 500);
         }
     }
