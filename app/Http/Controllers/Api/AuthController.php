@@ -63,8 +63,6 @@ class AuthController extends Controller
         *      @OA\Response(response=404, description="Resource Not Found"),
         * )
     */
-
-
     public function createUser(Request $request)
     {
         try {
@@ -111,7 +109,7 @@ class AuthController extends Controller
      * Login The User
      * @param Request $request
      * @return User
-     */
+    */
 
     /**
         * @OA\Post(
