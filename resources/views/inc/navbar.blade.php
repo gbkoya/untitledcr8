@@ -53,6 +53,8 @@
                       <li><a class="dropdown-item archware-nav-title-drop" href="/login">Login</a></li>
                       <li><a class="dropdown-item archware-nav-title-drop" href="/signup">Create account</a></li>
                       <li><a class="dropdown-item archware-nav-title-drop" href="#">Orders</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li onclick="handleLogout()"><a class="dropdown-item">Logout</a></li> 
                     </ul>
                   </div>
 
@@ -75,6 +77,8 @@
 
 <!-- THE SCRIPT TO CONTROL THE STATE OF THE NAVBAR -->
 <script type="text/javascript">
+
+
     // Declare and store all variables globally
     const getNav = document.querySelector('#navMain');
     const topOfNav = getNav.offsetTop;
@@ -104,4 +108,54 @@
         }
     }
     window.addEventListener('scroll', triggerNav);
+
+    
+    
+</script>
+
+<script type="text/javascript">
+ // LOGOUT
+ const handleLogout = async () =>{
+    // alert('working')
+        let token = localStorage.getItem('token');
+        alert(token);
+        function handleErrors(response) {
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+            return response;
+        }
+
+        try{
+            console.log(token);
+          const response = await fetch("https://foremosteyeclinic.com/api/auth/logout", {
+                  method: 'POST',
+                  headers: {
+                      'Accept': 'application/json, text/plain, */*',
+                      'content-type': 'application/json'
+                      'Authorization': token,                  }
+              })
+              .then(handleErrors)
+              const data = await response.json();
+              Swal.fire({
+                      icon: 'success',
+                      title: data.message,
+                      showConfirmButton: false,
+                      timer: 2000,
+                  })
+              window.location.href = "/login"
+              
+        } catch(error){
+          // let errorMessage = await error.json()
+          console.log(error);
+          // console.log(errorMessage);
+                  Swal.fire({
+                      icon: 'error',
+                      title: "Failed to logout",
+                      showConfirmButton: false,
+                      timer: 2000,
+                  })
+        }
+
+    }
 </script>

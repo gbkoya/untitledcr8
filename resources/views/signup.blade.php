@@ -1,10 +1,8 @@
 @extends('layouts.app')
 
-@section('description',
-'Archware - Africa\'s Leading Software Development Company
-Software development company helping businesses and individuals take advantage of the benefits of the global technology
-landscape.')
-@section('title', 'Archware - Excellent Tech-based Solutions For Your Business')
+@section('description', 'Foremost Eye Clinic is a leading provider of optometry services.')
+@section('title', 'Foremost - Africa\'s Most Innovative Eye Clinic')
+
 @section('article:section', 'Home')
 @section('url', 'www.archwareltd.com')
 @section('image'){{ asset('customImages/Logo.svg') }}@stop
@@ -26,9 +24,9 @@ landscape.')
           {{-- <a class="ml-1 btn" href="{{ url('auth/facebook') }}" style="margin-top: 0px !important;background: #F58634; width: 40%; color: #ffffff;padding: .7rem .2rem; border-radius: 25px;" id="btn-fblogin">
             <i class="fab fa-facebook" aria-hidden="true"></i> Login with Facebook
           </a> --}}
-          <a class="ml-1 btn" href="{{ url('auth/facebook') }}" style="margin-top: 0px !important;background: #F58634; width: 40%; color: #ffffff; padding: .7rem; .2rem; border-radius: 25px;" id="btn-fblogin">
+          <div class="ml-1 btn" id="social" onclick="socialLogin()" style="margin-top: 0px !important;background: #F58634; width: 40%; color: #ffffff; padding: .7rem; .2rem; border-radius: 25px;" id="btn-fblogin">
             <i class="fab fa-google" aria-hidden="true"></i> Login with Google
-        </a>
+          </div>
         </div>
         <form id="signupForm">
           <div class="mb-3 pt-2 px-3" style="border-radius: 20px;">
@@ -58,11 +56,11 @@ landscape.')
               <span class="mt-4 pt-1 px-2">
                 <img src="{{asset('customImages/Vector (1).png')}}" alt=""> 
               </span>
-              <input type="text" id="password" class="form-control-ika" placeholder="Enter Password (Min. 8 characters)" id="exampleInputPassword1" required
+              <input type="text" id="password" class="form-control-ika passwordInput" placeholder="Enter Password (Min. 8 characters)"  required
               pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
                    title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number."/>
-              <span id="e-hide" class="e-toggle-icon e-toggle-hide mt-4 pt-1 px-4"><img onclick="showPassword()" class="img-fluid" src="{{asset('customImages/Vector.png')}}" alt="hide image"/> </span>
-              <span id="e-display" class="e-toggle-icon mt-4 pt-1 px-4"><img onclick="hidePassword()"  class="img-fluid" src="{{asset('customImages/password.png')}}" alt="show image"/></span>
+              <span class="e-toggle-icon e-toggle-hide mt-4 pt-1 px-4"><img onclick="showPassword()" class="img-fluid" src="{{asset('customImages/Vector.png')}}" alt="hide image"/> </span>
+              <span class="e-toggle-icon e-toggle-display mt-4 pt-1 px-4"><img onclick="hidePassword()"  class="img-fluid" src="{{asset('customImages/password.png')}}" alt="show image"/></span>
 
             </div>
           </div>
@@ -74,7 +72,6 @@ landscape.')
             </div>
           </div>
           <div class="row i-login-button-mobile justify-content-center py-5">
-            
             <button type="submit" class="i-login-button ">Create Account</button>
           </div>
         </form>
@@ -85,20 +82,24 @@ landscape.')
   <script type="text/javascript">
   
         // Toggle password display
-        let display = document.getElementById('e-display');
-
+        // Declare the variables globally
+        let toggleHide = document.querySelector('.e-toggle-hide');
+        let toggleDisplay = document.querySelector('.e-toggle-display ');
+        let inputField = document.querySelector('.passwordInput');
 
         function hidePassword(){
-        let hide = document.getElementById('e-hide');
-          alert('show!');
-          hide.display = 'none'
+          toggleHide.style.display = 'block'
+          toggleDisplay.style.display = 'none'
+          inputField.type = 'password'
         }
 
         function showPassword(){
-          alert('hide!');
+          toggleHide.style.display = 'none'
+          toggleDisplay.style.display = 'block'
+          inputField.type = 'text'
         }
 
-        // Hide and show a loder logic
+        // Hide and show a loader logic
         const loaderContainer = document.querySelector('.loader-container');
 
         const displayLoading = () => {
@@ -179,8 +180,70 @@ landscape.')
           });
         }   
   
+
+       
+      // SOCIAL LOGIN
+       const socialLogin = async () => {
+          displayLoading();
+
+        // alert(JSON.stringify(contactData));
+        // alert(`${firstName} and ${lastName}`);
+        
+        function handleErrors(response) {
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+            return response;
+        }
+        try{
+          let headers = new Headers();
+
+          headers.append('Content-Type', 'application/json');
+          headers.append('Accept', 'application/json');
+
+          headers.append('Access-Control-Allow-Origin', 'http://127.0.0.1:8000');
+
+          const response = await fetch("https://foremosteyeclinic.com/api/auth/google", {
+                  method: 'GET',
+                  headers
+              })
+              .then(handleErrors)
+              const data = await response.json();
+              // return data;
+              console.log(data);
+              console.log(response);
+          
+
+              Swal.fire({
+                      icon: 'success',
+                      title: data.message,
+                      showConfirmButton: false,
+                      timer: 2000,
+      
+                  })
+                  res.reset();
+                  hideLoading();
+              window.location.href = "/shop"
+              
+        } catch(error){
+          // let errorMessage = await error.json()
+          console.log(error);
+          // console.log(errorMessage);
+                  hideLoading();
+                  Swal.fire({
+                      icon: 'error',
+                      title: "Invalid Email/Password. Try again",
+                      showConfirmButton: false,
+                      timer: 2000,
+                  })
+        }
+      }
+    document.getElementById('loginForm').addEventListener('submit', handleLogin);
+
+     
   </script>
 {{-- END OF API INTEGRATION --}}
+
 
 @endsection
 
