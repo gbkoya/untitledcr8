@@ -256,13 +256,218 @@
                 }
             }
         },
+        "/api/cart-items": {
+            "post": {
+                "tags": [
+                    "Cart list"
+                ],
+                "summary": "Cart items",
+                "description": "List all the products someone have added his cart. Does not store these details in the DB, rather it stores it on the users browser",
+                "operationId": "cartList",
+                "responses": {
+                    "200": {
+                        "description": "Returns all products a user currently have in their cart",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "error: Error message",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/add-to-cart": {
+            "post": {
+                "tags": [
+                    "Add to cart"
+                ],
+                "summary": "Add a product to cart",
+                "description": "Add a product to cart. Product id needs to be passed",
+                "operationId": "addToCart",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "product_id",
+                                    "name",
+                                    "price",
+                                    "quantity"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "text"
+                                    },
+                                    "price": {
+                                        "type": "number"
+                                    },
+                                    "quantity": {
+                                        "type": "number"
+                                    },
+                                    "imagedirectory": {
+                                        "type": "file"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Product added to cart successfully!",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Unable to add to cart: Error message",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/update-cart/[id]": {
+            "post": {
+                "tags": [
+                    "Update cart"
+                ],
+                "summary": "Update a product in the cart",
+                "description": "To update a product in the cart, you need to pass the product_id. [For the user]",
+                "operationId": "updateCart",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "product_id",
+                                    "price",
+                                    "quantity"
+                                ],
+                                "properties": {
+                                    "price": {
+                                        "type": "number"
+                                    },
+                                    "quantity": {
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Product cart is updated successfully!",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "important field missing: error with field names",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Unable to update cart: Error message",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/remove-item/[id]": {
+            "post": {
+                "tags": [
+                    "Remove cart"
+                ],
+                "summary": "Remove an existing product from the cart",
+                "description": "User removes a previously added product from his cart, you need to pass the product_id. [For the user]",
+                "operationId": "removeCart",
+                "responses": {
+                    "200": {
+                        "description": "Product removed from cart",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Unable to remove product from cart: Error message",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/clear-cart": {
+            "post": {
+                "tags": [
+                    "Clear buyer cart"
+                ],
+                "summary": "Remove all existing product from buyer cart",
+                "description": "Remove / clear all the product a user previously added to his cart. [For the user]",
+                "operationId": "clearAllCart",
+                "responses": {
+                    "200": {
+                        "description": "Cart cleared!",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Unable to clear cart: Error message",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/product-details-show/[product:id]": {
             "post": {
                 "tags": [
                     "Get product by id"
                 ],
                 "summary": "Show product detail",
-                "description": "Get the detail of a particular product. Comes with product price and features. Product ID must be passed in the url",
+                "description": "Get the detail of a particular product. Comes with product price and features. Product ID must be passed in the url. [For the admin]",
                 "operationId": "getProductById",
                 "requestBody": {
                     "content": {
@@ -270,7 +475,7 @@
                             "schema": {
                                 "properties": {
                                     "product_id": {
-                                        "type": "text"
+                                        "type": "number"
                                     }
                                 },
                                 "type": "object"
@@ -307,7 +512,7 @@
                     "Get product by category"
                 ],
                 "summary": "Get product by category",
-                "description": "Gets all products under the requested category. Product ID must be passed in the url",
+                "description": "Gets all products under the requested category. Product ID must be passed in the url. [For the admin]",
                 "operationId": "getProductByCategory",
                 "requestBody": {
                     "content": {
@@ -352,7 +557,7 @@
                     "Store product"
                 ],
                 "summary": "Add a new product to the system",
-                "description": "Add a new product to the system. The product price, features and images are also added",
+                "description": "Add a new product to the system. The product price, features and images are also added. [For the admin]",
                 "operationId": "storeProduct",
                 "requestBody": {
                     "content": {
@@ -374,7 +579,7 @@
                                         "type": "text"
                                     },
                                     "product_price": {
-                                        "type": "text"
+                                        "type": "number"
                                     }
                                 },
                                 "type": "object"
@@ -411,7 +616,7 @@
                     "Edit product"
                 ],
                 "summary": "Edit existing product",
-                "description": "Change or edit a product. Especially the product price. Product ID must be passed in the url",
+                "description": "Change or edit a product. Especially the product price. Product ID must be passed in the url. [For the admin]",
                 "operationId": "edit_product",
                 "requestBody": {
                     "content": {
@@ -431,7 +636,7 @@
                                         "type": "text"
                                     },
                                     "price": {
-                                        "type": "text"
+                                        "type": "number"
                                     }
                                 },
                                 "type": "object"
@@ -468,7 +673,7 @@
                     "Delete product"
                 ],
                 "summary": "Delete existing product",
-                "description": "Remove a product from the system. Product ID must be passed in the url",
+                "description": "Remove a product from the system. Product ID must be passed in the url. [For the admin]",
                 "operationId": "delete_product",
                 "requestBody": {
                     "content": {
@@ -479,7 +684,7 @@
                                 ],
                                 "properties": {
                                     "product_id": {
-                                        "type": "text"
+                                        "type": "number"
                                     }
                                 },
                                 "type": "object"
