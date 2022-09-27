@@ -1,10 +1,7 @@
 @extends('layouts.app')
 
-@section('description',
-'Archware - Africa\'s Leading Software Development Company
-Software development company helping businesses and individuals take advantage of the benefits of the global technology
-landscape.')
-@section('title', 'Archware - Excellent Tech-based Solutions For Your Business')
+@section('description', 'Foremost Eye Clinic is a leading provider of optometry services.')
+@section('title', 'Foremost - Africa\'s Most Innovative Eye Clinic')
 @section('article:section', 'Home')
 @section('url', 'www.archwareltd.com')
 @section('image'){{ asset('customImages/Logo.svg') }}@stop

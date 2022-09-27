@@ -1,10 +1,8 @@
 @extends('layouts.app')
 
-@section('description',
-'Archware - Africa\'s Leading Software Development Company
-Software development company helping businesses and individuals take advantage of the benefits of the global technology
-landscape.')
-@section('title', 'Archware - Excellent Tech-based Solutions For Your Business')
+@section('description', 'Foremost Eye Clinic is a leading provider of optometry services.')
+@section('title', 'Foremost - Africa\'s Most Innovative Eye Clinic')
+
 @section('article:section', 'Home')
 @section('url', 'www.archwareltd.com')
 @section('image'){{ asset('customImages/Logo.svg') }}@stop
@@ -41,9 +39,9 @@ landscape.')
           <div class="mb-3 pt-3 px-3">
             <div class="d-flex" style="background-color: #f3efef; padding-left: 1rem;" >
               <span class="mt-4 pt-1 px-2"><img src="{{asset('customImages/Vector (1).png')}}" alt=""> </span>
-              <input type="password" id="password" class="form-control-ika" placeholder="Enter Password" required/>
-              <span class="mt-4 pt-1 px-4"><img src="{{asset('customImages/Vector.png')}}" alt=""> </span>
-            </div>
+              <input type="text" id="password" class="form-control-ika passwordInput" placeholder="Enter Password" required/>
+              <span class="e-toggle-icon e-toggle-hide mt-4 pt-1 px-4"><img onclick="showPassword()" class="img-fluid" src="{{asset('customImages/Vector.png')}}" alt="hide image"/> </span>
+              <span class="e-toggle-icon e-toggle-display mt-4 pt-1 px-4"><img onclick="hidePassword()"  class="img-fluid" src="{{asset('customImages/password.png')}}" alt="show image"/></span>            </div>
           </div>
           <div class="mb-3 form-check pt-4">
             <div class="d-flex flex-row justify-content-center">
@@ -61,6 +59,24 @@ landscape.')
   </div>
 
   <script type="text/javascript">
+      // Toggle password display
+        // Declare the variables globally
+        let toggleHide = document.querySelector('.e-toggle-hide');
+        let toggleDisplay = document.querySelector('.e-toggle-display ');
+        let inputField = document.querySelector('.passwordInput');
+
+        function hidePassword(){
+          toggleHide.style.display = 'block'
+          toggleDisplay.style.display = 'none'
+          inputField.type = 'password'
+        }
+
+        function showPassword(){
+          toggleHide.style.display = 'none'
+          toggleDisplay.style.display = 'block'
+          inputField.type = 'text'
+        }
+
 
     //  LOGIN API INTEGRATION
      document.getElementById('loginForm').addEventListener('submit', handleLogin);
@@ -126,7 +142,8 @@ landscape.')
             window.location.href = "/shop"
         })
         .catch(error => {
-            console.log(error, 'wrong')
+            // res.reset();
+            hideLoading();
             Swal.fire({
                 icon: 'error',
                 title: 'Failed to login. Incorrect email or passord!',
