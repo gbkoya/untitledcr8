@@ -24,9 +24,9 @@
           {{-- <a class="ml-1 btn" href="{{ url('auth/facebook') }}" style="margin-top: 0px !important;background: #F58634; width: 40%; color: #ffffff;padding: .7rem .2rem; border-radius: 25px;" id="btn-fblogin">
             <i class="fab fa-facebook" aria-hidden="true"></i> Login with Facebook
           </a> --}}
-          <a class="ml-1 btn" href="{{ url('auth/facebook') }}" style="margin-top: 0px !important;background: #F58634; width: 40%; color: #ffffff; padding: .7rem; .2rem; border-radius: 25px;" id="btn-fblogin">
+          <div class="ml-1 btn" id="social" onclick="socialLogin()" style="margin-top: 0px !important;background: #F58634; width: 40%; color: #ffffff; padding: .7rem; .2rem; border-radius: 25px;" id="btn-fblogin">
             <i class="fab fa-google" aria-hidden="true"></i> Login with Google
-        </a>
+          </div>
         </div>
         <form id="signupForm">
           <div class="mb-3 pt-2 px-3" style="border-radius: 20px;">
@@ -180,8 +180,70 @@
           });
         }   
   
+
+       
+      // SOCIAL LOGIN
+       const socialLogin = async () => {
+          displayLoading();
+
+        // alert(JSON.stringify(contactData));
+        // alert(`${firstName} and ${lastName}`);
+        
+        function handleErrors(response) {
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+            return response;
+        }
+        try{
+          let headers = new Headers();
+
+          headers.append('Content-Type', 'application/json');
+          headers.append('Accept', 'application/json');
+
+          headers.append('Access-Control-Allow-Origin', 'http://127.0.0.1:8000');
+
+          const response = await fetch("https://foremosteyeclinic.com/api/auth/google", {
+                  method: 'GET',
+                  headers
+              })
+              .then(handleErrors)
+              const data = await response.json();
+              // return data;
+              console.log(data);
+              console.log(response);
+          
+
+              Swal.fire({
+                      icon: 'success',
+                      title: data.message,
+                      showConfirmButton: false,
+                      timer: 2000,
+      
+                  })
+                  res.reset();
+                  hideLoading();
+              window.location.href = "/shop"
+              
+        } catch(error){
+          // let errorMessage = await error.json()
+          console.log(error);
+          // console.log(errorMessage);
+                  hideLoading();
+                  Swal.fire({
+                      icon: 'error',
+                      title: "Invalid Email/Password. Try again",
+                      showConfirmButton: false,
+                      timer: 2000,
+                  })
+        }
+      }
+    document.getElementById('loginForm').addEventListener('submit', handleLogin);
+
+     
   </script>
 {{-- END OF API INTEGRATION --}}
+
 
 @endsection
 

@@ -64,6 +64,9 @@
         let toggleHide = document.querySelector('.e-toggle-hide');
         let toggleDisplay = document.querySelector('.e-toggle-display ');
         let inputField = document.querySelector('.passwordInput');
+        let res = document.getElementById("loginForm"); // Store the form id in a res variable
+
+       
 
         function hidePassword(){
           toggleHide.style.display = 'block'
@@ -78,10 +81,6 @@
         }
 
 
-    //  LOGIN API INTEGRATION
-     document.getElementById('loginForm').addEventListener('submit', handleLogin);
-     let res = document.getElementById("loginForm");
-
      // Hide and show a loder logic
      const loaderContainer = document.querySelector('.loader-container');
 
@@ -93,67 +92,79 @@
         loaderContainer.style.display = 'none';
     };
 
-    function handleLogin(event){
-    event.preventDefault();
-    displayLoading();
+    //  LOGIN API INTEGRATION
+    
 
-    // Get all the input field and store them in their unique variable each
-    let email = document.getElementById('email').value;
-    let password = document.getElementById('password').value;
-    
-    let loginData = {
-        email,
-        password,
-    }
-    // alert(JSON.stringify(contactData));
-    // alert(`${firstName} and ${lastName}`);
-    console.log(loginData);
-    isLoading = true;
-    
-    function handleErrors(response) {
-        if (!response.ok) {
-            throw Error(response.statusText);
+     const handleLogin = async (event) => {
+          event.preventDefault();
+          displayLoading();
+
+        // Get all the input field and store them in their unique variable each
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+        
+        let loginData = {
+            email,
+            password,
         }
-        return response;
-    }
-    fetch("https://foremosteyeclinic.com/api/auth/login", {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(loginData)
-        })
-        .then(handleErrors)
-        .then(response => {
-            // console.log("ok")
-            hideLoading();
+        // alert(JSON.stringify(contactData));
+        // alert(`${firstName} and ${lastName}`);
+        console.log(loginData);
+        isLoading = true;
+        
+        function handleErrors(response) {
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+            return response;
+        }
+        try{
+          const response = await fetch("https://foremosteyeclinic.com/api/auth/login", {
+                  method: 'POST',
+                  headers: {
+                      'Accept': 'application/json, text/plain, */*',
+                      'content-type': 'application/json'
+                  },
+                  body: JSON.stringify(loginData)
+              })
+              .then(handleErrors)
+              const data = await response.json();
+              // return data;
+              console.log(loginData.email);
+              console.log(data);
+              console.log(response);
+              localStorage.setItem('token', data.token);
+              localStorage.setItem('email', loginData.email);
 
-            Swal.fire({
-                icon: 'success',
-                title: 'Successfully Login!',
-                showConfirmButton: false,
-                timer: 2000,
+              Swal.fire({
+                      icon: 'success',
+                      title: data.message,
+                      showConfirmButton: false,
+                      timer: 2000,
+      
+                  })
+                  res.reset();
+                  hideLoading();
+              window.location.href = "/shop"
+              
+        } catch(error){
+          // let errorMessage = await error.json()
+          console.log(error);
+          // console.log(errorMessage);
+          res.reset();
+                  hideLoading();
+                  Swal.fire({
+                      icon: 'error',
+                      title: "Invalid Email/Password. Try again",
+                      showConfirmButton: false,
+                      timer: 2000,
+                  })
+        }
+      }
+    document.getElementById('loginForm').addEventListener('submit', handleLogin);
 
-            })
-            res.reset();
-            hideLoading();
-
-            window.location.href = "/shop"
-        })
-        .catch(error => {
-            // res.reset();
-            hideLoading();
-            Swal.fire({
-                icon: 'error',
-                title: 'Failed to login. Incorrect email or passord!',
-                showConfirmButton: false,
-                timer: 2000,
-            })
-
-        });
-    
-    }
+      // LOGOUT
+      
     </script>
     
     {{-- END OF API INTEGRATION --}}
