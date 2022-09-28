@@ -461,6 +461,34 @@
                 }
             }
         },
+        "/api/product-list": {
+            "post": {
+                "tags": [
+                    "Get All Products"
+                ],
+                "summary": "Show all products and then paginate",
+                "description": "Show all products and then paginate by 12 per request",
+                "operationId": "getAllProducts",
+                "responses": {
+                    "200": {
+                        "description": "Product details",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error page",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/product-details-show/[product:id]": {
             "post": {
                 "tags": [
