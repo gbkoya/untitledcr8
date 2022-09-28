@@ -145,7 +145,9 @@
                   })
                   res.reset();
                   hideLoading();
-              window.location.href = "/shop"
+                  setTimeout(() => {        
+            window.location.href = "/shop"
+              }, 1500);
               
         } catch(error){
           // let errorMessage = await error.json()

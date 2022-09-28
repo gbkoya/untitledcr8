@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0" id="navMain">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0" id="navMain"
+onload="displayName();">
     <div class="container-fluid">
         <a class="navbar-brand colored-logo" href="/" style="margin-left: 4%;">
             <img class="img-fluid" src="{{ asset('customImages/Logo.png') }}">
@@ -46,7 +47,7 @@
                 </li> --}}
                 <div class="dropdown e-drop-nav" style="margin: 0 1.3rem">
                     <li class="dropdown-toggle nav-item" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer; font-size: .83rem">
-                      Hello! Sign in<br>
+                      Hello, <span class="welcome-name"></span><br>
                       Account
                     </li>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -54,7 +55,8 @@
                       <li><a class="dropdown-item archware-nav-title-drop" href="/signup">Create account</a></li>
                       <li><a class="dropdown-item archware-nav-title-drop" href="#">Orders</a></li>
                       <li><hr class="dropdown-divider"></li>
-                      <li onclick="handleLogout()"><a class="dropdown-item">Logout</a></li> 
+                      <li id="triggerLogout"
+                      style="cursor: pointer"><span class="dropdown-item">Logout</span></li> 
                     </ul>
                   </div>
 
@@ -110,52 +112,72 @@
     window.addEventListener('scroll', triggerNav);
 
     
-    
 </script>
 
 <script type="text/javascript">
- // LOGOUT
- const handleLogout = async () =>{
+
+// LOGOUT
+ const handleLogout = () =>{
     // alert('working')
         let token = localStorage.getItem('token');
-        alert(token);
+        // alert(token);
         function handleErrors(response) {
-            if (!response.ok) {
-                throw Error(response.statusText);
-            }
-            return response;
+      if (!response.ok) {
+          throw Error(response.statusText);
+      }
+      return response;
         }
-
-        try{
-            console.log(token);
-          const response = await fetch("https://foremosteyeclinic.com/api/auth/logout", {
-                  method: 'POST',
-                  headers: {
-                      'Accept': 'application/json, text/plain, */*',
-                      'content-type': 'application/json'
-                      'Authorization': token,                  }
-              })
-              .then(handleErrors)
-              const data = await response.json();
-              Swal.fire({
-                      icon: 'success',
-                      title: data.message,
-                      showConfirmButton: false,
-                      timer: 2000,
+    fetch("https://foremosteyeclinic.com/api/auth/logout", {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        referrer: 'no-referrer'
+    })
+    .then(handleErrors)
+    .then(function(response){
+        console.log(response);
+        Swal.fire({
+                icon: 'success',
+                title: "User logged out!",
+                showConfirmButton: false,
+                timer: 2000,
                   })
-              window.location.href = "/login"
-              
-        } catch(error){
-          // let errorMessage = await error.json()
-          console.log(error);
-          // console.log(errorMessage);
-                  Swal.fire({
+        localStorage.removeItem('token');
+        localStorage.removeItem('email');
+        setTimeout(() => {        
+            window.location.href = "/login"
+        }, 1500);
+    }).catch(function(err){
+        Swal.fire({
                       icon: 'error',
-                      title: "Failed to logout",
+                      title: "Failed to logout user!",
                       showConfirmButton: false,
                       timer: 2000,
                   })
-        }
-
+        console.warn('Something went wrong.', err);
+    })
+        
     }
+    
+
+    document.getElementById('triggerLogout').addEventListener('click', handleLogout);
+
+</script>
+
+<script type="text/javascript">
+    let userEmail = localStorage.getItem('email');
+    console.log(userEmail);
+
+let welcomeName = document.querySelector('.welcome-name');
+// alert('working');
+
+ const displayName = () =>{
+//    alert('working');
+   console.log('working!');
+   console.log(userEmail);
+   welcomeName.innerHTML = userEmail;
+ }
+
+displayName();
 </script>

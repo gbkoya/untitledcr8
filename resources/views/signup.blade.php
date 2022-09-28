@@ -163,7 +163,9 @@
   
               })
               res.reset();
-              window.location.href = "/login"
+              setTimeout(() => {
+                window.location.href = "/login"
+              }, 1500);
           })
           .catch(error => {
               console.log(error, 'wrong')
@@ -180,9 +182,13 @@
           });
         }   
   
+    document.getElementById('loginForm').addEventListener('submit', handleLogin);
 
-       
-      // SOCIAL LOGIN
+     
+  </script>
+
+  <script type="text/javascript">
+ // SOCIAL LOGIN
        const socialLogin = async () => {
           displayLoading();
 
@@ -205,7 +211,7 @@
 
           const response = await fetch("https://foremosteyeclinic.com/api/auth/google", {
                   method: 'GET',
-                  headers
+                  headers: headers
               })
               .then(handleErrors)
               const data = await response.json();
@@ -223,24 +229,20 @@
                   })
                   res.reset();
                   hideLoading();
-              window.location.href = "/shop"
               
         } catch(error){
           // let errorMessage = await error.json()
-          console.log(error);
+          // console.log(error);
           // console.log(errorMessage);
                   hideLoading();
                   Swal.fire({
                       icon: 'error',
-                      title: "Invalid Email/Password. Try again",
+                      title: "Failed to Login with Google!",
                       showConfirmButton: false,
                       timer: 2000,
                   })
         }
       }
-    document.getElementById('loginForm').addEventListener('submit', handleLogin);
-
-     
   </script>
 {{-- END OF API INTEGRATION --}}
 

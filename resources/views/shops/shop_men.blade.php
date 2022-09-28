@@ -8,6 +8,11 @@
 @section('content')
 
 <body>
+    {{-- The loading spinner --}}
+    <div class="loader-container">
+      <div class="spinner"></div>
+    </div>
+
 <main>
 {{-- HERO SECTION --}}
 <section class="container-fluid shop-hero">
@@ -219,52 +224,60 @@
         // END OF ADD TO CART LOGIC
 
     // API integration to get all products from the database
-     const getAllProducts = (event) => {
-          event.preventDefault();
-      
-          // alert(JSON.stringify(contactData));
-          // alert(`${firstName} and ${lastName}`);
-          isLoading = true;
-      
-          function handleErrors(response) {
-              if (!response.ok) {
-                  throw Error(response.statusText);
-              }
-              return response;
-          }
-          fetch(`${APP_URL}/contactus/message`, {
+     // Hide and show a loader logic
+     const loaderContainer = document.querySelector('.loader-container');
+
+      const displayLoading = () => {
+      loaderContainer.style.display = 'block';
+      };
+
+      const hideLoading = () => {
+          loaderContainer.style.display = 'none';
+      };
+    const getAllProducts = async () => {
+      displayLoading();
+        // alert(JSON.stringify(contactData));
+        // alert(`${firstName} and ${lastName}`);
+        
+        function handleErrors(response) {
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+            return response;
+        }
+        try{
+          let headers = new Headers();
+
+          headers.append('Content-Type', 'application/json');
+          headers.append('Accept', 'application/json');
+
+          headers.append('Access-Control-Allow-Origin', 'http://127.0.0.1:8000');
+
+          const response = await fetch("https://foremosteyeclinic.com/api/product-list", {
                   method: 'GET',
-                  headers: {
-                      'Accept': 'application/json, text/plain, */*',
-                      'content-type': 'application/json'
-                  }
+                  headers: headers
               })
               .then(handleErrors)
-              .then(response => {
-                //   console.log("ok")
-                  Swal.fire({
-                      icon: 'success',
-                      title: 'Products retrieved successfully!',
-                      showConfirmButton: false,
-                      timer: 1500,
-      
-                  })
-                  let res = document.getElementById("sendData");
-                  res.reset();
-              })
-              .catch(error => {
-                  console.log(error, 'wrong')
+              const data = await response.json();
+              // return data;
+              console.log(data.products_list);
+              console.log(response);
+              hideLoading();
+              
+        } catch(error){
+          // let errorMessage = await error.json()
+          // console.log(error);
+          // console.log(errorMessage);
+                  hideLoading();
                   Swal.fire({
                       icon: 'error',
-                      title: 'Failed to retrieve products!',
+                      title: "Failed to retrieve products!",
                       showConfirmButton: false,
-                      timer: 1500,
-      
+                      timer: 2000,
                   })
-      
-              });
-      
+        }
       }
+      getAllProducts()
        // The logic to get and display
        const productItems = document.querySelector('.productsData');
        const productItemsWomen = document.querySelector('.productsDataWomen');
@@ -448,15 +461,15 @@
             // Get men data
             const menProducts = products.filter(menProduct => menProduct.product_category === "men"
             );
-            console.log(menProducts);
+            // console.log(menProducts);
 
             // Get women data
             const womenProducts = products.filter(womenProduct => womenProduct.product_category === "women");
-            console.log(womenProducts);
+            // console.log(womenProducts);
 
             // Get Kids data
             const kidsProducts = products.filter(kidProduct => kidProduct.product_category === "kids");
-            console.log(kidsProducts);
+            // console.log(kidsProducts);
 
 
             
