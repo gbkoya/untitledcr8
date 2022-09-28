@@ -253,7 +253,7 @@
                   res.reset();
               })
               .catch(error => {
-                  console.log(error, 'wrong')
+                  // console.log(error, 'wrong')
                   Swal.fire({
                       icon: 'error',
                       title: 'Failed to retrieve products!',
@@ -448,15 +448,15 @@
             // Get men data
             const menProducts = products.filter(menProduct => menProduct.product_category === "men"
             );
-            console.log(menProducts);
+            // console.log(menProducts);
 
             // Get women data
             const womenProducts = products.filter(womenProduct => womenProduct.product_category === "women");
-            console.log(womenProducts);
+            // console.log(womenProducts);
 
             // Get Kids data
             const kidsProducts = products.filter(kidProduct => kidProduct.product_category === "kids");
-            console.log(kidsProducts);
+            // console.log(kidsProducts);
 
 
             

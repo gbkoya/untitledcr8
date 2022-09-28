@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0" id="navMain">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0" id="navMain"
+onload="displayName();">
     <div class="container-fluid">
         <a class="navbar-brand colored-logo" href="/" style="margin-left: 4%;">
             <img class="img-fluid" src="{{ asset('customImages/Logo.png') }}">
@@ -46,7 +47,7 @@
                 </li> --}}
                 <div class="dropdown e-drop-nav" style="margin: 0 1.3rem">
                     <li class="dropdown-toggle nav-item" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer; font-size: .83rem">
-                      Hello! Sign in<br>
+                      Hello, <span class="welcome-name"></span><br>
                       Account
                     </li>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -111,14 +112,11 @@
     window.addEventListener('scroll', triggerNav);
 
     
-    
 </script>
 
 <script type="text/javascript">
 
-
-
- // LOGOUT
+// LOGOUT
  const handleLogout = () =>{
     // alert('working')
         let token = localStorage.getItem('token');
@@ -149,7 +147,7 @@
         localStorage.removeItem('email');
         setTimeout(() => {        
             window.location.href = "/login"
-        }, 2000);
+        }, 1500);
     }).catch(function(err){
         Swal.fire({
                       icon: 'error',
@@ -165,4 +163,21 @@
 
     document.getElementById('triggerLogout').addEventListener('click', handleLogout);
 
+</script>
+
+<script type="text/javascript">
+    let userEmail = localStorage.getItem('email');
+    console.log(userEmail);
+
+let welcomeName = document.querySelector('.welcome-name');
+// alert('working');
+
+ const displayName = () =>{
+//    alert('working');
+   console.log('working!');
+   console.log(userEmail);
+   welcomeName.innerHTML = userEmail;
+ }
+
+displayName();
 </script>
