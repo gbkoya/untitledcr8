@@ -54,7 +54,8 @@
                       <li><a class="dropdown-item archware-nav-title-drop" href="/signup">Create account</a></li>
                       <li><a class="dropdown-item archware-nav-title-drop" href="#">Orders</a></li>
                       <li><hr class="dropdown-divider"></li>
-                      <li onclick="handleLogout()"><a class="dropdown-item">Logout</a></li> 
+                      <li id="triggerLogout"
+                      style="cursor: pointer"><span class="dropdown-item">Logout</span></li> 
                     </ul>
                   </div>
 
@@ -114,48 +115,54 @@
 </script>
 
 <script type="text/javascript">
+
+
+
  // LOGOUT
- const handleLogout = async () =>{
+ const handleLogout = () =>{
     // alert('working')
         let token = localStorage.getItem('token');
-        alert(token);
+        // alert(token);
         function handleErrors(response) {
-            if (!response.ok) {
-                throw Error(response.statusText);
-            }
-            return response;
+      if (!response.ok) {
+          throw Error(response.statusText);
+      }
+      return response;
         }
-
-        try{
-            console.log(token);
-          const response = await fetch("https://foremosteyeclinic.com/api/auth/logout", {
-                  method: 'POST',
-                  headers: {
-                      'Accept': 'application/json, text/plain, */*',
-                      'content-type': 'application/json'
-                      'Authorization': token,                  }
-              })
-              .then(handleErrors)
-              const data = await response.json();
-              Swal.fire({
-                      icon: 'success',
-                      title: data.message,
-                      showConfirmButton: false,
-                      timer: 2000,
+    fetch("https://foremosteyeclinic.com/api/auth/logout", {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        referrer: 'no-referrer'
+    })
+    .then(handleErrors)
+    .then(function(response){
+        console.log(response);
+        Swal.fire({
+                icon: 'success',
+                title: "User logged out!",
+                showConfirmButton: false,
+                timer: 2000,
                   })
-              window.location.href = "/login"
-              
-        } catch(error){
-          // let errorMessage = await error.json()
-          console.log(error);
-          // console.log(errorMessage);
-                  Swal.fire({
+        localStorage.removeItem('token');
+        localStorage.removeItem('email');
+        setTimeout(() => {        
+            window.location.href = "/login"
+        }, 2000);
+    }).catch(function(err){
+        Swal.fire({
                       icon: 'error',
-                      title: "Failed to logout",
+                      title: "Failed to logout user!",
                       showConfirmButton: false,
                       timer: 2000,
                   })
-        }
-
+        console.warn('Something went wrong.', err);
+    })
+        
     }
+    
+
+    document.getElementById('triggerLogout').addEventListener('click', handleLogout);
+
 </script>
