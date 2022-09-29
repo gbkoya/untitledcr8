@@ -585,7 +585,7 @@
                     "Store product"
                 ],
                 "summary": "Add a new product to the system",
-                "description": "Add a new product to the system. The product price, features and images are also added. [For the admin]",
+                "description": "Add a new product to the system.\n     * Product category is 1 for men, 2 for women and 3 for kids respectively.\n     * The status can only be either available or unavailable.\n     * The product price, features and images are also added. [For the admin]",
                 "operationId": "storeProduct",
                 "requestBody": {
                     "content": {
@@ -594,7 +594,9 @@
                                 "required": [
                                     "name",
                                     "imagedirectory",
-                                    "product_price"
+                                    "product_price",
+                                    "status",
+                                    "productcategory_id"
                                 ],
                                 "properties": {
                                     "name": {
