@@ -260,220 +260,26 @@
               .then(handleErrors)
               const data = await response.json();
               // return data;
-              console.log(data.products_list);
-              console.log(response);
-              hideLoading();
-              
-        } catch(error){
-          // let errorMessage = await error.json()
-          // console.log(error);
-          // console.log(errorMessage);
-                  hideLoading();
-                  Swal.fire({
-                      icon: 'error',
-                      title: "Failed to retrieve products!",
-                      showConfirmButton: false,
-                      timer: 2000,
-                  })
-        }
-      }
-      getAllProducts()
-       // The logic to get and display
-       const productItems = document.querySelector('.productsData');
-       const productItemsWomen = document.querySelector('.productsDataWomen');
-       const productItemsKids = document.querySelector('.productsDatakids') 
+              let products = data.products_list.data
+              console.log(products);
 
-       const products= [
-             {
-                id: 0,
-                name: "Item-1",
-                price: 29,
-                instock : 4,
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-                imgSrc: "./img/t5.png",
-                product_category: "men"
-             },
-             {
-                id: 1,
-                name: "Item-2",
-                price: 29,
-                instock : 4,
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-                imgSrc: "./img/t5.png",
-                product_category: "men"
-             }, {
-                id: 2,
-                name: "Item-3",
-                price: 29,
-                instock : 4,
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-                imgSrc: "./img/t5.png",
-                product_category: "men"
-             }, {
-                id: 3,
-                name: "Item-4",
-                price: 29,
-                instock : 4,
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-                imgSrc: "./img/t5.png",
-                product_category: "men"
-             }, {
-                id: 4,
-                name: "Item-5",
-                price: 29,
-                instock : 4,
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-                imgSrc: "./img/t5.png",
-                product_category: "men"
-             }, {
-                id: 5,
-                name: "Item-6",
-                price: 29,
-                instock : 4,
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-                imgSrc: "./img/t5.png",
-                product_category: "men"
-             }, {
-                id: 6,
-                name: "Item-7",
-                price: 29,
-                instock : 4,
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-                imgSrc: "./img/t5.png",
-                product_category: "men"
-             }, {
-                id: 7,
-                name: "Item-8",
-                price: 29,
-                instock : 4,
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-                imgSrc: "./img/t5.png",
-                product_category: "men"
-             }, {
-                id: 8,
-                name: "Item-9",
-                price: 29,
-                instock : 4,
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-                imgSrc: "./img/t5.png",
-                product_category: "men"
-             }, {
-                id: 9,
-                name: "Item-10",
-                price: 29,
-                instock : 4,
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-                imgSrc: "./img/t5.png",
-                product_category: "men"
-             },
-             {
-                id: 10,
-                name: "Item-11",
-                price: 29,
-                instock : 4,
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-                imgSrc: "./img/t5.png",
-                product_category: "men"
-             },
-             {
-                id: 11,
-                name: "Item-12",
-                price: 29,
-                instock : 4,
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-                imgSrc: "./img/t5.png",
-                product_category: "men"
-             },
-             {
-                id: 12,
-                name: "Item-13",
-                price: 29,
-                instock : 4,
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-                imgSrc: "./img/t5.png",
-                product_category: "men"
-             },
-             {
-                id: 13,
-                name: "Item-14",
-                price: 29,
-                instock : 4,
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-                imgSrc: "./img/t5.png",
-                product_category: "Women"
-             },
-             {
-                id: 14,
-                name: "Item-15",
-                price: 29,
-                instock : 4,
-                description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-                imgSrc: "./img/t5.png",
-                product_category: "men"
-             },
-             {
-            id: 15,
-            name: "item-16",
-            price: 19.99,
-            instock: 10,
-            description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-            imgSrc: "./img/t3.png",
-            product_category: "women"
-        },
-        {
-            id: 16,
-            name: "T-shirt 4",
-            price: 25.99,
-            instock: 5,
-            description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-            imgSrc: "./img/t4.png",
-            product_category: "kids"
-        },
-        {
-            id: 17,
-            name: "T-shirt 5",
-            price: 29.99,
-            instock: 4,
-            description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-            imgSrc: "./img/t5.png",
-            product_category: "women"
-        },
-        {
-            id: 18,
-            name: "T-shirt 6",
-            price: 39.99,
-            instock: 40,
-            description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-            imgSrc: "./img/t6.png",
-            product_category: "kids"
-        },
-       ]; 
-
-        // alert(JSON.stringify(products));
-        function renderProducts(){
-            
-            // alert(JSON.stringify(products));
-
-            // Get men data
-            const menProducts = products.filter(menProduct => menProduct.product_category === "men"
+               // Get men data
+            const menProducts = products.filter(menProduct => menProduct.productcategory_id === 1
             );
             // console.log(menProducts);
 
             // Get women data
-            const womenProducts = products.filter(womenProduct => womenProduct.product_category === "women");
+            const womenProducts = products.filter(womenProduct => womenProduct.productcategory_id === 2);
             // console.log(womenProducts);
 
             // Get Kids data
-            const kidsProducts = products.filter(kidProduct => kidProduct.product_category === "kids");
-            // console.log(kidsProducts);
+            const kidsProducts = products.filter(kidProduct => kidProduct.productcategory_id === 3);
+            // console.log(kidsProducts)
+              // console.log(menProducts);
+              hideLoading();
 
-
-            
-            // MEN
+              // RENDER PRODUCTS
+               // MEN
             menProducts.forEach((product) => {
                 // alert(product.id)
                 // console.log(product);
@@ -512,36 +318,81 @@
                 `;
         });
 
-        // WOMEN
-        womenProducts.forEach((product) => {
-                // console.log(product);
-                productItemsWomen.innerHTML += `
-                    <div class="shop-card e-card-link cardClick" data-id=${product.id}>
-                    <img class="img-fluid
-                    data-bs-toggle="tooltip" data-bs-placement="top" title="View details
-                    " src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>${product.name}</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <button type="button" class="shop-card-button">
-                                <img
-                                src="{{ asset('customImages/buyIcon.png') }}"
-                                />
-                                Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                `;
-        });
+// // WOMEN
+//         womenProducts.forEach((product) => {
+//                 // console.log(product);
+//                 productItemsWomen.innerHTML += `
+//                     <div class="shop-card e-card-link cardClick" data-id=${product.id}>
+//                     <img class="img-fluid
+//                     data-bs-toggle="tooltip" data-bs-placement="top" title="View details
+//                     " src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
+//                     <div class="shop-card-heading">
+//                         <div>
+//                             <h4>${product.name}</h4>
+//                             <p data="date-updated">Updated July 2022</p>
+//                         </div>
+//                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+//                         <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+//                             <div class="price-child d-flex flex-row">
+//                                 <p>N4,999</p>
+//                                 <p>N9,000</p>
+//                             </div>
+//                             <button type="button" class="shop-card-button">
+//                                 <img
+//                                 src="{{ asset('customImages/buyIcon.png') }}"
+//                                 />
+//                                 Add
+//                             </button>
+//                         </div>
+//                     </div>
+//                 </div>
+//                 `;
+//         });
+              
+        } catch(error){
+          // let errorMessage = await error.json()
+          // console.log(error);
+          // console.log(errorMessage);
+                  hideLoading();
+                  Swal.fire({
+                      icon: 'error',
+                      title: "Failed to retrieve products!",
+                      showConfirmButton: false,
+                      timer: 2000,
+                  })
+        }
+      }
+      getAllProducts()
+
+    
+       // The logic to get and display
+       const productItems = document.querySelector('.productsData');
+       const productItemsWomen = document.querySelector('.productsDataWomen');
+       const productItemsKids = document.querySelector('.productsDatakids') 
+
+     
+        // alert(JSON.stringify(products));
+        function renderProducts(){
+            
+            // alert(JSON.stringify(products));
+
+            // Get men data
+            const menProducts = products.filter(menProduct => menProduct.product_category === "men"
+            );
+            // console.log(menProducts);
+
+            // Get women data
+            const womenProducts = products.filter(womenProduct => womenProduct.product_category === "women");
+            // console.log(womenProducts);
+
+            // Get Kids data
+            const kidsProducts = products.filter(kidProduct => kidProduct.product_category === "kids");
+            // console.log(kidsProducts);
+
+
+            
+           
+        
 
         // KIDS
         kidsProducts.forEach((product) => {

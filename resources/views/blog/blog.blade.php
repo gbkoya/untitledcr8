@@ -10,18 +10,23 @@
 @section('content')
 
 
-<section class="pt-5" style="  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)), url(FirstImg.jpg);">
-    <div class="container  pt-5">
-        <div class="container">
-            <h2 style="font-weight: 600;font-size: 68.2222px;line-height: 117.2%;letter-spacing: -0.01em;text-transform: capitalize;
-        color: #FFFFFF;">the effects <br> of screen use<br> on my child</h2>
+<main>
+    {{-- HERO SECTION --}}
+    <section class="container-fluid e-blog-hero">
+    {{-- Sub nav --}}
+     <div class="service-hero-copy shop-top-hero">
+                <h1>
+                    The effects of screen use on my child
+                </h1>
+                <button type="button" class="buy-button-shop">
+                    READ MORE
+                </button>
+            </div>
+    </section>
+    {{-- END OF HERO SECTION --}}
 
-            <button class="my-5" style="background: #F58634;border-radius: 5px; padding:1rem 1.5rem; border:none; color:#FFFFFF">Read More</button>
-        </div>
-</section>
-
-<div class="container">
-    <div class="d-flex flex-row flex-wrap card mt-5" style="background: #FAFAFA;box-shadow: 0px 18.1217px 20.3869px rgba(0, 0, 0, 0.05);border-radius: 11.7948px;">
+<div class="container glass-margin">
+    <div class="d-flex flex-row flex-wrap card" style="background: #FAFAFA;box-shadow: 0px 18.1217px 20.3869px rgba(0, 0, 0, 0.05);border-radius: 11.7948px;">
         <div class="col-lg-4">
             <img class="img-fluid" src="{{ asset('customImages/Frame 75@3x.png') }}" alt="" style="margin: 0px ;">
         </div>
@@ -153,21 +158,28 @@
     </div>
 </div>
 
-<div class="buttons-kell">
-    <button class="activeNumberButton container">1</button>
-    <button class="numberButton2">2</button>
-    <button class="numberButton3">3</button>
-    <button class="numberButton4">4</button>
-    <button class="numberButton5">5</button>
-    <button class="numberButton6">6</button>
-    <button class="numberButton7">7</button>
-    <button class="numberButton8">8</button>
-    <button class="numberButton9">9</button>
-    <button class="numberButton0" style="margin-left: 49.29px;">50</button>
-    <button class="nextButton">Next</button>
-    <p class="dotts">...</p>
-</div>
-
+ {{-- Paginated button --}}
+            <div class="d-flex flex-row flex-wrap justify-content-evenly pagination-button-wrapper">
+                <button class="paginated-first-button" type="button">
+                    1
+                </button>
+                <button class="paginated-first-button" type="button">
+                    2
+                </button>
+                <button class="paginated-first-button second" type="button">
+                    3
+                </button>
+                <button class="paginated-first-button second" type="button">
+                    4
+                </button>
+                ...
+                <button class="paginated-first-button second" type="button">
+                    10
+                </button>
+                <button class="paginated-first-button second" type="button">
+                    Next
+                </button>
+            </div>
 
 
 
