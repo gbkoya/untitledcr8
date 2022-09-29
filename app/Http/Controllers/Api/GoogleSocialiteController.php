@@ -99,7 +99,8 @@ class GoogleSocialiteController extends Controller
                     return response()->json([
                         'status'    => true,
                         'message'   => 'User Logged In Successfully',
-                        'data'      => 'Welcome back '.auth()->user()->firstname,
+                        // 'data'      => 'Welcome back '.auth()->user()->firstname,
+                        'data'      => 'Welcome back',
                         'token'     => $mailExist->createToken("API TOKEN")->plainTextToken
                     ], 200);
                 } else {
@@ -117,7 +118,8 @@ class GoogleSocialiteController extends Controller
                         return response()->json([
                             'status'    => true,
                             'message'   => 'User Logged In Successfully',
-                            'data'      => 'Welcome back '.auth()->user()->firstname,
+                            // 'data'      => 'Welcome back '.auth()->user()->firstname,
+                            'data'      => 'Welcome back',
                             'token'     => $newUser->createToken("API TOKEN")->plainTextToken
                         ], 200);
 
@@ -134,7 +136,8 @@ class GoogleSocialiteController extends Controller
                         return response()->json([
                             'status'    => true,
                             'message'   => 'User Logged In Successfully',
-                            'data'      => 'Welcome back '.auth()->user()->firstname,
+                            // 'data'      => 'Welcome back '.auth()->user()->firstname,
+                            'data'      => 'Welcome back',
                             'token'     => $newUser->createToken("API TOKEN")->plainTextToken
                         ], 200);
                     }
