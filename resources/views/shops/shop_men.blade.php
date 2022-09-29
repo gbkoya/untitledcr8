@@ -260,7 +260,7 @@
               .then(handleErrors)
               const data = await response.json();
               // return data;
-              console.log(data.products_list);
+              console.log(data);
               console.log(response);
               hideLoading();
               
