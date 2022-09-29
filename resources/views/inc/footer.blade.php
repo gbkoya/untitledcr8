@@ -16,7 +16,7 @@
 
                 <ul class="list-unstyled mb-0">
                     <li class="pb-3 e-footer-about" style="font-size:medium;">
-                        Foremost Eye Clinic is dedicated to acquiring innovative eye
+                        Foremost International Eye Clinic is dedicated to acquiring innovative eye
                         health services to meet the growing demands of local,
                         cross-border, and global-markets.
                     </li>
@@ -132,7 +132,7 @@
                         <span>Terms of Service</span>
                     </h5>
                     <h6>
-                        @2022 Foremost Eye Clinic. All rights reserved
+                        @2022 Foremost Int'l Eye Clinic. All rights reserved
                     </h6>
                 </div>
         </section>
