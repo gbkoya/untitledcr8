@@ -47,7 +47,7 @@
                     <div>
                         <br>
                         <p class="readmore_text1">How Much Do You Know About Pink Eye?</p>
-                        <button type="submit" class="i-blog-button">READ MORE</button>
+                        <button type="submit" class="i-blog-button my-2">READ MORE</button>
                     </div>
                 </div>
 
@@ -56,7 +56,7 @@
                     <div>
                         <br>
                         <p class="readmore_text1">How Much Do You Know About Pink Eye?</p>
-                        <button type="submit" class="i-blog-button ">READ MORE</button>
+                        <button type="submit" class="i-blog-button my-2">READ MORE</button>
                     </div>
                 </div>
 
@@ -65,7 +65,7 @@
                     <div>
                         <br>
                         <p class="readmore_text1">How Much Do You Know About Pink Eye?</p>
-                        <button type="submit" class="i-blog-button ">READ MORE</button>
+                        <button type="submit" class="i-blog-button my-2 ">READ MORE</button>
                     </div>
                 </div>
 
@@ -75,7 +75,7 @@
                     <div>
                         <br>
                         <p class="readmore_text1">How Much Do You Know About Pink Eye?</p>
-                        <button type="submit" class="i-blog-button ">READ MORE</button>
+                        <button type="submit" class="i-blog-button my-2">READ MORE</button>
                     </div>
                 </div>
             </div>
