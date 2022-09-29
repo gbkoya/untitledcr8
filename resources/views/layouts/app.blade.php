@@ -1,3 +1,6 @@
+@section('description', 'Foremost Eye Clinic is a leading provider of optometry services on a mission to cover the whole continent with technology-based eye care services.')
+@section('title', 'Foremost - Africa\'s Most Innovative Eye Clinic')
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 

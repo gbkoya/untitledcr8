@@ -1,6 +1,4 @@
 @extends('layouts.app')
-@section('description', 'Foremost Eye Clinic is a leading provider of optometry services.')
-@section('title', 'Foremost - Africa\'s Most Innovative Eye Clinic')
 
 @section('article:section', 'Home')
 @section('url', 'www.archwareltd.com')
