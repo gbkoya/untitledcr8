@@ -206,8 +206,7 @@
                                     "firstname",
                                     "lastname",
                                     "email",
-                                    "social_id",
-                                    "social_type",
+                                    "google_id",
                                     "password"
                                 ],
                                 "properties": {
@@ -220,11 +219,8 @@
                                     "lastname": {
                                         "type": "text"
                                     },
-                                    "social_id": {
+                                    "google_id": {
                                         "type": "integer"
-                                    },
-                                    "social_type": {
-                                        "type": "text"
                                     },
                                     "password": {
                                         "type": "password"
