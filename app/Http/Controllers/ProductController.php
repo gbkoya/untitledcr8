@@ -8,6 +8,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -164,14 +165,17 @@ class ProductController extends Controller
      * operationId="storeProduct",
      * tags={"Store product"},
      * summary="Add a new product to the system",
-     * description="Add a new product to the system. The product price, features and images are also added. [For the admin]",
+     * description="Add a new product to the system.
+     * Product category is 1 for men, 2 for women and 3 for kids respectively.
+     * The status can only be either available or unavailable.
+     * The product price, features and images are also added. [For the admin]",
      *     @OA\RequestBody(
      *         @OA\JsonContent(),
      *         @OA\MediaType(
      *            mediaType="multipart/form-data",
      *            @OA\Schema(
      *               type="object",
-     *               required={"name", "imagedirectory", "product_price"},
+     *               required={"name", "imagedirectory", "product_price", "status", "productcategory_id"},
      *               @OA\Property(property="name", type="text"),
      *               @OA\Property(property="imagedirectory", type="file"),
      *               @OA\Property(property="features", type="text"),
@@ -194,17 +198,35 @@ class ProductController extends Controller
     public function storeProduct(Request $request)
     {
         try {
-            $request->validate([
-                'name'              => 'required',
-                'imagedirectory'   => 'image|nullable|max:5120',
-                'product_price'     => 'required',
-            ]);
+            $validateUser = Validator::make(
+                $request->all(),
+                [
+                    'name'              => 'required',
+                    'imagedirectory'   => 'image|nullable|max:5120',
+                    'product_price'     => 'required',
+                ]
+            );
+
+            if ($validateUser->fails()) {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'validation error',
+                    'errors' => $validateUser->errors()
+                ], 400);
+            }
+
+            $status = null;
+            if ($request->status == "") {
+                $status = 'unavailable';
+            } else {
+                $status = $request->status;
+            }
 
             $product = new Product();
             $product->name              = $request->name;
             $product->quantityinstock   = $request->quantityinstock;
             $product->productcategory_id = $request->productcategory_id;
-            $product->status            = $request->status;
+            $product->status            = $status;
             $product->save();
 
             $product->productprices()->create([
