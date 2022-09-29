@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@section('description', 'Foremost Eye Clinic is a leading provider of optometry services.')
-@section('title', 'Foremost - Africa\'s Most Innovative Eye Clinic')
 
 @section('article:section', 'Home')
 @section('url', 'www.archwareltd.com')
@@ -204,14 +202,14 @@
         try{
           let headers = new Headers();
 
-          // headers.append('Content-Type', 'application/json');
-          // headers.append('Accept', 'application/json');
+          headers.append('Content-Type', 'application/json');
+          headers.append('Accept', 'application/json');
 
-          // headers.append('Access-Control-Allow-Origin', 'http://127.0.0.1:8000');
+          headers.append('Access-Control-Allow-Origin', 'https://foremosteyeclinic.com');
 
           const response = await fetch("https://foremosteyeclinic.com/api/auth/google", {
                   method: 'GET'
-                  // headers: headers
+                  headers: headers
               })
               .then(handleErrors)
               const data = await response.json();
