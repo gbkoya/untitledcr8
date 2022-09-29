@@ -58,12 +58,11 @@ class GoogleSocialiteController extends Controller
         *            mediaType="multipart/form-data",
         *            @OA\Schema(
         *               type="object",
-        *               required={"firstname", "lastname", "email", "social_id", "social_type", "password"},
+        *               required={"firstname", "lastname", "email", "google_id", "password"},
         *               @OA\Property(property="email", type="email"),
         *               @OA\Property(property="firstname", type="text"),
         *               @OA\Property(property="lastname", type="text"),
-        *               @OA\Property(property="social_id", type="integer"),
-        *               @OA\Property(property="social_type", type="text"),
+        *               @OA\Property(property="google_id", type="integer"),
         *               @OA\Property(property="password", type="password")
         *            ),
         *        ),
@@ -81,7 +80,7 @@ class GoogleSocialiteController extends Controller
     {
         try {
             $user = Socialite::driver('google')->user();
-            $finduser = User::where('social_id', $user->user['id'])->first();
+            $finduser = User::where('google_id', $user->user['id'])->first();
 
             if (isset($finduser))
             {
@@ -109,8 +108,8 @@ class GoogleSocialiteController extends Controller
                             'firstname' => $given_name,
                             'lastname' => $family_name,
                             'email' => $user->email,
-                            'social_id' => $user->id,
-                            'social_type' => 'google',
+                            'google_id' => $user->id,
+                            // 'social_type' => 'google',
                             // 'password' => encrypt('my-google'),
                             'password' => Hash::make('mypassword'),
                         ]);
@@ -127,8 +126,8 @@ class GoogleSocialiteController extends Controller
                             'firstname' => $given_name,
                             'lastname' => $family_name,
                             'email' => $user->email,
-                            'social_id' => $user->id,
-                            'social_type' => 'google',
+                            'google_id' => $user->id,
+                            // 'social_type' => 'google',
                             'password' => Hash::make('mypassword'),
                         ]);
 
