@@ -249,7 +249,7 @@
           headers.append('Content-Type', 'application/json');
           headers.append('Accept', 'application/json');
 
-          headers.append('Access-Control-Allow-Origin', 'http://127.0.0.1:8000');
+          headers.append('Access-Control-Allow-Origin', 'https://foremosteyeclinic.com');
 
           const response = await fetch("https://foremosteyeclinic.com/api/product-list", {
                   method: 'GET',

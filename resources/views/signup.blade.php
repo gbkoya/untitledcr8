@@ -198,11 +198,11 @@
       }
       fetch("https://foremosteyeclinic.com/api/auth/google", {
               method: 'GET',
-              // headers: {
-              //     'Accept': 'application/json, text/plain, */*',
-              //     'content-type': 'application/json',
-              //     'Access-Control-Allow-Origin': 'https://foremosteyeclinic.com'
-              // },
+              headers: {
+                  'Accept': 'application/json, text/plain, */*',
+                  'content-type': 'application/json',
+                  // 'Access-Control-Allow-Origin': 'https://foremosteyeclinic.com'
+              },
           })
           .then(handleErrors)
           .then(response => {
