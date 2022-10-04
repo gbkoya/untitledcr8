@@ -24,10 +24,10 @@ onload="displayName();">
                 <li class="nav-item px-3">
                     <a class="nav-link archware-nav-title" href="/">Home</a>
                 </li>
-                <li class="nav-item px-3">
+                {{-- <li class="nav-item px-3">
                     <a class="nav-link archware-nav-title" style="scroll-behavior: smooth;" href="/about">About
                         Us</a>
-                </li>
+                </li> --}}
 
                 <li class="nav-item px-3">
                     <a class="nav-link archware-nav-title" href="/first-service">Services</a>
@@ -45,14 +45,16 @@ onload="displayName();">
 
                     <a class="nav-link archware-nav-title" href="/login">Login</a>
                 </li> --}}
-                <div class="dropdown e-drop-nav" style="margin: 0 1.3rem">
-                    <li class="dropdown-toggle nav-item" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer; font-size: .83rem">
+                <div class="dropdown e-drop-nav" style="margin: .4rem 1.3rem; z-index: 1000" title="Account">
+                    {{-- <li class="dropdown-toggle nav-item" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer; font-size: .83rem">
                       Hello, <span class="welcome-name"></span><br>
                       Account
-                    </li>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      <li><a class="dropdown-item archware-nav-title-drop" href="/login">Login</a></li>
-                      <li><a class="dropdown-item archware-nav-title-drop" href="/signup">Create account</a></li>
+                    </li> --}}
+                    <li class="dropdown-toggle nav-item" 
+                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
+                    ><i class="fa fa-user fa-xl"></i></li>
+                    <span class="welcome-name"></span>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="z-index: 1000">
                       <li><a class="dropdown-item archware-nav-title-drop" href="#">Orders</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <li id="triggerLogout"

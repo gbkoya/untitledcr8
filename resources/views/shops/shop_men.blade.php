@@ -30,7 +30,7 @@
         <div class="d-sm-flex flex-sm-row align-items-center flex-wrap button-wrapper but-wrapper-mobile">
             <a href="/login"><button class="login" type="button">Log In</button></a>
             <a href="/signup"><button class="signup" type="button">Sign Up</button></a>
-           <a href="/try-it"><button class="try-it" type="button">Try it On</button></a>
+           {{-- <a href="/try-it"><button class="try-it" type="button">Try it On</button></a> --}}
         </div>
             {{-- <button type="button" class="">
                 <img
@@ -260,7 +260,7 @@
               })
               .then(handleErrors)
               const data = await response.json();
-              // console.log(data);
+              console.log(data);
               hideLoading();
               return data;
               
@@ -282,7 +282,8 @@
       const displayData = async () => {
         const result = await dataPromise;
         let products = result.products_list.data;
-        console.log(products);
+        console.log(result.products_list);
+        // console.log(products);
 
          // The logic to get and display
        const productItems = document.querySelector('.productsData');
