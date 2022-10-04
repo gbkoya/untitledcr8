@@ -30,7 +30,12 @@ Route::post('subscribe', [App\Http\Controllers\ContactusController::class, 'subs
 Route::post('/auth/register', [AuthController::class, 'createUser']);
 Route::post('/auth/login', [AuthController::class, 'loginUser'])->name('login');
 
-Route::get('auth/google', [GoogleSocialiteController::class, 'redirectToGoogle']);
+// Route::group(['middleware' => 'cors'], function () {
+//     Route::get('auth/google', [GoogleSocialiteController::class, 'redirectToGoogle']);
+//     Route::get('getData2', 'v1\MyController@getData2');
+// });
+
+Route::get('auth/google', [GoogleSocialiteController::class, 'redirectToGoogle']) ->middleware('cors');
 Route::get('callback/google', [GoogleSocialiteController::class, 'handleCallback']);
 
 Route::middleware('auth:sanctum')->group(function () {
