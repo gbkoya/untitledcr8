@@ -87,7 +87,7 @@
 
   @yield('scripts')
 
-  <script src="//code.tidio.co/0upkplnmbr89fgyuhfhnzra7ntt9xfya.js" async></script>
+  {{-- <script src="//code.tidio.co/0upkplnmbr89fgyuhfhnzra7ntt9xfya.js" async></script> --}}
 
   <!-- Aos animate library -->
   <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
