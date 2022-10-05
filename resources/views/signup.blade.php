@@ -145,7 +145,8 @@
               method: 'POST',
               headers: {
                   'Accept': 'application/json, text/plain, */*',
-                  'content-type': 'application/json'
+                  'content-type': 'application/json',
+                  'Access-Control-Allow-Origin': 'https://foremosteyeclinic.com'
               },
               body: JSON.stringify(userData)
           })

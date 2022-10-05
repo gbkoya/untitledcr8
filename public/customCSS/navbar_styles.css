@@ -131,6 +131,11 @@ ul li a:nth-child(2) {
     cursor: pointer;
 }
 
+.greetings{
+    font-size: .775rem;
+    font-weight: 600;
+    margin-left: -1em;
+}
 @media (max-width: 1200px) {
    
 }

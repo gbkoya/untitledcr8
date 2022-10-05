@@ -52,8 +52,9 @@ onload="displayName();">
                     </li> --}}
                     <li class="dropdown-toggle nav-item" 
                     id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
-                    ><i class="fa fa-user fa-xl"></i></li>
-                    <span class="welcome-name"></span>
+                    ><i class="fa fa-user fa-xl"></i>
+                </li>
+                  <li class="greetings"> Hi, <span class="welcome-name"></span></li>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="z-index: 1000">
                       <li><a class="dropdown-item archware-nav-title-drop" href="#">Orders</a></li>
                       <li><hr class="dropdown-divider"></li>
