@@ -147,6 +147,7 @@ class ProductController extends Controller
                     break;
             }
             $products = Productcategory::where('category', $category)->with(['products'])->paginate(24);
+            // $products = Product::where('productcategory_id', $category)->paginate(24);
             return response()->json([
                 'status' => true,
                 $response_variable => $products
