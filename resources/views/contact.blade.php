@@ -9,6 +9,8 @@
 
 <body>
     <main>
+        <!-- Sub nav -->
+@include('inc.sub-nav')
 <!-- CONTACT US SECTION -->
     @include('inc.contactForm')
  

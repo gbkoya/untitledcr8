@@ -63,7 +63,7 @@ nav button[type="button"]{
 }
 
 .right-nav{
-    margin-left: 17%;
+    margin-left: 26.5%;
     margin-top: 1rem;
 }
 
@@ -125,6 +125,16 @@ ul li a:nth-child(2) {
     border-radius: 50px;
     padding: 7px;
     margin-left: 5px;
+}
+
+.e-drop-nav{
+    cursor: pointer;
+}
+
+.greetings{
+    font-size: .775rem;
+    font-weight: 600;
+    margin-left: -1em;
 }
 @media (max-width: 1200px) {
    

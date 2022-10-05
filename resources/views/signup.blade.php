@@ -147,7 +147,8 @@
               method: 'POST',
               headers: {
                   'Accept': 'application/json, text/plain, */*',
-                  'content-type': 'application/json'
+                  'content-type': 'application/json',
+                  'Access-Control-Allow-Origin': 'https://foremosteyeclinic.com'
               },
               body: JSON.stringify(userData)
           })
@@ -192,26 +193,30 @@
        const socialLogin = async () => {
           displayLoading();
 
-        // alert(JSON.stringify(contactData));
-        // alert(`${firstName} and ${lastName}`);
-
-        function handleErrors(response) {
-            if (!response.ok) {
-                throw Error(response.statusText);
-            }
-            return response;
-        }
-        try{
-          let headers = new Headers();
-
-          // headers.append('Content-Type', 'application/json');
-          // headers.append('Accept', 'application/json');
-
-          // headers.append('Access-Control-Allow-Origin', 'http://127.0.0.1:8000');
-
-          const response = await fetch("https://foremosteyeclinic.com/api/auth/google", {
-                  method: 'GET'
-                  // headers: headers
+      function handleErrors(response) {
+      if (!response.ok) {
+          throw Error(response.statusText);
+      }
+      return response;
+      }
+      fetch("https://foremosteyeclinic.com/api/auth/google", {
+              method: 'GET',
+              headers: {
+                  'Accept': 'application/json, text/plain, */*',
+                  'content-type': 'application/json',
+                  // 'Access-Control-Allow-Origin': 'https://foremosteyeclinic.com'
+              },
+          })
+          .then(handleErrors)
+          .then(response => {
+              // console.log("ok")
+              hideLoading();
+              Swal.fire({
+                  icon: 'success',
+                  title: 'Success',
+                  showConfirmButton: false,
+                  timer: 2000,
+  
               })
               .then(handleErrors)
               const data = await response.json();
@@ -243,70 +248,27 @@
                   })
         }
       }
-    Swal.fire({
-                      icon: 'error',
 
+    // const socialLogin = () => {
+    //   displayLoading();
 
+    // axios.get('https://foremosteyeclinic.com/api/auth/google',{
+    //   headers : {
+    //               'Accept': 'application/json, text/plain, */*',
+    //               'content-type': 'application/json',
+    //               'Access-Control-Allow-Origin': 'https://foremosteyeclinic.com'
+    //           }
+    // })
+    // .then(response => {
+    //   const users = response.data.data;
+    //   console.log(`GET users`, users);
+    //           hideLoading();
+    // })
+    // .catch(error => console.error(error));
+    // hideLoading();
 
-
-    title: "Failed to Login with Google!",
-                      showConfirmButton: false,
-                      timer: 2000,
-                  })
-        }
-      }
-    Swal.fire({
-                      icon: 'error',
-
-
-
-
-    title: "Failed to Login with Google!",
-                      showConfirmButton: false,
-                      timer: 2000,
-                  })
-        }
-      }
-    Swal.fire({
-                      icon: 'error',
-
-
-
-
-    title: "Failed to Login with Google!",
-                      showConfirmButton: false,
-                      timer: 2000,
-                  })
-        }
-      }
-    Swal.fire({
-                      icon: 'error',
-                      title: "Failed to Login with Google!",
-                      showConfirmButton: false,
-                      timer: 2000,
-                  })
-        }
-      }
-    Swal.fire({
-                      icon: 'error',
-
-
-
-
-    title: "Failed to Login with Google!",
-                      showConfirmButton: false,
-                      timer: 2000,
-                  })
-        }
-      }
-    Swal.fire({
-                      icon: 'error',
-                      title: "Failed to Login with Google!",
-                      showConfirmButton: false,
-                      timer: 2000,
-                  })
-        }
-      }
+    // };
+    
   </script>
 {{-- END OF API INTEGRATION --}}
 

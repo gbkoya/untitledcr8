@@ -41,6 +41,7 @@
     max-width: 41.4375rem;
     height: 62px;
     border-radius: 5px;
+    border: none;
 }
 
 .search-wrapper input[type="search"]::placeholder{
@@ -49,7 +50,7 @@
     font-size: 18px;
     line-height: 147.9%;
     color: rgba(107, 128, 155, 0.6);
-}
+} 
 
 .button-wrapper a .login{
     /* height: 44px; */

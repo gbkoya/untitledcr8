@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('description', 'Foremost Eye Clinic is a leading provider of optometry services.')
+@section('title', 'Foremost - Africa\'s Most Innovative Eye Clinic')
 
 @section('article:section', 'Home')
 @section('url', 'www.archwareltd.com')
@@ -28,7 +30,7 @@
         <div class="d-sm-flex flex-sm-row align-items-center flex-wrap button-wrapper but-wrapper-mobile">
             <a href="/login"><button class="login" type="button">Log In</button></a>
             <a href="/signup"><button class="signup" type="button">Sign Up</button></a>
-           <a href="/try-it"><button class="try-it" type="button">Try it On</button></a>
+           {{-- <a href="/try-it"><button class="try-it" type="button">Try it On</button></a> --}}
         </div>
             {{-- <button type="button" class="">
                 <img
@@ -232,6 +234,7 @@
       const hideLoading = () => {
           loaderContainer.style.display = 'none';
       };
+
     const getAllProducts = async () => {
       displayLoading();
         // alert(JSON.stringify(contactData));
@@ -249,7 +252,7 @@
           headers.append('Content-Type', 'application/json');
           headers.append('Accept', 'application/json');
 
-          headers.append('Access-Control-Allow-Origin', 'http://127.0.0.1:8000');
+          headers.append('Access-Control-Allow-Origin', 'https://foremosteyeclinic.com');
 
           const response = await fetch("https://foremosteyeclinic.com/api/product-list", {
                   method: 'GET',
@@ -257,12 +260,38 @@
               })
               .then(handleErrors)
               const data = await response.json();
-              // return data;
-              let products = data.products_list.data
-              console.log(products);
+              console.log(data);
+              hideLoading();
+              return data;
+              
+        } catch(error){
+                  hideLoading();
+                  Swal.fire({
+                      icon: 'error',
+                      title: "Failed to retrieve products!",
+                      showConfirmButton: false,
+                      timer: 2000,
+                  })
+        }
+      }
+      getAllProducts();
 
-               // Get men data
-            const menProducts = products.filter(menProduct => menProduct.productcategory_id === 1
+      // Data from our fetch request, is retrieved and displayed to the DOM here
+      const dataPromise = getAllProducts();
+
+      const displayData = async () => {
+        const result = await dataPromise;
+        let products = result.products_list.data;
+        console.log(result.products_list);
+        // console.log(products);
+
+         // The logic to get and display
+       const productItems = document.querySelector('.productsData');
+       const productItemsWomen = document.querySelector('.productsDataWomen');
+       const productItemsKids = document.querySelector('.productsDatakids');
+       
+          // Get men data
+          const menProducts = products.filter(menProduct => menProduct.productcategory_id === 1
             );
             // console.log(menProducts);
 
@@ -272,13 +301,10 @@
 
             // Get Kids data
             const kidsProducts = products.filter(kidProduct => kidProduct.productcategory_id === 3);
-            // console.log(kidsProducts)
-              // console.log(menProducts);
-              hideLoading();
+            // console.log(kidsProducts);
 
-              // RENDER PRODUCTS
-               // MEN
-            menProducts.forEach((product) => {
+             // MEN
+             menProducts.forEach((product) => {
                 // alert(product.id)
                 // console.log(product);
                 productItems.innerHTML += `
@@ -315,85 +341,41 @@
                 </div>
                 `;
         });
+       
 
-// // WOMEN
-//         womenProducts.forEach((product) => {
-//                 // console.log(product);
-//                 productItemsWomen.innerHTML += `
-//                     <div class="shop-card e-card-link cardClick" data-id=${product.id}>
-//                     <img class="img-fluid
-//                     data-bs-toggle="tooltip" data-bs-placement="top" title="View details
-//                     " src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
-//                     <div class="shop-card-heading">
-//                         <div>
-//                             <h4>${product.name}</h4>
-//                             <p data="date-updated">Updated July 2022</p>
-//                         </div>
-//                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-//                         <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-//                             <div class="price-child d-flex flex-row">
-//                                 <p>N4,999</p>
-//                                 <p>N9,000</p>
-//                             </div>
-//                             <button type="button" class="shop-card-button">
-//                                 <img
-//                                 src="{{ asset('customImages/buyIcon.png') }}"
-//                                 />
-//                                 Add
-//                             </button>
-//                         </div>
-//                     </div>
-//                 </div>
-//                 `;
-//         });
-              
-        } catch(error){
-          // let errorMessage = await error.json()
-          // console.log(error);
-          // console.log(errorMessage);
-                  hideLoading();
-                  Swal.fire({
-                      icon: 'error',
-                      title: "Failed to retrieve products!",
-                      showConfirmButton: false,
-                      timer: 2000,
-                  })
-        }
-      }
-      getAllProducts()
+         // WOMEN
+         womenProducts.forEach((product) => {
+                // console.log(product);
+                productItemsWomen.innerHTML += `
+                    <div class="shop-card e-card-link cardClick" data-id=${product.id}>
+                    <img class="img-fluid
+                    data-bs-toggle="tooltip" data-bs-placement="top" title="View details
+                    " src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
+                    <div class="shop-card-heading">
+                        <div>
+                            <h4>${product.name}</h4>
+                            <p data="date-updated">Updated July 2022</p>
+                        </div>
+                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                            <div class="price-child d-flex flex-row">
+                                <p>N4,999</p>
+                                <p>N9,000</p>
+                            </div>
+                            <button type="button" class="shop-card-button">
+                                <img
+                                src="{{ asset('customImages/buyIcon.png') }}"
+                                />
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                `;
+        });
 
-    
-       // The logic to get and display
-       const productItems = document.querySelector('.productsData');
-       const productItemsWomen = document.querySelector('.productsDataWomen');
-       const productItemsKids = document.querySelector('.productsDatakids') 
-
-     
-        // alert(JSON.stringify(products));
-        function renderProducts(){
-            
-            // alert(JSON.stringify(products));
-
-            // Get men data
-            const menProducts = products.filter(menProduct => menProduct.product_category === "men"
-            );
-            // console.log(menProducts);
-
-            // Get women data
-            const womenProducts = products.filter(womenProduct => womenProduct.product_category === "women");
-            // console.log(womenProducts);
-
-            // Get Kids data
-            const kidsProducts = products.filter(kidProduct => kidProduct.product_category === "kids");
-            // console.log(kidsProducts);
-
-
-            
-           
-        
-
-        // KIDS
-        kidsProducts.forEach((product) => {
+         // KIDS
+         kidsProducts.forEach((product) => {
                 // console.log(product);
                 productItemsKids.innerHTML += `
                     <div class="shop-card e-card-link cardClick" data-id=${product.id}>
@@ -433,7 +415,7 @@
                     // localSorage.setItem('productId', cardId);
                     localStorage.setItem('product_id', cardId);
                     //  window.location.href = "/details"
-                    // console.log(cardId);
+                    console.log(cardId);
 
                 })
             })
@@ -442,109 +424,114 @@
         getItemID();
 
 
-// PAGINATION SCRIPT HERE
-const paginationNumbers = document.getElementById("pagination-numbers");
-const paginatedList = document.getElementById("paginated-list");
-const listItems = paginatedList.querySelectorAll(".cardClick");
-const nextButton = document.getElementById("next-button");
-const prevButton = document.getElementById("prev-button");
+    // PAGINATION SCRIPT HERE
+    const paginationNumbers = document.getElementById("pagination-numbers");
+    const paginatedList = document.getElementById("paginated-list");
+    const listItems = paginatedList.querySelectorAll(".cardClick");
+    const nextButton = document.getElementById("next-button");
+    const prevButton = document.getElementById("prev-button");
 
-const paginationLimit = 10;
-const pageCount = Math.ceil(listItems.length / paginationLimit);
-let currentPage = 1;
+    const paginationLimit = 10;
+    const pageCount = Math.ceil(listItems.length / paginationLimit);
+    let currentPage = 1;
 
-const disableButton = (button) => {
-  button.classList.add("disabled");
-  button.setAttribute("disabled", true);
-};
+    const disableButton = (button) => {
+      button.classList.add("disabled");
+      button.setAttribute("disabled", true);
+    };
 
-const enableButton = (button) => {
-  button.classList.remove("disabled");
-  button.removeAttribute("disabled");
-};
+    const enableButton = (button) => {
+      button.classList.remove("disabled");
+      button.removeAttribute("disabled");
+    };
 
-const handlePageButtonsStatus = () => {
-  if (currentPage === 1) {
-    disableButton(prevButton);
-  } else {
-    enableButton(prevButton);
-  }
+    const handlePageButtonsStatus = () => {
+      if (currentPage === 1) {
+        disableButton(prevButton);
+      } else {
+        enableButton(prevButton);
+      }
 
-  if (pageCount === currentPage) {
-    disableButton(nextButton);
-  } else {
-    enableButton(nextButton);
-  }
-};
+      if (pageCount === currentPage) {
+        disableButton(nextButton);
+      } else {
+        enableButton(nextButton);
+      }
+    };
 
-const handleActivePageNumber = () => {
-  document.querySelectorAll(".pagination-number").forEach((button) => {
-    button.classList.remove("active");
-    const pageIndex = Number(button.getAttribute("page-index"));
-    if (pageIndex == currentPage) {
-      button.classList.add("active");
-    }
-  });
-};
-
-const appendPageNumber = (index) => {
-  const pageNumber = document.createElement("button");
-  pageNumber.className = "pagination-number";
-  pageNumber.innerHTML = index;
-  pageNumber.setAttribute("page-index", index);
-  pageNumber.setAttribute("aria-label", "Page " + index);
-
-  paginationNumbers.appendChild(pageNumber);
-};
-
-const getPaginationNumbers = () => {
-  for (let i = 1; i <= pageCount; i++) {
-    appendPageNumber(i);
-  }
-};
-
-const setCurrentPage = (pageNum) => {
-  currentPage = pageNum;
-
-  handleActivePageNumber();
-  handlePageButtonsStatus();
-  
-  const prevRange = (pageNum - 1) * paginationLimit;
-  const currRange = pageNum * paginationLimit;
-
-  listItems.forEach((item, index) => {
-    item.classList.add("hidden");
-    if (index >= prevRange && index < currRange) {
-      item.classList.remove("hidden");
-    }
-  });
-};
-
-window.addEventListener("load", () => {
-  getPaginationNumbers();
-  setCurrentPage(1);
-
-  prevButton.addEventListener("click", () => {
-    setCurrentPage(currentPage - 1);
-  });
-
-  nextButton.addEventListener("click", () => {
-    setCurrentPage(currentPage + 1);
-  });
-
-  document.querySelectorAll(".pagination-number").forEach((button) => {
-    const pageIndex = Number(button.getAttribute("page-index"));
-
-    if (pageIndex) {
-      button.addEventListener("click", () => {
-        setCurrentPage(pageIndex);
-      });
-    }
-  });
-});
-         
+    const handleActivePageNumber = () => {
+      document.querySelectorAll(".pagination-number").forEach((button) => {
+        button.classList.remove("active");
+        const pageIndex = Number(button.getAttribute("page-index"));
+        if (pageIndex == currentPage) {
+          button.classList.add("active");
         }
-        renderProducts();
+      });
+    };
+
+    const appendPageNumber = (index) => {
+      const pageNumber = document.createElement("button");
+      pageNumber.className = "pagination-number";
+      pageNumber.innerHTML = index;
+      pageNumber.setAttribute("page-index", index);
+      pageNumber.setAttribute("aria-label", "Page " + index);
+
+      paginationNumbers.appendChild(pageNumber);
+    };
+
+    const getPaginationNumbers = () => {
+      for (let i = 1; i <= pageCount; i++) {
+        appendPageNumber(i);
+      }
+    };
+
+    const setCurrentPage = (pageNum) => {
+      currentPage = pageNum;
+
+      handleActivePageNumber();
+      handlePageButtonsStatus();
+      
+      const prevRange = (pageNum - 1) * paginationLimit;
+      const currRange = pageNum * paginationLimit;
+
+      listItems.forEach((item, index) => {
+        item.classList.add("hidden");
+        if (index >= prevRange && index < currRange) {
+          item.classList.remove("hidden");
+        }
+      });
+    };
+
+    window.addEventListener("load", () => {
+      getPaginationNumbers();
+      setCurrentPage(1);
+
+      prevButton.addEventListener("click", () => {
+        setCurrentPage(currentPage - 1);
+      });
+
+      nextButton.addEventListener("click", () => {
+        setCurrentPage(currentPage + 1);
+      });
+
+      document.querySelectorAll(".pagination-number").forEach((button) => {
+        const pageIndex = Number(button.getAttribute("page-index"));
+
+        if (pageIndex) {
+          button.addEventListener("click", () => {
+            setCurrentPage(pageIndex);
+          });
+        }
+      });
+    });
+         
+      }
+
+      displayData();
+      
+
+        // alert(JSON.stringify(products));
+
           </script>
 
 @endsection
