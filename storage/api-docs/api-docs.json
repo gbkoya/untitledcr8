@@ -457,6 +457,62 @@
                 }
             }
         },
+        "/api/checkout2": {
+            "post": {
+                "tags": [
+                    "Cart checkout 2"
+                ],
+                "summary": "Register the buyer once they enter their email",
+                "description": "Register buyer with the email and give them a default password, which can\n     * be changed later. <br>The address added to too which can later be more than 1",
+                "operationId": "checkout2",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "address",
+                                    "phone_number",
+                                    "email"
+                                ],
+                                "properties": {
+                                    "address": {
+                                        "type": "text"
+                                    },
+                                    "phone_number": {
+                                        "type": "text"
+                                    },
+                                    "email": {
+                                        "type": "text"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Delivery location saved and user added to system",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error occured: _error_message_",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/product-list": {
             "post": {
                 "tags": [
