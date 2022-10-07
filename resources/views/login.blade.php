@@ -116,20 +116,21 @@
             return response;
         }
         try{
-          const response = await fetch("https://foremosteyeclinic.com/api/auth/login", {
+          const response = await fetch("https://cors-anywhere.herokuapp.com/https://foremosteyeclinic.com/api/auth/login", {
                   method: 'POST',
                   headers: {
-                      'Accept': 'application/json, text/plain, */*',
-                      'content-type': 'application/json'
+                      'content-type': 'application/json',
+                      'Access-Control-Allow-Origin': 'https://foremosteyeclinic.com',
+                      'Access-Control-Allow-Methods': 'OPTIONS, HEAD, DELETE, POST, GET'
                   },
                   body: JSON.stringify(loginData)
               })
               .then(handleErrors)
               const data = await response.json();
               // return data;
-              console.log(loginData.email);
+              // console.log(loginData.email);
               console.log(data);
-              console.log(response);
+              // console.log(response);
               localStorage.setItem('token', data.token);
               localStorage.setItem('email', loginData.email);
 

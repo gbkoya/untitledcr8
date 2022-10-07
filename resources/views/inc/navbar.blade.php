@@ -54,7 +54,7 @@ onload="displayName();">
                     id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
                     ><i class="fa fa-user fa-xl"></i>
                 </li>
-                  <li class="greetings"> Hi, <span class="welcome-name"></span></li>
+                  <li class="greetings"><span class="welcome-name"> </span></li>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="z-index: 1000">
                       <li><a class="dropdown-item archware-nav-title-drop" href="#">Orders</a></li>
                       <li><hr class="dropdown-divider"></li>
@@ -130,10 +130,11 @@ onload="displayName();">
       }
       return response;
         }
-    fetch("https://foremosteyeclinic.com/api/auth/logout", {
+    fetch("https://proxy.cors.sh/https://cors-anywhere.herokuapp.com/https://foremosteyeclinic.com/api/auth/logout", {
         method: 'POST',
         headers: {
-            'content-type': 'application/json'
+            'content-type': 'application/json',
+            'Access-Control-Allow-Origin': 'https://foremosteyeclinic.com'
         },
         referrer: 'no-referrer'
     })
@@ -179,7 +180,7 @@ let welcomeName = document.querySelector('.welcome-name');
 //    alert('working');
    console.log('working!');
    console.log(userEmail);
-   welcomeName.innerHTML = userEmail;
+   welcomeName.innerHTML = userEmail !== null ? `Hi, ${userEmail}` : '';
  }
 
 displayName();

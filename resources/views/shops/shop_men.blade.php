@@ -235,7 +235,9 @@
           loaderContainer.style.display = 'none';
       };
 
-    const getAllProducts = async () => {
+    const getAllProducts = async (page = 1, 
+    url= "https://proxy.cors.sh/https://foremosteyeclinic.com/api/product-list",
+    previousResponse = []) => {
       displayLoading();
         // alert(JSON.stringify(contactData));
         // alert(`${firstName} and ${lastName}`);
@@ -249,20 +251,21 @@
         try{
           let headers = new Headers();
 
-          headers.append('Content-Type', 'application/json');
-          headers.append('Accept', 'application/json');
+          // headers.append('Content-Type', 'application/json');
 
           headers.append('Access-Control-Allow-Origin', 'https://foremosteyeclinic.com');
+          headers.append('Access-Control-Allow-Methods', 'OPTIONS, HEAD, DELETE, POST, GET');
 
-          const response = await fetch("https://foremosteyeclinic.com/api/product-list", {
+          const response = await fetch(`${url}`, {
                   method: 'GET',
                   headers: headers
               })
               .then(handleErrors)
               const data = await response.json();
-              console.log(data);
+              // console.log(data);
               hideLoading();
               return data;
+            // window.location.href = "https://foremosteyeclinic.com/api/product-list?page=1"
               
         } catch(error){
                   hideLoading();
@@ -282,7 +285,13 @@
       const displayData = async () => {
         const result = await dataPromise;
         let products = result.products_list.data;
-        console.log(result.products_list);
+        let pageDetails = result.products_list;
+        
+        console.log(result.products_list,);
+        console.log( pageDetails.current_page);
+        let currentPage = pageDetails.current_page;
+        // alert(currentPage);
+
         // console.log(products);
 
          // The logic to get and display
@@ -433,7 +442,9 @@
 
     const paginationLimit = 10;
     const pageCount = Math.ceil(listItems.length / paginationLimit);
-    let currentPage = 1;
+    // let products = result.products_list.data;
+    // alert(result.products_list);
+    // let currentPage = result.products_list.current_page;
 
     const disableButton = (button) => {
       button.classList.add("disabled");
@@ -468,6 +479,7 @@
         }
       });
     };
+    // alert(currentPage);
 
     const appendPageNumber = (index) => {
       const pageNumber = document.createElement("button");
