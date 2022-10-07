@@ -73,6 +73,10 @@
   <script src="/customJS/contact.js"></script>
   <script src="/customJS/telephoneinput.js"></script>
   <script src="/customJS/signupscript.js"></script>
+  <script src="/customJS/signupscript.js"></script>
+  <script src="/customJS/API.js"></script>
+
+
 
   {{-- Axios --}}
   <script src="./node_modules/axios/dist/axios.min.js"></script>
