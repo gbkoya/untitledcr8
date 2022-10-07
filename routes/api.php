@@ -38,6 +38,7 @@ Route::post('/auth/login', [AuthController::class, 'loginUser'])->name('login');
 Route::get('auth/google', [GoogleSocialiteController::class, 'redirectToGoogle']) ->middleware('cors');
 Route::get('callback/google', [GoogleSocialiteController::class, 'handleCallback']);
 
+
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/me', function (Request $request) {
         return response()->json([
@@ -71,4 +72,7 @@ Route::post('add-to-cart', [CartController::class, 'addToCart'])->name('cart.sto
 Route::post('update-cart/{id}', [CartController::class, 'updateCart'])->name('cart.update');
 Route::post('remove-item/{id}', [CartController::class, 'removeCart'])->name('cart.remove');
 Route::post('clear-cart', [CartController::class, 'clearAllCart'])->name('cart.clear');
+
+// Checkout
+Route::post('checkout2', [CartController::class, 'checkout2']);
 

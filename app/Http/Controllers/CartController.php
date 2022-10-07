@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class CartController extends Controller
@@ -264,6 +266,88 @@ class CartController extends Controller
             return response()->json([
                 'status' => FALSE,
                 'error' => 'Unable to clear cart: ' . $e->getMessage(),
+            ], 500);
+        }
+    }
+
+
+    /**
+     * @OA\Post(
+     * path="/api/checkout2",
+     * operationId="checkout2",
+     * tags={"Cart checkout 2"},
+     * summary="Register the buyer once they enter their email",
+     * description="Register buyer with the email and give them a default password, which can
+     * be changed later. <br>The address added to too which can later be more than 1",
+     *     @OA\RequestBody(
+     *         @OA\JsonContent(),
+     *         @OA\MediaType(
+     *            mediaType="multipart/form-data",
+     *            @OA\Schema(
+     *               type="object",
+     *               required={"address", "phone_number", "email"},
+     *               @OA\Property(property="address", type="text"),
+     *               @OA\Property(property="phone_number", type="text"),
+     *               @OA\Property(property="email", type="text"),
+     *            ),
+     *        ),
+     *    ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="Delivery location saved and user added to system",
+     *          @OA\JsonContent()
+     *       ),
+     *      @OA\Response(
+     *          response=500,
+     *          description="Error occured: _error_message_",
+     *          @OA\JsonContent()
+     *       ),
+     * )
+     */
+    public function checkout2(Request $request) {
+        try {
+            $validateUser = Validator::make(
+                $request->all(),
+                [
+                    'address' => 'required',
+                    'phone_number' => 'required',
+                    'email' => 'required|email|unique:users,email',
+                ]
+            );
+
+            if ($validateUser->fails()) {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'important field missing',
+                    'errors' => $validateUser->errors()
+                ], 400);
+            }
+
+
+            // Create new user with the provided email and a default password
+            $user = new User();
+            $user->email = $request->email;
+            $user->phone_number = $request->phone_number;
+            $user->password = "testpassword";
+            $user->save();
+
+            // Login the new user and remember token true
+            Auth::login($user, true);
+
+            // Add the user address as the user is being registered
+            $user->useraddress()->create([
+                'user_id' => $user->id,
+                'user_address' => $request->address
+            ]);
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Delivery location saved and user added to system'
+            ], 200);
+        } catch (Exception $e) {
+            return response()->json([
+                'status' => FALSE,
+                'error' => 'Error occured: ' . $e->getMessage(),
             ], 500);
         }
     }
