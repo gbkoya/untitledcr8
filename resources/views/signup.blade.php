@@ -199,7 +199,7 @@
       }
       return response;
       }
-      fetch("https://cors-anywhere.herokuapp.com/https://foremosteyeclinic.com/api/auth/google", {
+      fetch("https://foremosteyeclinic.com/api/auth/google", {
               method: 'GET',
               headers: {
                   'Accept': 'application/json, text/plain, */*',
