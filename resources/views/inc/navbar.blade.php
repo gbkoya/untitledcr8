@@ -130,7 +130,7 @@ onload="displayName();">
       }
       return response;
         }
-    fetch("https://proxy.cors.sh/https://cors-anywhere.herokuapp.com/https://foremosteyeclinic.com/api/auth/logout", {
+    fetch("https://proxy.cors.sh/https://foremosteyeclinic.com/api/auth/logout", {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
