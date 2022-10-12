@@ -116,7 +116,7 @@
             return response;
         }
         try{
-          const response = await fetch("https://foremosteyeclinic.com/api/auth/login", {
+          const response = await fetch("https://cors-anywhere.herokuapp.com/https://foremosteyeclinic.com/api/auth/login", {
                   method: 'POST',
                   headers: {
                       'content-type': 'application/json',
