@@ -637,7 +637,7 @@
                     "Store product"
                 ],
                 "summary": "Add a new product to the system",
-                "description": "Add a new product to the system.\n     * Product category is 1 for men, 2 for women and 3 for kids respectively.\n     * The status can only be either available or unavailable.\n     * The product price, features and images are also added. [For the admin]",
+                "description": "Add a new product to the system.\n     * Product category is 1 for men, 2 for women and 3 for kids respectively.\n     * The status can only be either available or unavailable.\n     * The product price, features and images are also added.<br>\n     * To add 2 or more images for a product<br>\n     * The image directory must be entered in this format: imagedirectory[0] imagedirectory[1]",
                 "operationId": "storeProduct",
                 "requestBody": {
                     "content": {
@@ -645,7 +645,7 @@
                             "schema": {
                                 "required": [
                                     "name",
-                                    "imagedirectory",
+                                    "imagedirectory[]",
                                     "product_price",
                                     "status",
                                     "productcategory_id"
@@ -654,7 +654,7 @@
                                     "name": {
                                         "type": "text"
                                     },
-                                    "imagedirectory": {
+                                    "imagedirectory[]": {
                                         "type": "file"
                                     },
                                     "features": {
