@@ -94,99 +94,96 @@
     //  LOGIN API INTEGRATION
 
 
-    //  const handleLogin = async (event) => {
-    //       event.preventDefault();
-    //       displayLoading();
-
-    //     // Get all the input field and store them in their unique variable each
-    //     let email = document.getElementById('email').value;
-    //     let password = document.getElementById('password').value;
-
-    //     let loginData = {
-    //         email,
-    //         password,
-    //     }
-    //     // alert(JSON.stringify(contactData));
-    //     // alert(`${firstName} and ${lastName}`);
-    //     console.log(loginData);
-    //     isLoading = true;
-
-    //     function handleErrors(response) {
-    //         if (!response.ok) {
-    //             throw Error(response.statusText);
-    //         }
-    //         return response;
-    //     }
-    //     try{
-    //       const response = await fetch(`${url}/auth/login`, {
-    //               method: 'POST',
-    //               headers: {
-    //                   'content-type': 'application/json',
-    //                   'Access-Control-Allow-Origin': 'http://localhost',
-    //                   'Access-Control-Allow-Methods': 'OPTIONS, HEAD, DELETE, POST, GET'
-    //               },
-    //               body: JSON.stringify(loginData)
-    //           })
-    //           .then(handleErrors)
-    //           const data = await response.json();
-    //           // return data;
-    //           // console.log(loginData.email);
-    //           console.log(data);
-    //           // console.log(response);
-    //           localStorage.setItem('token', data.token);
-    //           localStorage.setItem('email', loginData.email);
-
-    //           Swal.fire({
-    //                   icon: 'success',
-    //                   title: data.message,
-    //                   showConfirmButton: false,
-    //                   timer: 2000,
-
-    //               })
-    //               res.reset();
-    //               hideLoading();
-    //               setTimeout(() => {
-    //         window.location.href = "/shop"
-    //           }, 1500);
-
-    //     } catch(error){
-    //       // let errorMessage = await error.json()
-    //       console.log(error);
-    //       // console.log(errorMessage);
-    //       res.reset();
-    //               hideLoading();
-    //               Swal.fire({
-    //                   icon: 'error',
-    //                   title: "Invalid Email/Password. Try again",
-    //                   showConfirmButton: false,
-    //                   timer: 2000,
-    //               })
-    //     }
-    //   }
-
-    const handleLogin = () =>{
-      event.preventDefault();
+     const handleLogin = async (event) => {
+          event.preventDefault();
           displayLoading();
-          
-          // Get all the input field and store them in their unique variable each
-          let email = document.getElementById('email').value;
-          let password = document.getElementById('password').value;
 
-      let loginData = {
+        // Get all the input field and store them in their unique variable each
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+
+        let loginData = {
             email,
             password,
         }
-        
-      axios
-    .post(`${url}/auth/login`, loginData)
-    .then(response => {
-      const addedUser = response.data
-      console.log(`POST: user is added`, addedUser)
-      // append to DOM
-      appendToDOM([addedUser])
-    })
-    .catch(error => console.error(error))
-    }
+        // alert(JSON.stringify(contactData));
+        // alert(`${firstName} and ${lastName}`);
+        console.log(loginData);
+        isLoading = true;
+
+        function handleErrors(response) {
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+            return response;
+        }
+        try{
+          const response = await fetch(`${url}/api/auth/login`, {
+                  method: 'POST',
+                  headers: {
+                      'content-type': 'application/json'
+                      // 'Access-Control-Allow-Origin': 'http://localhost',
+                      // 'Access-Control-Allow-Methods': 'OPTIONS, HEAD, DELETE, POST, GET'
+                  },
+                  body: JSON.stringify(loginData)
+              })
+              .then(handleErrors)
+              const data = await response.json();
+              // return data;
+              // console.log(loginData.email);
+              console.log(data);
+              // console.log(response);
+              localStorage.setItem('token', data.token);
+              localStorage.setItem('email', loginData.email);
+
+              Swal.fire({
+                      icon: 'success',
+                      title: data.message,
+                      showConfirmButton: false,
+                      timer: 2000,
+
+                  })
+                  res.reset();
+                  hideLoading();
+                  setTimeout(() => {
+            window.location.href = "/shop"
+              }, 1500);
+
+        } catch(error){
+          // let errorMessage = await error.json()
+          console.log(error);
+          // console.log(errorMessage);
+          res.reset();
+                  hideLoading();
+                  Swal.fire({
+                      icon: 'error',
+                      title: "Invalid Email/Password. Try again",
+                      showConfirmButton: false,
+                      timer: 2000,
+                  })
+        }
+      }
+
+    // const handleLogin = () =>{
+    //   event.preventDefault();
+    //       displayLoading();
+    //          // Get all the input field and store them in their unique variable each
+    //     let email = document.getElementById('email').value;
+    //     let password = document.getElementById('password').value;
+    //   let loginData = {
+    //         email,
+    //         password,
+    //     }
+    //   axios
+    // .post(`${url}/auth/login`, loginData)
+    // .then(response => {
+    //   const addedUser = response.data
+    //   console.log(`POST: user is added`, addedUser)
+    //   // append to DOM
+    //   appendToDOM([addedUser])
+    // })
+    // .catch(error => console.error(error))
+    // }
 
     document.getElementById('loginForm').addEventListener('submit', handleLogin);
 

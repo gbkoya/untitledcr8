@@ -118,6 +118,7 @@ onload="displayName();">
 </script>
 
 <script type="text/javascript">
+    const baseURL= '{{ env('APP_URL') }}'
 
 // LOGOUT
  const handleLogout = () =>{
@@ -130,11 +131,11 @@ onload="displayName();">
       }
       return response;
         }
-    fetch("https://proxy.cors.sh/https://foremosteyeclinic.com/api/auth/logout", {
+    fetch(`${baseURL}/api/auth/logout`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
-            'Access-Control-Allow-Origin': 'https://foremosteyeclinic.com'
+            // 'Access-Control-Allow-Origin': 'https://foremosteyeclinic.com'
         },
         referrer: 'no-referrer'
     })

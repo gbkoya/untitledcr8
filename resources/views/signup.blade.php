@@ -24,7 +24,7 @@
           {{-- <a class="ml-1 btn" href="{{ url('auth/facebook') }}" style="margin-top: 0px !important;background: #F58634; width: 40%; color: #ffffff;padding: .7rem .2rem; border-radius: 25px;" id="btn-fblogin">
             <i class="fab fa-facebook" aria-hidden="true"></i> Login with Facebook
           </a> --}}
-          <div class="ml-1 btn" id="social" onclick="socialLogin()" style="margin-top: 0px !important;background: #F58634; width: 40%; color: #ffffff; padding: .7rem; .2rem; border-radius: 25px;" id="btn-fblogin">
+          <div class="ml-1 btn" id="social" style="margin-top: 0px !important;background: #F58634; width: 40%; color: #ffffff; padding: .7rem; .2rem; border-radius: 25px;" id="btn-fblogin">
             <i class="fab fa-google" aria-hidden="true"></i> Login with Google
           </div>
         </div>
@@ -86,6 +86,8 @@
         let toggleHide = document.querySelector('.e-toggle-hide');
         let toggleDisplay = document.querySelector('.e-toggle-display ');
         let inputField = document.querySelector('.passwordInput');
+        const url= '{{ env('APP_URL') }}'
+
 
         function hidePassword(){
           toggleHide.style.display = 'block'
@@ -127,6 +129,7 @@
   let email = document.getElementById('email').value;
   let password = document.getElementById('password').value;
 
+
   let userData = {
       firstname,
       lastname,
@@ -143,12 +146,12 @@
       }
       return response;
   }
-  fetch("https://foremosteyeclinic.com/api/auth/register", {
+  fetch(`${url}/api/auth/register`, {
               method: 'POST',
               headers: {
-                  'Accept': 'application/json, text/plain, */*',
+                  // 'Accept': 'application/json, text/plain, */*',
                   'content-type': 'application/json',
-                  'Access-Control-Allow-Origin': 'https://foremosteyeclinic.com'
+                  // 'Access-Control-Allow-Origin': 'https://foremosteyeclinic.com'
               },
               body: JSON.stringify(userData)
           })
@@ -183,28 +186,21 @@
           });
         }
 
-    document.getElementById('loginForm').addEventListener('submit', handleLogin);
-
-
-  </script>
-
-  <script type="text/javascript">
- // SOCIAL LOGIN
-       const socialLogin = async () => {
-          displayLoading();
-
-      function handleErrors(response) {
+// END OF SIGNUP API INTEGRATION
+const socialLogin = async () =>{
+  displayLoading();
+  function handleErrors(response) {
       if (!response.ok) {
           throw Error(response.statusText);
       }
       return response;
       }
-      fetch("https://foremosteyeclinic.com/api/auth/google", {
+            fetch(`${url}/api/auth/google`, {
               method: 'GET',
               headers: {
-                  'Accept': 'application/json, text/plain, */*',
+                  // 'Accept': 'application/json, text/plain, */*',
                   'content-type': 'application/json',
-                  'Access-Control-Allow-Origin': 'https://foremosteyeclinic.com'
+                  // 'Access-Control-Allow-Origin': 'https://foremosteyeclinic.com'
               },
           })
           .then(handleErrors)
@@ -213,63 +209,96 @@
               hideLoading();
               Swal.fire({
                   icon: 'success',
-                  title: 'Success',
+                  title: 'Social login initiated',
                   showConfirmButton: false,
                   timer: 2000,
-  
+
               })
-              .then(handleErrors)
-              const data = await response.json();
-              // return data;
-              console.log(data);
-              console.log(response);
-
-
+              setTimeout(() => {
+                // window.location.href = "/login"
+              }, 1500);
+          })
+          .catch(error => {
+              console.log(error, 'wrong')
+              hideLoading();
               Swal.fire({
-                      icon: 'success',
-                      title: data.message,
-                      showConfirmButton: false,
-                      timer: 2000,
+                  icon: 'error',
+                  title: 'Social login failed',
+                  showConfirmButton: false,
+                  timer: 1500,
 
-                  })
-                  res.reset();
-                  hideLoading();
+              })
 
-        } catch(error){
-          // let errorMessage = await error.json()
-          // console.log(error);
-          // console.log(errorMessage);
-                  hideLoading();
-                  Swal.fire({
-                      icon: 'error',
-                      title: "Failed to Login with Google!",
-                      showConfirmButton: false,
-                      timer: 2000,
-                  })
-        }
-      }
+          });
 
-    // const socialLogin = () => {
-    //   displayLoading();
+}
 
-    // axios.get('https://foremosteyeclinic.com/api/auth/google',{
-    //   headers : {
-    //               'Accept': 'application/json, text/plain, */*',
-    //               'content-type': 'application/json',
-    //               'Access-Control-Allow-Origin': 'https://foremosteyeclinic.com'
-    //           }
-    // })
-    // .then(response => {
-    //   const users = response.data.data;
-    //   console.log(`GET users`, users);
-    //           hideLoading();
-    // })
-    // .catch(error => console.error(error));
-    // hideLoading();
+document.getElementById('social').addEventListener('click', socialLogin);
 
-    // };
-    
+
+// SOCIAL LOGIN
+// const socialLogin = async (event) => {
+//         event.preventDefault();
+//           displayLoading();
+
+//       function handleErrors(response) {
+//       if (!response.ok) {
+//           throw Error(response.statusText);
+//       }
+//       return response;
+//       }
+//       fetch(`${url}/api/auth/google`, {
+//               method: 'GET',
+//               headers: {
+//                   // 'Accept': 'application/json, text/plain, */*',
+//                   'content-type': 'application/json',
+//                   // 'Access-Control-Allow-Origin': 'https://foremosteyeclinic.com'
+//               },
+//           })
+//           .then(handleErrors)
+//           .then(response => {
+//               // console.log("ok")
+//               hideLoading();
+//               Swal.fire({
+//                   icon: 'success',
+//                   title: 'Success',
+//                   showConfirmButton: false,
+//                   timer: 2000,
+  
+//               })
+//               .then(handleErrors)
+//               const data = await response.json();
+//               // return data;
+//               console.log(data);
+//               console.log(response);
+
+
+//               Swal.fire({
+//                       icon: 'success',
+//                       title: data.message,
+//                       showConfirmButton: false,
+//                       timer: 2000,
+
+//                   })
+//                   res.reset();
+//                   hideLoading();
+
+//         } catch(error){
+//           // let errorMessage = await error.json()
+//           // console.log(error);
+//           // console.log(errorMessage);
+//                   hideLoading();
+//                   Swal.fire({
+//                       icon: 'error',
+//                       title: "Failed to Login with Google!",
+//                       showConfirmButton: false,
+//                       timer: 2000,
+//                   })
+//         }
+//       }
+
   </script>
+
 {{-- END OF API INTEGRATION --}}
 
 

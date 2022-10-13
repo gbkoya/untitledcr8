@@ -267,14 +267,10 @@
           
           let headers = new Headers();
 
-          // headers.append('Content-Type', 'application/json');
-
-          // headers.append('Access-Control-Allow-Origin', 'http://127.0.0.1:8000/');
-          headers.append('Access-Control-Allow-Origin', 'http://localhost');
-
+          headers.append('Content-Type', 'application/json');
 
           // const response = await fetch(`${url}/product-list`, {
-          const response = await fetch(`${url}/product-list`, {
+          const response = await fetch(`${url}/api/product-list`, {
 
                   method: 'GET',
                   headers: headers
