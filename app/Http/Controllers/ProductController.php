@@ -169,16 +169,18 @@ class ProductController extends Controller
      * description="Add a new product to the system.
      * Product category is 1 for men, 2 for women and 3 for kids respectively.
      * The status can only be either available or unavailable.
-     * The product price, features and images are also added. [For the admin]",
+     * The product price, features and images are also added.<br>
+     * To add 2 or more images for a product<br>
+     * The image directory must be entered in this format: imagedirectory[0] imagedirectory[1]",
      *     @OA\RequestBody(
      *         @OA\JsonContent(),
      *         @OA\MediaType(
      *            mediaType="multipart/form-data",
      *            @OA\Schema(
      *               type="object",
-     *               required={"name", "imagedirectory", "product_price", "status", "productcategory_id"},
+     *               required={"name", "imagedirectory[]", "product_price", "status", "productcategory_id"},
      *               @OA\Property(property="name", type="text"),
-     *               @OA\Property(property="imagedirectory", type="file"),
+     *               @OA\Property(property="imagedirectory[]", type="file"),
      *               @OA\Property(property="features", type="text"),
      *               @OA\Property(property="product_price", type="number"),
      *            ),
@@ -239,28 +241,34 @@ class ProductController extends Controller
                 'features' => $request->features,
             ]);
 
-            foreach ($request->imagedirectory as $image) {
-                \Log::info($image. "This is image");
-
+            $file = $request->file('imagedirectory');
+            foreach ($file as $key => $value) {
+                // \Log::info('Value' . $value);
+                // \Log::info('Client name: <br>' . $value->getClientOriginalName());
 
                 if ($request->hasFile('imagedirectory')) {
-                    \Log::info("There is a file");
-                    $fileNameWithExt    = $request->file('imagedirectory')->getClientOriginalName();
+                    $fileNameWithExt    = $value->getClientOriginalName();
+                    // $fileNameWithExt    = $request->file('imagedirectory')->getClientOriginalName();
                     $filename           = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-                    $extension          = $request->file('imagedirectory')->getClientOriginalExtension();
+                    $extension          = $value->getClientOriginalExtension();
+                    // $extension          = $request->file('imagedirectory')->getClientOriginalExtension();
                     $imagedirectory     = 'foremost_' . $filename . '_' . time() . '.' . $extension;
-                    $img                = \Image::make($request->file('imagedirectory'))->encode('jpg', 30);
+                    $img                = \Image::make($value)->encode('jpg', 30);
+                    // $img                = \Image::make($request->file('imagedirectory'))->encode('jpg', 30);
                     Storage::put('public/product_image/' . $imagedirectory, $img->__toString());
                 } else {
                     $imagedirectory = "noimage.jpg";
                 }
 
                 if ($request->hasFile('imagedirectory')) {
-                    $fileNameWithExt    = $request->file('imagedirectory')->getClientOriginalName();
+                    $fileNameWithExt    = $value->getClientOriginalName();
+                    // $fileNameWithExt    = $request->file('imagedirectory')->getClientOriginalName();
                     $filename           = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-                    $extension          = $request->file('imagedirectory')->getClientOriginalExtension();
+                    $extension          = $value->getClientOriginalExtension();
+                    // $extension          = $request->file('imagedirectory')->getClientOriginalExtension();
                     $thumbnaildirectory = 'foremost_' . $filename . '_' . time() . '.' . $extension;
-                    $img                = \Image::make($request->file('imagedirectory'))->encode('jpg', 30);
+                    $img                = \Image::make($value)->encode('jpg', 30);
+                    // $img                = \Image::make($request->file('imagedirectory'))->encode('jpg', 30);
                     Storage::put('public/thumbnail_image/' . $thumbnaildirectory, $img->__toString());
                 } else {
                     $thumbnaildirectory = "noimage.jpg";
@@ -271,7 +279,6 @@ class ProductController extends Controller
                     'imagedirectory' => $imagedirectory,
                     'thumbnaildirectory' => $thumbnaildirectory
                 ]);
-
             }
 
             return response()->json([
