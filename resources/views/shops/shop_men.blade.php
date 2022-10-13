@@ -236,7 +236,7 @@
       };
 
     const getAllProducts = async (page = 1, 
-    url= "https://foremosteyeclinic.com/api/product-list",
+    url= "https://cors-anywhere.herokuapp.com/https://foremosteyeclinic.com/api/product-list",
     previousResponse = []) => {
       displayLoading();
         // alert(JSON.stringify(contactData));
