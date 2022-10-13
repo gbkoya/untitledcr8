@@ -15,7 +15,7 @@
   <div class="login-ik card justify-content-center mt-5">
     <div class="container my-5 py-5">
       <div class="container col-lg-5 col-md-7 my-5 py-5 i-login-backg">
-  
+
         <h2 class="i-login-head">Log In</h2>
         <div class="d-flex flex-sm-row flex-sm-wrap justify-content-evenly" style="margin-top: 1rem">
           {{-- <a class="ml-1 btn" href="{{ url('auth/facebook') }}" style="margin-top: 0px !important;background: #F58634; width: 40%; color: #ffffff;padding: .7rem .2rem; border-radius: 25px;" id="btn-fblogin">
@@ -47,7 +47,7 @@
             </div>
           </div>
           <div class="row i-login-button-mobile justify-content-center py-5">
-            
+
             <button type="submit" class="i-login-button ">SIgn In</button>
           </div>
         </form>
@@ -63,7 +63,7 @@
         let inputField = document.querySelector('.passwordInput');
         let res = document.getElementById("loginForm"); // Store the form id in a res variable
 
-       
+
 
         function hidePassword(){
           toggleHide.style.display = 'block'
@@ -90,7 +90,7 @@
     };
 
     //  LOGIN API INTEGRATION
-    
+
 
      const handleLogin = async (event) => {
           event.preventDefault();
@@ -99,7 +99,7 @@
         // Get all the input field and store them in their unique variable each
         let email = document.getElementById('email').value;
         let password = document.getElementById('password').value;
-        
+
         let loginData = {
             email,
             password,
@@ -108,7 +108,7 @@
         // alert(`${firstName} and ${lastName}`);
         console.log(loginData);
         isLoading = true;
-        
+
         function handleErrors(response) {
             if (!response.ok) {
                 throw Error(response.statusText);
@@ -139,14 +139,14 @@
                       title: data.message,
                       showConfirmButton: false,
                       timer: 2000,
-      
+
                   })
                   res.reset();
                   hideLoading();
-                  setTimeout(() => {        
+                  setTimeout(() => {
             window.location.href = "/shop"
               }, 1500);
-              
+
         } catch(error){
           // let errorMessage = await error.json()
           console.log(error);
@@ -164,9 +164,9 @@
     document.getElementById('loginForm').addEventListener('submit', handleLogin);
 
       // LOGOUT
-      
+
     </script>
-    
+
     {{-- END OF API INTEGRATION --}}
 </body>
 

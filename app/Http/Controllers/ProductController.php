@@ -203,7 +203,7 @@ class ProductController extends Controller
                 $request->all(),
                 [
                     'name'              => 'required',
-                    'imagedirectory'   => 'image|nullable|max:5120',
+                    // 'imagedirectory'   => 'image|nullable|max:5120',
                     'product_price'     => 'required',
                 ]
             );
@@ -239,33 +239,40 @@ class ProductController extends Controller
                 'features' => $request->features,
             ]);
 
-            if ($request->hasFile('imagedirectory')) {
-                $fileNameWithExt    = $request->file('imagedirectory')->getClientOriginalName();
-                $filename           = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-                $extension          = $request->file('imagedirectory')->getClientOriginalExtension();
-                $imagedirectory     = 'foremost_' . $filename . '_' . time() . '.' . $extension;
-                $img                = \Image::make($request->file('imagedirectory'))->encode('jpg', 30);
-                Storage::put('public/product_image/' . $imagedirectory, $img->__toString());
-            } else {
-                $imagedirectory = "noimage.jpg";
-            }
+            foreach ($request->imagedirectory as $image) {
+                \Log::info($image. "This is image");
 
-            if ($request->hasFile('imagedirectory')) {
-                $fileNameWithExt    = $request->file('imagedirectory')->getClientOriginalName();
-                $filename           = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-                $extension          = $request->file('imagedirectory')->getClientOriginalExtension();
-                $thumbnaildirectory = 'foremost_' . $filename . '_' . time() . '.' . $extension;
-                $img                = \Image::make($request->file('imagedirectory'))->encode('jpg', 30);
-                Storage::put('public/thumbnail_image/' . $thumbnaildirectory, $img->__toString());
-            } else {
-                $thumbnaildirectory = "noimage.jpg";
-            }
 
-            $product->productimages()->create([
-                'product_id' => $product->id,
-                'imagedirectory' => $imagedirectory,
-                'thumbnaildirectory' => $thumbnaildirectory
-            ]);
+                if ($request->hasFile('imagedirectory')) {
+                    \Log::info("There is a file");
+                    $fileNameWithExt    = $request->file('imagedirectory')->getClientOriginalName();
+                    $filename           = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                    $extension          = $request->file('imagedirectory')->getClientOriginalExtension();
+                    $imagedirectory     = 'foremost_' . $filename . '_' . time() . '.' . $extension;
+                    $img                = \Image::make($request->file('imagedirectory'))->encode('jpg', 30);
+                    Storage::put('public/product_image/' . $imagedirectory, $img->__toString());
+                } else {
+                    $imagedirectory = "noimage.jpg";
+                }
+
+                if ($request->hasFile('imagedirectory')) {
+                    $fileNameWithExt    = $request->file('imagedirectory')->getClientOriginalName();
+                    $filename           = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                    $extension          = $request->file('imagedirectory')->getClientOriginalExtension();
+                    $thumbnaildirectory = 'foremost_' . $filename . '_' . time() . '.' . $extension;
+                    $img                = \Image::make($request->file('imagedirectory'))->encode('jpg', 30);
+                    Storage::put('public/thumbnail_image/' . $thumbnaildirectory, $img->__toString());
+                } else {
+                    $thumbnaildirectory = "noimage.jpg";
+                }
+
+                $product->productimages()->create([
+                    'product_id' => $product->id,
+                    'imagedirectory' => $imagedirectory,
+                    'thumbnaildirectory' => $thumbnaildirectory
+                ]);
+
+            }
 
             return response()->json([
                 'status' => true,
