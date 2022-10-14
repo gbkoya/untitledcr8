@@ -62,6 +62,8 @@
         let toggleDisplay = document.querySelector('.e-toggle-display ');
         let inputField = document.querySelector('.passwordInput');
         let res = document.getElementById("loginForm"); // Store the form id in a res variable
+        const url= '{{ env('APP_URL') }}'
+
 
 
 
@@ -116,12 +118,12 @@
             return response;
         }
         try{
-          const response = await fetch("https://foremosteyeclinic.com/api/auth/login", {
+          const response = await fetch(`${url}/api/auth/login`, {
                   method: 'POST',
                   headers: {
-                      'content-type': 'application/json',
-                      'Access-Control-Allow-Origin': 'https://foremosteyeclinic.com',
-                      'Access-Control-Allow-Methods': 'OPTIONS, HEAD, DELETE, POST, GET'
+                      'content-type': 'application/json'
+                      // 'Access-Control-Allow-Origin': 'http://localhost',
+                      // 'Access-Control-Allow-Methods': 'OPTIONS, HEAD, DELETE, POST, GET'
                   },
                   body: JSON.stringify(loginData)
               })
@@ -161,6 +163,28 @@
                   })
         }
       }
+
+    // const handleLogin = () =>{
+    //   event.preventDefault();
+    //       displayLoading();
+    //          // Get all the input field and store them in their unique variable each
+    //     let email = document.getElementById('email').value;
+    //     let password = document.getElementById('password').value;
+    //   let loginData = {
+    //         email,
+    //         password,
+    //     }
+    //   axios
+    // .post(`${url}/auth/login`, loginData)
+    // .then(response => {
+    //   const addedUser = response.data
+    //   console.log(`POST: user is added`, addedUser)
+    //   // append to DOM
+    //   appendToDOM([addedUser])
+    // })
+    // .catch(error => console.error(error))
+    // }
+
     document.getElementById('loginForm').addEventListener('submit', handleLogin);
 
       // LOGOUT

@@ -198,16 +198,29 @@
 
 </body>
 
+  {{-- <script type="text/javascript">
+        // alert(env('APP_URL'));
+    // alert('working')
+    var name = '{{ env('APP_URL') }}';
+
+    alert(name);
+
+  </script> --}}
+
     <script type="text/javascript">
+    
+
     // Global variable declaration
       const totalItemsInCartEl = document.querySelector(".total-items-in-cart");
       const menCards = document.querySelectorAll(".cardClick");
+      const url= '{{ env('APP_URL') }}'
+
 
         // ADD TO CART LOGIC
         let cart = JSON.parse(localStorage.getItem("CART")) || [];
         const addToCart = () =>{
            // check if prodcut already exist in cart
-           console.log("working");
+          //  console.log("working");
         // if (cart.some((item) => item.id === id)) {
         //   changeNumberOfUnits("plus", id);
         // } else {
@@ -225,6 +238,8 @@
 
     // API integration to get all products from the database
      // Hide and show a loader logic
+   
+
      const loaderContainer = document.querySelector('.loader-container');
 
       const displayLoading = () => {
@@ -234,9 +249,9 @@
       const hideLoading = () => {
           loaderContainer.style.display = 'none';
       };
-
+   
     const getAllProducts = async (page = 1, 
-    url= "https://foremosteyeclinic.com/api/product-list",
+   
     previousResponse = []) => {
       displayLoading();
         // alert(JSON.stringify(contactData));
@@ -249,14 +264,14 @@
             return response;
         }
         try{
+          
           let headers = new Headers();
 
-          // headers.append('Content-Type', 'application/json');
+          headers.append('Content-Type', 'application/json');
 
-          headers.append('Access-Control-Allow-Origin', 'https://foremosteyeclinic.com');
-          headers.append('Access-Control-Allow-Methods', 'OPTIONS, HEAD, DELETE, POST, GET');
+          // const response = await fetch(`${url}/product-list`, {
+          const response = await fetch(`${url}/api/product-list`, {
 
-          const response = await fetch(`${url}`, {
                   method: 'GET',
                   headers: headers
               })
