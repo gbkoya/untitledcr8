@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Checkout;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
@@ -70,17 +71,20 @@ class CartController extends Controller
 
             if ($cartItemObject != '') {
                 foreach ($cartItemObject as $key => $item) {
+                    $transactionString = substr(str_shuffle( uniqid() ), 0, 8);
                     $cartItems = [
                         'user_id' => $user_id,
                         'product_id' => $item['id'],
                         'price' => $item['price'],
                         'quantity' => $item['quantity'],
+                        'transaction_id' => $transactionString,
                     ];
 
                     $validator = Validator::make($cartItems, [
                         'user_id' => 'required',
                         'product_id' => 'required',
                         'quantity' => 'required',
+                        'transaction_id' => 'required|unique:checkouts'
                     ]);
                     if ($validator->fails()) {
                         return response()->json([
@@ -95,8 +99,15 @@ class CartController extends Controller
                     $cart->product_id = $cartItems['product_id'];
                     $cart->quantity = $cartItems['quantity'];
 
+                    $checkout = new Checkout();
+                    $checkout->user_id = $user_id;
+                    $checkout->product_id = $cartItems['product_id'];
+                    $checkout->quantity = $cartItems['quantity'];
+                    $checkout->transaction_id = $cartItems['transaction_id'];
+
                     try {
                         $cart->save();
+                        $checkout->save();
                     } catch (Exception $e) {
                         return response()->json([
                             'status' => FALSE,
