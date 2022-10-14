@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
@@ -10,6 +11,120 @@ use Illuminate\Support\Facades\Validator;
 
 class CartController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->only(['saveCart']);
+    }
+
+
+    /**
+     * @OA\Post(
+     * path="/api/cart-save",
+     * operationId="saveCart",
+     * tags={"Save Cart to DB"},
+     * summary="From checkout, it saves the cart info into the DB",
+     * description="Once the buyer clicks on checkout, the cart info is saved <br>
+     * into the DB. But the user must be logged in first to use this function, <br>
+     * otherwise, he will be redirected to the homepage. <br>
+     * The required user_id will be gotten once the user is logged in.",
+     *     @OA\RequestBody(
+     *         @OA\JsonContent(),
+     *         @OA\MediaType(
+     *            mediaType="multipart/form-data",
+     *            @OA\Schema(
+     *               type="object",
+     *               required={"product_id", "price", "quantity"},
+     *               @OA\Property(property="price", type="number"),
+     *               @OA\Property(property="quantity", type="number"),
+     *               @OA\Property(property="product_id", type="number"),
+     *            ),
+     *        ),
+     *    ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="cart saved",
+     *          @OA\JsonContent()
+     *       ),
+     *      @OA\Response(
+     *          response=400,
+     *          description="validation error",
+     *          @OA\JsonContent()
+     *       ),
+     *      @OA\Response(
+     *          response=404,
+     *          description="empty cart",
+     *          @OA\JsonContent()
+     *       ),
+     *      @OA\Response(
+     *          response=500,
+     *          description="unable to save cart",
+     *          @OA\JsonContent()
+     *       ),
+     * )
+     */
+    public function saveCart () {
+        try {
+            $cartItemObject = \Cart::getContent();
+
+            $user_id = auth()->user()->id;
+
+            if ($cartItemObject != '') {
+                foreach ($cartItemObject as $key => $item) {
+                    $cartItems = [
+                        'user_id' => $user_id,
+                        'product_id' => $item['id'],
+                        'price' => $item['price'],
+                        'quantity' => $item['quantity'],
+                    ];
+
+                    $validator = Validator::make($cartItems, [
+                        'user_id' => 'required',
+                        'product_id' => 'required',
+                        'quantity' => 'required',
+                    ]);
+                    if ($validator->fails()) {
+                        return response()->json([
+                            'status' => false,
+                            'message' => 'validation error',
+                            'errors' => $validator->errors()
+                        ], 400);
+                    }
+
+                    $cart = new Cart();
+                    $cart->user_id = $user_id;
+                    $cart->product_id = $cartItems['product_id'];
+                    $cart->quantity = $cartItems['quantity'];
+
+                    try {
+                        $cart->save();
+                    } catch (Exception $e) {
+                        return response()->json([
+                            'status' => FALSE,
+                            'message' => 'unable to save cart',
+                            'error' => 'An error occured: ' . $e->getMessage(),
+                        ], 500);
+                    }
+
+                }
+
+            } else {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'empty cart',
+                    'error' => 'There is no item in your cart',
+                ], 404);
+            }
+            return response()->json([
+                'status' => true,
+                'message' => 'cart saved',
+            ], 200);
+        } catch (Exception $e) {
+            return response()->json([
+                'status' => FALSE,
+                'error' => 'An error occured: ' . $e->getMessage(),
+            ], 500);
+        }
+    }
 
     /**
      * @OA\Post(
@@ -33,16 +148,10 @@ class CartController extends Controller
     public function cartList()
     {
         try {
-            $cartItems = \Cart::getContent();
-            foreach ($cartItems as $childArray) {
-                foreach ($childArray as $value) {
-                    $singleArray[] = $value;
-                    \Log::info( $value );
-                }
-            }
+            $cartItemObject = \Cart::getContent();
             return response()->json([
                 'status' => true,
-                'cartItems' => $cartItems
+                'cartItems' => $cartItemObject
             ], 200);
         } catch (Exception $e) {
             return response()->json([

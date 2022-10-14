@@ -48,6 +48,9 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::post('/auth/logout', [AuthController::class, 'logout']);
+
+    // Save up cart information
+    Route::post('/cart-save', [CartController::class, 'saveCart'])->name('cart.save');
 });
 
 // Product api for user
