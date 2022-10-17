@@ -109,7 +109,7 @@
         </li>
       </ul>
 
-
+      {{-- men content here --}}
       <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane card-paginat fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
             <div class="d-flex flex-row flex-wrap justify-content-evenly productsData" id="paginated-list" data-current-page="1" aria-live="polite">
@@ -137,7 +137,19 @@
                     Next
                 </button>
             </div> --}}
-  
+        <nav class="pagination-container">
+                <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+                  &lt;
+                </button>
+            
+                <div id="pagination-numbers">
+            
+                </div>
+            
+                <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+                  &gt;
+                </button>
+              </nav>
         </div>
 
         {{-- Women content here --}}
@@ -166,16 +178,21 @@
             <div class="d-flex flex-row flex-wrap justify-content-evenly productsDatakids">
                
             </div>
+                    {{-- Paginated button --}}
+                    <nav class="pagination-container">
+                        <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+                          &lt;
+                        </button>
+                    
+                        <div id="pagination-numbers">
+                    
+                        </div>
+                    
+                        <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+                          &gt;
+                        </button>
+                    </nav>
         </div>
-
-        {{-- PAGINATION HERE --}}
-        <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <li class="page-item" id="previous"><a class="page-link" href="#">Previous</a></li>
-        
-            <li class="page-item" id="next"><a class="page-link" href="#">Next</a></li>
-          </ul>
-        </nav>
       </div>
 </div>
 
@@ -197,11 +214,6 @@
       const totalItemsInCartEl = document.querySelector(".total-items-in-cart");
       const menCards = document.querySelectorAll(".cardClick");
       const url= '{{ env('APP_URL') }}'
-      const paginationNumbers = document.getElementById("pagination-numbers");
-      const paginatedList = document.getElementById("paginated-list");
-      const listItems = paginatedList.querySelectorAll(".cardClick");
-      const nextButton = document.getElementById("next-button");
-      const prevButton = document.getElementById("prev-button");
 
 
         // ADD TO CART LOGIC
@@ -290,71 +302,11 @@
         let products = result.products_list.data;
         let pageDetails = result.products_list;
         
-        // console.log(result.products_list,);
-        // console.log(result.products_list.links,);
-        let links = result.products_list.links
-        let linkURL = links.map(url=>{
-          // console.log(url.url);
-        })
-
+        console.log(result.products_list,);
         console.log( pageDetails.current_page);
         let currentPage = pageDetails.current_page;
         // alert(currentPage);
 
-
-        let totalItems = pageDetails.total
-        // console.log(totalItems);
-
-        // PAGINATION NUMBER
-        function pagination(current, total) {
-        const center = [current - 2, current - 1, current, current + 1, current + 2],
-            filteredCenter = center.filter((p) => p > 1 && p < total),
-            includeThreeLeft = current === 5,
-            includeThreeRight = current === total - 4,
-            includeLeftDots = current > 5,
-            includeRightDots = current < total - 4;
-
-        if (includeThreeLeft) filteredCenter.unshift(2)
-        if (includeThreeRight) filteredCenter.push(total - 1)
-
-        if (includeLeftDots) filteredCenter.unshift('...');
-        if (includeRightDots) filteredCenter.push('...');
-
-        return [1, ...filteredCenter, total]
-        }
-        // console.log(pagination(currentPage, totalItems));
-        let previousButton = document.getElementById('previous');
-        let linkPrevious = previousButton.querySelector('.page-link');
-        let page_numbers = pagination(currentPage, totalItems);
-
-
-        console.log(page_numbers);
-
-        let changePage = page_numbers.length - 2
-        for (let i = 0; i < changePage; i++) {
-          let newPage = page_numbers[i];
-          // console.log(`http://127.0.0.1:8000/api/product-list?page=${page_numbers[i]}`);
-          let paginationLinks = document.querySelector('.pagination');
-          // paginationLinks.hfef = '3'
-          // console.log(paginationLinks);
-          paginationLinks.innerHTML +=`
-          <li class="page-item"><a class="page-link" id="actualLink" href=http://127.0.0.1:8000/api/product-list?page=${page_numbers[i]}>${page_numbers[i]}</a></li>
-          `;
-
-        //  console.log(`<li class="page-item"><a class="page-link" id="actualLink" href=http://127.0.0.1:8000/api/product-list?page=${page_numbers[i]}>${page_numbers[i]}</a></li>`)
-
-          // console.log(`paginationLinks.href = ${page_numbers[i]}`);
-       
-          console.log(linkPrevious.getAttribute('href'));
-          // console.log(linkPrevious.setAttribute("href", "helloButton"));
-
-          let nextButton = document.getElementById('next');
-          // console.log(nextButton);
-        
-        }
-
-
-    
         // console.log(products);
 
          // The logic to get and display
@@ -494,110 +446,111 @@
 
         }
         getItemID();
-        
-
-
 
 
     // PAGINATION SCRIPT HERE
-     
+    const paginationNumbers = document.getElementById("pagination-numbers");
+    const paginatedList = document.getElementById("paginated-list");
+    const listItems = paginatedList.querySelectorAll(".cardClick");
+    const nextButton = document.getElementById("next-button");
+    const prevButton = document.getElementById("prev-button");
 
-    // const paginationLimit = 10;
-    // const pageCount = Math.ceil(listItems.length / paginationLimit);
+    const paginationLimit = 10;
+    const pageCount = Math.ceil(listItems.length / paginationLimit);
     // let products = result.products_list.data;
     // alert(result.products_list);
     // let currentPage = result.products_list.current_page;
 
-    // const disableButton = (button) => {
-    //   button.classList.add("disabled");
-    //   button.setAttribute("disabled", true);
-    // };
+    const disableButton = (button) => {
+      button.classList.add("disabled");
+      button.setAttribute("disabled", true);
+    };
 
-    // const enableButton = (button) => {
-    //   button.classList.remove("disabled");
-    //   button.removeAttribute("disabled");
-    // };
+    const enableButton = (button) => {
+      button.classList.remove("disabled");
+      button.removeAttribute("disabled");
+    };
 
-    // const handlePageButtonsStatus = () => {
-    //   if (currentPage === 1) {
-    //     disableButton(prevButton);
-    //   } else {
-    //     enableButton(prevButton);
-    //   }
+    const handlePageButtonsStatus = () => {
+      if (currentPage === 1) {
+        disableButton(prevButton);
+      } else {
+        enableButton(prevButton);
+      }
 
-    //   if (pageCount === currentPage) {
-    //     disableButton(nextButton);
-    //   } else {
-    //     enableButton(nextButton);
-    //   }
-    // };
+      if (pageCount === currentPage) {
+        disableButton(nextButton);
+      } else {
+        enableButton(nextButton);
+      }
+    };
 
-    // const handleActivePageNumber = () => {
-    //   document.querySelectorAll(".pagination-number").forEach((button) => {
-    //     button.classList.remove("active");
-    //     const pageIndex = Number(button.getAttribute("page-index"));
-    //     if (pageIndex == currentPage) {
-    //       button.classList.add("active");
-    //     }
-    //   });
-    // };
+    const handleActivePageNumber = () => {
+      document.querySelectorAll(".pagination-number").forEach((button) => {
+        button.classList.remove("active");
+        const pageIndex = Number(button.getAttribute("page-index"));
+        if (pageIndex == currentPage) {
+          button.classList.add("active");
+        }
+      });
+    };
     // alert(currentPage);
 
-    // const appendPageNumber = (index) => {
-    //   const pageNumber = document.createElement("button");
-    //   pageNumber.className = "pagination-number";
-    //   pageNumber.innerHTML = index;
-    //   pageNumber.setAttribute("page-index", index);
-    //   pageNumber.setAttribute("aria-label", "Page " + index);
+    const appendPageNumber = (index) => {
+      const pageNumber = document.createElement("button");
+      pageNumber.className = "pagination-number";
+      pageNumber.innerHTML = index;
+      pageNumber.setAttribute("page-index", index);
+      pageNumber.setAttribute("aria-label", "Page " + index);
 
-    //   paginationNumbers.appendChild(pageNumber);
-    // };
+      paginationNumbers.appendChild(pageNumber);
+    };
 
-    // const getPaginationNumbers = () => {
-    //   for (let i = 1; i <= pageCount; i++) {
-    //     appendPageNumber(i);
-    //   }
-    // };
+    const getPaginationNumbers = () => {
+      for (let i = 1; i <= pageCount; i++) {
+        appendPageNumber(i);
+      }
+    };
 
-    // const setCurrentPage = (pageNum) => {
-    //   currentPage = pageNum;
+    const setCurrentPage = (pageNum) => {
+      currentPage = pageNum;
 
-    //   handleActivePageNumber();
-    //   handlePageButtonsStatus();
+      handleActivePageNumber();
+      handlePageButtonsStatus();
       
-    //   const prevRange = (pageNum - 1) * paginationLimit;
-    //   const currRange = pageNum * paginationLimit;
+      const prevRange = (pageNum - 1) * paginationLimit;
+      const currRange = pageNum * paginationLimit;
 
-    //   listItems.forEach((item, index) => {
-    //     item.classList.add("hidden");
-    //     if (index >= prevRange && index < currRange) {
-    //       item.classList.remove("hidden");
-    //     }
-    //   });
-    // };
+      listItems.forEach((item, index) => {
+        item.classList.add("hidden");
+        if (index >= prevRange && index < currRange) {
+          item.classList.remove("hidden");
+        }
+      });
+    };
 
-    // window.addEventListener("load", () => {
-    //   getPaginationNumbers();
-    //   setCurrentPage(1);
+    window.addEventListener("load", () => {
+      getPaginationNumbers();
+      setCurrentPage(1);
 
-    //   prevButton.addEventListener("click", () => {
-    //     setCurrentPage(currentPage - 1);
-    //   });
+      prevButton.addEventListener("click", () => {
+        setCurrentPage(currentPage - 1);
+      });
 
-    //   nextButton.addEventListener("click", () => {
-    //     setCurrentPage(currentPage + 1);
-    //   });
+      nextButton.addEventListener("click", () => {
+        setCurrentPage(currentPage + 1);
+      });
 
-    //   document.querySelectorAll(".pagination-number").forEach((button) => {
-    //     const pageIndex = Number(button.getAttribute("page-index"));
+      document.querySelectorAll(".pagination-number").forEach((button) => {
+        const pageIndex = Number(button.getAttribute("page-index"));
 
-    //     if (pageIndex) {
-    //       button.addEventListener("click", () => {
-    //         setCurrentPage(pageIndex);
-    //       });
-    //     }
-    //   });
-    // });
+        if (pageIndex) {
+          button.addEventListener("click", () => {
+            setCurrentPage(pageIndex);
+          });
+        }
+      });
+    });
          
       }
 
