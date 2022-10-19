@@ -252,6 +252,78 @@
                 }
             }
         },
+        "/api/cart-save": {
+            "post": {
+                "tags": [
+                    "Save Cart to DB"
+                ],
+                "summary": "From checkout, it saves the cart info into the DB",
+                "description": "Once the buyer clicks on checkout, the cart info is saved <br>\n     * into the DB. But the user must be logged in first to use this function, <br>\n     * otherwise, he will be redirected to the homepage. <br>\n     * The required user_id will be gotten once the user is logged in.",
+                "operationId": "saveCart",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "product_id",
+                                    "price",
+                                    "quantity"
+                                ],
+                                "properties": {
+                                    "price": {
+                                        "type": "number"
+                                    },
+                                    "quantity": {
+                                        "type": "number"
+                                    },
+                                    "product_id": {
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "cart saved",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "validation error",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "empty cart",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "unable to save cart",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/cart-items": {
             "post": {
                 "tags": [

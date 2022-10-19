@@ -23,9 +23,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::post('contactus/message', [App\Http\Controllers\ContactusController::class, 'store'])->name('contact.message');
+Route::post('/contactus/message', [App\Http\Controllers\ContactusController::class, 'store'])->name('contact.message');
 
-Route::post('subscribe', [App\Http\Controllers\ContactusController::class, 'subscribe'])->name('subscribe');
+Route::post('/subscribe', [App\Http\Controllers\ContactusController::class, 'subscribe'])->name('subscribe');
 
 Route::post('/auth/register', [AuthController::class, 'createUser']);
 Route::post('/auth/login', [AuthController::class, 'loginUser'])->name('login');
@@ -35,8 +35,8 @@ Route::post('/auth/login', [AuthController::class, 'loginUser'])->name('login');
 //     Route::get('getData2', 'v1\MyController@getData2');
 // });
 
-Route::get('auth/google', [GoogleSocialiteController::class, 'redirectToGoogle']) ->middleware('cors');
-Route::get('callback/google', [GoogleSocialiteController::class, 'handleCallback']);
+Route::get('/auth/google', [GoogleSocialiteController::class, 'redirectToGoogle']) ->middleware('cors');
+Route::get('/callback/google', [GoogleSocialiteController::class, 'handleCallback']);
 
 
 Route::middleware('auth:sanctum')->group(function () {
@@ -48,12 +48,14 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::post('/auth/logout', [AuthController::class, 'logout']);
+
+    // Save up cart information
+    Route::post('/cart-save', [CartController::class, 'saveCart'])->name('cart.save');
 });
 
 // Product api for user
 Route::get('/product-category/{product:category}', [ProductController::class, 'getProductByCategory']);
 Route::get('/product-details-show/{product:id}', [ProductController::class, 'getProductById']);
-// Route::get('/product-add-to-cart/{product:id}', [ProductController::class, 'addToCart']);
 
 // Product api here for admin
 Route::get('/product-list', [ProductController::class, 'index']);
@@ -67,12 +69,12 @@ Route::post('/product/edit-product/{product:id}', [ProductController::class, 'ed
 Route::post('/product/delete-product/{product:id}', [ProductController::class, 'delete_product'])->name('delete_product');
 
 // Cart section
-Route::get('cart-items', [CartController::class, 'cartList'])->name('cart.list');
-Route::post('add-to-cart', [CartController::class, 'addToCart'])->name('cart.store');
-Route::post('update-cart/{id}', [CartController::class, 'updateCart'])->name('cart.update');
-Route::post('remove-item/{id}', [CartController::class, 'removeCart'])->name('cart.remove');
-Route::post('clear-cart', [CartController::class, 'clearAllCart'])->name('cart.clear');
+Route::get('/cart-items', [CartController::class, 'cartList'])->name('cart.list');
+Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('cart.store');
+Route::post('/update-cart/{id}', [CartController::class, 'updateCart'])->name('cart.update');
+Route::post('/remove-item/{id}', [CartController::class, 'removeCart'])->name('cart.remove');
+Route::get('/clear-cart', [CartController::class, 'clearAllCart'])->name('cart.clear');
 
 // Checkout
-Route::post('checkout2', [CartController::class, 'checkout2']);
+Route::post('/checkout2', [CartController::class, 'checkout2']);
 
