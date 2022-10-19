@@ -192,7 +192,7 @@
 
     <script type="text/javascript">
     
-
+   
     // Global variable declaration
       const totalItemsInCartEl = document.querySelector(".total-items-in-cart");
       const menCards = document.querySelectorAll(".cardClick");
@@ -290,7 +290,7 @@
         let products = result.products_list.data;
         let pageDetails = result.products_list;
         
-        // console.log(result.products_list,);
+        console.log(result.products_list,);
         // console.log(result.products_list.links,);
         let links = result.products_list.links
         let linkURL = links.map(url=>{
@@ -337,27 +337,96 @@
           let paginationLinks = document.querySelector('.pagination');
           // paginationLinks.hfef = '3'
           // console.log(paginationLinks);
+          
           paginationLinks.innerHTML +=`
-          <li class="page-item"><a class="page-link" id="actualLink" href=http://127.0.0.1:8000/api/product-list?page=${page_numbers[i]}>${page_numbers[i]}</a></li>
+          <li class="page-item"><a class="page-link" id="actualLink" href="http://127.0.0.1:8000/api/product-list?page=${page_numbers[i]}">${page_numbers[i]}</a></li>
           `;
 
+      
         //  console.log(`<li class="page-item"><a class="page-link" id="actualLink" href=http://127.0.0.1:8000/api/product-list?page=${page_numbers[i]}>${page_numbers[i]}</a></li>`)
 
           // console.log(`paginationLinks.href = ${page_numbers[i]}`);
        
-          console.log(linkPrevious.getAttribute('href'));
+        //   console.log(linkPrevious.getAttribute('href'));
           // console.log(linkPrevious.setAttribute("href", "helloButton"));
 
           let nextButton = document.getElementById('next');
           // console.log(nextButton);
-        
+        //   console.log(page_numbers[i]);
+            let activeLink = document.getElementById('actualLink');
+            // console.log(activeLink);
+          if (page_numbers[i] === currentPage){
+            activeLink.classList.add('activeLink')
+            // console.log(activeLink);
+            // console.log(`The page number is ${currentPage}`);
+          }else{
+            activeLink.classList.remove('activeLink')
+          }
+        //   activeLink.forEach(buttonLink => {
+        //     console.log(buttonLink);
+        //   })
+         
+       
+               
         }
 
+         // CONTROL WHAT PAGE DISPLAY HERE.
+        let itemPerPage = result.products_list.per_page;
+            let totalNoItems = result.products_list.total;
+            console.log(currentPage);
 
-    
+            // console.log(itemPerPage, result.products_list.total, result.products_list.current_page);
+            
+            // Get total number of pages
+            const totalPage = Math.ceil(totalNoItems / itemPerPage);
+            console.log(totalPage);
+
+         
+        //     const setCurrentPage = (pageNum) => {
+        //     currentPage = pageNum;
+
+        //     // handleActivePageNumber();
+        //     // handlePageButtonsStatus();
+            
+        //     const prevRange = (pageNum - 1) * paginationLimit;
+        //     const currRange = pageNum * paginationLimit;
+
+        //     listItems.forEach((item, index) => {
+        //         console.log(item);
+        //         item.classList.add("hidden");
+        //         if (index >= prevRange && index < currRange) {
+        //         item.classList.remove("hidden");
+        //         }
+        //     });
+        //     };
+
+        // window.addEventListener('load', () =>{
+        //     console.log("Page is loading");
+        //      setCurrentPage(currentPage + 1);
+
+        //     // prevButton.addEventListener("click", () => {
+        //     //     setCurrentPage(currentPage - 1);
+        //     // });
+
+        //     // nextButton.addEventListener("click", () => {
+        //     //     setCurrentPage(currentPage + 1);
+        //     // });
+
+        //     document.querySelectorAll(".pagination-number").forEach((button) => {
+        //         const pageIndex = Number(button.getAttribute("page-index"));
+
+        //         if (pageIndex) {
+        //         button.addEventListener("click", () => {
+        //             setCurrentPage(pageIndex);
+        //         });
+        //         }
+        //     });
+        // });
+        
+
         // console.log(products);
 
-         // The logic to get and display
+         // THE LOGIC TO GET AND DISPLAY A PAGE
        const productItems = document.querySelector('.productsData');
        const productItemsWomen = document.querySelector('.productsDataWomen');
        const productItemsKids = document.querySelector('.productsDatakids');
@@ -494,116 +563,13 @@
 
         }
         getItemID();
-        
 
-
-
-
-    // PAGINATION SCRIPT HERE
-     
-
-    // const paginationLimit = 10;
-    // const pageCount = Math.ceil(listItems.length / paginationLimit);
-    // let products = result.products_list.data;
-    // alert(result.products_list);
-    // let currentPage = result.products_list.current_page;
-
-    // const disableButton = (button) => {
-    //   button.classList.add("disabled");
-    //   button.setAttribute("disabled", true);
-    // };
-
-    // const enableButton = (button) => {
-    //   button.classList.remove("disabled");
-    //   button.removeAttribute("disabled");
-    // };
-
-    // const handlePageButtonsStatus = () => {
-    //   if (currentPage === 1) {
-    //     disableButton(prevButton);
-    //   } else {
-    //     enableButton(prevButton);
-    //   }
-
-    //   if (pageCount === currentPage) {
-    //     disableButton(nextButton);
-    //   } else {
-    //     enableButton(nextButton);
-    //   }
-    // };
-
-    // const handleActivePageNumber = () => {
-    //   document.querySelectorAll(".pagination-number").forEach((button) => {
-    //     button.classList.remove("active");
-    //     const pageIndex = Number(button.getAttribute("page-index"));
-    //     if (pageIndex == currentPage) {
-    //       button.classList.add("active");
-    //     }
-    //   });
-    // };
-    // alert(currentPage);
-
-    // const appendPageNumber = (index) => {
-    //   const pageNumber = document.createElement("button");
-    //   pageNumber.className = "pagination-number";
-    //   pageNumber.innerHTML = index;
-    //   pageNumber.setAttribute("page-index", index);
-    //   pageNumber.setAttribute("aria-label", "Page " + index);
-
-    //   paginationNumbers.appendChild(pageNumber);
-    // };
-
-    // const getPaginationNumbers = () => {
-    //   for (let i = 1; i <= pageCount; i++) {
-    //     appendPageNumber(i);
-    //   }
-    // };
-
-    // const setCurrentPage = (pageNum) => {
-    //   currentPage = pageNum;
-
-    //   handleActivePageNumber();
-    //   handlePageButtonsStatus();
-      
-    //   const prevRange = (pageNum - 1) * paginationLimit;
-    //   const currRange = pageNum * paginationLimit;
-
-    //   listItems.forEach((item, index) => {
-    //     item.classList.add("hidden");
-    //     if (index >= prevRange && index < currRange) {
-    //       item.classList.remove("hidden");
-    //     }
-    //   });
-    // };
-
-    // window.addEventListener("load", () => {
-    //   getPaginationNumbers();
-    //   setCurrentPage(1);
-
-    //   prevButton.addEventListener("click", () => {
-    //     setCurrentPage(currentPage - 1);
-    //   });
-
-    //   nextButton.addEventListener("click", () => {
-    //     setCurrentPage(currentPage + 1);
-    //   });
-
-    //   document.querySelectorAll(".pagination-number").forEach((button) => {
-    //     const pageIndex = Number(button.getAttribute("page-index"));
-
-    //     if (pageIndex) {
-    //       button.addEventListener("click", () => {
-    //         setCurrentPage(pageIndex);
-    //       });
-    //     }
-    //   });
-    // });
          
       }
 
       displayData();
       
-
+       
         // alert(JSON.stringify(products));
 
           </script>
