@@ -165,12 +165,12 @@
 		<button class="next-btn">Next</button>
 	</div>
     </nav> --}}
-    <div class="container">
-        <nav aria-label="Page navigation example" style="margin: 0 auto ">
+    <div class="container-fluid d-flex flex-sm-row justify-content-center">
+        <nav aria-label="Page navigation example">
             <ul class="pagination">
               <li class="page-item nav-link-pagina prev-btn" ><a class="page-link">Previous</a></li>
           
-              <li class="page-item  nav-link-pagina next-btn"><a class="page-link">Next</a></li>
+              <li class="page-item  nav-link-pagina next-btn" style="margin-left: .5rem"><a class="page-link">Next</a></li>
             </ul>
           </nav>
         </div>
@@ -180,17 +180,18 @@
 
 </body>
 
-  {{-- <script type="text/javascript">
-        // alert(env('APP_URL'));
-    // alert('working')
-    var name = '{{ env('APP_URL') }}';
-
-    alert(name);
-
-  </script> --}}
-
     <script type="text/javascript">
    
+   const loaderContainer = document.querySelector('.loader-container');
+
+
+      const displayLoading = () => {
+      loaderContainer.style.display = 'block';
+      };
+
+      const hideLoading = () => {
+          loaderContainer.style.display = 'none';
+      };
    
         // USING JQUERY AND AJAX
         $(function(){
@@ -199,6 +200,7 @@
 		pagelimit = 12,
 		totalrecord = 0;
         const baseURL= '{{ env('APP_URL') }}'
+      displayLoading();
 
         fetchProduct();
 
@@ -208,7 +210,7 @@
 			page--;
 			fetchProduct();
 		}
-		console.log("Prev Page: " + page);
+		// console.log("Prev Page: " + page);
 	});
 
 	// handling the next-btn
@@ -217,7 +219,7 @@
 			page++;
 			fetchProduct();
 		}
-		console.log("Next Page: " + page);
+		// console.log("Next Page: " + page);
 	});
         // Fetch the product data using Ajax
         function fetchProduct() {
@@ -230,7 +232,8 @@
 				pagelimit: pagelimit
 			},
 			success: function(data) {
-				console.log(data.products_list);
+              hideLoading();
+				// console.log(data.products_list);
 
 				if (data) {
 					let dataArr = data.products_list.data;
@@ -244,7 +247,7 @@
                     // MEN
                     const menProducts = dataArr.filter(menProduct => menProduct.productcategory_id === 1
             );
-                    console.log(menProducts);
+                    // console.log(menProducts);
                     // WOMEN
                     // Get women data
 
@@ -262,12 +265,11 @@
 						htmlMen += `
                 
                     <div class="shop-card e-card-link cardClick" data-id=${menProducts[i].id}>
-                    <a href="/details">
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
-                    </a>
+                    
                     <div class="shop-card-heading">
                         <div>
                             <h4>${menProducts[i].name}</h4>
@@ -301,7 +303,6 @@
 						htmlWomen += `
                 
                     <div class="shop-card e-card-link cardClick" data-id=${womenProducts[i].id}>
-                    <a href="/details">
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
@@ -339,12 +340,10 @@
 						htmlKids += `
                 
                     <div class="shop-card e-card-link cardClick" data-id=${kidsProducts[i].id}>
-                    <a href="/details">
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
-                    </a>
                     <div class="shop-card-heading">
                         <div>
                             <h4>${kidsProducts[i].name}</h4>
@@ -392,17 +391,18 @@
                     // }
 
 
-        let page_numbers = pagination(currentPage, totalrecord);
-                    console.log(page_numbers);
-                    page_numbers.map(page=>{
-                        console.log(page);
-                    let paginationLinks = document.querySelector('.pagination');
-                    paginationLinks.innerHTML +=`
-          <li class="page-item"><a class="page-link" id="actualLink" href="http://127.0.0.1:8000/api/product-list?page=${page}">${page}</a></li>
-            `;
-                    })
+        // let page_numbers = pagination(currentPage, totalrecord);
+        //             console.log(page_numbers);
+        //             page_numbers.map(page=>{
+        //                 console.log(page);
+        //             let paginationLinks = document.querySelector('.pagination');
+        //             paginationLinks.innerHTML +=`
+        //   <li class="page-item"><a class="page-link" id="actualLink" href="http://127.0.0.1:8000/api/product-list?page=${page}">${page}</a></li>
+        //     `;
+        //             })
                         },
 			error: function(jqXHR, textStatus, errorThrown) {
+              hideLoading();
 				console.log(jqXHR);
 				console.log(textStatus);
 				console.log(errorThrown);
@@ -411,6 +411,29 @@
 	}
         });
     
+               // Get the item ID and redirect to the details page
+
+            function getItemID(){
+            const menCards = document.querySelectorAll(".cardClick");
+            
+            menCards.forEach(card =>{
+                console.log(card);
+                card.addEventListener('click', ()=>{
+                console.log('yea');
+
+                console.log("Take me to the details");
+
+                    // let cardId = card.getAttribute("data-id");
+                    // // localSorage.setItem('productId', cardId);
+                    // localStorage.setItem('product_id', cardId);
+                    // //  window.location.href = "/details"
+                    // console.log(cardId);
+
+                })
+            })
+
+        }
+        // getItemID();
 
         
           </script>
