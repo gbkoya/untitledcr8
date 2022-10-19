@@ -359,6 +359,14 @@
 .e-card-link{
     text-decoration: none;
 }
+
+.nav-link-pagina{
+    cursor: pointer;
+}
+
+.page-link{
+    color: #F58634!important
+}
 /* RESPONSIVENESS */
 @media(max-width: 414px){
     .search-wrapper{

@@ -142,93 +142,48 @@
 
         {{-- Women content here --}}
         <div class="tab-pane fade card-paginat" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-            <div class="d-flex flex-row flex-wrap justify-content-evenly productsDataWomen">
+            <div class="d-flex flex-row flex-wrap justify-content-evenly productsDataWomen" id="paginated-listWomen">
                
             </div> 
-                    {{-- Paginated here --}}
-                    <nav class="pagination-container">
-                        <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
-                          &lt;
-                        </button>
-                    
-                        <div id="pagination-numbers">
-                    
-                        </div>
-                    
-                        <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
-                          &gt;
-                        </button>
-                      </nav>
         </div>
 
         {{-- Kids content here --}}
         <div class="tab-pane fade card-paginat" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-            <div class="d-flex flex-row flex-wrap justify-content-evenly productsDatakids">
+            <div class="d-flex flex-row flex-wrap justify-content-evenly productsDatakids" id="paginated-listKids">
                
             </div>
         </div>
 
         {{-- PAGINATION HERE --}}
+        {{-- <nav aria-label="Page navigation example">
+            
+	<div class="nav-btn-container">
+		<button class="prev-btn">Prev</button>
+        <ul>
+
+        </ul>
+		<button class="next-btn">Next</button>
+	</div>
+    </nav> --}}
+    <div class="container-fluid d-flex flex-sm-row justify-content-center">
         <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <li class="page-item" id="previous"><a class="page-link" href="#">Previous</a></li>
-        
-            <li class="page-item" id="next"><a class="page-link" href="#">Next</a></li>
-          </ul>
-        </nav>
-      </div>
+            <ul class="pagination">
+              <li class="page-item nav-link-pagina prev-btn" ><a class="page-link">Previous</a></li>
+          
+              <li class="page-item  nav-link-pagina next-btn" style="margin-left: .5rem"><a class="page-link">Next</a></li>
+            </ul>
+          </nav>
+        </div>
+    </div>
+       
 </div>
 
 </body>
 
-  {{-- <script type="text/javascript">
-        // alert(env('APP_URL'));
-    // alert('working')
-    var name = '{{ env('APP_URL') }}';
-
-    alert(name);
-
-  </script> --}}
-
     <script type="text/javascript">
-    
    
-    // Global variable declaration
-      const totalItemsInCartEl = document.querySelector(".total-items-in-cart");
-      const menCards = document.querySelectorAll(".cardClick");
-      const url= '{{ env('APP_URL') }}'
-      const paginationNumbers = document.getElementById("pagination-numbers");
-      const paginatedList = document.getElementById("paginated-list");
-      const listItems = paginatedList.querySelectorAll(".cardClick");
-      const nextButton = document.getElementById("next-button");
-      const prevButton = document.getElementById("prev-button");
+   const loaderContainer = document.querySelector('.loader-container');
 
-
-        // ADD TO CART LOGIC
-        let cart = JSON.parse(localStorage.getItem("CART")) || [];
-        const addToCart = () =>{
-           // check if prodcut already exist in cart
-          //  console.log("working");
-        // if (cart.some((item) => item.id === id)) {
-        //   changeNumberOfUnits("plus", id);
-        // } else {
-        //   const item = menCards.find((product) => product.id === id);
-
-        //   cart.push({
-        //     ...item,
-        //     numberOfUnits: 1,
-        //   });
-        // }
-
-        // updateCart();
-        }
-        // END OF ADD TO CART LOGIC
-
-    // API integration to get all products from the database
-     // Hide and show a loader logic
-   
-
-     const loaderContainer = document.querySelector('.loader-container');
 
       const displayLoading = () => {
       loaderContainer.style.display = 'block';
@@ -238,228 +193,86 @@
           loaderContainer.style.display = 'none';
       };
    
-    const getAllProducts = async (page = 1, 
-   
-    previousResponse = []) => {
+        // USING JQUERY AND AJAX
+        $(function(){
+    // Declare some global variables
+        let page = 1,
+		pagelimit = 12,
+		totalrecord = 0;
+        const baseURL= '{{ env('APP_URL') }}'
       displayLoading();
-        // alert(JSON.stringify(contactData));
-        // alert(`${firstName} and ${lastName}`);
-        
-        function handleErrors(response) {
-            if (!response.ok) {
-                throw Error(response.statusText);
-            }
-            return response;
-        }
-        try{
-          
-          let headers = new Headers();
 
-          headers.append('Content-Type', 'application/json');
+        fetchProduct();
 
-          // const response = await fetch(`${url}/product-list`, {
-          const response = await fetch(`${url}/api/product-list`, {
+        // handling the prev-btn
+	$(".prev-btn").on("click", function(){
+		if (page > 1) {
+			page--;
+			fetchProduct();
+		}
+		// console.log("Prev Page: " + page);
+	});
 
-                  method: 'GET',
-                  headers: headers
-              })
-              .then(handleErrors)
-              const data = await response.json();
-              // console.log(data);
+	// handling the next-btn
+	$(".next-btn").on("click", function(){
+		if (page * pagelimit < totalrecord) {
+			page++;
+			fetchProduct();
+		}
+		// console.log("Next Page: " + page);
+	});
+        // Fetch the product data using Ajax
+        function fetchProduct() {
+		// ajax() method to make api calls
+		$.ajax({
+			url: `${baseURL}/api/product-list`,
+			type: "GET",
+			data: {
+				page: page,
+				pagelimit: pagelimit
+			},
+			success: function(data) {
               hideLoading();
-              return data;
-            // window.location.href = "https://foremosteyeclinic.com/api/product-list?page=1"
-              
-        } catch(error){
-                  hideLoading();
-                  Swal.fire({
-                      icon: 'error',
-                      title: "Failed to retrieve products!",
-                      showConfirmButton: false,
-                      timer: 2000,
-                  })
-        }
-      }
-      getAllProducts();
+				// console.log(data.products_list);
 
-      // Data from our fetch request, is retrieved and displayed to the DOM here
-      const dataPromise = getAllProducts();
+				if (data) {
+					let dataArr = data.products_list.data;
+					totalrecord = data.products_list.total;
+                    let currentPage = data.products_list.current_page;
+                    const productItems = document.querySelector('.productsData');
+                    const productItemsWomen = document.querySelector('.productsDataWomen');
+                    const productItemsKids = document.querySelector('.productsDatakids');
 
-      const displayData = async () => {
-        const result = await dataPromise;
-        let products = result.products_list.data;
-        let pageDetails = result.products_list;
-        
-        console.log(result.products_list,);
-        // console.log(result.products_list.links,);
-        let links = result.products_list.links
-        let linkURL = links.map(url=>{
-          // console.log(url.url);
-        })
-
-        console.log( pageDetails.current_page);
-        let currentPage = pageDetails.current_page;
-        // alert(currentPage);
-
-
-        let totalItems = pageDetails.total
-        // console.log(totalItems);
-
-        // PAGINATION NUMBER
-        function pagination(current, total) {
-        const center = [current - 2, current - 1, current, current + 1, current + 2],
-            filteredCenter = center.filter((p) => p > 1 && p < total),
-            includeThreeLeft = current === 5,
-            includeThreeRight = current === total - 4,
-            includeLeftDots = current > 5,
-            includeRightDots = current < total - 4;
-
-        if (includeThreeLeft) filteredCenter.unshift(2)
-        if (includeThreeRight) filteredCenter.push(total - 1)
-
-        if (includeLeftDots) filteredCenter.unshift('...');
-        if (includeRightDots) filteredCenter.push('...');
-
-        return [1, ...filteredCenter, total]
-        }
-        // console.log(pagination(currentPage, totalItems));
-        let previousButton = document.getElementById('previous');
-        let linkPrevious = previousButton.querySelector('.page-link');
-        let page_numbers = pagination(currentPage, totalItems);
-
-
-        console.log(page_numbers);
-
-        let changePage = page_numbers.length - 2
-        for (let i = 0; i < changePage; i++) {
-          let newPage = page_numbers[i];
-          // console.log(`http://127.0.0.1:8000/api/product-list?page=${page_numbers[i]}`);
-          let paginationLinks = document.querySelector('.pagination');
-          // paginationLinks.hfef = '3'
-          // console.log(paginationLinks);
-          
-          paginationLinks.innerHTML +=`
-          <li class="page-item"><a class="page-link" id="actualLink" href="http://127.0.0.1:8000/api/product-list?page=${page_numbers[i]}">${page_numbers[i]}</a></li>
-          `;
-
-      
-        //  console.log(`<li class="page-item"><a class="page-link" id="actualLink" href=http://127.0.0.1:8000/api/product-list?page=${page_numbers[i]}>${page_numbers[i]}</a></li>`)
-
-          // console.log(`paginationLinks.href = ${page_numbers[i]}`);
-       
-        //   console.log(linkPrevious.getAttribute('href'));
-          // console.log(linkPrevious.setAttribute("href", "helloButton"));
-
-          let nextButton = document.getElementById('next');
-          // console.log(nextButton);
-        //   console.log(page_numbers[i]);
-            let activeLink = document.getElementById('actualLink');
-            // console.log(activeLink);
-          if (page_numbers[i] === currentPage){
-            activeLink.classList.add('activeLink')
-            // console.log(activeLink);
-            // console.log(`The page number is ${currentPage}`);
-          }else{
-            activeLink.classList.remove('activeLink')
-          }
-        //   activeLink.forEach(buttonLink => {
-        //     console.log(buttonLink);
-        //   })
-         
-       
-               
-        }
-
-         // CONTROL WHAT PAGE DISPLAY HERE.
-        let itemPerPage = result.products_list.per_page;
-            let totalNoItems = result.products_list.total;
-            console.log(currentPage);
-
-            // console.log(itemPerPage, result.products_list.total, result.products_list.current_page);
-            
-            // Get total number of pages
-            const totalPage = Math.ceil(totalNoItems / itemPerPage);
-            console.log(totalPage);
-
-         
-        //     const setCurrentPage = (pageNum) => {
-        //     currentPage = pageNum;
-
-        //     // handleActivePageNumber();
-        //     // handlePageButtonsStatus();
-            
-        //     const prevRange = (pageNum - 1) * paginationLimit;
-        //     const currRange = pageNum * paginationLimit;
-
-        //     listItems.forEach((item, index) => {
-        //         console.log(item);
-        //         item.classList.add("hidden");
-        //         if (index >= prevRange && index < currRange) {
-        //         item.classList.remove("hidden");
-        //         }
-        //     });
-        //     };
-
-        // window.addEventListener('load', () =>{
-        //     console.log("Page is loading");
-        //      setCurrentPage(currentPage + 1);
-
-        //     // prevButton.addEventListener("click", () => {
-        //     //     setCurrentPage(currentPage - 1);
-        //     // });
-
-        //     // nextButton.addEventListener("click", () => {
-        //     //     setCurrentPage(currentPage + 1);
-        //     // });
-
-        //     document.querySelectorAll(".pagination-number").forEach((button) => {
-        //         const pageIndex = Number(button.getAttribute("page-index"));
-
-        //         if (pageIndex) {
-        //         button.addEventListener("click", () => {
-        //             setCurrentPage(pageIndex);
-        //         });
-        //         }
-        //     });
-        // });
-        
-
-        // console.log(products);
-
-         // THE LOGIC TO GET AND DISPLAY A PAGE
-       const productItems = document.querySelector('.productsData');
-       const productItemsWomen = document.querySelector('.productsDataWomen');
-       const productItemsKids = document.querySelector('.productsDatakids');
-       
-          // Get men data
-          const menProducts = products.filter(menProduct => menProduct.productcategory_id === 1
+                    // Get data for Men, women and kids
+                    // MEN
+                    const menProducts = dataArr.filter(menProduct => menProduct.productcategory_id === 1
             );
-            // console.log(menProducts);
+                    // console.log(menProducts);
+                    // WOMEN
+                    // Get women data
 
-            // Get women data
-            const womenProducts = products.filter(womenProduct => womenProduct.productcategory_id === 2);
-            // console.log(womenProducts);
+                    const womenProducts = dataArr.filter(womenProduct => womenProduct.productcategory_id === 2);
+                    // console.log(womenProducts);
 
-            // Get Kids data
-            const kidsProducts = products.filter(kidProduct => kidProduct.productcategory_id === 3);
-            // console.log(kidsProducts);
+                    // KIDS
+                      // Get Kids data
+                    const kidsProducts = dataArr.filter(kidProduct => kidProduct.productcategory_id === 3);
+                    // console.log(kidsProducts);
 
-             // MEN
-             menProducts.forEach((product) => {
-                // alert(product.id)
-                // console.log(product);
-                productItems.innerHTML += `
+                    // DISPLAY MEN
+					var htmlMen = "";
+					for (var i = 0; i < menProducts.length; i++) {
+						htmlMen += `
                 
-                    <div class="shop-card e-card-link cardClick" data-id=${product.id}>
-                    <a href="/details">
+                    <div class="shop-card e-card-link cardClick" data-id=${menProducts[i].id}>
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
-                    </a>
+                    
                     <div class="shop-card-heading">
                         <div>
-                            <h4>${product.name}</h4>
+                            <h4>${menProducts[i].name}</h4>
                             <p data="date-updated">Updated July 2022</p>
                         </div>
                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
@@ -481,20 +294,23 @@
                     </div>
                 </div>
                 `;
-        });
-       
+					}
+					$("#paginated-list").html(htmlMen);
 
-         // WOMEN
-         womenProducts.forEach((product) => {
-                // console.log(product);
-                productItemsWomen.innerHTML += `
-                    <div class="shop-card e-card-link cardClick" data-id=${product.id}>
-                    <img class="img-fluid
-                    data-bs-toggle="tooltip" data-bs-placement="top" title="View details
-                    " src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
+                     // DISPLAY WOMEN
+					var htmlWomen = "";
+					for (var i = 0; i < womenProducts.length; i++) {
+						htmlWomen += `
+                
+                    <div class="shop-card e-card-link cardClick" data-id=${womenProducts[i].id}>
+                      <img class="img-fluid
+                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                      "
+                       src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
+                    </a>
                     <div class="shop-card-heading">
                         <div>
-                            <h4>${product.name}</h4>
+                            <h4>${womenProducts[i].name}</h4>
                             <p data="date-updated">Updated July 2022</p>
                         </div>
                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
@@ -503,31 +319,34 @@
                                 <p>N4,999</p>
                                 <p>N9,000</p>
                             </div>
-                            <button type="button" class="shop-card-button">
-                                <img
-                                src="{{ asset('customImages/buyIcon.png') }}"
-                                />
-                                Add
-                            </button>
+                            <div onclick="addToCart()">
+                              
+                              <button type="button" class="shop-card-button">
+                                  <img
+                                  src="{{ asset('customImages/buyIcon.png') }}"
+                                  />
+                                  Add
+                              </button>
+                              </div>
                         </div>
                     </div>
                 </div>
                 `;
-        });
+					}
+					$("#paginated-listWomen").html(htmlWomen);
 
-         // KIDS
-         kidsProducts.forEach((product) => {
-                // console.log(product);
-                productItemsKids.innerHTML += `
-                    <div class="shop-card e-card-link cardClick" data-id=${product.id}>
-                    <a href="/details">  
-                    <img class="img-fluid
-                    data-bs-toggle="tooltip" data-bs-placement="top" title="View details
-                    " src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/>
-                    </a>
+                    var htmlKids = "";
+					for (var i = 0; i < kidsProducts.length; i++) {
+						htmlKids += `
+                
+                    <div class="shop-card e-card-link cardClick" data-id=${kidsProducts[i].id}>
+                      <img class="img-fluid
+                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                      "
+                       src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
                     <div class="shop-card-heading">
                         <div>
-                            <h4>${product.name}</h4>
+                            <h4>${kidsProducts[i].name}</h4>
                             <p data="date-updated">Updated July 2022</p>
                         </div>
                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
@@ -536,42 +355,87 @@
                                 <p>N4,999</p>
                                 <p>N9,000</p>
                             </div>
-                            <button type="button" class="shop-card-button">
-                                <img
-                                src="{{ asset('customImages/buyIcon.png') }}"
-                                />
-                                Add
-                            </button>
+                            <div onclick="addToCart()">
+                              
+                              <button type="button" class="shop-card-button">
+                                  <img
+                                  src="{{ asset('customImages/buyIcon.png') }}"
+                                  />
+                                  Add
+                              </button>
+                              </div>
                         </div>
                     </div>
-                </div>   
+                </div>
                 `;
-        });
+					}
+					$("#paginated-listKids").html(htmlKids);
 
-        // Get the item ID and redirect to the details page
-        function getItemID(event){
+                            }
+                    //                      // GET AND DISPLAY PAGE NUMBERS
+                    // function pagination(current, total) {
+                    // const center = [current - 2, current - 1, current, current + 1, current + 2],
+                    //     filteredCenter = center.filter((p) => p > 1 && p < total),
+                    //     includeThreeLeft = current === 5,
+                    //     includeThreeRight = current === total - 4,
+                    //     includeLeftDots = current > 5,
+                    //     includeRightDots = current < total - 4;
+
+                    // if (includeThreeLeft) filteredCenter.unshift(2)
+                    // if (includeThreeRight) filteredCenter.push(total - 1)
+
+                    // if (includeLeftDots) filteredCenter.unshift('...');
+                    // if (includeRightDots) filteredCenter.push('...');
+
+                    // return [1, ...filteredCenter, total]
+                    // }
+
+
+        // let page_numbers = pagination(currentPage, totalrecord);
+        //             console.log(page_numbers);
+        //             page_numbers.map(page=>{
+        //                 console.log(page);
+        //             let paginationLinks = document.querySelector('.pagination');
+        //             paginationLinks.innerHTML +=`
+        //   <li class="page-item"><a class="page-link" id="actualLink" href="http://127.0.0.1:8000/api/product-list?page=${page}">${page}</a></li>
+        //     `;
+        //             })
+                        },
+			error: function(jqXHR, textStatus, errorThrown) {
+              hideLoading();
+				console.log(jqXHR);
+				console.log(textStatus);
+				console.log(errorThrown);
+			}
+		});
+	}
+        });
+    
+               // Get the item ID and redirect to the details page
+
+            function getItemID(){
+            const menCards = document.querySelectorAll(".cardClick");
+            
             menCards.forEach(card =>{
+                console.log(card);
                 card.addEventListener('click', ()=>{
-                    let cardId = card.getAttribute("data-id");
-                    // localSorage.setItem('productId', cardId);
-                    localStorage.setItem('product_id', cardId);
-                    //  window.location.href = "/details"
-                    console.log(cardId);
+                console.log('yea');
+
+                console.log("Take me to the details");
+
+                    // let cardId = card.getAttribute("data-id");
+                    // // localSorage.setItem('productId', cardId);
+                    // localStorage.setItem('product_id', cardId);
+                    // //  window.location.href = "/details"
+                    // console.log(cardId);
 
                 })
             })
 
         }
-        getItemID();
+        // getItemID();
 
-         
-      }
-
-      displayData();
-      
-       
-        // alert(JSON.stringify(products));
-
+        
           </script>
 
 @endsection
