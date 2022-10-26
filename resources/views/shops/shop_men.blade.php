@@ -233,7 +233,7 @@
 			},
 			success: function(data) {
               hideLoading();
-				// console.log(data.products_list);
+				console.log(data.products_list);
 
 				if (data) {
 					let dataArr = data.products_list.data;
@@ -411,17 +411,17 @@
 	}
         });
     
-               // Get the item ID and redirect to the details page
-
-            function getItemID(){
-            const menCards = document.querySelectorAll(".cardClick");
-            
+           
+        
+          </script>
+          <script type="text/javascript">
+    // Get the item ID and redirect to the details page
+    const menCards = document.querySelectorAll(".cardClick");
             menCards.forEach(card =>{
-                console.log(card);
                 card.addEventListener('click', ()=>{
-                console.log('yea');
+                     window.location.href = "/details"
 
-                console.log("Take me to the details");
+                console.log('yea');
 
                     // let cardId = card.getAttribute("data-id");
                     // // localSorage.setItem('productId', cardId);
@@ -431,11 +431,13 @@
 
                 })
             })
+            function getItemID(){
+                // alert(menCards);
+       
 
         }
-        // getItemID();
+        getItemID();
 
-        
           </script>
 
 @endsection
