@@ -9,6 +9,11 @@
 <div>
     <section class="container-fluid search-background mt-5">
         <main>
+                {{-- The loading spinner --}}
+    <div class="loader-container">
+        <div class="spinner"></div>
+      </div>
+  
             {{-- Sub nav --}}
             {{-- <section class="e-try-hero container-fluid"> --}}
             <nav class="d-flex flex-row align-items-center flex-wrap container-fluid justify-content-evenly e-try-nav">
@@ -81,15 +86,27 @@
 @endsection
 
 <script type="text/javascript">
+const productId = localStorage.getItem('productId');
+const URL= '{{ env('APP_URL') }}';
+const loaderContainer = document.querySelector('.loader-container');
+
+
+// const displayLoading = () => {
+//       loaderContainer.style.display = 'block';
+//       };
+
+// const hideLoading = () => {
+//           loaderContainer.style.display = 'none';
+//       };
+   
+
+// console.log(productId);
 
 // API INTEGRATION TO GET A SINCLE SHOP PRODUCT
- const getProduct = (event, id) => {
-          event.preventDefault();
-      
-          // alert(JSON.stringify(contactData));
-          // alert(`${firstName} and ${lastName}`);
-          console.log(contactData);
-          isLoading = true;
+ const getProduct = async (id) => {
+    // alert(productId);
+    //   displayLoading();
+
       
           function handleErrors(response) {
               if (!response.ok) {
@@ -97,38 +114,39 @@
               }
               return response;
           }
-          fetch(`${APP_URL}/contactus/message`, {
+
+          try{
+          const response = await fetch(`${URL}/api/product-details-show/${productId}`, {
                   method: 'GET',
                   headers: {
-                      'Accept': 'application/json, text/plain, */*',
                       'content-type': 'application/json'
-                  },
-                //   body: JSON.stringify(contactData)
+                    },
               })
               .then(handleErrors)
-              .then(response => {
-                  console.log("ok")
-                  Swal.fire({
+              const data = await response.json();
+              // return data;
+              // console.log(loginData.email);
+              console.log(data);
+              Swal.fire({
                       icon: 'success',
-                      title: 'Products created!',
+                      title: "Products retrieved successfully!",
                       showConfirmButton: false,
-                      timer: 1500,
-      
+                      timer: 2000,
+
                   })
-                  let res = document.getElementById("sendData");
-                  res.reset();
-              })
-              .catch(error => {
-                  console.log(error, 'wrong')
+                //   hideLoading();
+        } catch(error){
+          console.log(error);
+          // console.log(errorMessage);
+                //   hideLoading();
                   Swal.fire({
                       icon: 'error',
-                      title: 'Failed to create product, something went wrong!',
+                      title: "Invalid Email/Password. Try again",
                       showConfirmButton: false,
-                      timer: 1500,
-      
+                      timer: 2000,
                   })
-      
-              });
+        }  
       
       }
+      getProduct();
 </script>
