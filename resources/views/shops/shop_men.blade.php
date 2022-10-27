@@ -184,6 +184,12 @@
    
    const loaderContainer = document.querySelector('.loader-container');
 
+    function getId(id){
+        localStorage.setItem('productId', id);
+        window.location.href = "/details"
+        // alert(id);
+    }
+ 
 
       const displayLoading = () => {
       loaderContainer.style.display = 'block';
@@ -233,7 +239,7 @@
 			},
 			success: function(data) {
               hideLoading();
-				// console.log(data.products_list);
+				console.log(data.products_list);
 
 				if (data) {
 					let dataArr = data.products_list.data;
@@ -264,7 +270,7 @@
 					for (var i = 0; i < menProducts.length; i++) {
 						htmlMen += `
                 
-                    <div class="shop-card e-card-link cardClick" data-id=${menProducts[i].id}>
+                    <div class="shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${menProducts[i].id}>
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
@@ -302,7 +308,7 @@
 					for (var i = 0; i < womenProducts.length; i++) {
 						htmlWomen += `
                 
-                    <div class="shop-card e-card-link cardClick" data-id=${womenProducts[i].id}>
+                    <div class="shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${womenProducts[i].id}>
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
@@ -339,7 +345,7 @@
 					for (var i = 0; i < kidsProducts.length; i++) {
 						htmlKids += `
                 
-                    <div class="shop-card e-card-link cardClick" data-id=${kidsProducts[i].id}>
+                    <div class="shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${kidsProducts[i].id}>
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
@@ -411,28 +417,26 @@
 	}
         });
     
-               // Get the item ID and redirect to the details page
-
-            function getItemID(){
-            const menCards = document.querySelectorAll(".cardClick");
             
-            menCards.forEach(card =>{
-                console.log(card);
-                card.addEventListener('click', ()=>{
-                console.log('yea');
+        //     menCards.forEach(card =>{
+        //         card.addEventListener('click', ()=>{
+        //             //  window.location.href = "/details"
 
-                console.log("Take me to the details");
+        //         console.log('yea');
 
-                    // let cardId = card.getAttribute("data-id");
-                    // // localSorage.setItem('productId', cardId);
-                    // localStorage.setItem('product_id', cardId);
-                    // //  window.location.href = "/details"
-                    // console.log(cardId);
+        //             // let cardId = card.getAttribute("data-id");
+        //             // // localSorage.setItem('productId', cardId);
+        //             // localStorage.setItem('product_id', cardId);
+        //             // //  window.location.href = "/details"
+        //             // console.log(cardId);
 
-                })
-            })
+        //         })
+        //     })
+        //     function getItemID(){
+        //         // alert(menCards);
+       
 
-        }
+        // }
         // getItemID();
 
         

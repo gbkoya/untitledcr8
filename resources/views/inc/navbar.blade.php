@@ -87,27 +87,11 @@ onload="displayName();">
     // Declare and store all variables globally
     const getNav = document.querySelector('#navMain');
     const topOfNav = getNav.offsetTop;
-    const logoManipulation = document.querySelector('.light-logo');
-    const normalLogo = document.querySelector('.colored-logo');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const navDrop = document.querySelector('.nav-drop');
-
     const triggerNav = (event) => {
         // console.log(event);
         if (window.scrollY >= 10) {
             //    console.log('You have passed the nav bottom!')
-            // console.log(event);
             getNav.classList.add('navbar-trigger');
-            // console.log(navLinks);
-            Array.from(navLinks).map((nav) => {
-                // console.log(nav);
-                nav.classList.add('nav-link-text');
-            })
-            navDrop.classList.add('nav-link-text');
-
-            logoManipulation.style.display = 'block';
-            normalLogo.style.display = 'none'
-
         } else {
             getNav.classList.remove('navbar-trigger');
         }
