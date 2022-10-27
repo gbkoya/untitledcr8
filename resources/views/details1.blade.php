@@ -56,14 +56,12 @@
                 <button class="mt-3" style="font-weight: 500;font-size: 16px;line-height: 19px;color: #FFFFFF;
                 width: 119px;height: 45px;background: #F58634;border-radius: 5px;"> TRY IT ON</button>
             </div>
-            <div class="col-lg-6 mx-5 mt-5 details-sect-right-ika main-price">
-                <div  class="pt-4 " style="font-weight: 600;font-size: 28px;line-height: 180%;letter-spacing: -0.01em;color: #6B809B;">
-                    
+            <div class="col-lg-6 mx-5 mt-5 details-sect-right-ika">
+                <div class="main-price">
                 </div>
-                <div style="margin-top:-15px;font-weight: 300;font-size: 15px;line-height: 180%;letter-spacing: -0.01em;color: rgba(0, 0, 0, 0.3);">
-                    N9,000
+                <div class="actual-price">
+
                 </div>
-                
 
                 <button class="mt-4" type="button" style="width: 100%;height: 56px;border-radius: 5px;
                 background: #F58634;font-weight: 600;font-size: 20px;line-height: 24px;
@@ -93,6 +91,7 @@ const productsName = document.querySelector('.products');
 console.log(productsName);
 const priceItem = document.querySelector('.main-price');
 console.log(priceItem);
+const actualProductP = document.querySelector('.actual-price');
 
 // const displayLoading = () => {
 //       loaderContainer.style.display = 'block';
@@ -131,16 +130,16 @@ console.log(priceItem);
             //   console.log(data);
               let productDetail = data.product
               let productName = productDetail.map(product => product.name);
-              console.log(productName[0]);
+            //   console.log(productName[0]);
               let productPrice = productDetail.map(product => product.productprices);
             //   console.log(productPrice);
             //   console.log(productPrice[0]);
 
               let priceDetail = productPrice[0].map(productP => productP.product_price);
-              console.log(priceDetail[0]);
+            //   console.log(priceDetail[0]);
 
             //Display the product name
-              console.log(productsName, productName[0]);
+            //   console.log(productsName, productName[0]);
               productsName.innerHTML += `
               <div class="pt-4" style="font-weight: 700;font-size: 24px;line-height: 140%;color: #6B809B;">
                 ${productName[0]}
@@ -148,9 +147,18 @@ console.log(priceItem);
               `;
 
             //   Display the product price
-            console.log(priceItem, priceDetail[0]);
+            // console.log(priceItem, priceDetail[0]);
             priceItem.innerHTML += `
-             
+            <div  class="pt-4 " style="font-weight: 600;font-size: 28px;line-height: 180%;letter-spacing: -0.01em;color: #6B809B;">
+               ₦${priceDetail[0]}
+                </div>
+            `;
+
+            // Display the actual price
+            actualProductP.innerHTML += `
+            <div style="margin-top:-15px;font-weight: 300;font-size: 15px;line-height: 180%;letter-spacing: -0.01em;color: rgba(0, 0, 0, 0.3);">
+                ₦${priceDetail[0]}
+                </div>            
             `;
                 //   hideLoading();
         } catch(error){
