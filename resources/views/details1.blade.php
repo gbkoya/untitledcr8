@@ -50,14 +50,15 @@
         <div class="row col-lg-11">
             <div class="col-lg-4">
                 <img class="img-fluid image-size-middle-ika" src="{{ asset('customImages/Frame 93.png') }}" alt="">
-                <div class="pt-4" style="font-weight: 700;font-size: 24px;line-height: 140%;color: #6B809B;">
-                Anti blu ray radiation, computer glasses</div>
+               <div class="products">
+
+               </div>
                 <button class="mt-3" style="font-weight: 500;font-size: 16px;line-height: 19px;color: #FFFFFF;
                 width: 119px;height: 45px;background: #F58634;border-radius: 5px;"> TRY IT ON</button>
             </div>
-            <div class="col-lg-6 mx-5 mt-5 details-sect-right-ika">
-                <div  class="pt-4" style="font-weight: 600;font-size: 28px;line-height: 180%;letter-spacing: -0.01em;color: #6B809B;">
-                    ₦4,999
+            <div class="col-lg-6 mx-5 mt-5 details-sect-right-ika main-price">
+                <div  class="pt-4 " style="font-weight: 600;font-size: 28px;line-height: 180%;letter-spacing: -0.01em;color: #6B809B;">
+                    
                 </div>
                 <div style="margin-top:-15px;font-weight: 300;font-size: 15px;line-height: 180%;letter-spacing: -0.01em;color: rgba(0, 0, 0, 0.3);">
                     N9,000
@@ -83,13 +84,15 @@
         </div>
     </section>
 </div>
-@endsection
 
 <script type="text/javascript">
 const productId = localStorage.getItem('productId');
 const URL= '{{ env('APP_URL') }}';
 const loaderContainer = document.querySelector('.loader-container');
-
+const productsName = document.querySelector('.products');
+console.log(productsName);
+const priceItem = document.querySelector('.main-price');
+console.log(priceItem);
 
 // const displayLoading = () => {
 //       loaderContainer.style.display = 'block';
@@ -125,28 +128,40 @@ const loaderContainer = document.querySelector('.loader-container');
               .then(handleErrors)
               const data = await response.json();
               // return data;
-              // console.log(loginData.email);
-              console.log(data);
-              Swal.fire({
-                      icon: 'success',
-                      title: "Products retrieved successfully!",
-                      showConfirmButton: false,
-                      timer: 2000,
+            //   console.log(data);
+              let productDetail = data.product
+              let productName = productDetail.map(product => product.name);
+              console.log(productName[0]);
+              let productPrice = productDetail.map(product => product.productprices);
+            //   console.log(productPrice);
+            //   console.log(productPrice[0]);
 
-                  })
+              let priceDetail = productPrice[0].map(productP => productP.product_price);
+              console.log(priceDetail[0]);
+
+            //Display the product name
+              console.log(productsName, productName[0]);
+              productsName.innerHTML += `
+              <div class="pt-4" style="font-weight: 700;font-size: 24px;line-height: 140%;color: #6B809B;">
+                ${productName[0]}
+                </div>
+              `;
+
+            //   Display the product price
+            console.log(priceItem, priceDetail[0]);
+            priceItem.innerHTML += `
+             
+            `;
                 //   hideLoading();
         } catch(error){
           console.log(error);
           // console.log(errorMessage);
                 //   hideLoading();
-                  Swal.fire({
-                      icon: 'error',
-                      title: "Invalid Email/Password. Try again",
-                      showConfirmButton: false,
-                      timer: 2000,
-                  })
+                
         }  
       
       }
       getProduct();
 </script>
+
+@endsection
