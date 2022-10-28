@@ -2,19 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Address;
 use App\Models\Cart;
 use App\Models\Checkout;
 use App\Models\User;
+use App\Models\Userdeliverymethod;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Psy\VersionUpdater\Checker;
 
 class CartController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->only(['saveCart']);
+        $this->middleware('auth')->only(['saveCart', 'userDelivery', 'deliveryLocation']);
     }
 
 
@@ -63,15 +66,16 @@ class CartController extends Controller
      *       ),
      * )
      */
-    public function saveCart () {
+    public function saveCart()
+    {
         try {
             $cartItemObject = \Cart::getContent();
 
             $user_id = auth()->user()->id;
+            $transactionString = substr(str_shuffle(uniqid()), 0, 8);
 
             if ($cartItemObject != '') {
                 foreach ($cartItemObject as $key => $item) {
-                    $transactionString = substr(str_shuffle( uniqid() ), 0, 8);
                     $cartItems = [
                         'user_id' => $user_id,
                         'product_id' => $item['id'],
@@ -84,7 +88,7 @@ class CartController extends Controller
                         'user_id' => 'required',
                         'product_id' => 'required',
                         'quantity' => 'required',
-                        'transaction_id' => 'required|unique:checkouts'
+                        'transaction_id' => 'required'
                     ]);
                     if ($validator->fails()) {
                         return response()->json([
@@ -115,9 +119,7 @@ class CartController extends Controller
                             'error' => 'An error occured: ' . $e->getMessage(),
                         ], 500);
                     }
-
                 }
-
             } else {
                 return response()->json([
                     'status' => false,
@@ -135,6 +137,88 @@ class CartController extends Controller
                 'error' => 'An error occured: ' . $e->getMessage(),
             ], 500);
         }
+    }
+
+    public function deliveryLocation(Request $request)
+    {
+        try {
+            $validateUser = Validator::make(
+                $request->all(),
+                [
+                    'phone_number'  => 'required',
+                    'address'       => 'required',
+                ]
+            );
+
+            if ($validateUser->fails()) {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'validation error',
+                    'errors' => $validateUser->errors()
+                ], 400);
+            }
+
+            $user_id = auth()->user()->id;
+            User::where('id', $user_id)->update(array('phone_number' => $request->phone_number));
+
+            $user_address = new Address();
+            $user_address->user_id = $user_id;
+            $user_address->user_address = $request->address;
+            $user_address->save();
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Location saved',
+            ], 200);
+        } catch (Exception $e) {
+            return response()->json([
+                'status' => FALSE,
+                'error' => 'An error occured: ' . $e->getMessage(),
+            ], 500);
+        }
+    }
+
+    public function userDelivery(Request $request)
+    {
+        $validateUser = Validator::make(
+            $request->all(),
+            [
+                'deliverymethodid' => 'required',
+            ]
+        );
+
+        if ($validateUser->fails()) {
+            return response()->json([
+                'status' => false,
+                'message' => 'validation error',
+                'errors' => $validateUser->errors()
+            ], 404);
+        }
+
+        $checkout = Checkout::where('user_id', auth()->user()->id)
+            ->latest('created_at')
+            ->first(['user_id', 'transaction_id'])->toArray();
+
+        $delivery = new Userdeliverymethod();
+        $delivery->transaction_id       = $checkout['transaction_id'];
+        $delivery->user_id              = $checkout['user_id'];
+        $delivery->deliverymethod_id    = $request->deliverymethodid;
+
+        try {
+            $delivery->save();
+            return response()->json([
+                'status' => true,
+                'message' => 'delivery method saved',
+            ], 200);
+        } catch (Exception $e) {
+            return response()->json([
+                'status' => FALSE,
+                'message' => 'unable to save save delivery method',
+                'error' => 'An error occured: ' . $e->getMessage(),
+            ], 500);
+        }
+
+        // return $tansaction_id;
     }
 
     /**
