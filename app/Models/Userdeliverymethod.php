@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Userdeliverymethod extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'deliverymethod_id', 'transaction_id', 'user_id',
+    ];
 }
