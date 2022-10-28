@@ -34,7 +34,22 @@ class ProductController extends Controller
     public function index()
     {
         try {
-            $products = Product::latest()->paginate(12);
+
+            $products = Product::
+                with(array(
+                    'productprices' => function ($query) {
+                        $query->select('id', 'product_price', 'product_id');
+                    },
+                    'productfeatures' => function ($query) {
+                        $query->select('id', 'features', 'product_id');
+                    },
+                    'productimages' => function ($query) {
+                        $query->select('id', 'imagedirectory', 'product_id');
+                    }
+                ))->select('name', 'quantityinstock', 'status', 'productcategory_id', 'id')->get();
+
+
+            // $products = Product::latest()->paginate(12);
             return response()->json([
                 'status' => true,
                 'products_list' => $products
@@ -79,8 +94,6 @@ class ProductController extends Controller
     public function getProductById(Request $request, $id)
     {
         try {
-            // $product = Product::where('id', $id)->with('productprices', 'productfeatures')->get();
-
             $product = Product::where('id', $id)
                 ->with(array(
                     'productprices' => function ($query) use ($id) {
@@ -88,6 +101,9 @@ class ProductController extends Controller
                     },
                     'productfeatures' => function ($query) use ($id) {
                         $query->select('id', 'features', 'product_id');
+                    },
+                    'productimages' => function ($query) use ($id) {
+                        $query->select('id', 'imagedirectory', 'product_id');
                     }
                 ))->select('name', 'quantityinstock', 'status', 'productcategory_id', 'id')->get();
 
