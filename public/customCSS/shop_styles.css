@@ -359,6 +359,15 @@
 .e-card-link{
     text-decoration: none;
 }
+
+.nav-link-pagina{
+    cursor: pointer;
+}
+
+.page-link{
+    color: #F58634!important
+}
+
 /* RESPONSIVENESS */
 @media(max-width: 414px){
     .search-wrapper{
@@ -595,4 +604,29 @@
     color: #fff;
     background: #F58634;
   }
+  .activeLink{
+    color: #fff!important;
+    background: #F58634!important;
+  }
 /* END OF SHOP MEN STYLES */
+
+
+
+/* DETAILS PAGE STYLE */
+.quantity-button{
+    margin-top: 2rem;
+}
+.quantity-button button[type="button"]{
+    background: #F58634;
+    padding: .3rem .8rem;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    /* font-size: 1rem; */
+}
+
+.quantity-button span{
+    margin-left: .5rem;
+    margin-right: .5rem;
+    font-size: 1rem;
+}

@@ -84,6 +84,10 @@ Route::get('/checkout2', function () {
     return view('2ndcheckout');
 });
 
+Route::get('/pagination', function () {
+    return view('pagination');
+});
+
 
 
 // This route would soon be removed as its for testing purpose
