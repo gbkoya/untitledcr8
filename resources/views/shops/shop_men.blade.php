@@ -308,7 +308,7 @@
 					for (var i = 0; i < womenProducts.length; i++) {
 						htmlWomen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${womenProducts[i].id}>
+                    <div class="shop-card e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
@@ -345,7 +345,7 @@
 					for (var i = 0; i < kidsProducts.length; i++) {
 						htmlKids += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${kidsProducts[i].id}>
+                    <div class="shop-card e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "

@@ -122,13 +122,13 @@ const decrement = () =>{
 
 
 // getData();
-// const displayLoading = () => {
-//       loaderContainer.style.display = 'block';
-//       };
+const displayLoading = () => {
+      loaderContainer.style.display = 'block';
+      };
 
-// const hideLoading = () => {
-//           loaderContainer.style.display = 'none';
-//       };
+const hideLoading = () => {
+          loaderContainer.style.display = 'none';
+      };
    
 
 // console.log(productId);
@@ -204,66 +204,67 @@ const decrement = () =>{
      
     // API integration to add to cart
         const addToCart = async () =>{
-
-                alert(`product added to cart ${data},`)
-                // console.log(getProduct());
+            displayLoading()
+                // alert(`product added to cart ${data},`)
                 const result = await dataPromise;
-                console.log(result);
+                console.log(result.product[0]);
+                let productPrice = result.product[0].productprices[0].product_price;
+                console.log(productPrice);
 
-        //         let name = 'glass';
-        //         let price = 2000;
-        //         quantity = data;
-        //         imagedirectory = '4.png';
+                let product_id = result.product[0].id
+                let name = result.product[0].name;
+                let price = JSON.stringify(productPrice);
+                let quantity = JSON.stringify(data);
 
-        // let cartData = {
-        //     name,
-        //     price,
-        //     quantity,
-        //     imagedirectory
-        // }
+        let cartData = {
+            product_id,
+            name,
+            price,
+            quantity,
+        }
       
-        // console.log(cartData);
+        // let cartBody = JSON.stringify(cartData);
 
-        // function handleErrors(response) {
-        //     if (!response.ok) {
-        //         throw Error(response.statusText);
-        //     }
-        //     return response;
-        // }
-        // fetch(`${URL}/api/add-to-cart/${productId}`, {
-        //             method: 'POST',
-        //             headers: {
-        //                 'content-type': 'application/json',
-        //             },
-        //             body: JSON.stringify(cartData)
-        //         })
-        //         .then(handleErrors)
-        //         .then(response => {
-        //             hideLoading();
-        //             Swal.fire({
-        //                 icon: 'success',
-        //                 title: 'Account created successfully! Login',
-        //                 showConfirmButton: false,
-        //                 timer: 2000,
+        // console.log(cartBody);
 
-        //             })
-        //             res.reset();
-        //             setTimeout(() => {
-        //             }, 1500);
-        //         })
-        //         .catch(error => {
-        //             console.log(error, 'wrong')
-        //             res.reset();
-        //             hideLoading();
-        //             Swal.fire({
-        //                 icon: 'error',
-        //                 title: 'Failed to create account. Try again!',
-        //                 showConfirmButton: false,
-        //                 timer: 1500,
+        function handleErrors(response) {
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+            return response;
+        }
+        fetch(`${URL}/api/add-to-cart`, {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json',
+                    },
+                    body: JSON.stringify(cartData)
+                })
+                .then(handleErrors)
+                .then(response => {
+                    hideLoading();
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Product added to cart',
+                        showConfirmButton: false,
+                        timer: 2000,
 
-        //             })
+                    })
+                    setTimeout(() => {
+                    }, 1500);
+                })
+                .catch(error => {
+                    console.log(error, 'wrong')
+                    hideLoading();
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Failed to add product!',
+                        showConfirmButton: false,
+                        timer: 1500,
 
-        //         });
+                    })
+
+                });
             
             }
 </script>
