@@ -239,7 +239,7 @@
 			},
 			success: function(data) {
               hideLoading();
-				console.log(data.products_list);
+				console.log(data);
 
 				if (data) {
 					let dataArr = data.products_list.data;
