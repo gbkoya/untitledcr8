@@ -51,6 +51,8 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // Save up cart information
     Route::post('/cart-save', [CartController::class, 'saveCart'])->name('cart.save');
+    Route::post('/delivery-method', [CartController::class, 'userDelivery'])->name('user.delivery');
+    Route::get('/delivery-location', [CartController::class, 'deliveryLocation'])->name('delivery.location');
 });
 
 // Product api for user

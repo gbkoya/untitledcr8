@@ -18,7 +18,7 @@ class CreateCheckoutsTable extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade')->nullable();
             $table->foreignId('product_id')->constrained()->onDelete('cascade');
             $table->integer('quantity')->unsigned()->nullable();
-            $table->string('transaction_id')->unique();
+            $table->string('transaction_id');
             $table->timestamps();
         });
     }
