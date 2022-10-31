@@ -198,71 +198,73 @@ const decrement = () =>{
       
       }
       getProduct();
-    
+  
 
+      promise.then((result)=>{
+        console.log(result);
+      })
     // API integration to add to cart
-        const addToCart = () =>{
+        const addToCart = async () =>{
                 alert(`product added to cart ${data},`)
-                console.log(productName);
+                // console.log(getProduct());
+                // const result = await productDataResolve;
 
-                let name = 'glass';
-                let price = 2000;
-                quantity = data;
-                imagedirectory = '4.png';
+                // console.log(result);
 
-        let cartData = {
-            name,
-            price,
-            quantity,
-            imagedirectory
-        }
-        // alert(JSON.stringify(contactData));
-        // alert(`${firstName} and ${lastName}`);
-        console.log(cartData);
+        //         let name = 'glass';
+        //         let price = 2000;
+        //         quantity = data;
+        //         imagedirectory = '4.png';
 
-        function handleErrors(response) {
-            if (!response.ok) {
-                throw Error(response.statusText);
-            }
-            return response;
-        }
-        fetch(`${URL}/api/add-to-cart/${productId}`, {
-                    method: 'POST',
-                    headers: {
-                        // 'Accept': 'application/json, text/plain, */*',
-                        'content-type': 'application/json',
-                        // 'Access-Control-Allow-Origin': 'https://foremosteyeclinic.com'
-                    },
-                    body: JSON.stringify(cartData)
-                })
-                .then(handleErrors)
-                .then(response => {
-                    // console.log("ok")
-                    hideLoading();
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Account created successfully! Login',
-                        showConfirmButton: false,
-                        timer: 2000,
+        // let cartData = {
+        //     name,
+        //     price,
+        //     quantity,
+        //     imagedirectory
+        // }
+      
+        // console.log(cartData);
 
-                    })
-                    res.reset();
-                    setTimeout(() => {
-                    }, 1500);
-                })
-                .catch(error => {
-                    console.log(error, 'wrong')
-                    res.reset();
-                    hideLoading();
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Failed to create account. Try again!',
-                        showConfirmButton: false,
-                        timer: 1500,
+        // function handleErrors(response) {
+        //     if (!response.ok) {
+        //         throw Error(response.statusText);
+        //     }
+        //     return response;
+        // }
+        // fetch(`${URL}/api/add-to-cart/${productId}`, {
+        //             method: 'POST',
+        //             headers: {
+        //                 'content-type': 'application/json',
+        //             },
+        //             body: JSON.stringify(cartData)
+        //         })
+        //         .then(handleErrors)
+        //         .then(response => {
+        //             hideLoading();
+        //             Swal.fire({
+        //                 icon: 'success',
+        //                 title: 'Account created successfully! Login',
+        //                 showConfirmButton: false,
+        //                 timer: 2000,
 
-                    })
+        //             })
+        //             res.reset();
+        //             setTimeout(() => {
+        //             }, 1500);
+        //         })
+        //         .catch(error => {
+        //             console.log(error, 'wrong')
+        //             res.reset();
+        //             hideLoading();
+        //             Swal.fire({
+        //                 icon: 'error',
+        //                 title: 'Failed to create account. Try again!',
+        //                 showConfirmButton: false,
+        //                 timer: 1500,
 
-                });
+        //             })
+
+        //         });
             
             }
 </script>
