@@ -35,8 +35,7 @@ class ProductController extends Controller
     {
         try {
 
-            $products = Product::
-                with(array(
+            $products = Product::with(array(
                     'productprices' => function ($query) {
                         $query->select('id', 'product_price', 'product_id');
                     },
@@ -46,7 +45,7 @@ class ProductController extends Controller
                     'productimages' => function ($query) {
                         $query->select('id', 'imagedirectory', 'product_id');
                     }
-                ))->select('name', 'quantityinstock', 'status', 'productcategory_id', 'id')->get();
+                ))->select('name', 'quantityinstock', 'status', 'productcategory_id', 'id')->paginate(18);
 
 
             // $products = Product::latest()->paginate(12);
@@ -216,6 +215,13 @@ class ProductController extends Controller
      */
     public function storeProduct(Request $request)
     {
+        // $file = $request->file('imagedirectory');
+        // if (! empty($file)) {
+        //     \Log::info( count(array($file)) );
+        // } else {
+        //     \Log::info('Empty');
+        // }
+
         try {
             $validateUser = Validator::make(
                 $request->all(),
@@ -259,7 +265,7 @@ class ProductController extends Controller
 
             $file = $request->file('imagedirectory');
             foreach ($file as $key => $value) {
-                // \Log::info('Value' . $value);
+                \Log::info('Value');
                 // \Log::info('Client name: <br>' . $value->getClientOriginalName());
 
                 if ($request->hasFile('imagedirectory')) {
