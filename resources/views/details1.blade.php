@@ -122,13 +122,13 @@ const decrement = () =>{
 
 
 // getData();
-// const displayLoading = () => {
-//       loaderContainer.style.display = 'block';
-//       };
+const displayLoading = () => {
+      loaderContainer.style.display = 'block';
+      };
 
-// const hideLoading = () => {
-//           loaderContainer.style.display = 'none';
-//       };
+const hideLoading = () => {
+          loaderContainer.style.display = 'none';
+      };
    
 
 // console.log(productId);
@@ -154,7 +154,6 @@ const decrement = () =>{
               })
               .then(handleErrors)
               const data = await response.json();
-              // return data;
             //   console.log(data);
               let productDetail = data.product
               let productName = productDetail.map(product => product.name);
@@ -168,7 +167,7 @@ const decrement = () =>{
 
             //Display the product name
             //   console.log(productsName, productName[0]);
-              productsName.innerHTML += `
+              productsName.innerHTML = `
               <div class="pt-4" style="font-weight: 700;font-size: 24px;line-height: 140%;color: #6B809B;">
                 ${productName[0]}
                 </div>
@@ -176,19 +175,20 @@ const decrement = () =>{
 
             //   Display the product price
             // console.log(priceItem, priceDetail[0]);
-            priceItem.innerHTML += `
+            priceItem.innerHTML = `
             <div  class="pt-4 " style="font-weight: 600;font-size: 28px;line-height: 180%;letter-spacing: -0.01em;color: #6B809B;">
                ₦${priceDetail[0]}
                 </div>
             `;
 
             // Display the actual price
-            actualProductP.innerHTML += `
+            actualProductP.innerHTML = `
             <div style="margin-top:-15px;font-weight: 300;font-size: 15px;line-height: 180%;letter-spacing: -0.01em;color: rgba(0, 0, 0, 0.3);">
                 ₦${priceDetail[0]}
                 </div>            
             `;
                 //   hideLoading();
+              return data;
         } catch(error){
           console.log(error);
           // console.log(errorMessage);
@@ -198,27 +198,34 @@ const decrement = () =>{
       
       }
       getProduct();
-    
+      const dataPromise = getProduct();
+  
 
+     
     // API integration to add to cart
-        const addToCart = () =>{
-                alert(`product added to cart ${data},`)
-                console.log(productName);
+        const addToCart = async () =>{
+            displayLoading()
+                // alert(`product added to cart ${data},`)
+                const result = await dataPromise;
+                console.log(result.product[0]);
+                let productPrice = result.product[0].productprices[0].product_price;
+                console.log(productPrice);
 
-                let name = 'glass';
-                let price = 2000;
-                quantity = data;
-                imagedirectory = '4.png';
+                let product_id = result.product[0].id
+                let name = result.product[0].name;
+                let price = JSON.stringify(productPrice);
+                let quantity = JSON.stringify(data);
 
         let cartData = {
+            product_id,
             name,
             price,
             quantity,
-            imagedirectory
         }
-        // alert(JSON.stringify(contactData));
-        // alert(`${firstName} and ${lastName}`);
-        console.log(cartData);
+      
+        // let cartBody = JSON.stringify(cartData);
+
+        // console.log(cartBody);
 
         function handleErrors(response) {
             if (!response.ok) {
@@ -226,37 +233,32 @@ const decrement = () =>{
             }
             return response;
         }
-        fetch(`${URL}/api/add-to-cart/${productId}`, {
+        fetch(`${URL}/api/add-to-cart`, {
                     method: 'POST',
                     headers: {
-                        // 'Accept': 'application/json, text/plain, */*',
                         'content-type': 'application/json',
-                        // 'Access-Control-Allow-Origin': 'https://foremosteyeclinic.com'
                     },
                     body: JSON.stringify(cartData)
                 })
                 .then(handleErrors)
                 .then(response => {
-                    // console.log("ok")
                     hideLoading();
                     Swal.fire({
                         icon: 'success',
-                        title: 'Account created successfully! Login',
+                        title: 'Product added to cart',
                         showConfirmButton: false,
                         timer: 2000,
 
                     })
-                    res.reset();
                     setTimeout(() => {
                     }, 1500);
                 })
                 .catch(error => {
                     console.log(error, 'wrong')
-                    res.reset();
                     hideLoading();
                     Swal.fire({
                         icon: 'error',
-                        title: 'Failed to create account. Try again!',
+                        title: 'Failed to add product!',
                         showConfirmButton: false,
                         timer: 1500,
 
