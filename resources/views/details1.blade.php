@@ -154,7 +154,6 @@ const decrement = () =>{
               })
               .then(handleErrors)
               const data = await response.json();
-              // return data;
             //   console.log(data);
               let productDetail = data.product
               let productName = productDetail.map(product => product.name);
@@ -168,7 +167,7 @@ const decrement = () =>{
 
             //Display the product name
             //   console.log(productsName, productName[0]);
-              productsName.innerHTML += `
+              productsName.innerHTML = `
               <div class="pt-4" style="font-weight: 700;font-size: 24px;line-height: 140%;color: #6B809B;">
                 ${productName[0]}
                 </div>
@@ -176,19 +175,20 @@ const decrement = () =>{
 
             //   Display the product price
             // console.log(priceItem, priceDetail[0]);
-            priceItem.innerHTML += `
+            priceItem.innerHTML = `
             <div  class="pt-4 " style="font-weight: 600;font-size: 28px;line-height: 180%;letter-spacing: -0.01em;color: #6B809B;">
                ₦${priceDetail[0]}
                 </div>
             `;
 
             // Display the actual price
-            actualProductP.innerHTML += `
+            actualProductP.innerHTML = `
             <div style="margin-top:-15px;font-weight: 300;font-size: 15px;line-height: 180%;letter-spacing: -0.01em;color: rgba(0, 0, 0, 0.3);">
                 ₦${priceDetail[0]}
                 </div>            
             `;
                 //   hideLoading();
+              return data;
         } catch(error){
           console.log(error);
           // console.log(errorMessage);
@@ -198,18 +198,17 @@ const decrement = () =>{
       
       }
       getProduct();
+      const dataPromise = getProduct();
   
 
-      promise.then((result)=>{
-        console.log(result);
-      })
+     
     // API integration to add to cart
         const addToCart = async () =>{
+
                 alert(`product added to cart ${data},`)
                 // console.log(getProduct());
-                // const result = await productDataResolve;
-
-                // console.log(result);
+                const result = await dataPromise;
+                console.log(result);
 
         //         let name = 'glass';
         //         let price = 2000;
