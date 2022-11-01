@@ -270,31 +270,38 @@ const hideLoading = () => {
 
 
         // GET CART ITEMS
-        const getCartProducts = async () => {
-            
-        function handleErrors(response) {
-            if (!response.ok) {
-                throw Error(response.statusText);
-            }
-            return response;
-        }
-        try {
-            const response = await fetch(`${URL}/api/cart-items`, {
-                        method: 'GET',
-                        headers: {
-                            'content-type': 'application/json',
-                        },
-                    })
-                    .then(handleErrors)
-                  const result = await response.json();
-                   console.log(result);
-        }.catch(error => {
-                    console.log(error, 'wrong')
-                   
-                });
-            }
+        // API INTEGRATION TO GET A SINCLE SHOP PRODUCT
+ const getCartProduct = async () => {
+    // alert(productId);
+    //   displayLoading();
+    
+          function handleErrors(response) {
+              if (!response.ok) {
+                  throw Error(response.statusText);
+              }
+              return response;
+          }
 
-            getCartProducts();
+          try{
+          const response = await fetch(`${URL}/api/cart-items`, {
+                  method: 'GET',
+                  headers: {
+                      'content-type': 'application/json'
+                    },
+              })
+              .then(handleErrors)
+              const data = await response.json();
+              console.log(data);
+             
+              return data;
+        } catch(error){
+          console.log(error);
+                
+        }  
+      
+      }
+
+            getCartProduct();
 </script>
 
 
