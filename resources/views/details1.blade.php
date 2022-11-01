@@ -41,7 +41,7 @@
                     <img
                     src="{{ asset('customImages/buyIcon.png') }}"
                     />
-                   CART <span class="total-items-in-cart">0</span>
+                   CART <span class="total-items-in-cart"></span>
                 </button>
             </li>
     {{-- </div>  --}}
@@ -102,6 +102,8 @@ const priceItem = document.querySelector('.main-price');
 const actualProductP = document.querySelector('.actual-price');
 const quantVal = document.querySelector('.quantity');
 console.log(quantVal);
+let totalCartItem = document.querySelector('.total-items-in-cart');
+totalCartItem.innerHTML = 0;
 
 let data = 0;
 quantVal.innerText = data;
@@ -292,6 +294,8 @@ const hideLoading = () => {
               .then(handleErrors)
               const data = await response.json();
               console.log(data);
+              totalCartItem.innerHTML = data.cartItems.length
+
              
               return data;
         } catch(error){
