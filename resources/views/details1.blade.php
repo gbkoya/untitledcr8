@@ -37,12 +37,14 @@
                     CART
                 </button> --}}
                 <li class="right-nav-button-shop-wrapper">
-                <button type="button" class="shop-button">
-                    <img
-                    src="{{ asset('customImages/buyIcon.png') }}"
-                    />
-                   CART <span class="total-items-in-cart"></span>
-                </button>
+                    <a href="/cart">
+                        <button type="button" class="shop-button">
+                            <img
+                            src="{{ asset('customImages/buyIcon.png') }}"
+                            />
+                           CART <span class="total-items-in-cart"></span>
+                        </button>
+                    </a>
             </li>
     {{-- </div>  --}}
     </nav>
@@ -67,9 +69,9 @@
 
                 </div>
                 <div class="d-flex flex-row flex-wrap align-items-center quantity-button">
-                    <button type="button" onclick="decrement()">-</button>
+                    {{-- <button type="button" onclick="decrement()">-</button> --}}
                     <span class="quantity"></span>
-                    <button type="button" onclick="increment()">+</button>
+                    {{-- <button type="button" onclick="increment()">+</button> --}}
                 </div>
                 <button class="mt-4" type="button" style="width: 100%;height: 56px;border-radius: 5px;
                 background: #F58634;font-weight: 600;font-size: 20px;line-height: 24px;
@@ -123,7 +125,6 @@ const decrement = () =>{
 }
 
 
-// getData();
 const displayLoading = () => {
       loaderContainer.style.display = 'block';
       };
@@ -156,7 +157,7 @@ const hideLoading = () => {
               })
               .then(handleErrors)
               const data = await response.json();
-            //   console.log(data);
+              console.log(data);
               let productDetail = data.product
               let productName = productDetail.map(product => product.name);
             //   console.log(productName[0]);
@@ -216,7 +217,7 @@ const hideLoading = () => {
                 let product_id = result.product[0].id
                 let name = result.product[0].name;
                 let price = JSON.stringify(productPrice);
-                let quantity = JSON.stringify(data);
+                let quantity = JSON.stringify(1);
 
         let cartData = {
             product_id,
@@ -244,6 +245,7 @@ const hideLoading = () => {
                 })
                 .then(handleErrors)
                 .then(response => {
+                    console.log(response);
                     hideLoading();
                     Swal.fire({
                         icon: 'success',
@@ -267,6 +269,8 @@ const hideLoading = () => {
                     })
 
                 });
+            getCartProduct();
+
             
             }
 
@@ -294,7 +298,17 @@ const hideLoading = () => {
               .then(handleErrors)
               const data = await response.json();
               console.log(data);
-              totalCartItem.innerHTML = data.cartItems.length
+              console.log(data.cartItems);
+              let cartItem = JSON.stringify(data);
+              console.log(cartItem);
+              let newCart = JSON.parse(cartItem).cartItems[id=productId];
+              console.log(newCart);
+              localStorage.setItem('cartItem',JSON.stringify(newCart))
+            
+            //   console.log(whatwewant);
+             
+              totalCartItem.innerHTML = newCart.quantity;
+              quantVal.innerHTML = newCart.quantity
 
              
               return data;
