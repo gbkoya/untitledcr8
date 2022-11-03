@@ -150,7 +150,6 @@
         {{-- Kids content here --}}
         <div class="tab-pane fade card-paginat" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
             <div class="d-flex flex-row flex-wrap justify-content-evenly productsDatakids" id="paginated-listKids">
-               
             </div>
         </div>
 
@@ -266,7 +265,13 @@
                     // console.log(kidsProducts);
 
                     // DISPLAY MEN
-					var htmlMen = "";
+                    let htmlMen;
+
+                    menProducts.length <= 0 
+                    ?
+                    htmlMen = "<h3>No product found<h3>"
+                    :
+				     htmlMen = "";
 					for (var i = 0; i < menProducts.length; i++) {
 						htmlMen += `
                 
@@ -293,7 +298,7 @@
                                   <img
                                   src="{{ asset('customImages/buyIcon.png') }}"
                                   />
-                                  Add
+                                  View
                               </button>
                               </div>
                         </div>
@@ -304,7 +309,13 @@
 					$("#paginated-list").html(htmlMen);
 
                      // DISPLAY WOMEN
-					var htmlWomen = "";
+                     let htmlWomen;
+
+                    womenProducts.length <= 0 
+                    ?
+                    htmlWomen = "<h3>No product found<h3>"
+                    :
+					htmlWomen = "";
 					for (var i = 0; i < womenProducts.length; i++) {
 						htmlWomen += `
                 
@@ -331,7 +342,7 @@
                                   <img
                                   src="{{ asset('customImages/buyIcon.png') }}"
                                   />
-                                  Add
+                                  View
                               </button>
                               </div>
                         </div>
@@ -340,8 +351,13 @@
                 `;
 					}
 					$("#paginated-listWomen").html(htmlWomen);
+                    let htmlKids;
 
-                    var htmlKids = "";
+                    kidsProducts.length <= 0 
+                    ?
+                    htmlKids = "<h3>No product found<h3>"
+                    :
+                    htmlKids = "";
 					for (var i = 0; i < kidsProducts.length; i++) {
 						htmlKids += `
                 
@@ -367,7 +383,7 @@
                                   <img
                                   src="{{ asset('customImages/buyIcon.png') }}"
                                   />
-                                  Add
+                                  View
                               </button>
                               </div>
                         </div>
