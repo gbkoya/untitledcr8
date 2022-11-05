@@ -94,6 +94,8 @@
 </div>
 
 <script type="text/javascript">
+let cartItems =  JSON.parse(sessionStorage.getItem('cartItem') || '[]');
+// alert(cartItems);
 const productId = localStorage.getItem('productId');
 const URL= '{{ env('APP_URL') }}';
 const loaderContainer = document.querySelector('.loader-container');
@@ -107,22 +109,25 @@ console.log(quantVal);
 let totalCartItem = document.querySelector('.total-items-in-cart');
 totalCartItem.innerHTML = 0;
 
+let allProducts = sessionStorage.getItem('cartItem');
+console.log(allProducts);
+
 let data = 0;
 quantVal.innerText = data;
-const increment = () =>{
-    data = data + 1;
-    quantVal.innerText = data;
-    // alert(data + 1)
-} 
-const decrement = () =>{
-    if(data > 0){
-        data = data - 1;
-        quantVal.innerText = data
-        console.log(data);
-    }else{
+// const increment = () =>{
+//     data = data + 1;
+//     quantVal.innerText = data;
+//     // alert(data + 1)
+// } 
+// const decrement = () =>{
+//     if(data > 0){
+//         data = data - 1;
+//         quantVal.innerText = data
+//         console.log(data);
+//     }else{
         
-    }
-}
+//     }
+// }
 
 
 const displayLoading = () => {
@@ -247,6 +252,7 @@ const hideLoading = () => {
                 .then(response => {
                     console.log(response);
                     hideLoading();
+            // window.location.href = "/cart"
                     Swal.fire({
                         icon: 'success',
                         title: 'Product added to cart',
@@ -303,11 +309,23 @@ const hideLoading = () => {
               console.log(cartItem);
               let newCart = JSON.parse(cartItem).cartItems[id=productId];
               console.log(newCart);
-              localStorage.setItem('cartItem',JSON.stringify(newCart))
-            
+            //   cartItems.filter(element => {
+            //     return element !== null;
+            //     });
+            console.log(cartItems);
+              cartItems.push(newCart)
+              console.log(cartItems);
+              let cartQuantity = cartItems.length - 2
+              console.log(cartQuantity);
+             
+                localStorage.setItem('cartItem', JSON.stringify(cartItems))
+              sessionStorage.setItem('cartItem', JSON.stringify(cartItems))
+              
+              
+            // alert('working');
             //   console.log(whatwewant);
              
-              totalCartItem.innerHTML = newCart.quantity;
+              totalCartItem.innerHTML = cartQuantity;
               quantVal.innerHTML = newCart.quantity
 
              
@@ -320,6 +338,15 @@ const hideLoading = () => {
       }
 
             getCartProduct();
+            // window.addEventListener('load', (event) => {
+            //     if(sessionStorage.getItem("cartItem")){
+            //         let cart = sessionStorage.getItem('cartItem');
+            //         alert(cart);
+            //         sessionStorage.setItem(cart);
+            //     }
+
+            //     // alert('finish loading', JSON.stringify(cart));
+            // });
 </script>
 
 

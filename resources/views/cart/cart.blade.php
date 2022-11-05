@@ -56,48 +56,10 @@ landscape.')
       <img class="" src="{{ asset('customImages/Group 191.png') }}" />
     </div>
 
-    <div class="container card my-5 col-md-10">
-      <div class="d-flex flex-row justify-content-between">
-        <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Item(s)</div>
-        <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Quantity</div>
-        <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Price </div>
-        <div></div>
-      </div>
-
-      <div class="" style="border: 1px solid rgba(0, 0, 0, 0.5);"></div>
-      <div class=" pt-5 col-lg-10 d-flex flex-wrap justify-content-between align-items-center">
-
-      <div class="d-flex flex-wrap">
-        <img class="img-fluid" src="{{ asset('customImages/Frame 106.png') }}" />
-
-        <div class="px-2 small-screen-font item-name" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color: rgba(107, 128, 155, 0.8);">
-          </div>
-      </div>
-
-
-        <form>
-
-          <div class="d-flex flex-row flex-wrap align-items-center quantity-button">
-            <button type="button" onclick="decrement()">-</button>
-            <span class="quantity"></span>
-            <button type="button" onclick="increment()">+</button>
-        </div>
-
-        </form>
-
-        <div class="pt-2 small-screen-font price-val" style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);"></div>
-
-        <div onclick="handleDelete(id)"><img class="img-fluid" src="{{ asset('customImages/trash vector.png') }}" alt="Delete icon"></div>
-      </div>
-      <div class="d-flex align-items-end container" style="text-align: right;">
-      <div>Total Price:</div>
-      <div class="pt-2 total-price " style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);"></div>
-      </div>
-
-
-
+    <div class="cart-display">
 
     </div>
+    
    
 
     <div class="container col-lg-10 d-flex justify-content-between">
@@ -119,7 +81,9 @@ landscape.')
   </section>
   {{-- END OF STORE CARD SECTION --}}
 <script type="text/javascript">
+
 let cartProduct = document.querySelector('.cart-data');
+let cartDisplay = document.querySelector('.cart-display');
  let totalCartItem = document.querySelector('.total-items-in-cart');
   totalCartItem.innerHTML = 0;
 const quantVal = document.querySelector('.quantity');
@@ -127,68 +91,197 @@ const URL= '{{ env('APP_URL') }}';
 const productID = localStorage.getItem('productId');
 // console.log(productID);
 const loaderContainer = document.querySelector('.loader-container');
-const cartItem = localStorage.getItem('cartItem');
-const cartItems = JSON.parse(cartItem);
-console.log(cartItems.price);
+const cartItem = JSON.parse(sessionStorage.getItem('cartItem'));
+console.log(cartItem);
+let newCart = cartItem.filter(element =>{
+  return element !== null;
+});
+console.log(newCart);
+// const cartItems = JSON.parse(cartItem);
+// console.log(cartItems.price);
 let priceValue = document.querySelector('.price-val');
 let itemName = document.querySelector('.item-name');
 
-let data = cartItems.quantity;
-
+let data = newCart.length;
+console.log(data);
 let totalPrice = document.querySelector('.total-price');
-let price = cartItems.price;
-let sumPrice = price;
-totalPrice.innerHTML = `
-    ${sumPrice}
-    `;
+// let price = cartItems.price;
+// let sumPrice = price;
+// totalPrice.innerHTML = `
+//     ${sumPrice}
+//     `;
 
 
 
 // Display product price and name
-priceValue.innerHTML = `
-₦${cartItems.price}
-`;
+// priceValue.innerHTML = `
+// ₦${cartItems.price}
+// `;
 
-itemName.innerHTML = `${cartItems.name}`;
-
-
+// itemName.innerHTML = `${cartItems.name}`;
 
 
-quantVal.innerText = data;
-const increment = () =>{
-    data =+ data + 1;
-    quantVal.innerText = data;
-    sumPrice = price * data;
 
-    totalPrice.innerHTML = `
-    ${sumPrice}
-    `;
-    totalCartItem.innerHTML = data;
+const incrementQuant = (quantity) => {
+  quantity + 1
+}
+// quantVal.innerText = data;
+const increment = (price, quantity, id) =>{
+  console.log(`yes ${price}, ${quantity}, ${id}`);
+    // data =+ data + 1;
+    // // quantVal.innerText = data;
+    // sumPrice = price * data;
+
+    // totalPrice.innerHTML = `
+    // ${sumPrice}
+    // `;
+    // totalCartItem.innerHTML = data;
     setTimeout(() => {
-      updateCart();
+      updateCart(price, quantity, id);
     }, 2000);
     // alert(data + 1)
 } 
-const decrement = () =>{
-    if(data > 0){
-        data = data - 1;
-        quantVal.innerText = data
-        console.log(data);
-        sumPrice = price * data;
+// const decrement = () =>{
+//     if(data > 0){
+//         data = data - 1;
+//         // quantVal.innerText = data
+//         console.log(data);
+//         sumPrice = price * data;
 
-        totalPrice.innerHTML = `
-        ${sumPrice}
-        `;
-    totalCartItem.innerHTML = data;
-        setTimeout(() => {
-        updateCart();
-      }, 2000);
-    }else{
+//         // totalPrice.innerHTML = `
+//         // ${sumPrice}
+//         // `;
+//     // totalCartItem.innerHTML = data;
+//         setTimeout(() => {
+//         updateCart();
+//       }, 2000);
+//     }else{
         
-    }
+//     }
+// }
+
+
+const renderCartItem = () => {
+  cartDisplay.innerHTML = ""; // clear cart element
+  newCart.map(el => {
+  let dataCart = el.quantity;
+  function incremen(){
+    console.log('incrementing')
+  }
+
+  // incremen();
+    return cartDisplay.innerHTML += `
+    <div class="container card my-5 col-md-10">
+      <div class="d-flex flex-row justify-content-between">
+        <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Item(s)</div>
+        <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Quantity</div>
+        <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Price </div>
+        <div></div>
+      </div>
+
+      <div class="" style="border: 1px solid rgba(0, 0, 0, 0.5);">
+        </div>
+      <div class=" pt-5 col-lg-10 d-flex flex-wrap justify-content-between align-items-center">
+       
+      <div class="d-flex flex-wrap">
+        <img class="img-fluid" src="{{ asset('customImages/Frame 106.png') }}" />
+
+        <div class="px-2 small-screen-font item-name" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color: rgba(107, 128, 155, 0.8);">
+          <h4>${el.name}</h4>
+          </div>
+      </div>
+
+
+        <form>
+
+          <div class="d-flex flex-row flex-wrap align-items-center quantity-button">
+            <button type="button" onclick="decrement()">-</button>
+            <span class="quantity">${dataCart}</span>
+            <button type="button" onclick="increment(${el.price}, ${dataCart}, ${el.id})">+</button>
+        </div>
+
+        </form>
+
+        <div class="pt-2 small-screen-font price-val" style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">${el.price}</div>
+
+        <div onclick="deleteProduct(${el.id})"><img class="img-fluid" src="{{ asset('customImages/trash vector.png') }}" alt="Delete icon"></div>
+      </div>
+      <div class="d-flex align-items-end container" style="text-align: right;">
+      <div>Total Price:</div>
+      <div class="pt-2 total-price " style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">
+        ${el.price * dataCart}
+        </div>
+      </div>
+
+    </div>
+    `;
+    
+  })
 }
 
+renderCartItem();
+// cartDisplay.innerText =+ `
+  
+// `;
 
+// API INTEGRATION TO DELETE CART
+const deleteProduct = (id) => {
+  console.log(id);
+        // displayLoading();
+      
+
+        function handleErrors(response) {
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+            return response;
+        }
+        console.log(id);
+        fetch(`${URL}/api/remove-item/${id}`, {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json',
+                    },
+                })
+                .then(handleErrors)
+                .then(response => {
+                  console.log(response);
+
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Product deleted successfully',
+                        showConfirmButton: false,
+                        timer: 2000,
+
+                    })
+                    let updateFromDelete = newCart.filter(newCa=>{
+                  return newCa.id !== id;
+                });
+                console.log(updateFromDelete);
+                sessionStorage.setItem('cartItem', JSON.stringify(updateFromDelete));
+                renderCartItem();
+                location.reload();
+                // setTimeout(() => {
+                    // }, 1500);
+                })
+                .catch(error => {
+                    console.log(error, 'wrong')
+                    hideLoading();
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Failed to delete product!',
+                        showConfirmButton: false,
+                        timer: 1500,
+
+                    })
+
+                });
+           
+}
+
+// const deleteProduct = (id) =>{
+// console.log(id);
+// }
 const displayLoading = () => {
       loaderContainer.style.display = 'block';
       };
@@ -200,6 +293,7 @@ const hideLoading = () => {
 
  // API INTEGRATION TO GET A SINCLE SHOP PRODUCT
  const getCartProduct = async () => {
+  sessionStorage.setItem('cartItem', JSON.stringify(newCart));
   function handleErrors(response) {
               if (!response.ok) {
                   throw Error(response.statusText);
@@ -281,22 +375,34 @@ const hideLoading = () => {
       
       // }
       // API INTEGRATION TO UPDATE CART
-      const updateCart = async () =>{
+      const updateCart = async (price, quantity, id) =>{
+        console.log(`updating ${price}, ${quantity}, ${id}`);
 
         // displayLoading();
         // alert(data);
                 // alert(`product added to cart ${data},`)
-                let price = JSON.stringify(cartItems.price);
-                let quantity = JSON.stringify(data);
+        console.log(newCart);
+
+                 price = JSON.stringify(price);
+                 quantity = JSON.stringify(quantity + 1);
 
         let cartData = {
             price,
             quantity,
         }
-      
+       
+        let newUpdateCart = newCart.map(newC=>{
+          let itemNew = newCart.find(el=> el.id === id)
+        console.log(itemNew);
+        // itemNew.quantity = quantity
+          newC = itemNew 
+       return newC
+
+      });
+      console.log(newUpdateCart);
         // let cartBody = JSON.stringify(cartData);
 
-        // console.log(cartBody);
+        console.log(cartData);
 
         function handleErrors(response) {
             if (!response.ok) {
@@ -304,7 +410,8 @@ const hideLoading = () => {
             }
             return response;
         }
-        fetch(`${URL}/api/update-cart/${productID}`, {
+        console.log(id);
+        fetch(`${URL}/api/update-cart/${id}`, {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',
@@ -340,9 +447,6 @@ const hideLoading = () => {
                 });
       }
 
-      // API INTEGRATION TO DELETE A SINGLE PRODUCT
-      const handleDelete = async (id) =>{
-        alert('id')
-      }
+    
 </script>
   @endsection
