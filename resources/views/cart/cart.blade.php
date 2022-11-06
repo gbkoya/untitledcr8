@@ -81,11 +81,12 @@ landscape.')
   </section>
   {{-- END OF STORE CARD SECTION --}}
 <script type="text/javascript">
-
+let totalCartQuant = sessionStorage.getItem('totalCartItem') || 0;
+console.log(totalCartQuant);
 let cartProduct = document.querySelector('.cart-data');
 let cartDisplay = document.querySelector('.cart-display');
  let totalCartItem = document.querySelector('.total-items-in-cart');
-  totalCartItem.innerHTML = 0;
+  // totalCartItem.innerHTML = 0;
 const quantVal = document.querySelector('.quantity');
 const URL= '{{ env('APP_URL') }}';
 const productID = localStorage.getItem('productId');
@@ -105,13 +106,8 @@ let itemName = document.querySelector('.item-name');
 let data = newCart.length;
 console.log(data);
 let totalPrice = document.querySelector('.total-price');
-// let price = cartItems.price;
-// let sumPrice = price;
-// totalPrice.innerHTML = `
-//     ${sumPrice}
-//     `;
 
-
+totalCartItem.innerHTML = totalCartQuant
 
 // Display product price and name
 // priceValue.innerHTML = `

@@ -284,8 +284,6 @@ const hideLoading = () => {
         // GET CART ITEMS
         // API INTEGRATION TO GET A SINCLE SHOP PRODUCT
  const getCartProduct = async () => {
-    // alert(productId);
-    //   displayLoading();
     
           function handleErrors(response) {
               if (!response.ok) {
@@ -309,24 +307,22 @@ const hideLoading = () => {
               console.log(cartItem);
               let newCart = JSON.parse(cartItem).cartItems[id=productId];
               console.log(newCart);
-            //   cartItems.filter(element => {
-            //     return element !== null;
-            //     });
             console.log(cartItems);
-              cartItems.push(newCart)
-              console.log(cartItems);
-              let cartQuantity = cartItems.length - 2
-              console.log(cartQuantity);
-             
-                localStorage.setItem('cartItem', JSON.stringify(cartItems))
-              sessionStorage.setItem('cartItem', JSON.stringify(cartItems))
-              
+            if(newCart){
+                cartItems.push(newCart)
+                console.log(cartItems);
+
+                sessionStorage.setItem('cartItem', JSON.stringify(cartItems))
+            }
+            let cartQuantity = cartItems.length;
+                console.log(cartQuantity);
               
             // alert('working');
             //   console.log(whatwewant);
              
               totalCartItem.innerHTML = cartQuantity;
-              quantVal.innerHTML = newCart.quantity
+              quantVal.innerHTML = cartQuantity;
+              sessionStorage.setItem('totalCartItem', cartQuantity);
 
              
               return data;
