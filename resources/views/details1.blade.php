@@ -105,12 +105,12 @@ const priceItem = document.querySelector('.main-price');
 // console.log(priceItem);
 const actualProductP = document.querySelector('.actual-price');
 const quantVal = document.querySelector('.quantity');
-console.log(quantVal);
+// console.log(quantVal);
 let totalCartItem = document.querySelector('.total-items-in-cart');
 totalCartItem.innerHTML = 0;
 
 let allProducts = sessionStorage.getItem('cartItem');
-console.log(allProducts);
+// console.log(allProducts);
 
 let data = 0;
 quantVal.innerText = data;
@@ -162,7 +162,7 @@ const hideLoading = () => {
               })
               .then(handleErrors)
               const data = await response.json();
-              console.log(data);
+            //   console.log(data);
               let productDetail = data.product
               let productName = productDetail.map(product => product.name);
             //   console.log(productName[0]);
@@ -215,9 +215,9 @@ const hideLoading = () => {
             displayLoading()
                 // alert(`product added to cart ${data},`)
                 const result = await dataPromise;
-                console.log(result.product[0]);
+                // console.log(result.product[0]);
                 let productPrice = result.product[0].productprices[0].product_price;
-                console.log(productPrice);
+                // console.log(productPrice);
 
                 let product_id = result.product[0].id
                 let name = result.product[0].name;
@@ -241,29 +241,28 @@ const hideLoading = () => {
             }
             return response;
         }
-        fetch(`${URL}/api/add-to-cart`, {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json',
-                    },
-                    body: JSON.stringify(cartData)
-                })
-                .then(handleErrors)
-                .then(response => {
-                    console.log(response);
-                    hideLoading();
-            // window.location.href = "/cart"
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Product added to cart',
-                        showConfirmButton: false,
-                        timer: 2000,
-
+        try{
+           const response = await fetch(`${URL}/api/add-to-cart`, {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json',
+                        },
+                        body: JSON.stringify(cartData)
                     })
-                    setTimeout(() => {
-                    }, 1500);
-                })
-                .catch(error => {
+                    .then(handleErrors)
+                    const datal = await response.json();
+                    // console.log(response);
+                    // console.log(datal);
+                        hideLoading();
+                // window.location.href = "/cart"
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Product added to cart',
+                            showConfirmButton: false,
+                            timer: 2000,
+    
+                        })
+        }catch(error){
                     console.log(error, 'wrong')
                     hideLoading();
                     Swal.fire({
@@ -274,7 +273,7 @@ const hideLoading = () => {
 
                     })
 
-                });
+                };
             getCartProduct();
 
             
@@ -301,16 +300,16 @@ const hideLoading = () => {
               })
               .then(handleErrors)
               const data = await response.json();
-              console.log(data);
-              console.log(data.cartItems);
+            //   console.log(data);
+            //   console.log(data.cartItems);
               let cartItem = JSON.stringify(data);
-              console.log(cartItem);
+            //   console.log(cartItem);
               let newCart = JSON.parse(cartItem).cartItems[id=productId];
-              console.log(newCart);
-            console.log(cartItems);
+            //   console.log(newCart);
+            // console.log(cartItems);
             if(newCart){
                 cartItems.push(newCart)
-                console.log(cartItems);
+                // console.log(cartItems);
 
                 sessionStorage.setItem('cartItem', JSON.stringify(cartItems))
             }

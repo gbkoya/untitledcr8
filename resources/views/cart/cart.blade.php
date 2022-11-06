@@ -82,40 +82,35 @@ landscape.')
   {{-- END OF STORE CARD SECTION --}}
 <script type="text/javascript">
 let totalCartQuant = sessionStorage.getItem('totalCartItem') || 0;
-console.log(totalCartQuant);
+// console.log(totalCartQuant);
 let cartProduct = document.querySelector('.cart-data');
 let cartDisplay = document.querySelector('.cart-display');
  let totalCartItem = document.querySelector('.total-items-in-cart');
   // totalCartItem.innerHTML = 0;
-const quantVal = document.querySelector('.quantity');
+  const quantVal = document.querySelector('.quantity');
+// console.log(quantVal);
 const URL= '{{ env('APP_URL') }}';
 const productID = localStorage.getItem('productId');
 // console.log(productID);
 const loaderContainer = document.querySelector('.loader-container');
 const cartItem = JSON.parse(sessionStorage.getItem('cartItem'));
-console.log(cartItem);
+// console.log(cartItem);
 let newCart = cartItem.filter(element =>{
   return element !== null;
 });
-console.log(newCart);
+
+
+// console.log(newCart);
 // const cartItems = JSON.parse(cartItem);
 // console.log(cartItems.price);
 let priceValue = document.querySelector('.price-val');
 let itemName = document.querySelector('.item-name');
 
 let data = newCart.length;
-console.log(data);
+// console.log(data);
 let totalPrice = document.querySelector('.total-price');
 
 totalCartItem.innerHTML = totalCartQuant
-
-// Display product price and name
-// priceValue.innerHTML = `
-// ₦${cartItems.price}
-// `;
-
-// itemName.innerHTML = `${cartItems.name}`;
-
 
 
 const incrementQuant = (quantity) => {
@@ -133,37 +128,30 @@ const increment = (price, quantity, id) =>{
     // `;
     // totalCartItem.innerHTML = data;
     setTimeout(() => {
-      updateCart(price, quantity, id);
+      updateCart(price, quantity + 1, id);
     }, 2000);
     // alert(data + 1)
 } 
-// const decrement = () =>{
-//     if(data > 0){
-//         data = data - 1;
-//         // quantVal.innerText = data
-//         console.log(data);
-//         sumPrice = price * data;
 
-//         // totalPrice.innerHTML = `
-//         // ${sumPrice}
-//         // `;
-//     // totalCartItem.innerHTML = data;
-//         setTimeout(() => {
-//         updateCart();
-//       }, 2000);
-//     }else{
+const decrement = (price, quantity, id) =>{
+  console.log(`yes ${price}, ${quantity}, ${id}`);
+
+    if(quantity > 0){
+    totalCartItem.innerHTML = data;
+        setTimeout(() => {
+        updateCart(price, quantity - 1, id);
+      }, 2000);
+    }else{
         
-//     }
-// }
+    }
+}
 
 
-const renderCartItem = () => {
+// const renderCartItem = () => {
   cartDisplay.innerHTML = ""; // clear cart element
   newCart.map(el => {
   let dataCart = el.quantity;
-  function incremen(){
-    console.log('incrementing')
-  }
+
 
   // incremen();
     return cartDisplay.innerHTML += `
@@ -191,7 +179,7 @@ const renderCartItem = () => {
         <form>
 
           <div class="d-flex flex-row flex-wrap align-items-center quantity-button">
-            <button type="button" onclick="decrement()">-</button>
+            <button type="button" onclick="decrement(${el.price}, ${dataCart}, ${el.id})">-</button>
             <span class="quantity">${dataCart}</span>
             <button type="button" onclick="increment(${el.price}, ${dataCart}, ${el.id})">+</button>
         </div>
@@ -213,9 +201,9 @@ const renderCartItem = () => {
     `;
     
   })
-}
+// }
 
-renderCartItem();
+// renderCartItem();
 // cartDisplay.innerText =+ `
   
 // `;
@@ -241,7 +229,7 @@ const deleteProduct = (id) => {
                 })
                 .then(handleErrors)
                 .then(response => {
-                  console.log(response);
+                  // console.log(response);
 
                     Swal.fire({
                         icon: 'success',
@@ -255,7 +243,7 @@ const deleteProduct = (id) => {
                 });
                 console.log(updateFromDelete);
                 sessionStorage.setItem('cartItem', JSON.stringify(updateFromDelete));
-                renderCartItem();
+                // renderCartItem();
                 location.reload();
                 // setTimeout(() => {
                     // }, 1500);
@@ -316,60 +304,7 @@ const hideLoading = () => {
       getCartProduct();
 
 
-      // const updateCart = async () => {
-      //   displayLoading();
-
-      //   let price = JSON.stringify(cartItems.price);
-      //   let quantity = JSON.stringify(data);
-
-      //   let cartData = {
-      //       price,
-      //       quantity,
-      //   }
       
-      //   let cartBody = JSON.stringify(cartData);
-
-      // function handleErrors(response) {
-      //         if (!response.ok) {
-      //             throw Error(response.statusText);
-      //         }
-      //         return response;
-      //     }
-
-      //     try{
-      //       const response = await fetch(`${URL}/update-cart/${productID}`, {
-      //             method: 'POST',
-      //             headers: {
-      //                 'content-type': 'application/json'
-      //               },
-      //               body: JSON.stringify(cartData)
-      //         })
-      //         .then(handleErrors)
-      //         const data = await response.json();
-      //         console.log(data);
-      //         hideLoading();
-      //               Swal.fire({
-      //                   icon: 'success',
-      //                   title: 'Cart updated successfully!',
-      //                   showConfirmButton: false,
-      //                   timer: 2000,
-
-      //               })
-      //               setTimeout(() => {
-      //               }, 1500);
-      //     }catch(error){
-      //       console.log(error);
-      //       hideLoading();
-      //               Swal.fire({
-      //                   icon: 'error',
-      //                   title: 'Failed to update cart!',
-      //                   showConfirmButton: false,
-      //                   timer: 1500,
-
-      //               })
-      //     }
-      
-      // }
       // API INTEGRATION TO UPDATE CART
       const updateCart = async (price, quantity, id) =>{
         console.log(`updating ${price}, ${quantity}, ${id}`);
@@ -380,25 +315,28 @@ const hideLoading = () => {
         console.log(newCart);
 
                  price = JSON.stringify(price);
-                 quantity = JSON.stringify(quantity + 1);
+                 quantity = JSON.stringify(quantity);
 
         let cartData = {
             price,
             quantity,
         }
-       
-        let newUpdateCart = newCart.map(newC=>{
-          let itemNew = newCart.find(el=> el.id === id)
+        let itemNew = newCart.find(el=> el.id === id)
+        itemNew.quantity = quantity
         console.log(itemNew);
-        // itemNew.quantity = quantity
-          newC = itemNew 
-       return newC
 
-      });
-      console.log(newUpdateCart);
+      //   let newUpdateCart = newCart.map(newC=>{
+        
+      //   // itemNew.quantity = quantity
+      //     newC = itemNew 
+      //  return newC
+
+      // });
+      // console.log(newUpdateCart);
         // let cartBody = JSON.stringify(cartData);
 
-        console.log(cartData);
+        // console.log(cartData);
+        location.reload();
 
         function handleErrors(response) {
             if (!response.ok) {
