@@ -43,7 +43,7 @@
                 <img
                 src="{{ asset('customImages/buyIcon.png') }}"
                 />
-               CART <span class="total-items-in-cart">0</span>
+               CART <span class="total-items-in-cart"></span>
             </button>
         </li>
 {{-- </div>  --}}
@@ -180,7 +180,9 @@
 </body>
 
     <script type="text/javascript">
-   
+    let totalCartItem = document.querySelector('.total-items-in-cart');
+    let totalCartQuant = sessionStorage.getItem('totalCartItem') || 0;
+    totalCartItem.innerHTML = totalCartQuant;
    const loaderContainer = document.querySelector('.loader-container');
 
     function getId(id){

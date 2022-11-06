@@ -94,6 +94,8 @@
 </div>
 
 <script type="text/javascript">
+let cartItems =  JSON.parse(sessionStorage.getItem('cartItem') || '[]');
+// alert(cartItems);
 const productId = localStorage.getItem('productId');
 const URL= '{{ env('APP_URL') }}';
 const loaderContainer = document.querySelector('.loader-container');
@@ -103,26 +105,29 @@ const priceItem = document.querySelector('.main-price');
 // console.log(priceItem);
 const actualProductP = document.querySelector('.actual-price');
 const quantVal = document.querySelector('.quantity');
-console.log(quantVal);
+// console.log(quantVal);
 let totalCartItem = document.querySelector('.total-items-in-cart');
 totalCartItem.innerHTML = 0;
 
+let allProducts = sessionStorage.getItem('cartItem');
+// console.log(allProducts);
+
 let data = 0;
 quantVal.innerText = data;
-const increment = () =>{
-    data = data + 1;
-    quantVal.innerText = data;
-    // alert(data + 1)
-} 
-const decrement = () =>{
-    if(data > 0){
-        data = data - 1;
-        quantVal.innerText = data
-        console.log(data);
-    }else{
+// const increment = () =>{
+//     data = data + 1;
+//     quantVal.innerText = data;
+//     // alert(data + 1)
+// } 
+// const decrement = () =>{
+//     if(data > 0){
+//         data = data - 1;
+//         quantVal.innerText = data
+//         console.log(data);
+//     }else{
         
-    }
-}
+//     }
+// }
 
 
 const displayLoading = () => {
@@ -157,7 +162,7 @@ const hideLoading = () => {
               })
               .then(handleErrors)
               const data = await response.json();
-              console.log(data);
+            //   console.log(data);
               let productDetail = data.product
               let productName = productDetail.map(product => product.name);
             //   console.log(productName[0]);
@@ -210,9 +215,9 @@ const hideLoading = () => {
             displayLoading()
                 // alert(`product added to cart ${data},`)
                 const result = await dataPromise;
-                console.log(result.product[0]);
+                // console.log(result.product[0]);
                 let productPrice = result.product[0].productprices[0].product_price;
-                console.log(productPrice);
+                // console.log(productPrice);
 
                 let product_id = result.product[0].id
                 let name = result.product[0].name;
@@ -236,28 +241,28 @@ const hideLoading = () => {
             }
             return response;
         }
-        fetch(`${URL}/api/add-to-cart`, {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json',
-                    },
-                    body: JSON.stringify(cartData)
-                })
-                .then(handleErrors)
-                .then(response => {
-                    console.log(response);
-                    hideLoading();
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Product added to cart',
-                        showConfirmButton: false,
-                        timer: 2000,
-
+        try{
+           const response = await fetch(`${URL}/api/add-to-cart`, {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json',
+                        },
+                        body: JSON.stringify(cartData)
                     })
-                    setTimeout(() => {
-                    }, 1500);
-                })
-                .catch(error => {
+                    .then(handleErrors)
+                    const datal = await response.json();
+                    // console.log(response);
+                    // console.log(datal);
+                        hideLoading();
+                // window.location.href = "/cart"
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Product added to cart',
+                            showConfirmButton: false,
+                            timer: 2000,
+    
+                        })
+        }catch(error){
                     console.log(error, 'wrong')
                     hideLoading();
                     Swal.fire({
@@ -268,7 +273,7 @@ const hideLoading = () => {
 
                     })
 
-                });
+                };
             getCartProduct();
 
             
@@ -278,8 +283,6 @@ const hideLoading = () => {
         // GET CART ITEMS
         // API INTEGRATION TO GET A SINCLE SHOP PRODUCT
  const getCartProduct = async () => {
-    // alert(productId);
-    //   displayLoading();
     
           function handleErrors(response) {
               if (!response.ok) {
@@ -297,18 +300,28 @@ const hideLoading = () => {
               })
               .then(handleErrors)
               const data = await response.json();
-              console.log(data);
-              console.log(data.cartItems);
+            //   console.log(data);
+            //   console.log(data.cartItems);
               let cartItem = JSON.stringify(data);
-              console.log(cartItem);
+            //   console.log(cartItem);
               let newCart = JSON.parse(cartItem).cartItems[id=productId];
-              console.log(newCart);
-              localStorage.setItem('cartItem',JSON.stringify(newCart))
-            
+            //   console.log(newCart);
+            // console.log(cartItems);
+            if(newCart){
+                cartItems.push(newCart)
+                // console.log(cartItems);
+
+                sessionStorage.setItem('cartItem', JSON.stringify(cartItems))
+            }
+            let cartQuantity = cartItems.length;
+                console.log(cartQuantity);
+              
+            // alert('working');
             //   console.log(whatwewant);
              
-              totalCartItem.innerHTML = newCart.quantity;
-              quantVal.innerHTML = newCart.quantity
+              totalCartItem.innerHTML = cartQuantity;
+              quantVal.innerHTML = cartQuantity;
+              sessionStorage.setItem('totalCartItem', cartQuantity);
 
              
               return data;
@@ -320,6 +333,15 @@ const hideLoading = () => {
       }
 
             getCartProduct();
+            // window.addEventListener('load', (event) => {
+            //     if(sessionStorage.getItem("cartItem")){
+            //         let cart = sessionStorage.getItem('cartItem');
+            //         alert(cart);
+            //         sessionStorage.setItem(cart);
+            //     }
+
+            //     // alert('finish loading', JSON.stringify(cart));
+            // });
 </script>
 
 
