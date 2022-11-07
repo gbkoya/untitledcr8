@@ -134,7 +134,7 @@ const increment = (price, quantity, id) =>{
 const decrement = (price, quantity, id) =>{
   console.log(`yes ${price}, ${quantity}, ${id}`);
 
-    if(quantity > 0){
+    if(quantity > 1){
     totalCartItem.innerHTML = data;
         setTimeout(() => {
         updateCart(price, quantity - 1, id);
@@ -145,7 +145,7 @@ const decrement = (price, quantity, id) =>{
 }
 
 
-// const renderCartItem = () => {
+const renderCartItem = () => {
   cartDisplay.innerHTML = ""; // clear cart element
   newCart.map(el => {
   let dataCart = el.quantity;
@@ -199,9 +199,9 @@ const decrement = (price, quantity, id) =>{
     `;
     
   })
-// }
+}
 
-// renderCartItem();
+renderCartItem();
 // cartDisplay.innerText =+ `
   
 // `;
@@ -210,60 +210,28 @@ const decrement = (price, quantity, id) =>{
 const deleteProduct = (id) => {
   console.log(id);
         // displayLoading();
-      
-
-        function handleErrors(response) {
-            if (!response.ok) {
-                throw Error(response.statusText);
-            }
-            return response;
-        }
-        console.log(id);
-        fetch(`${URL}/api/remove-item/${id}`, {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json',
-                    },
-                })
-                .then(handleErrors)
-                .then(response => {
-                  // console.log(response);
-
-                    Swal.fire({
+  
+                  let updateFromDelete = cartItem.filter(newCa=>{
+                  return newCa.id !== id;
+                });
+                console.log(updateFromDelete);
+                sessionStorage.setItem('cartItem', JSON.stringify(updateFromDelete));
+                renderCartItem();
+                Swal.fire({
                         icon: 'success',
                         title: 'Product deleted successfully',
                         showConfirmButton: false,
                         timer: 2000,
 
                     })
-                    let updateFromDelete = newCart.filter(newCa=>{
-                  return newCa.id !== id;
-                });
-                console.log(updateFromDelete);
-                sessionStorage.setItem('cartItem', JSON.stringify(updateFromDelete));
-                // renderCartItem();
                 location.reload();
-                // setTimeout(() => {
-                    // }, 1500);
-                })
-                .catch(error => {
-                    console.log(error, 'wrong')
-                    hideLoading();
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Failed to delete product!',
-                        showConfirmButton: false,
-                        timer: 1500,
-
-                    })
-
-                });
            
 }
 
 // const deleteProduct = (id) =>{
 // console.log(id);
 // }
+
 const displayLoading = () => {
       loaderContainer.style.display = 'block';
       };
@@ -320,22 +288,10 @@ const hideLoading = () => {
             price,
             quantity,
         }
-        let itemNew = newCart.find(el=> el.id === id)
+        let itemNew = cartItem.find(el=> el.id === id)
         itemNew.quantity = quantity
-        // console.log(itemNew);
-
-      //   let newUpdateCart = newCart.map(newC=>{
-        
-      //   // itemNew.quantity = quantity
-      //     newC = itemNew 
-      //  return newC
-
-      // });
-      // console.log(newUpdateCart);
-        // let cartBody = JSON.stringify(cartData);
-
-        // console.log(cartData);
-        // location.reload();
+        sessionStorage.setItem('cartItem', JSON.stringify(newCart));
+        renderCartItem();
 
                     hideLoading();
                     Swal.fire({

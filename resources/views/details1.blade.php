@@ -225,8 +225,11 @@ const hideLoading = () => {
                 let name = result.product[0].name;
                 let price = JSON.stringify(productPrice);
                 let quantity = JSON.stringify(1);
-                let quantityP =  ++quantity
-                let quantityTwo = JSON.stringify(quantityP);
+                let quantN = cartItems.find(elemee => elemee.id === product_id);
+                // let quantO = quantN.quantity;
+                // console.log(quantO);
+                // let quantityP =  ++quantO
+                // let quantityTwo = JSON.stringify(quantityP);
                 console.log(cartItems);
                 console.log(result);
                  // check if prodcut already exist in cart
@@ -235,8 +238,9 @@ const hideLoading = () => {
                         return element.id !== product_id
                     });
                     console.log(identifiedItem);
+                 
                     
-                  let newQuantity = changeNumberOfUnits(quantityTwo, product_id);
+                  let newQuantity = changeNumberOfUnits(++quantN.quantity, product_id);
                   console.log(newQuantity); 
                   let newCartItems = [...identifiedItem, newQuantity]
                   console.log(newCartItems);
@@ -245,25 +249,23 @@ const hideLoading = () => {
                 } else {
                     const item = {id: product_id, name: name, price: productPrice};
                     console.log(item);
+                    console.log(quantity);
                     cartItems.push({
                     ...item,
-                    quantity: quantity,
+                    quantity: quantity
                     });
                 sessionStorage.setItem('cartItem', JSON.stringify(cartItems));
 
-                // Get total quantity
-                let cartQuantity = cartItems.length;
-                console.log(cartQuantity);
-              
-            // alert('working');
-            //   console.log(whatwewant);
-             
-              totalCartItem.innerHTML = cartQuantity;
-              quantVal.innerHTML = cartQuantity;
-              sessionStorage.setItem('totalCartItem', cartQuantity);
-
                 }
                 hideLoading();
+                //  GET THE TOTAL QUANTITY OF ITEMS IN THE CART
+                let cartQuantity = cartItems.reduce(
+                    (sum,eve)=>sum+Number(eve.quantity),0
+                );
+                console.log(cartQuantity);
+                totalCartItem.innerHTML = cartQuantity;
+                quantVal.innerHTML = cartQuantity;
+                sessionStorage.setItem('totalCartItem', cartQuantity);
                 // window.location.href = "/cart"
                         Swal.fire({
                             icon: 'success',
