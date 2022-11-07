@@ -45,7 +45,8 @@ class ProductController extends Controller
                     'productimages' => function ($query) {
                         $query->select('id', 'imagedirectory', 'product_id');
                     }
-                ))->select('name', 'quantityinstock', 'status', 'productcategory_id', 'id')->paginate(18);
+                // ))->select('name', 'quantityinstock', 'status', 'productcategory_id', 'id')->paginate(18);
+                ))->select('name', 'quantityinstock', 'status', 'id')->paginate(18);
 
 
             // $products = Product::latest()->paginate(12);
@@ -104,7 +105,8 @@ class ProductController extends Controller
                     'productimages' => function ($query) use ($id) {
                         $query->select('id', 'imagedirectory', 'product_id');
                     }
-                ))->select('name', 'quantityinstock', 'status', 'productcategory_id', 'id')->get();
+                // ))->select('name', 'quantityinstock', 'status', 'productcategory_id', 'id')->get();
+                ))->select('name', 'quantityinstock', 'status', 'id')->get();
 
             return response()->json([
                 'status' => true,
@@ -229,6 +231,8 @@ class ProductController extends Controller
                     'name'              => 'required',
                     // 'imagedirectory'   => 'image|nullable|max:5120',
                     'product_price'     => 'required',
+                    'cat_select'        => 'required',
+                    'cat_name'          => 'required'
                 ]
             );
 
@@ -250,8 +254,25 @@ class ProductController extends Controller
             $product = new Product();
             $product->name              = $request->name;
             $product->quantityinstock   = $request->quantityinstock;
-            $product->productcategory_id = $request->productcategory_id;
-            $product->status            = $status;
+            switch ($request->cat_select) {
+                case 'gendercategory':
+                    $product->gender_categories_id = $request->cat_name;
+                    break;
+                case 'shapecategory':
+                    $product->shape_categories_id = $request->cat_name;
+                    break;
+                case 'colorcategory':
+                    $product->color_categories_id = $request->cat_name;
+                    break;
+                case 'sizecategory':
+                    $product->size_categories_id = $request->cat_name;
+                    break;
+                case 'glasscategory':
+                    $product->glass_categories_id = $request->cat_name;
+                    break;
+            }
+            // $product->productcategory_id    = $request->productcategory_id;
+            $product->status                = $status;
             $product->save();
 
             $product->productprices()->create([
@@ -265,7 +286,6 @@ class ProductController extends Controller
 
             $file = $request->file('imagedirectory');
             foreach ($file as $key => $value) {
-                \Log::info('Value');
                 // \Log::info('Client name: <br>' . $value->getClientOriginalName());
 
                 if ($request->hasFile('imagedirectory')) {
