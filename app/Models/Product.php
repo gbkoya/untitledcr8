@@ -13,8 +13,25 @@ class Product extends Model
         'productcategory_id', 'name', 'quantityinstock', 'status'
     ];
 
-    public function productcategory() {
-        return $this->belongsTo(Productcategory::class);
+    // public function productcategory() {
+    //     return $this->belongsTo(Productcategory::class);
+    // }
+
+    // New product categories below
+    public function gendercategory() {
+        return $this->belongsTo(GenderCategory::class);
+    }
+    public function shapecategory() {
+        return $this->belongsTo(ShapeCategory::class);
+    }
+    public function colorcategory() {
+        return $this->belongsTo(ColorCategory::class);
+    }
+    public function sizecategory() {
+        return $this->belongsTo(SizeCategory::class);
+    }
+    public function glasscategory() {
+        return $this->belongsTo(GlassCategory::class);
     }
 
     public function productimages() {
