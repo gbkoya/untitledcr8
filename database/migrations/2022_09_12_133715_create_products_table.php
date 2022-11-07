@@ -18,7 +18,11 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->integer('quantityinstock')->nullable();
             $table->enum('status', array('available', 'unavailable'));
-            $table->foreignId('productcategory_id')->constrained()->onDelete('cascade');
+            $table->foreignId('gender_categories_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('shape_categories_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('color_categories_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('size_categories_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('glass_categories_id')->nullable()->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
