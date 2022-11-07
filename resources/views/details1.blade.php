@@ -107,12 +107,13 @@ const actualProductP = document.querySelector('.actual-price');
 const quantVal = document.querySelector('.quantity');
 // console.log(quantVal);
 let totalCartItem = document.querySelector('.total-items-in-cart');
-totalCartItem.innerHTML = 0;
+cartTot = sessionStorage.getItem('totalCartItem') || 0
+totalCartItem.innerHTML = cartTot;
 
 let allProducts = sessionStorage.getItem('cartItem');
 // console.log(allProducts);
 
-let data = 0;
+let data = sessionStorage.getItem('totalCartItem') || 0;
 quantVal.innerText = data;
 // const increment = () =>{
 //     data = data + 1;
@@ -211,49 +212,58 @@ const hideLoading = () => {
 
      
     // API integration to add to cart
-        const addToCart = async () =>{
+        const addToCart = async (id) =>{
             displayLoading()
                 // alert(`product added to cart ${data},`)
                 const result = await dataPromise;
-                // console.log(result.product[0]);
+                console.log(result.product[0]);
                 let productPrice = result.product[0].productprices[0].product_price;
-                // console.log(productPrice);
+                console.log(productPrice);
 
                 let product_id = result.product[0].id
+                console.log(product_id);
                 let name = result.product[0].name;
                 let price = JSON.stringify(productPrice);
                 let quantity = JSON.stringify(1);
+                let quantityP =  ++quantity
+                let quantityTwo = JSON.stringify(quantityP);
+                console.log(cartItems);
+                console.log(result);
+                 // check if prodcut already exist in cart
+                if (cartItems.some((item) => item.id === product_id)) {
+                    let identifiedItem = cartItems.filter(element=>{
+                        return element.id !== product_id
+                    });
+                    console.log(identifiedItem);
+                    
+                  let newQuantity = changeNumberOfUnits(quantityTwo, product_id);
+                  console.log(newQuantity); 
+                  let newCartItems = [...identifiedItem, newQuantity]
+                  console.log(newCartItems);
+                  sessionStorage.setItem('cartItem', JSON.stringify(newCartItems));
+                console.log('item already exits');
+                } else {
+                    const item = {id: product_id, name: name, price: productPrice};
+                    console.log(item);
+                    cartItems.push({
+                    ...item,
+                    quantity: quantity,
+                    });
+                sessionStorage.setItem('cartItem', JSON.stringify(cartItems));
 
-        let cartData = {
-            product_id,
-            name,
-            price,
-            quantity,
-        }
-      
-        // let cartBody = JSON.stringify(cartData);
+                // Get total quantity
+                let cartQuantity = cartItems.length;
+                console.log(cartQuantity);
+              
+            // alert('working');
+            //   console.log(whatwewant);
+             
+              totalCartItem.innerHTML = cartQuantity;
+              quantVal.innerHTML = cartQuantity;
+              sessionStorage.setItem('totalCartItem', cartQuantity);
 
-        // console.log(cartBody);
-
-        function handleErrors(response) {
-            if (!response.ok) {
-                throw Error(response.statusText);
-            }
-            return response;
-        }
-        try{
-           const response = await fetch(`${URL}/api/add-to-cart`, {
-                        method: 'POST',
-                        headers: {
-                            'content-type': 'application/json',
-                        },
-                        body: JSON.stringify(cartData)
-                    })
-                    .then(handleErrors)
-                    const datal = await response.json();
-                    // console.log(response);
-                    // console.log(datal);
-                        hideLoading();
+                }
+                hideLoading();
                 // window.location.href = "/cart"
                         Swal.fire({
                             icon: 'success',
@@ -262,21 +272,15 @@ const hideLoading = () => {
                             timer: 2000,
     
                         })
-        }catch(error){
-                    console.log(error, 'wrong')
-                    hideLoading();
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Failed to add product!',
-                        showConfirmButton: false,
-                        timer: 1500,
-
-                    })
-
-                };
-            getCartProduct();
-
             
+            }
+
+            // CHANGE QUANTITY
+            const changeNumberOfUnits = (quantity, id) =>{
+                let cartNew = cartItems.find(ele=>ele.id === id);
+                        cartNew.quantity = quantity;
+                // console.log(cartNew);
+                return cartNew;
             }
 
 
@@ -307,22 +311,13 @@ const hideLoading = () => {
               let newCart = JSON.parse(cartItem).cartItems[id=productId];
             //   console.log(newCart);
             // console.log(cartItems);
-            if(newCart){
-                cartItems.push(newCart)
-                // console.log(cartItems);
+            // if(newCart){
+            //     cartItems.push(newCart)
+            //     // console.log(cartItems);
 
-                sessionStorage.setItem('cartItem', JSON.stringify(cartItems))
-            }
-            let cartQuantity = cartItems.length;
-                console.log(cartQuantity);
-              
-            // alert('working');
-            //   console.log(whatwewant);
-             
-              totalCartItem.innerHTML = cartQuantity;
-              quantVal.innerHTML = cartQuantity;
-              sessionStorage.setItem('totalCartItem', cartQuantity);
-
+            //     sessionStorage.setItem('cartItem', JSON.stringify(cartItems))
+            // }
+            
              
               return data;
         } catch(error){
