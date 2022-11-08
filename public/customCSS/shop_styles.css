@@ -337,8 +337,6 @@
     color: #000000;    
 }
 
-.nav-but{}
-
 /* .nav-pill-head-wrapper{
     width: 90%!important;
 } */
@@ -607,6 +605,73 @@
   .activeLink{
     color: #fff!important;
     background: #F58634!important;
+  }
+
+  .left_product {
+    width: 20%;
+    background: rgba(217, 217, 217, 0.3);
+    padding: .5rem;
+  }
+
+  .right_product{
+    width: 80%;
+  }
+
+  .hide_filter{
+    cursor: pointer;
+  }
+
+  .hide_filter h2{
+    font-size: 1.6rem;
+    font-family: 600;
+  }
+
+  .img-arrow{
+    cursor: pointer;
+  }
+
+  .colours_wrapper--left{
+    cursor: pointer;
+  }
+
+  .closeSideNav {
+    width: 0;
+    transition: .5s;
+    overflow-x: hidden;
+    padding: unset;
+  }
+
+  .openSideNav{
+    width: 20%!important;
+    transition: .5s;
+  }
+
+  #show_filter{
+    cursor: pointer;
+    /* margin-top: .8rem; */
+    margin-left: 2%;
+    display: none;
+  }
+
+  .category_heading{
+    max-width: 50rem;
+  }
+
+  .shop_display{
+    padding-left: 1rem;
+    margin-top: 2rem;
+  }
+
+  .toggleIcon{
+    /* max-width: 20rem; */
+  }
+
+  .hide_close{
+    margin-left: .5rem;
+  }
+
+  .accordion-button{
+    font-weight: 600!important;
   }
 /* END OF SHOP MEN STYLES */
 

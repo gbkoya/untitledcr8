@@ -88,103 +88,231 @@
         <div class="sort-wrapper d-flex flex-row flex-wrap align-items-center justify-content-evenly">
             <label for="">Sort by:</label>
             <select name="sort">
-                <option value="popularity">Popularity</option>
-                <option value="popularity">eye curvature</option>
+                <option value="popularity">Relevance</option>
+                <option value="popularity">New Arrivals</option>
+                <option value="popularity">Best Sellers</option>
+                <option value="popularity">Top Rated</option>
+                <option value="popularity">New Arrivals</option>
+                <option value="popularity">On Sale</option>
             </select>
         </div>
     </header>
 </section>
 
 {{-- The tabs pills nav --}}
-<div class="eb-tab">
-    <ul class="nav nav-pills nav-pill-head-wrapper mb-3 d-md-flex justify-content-center align-items-center" id="pills-tab" role="tablist">
-        <li class="nav-item nav-but" role="presentation">
-          <button class="nav-link pill-button active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Men</button>
-        </li>
-        <li class="nav-item nav-but" role="presentation">
-          <button class="nav-link pill-button" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Women</button>
-        </li>
-        <li class="nav-item nav-but" role="presentation">
-          <button class="nav-link pill-button" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Kids</button>
-        </li>
-      </ul>
-
-
-      <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane card-paginat fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-            <div class="d-flex flex-row flex-wrap justify-content-evenly productsData" id="paginated-list" data-current-page="1" aria-live="polite">
-               
+<section class="d-flex -flex-row flex-wrap justify-content-evenly shop_display">
+    <div class="left_product">
+        <header class="hide_filter d-flex flex-row justify-content-between align-items-baseline">
+            <h2>Filters</h2>
+            <div id="hide_close" class="d-flex flex-row align-items-baseline justify-content-evenly toggleIcon">
+                <img class="img-fluid" src="{{asset('customImages/toggle-icon.png')}}" alt="toggle icon">
+                <p class="hide_close">Hide filters</p>
             </div>
-            {{-- Paginated button --}}
-            {{-- <div class="d-flex flex-row flex-wrap justify-content-evenly pagination-button-wrapper">
-                <button class="paginated-first-button" type="button">
-                    1
-                </button>
-                <button class="paginated-first-button" type="button">
-                    2
-                </button>
-                <button class="paginated-first-button second" type="button">
-                    3
-                </button>
-                <button class="paginated-first-button second" type="button">
-                    4
-                </button>
-                ...
-                <button class="paginated-first-button second" type="button">
-                    10
-                </button>
-                <button class="paginated-first-button second" type="button">
-                    Next
-                </button>
-            </div> --}}
-  
+        </header>
+        {{-- <hr>
+        <div class="d-flex flex-row justify-content-between">
+            <h6>Color</h6>
+           <div class="img-arrow"> <img class="img-fluid" src="{{asset('customImages/arrow-down1.png')}}" alt="Arrow down"></div>
         </div>
-
-        {{-- Women content here --}}
-        <div class="tab-pane fade card-paginat" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-            <div class="d-flex flex-row flex-wrap justify-content-evenly productsDataWomen" id="paginated-listWomen">
-               
-            </div> 
-        </div>
-
-        {{-- Kids content here --}}
-        <div class="tab-pane fade card-paginat" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-            <div class="d-flex flex-row flex-wrap justify-content-evenly productsDatakids" id="paginated-listKids">
+        <section class="colours_wrapper d-flex flex-row justify-content-evenly">
+            <div class="colours_wrapper--left">
+                <p>Blue</p>
+                <p>Red</p>
             </div>
-        </div>
+            <div class="colours_wrapper--right">
+                <p>Orange</p>
+                <p>Purple</p>
 
-        {{-- PAGINATION HERE --}}
-        {{-- <nav aria-label="Page navigation example">
+            </div>
+
+
+           </section>
+        <hr> --}}
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Color
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <section class="colours_wrapper d-flex flex-row justify-content-evenly">
+                        <div class="colours_wrapper--left">
+                            <p>Blue</p>
+                            <p>Red</p>
+                        </div>
+                        <div class="colours_wrapper--right">
+                            <p>Orange</p>
+                            <p>Purple</p>
             
-	<div class="nav-btn-container">
-		<button class="prev-btn">Prev</button>
-        <ul>
-
-        </ul>
-		<button class="next-btn">Next</button>
-	</div>
-    </nav> --}}
-    <div class="container-fluid d-flex flex-sm-row justify-content-center">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <li class="page-item nav-link-pagina prev-btn" ><a class="page-link">Previous</a></li>
-          
-              <li class="page-item  nav-link-pagina next-btn" style="margin-left: .5rem"><a class="page-link">Next</a></li>
-            </ul>
-          </nav>
-        </div>
+                        </div>
+                       </section>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Face Shape
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <section class="colours_wrapper d-flex flex-row justify-content-evenly">
+                        <div class="colours_wrapper--left">
+                            <p>Oval</p>
+                            <p>Round</p>
+                        </div>
+                        <div class="colours_wrapper--right">
+                            <p>Square</p>
+                            <p>Triangle</p>
+            
+                        </div>
+            
+            
+                       </section>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Gender
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <section class="colours_wrapper d-flex flex-row justify-content-evenly">
+                        <div class="colours_wrapper--left">
+                            <p>Male</p>
+                        </div>
+                        <div class="colours_wrapper--right">
+                            <p>Female</p>            
+                        </div>
+            
+            
+                       </section>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
-       
-</div>
+    <div class="eb-tab right_product">
+        <div class="d-flex flex-row align-items-center justify-content-evenly category_heading">
+            <p id="show_filter">Show filters</p>
+            <ul class="nav nav-pills nav-pill-head-wrapper mb-3 d-md-flex justify-content-center align-items-center" id="pills-tab" role="tablist">
+                <li class="nav-item nav-but" role="presentation">
+                  <button class="nav-link pill-button active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Men</button>
+                </li>
+                <li class="nav-item nav-but" role="presentation">
+                  <button class="nav-link pill-button" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Women</button>
+                </li>
+                <li class="nav-item nav-but" role="presentation">
+                  <button class="nav-link pill-button" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Kids</button>
+                </li>
+              </ul>
+            
+        </div>
+    
+    
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane card-paginat fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="d-flex flex-row flex-wrap justify-content-evenly productsData" id="paginated-list" data-current-page="1" aria-live="polite">
+                   
+                </div>
+                {{-- Paginated button --}}
+                {{-- <div class="d-flex flex-row flex-wrap justify-content-evenly pagination-button-wrapper">
+                    <button class="paginated-first-button" type="button">
+                        1
+                    </button>
+                    <button class="paginated-first-button" type="button">
+                        2
+                    </button>
+                    <button class="paginated-first-button second" type="button">
+                        3
+                    </button>
+                    <button class="paginated-first-button second" type="button">
+                        4
+                    </button>
+                    ...
+                    <button class="paginated-first-button second" type="button">
+                        10
+                    </button>
+                    <button class="paginated-first-button second" type="button">
+                        Next
+                    </button>
+                </div> --}}
+      
+            </div>
+    
+            {{-- Women content here --}}
+            <div class="tab-pane fade card-paginat" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="d-flex flex-row flex-wrap justify-content-evenly productsDataWomen" id="paginated-listWomen">
+                   
+                </div> 
+            </div>
+    
+            {{-- Kids content here --}}
+            <div class="tab-pane fade card-paginat" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <div class="d-flex flex-row flex-wrap justify-content-evenly productsDatakids" id="paginated-listKids">
+                </div>
+            </div>
+    
+            {{-- PAGINATION HERE --}}
+            {{-- <nav aria-label="Page navigation example">
+                
+        <div class="nav-btn-container">
+            <button class="prev-btn">Prev</button>
+            <ul>
+    
+            </ul>
+            <button class="next-btn">Next</button>
+        </div>
+        </nav> --}}
+        <div class="container-fluid d-flex flex-sm-row justify-content-center">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item nav-link-pagina prev-btn" ><a class="page-link">Previous</a></li>
+              
+                  <li class="page-item  nav-link-pagina next-btn" style="margin-left: .5rem"><a class="page-link">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+        </div>
+           
+    </div>
+</section>
 
 </body>
 
     <script type="text/javascript">
+    let toggleClose = document.getElementById('hide_close');
+    let leftSide = document.querySelector('.left_product');
+    let toggleOpen = document.getElementById('show_filter');
     let totalCartItem = document.querySelector('.total-items-in-cart');
     let totalCartQuant = sessionStorage.getItem('totalCartItem') || 0;
     totalCartItem.innerHTML = totalCartQuant;
    const loaderContainer = document.querySelector('.loader-container');
 
+        // LOGIC TO TOGGLE OPEN AND CLOSE THE LEFT FILTER
+        const triggerSide = () => {
+            leftSide.classList.add('closeSideNav');
+            toggleOpen.style.display = 'block';
+            leftSide.classList.remove('openSideNav');
+
+        }
+        toggleClose.addEventListener('click', triggerSide);
+
+        const triggerSideClose = () =>{
+            leftSide.classList.add('openSideNav');
+            toggleOpen.style.display = 'none';
+            leftSide.classList.remove('closeSideNav');
+
+        }
+        toggleOpen.addEventListener('click', triggerSideClose);
+
+     
     function getId(id){
         localStorage.setItem('productId', id);
         window.location.href = "/details"
@@ -204,7 +332,7 @@
         $(function(){
     // Declare some global variables
         let page = 1,
-		pagelimit = 12,
+		pagelimit = 18,
 		totalrecord = 0;
         const baseURL= '{{ env('APP_URL') }}'
       displayLoading();
