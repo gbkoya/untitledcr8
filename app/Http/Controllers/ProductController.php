@@ -35,18 +35,26 @@ class ProductController extends Controller
     {
         try {
 
-            $products = Product::with(array(
-                    'productprices' => function ($query) {
-                        $query->select('id', 'product_price', 'product_id');
-                    },
-                    'productfeatures' => function ($query) {
-                        $query->select('id', 'features', 'product_id');
-                    },
-                    'productimages' => function ($query) {
-                        $query->select('id', 'imagedirectory', 'product_id');
-                    }
-                // ))->select('name', 'quantityinstock', 'status', 'productcategory_id', 'id')->paginate(18);
-                ))->select('name', 'quantityinstock', 'status', 'id')->paginate(18);
+            $products = Product::
+            with('gendercategory', 'shapecategory',
+                'colorcategory', 'sizecategory', 'glasscategory')
+            ->with(array(
+                'productprices' => function ($query) {
+                    $query->select('product_price', 'product_id');
+                },
+                'productfeatures' => function ($query) {
+                    $query->select('features', 'product_id');
+                },
+                'productimages' => function ($query) {
+                    $query->select('imagedirectory', 'product_id');
+                }
+            ))
+            ->select('id', 'name', 'quantityinstock', 'status',
+                    'gender_categories_id', 'size_categories_id', 'shape_categories_id',
+                    'color_categories_id', 'glass_categories_id')
+            ->paginate(18);
+            // ))->select('name', 'quantityinstock', 'status', 'id')->paginate(18);
+            // ->paginate(12);
 
 
             // $products = Product::latest()->paginate(12);
@@ -105,7 +113,7 @@ class ProductController extends Controller
                     'productimages' => function ($query) use ($id) {
                         $query->select('id', 'imagedirectory', 'product_id');
                     }
-                // ))->select('name', 'quantityinstock', 'status', 'productcategory_id', 'id')->get();
+                    // ))->select('name', 'quantityinstock', 'status', 'productcategory_id', 'id')->get();
                 ))->select('name', 'quantityinstock', 'status', 'id')->get();
 
             return response()->json([
