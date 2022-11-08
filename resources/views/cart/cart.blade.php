@@ -70,8 +70,8 @@ landscape.')
         </button>
       </div>
       <div class=" py-3  pb-5">
-        <button class="small-mobile-long-button small-screen-font" style="background: #F58634;border-radius: 4.67259px;font-weight: 700;font-size: 18.6904px;
-                line-height: 140%;color: #ffffff; padding: 0.8em 3em; float:right; border:none">Checkout
+        <button onclick="saveCartDB()" class="small-mobile-long-button small-screen-font" style="background: #F58634;border-radius: 4.67259px;font-weight: 700;font-size: 18.6904px;
+                line-height: 140%;color: #ffffff; cursor: pointer; padding: 0.8em 3em; float:right; border:none">Checkout
 
         </button>
       </div>
@@ -113,9 +113,7 @@ let totalPrice = document.querySelector('.total-price');
 totalCartItem.innerHTML = totalCartQuant
 
 
-const incrementQuant = (quantity) => {
-  quantity + 1
-}
+
 // quantVal.innerText = data;
 const increment = (price, quantity, id) =>{
   console.log(`yes ${price}, ${quantity}, ${id}`);
@@ -136,7 +134,7 @@ const increment = (price, quantity, id) =>{
 const decrement = (price, quantity, id) =>{
   console.log(`yes ${price}, ${quantity}, ${id}`);
 
-    if(quantity > 0){
+    if(quantity > 1){
     totalCartItem.innerHTML = data;
         setTimeout(() => {
         updateCart(price, quantity - 1, id);
@@ -147,7 +145,7 @@ const decrement = (price, quantity, id) =>{
 }
 
 
-// const renderCartItem = () => {
+const renderCartItem = () => {
   cartDisplay.innerHTML = ""; // clear cart element
   newCart.map(el => {
   let dataCart = el.quantity;
@@ -201,9 +199,9 @@ const decrement = (price, quantity, id) =>{
     `;
     
   })
-// }
+}
 
-// renderCartItem();
+renderCartItem();
 // cartDisplay.innerText =+ `
   
 // `;
@@ -212,60 +210,28 @@ const decrement = (price, quantity, id) =>{
 const deleteProduct = (id) => {
   console.log(id);
         // displayLoading();
-      
-
-        function handleErrors(response) {
-            if (!response.ok) {
-                throw Error(response.statusText);
-            }
-            return response;
-        }
-        console.log(id);
-        fetch(`${URL}/api/remove-item/${id}`, {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json',
-                    },
-                })
-                .then(handleErrors)
-                .then(response => {
-                  // console.log(response);
-
-                    Swal.fire({
+  
+                  let updateFromDelete = cartItem.filter(newCa=>{
+                  return newCa.id !== id;
+                });
+                console.log(updateFromDelete);
+                sessionStorage.setItem('cartItem', JSON.stringify(updateFromDelete));
+                renderCartItem();
+                Swal.fire({
                         icon: 'success',
                         title: 'Product deleted successfully',
                         showConfirmButton: false,
                         timer: 2000,
 
                     })
-                    let updateFromDelete = newCart.filter(newCa=>{
-                  return newCa.id !== id;
-                });
-                console.log(updateFromDelete);
-                sessionStorage.setItem('cartItem', JSON.stringify(updateFromDelete));
-                // renderCartItem();
                 location.reload();
-                // setTimeout(() => {
-                    // }, 1500);
-                })
-                .catch(error => {
-                    console.log(error, 'wrong')
-                    hideLoading();
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Failed to delete product!',
-                        showConfirmButton: false,
-                        timer: 1500,
-
-                    })
-
-                });
            
 }
 
 // const deleteProduct = (id) =>{
 // console.log(id);
 // }
+
 const displayLoading = () => {
       loaderContainer.style.display = 'block';
       };
@@ -313,6 +279,7 @@ const hideLoading = () => {
         // alert(data);
                 // alert(`product added to cart ${data},`)
         console.log(newCart);
+        sessionStorage.setItem('cartItem', JSON.stringify(newCart));
 
                  price = JSON.stringify(price);
                  quantity = JSON.stringify(quantity);
@@ -321,41 +288,11 @@ const hideLoading = () => {
             price,
             quantity,
         }
-        let itemNew = newCart.find(el=> el.id === id)
+        let itemNew = cartItem.find(el=> el.id === id)
         itemNew.quantity = quantity
-        console.log(itemNew);
+        sessionStorage.setItem('cartItem', JSON.stringify(newCart));
+        renderCartItem();
 
-      //   let newUpdateCart = newCart.map(newC=>{
-        
-      //   // itemNew.quantity = quantity
-      //     newC = itemNew 
-      //  return newC
-
-      // });
-      // console.log(newUpdateCart);
-        // let cartBody = JSON.stringify(cartData);
-
-        // console.log(cartData);
-        location.reload();
-
-        function handleErrors(response) {
-            if (!response.ok) {
-                throw Error(response.statusText);
-            }
-            return response;
-        }
-        console.log(id);
-        fetch(`${URL}/api/update-cart/${id}`, {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json',
-                    },
-                    body: JSON.stringify(cartData)
-                })
-                .then(handleErrors)
-                .then(response => {
-                  console.log(response);
-                  getCartProduct();
                     hideLoading();
                     Swal.fire({
                         icon: 'success',
@@ -364,22 +301,62 @@ const hideLoading = () => {
                         timer: 2000,
 
                     })
-                    setTimeout(() => {
-                    }, 1500);
-                })
-                .catch(error => {
+
+      }
+
+
+      // API integration to save cart data to the database
+      const saveCartDB = async () =>{
+       if(!localStorage.getItem('token')){
+        window.location.href = "/login"
+       }else{
+        console.log(cartItem);
+            displayLoading()
+                // alert(`product added to cart ${data},`)
+           
+        function handleErrors(response) {
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+            return response;
+        }
+        try{
+           const response = await fetch(`${URL}/api/cart-save`, {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json',
+                             'Accept': 'application/json',
+                            'Authorization': 'Bearer ' + localStorage.getItem('token')
+                        },
+                        body: cartItem
+                    })
+                    .then(handleErrors)
+                    const datal = await response
+                    // console.log(response);
+                    console.log(datal);
+                        hideLoading();
+                // window.location.href = "/cart"
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Cart saved to the database!',
+                            showConfirmButton: false,
+                            timer: 2000,
+    
+                        })
+        }catch(error){
                     console.log(error, 'wrong')
                     hideLoading();
                     Swal.fire({
                         icon: 'error',
-                        title: 'Failed to update cart!',
+                        title: 'Failed to save cart!',
                         showConfirmButton: false,
                         timer: 1500,
 
                     })
 
-                });
-      }
+                };
+              }
+            }
 
     
 </script>
