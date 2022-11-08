@@ -19,19 +19,19 @@ class Product extends Model
 
     // New product categories below
     public function gendercategory() {
-        return $this->belongsTo(GenderCategory::class);
+        return $this->belongsTo(GenderCategory::class, 'gender_categories_id');
     }
     public function shapecategory() {
-        return $this->belongsTo(ShapeCategory::class);
+        return $this->belongsTo(ShapeCategory::class, 'shape_categories_id');
     }
     public function colorcategory() {
-        return $this->belongsTo(ColorCategory::class);
+        return $this->belongsTo(ColorCategory::class, 'color_categories_id');
     }
     public function sizecategory() {
-        return $this->belongsTo(SizeCategory::class);
+        return $this->belongsTo(SizeCategory::class, 'size_categories_id');
     }
     public function glasscategory() {
-        return $this->belongsTo(GlassCategory::class);
+        return $this->belongsTo(GlassCategory::class, 'glass_categories_id');
     }
 
     public function productimages() {

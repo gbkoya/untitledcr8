@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ProductCrud;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+
+Route::get('admin/product-index', [ProductCrud::class, 'productIndex'])  ->name('productIndex');
 
 Route::get('/about', function () {
     return view('about');
