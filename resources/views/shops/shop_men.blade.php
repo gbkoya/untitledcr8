@@ -332,7 +332,7 @@
         $(function(){
     // Declare some global variables
         let page = 1,
-		pagelimit = 12,
+		pagelimit = 18,
 		totalrecord = 0;
         const baseURL= '{{ env('APP_URL') }}'
       displayLoading();
