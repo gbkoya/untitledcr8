@@ -341,8 +341,11 @@ const hideLoading = () => {
                             title: 'Cart saved to the database!',
                             showConfirmButton: false,
                             timer: 2000,
-    
                         })
+                        setTimeout(() => {
+                          window.location.href = "/checkout1"
+                        }, 1000);
+
         }catch(error){
                     console.log(error, 'wrong')
                     hideLoading();
