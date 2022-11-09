@@ -327,8 +327,8 @@
           loaderContainer.style.display = 'none';
       };
    
-      const filterColor = () =>{
-                        alert('my color')
+      const filterColor = (id) =>{
+                        alert(id)
                     } 
 
         // USING JQUERY AND AJAX
@@ -397,7 +397,7 @@
                     color_category.map(element =>{
                         return colorItems.innerHTML += `
                         <div class="colours_wrapper--left">
-                            <div onclick="filterColor()" class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
+                            <div onclick="filterColor( ${element.id})" class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
                             <i class="fa fa-square fa-lg" style="color: ${element.color}; "></i>
                                 <p>${element.color}</p>
                             </div>
