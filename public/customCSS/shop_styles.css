@@ -437,6 +437,13 @@
         text-align: center;
         font-weight: 600;
     }
+
+    .shop_display{
+        padding: .5rem!important;
+    }
+    .left_product{
+        width: 100%!important;
+    }
 }
 
 /* Ipad screen */
@@ -630,9 +637,16 @@
     cursor: pointer;
   }
 
-  .colours_wrapper--left{
+  .colours_wrapper--left .color_container{
     cursor: pointer;
   }
+
+  .colours_wrapper--left .color_container p{
+    margin-left: .5rem;
+  }
+  
+  .color_container{}
+ 
 
   .closeSideNav {
     width: 0;
@@ -673,6 +687,8 @@
   .accordion-button{
     font-weight: 600!important;
   }
+
+ 
 /* END OF SHOP MEN STYLES */
 
 

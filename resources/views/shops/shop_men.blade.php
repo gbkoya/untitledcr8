@@ -100,7 +100,7 @@
 </section>
 
 {{-- The tabs pills nav --}}
-<section class="d-flex -flex-row flex-wrap justify-content-evenly shop_display">
+<section class="d-flex flex-row flex-wrap justify-content-evenly shop_display">
     <div class="left_product">
         <header class="hide_filter d-flex flex-row justify-content-between align-items-baseline">
             <h2>Filters</h2>
@@ -137,16 +137,8 @@
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <section class="colours_wrapper d-flex flex-row justify-content-evenly">
-                        <div class="colours_wrapper--left">
-                            <p>Blue</p>
-                            <p>Red</p>
-                        </div>
-                        <div class="colours_wrapper--right">
-                            <p>Orange</p>
-                            <p>Purple</p>
-            
-                        </div>
+                    <section class="colours_wrapper d-flex flex-row flex-wrap justify-content-evenly">                   
+                 
                        </section>
                 </div>
               </div>
@@ -159,22 +151,32 @@
               </h2>
               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <section class="colours_wrapper d-flex flex-row justify-content-evenly">
-                        <div class="colours_wrapper--left">
+                    <section class="colours_wrapper shape_wrapper d-flex flex-row justify-content-evenly">
+                        {{-- <div class="colours_wrapper--left">
                             <p>Oval</p>
                             <p>Round</p>
-                        </div>
-                        <div class="colours_wrapper--right">
-                            <p>Square</p>
-                            <p>Triangle</p>
-            
-                        </div>
-            
-            
+                        </div> --}}
+
                        </section>
                 </div>
               </div>
             </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwoJ">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoJ" aria-expanded="false" aria-controls="collapseTwoJ">
+                    Glass
+                  </button>
+                </h2>
+                <div id="collapseTwoJ" class="accordion-collapse collapse" aria-labelledby="headingTwoJ" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                      <section class="colours_wrapper glass_wrapper d-flex flex-row justify-content-evenly">
+                         
+              
+              
+                         </section>
+                  </div>
+                </div>
+              </div>
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingThree">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -183,14 +185,7 @@
               </h2>
               <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <section class="colours_wrapper d-flex flex-row justify-content-evenly">
-                        <div class="colours_wrapper--left">
-                            <p>Male</p>
-                        </div>
-                        <div class="colours_wrapper--right">
-                            <p>Female</p>            
-                        </div>
-            
+                    <section class="colours_wrapper gender_wrapper d-flex flex-row justify-content-evenly">
             
                        </section>
                 </div>
@@ -294,6 +289,10 @@
     let totalCartQuant = sessionStorage.getItem('totalCartItem') || 0;
     totalCartItem.innerHTML = totalCartQuant;
    const loaderContainer = document.querySelector('.loader-container');
+   let colorItems = document.querySelector('.colours_wrapper');
+   let shapeItems = document.querySelector('.shape_wrapper');
+   let genderItems = document.querySelector('.gender_wrapper');
+   let glassItems = document.querySelector('.glass_wrapper');
 
         // LOGIC TO TOGGLE OPEN AND CLOSE THE LEFT FILTER
         const triggerSide = () => {
@@ -328,6 +327,10 @@
           loaderContainer.style.display = 'none';
       };
    
+      const filterColor = (id) =>{
+                        alert(id)
+                    } 
+
         // USING JQUERY AND AJAX
         $(function(){
     // Declare some global variables
@@ -356,6 +359,7 @@
 		}
 		// console.log("Next Page: " + page);
 	});
+    
         // Fetch the product data using Ajax
         function fetchProduct() {
 		// ajax() method to make api calls
@@ -369,11 +373,115 @@
 			success: function(data) {
               hideLoading();
 				console.log(data);
+                console.log(data.products_list.data);
 
 				if (data) {
 					let dataArr = data.products_list.data;
 					totalrecord = data.products_list.total;
                     let currentPage = data.products_list.current_page;
+
+                   
+                    let colorArr = dataArr.map(colorA=>{
+                        return colorA.colorcategory
+                    })
+                    console.log(colorArr);
+                    let color_category = colorArr.filter(elem=>{
+                        // console.log(elem);
+                       return elem !== null;
+                    })
+                    console.log(color_category);
+                    colorItems < 1
+                    ?
+                    colorItems.innerHTML = "No color category found"
+                    :
+                    color_category.map(element =>{
+                        return colorItems.innerHTML += `
+                        <div class="colours_wrapper--left">
+                            <div onclick="filterColor( ${element.id})" class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
+                            <i class="fa fa-square fa-lg" style="color: ${element.color}; "></i>
+                                <p>${element.color}</p>
+                            </div>
+                            </div>
+                        `;
+                    })
+
+
+                    // GET AND DISPLAY SHAPE CATEGORIES
+                    let shapeArr = dataArr.map(shapeA=>{
+                        return shapeA.shapecategory
+                    })
+                    console.log(shapeArr);
+                    let shape_category = shapeArr.filter(elem=>{
+                        // console.log(elem);
+                       return elem !== null;
+                    })
+                    console.log(shape_category);
+                    shapeItems < 1
+                    ?
+                    shapeItems.innerHTML = "No face shape category found"
+                    :
+                    shape_category.map(elem =>{
+                        return shapeItems.innerHTML += `
+                        <div class="colours_wrapper--left">
+                            <div class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
+                            <i class="fa fa-square fa-2xl" style="color: blue;"></i>
+                                <p>${elem.shape}</p>
+                            </div>
+                            </div>
+                        `;
+                    })
+
+                    // GET AN DISPLAY GENDER FROM THE DATABASE
+                    let genderArr = dataArr.map(genderA=>{
+                        return genderA.gendercategory
+                    })
+                    console.log(genderArr);
+                    let gender_category = genderArr.filter(elem=>{
+                        // console.log(elem);
+                       return elem !== null;
+                    })
+                    console.log(gender_category);
+                    genderItems < 1
+                    ?
+                    genderItems.innerHTML = "No gender category found"
+                    :
+                    gender_category.map(elem =>{
+                        return genderItems.innerHTML += `
+                        <div class="colours_wrapper--left">
+                            <div class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
+                                <p>${elem.gender}</p>
+                            </div>
+                            </div>
+                        `;
+                    })
+
+                    // GET AND DISPLAY GLASS CATEGORIES FROM THE DATABASE
+                    let glassArr = dataArr.map(glassA=>{
+                        return glassA.glasscategory
+                    })
+                    console.log(glassArr);
+                    let glass_category = glassArr.filter(elem=>{
+                        // console.log(elem);
+                       return elem !== null;
+                    })
+                    console.log(glass_category);
+                    glassItems < 1
+                    ?
+                    glassItems.innerHTML = "No glass category found"
+                    :
+                    glass_category.map(elem =>{
+                        return glassItems.innerHTML += `
+                        <div class="colours_wrapper--left row">
+                            <div class="container">
+                                <div class="color_container col-sm-12 align-items-baseline justify-content-evenly">
+                                    <p>${elem.glass}</p>
+                                </div>
+                                
+                            </div>
+                            </div>
+                        `;
+                    })
+            
                     const productItems = document.querySelector('.productsData');
                     const productItemsWomen = document.querySelector('.productsDataWomen');
                     const productItemsKids = document.querySelector('.productsDatakids');
@@ -397,15 +505,15 @@
                     // DISPLAY MEN
                     let htmlMen;
 
-                    menProducts.length <= 0 
+                    dataArr.length <= 0 
                     ?
                     htmlMen = "<h3>No product found<h3>"
                     :
 				     htmlMen = "";
-					for (var i = 0; i < menProducts.length; i++) {
+					for (var i = 0; i < dataArr.length; i++) {
 						htmlMen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${menProducts[i].id}>
+                    <div class="shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
@@ -413,7 +521,7 @@
                     
                     <div class="shop-card-heading">
                         <div>
-                            <h4>${menProducts[i].name}</h4>
+                            <h4>${dataArr[i].name}</h4>
                             <p data="date-updated">Updated July 2022</p>
                         </div>
                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
