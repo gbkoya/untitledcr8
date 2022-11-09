@@ -54,7 +54,7 @@ landscape.')
 
     <div class="row justify-content-center my-5 ">
       <button style="background: #FAFAFA;border: 1px solid #F58634;" class="col-lg-7 py-5 mx-4"> Pickup </button>
-      <button style="background: #F58634; color:#FAFAFA; border:none" class="col-lg-7 mt-4 py-5 mx-4"> Delivery</button>
+     <a class="text-center" href="/checkout2"><button style="background: #F58634; color:#FAFAFA; border:none" class="col-lg-7 mt-4 py-5 mx-4"> Delivery</button></a>
     </div>
 
   </div>
