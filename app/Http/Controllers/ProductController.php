@@ -34,42 +34,35 @@ class ProductController extends Controller
     public function index()
     {
         try {
-
             $products = Product::with(
                 'gendercategory',
                 'shapecategory',
                 'colorcategory',
                 'sizecategory',
                 'glasscategory'
-            )
-                ->with(array(
-                    'productprices' => function ($query) {
-                        $query->select('product_price', 'product_id');
-                    },
-                    'productfeatures' => function ($query) {
-                        $query->select('features', 'product_id');
-                    },
-                    'productimages' => function ($query) {
-                        $query->select('imagedirectory', 'product_id');
-                    }
-                ))
-                ->select(
-                    'id',
-                    'name',
-                    'quantityinstock',
-                    'status',
-                    'gender_categories_id',
-                    'size_categories_id',
-                    'shape_categories_id',
-                    'color_categories_id',
-                    'glass_categories_id'
-                )
-                ->paginate(18);
-            // ))->select('name', 'quantityinstock', 'status', 'id')->paginate(18);
-            // ->paginate(12);
+            )->with(array(
+                'productprices' => function ($query) {
+                    $query->select('product_price', 'product_id');
+                },
+                'productfeatures' => function ($query) {
+                    $query->select('features', 'product_id');
+                },
+                'productimages' => function ($query) {
+                    $query->select('imagedirectory', 'product_id');
+                }
+            ))->select(
+                'id',
+                'name',
+                'quantityinstock',
+                'status',
+                'gender_categories_id',
+                'size_categories_id',
+                'shape_categories_id',
+                'color_categories_id',
+                'glass_categories_id',
+                'updated_at'
+            )->paginate(12);
 
-
-            // $products = Product::latest()->paginate(12);
             return response()->json([
                 'status' => true,
                 'products_list' => $products
