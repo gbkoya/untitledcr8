@@ -616,10 +616,17 @@
 
 /* Pagination styles */
 .card-paginat{
+    width: 100%!important;
     position: relative;
-    padding: 1rem 1rem 3rem;
+    /* padding: 1rem .7rem 3rem .7rem; */
     min-height: calc(100vh - 4rem);
 }
+
+.productsData{
+    /* max-width: 90rem; */
+    /* margin: 0 auto 0 auto; */
+}
+
 .hidden {
     display: none;
   }
@@ -661,13 +668,13 @@
   }
 
   .left_product {
-    width: 20%;
+    width: 25%;
     background: rgba(217, 217, 217, 0.3);
     padding: .5rem;
   }
 
   .right_product{
-    width: 80%;
+    width: 65%;
   }
 
   .hide_filter{
@@ -702,7 +709,7 @@
   }
 
   .openSideNav{
-    width: 20%!important;
+    width: 25%!important;
     transition: .5s;
   }
 
@@ -714,11 +721,12 @@
   }
 
   .category_heading{
-    max-width: 50rem;
+    max-width: 100rem!important;
+    /* margin: 0 auto; */
   }
 
   .shop_display{
-    padding-left: 1rem;
+    /* padding-left: 1rem; */
     margin-top: 2rem;
   }
 

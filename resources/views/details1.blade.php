@@ -196,6 +196,12 @@ const hideLoading = () => {
               let priceDetail = productPrice[0].map(productP => productP.product_price);
             //   console.log(priceDetail[0]);
 
+               // Format price
+               const formatter = new Intl.NumberFormat('en-NG', {
+                    style: 'currency',
+                    currency: 'NGN',
+                    });
+
             //Display the product name
             //   console.log(productsName, productName[0]);
               productsName.innerHTML = `
@@ -208,14 +214,14 @@ const hideLoading = () => {
             // console.log(priceItem, priceDetail[0]);
             priceItem.innerHTML = `
             <div  class="pt-4 " style="font-weight: 600;font-size: 28px;line-height: 180%;letter-spacing: -0.01em;color: #6B809B;">
-               ₦${priceDetail[0]}
+               ${formatter.format(priceDetail[0]).replace(/(\.|,)00$/g, '')}
                 </div>
             `;
 
             // Display the actual price
             actualProductP.innerHTML = `
             <div style="margin-top:-15px;font-weight: 300;font-size: 15px;line-height: 180%;letter-spacing: -0.01em;color: rgba(0, 0, 0, 0.3);">
-                ₦${priceDetail[0]}
+                ${formatter.format(priceDetail[0]).replace(/(\.|,)00$/g, '')}
                 </div>            
             `;
                 //   hideLoading();

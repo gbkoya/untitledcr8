@@ -100,7 +100,7 @@
 </section>
 
 {{-- The tabs pills nav --}}
-<section class="d-flex flex-row flex-wrap justify-content-evenly shop_display">
+<section class="container-fluid d-flex flex-row flex-wrap  shop_display">
     <div class="left_product">
         <header class="hide_filter d-flex flex-row justify-content-between align-items-baseline">
             <h2>Filters</h2>
@@ -213,7 +213,7 @@
     
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane card-paginat fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <div class="d-flex flex-row flex-wrap justify-content-evenly productsData" id="paginated-list" data-current-page="1" aria-live="polite">
+                <div class="d-flex flex-row flex-wrap justify-content-between productsData" id="paginated-list" data-current-page="1" aria-live="polite">
                    
                 </div>
                 {{-- Paginated button --}}
@@ -265,7 +265,7 @@
             <button class="next-btn">Next</button>
         </div>
         </nav> --}}
-        <div class="container-fluid d-flex flex-sm-row justify-content-center">
+        <div class="container-fluid d-flex flex-sm-row justify-content-center" style="margin-top: 3rem">
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
                   <li class="page-item nav-link-pagina prev-btn" ><a class="page-link">Previous</a></li>
@@ -293,9 +293,11 @@
    let shapeItems = document.querySelector('.shape_wrapper');
    let genderItems = document.querySelector('.gender_wrapper');
    let glassItems = document.querySelector('.glass_wrapper');
+   let shopContainer = document.querySelector('.shop_display');
 
         // LOGIC TO TOGGLE OPEN AND CLOSE THE LEFT FILTER
         const triggerSide = () => {
+            shopContainer.classList.add('justify-content-evenly');
             leftSide.classList.add('closeSideNav');
             toggleOpen.style.display = 'block';
             leftSide.classList.remove('openSideNav');
@@ -304,6 +306,7 @@
         toggleClose.addEventListener('click', triggerSide);
 
         const triggerSideClose = () =>{
+            shopContainer.classList.remove('justify-content-evenly');
             leftSide.classList.add('openSideNav');
             toggleOpen.style.display = 'none';
             leftSide.classList.remove('closeSideNav');
@@ -484,6 +487,13 @@
                     const productItems = document.querySelector('.productsData');
                     const productItemsWomen = document.querySelector('.productsDataWomen');
                     const productItemsKids = document.querySelector('.productsDatakids');
+                   
+                    // Format price
+                    const formatter = new Intl.NumberFormat('en-NG', {
+                    style: 'currency',
+                    currency: 'NGN',
+                    });
+
 
                     // Get data for Men, women and kids
                     // MEN
@@ -537,8 +547,8 @@
                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
                         <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
                             <div class="price-child d-flex flex-row">
-                                <p>₦${dataArr[i].productprices[0].product_price}</p>
-                                <p>₦${dataArr[i].productprices[0].product_price}</p>
+                                <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                <p>₦${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
                             </div>
                             <div onclick="addToCart()">
                               
