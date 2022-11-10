@@ -55,12 +55,34 @@
     <section class="container pt-5">
         <div class="row col-lg-11">
             <div class="col-lg-4">
-                <img class="img-fluid image-size-middle-ika" src="{{ asset('customImages/Frame 93.png') }}" alt="">
-               <div class="products">
+                {{-- <img class="img-fluid image-size-middle-ika" src="{{ asset('customImages/Frame 93.png') }}" alt=""> --}}
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                        <img src="{{asset('customImages/Frame 93.png')}}" class="image-size-middle-ika" alt="shop men">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="{{asset('customImages/Frame 93.png')}}" class="image-size-middle-ika" alt="Shop image">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="{{asset('customImages/Frame 93.png')}}" class="image-size-middle-ika"  alt="Shop image">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    </div>
+                <div class="products">
 
                </div>
                 <button class="mt-3" style="font-weight: 500;font-size: 16px;line-height: 19px;color: #FFFFFF;
-                width: 119px;height: 45px;background: #F58634;border-radius: 5px;"> TRY IT ON</button>
+                width: 119px;height: 45px;background: #F58634;border-radius: 5px;
+                border: none;"> TRY IT ON</button>
             </div>
             <div class="col-lg-6 mx-5 mt-5 details-sect-right-ika">
                 <div class="main-price">
@@ -75,7 +97,7 @@
                 </div>
                 <button class="mt-4" type="button" style="width: 100%;height: 56px;border-radius: 5px;
                 background: #F58634;font-weight: 600;font-size: 20px;line-height: 24px;
-                color:#FFFF" onclick="addToCart()">
+                color:#FFFF; border: none;" onclick="addToCart()">
                     <img src="{{ asset('customImages/buyIcon.png') }}" class='pt-1 px-3' style="float: left">
                     ADD TO CART
                 </button>
@@ -330,15 +352,7 @@ const hideLoading = () => {
       }
 
             getCartProduct();
-            // window.addEventListener('load', (event) => {
-            //     if(sessionStorage.getItem("cartItem")){
-            //         let cart = sessionStorage.getItem('cartItem');
-            //         alert(cart);
-            //         sessionStorage.setItem(cart);
-            //     }
-
-            //     // alert('finish loading', JSON.stringify(cart));
-            // });
+          
 </script>
 
 

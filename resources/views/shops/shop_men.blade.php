@@ -424,7 +424,6 @@
                         return shapeItems.innerHTML += `
                         <div class="colours_wrapper--left">
                             <div class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
-                            <i class="fa fa-square fa-2xl" style="color: blue;"></i>
                                 <p>${elem.shape}</p>
                             </div>
                             </div>
@@ -514,10 +513,21 @@
 						htmlMen += `
                 
                     <div class="shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
-                      <img class="img-fluid
-                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                      "
-                       src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
+                     
+                       
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                        <img src="{{asset('customImages/shopimage.png')}}" class="img-fluid" alt="shop men">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="{{asset('customImages/shopimage.png')}}" class="img-fluid" alt="Shop image">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="{{asset('customImages/shopimage.png')}}" class="img-fluid"  alt="Shop image">
+                        </div>
+                    </div>
+                    </div>
                     
                     <div class="shop-card-heading">
                         <div>
@@ -527,8 +537,8 @@
                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
                         <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
                             <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
+                                <p>₦${dataArr[i].productprices[0].product_price}</p>
+                                <p>₦${dataArr[i].productprices[0].product_price}</p>
                             </div>
                             <div onclick="addToCart()">
                               

@@ -337,6 +337,52 @@
     color: #000000;    
 }
 
+.cart_wrapper{
+    position: relative;
+}
+
+.delete-icon{
+    cursor: pointer;
+}
+
+.e-card-modal{
+    max-width: 35rem;
+    height: auto;
+    /* margin: 0 auto; */
+    padding: 2.5rem 1.8rem;
+    display: none;
+    left: 30%;
+    right: 20%;
+    top: 5%;
+    transition: 1s ease-in-out;
+}
+
+.e-card-modal h2{
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.e-card-modal .button_wrap{
+    margin-top: 2rem;
+}
+
+.e-card-modal .button_wrap button[type="button"]{
+    border: none;
+    padding: .5rem 1.5rem;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+
+.e-card-modal .button_wrap button[type="button"]:nth-child(1){
+    background: #F58634;
+}
+
+.e-card-modal .button_wrap button[type="button"]:nth-child(2){
+    background: red;
+    margin-left: 1rem;
+}
+
 /* .nav-pill-head-wrapper{
     width: 90%!important;
 } */
