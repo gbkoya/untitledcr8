@@ -35,24 +35,36 @@ class ProductController extends Controller
     {
         try {
 
-            $products = Product::
-            with('gendercategory', 'shapecategory',
-                'colorcategory', 'sizecategory', 'glasscategory')
-            ->with(array(
-                'productprices' => function ($query) {
-                    $query->select('product_price', 'product_id');
-                },
-                'productfeatures' => function ($query) {
-                    $query->select('features', 'product_id');
-                },
-                'productimages' => function ($query) {
-                    $query->select('imagedirectory', 'product_id');
-                }
-            ))
-            ->select('id', 'name', 'quantityinstock', 'status',
-                    'gender_categories_id', 'size_categories_id', 'shape_categories_id',
-                    'color_categories_id', 'glass_categories_id')
-            ->paginate(18);
+            $products = Product::with(
+                'gendercategory',
+                'shapecategory',
+                'colorcategory',
+                'sizecategory',
+                'glasscategory'
+            )
+                ->with(array(
+                    'productprices' => function ($query) {
+                        $query->select('product_price', 'product_id');
+                    },
+                    'productfeatures' => function ($query) {
+                        $query->select('features', 'product_id');
+                    },
+                    'productimages' => function ($query) {
+                        $query->select('imagedirectory', 'product_id');
+                    }
+                ))
+                ->select(
+                    'id',
+                    'name',
+                    'quantityinstock',
+                    'status',
+                    'gender_categories_id',
+                    'size_categories_id',
+                    'shape_categories_id',
+                    'color_categories_id',
+                    'glass_categories_id'
+                )
+                ->paginate(18);
             // ))->select('name', 'quantityinstock', 'status', 'id')->paginate(18);
             // ->paginate(12);
 
@@ -225,13 +237,6 @@ class ProductController extends Controller
      */
     public function storeProduct(Request $request)
     {
-        // $file = $request->file('imagedirectory');
-        // if (! empty($file)) {
-        //     \Log::info( count(array($file)) );
-        // } else {
-        //     \Log::info('Empty');
-        // }
-
         try {
             $validateUser = Validator::make(
                 $request->all(),
@@ -254,31 +259,44 @@ class ProductController extends Controller
 
             $status = null;
             if ($request->status == "") {
-                $status = 'unavailable';
+                $status = 'available';
             } else {
                 $status = $request->status;
             }
 
+            $quantityinstock = null;
+            if ($request->quantityinstock == "") {
+                $quantityinstock = 1;
+            } else {
+                $quantityinstock = $request->quantityinstock;
+            }
+
             $product = new Product();
             $product->name              = $request->name;
-            $product->quantityinstock   = $request->quantityinstock;
-            switch ($request->cat_select) {
-                case 'gendercategory':
-                    $product->gender_categories_id = $request->cat_name;
-                    break;
-                case 'shapecategory':
-                    $product->shape_categories_id = $request->cat_name;
-                    break;
-                case 'colorcategory':
-                    $product->color_categories_id = $request->cat_name;
-                    break;
-                case 'sizecategory':
-                    $product->size_categories_id = $request->cat_name;
-                    break;
-                case 'glasscategory':
-                    $product->glass_categories_id = $request->cat_name;
-                    break;
+            $product->quantityinstock   = $quantityinstock;
+
+            $category_select = $request->cat_select;
+            foreach ($category_select as $key => $value) {
+                switch ($value) {
+                    case 'gendercategory':
+                        $product->gender_categories_id = $request->cat_name;
+                        break;
+                    case 'shapecategory':
+                        $product->shape_categories_id = $request->cat_name;
+                        break;
+                    case 'colorcategory':
+                        $product->color_categories_id = $request->cat_name;
+                        break;
+                    case 'sizecategory':
+                        $product->size_categories_id = $request->cat_name;
+                        break;
+                    case 'glasscategory':
+                        $product->glass_categories_id = $request->cat_name;
+                        break;
+                }
             }
+
+
             // $product->productcategory_id    = $request->productcategory_id;
             $product->status                = $status;
             $product->save();
@@ -293,6 +311,7 @@ class ProductController extends Controller
             ]);
 
             $file = $request->file('imagedirectory');
+            \Log::info($file);
             foreach ($file as $key => $value) {
                 // \Log::info('Client name: <br>' . $value->getClientOriginalName());
 
