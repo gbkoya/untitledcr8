@@ -19,7 +19,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('admin/product-index', [ProductCrud::class, 'productIndex'])  ->name('productIndex');
+Route::get('admin/product-index', [ProductCrud::class, 'productIndex']) ->name('productIndex');
+Route::post('admin/save-product', [ProductCrud::class, 'storeProduct']) ->name('storeProduct');
 
 Route::get('/about', function () {
     return view('about');
