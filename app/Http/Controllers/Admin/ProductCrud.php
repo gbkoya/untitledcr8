@@ -159,4 +159,8 @@ class ProductCrud extends Controller
             ], 500);
         }
     }
+
+    public function updateProduct()
+    {
+    }
 }
