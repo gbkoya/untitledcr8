@@ -171,11 +171,11 @@
                     </div>
                 </form>
 
-            </div><!-- panel-body // -->
-        </section><!-- panel// -->
+            </div>
+        </section>
 
 
-    </div> <!-- container// -->
+    </div>
     <script></script>
 
 @endsection
