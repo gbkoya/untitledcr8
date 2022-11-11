@@ -182,6 +182,11 @@
     padding: 0 6rem;
 }
 
+.car_image_wrapper{
+    width: 100%;
+    height: 25vh;
+}
+
 .store-heading{
 
 }
@@ -412,6 +417,14 @@
     color: #F58634!important
 }
 
+.details-Image{
+    size: 20%;
+}
+
+.det_imageWrapper{
+    max-width: 20rem;
+    height: 20rem;
+}
 /* RESPONSIVENESS */
 @media(max-width: 414px){
     .search-wrapper{

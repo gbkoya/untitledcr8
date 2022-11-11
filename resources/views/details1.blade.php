@@ -54,29 +54,12 @@
 
     <section class="container pt-5">
         <div class="row col-lg-11">
-            <div class="col-lg-4">
+            <div class="col-lg-4 ">
+                <div class="image_slidedeta">
+
+                </div>
                 {{-- <img class="img-fluid image-size-middle-ika" src="{{ asset('customImages/Frame 93.png') }}" alt=""> --}}
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                        <img src="{{asset('customImages/Frame 93.png')}}" class="image-size-middle-ika" alt="shop men">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="{{asset('customImages/Frame 93.png')}}" class="image-size-middle-ika" alt="Shop image">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="{{asset('customImages/Frame 93.png')}}" class="image-size-middle-ika"  alt="Shop image">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                    </div>
+   
                 <div class="products">
 
                </div>
@@ -118,6 +101,7 @@
 <script type="text/javascript">
 let cartItems =  JSON.parse(sessionStorage.getItem('cartItem') || '[]');
 // alert(cartItems);
+let imageSlide = document.querySelector('.image_slidedeta');
 const productId = localStorage.getItem('productId');
 const URL= '{{ env('APP_URL') }}';
 const loaderContainer = document.querySelector('.loader-container');
@@ -187,6 +171,7 @@ const hideLoading = () => {
               const data = await response.json();
             //   console.log(data);
               let productDetail = data.product
+              console.log(productDetail);
               let productName = productDetail.map(product => product.name);
             //   console.log(productName[0]);
               let productPrice = productDetail.map(product => product.productprices);
@@ -196,6 +181,20 @@ const hideLoading = () => {
               let priceDetail = productPrice[0].map(productP => productP.product_price);
             //   console.log(priceDetail[0]);
 
+            let imageFile1 = productDetail.map(elem=>{
+                return elem.productimages[0].imagedirectory;
+            });
+            console.log(imageFile1[0]);
+
+            let imageFile2 = productDetail.map(elem=>{
+                return elem.productimages[1].imagedirectory;
+            });
+            console.log(imageFile2[0]);
+
+            let imageFile3 = productDetail.map(elem=>{
+                return elem.productimages[2].imagedirectory;
+            });
+            console.log(imageFile3[3]);
                // Format price
                const formatter = new Intl.NumberFormat('en-NG', {
                     style: 'currency',
@@ -209,6 +208,29 @@ const hideLoading = () => {
                 ${productName[0]}
                 </div>
               `;
+              productDetail
+              imageSlide.innerHTML = `
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner details-Image">
+                        <div class="carousel-item active det_imageWrapper">
+                        <img src="http://127.0.0.1:8000/storage/product_image/${imageFile1}" class="img-fluid" alt="shop men">
+                        </div>
+                        <div class="carousel-item det_imageWrapper">
+                        <img src="http://127.0.0.1:8000/storage/product_image/${imageFile2}" class="img-fluid" alt="Shop image">
+                        </div>
+                        <div class="carousel-item det_imageWrapper">
+                        <img src="http://127.0.0.1:8000/storage/product_image/${imageFile3}" class="img-fluid"  alt="Shop image">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    </div>`;
 
             //   Display the product price
             // console.log(priceItem, priceDetail[0]);

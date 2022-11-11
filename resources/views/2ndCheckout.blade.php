@@ -41,7 +41,7 @@
     {{-- </section> --}}
     </main>
 
-    <section class="container">
+    <section class="container checkout2_form">
                 {{-- The loading spinner --}}
         <div class="loader-container">
             <div class="spinner"></div>
@@ -64,17 +64,17 @@
                         <label for="exampleInputEmail1">Email address</label>
                         </div>
                         <input class="payment-forms"
-                        style="border: 1.14951px solid #D2D6DA;border-radius: 5.74757px;height: 46px; width:446px"
+                        style="border: 1.14951px solid #D2D6DA;border-radius: 5.74757px;height: 46px; width:597px; padding-left: 1rem; margin-top: .5rem;"
                          type="email" class="form-control" id="email" aria-describedby="emailHelp"
                             placeholder="hello@dummie.org"
                             required>
                     </div>
                     <div class="form-group col-lg- mt-5">
                         <label for="exampleInputPassword1">Phone Number</label>
-                        <div class="d-flex">
+                        <div class="d-flex" style="margin-top: .5rem;">
                             <input class="payment-forms"
                             required
-                                style="border: 1.14951px solid #D2D6DA;border-radius: 5.74757px;height: 46px; width:446px"
+                                style="border: 1.14951px solid #D2D6DA;border-radius: 5.74757px;height: 46px; width: 597px; padding-left: 1rem; "
                                 class="" type="text" class="" id="phone_number" placeholder="01234567">
 
                         </div>
@@ -83,16 +83,17 @@
                         <label for="exampleInputEmail1">What’s your address?</label>
                         <input class="payment-forms"
                         required
-                        style="border: 1.14951px solid #D2D6DA;border-radius: 5.74757px;height: 46px; width:597px"
+                        style="border: 1.14951px solid #D2D6DA;border-radius: 5.74757px;height: 46px; width:597px; padding-left: 1rem; margin-top: .5rem;"
                         type="text" class="form-control" id="address" aria-describedby=""
                             placeholder="">
                     </div>
                     <div class="pt-5"></div>
 
-                    <div class=" py-3  pb-5">
-                        <button type="submit" class="small-mobile-long-button small-screen-font"
+                    <div class="checkout2_but mt-3 pb-5">
+                        <button type="submit" class=" small-screen-font"
                             style="background: #F58634;border-radius: 4.67259px;font-weight: 700;font-size: 18.6904px;
-                        line-height: 140%;color: #ffffff; padding: 0.8em 3em; float:right; border:none">Next
+                        line-height: 140%;color: #ffffff; padding: 0.6em 5em; border:none;
+                        ">Next
         
                         </button>
                     </div>
@@ -101,17 +102,19 @@
         </div>
 
 
-        <div class="container col-lg-10 d-flex justify-content-between">
-            <div class=" py-3 pb-5">
-                <button class="small-mobile-long-button small-screen-font"
-                    style="background: rgba(0, 0, 0, 0.2);border-radius: 4.67259px;font-weight: 700;font-size: 18.6904px;
-                line-height: 140%;color: #6B809B; padding: 0.8em 3em; border:none">Back
-
-                </button>
+        {{-- <div class="container col-lg-10"> --}}
+            <div class="back_but pb-5">
+                <a href="/checkout1">
+                    <button class=""
+                        style="background: rgba(0, 0, 0, 0.2);border-radius: 4.67259px;font-weight: 700;font-size: 18.6904px;
+                    line-height: 140%;color: #6B809B; padding: 0.6em 5em; border:none">Back
+    
+                    </button>
+                </a>
             </div>
            
 
-        </div>
+        {{-- </div> --}}
 
     </section>
     {{-- END OF STORE CARD SECTION --}}

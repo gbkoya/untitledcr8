@@ -169,7 +169,7 @@
                 </h2>
                 <div id="collapseTwoJ" class="accordion-collapse collapse" aria-labelledby="headingTwoJ" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
-                      <section class="colours_wrapper glass_wrapper d-flex flex-row justify-content-evenly">
+                      <section class="colours_wrapper glass_wrapper d-flex flex-row flex-wrap justify-content-evenly" style="max-width: 13rem!important">
                          
               
               
@@ -473,13 +473,11 @@
                     :
                     glass_category.map(elem =>{
                         return glassItems.innerHTML += `
-                        <div class="colours_wrapper--left row">
-                            <div class="container">
-                                <div class="color_container col-sm-12 align-items-baseline justify-content-evenly">
+                        <div class="colours_wrapper--left">
+                                <div class="color_container">
                                     <p>${elem.glass}</p>
                                 </div>
                                 
-                            </div>
                             </div>
                         `;
                     })
@@ -512,6 +510,7 @@
                     // console.log(kidsProducts);
 
                     // DISPLAY MEN
+                    let defaultImg = 'foremost_shopimage_1667983695.png'
                     let htmlMen;
 
                     dataArr.length <= 0 
@@ -526,15 +525,15 @@
                      
                        
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
+                    <div class="carousel-inner car_image_wrapper">
                         <div class="carousel-item active">
-                        <img src="{{asset('customImages/shopimage.png')}}" class="img-fluid" alt="shop men">
+                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
                         </div>
                         <div class="carousel-item">
-                        <img src="{{asset('customImages/shopimage.png')}}" class="img-fluid" alt="Shop image">
+                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
                         </div>
                         <div class="carousel-item">
-                        <img src="{{asset('customImages/shopimage.png')}}" class="img-fluid"  alt="Shop image">
+                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
                         </div>
                     </div>
                     </div>
