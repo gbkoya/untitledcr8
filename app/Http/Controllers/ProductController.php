@@ -304,7 +304,6 @@ class ProductController extends Controller
             ]);
 
             $file = $request->file('imagedirectory');
-            \Log::info($file);
             foreach ($file as $key => $value) {
                 // \Log::info('Client name: <br>' . $value->getClientOriginalName());
 
