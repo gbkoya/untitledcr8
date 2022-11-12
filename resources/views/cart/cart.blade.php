@@ -155,7 +155,11 @@ const renderCartItem = () => {
   cartDisplay.innerHTML = ""; // clear cart element
   newCart.map(el => {
   let dataCart = el.quantity;
-
+    // console.log(el);
+  const formatter = new Intl.NumberFormat('en-NG', {
+                    style: 'currency',
+                    currency: 'NGN',
+                    });
 
   // incremen();
     return cartDisplay.innerHTML += `
@@ -188,8 +192,10 @@ const renderCartItem = () => {
           </div>
         <div class=" pt-5 col-lg-10 d-flex flex-wrap justify-content-between align-items-center">
          
-        <div class="d-flex flex-wrap">
-          <img class="img-fluid" src="{{ asset('customImages/Frame 106.png') }}" />
+        <div class="d-flex flex-wrap flex-row align-items-center">
+          <div class="cart_imageWrapper">
+            <img class="img-fluid" src="http://127.0.0.1:8000/storage/product_image/${el.imagedirectory}" alt="product image"/>
+            </div>
   
           <div class="px-2 small-screen-font item-name" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color: rgba(107, 128, 155, 0.8);">
             <h4>${el.name}</h4>
@@ -207,14 +213,15 @@ const renderCartItem = () => {
   
           </form>
   
-          <div class="pt-2 small-screen-font price-val" style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">${el.price}</div>
+          <div class=" small-screen-font price-val" style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">${formatter.format(el.price).replace(/(\.|,)00$/g, '')}</div>
   
           <div class="delete-icon" onclick="getProduct()"><img class="img-fluid" src="{{ asset('customImages/trash vector.png') }}" alt="Delete icon"></div>
         </div>
-        <div class="d-flex align-items-end container" style="text-align: right;">
-        <div>Total Price:</div>
-        <div class="pt-2 total-price " style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">
-          ${el.price * dataCart}
+        <div class="d-flex align-items-baseline" style="text-align: right;">
+        <div style="font-weight: 600;">Total Price:</div>
+        <div class="pt-2 total-price " style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);
+        margin-left: 1rem">
+          ${formatter.format(el.price * dataCart).replace(/(\.|,)00$/g, '')}
           </div>
         </div>
   
@@ -260,7 +267,7 @@ const deleteProduct = (id) => {
                 
                 // totalCartItem.innerHTML = cartQuantity;
                 // quantVal.innerHTML = cartQuantity;
-                sessionStorage.setItem('totalCartItem', cartQuantity);                renderCartItem();
+                sessionStorage.setItem('totalCartItem', JSON.stringify(cartQuantity));                renderCartItem();
                 Swal.fire({
                         icon: 'success',
                         title: 'Product deleted successfully',

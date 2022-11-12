@@ -65,7 +65,8 @@
                </div>
                 <button class="mt-3" style="font-weight: 500;font-size: 16px;line-height: 19px;color: #FFFFFF;
                 width: 119px;height: 45px;background: #F58634;border-radius: 5px;
-                border: none;"> TRY IT ON</button>
+                border: none;" onclick="capturePhoto()"> TRY IT ON</button>
+                {{-- <video id="video" width="320" height="240" autoplay></video> --}}
             </div>
             <div class="col-lg-6 mx-5 mt-5 details-sect-right-ika">
                 <div class="main-price">
@@ -87,10 +88,7 @@
 
                 <div class="mt-4" style="font-weight: 500;font-size: 20px;line-height: 30px;color: rgba(107, 128, 155, 0.8);">
                 Details</div>
-                <div class="mt-3" style="font-weight: 500;font-size: 15px;line-height: 34px;letter-spacing: 0.01em;color: rgba(107, 128, 155, 0.8);">"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum 
-                    deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, 
-                    similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem 
-                    rerum facilis est et expedita 
+                <div class="mt-3 dynamic_details" style="font-weight: 500;font-size: 15px;line-height: 34px;letter-spacing: 0.01em;color: rgba(107, 128, 155, 0.8);">
                 </div>
 
             </div>
@@ -115,6 +113,7 @@ const quantVal = document.querySelector('.quantity');
 let totalCartItem = document.querySelector('.total-items-in-cart');
 cartTot = sessionStorage.getItem('totalCartItem') || 0
 totalCartItem.innerHTML = cartTot;
+let dynamDetails = document.querySelector('.dynamic_details');
 
 let allProducts = sessionStorage.getItem('cartItem');
 // console.log(allProducts);
@@ -136,7 +135,10 @@ quantVal.innerText = data;
 //     }
 // }
 
-
+const capturePhoto = () =>{
+    // alert('working')
+    // let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+}
 const displayLoading = () => {
       loaderContainer.style.display = 'block';
       };
@@ -184,17 +186,17 @@ const hideLoading = () => {
             let imageFile1 = productDetail.map(elem=>{
                 return elem.productimages[0].imagedirectory;
             });
-            console.log(imageFile1[0]);
+            // console.log(imageFile1[0]);
 
             let imageFile2 = productDetail.map(elem=>{
                 return elem.productimages[1].imagedirectory;
             });
-            console.log(imageFile2[0]);
+            // console.log(imageFile2[0]);
 
             let imageFile3 = productDetail.map(elem=>{
                 return elem.productimages[2].imagedirectory;
             });
-            console.log(imageFile3[3]);
+            // console.log(imageFile3[3]);
                // Format price
                const formatter = new Intl.NumberFormat('en-NG', {
                     style: 'currency',
@@ -246,6 +248,17 @@ const hideLoading = () => {
                 ${formatter.format(priceDetail[0]).replace(/(\.|,)00$/g, '')}
                 </div>            
             `;
+                let featureArr = productDetail.map((ele, i)=> {
+                    return ele.productfeatures[i].features
+                })
+                console.log(featureArr[0]);
+                featureArr[0] === null
+                // console.log('no details found');
+                ?
+                dynamDetails.innerHTML = "No details found"
+                :
+                dynamDetails.innerHTML = `${featureArr}`
+
                 //   hideLoading();
               return data;
         } catch(error){
@@ -274,6 +287,8 @@ const hideLoading = () => {
                 console.log(product_id);
                 let name = result.product[0].name;
                 let price = JSON.stringify(productPrice);
+                let imageP =  result.product[0].productimages[0].imagedirectory
+                console.log(imageP);
                 let quantity = JSON.stringify(1);
                 let quantN = cartItems.find(elemee => elemee.id === product_id);
                 // let quantO = quantN.quantity;
@@ -297,7 +312,7 @@ const hideLoading = () => {
                   sessionStorage.setItem('cartItem', JSON.stringify(newCartItems));
                 console.log('item already exits');
                 } else {
-                    const item = {id: product_id, name: name, price: productPrice};
+                    const item = {id: product_id, name: name, price: productPrice, imagedirectory: imageP};
                     console.log(item);
                     console.log(quantity);
                     cartItems.push({

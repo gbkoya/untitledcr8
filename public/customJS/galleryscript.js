@@ -1,3 +1,9 @@
+// import moment from 'moment'
+
+// let testDate = '2022-11-09T08:48:15.000000Z'
+// let date = moment(testDate).format('MM/DD/YYYY');
+//    console.log(date);
+
 (function () {
     var $left_arrow, $right_arrow, animate_next, animate_previous;
 

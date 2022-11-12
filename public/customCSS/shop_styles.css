@@ -418,12 +418,18 @@
 }
 
 .details-Image{
-    size: 20%;
+    width: 100%;
+    height: 30vh;
 }
 
 .det_imageWrapper{
     max-width: 20rem;
     height: 20rem;
+}
+
+.cart_imageWrapper{
+    max-width: 10rem;
+    min-height: 3vh!important;
 }
 /* RESPONSIVENESS */
 @media(max-width: 414px){
@@ -729,13 +735,16 @@
   #show_filter{
     cursor: pointer;
     /* margin-top: .8rem; */
-    margin-left: 2%;
+    margin-left: -8%;
+    margin-right: 3%;
     display: none;
+    text-decoration: underline;
+    font-weight: 600;
   }
 
   .category_heading{
     max-width: 100rem!important;
-    /* margin: 0 auto; */
+    margin: 0 auto;
   }
 
   .shop_display{
@@ -755,6 +764,9 @@
     font-weight: 600!important;
   }
 
+  .prod_availa{
+    margin-top: 2.5rem;
+  }
  
 /* END OF SHOP MEN STYLES */
 
@@ -762,7 +774,7 @@
 
 /* DETAILS PAGE STYLE */
 .quantity-button{
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
 }
 .quantity-button button[type="button"]{
     background: #F58634;

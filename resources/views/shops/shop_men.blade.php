@@ -194,7 +194,7 @@
           </div>
     </div>
     <div class="eb-tab right_product">
-        <div class="d-flex flex-row align-items-center justify-content-evenly category_heading">
+        <div class="d-flex flex-row align-items-center justify-content-center category_heading">
             <p id="show_filter">Show filters</p>
             <ul class="nav nav-pills nav-pill-head-wrapper mb-3 d-md-flex justify-content-center align-items-center" id="pills-tab" role="tablist">
                 <li class="nav-item nav-but" role="presentation">
@@ -295,6 +295,10 @@
    let glassItems = document.querySelector('.glass_wrapper');
    let shopContainer = document.querySelector('.shop_display');
 
+   let formattedDate = new Date('2022-11-09T08:48:15.000000Z').toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"}) 
+    console.log(formattedDate);
+   // "Friday, Jul 2, 2021"
+ 
         // LOGIC TO TOGGLE OPEN AND CLOSE THE LEFT FILTER
         const triggerSide = () => {
             shopContainer.classList.add('justify-content-evenly');
@@ -541,7 +545,7 @@
                     <div class="shop-card-heading">
                         <div>
                             <h4>${dataArr[i].name}</h4>
-                            <p data="date-updated">Updated July 2022</p>
+                            <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
                         </div>
                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
                         <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
@@ -711,8 +715,7 @@
 
         // }
         // getItemID();
-
-        
+           
           </script>
 
 @endsection
