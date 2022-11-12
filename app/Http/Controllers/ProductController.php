@@ -31,42 +31,226 @@ class ProductController extends Controller
      *       ),
      * )
      */
-    public function index()
+    public function index(Request $request)
     {
         try {
-            $products = Product::with(
-                'gendercategory',
-                'shapecategory',
-                'colorcategory',
-                'sizecategory',
-                'glasscategory'
-            )->with(array(
-                'productprices' => function ($query) {
-                    $query->select('product_price', 'product_id');
-                },
-                'productfeatures' => function ($query) {
-                    $query->select('features', 'product_id');
-                },
-                'productimages' => function ($query) {
-                    $query->select('imagedirectory', 'product_id');
-                }
-            ))->select(
-                'id',
-                'name',
-                'quantityinstock',
-                'status',
-                'gender_categories_id',
-                'size_categories_id',
-                'shape_categories_id',
-                'color_categories_id',
-                'glass_categories_id',
-                'updated_at'
-            )->paginate(12);
+            if ($request->get('gender_id') != null) {
+                $products = Product::where('gender_categories_id', $request->get('gender_id'))
+                    ->with(
+                        'gendercategory',
+                        'shapecategory',
+                        'colorcategory',
+                        'sizecategory',
+                        'glasscategory'
+                    )->with(array(
+                        'productprices' => function ($query) {
+                            $query->select('product_price', 'product_id');
+                        },
+                        'productfeatures' => function ($query) {
+                            $query->select('features', 'product_id');
+                        },
+                        'productimages' => function ($query) {
+                            $query->select('imagedirectory', 'product_id');
+                        }
+                    ))->select(
+                        'id',
+                        'name',
+                        'quantityinstock',
+                        'status',
+                        'gender_categories_id',
+                        'size_categories_id',
+                        'shape_categories_id',
+                        'color_categories_id',
+                        'glass_categories_id',
+                        'updated_at'
+                    )->paginate(12);
 
-            return response()->json([
-                'status' => true,
-                'products_list' => $products
-            ], 200);
+                    return response()->json([
+                        'status' => true,
+                        'total_count' => $products->count(),
+                        'gender_products_list' => $products
+                    ], 200);
+                dd($products);
+            } elseif ($request->get('shape_id') != null) {
+                $products = Product::where('shape_categories_id', $request->get('shape_id'))
+                    ->with(
+                        'gendercategory',
+                        'shapecategory',
+                        'colorcategory',
+                        'sizecategory',
+                        'glasscategory'
+                    )->with(array(
+                        'productprices' => function ($query) {
+                            $query->select('product_price', 'product_id');
+                        },
+                        'productfeatures' => function ($query) {
+                            $query->select('features', 'product_id');
+                        },
+                        'productimages' => function ($query) {
+                            $query->select('imagedirectory', 'product_id');
+                        }
+                    ))->select(
+                        'id',
+                        'name',
+                        'quantityinstock',
+                        'status',
+                        'gender_categories_id',
+                        'size_categories_id',
+                        'shape_categories_id',
+                        'color_categories_id',
+                        'glass_categories_id',
+                        'updated_at'
+                    )->paginate(12);
+
+                    return response()->json([
+                        'status' => true,
+                        'total_count' => $products->count(),
+                        'shape_products_list' => $products
+                    ], 200);
+            } elseif ($request->get('color_id')) {
+                $products = Product::where('color_categories_id', $request->get('color_id'))
+                    ->with(
+                        'gendercategory',
+                        'shapecategory',
+                        'colorcategory',
+                        'sizecategory',
+                        'glasscategory'
+                    )->with(array(
+                        'productprices' => function ($query) {
+                            $query->select('product_price', 'product_id');
+                        },
+                        'productfeatures' => function ($query) {
+                            $query->select('features', 'product_id');
+                        },
+                        'productimages' => function ($query) {
+                            $query->select('imagedirectory', 'product_id');
+                        }
+                    ))->select(
+                        'id',
+                        'name',
+                        'quantityinstock',
+                        'status',
+                        'gender_categories_id',
+                        'size_categories_id',
+                        'shape_categories_id',
+                        'color_categories_id',
+                        'glass_categories_id',
+                        'updated_at'
+                    )->paginate(12);
+
+                    return response()->json([
+                        'status' => true,
+                        'total_count' => $products->count(),
+                        'color_products_list' => $products
+                    ], 200);
+            } elseif ($request->get('size')) {
+                $products = Product::where('size_categories_id', $request->get('size_id'))
+                    ->with(
+                        'gendercategory',
+                        'shapecategory',
+                        'colorcategory',
+                        'sizecategory',
+                        'glasscategory'
+                    )->with(array(
+                        'productprices' => function ($query) {
+                            $query->select('product_price', 'product_id');
+                        },
+                        'productfeatures' => function ($query) {
+                            $query->select('features', 'product_id');
+                        },
+                        'productimages' => function ($query) {
+                            $query->select('imagedirectory', 'product_id');
+                        }
+                    ))->select(
+                        'id',
+                        'name',
+                        'quantityinstock',
+                        'status',
+                        'gender_categories_id',
+                        'size_categories_id',
+                        'shape_categories_id',
+                        'color_categories_id',
+                        'glass_categories_id',
+                        'updated_at'
+                    )->paginate(12);
+
+                    return response()->json([
+                        'status' => true,
+                        'total_count' => $products->count(),
+                        'size_products_list' => $products
+                    ], 200);
+            } elseif ($request->get('glass')) {
+                $products = Product::where('glass_categories_id', $request->get('glass_id'))
+                    ->with(
+                        'gendercategory',
+                        'shapecategory',
+                        'colorcategory',
+                        'sizecategory',
+                        'glasscategory'
+                    )->with(array(
+                        'productprices' => function ($query) {
+                            $query->select('product_price', 'product_id');
+                        },
+                        'productfeatures' => function ($query) {
+                            $query->select('features', 'product_id');
+                        },
+                        'productimages' => function ($query) {
+                            $query->select('imagedirectory', 'product_id');
+                        }
+                    ))->select(
+                        'id',
+                        'name',
+                        'quantityinstock',
+                        'status',
+                        'gender_categories_id',
+                        'size_categories_id',
+                        'shape_categories_id',
+                        'color_categories_id',
+                        'glass_categories_id',
+                        'updated_at'
+                    )->paginate(12);
+
+                    return response()->json([
+                        'status' => true,
+                        'total_count' => $products->count(),
+                        'glass_products_list' => $products
+                    ], 200);
+            } else {
+                $products = Product::with(
+                    'gendercategory',
+                    'shapecategory',
+                    'colorcategory',
+                    'sizecategory',
+                    'glasscategory'
+                )->with(array(
+                    'productprices' => function ($query) {
+                        $query->select('product_price', 'product_id');
+                    },
+                    'productfeatures' => function ($query) {
+                        $query->select('features', 'product_id');
+                    },
+                    'productimages' => function ($query) {
+                        $query->select('imagedirectory', 'product_id');
+                    }
+                ))->select(
+                    'id',
+                    'name',
+                    'quantityinstock',
+                    'status',
+                    'gender_categories_id',
+                    'size_categories_id',
+                    'shape_categories_id',
+                    'color_categories_id',
+                    'glass_categories_id',
+                    'updated_at'
+                )->paginate(12);
+
+                return response()->json([
+                    'status' => true,
+                    'total_count' => $products->count(),
+                    'products_list' => $products
+                ], 200);
+            }
         } catch (Exception $e) {
             return response()->json([
                 'status' => FALSE,
@@ -304,7 +488,6 @@ class ProductController extends Controller
             ]);
 
             $file = $request->file('imagedirectory');
-            \Log::info($file);
             foreach ($file as $key => $value) {
                 // \Log::info('Client name: <br>' . $value->getClientOriginalName());
 

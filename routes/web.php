@@ -21,6 +21,7 @@ Route::get('/', function () {
 
 Route::get('admin/product-index', [ProductCrud::class, 'productIndex']) ->name('productIndex');
 Route::post('admin/save-product', [ProductCrud::class, 'storeProduct']) ->name('storeProduct');
+Route::get('admin/edit-product/{product:id}', [ProductCrud::class, 'editProduct']) ->name('editProduct');
 Route::put('admin/update-product/{product:id}', [ProductCrud::class, 'updateProduct']) ->name('updateProduct');
 
 Route::get('/about', function () {
