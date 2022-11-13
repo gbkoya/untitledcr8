@@ -180,7 +180,7 @@ const renderCartItem = () => {
       </div>
   
   
-      <div class="container card my-5 col-md-10">
+      <div class="container card my-5 col-md-10" style="padding-top: 1rem; padding-bottom: 1rem;">
         <div class="d-flex flex-row justify-content-between">
           <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Item(s)</div>
           <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Quantity</div>
@@ -217,10 +217,10 @@ const renderCartItem = () => {
   
           <div class="delete-icon" onclick="getProduct()"><img class="img-fluid" src="{{ asset('customImages/trash vector.png') }}" alt="Delete icon"></div>
         </div>
-        <div class="d-flex align-items-baseline" style="text-align: right;">
+        <div class="d-flex align-items-baseline justify-content-end" style="text-align: right; margin-right: 18%">
         <div style="font-weight: 600;">Total Price:</div>
         <div class="pt-2 total-price " style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);
-        margin-left: 1rem">
+        margin-left: 2rem">
           ${formatter.format(el.price * dataCart).replace(/(\.|,)00$/g, '')}
           </div>
         </div>
