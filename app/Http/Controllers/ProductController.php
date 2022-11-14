@@ -143,7 +143,7 @@ class ProductController extends Controller
                         'total_count' => $products->count(),
                         'color_products_list' => $products
                     ], 200);
-            } elseif ($request->get('size')) {
+            } elseif ($request->get('size_id')) {
                 $products = Product::where('size_categories_id', $request->get('size_id'))
                     ->with(
                         'gendercategory',
@@ -179,7 +179,7 @@ class ProductController extends Controller
                         'total_count' => $products->count(),
                         'size_products_list' => $products
                     ], 200);
-            } elseif ($request->get('glass')) {
+            } elseif ($request->get('glass_id')) {
                 $products = Product::where('glass_categories_id', $request->get('glass_id'))
                     ->with(
                         'gendercategory',
