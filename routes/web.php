@@ -23,6 +23,7 @@ Route::get('admin/product-index', [ProductCrud::class, 'productIndex']) ->name('
 Route::post('admin/save-product', [ProductCrud::class, 'storeProduct']) ->name('storeProduct');
 Route::get('admin/edit-product/{product:id}', [ProductCrud::class, 'editProduct']) ->name('editProduct');
 Route::put('admin/update-product/{product:id}', [ProductCrud::class, 'updateProduct']) ->name('updateProduct');
+Route::delete('admin/delete-product/{product:id}', [ProductCrud::class, 'deleteProduct']) ->name('deleteProduct');
 
 Route::get('/about', function () {
     return view('about');

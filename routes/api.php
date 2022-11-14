@@ -59,6 +59,7 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::get('/product-category/{product:category}', [ProductController::class, 'getProductByCategory']);
 Route::get('/product-details-show/{product:id}', [ProductController::class, 'getProductById']);
 
+Route::delete('admin/delete-product-api/{product:id}', [ProductController::class, 'deleteProductApi']) ->name('deleteProductApi');
 // Product api here for admin
 Route::get('/product-list', [ProductController::class, 'index']);
 
