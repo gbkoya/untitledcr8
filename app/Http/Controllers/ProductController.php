@@ -35,7 +35,7 @@ class ProductController extends Controller
     {
         try {
             if ($request->get('gender_id') != null) {
-                $products = Product::where('gender_categories_id', $request->get('gender_id'))
+                $products = Product::whereIn('gender_categories_id', $request->get('gender_id'))
                     ->with(
                         'gendercategory',
                         'shapecategory',
@@ -71,8 +71,9 @@ class ProductController extends Controller
                         'gender_products_list' => $products
                     ], 200);
                 dd($products);
-            } elseif ($request->get('shape_id') != null) {
-                $products = Product::where('shape_categories_id', $request->get('shape_id'))
+            }
+            if ($request->get('shape_id') != null) {
+                $products = Product::whereIn('shape_categories_id', $request->get('shape_id'))
                     ->with(
                         'gendercategory',
                         'shapecategory',
@@ -107,8 +108,9 @@ class ProductController extends Controller
                         'total_count' => $products->count(),
                         'shape_products_list' => $products
                     ], 200);
-            } elseif ($request->get('color_id')) {
-                $products = Product::where('color_categories_id', $request->get('color_id'))
+            }
+            if ($request->get('color_id')) {
+                $products = Product::whereIn('color_categories_id', $request->get('color_id'))
                     ->with(
                         'gendercategory',
                         'shapecategory',
@@ -143,8 +145,9 @@ class ProductController extends Controller
                         'total_count' => $products->count(),
                         'color_products_list' => $products
                     ], 200);
-            } elseif ($request->get('size_id')) {
-                $products = Product::where('size_categories_id', $request->get('size_id'))
+            }
+            if ($request->get('size_id')) {
+                $products = Product::whereIn('size_categories_id', $request->get('size_id'))
                     ->with(
                         'gendercategory',
                         'shapecategory',
@@ -179,8 +182,9 @@ class ProductController extends Controller
                         'total_count' => $products->count(),
                         'size_products_list' => $products
                     ], 200);
-            } elseif ($request->get('glass_id')) {
-                $products = Product::where('glass_categories_id', $request->get('glass_id'))
+            }
+            if ($request->get('glass_id')) {
+                $products = Product::whereIn('glass_categories_id', $request->get('glass_id'))
                     ->with(
                         'gendercategory',
                         'shapecategory',
@@ -215,7 +219,8 @@ class ProductController extends Controller
                         'total_count' => $products->count(),
                         'glass_products_list' => $products
                     ], 200);
-            } else {
+            }
+            else {
                 $products = Product::with(
                     'gendercategory',
                     'shapecategory',
