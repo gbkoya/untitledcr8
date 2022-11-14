@@ -302,24 +302,46 @@
    // "Friday, Jul 2, 2021"
  
    const filterColor = (id) =>{
-        testVar = `?color_id=${id}`;
+        if(testVar === null ){
+            testVar = `?color_id[0]=${id}`;
+        }else{
+            testVar += `&color_id[0]=${id}`;
+        }
         console.log(testVar);
         doCheck();
       }
       console.log(testVar);
 
     const filterShape = (id) =>{
-        testVar = `?shape_id=${id}`;
+        if(testVar === null ){
+            testVar = `?shape_id[0]=${id}`;
+        }else{
+            testVar += `&shape_id[0]=${id}`;
+        }
         console.log(testVar);
         showShape();
     }
 
     const filterGlasses = (id) =>{
-        testVar = `?glass_id=${id}`;
+        if(testVar === null ){
+            testVar = `?glass_id[0]=${id}`;
+        }else {
+            testVar += `&glass_id[0]=${id}`;
+        }
         console.log(testVar);
         showGlass();
     }
 
+    const filterGender = (id) =>{
+        if(testVar === null ){
+            testVar = `?gender_id[0]=${id}`;
+        }else {
+            testVar += `&gender_id[0]=${id}`;
+        }
+        console.log(testVar);
+        showGender();
+    }
+    
 
         // LOGIC TO TOGGLE OPEN AND CLOSE THE LEFT FILTER
         const triggerSide = () => {
@@ -387,7 +409,7 @@
 	$(".next-btn").on("click", function(){
 		if (page * pagelimit < totalrecord) {
 			page++;
-			fetchColour();
+			fetchColor();
 		}
 		// console.log("Next Page: " + page);
 	});
@@ -413,80 +435,6 @@
 					let dataArr =  data.color_products_list.data;
 					totalrecord = data.color_products_list.total;
                     let currentPage = data.color_products_list.current_page;
-        
-
-                    // GET AND DISPLAY SHAPE CATEGORIES
-                    let shapeArr = dataArr.map(shapeA=>{
-                        return shapeA.shapecategory
-                    })
-                    console.log(shapeArr);
-                    let shape_category = shapeArr.filter(elem=>{
-                        // console.log(elem);
-                       return elem !== null;
-                    })
-                    console.log(shape_category);
-                    shapeItems < 1
-                    ?
-                    shapeItems.innerHTML = "No face shape category found"
-                    :
-                    shape_category.map(elem =>{
-                        return shapeItems.innerHTML += `
-                        <div class="colours_wrapper--left">
-                            <div class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
-                                <p>${elem.shape}</p>
-                            </div>
-                            </div>
-                        `;
-                    })
-
-                    // GET AN DISPLAY GENDER FROM THE DATABASE
-                    let genderArr = dataArr.map(genderA=>{
-                        return genderA.gendercategory
-                    })
-                    console.log(genderArr);
-                    let gender_category = genderArr.filter(elem=>{
-                        // console.log(elem);
-                       return elem !== null;
-                    })
-                    console.log(gender_category);
-                    genderItems < 1
-                    ?
-                    genderItems.innerHTML = "No gender category found"
-                    :
-                    gender_category.map(elem =>{
-                        return genderItems.innerHTML += `
-                        <div class="colours_wrapper--left">
-                            <div class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
-                                <p>${elem.gender}</p>
-                            </div>
-                            </div>
-                        `;
-                    })
-
-                    // GET AND DISPLAY GLASS CATEGORIES FROM THE DATABASE
-                    let glassArr = dataArr.map(glassA=>{
-                        return glassA.glasscategory
-                    })
-                    console.log(glassArr);
-                    let glass_category = glassArr.filter(elem=>{
-                        // console.log(elem);
-                       return elem !== null;
-                    })
-                    console.log(glass_category);
-                    glassItems < 1
-                    ?
-                    glassItems.innerHTML = "No glass category found"
-                    :
-                    glass_category.map(elem =>{
-                        return glassItems.innerHTML += `
-                        <div class="colours_wrapper--left">
-                                <div class="color_container">
-                                    <p>${elem.glass}</p>
-                                </div>
-                                
-                            </div>
-                        `;
-                    })
             
                     const productItems = document.querySelector('.productsData');
                     const productItemsWomen = document.querySelector('.productsDataWomen');
@@ -732,54 +680,6 @@
 					totalrecord = data.shape_products_list.total;
                     let currentPage = data.shape_products_list.current_page;
         
-                    // GET AN DISPLAY GENDER FROM THE DATABASE
-                    let genderArr = dataArr.map(genderA=>{
-                        return genderA.gendercategory
-                    })
-                    console.log(genderArr);
-                    let gender_category = genderArr.filter(elem=>{
-                        // console.log(elem);
-                       return elem !== null;
-                    })
-                    console.log(gender_category);
-                    genderItems < 1
-                    ?
-                    genderItems.innerHTML = "No gender category found"
-                    :
-                    gender_category.map(elem =>{
-                        return genderItems.innerHTML += `
-                        <div class="colours_wrapper--left">
-                            <div class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
-                                <p>${elem.gender}</p>
-                            </div>
-                            </div>
-                        `;
-                    })
-
-                    // GET AND DISPLAY GLASS CATEGORIES FROM THE DATABASE
-                    let glassArr = dataArr.map(glassA=>{
-                        return glassA.glasscategory
-                    })
-                    console.log(glassArr);
-                    let glass_category = glassArr.filter(elem=>{
-                        // console.log(elem);
-                       return elem !== null;
-                    })
-                    console.log(glass_category);
-                    glassItems < 1
-                    ?
-                    glassItems.innerHTML = "No glass category found"
-                    :
-                    glass_category.map(elem =>{
-                        return glassItems.innerHTML += `
-                        <div class="colours_wrapper--left">
-                                <div class="color_container">
-                                    <p>${elem.glass}</p>
-                                </div>
-                                
-                            </div>
-                        `;
-                    })
             
                     const productItems = document.querySelector('.productsData');
                     const productItemsWomen = document.querySelector('.productsDataWomen');
@@ -966,6 +866,248 @@
     }
    }
 
+   const showGender = () =>{
+    if(testVar !== null ){
+        // alert(testVar) 
+         // USING JQUERY AND AJAX
+         $(function(){
+    // Declare some global variables
+        let page = 1,
+		pagelimit = 18,
+		totalrecord = 0;
+        const baseURL= '{{ env('APP_URL') }}'
+      displayLoading();
+
+        fetchGender();
+
+        // handling the prev-btn
+	$(".prev-btn").on("click", function(){
+		if (page > 1) {
+			page--;
+			fetchGender();
+		}
+        
+		// console.log("Prev Page: " + page);
+	});
+
+	// handling the next-btn
+	$(".next-btn").on("click", function(){
+		if (page * pagelimit < totalrecord) {
+			page++;
+			fetchGender();
+		}
+		// console.log("Next Page: " + page);
+	});
+
+ 
+        // Fetch the product data using Ajax
+        function fetchGender() {
+            console.log(testVar);
+		// ajax() method to make api calls
+		$.ajax({
+			url: `${baseURL}/api/product-list${testVar===null ? '' : testVar}`,
+			type: "GET",
+			data: {
+				page: page,
+				pagelimit: pagelimit
+			},
+			success: function(data) {
+              hideLoading();
+				console.log(data);
+                console.log(data.gender_products_list.data);
+
+				if (data) {
+					let dataArr =  data.gender_products_list.data;
+					totalrecord = data.gender_products_list.total;
+                    let currentPage = data.gender_products_list.current_page;
+        
+                    
+                    const productItems = document.querySelector('.productsData');
+                    const productItemsWomen = document.querySelector('.productsDataWomen');
+                    const productItemsKids = document.querySelector('.productsDatakids');
+                   
+                    // Format price
+                    const formatter = new Intl.NumberFormat('en-NG', {
+                    style: 'currency',
+                    currency: 'NGN',
+                    });
+
+
+                    // Get data for Men, women and kids
+                    // MEN
+                    const menProducts = dataArr.filter(menProduct => menProduct.productcategory_id === 1
+            );
+                    // console.log(menProducts);
+                    // WOMEN
+                    // Get women data
+
+                    const womenProducts = dataArr.filter(womenProduct => womenProduct.productcategory_id === 2);
+                    // console.log(womenProducts);
+
+                    // KIDS
+                      // Get Kids data
+                    const kidsProducts = dataArr.filter(kidProduct => kidProduct.productcategory_id === 3);
+                    // console.log(kidsProducts);
+
+                    // DISPLAY MEN
+                    let defaultImg = 'foremost_shopimage_1667983695.png'
+                    let htmlMen;
+
+                    dataArr.length <= 0 
+                    ?
+                    htmlMen = "<h3>No product found<h3>"
+                    :
+				     htmlMen = "";
+					for (var i = 0; i < dataArr.length; i++) {
+						htmlMen += `
+                
+                    <div class="shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                     
+                       
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner car_image_wrapper">
+                        <div class="carousel-item active">
+                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <div class="shop-card-heading">
+                        <div>
+                            <h4>${dataArr[i].name}</h4>
+                            <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                        </div>
+                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                            <div class="price-child d-flex flex-row">
+                                <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                <p>₦${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                            </div>
+                            <div onclick="addToCart()">
+                              
+                              <button type="button" class="shop-card-button">
+                                  <img
+                                  src="{{ asset('customImages/buyIcon.png') }}"
+                                  />
+                                  View
+                              </button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+					}
+					$("#paginated-list").html(htmlMen);
+
+                     // DISPLAY WOMEN
+                     let htmlWomen;
+
+                    womenProducts.length <= 0 
+                    ?
+                    htmlWomen = "<h3>No product found<h3>"
+                    :
+					htmlWomen = "";
+					for (var i = 0; i < womenProducts.length; i++) {
+						htmlWomen += `
+                
+                    <div class="shop-card e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
+                      <img class="img-fluid
+                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                      "
+                       src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
+                    </a>
+                    <div class="shop-card-heading">
+                        <div>
+                            <h4>${womenProducts[i].name}</h4>
+                            <p data="date-updated">Updated July 2022</p>
+                        </div>
+                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                            <div class="price-child d-flex flex-row">
+                                <p>N4,999</p>
+                                <p>N9,000</p>
+                            </div>
+                            <div onclick="addToCart()">
+                              
+                              <button type="button" class="shop-card-button">
+                                  <img
+                                  src="{{ asset('customImages/buyIcon.png') }}"
+                                  />
+                                  View
+                              </button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+					}
+					$("#paginated-listWomen").html(htmlWomen);
+                    let htmlKids;
+
+                    kidsProducts.length <= 0 
+                    ?
+                    htmlKids = "<h3>No product found<h3>"
+                    :
+                    htmlKids = "";
+					for (var i = 0; i < kidsProducts.length; i++) {
+						htmlKids += `
+                
+                    <div class="shop-card e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
+                      <img class="img-fluid
+                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                      "
+                       src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
+                    <div class="shop-card-heading">
+                        <div>
+                            <h4>${kidsProducts[i].name}</h4>
+                            <p data="date-updated">Updated July 2022</p>
+                        </div>
+                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                            <div class="price-child d-flex flex-row">
+                                <p>N4,999</p>
+                                <p>N9,000</p>
+                            </div>
+                            <div onclick="addToCart()">
+                              
+                              <button type="button" class="shop-card-button">
+                                  <img
+                                  src="{{ asset('customImages/buyIcon.png') }}"
+                                  />
+                                  View
+                              </button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+					}
+					$("#paginated-listKids").html(htmlKids);
+
+                            }
+                        },
+			error: function(jqXHR, textStatus, errorThrown) {
+              hideLoading();
+				console.log(jqXHR);
+				console.log(textStatus);
+				console.log(errorThrown);
+			}
+		});
+	}
+
+
+    
+        });
+    }
+   }
+
+
 
    const showGlass = () =>{
     if(testVar !== null ){
@@ -1015,36 +1157,13 @@
 			success: function(data) {
               hideLoading();
 				console.log(data);
-                console.log(data.products_list.data);
+                console.log(data.glass_products_list.data);
 
 				if (data) {
-					let dataArr =  data.products_list.data;
-					totalrecord = data.products_list.total;
-                    let currentPage = data.products_list.current_page;
+					let dataArr =  data.glass_products_list.data;
+					totalrecord = data.glass_products_list.total;
+                    let currentPage = data.glass_products_list.current_page;
         
-                    // GET AN DISPLAY GENDER FROM THE DATABASE
-                    let genderArr = dataArr.map(genderA=>{
-                        return genderA.gendercategory
-                    })
-                    console.log(genderArr);
-                    let gender_category = genderArr.filter(elem=>{
-                        // console.log(elem);
-                       return elem !== null;
-                    })
-                    console.log(gender_category);
-                    genderItems < 1
-                    ?
-                    genderItems.innerHTML = "No gender category found"
-                    :
-                    gender_category.map(elem =>{
-                        return genderItems.innerHTML += `
-                        <div class="colours_wrapper--left">
-                            <div class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
-                                <p>${elem.gender}</p>
-                            </div>
-                            </div>
-                        `;
-                    })
                     
                     const productItems = document.querySelector('.productsData');
                     const productItemsWomen = document.querySelector('.productsDataWomen');
@@ -1296,11 +1415,30 @@
                        return elem !== null;
                     })
                     console.log(color_category);
+
+                    let colorId = []
+                    console.log(colorId);
+
+                    color_category.map(el=>{
+                       if(colorId.find(object=>{
+                        if(object.id === el.id && object.color === el.color){
+                            object++
+                            return true;
+                        }else{
+                            return false;
+                        }
+                       })){
+
+                       }else{
+                        colorId.push(el);
+                       }
+
+                    })
                     colorItems < 1
                     ?
                     colorItems.innerHTML = "No color category found"
                     :
-                    color_category.map(element =>{
+                    colorId.map(element =>{
                         return colorItems.innerHTML += `
                         <div class="colours_wrapper--left">
                             <div onclick="filterColor( ${element.id})" class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
@@ -1316,17 +1454,38 @@
                     let shapeArr = dataArr.map(shapeA=>{
                         return shapeA.shapecategory
                     })
-                    console.log(shapeArr);
+                    // console.log(shapeArr);
                     let shape_category = shapeArr.filter(elem=>{
                         // console.log(elem);
                        return elem !== null;
                     })
                     console.log(shape_category);
+
+                    let shapeId = []
+                    console.log(shapeId);
+
+                    shape_category.map(el=>{
+                       if(shapeId.find(object=>{
+                        if(object.id === el.id && object.shape === el.shape){
+                            object++
+                            return true;
+                        }else{
+                            return false;
+                        }
+                       })){
+
+                       }else{
+                        shapeId.push(el);
+                       }
+
+                    })
+                    // console.log(uniqueShape);
+
                     shapeItems < 1
                     ?
                     shapeItems.innerHTML = "No face shape category found"
                     :
-                    shape_category.map(elem =>{
+                    shapeId.map(elem =>{
                         return shapeItems.innerHTML += `
                         <div class="colours_wrapper--left">
                             <div onclick="filterShape(${elem.id})" class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
@@ -1345,15 +1504,35 @@
                         // console.log(elem);
                        return elem !== null;
                     })
-                    console.log(gender_category);
+                    // console.log(gender_category);
+
+                    let genderId = []
+                    console.log(genderId);
+
+                    gender_category.map(el=>{
+                       if(genderId.find(object=>{
+                        if(object.id === el.id && object.gender === el.gender){
+                            object++
+                            return true;
+                        }else{
+                            return false;
+                        }
+                       })){
+
+                       }else{
+                        genderId.push(el);
+                       }
+
+                    })
+
                     genderItems < 1
                     ?
                     genderItems.innerHTML = "No gender category found"
                     :
-                    gender_category.map(elem =>{
+                    genderId.map(elem =>{
                         return genderItems.innerHTML += `
                         <div class="colours_wrapper--left">
-                            <div class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
+                            <div onclick="filterGender(${elem.id})" class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
                                 <p>${elem.gender}</p>
                             </div>
                             </div>
@@ -1370,11 +1549,30 @@
                        return elem !== null;
                     })
                     console.log(glass_category);
+
+                    let glassId = []
+                    console.log(glassId);
+
+                    glass_category.map(el=>{
+                       if(glassId.find(object=>{
+                        if(object.id === el.id && object.glass === el.glass){
+                            object++
+                            return true;
+                        }else{
+                            return false;
+                        }
+                       })){
+
+                       }else{
+                        glassId.push(el);
+                       }
+
+                    })
                     glassItems < 1
                     ?
                     glassItems.innerHTML = "No glass category found"
                     :
-                    glass_category.map(elem =>{
+                    glassId.map(elem =>{
                         return glassItems.innerHTML += `
                         <div class="colours_wrapper--left">
                                 <div onclick="filterGlasses(${elem.id})" class="color_container">
