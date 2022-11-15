@@ -27,9 +27,8 @@
     class="img-fluid search-shop-image"
     src="{{ asset('customImages/arrow-right.png') }}"/>
         </div>   
-        <div class="d-sm-flex flex-sm-row align-items-center flex-wrap button-wrapper but-wrapper-mobile">
-            <a href="/login"><button class="login" type="button">Log In</button></a>
-            <a href="/signup"><button class="signup" type="button">Sign Up</button></a>
+        <div class="button-container">
+          
            {{-- <a href="/try-it"><button class="try-it" type="button">Try it On</button></a> --}}
         </div>
             {{-- <button type="button" class="">
@@ -300,6 +299,22 @@
    let formattedDate = new Date('2022-11-09T08:48:15.000000Z').toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"}) 
     console.log(formattedDate);
    // "Friday, Jul 2, 2021"
+   let tokenStatus = localStorage.getItem('token');
+//    console.log(tokenStatus);
+    let authButtons = document.querySelector('.button-container');
+    console.log(authButtons);
+    if(!tokenStatus){
+        authButtons.innerHTML += `
+        <div class="d-sm-flex flex-sm-row align-items-center flex-wrap button-wrapper but-wrapper-mobile">
+            <a href="/login"><button class="login" type="button">Log In</button></a>
+            <a href="/signup"><button class="signup" type="button">Sign Up</button></a>
+        </div>
+    `;
+    }else{
+        authButtons.innerHTML = ""
+    } 
+    
+      
  
    const filterColor = (id) =>{
         if(testVar === null ){
@@ -429,12 +444,12 @@
 			success: function(data) {
               hideLoading();
 				console.log(data);
-                console.log(data.color_products_list.data);
+                console.log(data.products_list.data);
 
 				if (data) {
-					let dataArr =  data.color_products_list.data;
-					totalrecord = data.color_products_list.total;
-                    let currentPage = data.color_products_list.current_page;
+					let dataArr =  data.products_list.data;
+					totalrecord = data.products_list.total;
+                    let currentPage = data.products_list.current_page;
             
                     const productItems = document.querySelector('.productsData');
                     const productItemsWomen = document.querySelector('.productsDataWomen');
@@ -469,7 +484,7 @@
 
                     dataArr.length <= 0 
                     ?
-                    htmlMen = "<h3>No product found<h3>"
+                    htmlMen = `<h4 class="no_productText text-center">No product found..<h4>`
                     :
 				     htmlMen = "";
 					for (var i = 0; i < dataArr.length; i++) {
@@ -524,7 +539,7 @@
 
                     womenProducts.length <= 0 
                     ?
-                    htmlWomen = "<h3>No product found<h3>"
+                    htmlWomen =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
 					htmlWomen = "";
 					for (var i = 0; i < womenProducts.length; i++) {
@@ -566,7 +581,7 @@
 
                     kidsProducts.length <= 0 
                     ?
-                    htmlKids = "<h3>No product found<h3>"
+                    htmlKids =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
                     htmlKids = "";
 					for (var i = 0; i < kidsProducts.length; i++) {
@@ -673,12 +688,12 @@
 			success: function(data) {
               hideLoading();
 				console.log(data);
-                console.log(data.shape_products_list.data);
+                console.log(data.products_list.data);
 
 				if (data) {
-					let dataArr =  data.shape_products_list.data;
-					totalrecord = data.shape_products_list.total;
-                    let currentPage = data.shape_products_list.current_page;
+					let dataArr =  data.products_list.data;
+					totalrecord = data.products_list.total;
+                    let currentPage = data.products_list.current_page;
         
             
                     const productItems = document.querySelector('.productsData');
@@ -714,7 +729,7 @@
 
                     dataArr.length <= 0 
                     ?
-                    htmlMen = "<h3>No product found<h3>"
+                    htmlMen =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
 				     htmlMen = "";
 					for (var i = 0; i < dataArr.length; i++) {
@@ -769,7 +784,7 @@
 
                     womenProducts.length <= 0 
                     ?
-                    htmlWomen = "<h3>No product found<h3>"
+                    htmlWomen =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
 					htmlWomen = "";
 					for (var i = 0; i < womenProducts.length; i++) {
@@ -811,7 +826,7 @@
 
                     kidsProducts.length <= 0 
                     ?
-                    htmlKids = "<h3>No product found<h3>"
+                    htmlKids =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
                     htmlKids = "";
 					for (var i = 0; i < kidsProducts.length; i++) {
@@ -914,12 +929,12 @@
 			success: function(data) {
               hideLoading();
 				console.log(data);
-                console.log(data.gender_products_list.data);
+                console.log(data.products_list.data);
 
 				if (data) {
-					let dataArr =  data.gender_products_list.data;
-					totalrecord = data.gender_products_list.total;
-                    let currentPage = data.gender_products_list.current_page;
+					let dataArr =  data.products_list.data;
+					totalrecord = data.products_list.total;
+                    let currentPage = data.products_list.current_page;
         
                     
                     const productItems = document.querySelector('.productsData');
@@ -955,7 +970,7 @@
 
                     dataArr.length <= 0 
                     ?
-                    htmlMen = "<h3>No product found<h3>"
+                    htmlMen =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
 				     htmlMen = "";
 					for (var i = 0; i < dataArr.length; i++) {
@@ -1010,7 +1025,7 @@
 
                     womenProducts.length <= 0 
                     ?
-                    htmlWomen = "<h3>No product found<h3>"
+                    htmlWomen =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
 					htmlWomen = "";
 					for (var i = 0; i < womenProducts.length; i++) {
@@ -1052,7 +1067,7 @@
 
                     kidsProducts.length <= 0 
                     ?
-                    htmlKids = "<h3>No product found<h3>"
+                    htmlKids =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
                     htmlKids = "";
 					for (var i = 0; i < kidsProducts.length; i++) {
@@ -1157,12 +1172,12 @@
 			success: function(data) {
               hideLoading();
 				console.log(data);
-                console.log(data.glass_products_list.data);
+                console.log(data.products_list.data);
 
 				if (data) {
-					let dataArr =  data.glass_products_list.data;
-					totalrecord = data.glass_products_list.total;
-                    let currentPage = data.glass_products_list.current_page;
+					let dataArr =  data.products_list.data;
+					totalrecord = data.products_list.total;
+                    let currentPage = data.products_list.current_page;
         
                     
                     const productItems = document.querySelector('.productsData');
@@ -1198,7 +1213,7 @@
 
                     dataArr.length <= 0 
                     ?
-                    htmlMen = "<h3>No product found<h3>"
+                    htmlMen =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
 				     htmlMen = "";
 					for (var i = 0; i < dataArr.length; i++) {
@@ -1253,7 +1268,7 @@
 
                     womenProducts.length <= 0 
                     ?
-                    htmlWomen = "<h3>No product found<h3>"
+                    htmlWomen =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
 					htmlWomen = "";
 					for (var i = 0; i < womenProducts.length; i++) {
@@ -1295,7 +1310,7 @@
 
                     kidsProducts.length <= 0 
                     ?
-                    htmlKids = "<h3>No product found<h3>"
+                    htmlKids =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
                     htmlKids = "";
 					for (var i = 0; i < kidsProducts.length; i++) {
@@ -1596,19 +1611,19 @@
 
                     // Get data for Men, women and kids
                     // MEN
-                    const menProducts = dataArr.filter(menProduct => menProduct.productcategory_id === 1
+                    const menProducts = dataArr.filter(menProduct => menProduct.gender_categories_id === 1
             );
                     // console.log(menProducts);
+
                     // WOMEN
                     // Get women data
-
-                    const womenProducts = dataArr.filter(womenProduct => womenProduct.productcategory_id === 2);
-                    // console.log(womenProducts);
+                    const womenProducts = dataArr.filter(womenProduct => womenProduct.gender_categories_id === 2);
+                    console.log(womenProducts);
 
                     // KIDS
                       // Get Kids data
-                    const kidsProducts = dataArr.filter(kidProduct => kidProduct.productcategory_id === 3);
-                    // console.log(kidsProducts);
+                    const kidsProducts = dataArr.filter(kidProduct => kidProduct.gender_categories_id === 3);
+                    console.log(kidsProducts);
 
                     // DISPLAY MEN
                     let defaultImg = 'foremost_shopimage_1667983695.png'
@@ -1616,39 +1631,39 @@
 
                     dataArr.length <= 0 
                     ?
-                    htmlMen = "<h3>No product found<h3>"
+                    htmlMen =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
 				     htmlMen = "";
-					for (var i = 0; i < dataArr.length; i++) {
+					for (var i = 0; i < menProducts.length; i++) {
 						htmlMen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                    <div class="shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${menProducts[i].id}>
                      
                        
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner car_image_wrapper">
                         <div class="carousel-item active">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                        <img src="http://127.0.0.1:8000/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
                         </div>
                         <div class="carousel-item">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                        <img src="http://127.0.0.1:8000/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
                         </div>
                         <div class="carousel-item">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                        <img src="http://127.0.0.1:8000/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
                         </div>
                     </div>
                     </div>
                     
                     <div class="shop-card-heading">
                         <div>
-                            <h4>${dataArr[i].name}</h4>
-                            <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                            <h4>${menProducts[i].name}</h4>
+                            <p data="date-updated">Updated ${ new Date(menProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
                         </div>
                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
                         <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
                             <div class="price-child d-flex flex-row">
-                                <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
-                                <p>₦${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
                             </div>
                             <div onclick="addToCart()">
                               
@@ -1671,41 +1686,52 @@
 
                     womenProducts.length <= 0 
                     ?
-                    htmlWomen = "<h3>No product found<h3>"
+                    htmlWomen =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
 					htmlWomen = "";
 					for (var i = 0; i < womenProducts.length; i++) {
 						htmlWomen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
-                      <img class="img-fluid
-                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                      "
-                       src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
-                    </a>
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>${womenProducts[i].name}</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <div onclick="addToCart()">
-                              
-                              <button type="button" class="shop-card-button">
-                                  <img
-                                  src="{{ asset('customImages/buyIcon.png') }}"
-                                  />
-                                  View
-                              </button>
-                              </div>
-                        </div>
-                    </div>
-                </div>
+                        <div class="shop-card e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
+                     
+                       
+                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                     <div class="carousel-inner car_image_wrapper">
+                         <div class="carousel-item active">
+                         <img src="http://127.0.0.1:8000/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                         </div>
+                         <div class="carousel-item">
+                         <img src="http://127.0.0.1:8000/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                         </div>
+                         <div class="carousel-item">
+                         <img src="http://127.0.0.1:8000/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                         </div>
+                     </div>
+                     </div>
+                     
+                     <div class="shop-card-heading">
+                         <div>
+                             <h4>${womenProducts[i].name}</h4>
+                             <p data="date-updated">Updated ${ new Date(womenProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                         </div>
+                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                         <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                             <div class="price-child d-flex flex-row">
+                                 <p>${formatter.format(womenProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                 <p>${formatter.format(womenProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                             </div>
+                             <div onclick="addToCart()">
+                               
+                               <button type="button" class="shop-card-button">
+                                   <img
+                                   src="{{ asset('customImages/buyIcon.png') }}"
+                                   />
+                                   View
+                               </button>
+                               </div>
+                         </div>
+                     </div>
+                 </div>
                 `;
 					}
 					$("#paginated-listWomen").html(htmlWomen);
@@ -1713,40 +1739,52 @@
 
                     kidsProducts.length <= 0 
                     ?
-                    htmlKids = "<h3>No product found<h3>"
+                    htmlKids = `<h4 class="no_productText text-center">No product found..<h4>`
                     :
                     htmlKids = "";
 					for (var i = 0; i < kidsProducts.length; i++) {
 						htmlKids += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
-                      <img class="img-fluid
-                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                      "
-                       src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>${kidsProducts[i].name}</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <div onclick="addToCart()">
-                              
-                              <button type="button" class="shop-card-button">
-                                  <img
-                                  src="{{ asset('customImages/buyIcon.png') }}"
-                                  />
-                                  View
-                              </button>
-                              </div>
-                        </div>
-                    </div>
-                </div>
+                        <div class="shop-card e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
+                     
+                       
+                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                     <div class="carousel-inner car_image_wrapper">
+                         <div class="carousel-item active">
+                         <img src="http://127.0.0.1:8000/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                         </div>
+                         <div class="carousel-item">
+                         <img src="http://127.0.0.1:8000/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                         </div>
+                         <div class="carousel-item">
+                         <img src="http://127.0.0.1:8000/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                         </div>
+                     </div>
+                     </div>
+                     
+                     <div class="shop-card-heading">
+                         <div>
+                             <h4>${kidsProducts[i].name}</h4>
+                             <p data="date-updated">Updated ${ new Date(kidsProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                         </div>
+                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                         <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                             <div class="price-child d-flex flex-row">
+                                 <p>${formatter.format(kidsProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                 <p>${formatter.format(kidsProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                             </div>
+                             <div onclick="addToCart()">
+                               
+                               <button type="button" class="shop-card-button">
+                                   <img
+                                   src="{{ asset('customImages/buyIcon.png') }}"
+                                   />
+                                   View
+                               </button>
+                               </div>
+                         </div>
+                     </div>
+                 </div>
                 `;
 					}
 					$("#paginated-listKids").html(htmlKids);
@@ -1793,28 +1831,6 @@
 
     
         });
-    
-            
-        //     menCards.forEach(card =>{
-        //         card.addEventListener('click', ()=>{
-        //             //  window.location.href = "/details"
-
-        //         console.log('yea');
-
-        //             // let cardId = card.getAttribute("data-id");
-        //             // // localSorage.setItem('productId', cardId);
-        //             // localStorage.setItem('product_id', cardId);
-        //             // //  window.location.href = "/details"
-        //             // console.log(cardId);
-
-        //         })
-        //     })
-        //     function getItemID(){
-        //         // alert(menCards);
-       
-
-        // }
-        // getItemID();
            
           </script>
 

@@ -742,6 +742,12 @@
     font-weight: 600;
   }
 
+  .no_productText{
+    margin-top: 3rem;
+    color: #6B809B;
+    font-weight: 600;
+  }
+
   .category_heading{
     max-width: 100rem!important;
     margin: 0 auto;

@@ -9,9 +9,9 @@
         class="img-fluid search-shop-image"
         src="{{ asset('customImages/arrow-right.png') }}"/>
             </div>   
-            <div class="d-sm-flex flex-sm-row align-items-center flex-wrap button-wrapper but-wrapper-mobile">
-                <a href="/login"><button class="login-sub" type="button">Log In</button></a>
-                <a href="/signup"><button class="signup-sub" type="button">Sign Up</button></a>
+
+             <div class="button-container">
+          
             </div>
                 {{-- <button type="button" class="">
                     <img
@@ -29,3 +29,20 @@
             </li>
     {{-- </div>  --}}
     </nav>
+
+    <script type="text/javascript">
+    let tokenStatus = localStorage.getItem('token');
+//    console.log(tokenStatus);
+    let authButtons = document.querySelector('.button-container');
+    console.log(authButtons);
+    if(!tokenStatus){
+        authButtons.innerHTML += `
+        <div class="d-sm-flex flex-sm-row align-items-center flex-wrap button-wrapper but-wrapper-mobile">
+            <a href="/login"><button class="login" type="button">Log In</button></a>
+            <a href="/signup"><button class="signup" type="button">Sign Up</button></a>
+        </div>
+    `;
+    }else{
+        authButtons.innerHTML = ""
+    } 
+    </script>
