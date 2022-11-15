@@ -472,3 +472,39 @@ max-height: 700px !important;
     z-index: 1;
     display: none;
 }
+
+.checkout_buttonWrap a:nth-child(1) button[type="button"]{
+  background: #FAFAFA;
+  border: 1px solid #F58634;
+  padding: 1rem 10rem;
+}
+
+.checkout_buttonWrap a:nth-child(2) button[type="button"]{
+  padding: 1rem 10rem;
+  background:  #F58634; 
+  border: 1px solid #F58634;
+  color:#FAFAFA;
+  margin-top: 1rem;
+}
+
+.checkout_card{
+  cursor: unset;
+}
+
+.checkout2_form{
+  position: relative;
+}
+
+.checkout2_but{
+  position: absolute;
+  right: .3%;
+  top: 29rem;
+}
+
+.back_but{
+  padding-left: 7rem;
+}
+
+#checkoutForm{
+  padding-left: 14%;
+}
