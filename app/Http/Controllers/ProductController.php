@@ -39,12 +39,23 @@ class ProductController extends Controller
                 $request->get('color_id') != null || $request->get('size_id') != null ||
                 $request->get('glass_id') != null
             ) {
-                $products = Product::
-                      whereIn('gender_categories_id', $request->get('gender_id'))
-                    ->whereIn('size_categories_id', $request->get('size_id'))
-                    ->whereIn('shape_categories_id', $request->get('shape_id'))
-                    ->whereIn('color_categories_id', $request->get('color_id'))
-                    ->whereIn('glass_categories_id', $request->get('glass_id'))
+                $qb = Product::query();
+                if ($request->get('gender_id')) {
+                    $qb->whereIn('gender_categories_id', $request->get('gender_id'));
+                }
+                if ($request->get('size_id')) {
+                    $qb->whereIn('size_categories_id', $request->get('size_id'));
+                }
+                if ($request->get('shape_id')) {
+                    $qb->whereIn('shape_categories_id', $request->get('shape_id'));
+                }
+                if ($request->get('color_id')) {
+                    $qb->whereIn('color_categories_id', $request->get('color_id'));
+                }
+                if ($request->get('glass_id')) {
+                    $qb->whereIn('glass_categories_id', $request->get('glass_id'));
+                }
+                $products = $qb
                     ->with(
                         'gendercategory',
                         'shapecategory',
@@ -78,192 +89,6 @@ class ProductController extends Controller
                     'status' => true,
                     'total_count' => $products->count(),
                     'products_list' => $products
-                ], 200);
-            }
-
-            if ($request->get('gender_id') != null) {
-                $products = Product::whereIn('gender_categories_id', $request->get('gender_id'))
-                    ->with(
-                        'gendercategory',
-                        'shapecategory',
-                        'colorcategory',
-                        'sizecategory',
-                        'glasscategory'
-                    )->with(array(
-                        'productprices' => function ($query) {
-                            $query->select('product_price', 'product_id');
-                        },
-                        'productfeatures' => function ($query) {
-                            $query->select('features', 'product_id');
-                        },
-                        'productimages' => function ($query) {
-                            $query->select('imagedirectory', 'product_id');
-                        }
-                    ))->select(
-                        'id',
-                        'name',
-                        'quantityinstock',
-                        'status',
-                        'gender_categories_id',
-                        'size_categories_id',
-                        'shape_categories_id',
-                        'color_categories_id',
-                        'glass_categories_id',
-                        'updated_at'
-                    )->paginate(12);
-
-                return response()->json([
-                    'status' => true,
-                    'total_count' => $products->count(),
-                    'gender_products_list' => $products
-                ], 200);
-            }
-            if ($request->get('shape_id') != null) {
-                $products = Product::whereIn('shape_categories_id', $request->get('shape_id'))
-                    ->with(
-                        'gendercategory',
-                        'shapecategory',
-                        'colorcategory',
-                        'sizecategory',
-                        'glasscategory'
-                    )->with(array(
-                        'productprices' => function ($query) {
-                            $query->select('product_price', 'product_id');
-                        },
-                        'productfeatures' => function ($query) {
-                            $query->select('features', 'product_id');
-                        },
-                        'productimages' => function ($query) {
-                            $query->select('imagedirectory', 'product_id');
-                        }
-                    ))->select(
-                        'id',
-                        'name',
-                        'quantityinstock',
-                        'status',
-                        'gender_categories_id',
-                        'size_categories_id',
-                        'shape_categories_id',
-                        'color_categories_id',
-                        'glass_categories_id',
-                        'updated_at'
-                    )->paginate(12);
-
-                return response()->json([
-                    'status' => true,
-                    'total_count' => $products->count(),
-                    'shape_products_list' => $products
-                ], 200);
-            }
-            if ($request->get('color_id')) {
-                $products = Product::whereIn('color_categories_id', $request->get('color_id'))
-                    ->with(
-                        'gendercategory',
-                        'shapecategory',
-                        'colorcategory',
-                        'sizecategory',
-                        'glasscategory'
-                    )->with(array(
-                        'productprices' => function ($query) {
-                            $query->select('product_price', 'product_id');
-                        },
-                        'productfeatures' => function ($query) {
-                            $query->select('features', 'product_id');
-                        },
-                        'productimages' => function ($query) {
-                            $query->select('imagedirectory', 'product_id');
-                        }
-                    ))->select(
-                        'id',
-                        'name',
-                        'quantityinstock',
-                        'status',
-                        'gender_categories_id',
-                        'size_categories_id',
-                        'shape_categories_id',
-                        'color_categories_id',
-                        'glass_categories_id',
-                        'updated_at'
-                    )->paginate(12);
-
-                return response()->json([
-                    'status' => true,
-                    'total_count' => $products->count(),
-                    'color_products_list' => $products
-                ], 200);
-            }
-            if ($request->get('size_id')) {
-                $products = Product::whereIn('size_categories_id', $request->get('size_id'))
-                    ->with(
-                        'gendercategory',
-                        'shapecategory',
-                        'colorcategory',
-                        'sizecategory',
-                        'glasscategory'
-                    )->with(array(
-                        'productprices' => function ($query) {
-                            $query->select('product_price', 'product_id');
-                        },
-                        'productfeatures' => function ($query) {
-                            $query->select('features', 'product_id');
-                        },
-                        'productimages' => function ($query) {
-                            $query->select('imagedirectory', 'product_id');
-                        }
-                    ))->select(
-                        'id',
-                        'name',
-                        'quantityinstock',
-                        'status',
-                        'gender_categories_id',
-                        'size_categories_id',
-                        'shape_categories_id',
-                        'color_categories_id',
-                        'glass_categories_id',
-                        'updated_at'
-                    )->paginate(12);
-
-                return response()->json([
-                    'status' => true,
-                    'total_count' => $products->count(),
-                    'size_products_list' => $products
-                ], 200);
-            }
-            if ($request->get('glass_id')) {
-                $products = Product::whereIn('glass_categories_id', $request->get('glass_id'))
-                    ->with(
-                        'gendercategory',
-                        'shapecategory',
-                        'colorcategory',
-                        'sizecategory',
-                        'glasscategory'
-                    )->with(array(
-                        'productprices' => function ($query) {
-                            $query->select('product_price', 'product_id');
-                        },
-                        'productfeatures' => function ($query) {
-                            $query->select('features', 'product_id');
-                        },
-                        'productimages' => function ($query) {
-                            $query->select('imagedirectory', 'product_id');
-                        }
-                    ))->select(
-                        'id',
-                        'name',
-                        'quantityinstock',
-                        'status',
-                        'gender_categories_id',
-                        'size_categories_id',
-                        'shape_categories_id',
-                        'color_categories_id',
-                        'glass_categories_id',
-                        'updated_at'
-                    )->paginate(12);
-
-                return response()->json([
-                    'status' => true,
-                    'total_count' => $products->count(),
-                    'glass_products_list' => $products
                 ], 200);
             } else {
                 $products = Product::with(
