@@ -131,7 +131,6 @@ const increment = (price, quantity, id) =>{
     // totalCartItem.innerHTML = data;
     setTimeout(() => {
       updateCart(price, quantity + 1, id);
-      sessionStorage.setItem('totalCartItem', cartQuantity);                renderCartItem();
 
     }, 2000);
     // alert(data + 1)
@@ -265,9 +264,12 @@ const deleteProduct = (id) => {
                 console.log(updateFromDelete);
                 sessionStorage.setItem('cartItem', JSON.stringify(updateFromDelete));
                 
-                // totalCartItem.innerHTML = cartQuantity;
-                // quantVal.innerHTML = cartQuantity;
-                sessionStorage.setItem('totalCartItem', JSON.stringify(cartQuantity));                renderCartItem();
+                let cartDeleteQuanti = cartItem.reduce(
+                    (sum,eve)=>sum+Number(eve.quantity),0
+                );
+              console.log(cartDeleteQuanti);
+              sessionStorage.setItem('totalCartItem', cartDeleteQuanti);  
+
                 Swal.fire({
                         icon: 'success',
                         title: 'Product deleted successfully',
@@ -275,9 +277,11 @@ const deleteProduct = (id) => {
                         timer: 2000,
 
                     })
-                renderCartItem();
+                    cancelModal();
+                // renderCartItem();
 
                 location.reload();
+
            
 }
 
@@ -344,9 +348,11 @@ const hideLoading = () => {
         let itemNew = cartItem.find(el=> el.id === id)
         itemNew.quantity = quantity
         sessionStorage.setItem('cartItem', JSON.stringify(newCart));
-        console.log(cartQuantity);
-
-        renderCartItem();
+        let cartUpdateQuanti = cartItem.reduce(
+                    (sum,eve)=>sum+Number(eve.quantity),0
+                );
+              // console.log(cartQuantity);
+      sessionStorage.setItem('totalCartItem', cartUpdateQuanti);  
 
 
                     hideLoading();
@@ -357,6 +363,7 @@ const hideLoading = () => {
                         timer: 2000,
 
                     })
+                    location.reload();
 
       }
 
