@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ProductCrud;
+use App\Http\Controllers\ProtectedRoutes;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,9 +58,7 @@ Route::get('/blog-post', function () {
     return view('blog_post.first_blog_post');
 });
 
-Route::get('/pay-with-card', function () {
-    return view('pay-with-card');
-});
+Route::get('pay-with-card', [ProtectedRoutes::class, 'payWithCard']) ->name('payWithCard');
 
 Route::get('/checkout3', function () {
     return view('checkout3');
@@ -79,7 +78,7 @@ Route::get('/details2', function () {
 });
 Route::get('/login', function () {
     return view('login');
-});
+})->name('login');
 
 Route::get('/cart', function () {
     return view('cart.cart');
