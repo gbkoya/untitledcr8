@@ -108,25 +108,7 @@
                 <p class="hide_close">Hide filters</p>
             </div>
         </header>
-        {{-- <hr>
-        <div class="d-flex flex-row justify-content-between">
-            <h6>Color</h6>
-           <div class="img-arrow"> <img class="img-fluid" src="{{asset('customImages/arrow-down1.png')}}" alt="Arrow down"></div>
-        </div>
-        <section class="colours_wrapper d-flex flex-row justify-content-evenly">
-            <div class="colours_wrapper--left">
-                <p>Blue</p>
-                <p>Red</p>
-            </div>
-            <div class="colours_wrapper--right">
-                <p>Orange</p>
-                <p>Purple</p>
-
-            </div>
-
-
-           </section>
-        <hr> --}}
+    
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
@@ -212,7 +194,7 @@
     
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane card-paginat fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <div class="d-flex flex-row flex-wrap justify-content-between productsData" id="paginated-list" data-current-page="1" aria-live="polite">
+                <div class="d-flex flex-sm-row flex-sm-wrap justify-content-between align-items-center productsData" id="paginated-list" data-current-page="1" aria-live="polite">
                    
                 </div>
                 {{-- Paginated button --}}
@@ -293,6 +275,7 @@
    let genderItems = document.querySelector('.gender_wrapper');
    let glassItems = document.querySelector('.glass_wrapper');
    let shopContainer = document.querySelector('.shop_display');
+   let rightProduct = document.querySelector('.right_product');
    let testVar = null
     // console.log(testVar);
     let bo = true;
@@ -364,6 +347,7 @@
             leftSide.classList.add('closeSideNav');
             toggleOpen.style.display = 'block';
             leftSide.classList.remove('openSideNav');
+            rightProduct.style.marginLeft = 'unset'
 
         }
         toggleClose.addEventListener('click', triggerSide);
@@ -373,6 +357,7 @@
             leftSide.classList.add('openSideNav');
             toggleOpen.style.display = 'none';
             leftSide.classList.remove('closeSideNav');
+            rightProduct.style.marginLeft = '2rem'
 
         }
         toggleOpen.addEventListener('click', triggerSideClose);

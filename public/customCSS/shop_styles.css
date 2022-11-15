@@ -478,6 +478,9 @@
     .sort-wrapper{
         width: 100%;
     }
+    .sort-wrapper label{
+        font-size: 1.5rem;
+    }
     .sort-wrapper select{
         width: 100%;
         margin-top: 1rem;
@@ -493,22 +496,35 @@
     }
     /* Shop men, women tabs style */
     .shop-card{
+        width: 100%;
         margin-top: 2rem;
         height: auto;
         padding-bottom: 1rem;
     }
     .store-heading h1{
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         text-align: center;
         font-weight: 600;
     }
 
     .shop_display{
+        width: 100%;
         padding: .5rem!important;
     }
     .left_product{
         width: 100%!important;
     }
+  .right_product{
+    width: 100%;
+    margin-top: 9rem;
+    margin-left: unset;
+    margin-right: unset;
+  }
+  .productsData{
+    flex-direction: column!important;
+    align-items: center!important;
+    justify-content: center!important;
+}
 }
 
 /* Ipad screen */
@@ -688,12 +704,16 @@
 
   .left_product {
     width: 25%;
+    height: auto;
+    min-height: 48vmin;
+    max-height: 25vmax;
     background: rgba(217, 217, 217, 0.3);
     padding: .5rem;
   }
 
   .right_product{
     width: 65%;
+    margin-left: 2rem;
   }
 
   .hide_filter{
