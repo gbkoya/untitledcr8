@@ -37,9 +37,13 @@ class ProductController extends Controller
             if (
                 $request->get('gender_id') != null || $request->get('shape_id') != null ||
                 $request->get('color_id') != null || $request->get('size_id') != null ||
-                $request->get('glass_id') != null
+                $request->get('glass_id') != null || $request->get('search_query') != null
             ) {
                 $qb = Product::query();
+                $searchQuery = $request->get('search_query');
+                if ($request->get('search_query')) {
+                    $qb->where('name', 'LIKE', '%' . $searchQuery . '%');
+                }
                 if ($request->get('gender_id')) {
                     $qb->whereIn('gender_categories_id', $request->get('gender_id'));
                 }
