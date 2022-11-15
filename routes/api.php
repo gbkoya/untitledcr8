@@ -28,7 +28,7 @@ Route::post('/contactus/message', [App\Http\Controllers\ContactusController::cla
 Route::post('/subscribe', [App\Http\Controllers\ContactusController::class, 'subscribe'])->name('subscribe');
 
 Route::post('/auth/register', [AuthController::class, 'createUser']);
-Route::post('/auth/login', [AuthController::class, 'loginUser'])->name('login');
+Route::post('/auth/login', [AuthController::class, 'loginUser'])->name('login_api');
 
 // Route::group(['middleware' => 'cors'], function () {
 //     Route::get('auth/google', [GoogleSocialiteController::class, 'redirectToGoogle']);
