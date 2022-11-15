@@ -21,9 +21,11 @@
 {{-- <div class="d-flex flex-row"> --}}
 <div class="row d-sm-flex search-wrapper">
     <input type="search"
+    id="search"
     placeholder="Search for eyewear, lenses and frames"
     />
     <img 
+    onclick="searchProduct()"
     class="img-fluid search-shop-image"
     src="{{ asset('customImages/arrow-right.png') }}"/>
         </div>   
@@ -339,6 +341,12 @@
         console.log(testVar);
         showGender();
     }
+
+    // SEARCH PRODUCT FEATURE
+    const searchProduct = () =>{
+        let inputData = document.getElementById('search');
+        alert(inputData.value)
+    }
     
 
         // LOGIC TO TOGGLE OPEN AND CLOSE THE LEFT FILTER
@@ -481,13 +489,13 @@
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner car_image_wrapper">
                         <div class="carousel-item active">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
                         </div>
                         <div class="carousel-item">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
                         </div>
                         <div class="carousel-item">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
                         </div>
                     </div>
                     </div>
@@ -726,13 +734,13 @@
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner car_image_wrapper">
                         <div class="carousel-item active">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
                         </div>
                         <div class="carousel-item">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
                         </div>
                         <div class="carousel-item">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
                         </div>
                     </div>
                     </div>
@@ -967,13 +975,13 @@
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner car_image_wrapper">
                         <div class="carousel-item active">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
                         </div>
                         <div class="carousel-item">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
                         </div>
                         <div class="carousel-item">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
                         </div>
                     </div>
                     </div>
@@ -1628,13 +1636,13 @@
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner car_image_wrapper">
                         <div class="carousel-item active">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                        <img src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
                         </div>
                         <div class="carousel-item">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                        <img src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
                         </div>
                         <div class="carousel-item">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                        <img src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
                         </div>
                     </div>
                     </div>
@@ -1683,13 +1691,13 @@
                      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                      <div class="carousel-inner car_image_wrapper">
                          <div class="carousel-item active">
-                         <img src="http://127.0.0.1:8000/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                         <img src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
                          </div>
                          <div class="carousel-item">
-                         <img src="http://127.0.0.1:8000/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                         <img src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
                          </div>
                          <div class="carousel-item">
-                         <img src="http://127.0.0.1:8000/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                         <img src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
                          </div>
                      </div>
                      </div>
@@ -1736,13 +1744,13 @@
                      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                      <div class="carousel-inner car_image_wrapper">
                          <div class="carousel-item active">
-                         <img src="http://127.0.0.1:8000/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                         <img src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
                          </div>
                          <div class="carousel-item">
-                         <img src="http://127.0.0.1:8000/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                         <img src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
                          </div>
                          <div class="carousel-item">
-                         <img src="http://127.0.0.1:8000/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                         <img src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
                          </div>
                      </div>
                      </div>

@@ -215,13 +215,13 @@ const hideLoading = () => {
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner details-Image">
                         <div class="carousel-item active det_imageWrapper">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${imageFile1}" class="img-fluid" alt="shop men">
+                        <img src="${URL}/storage/product_image/${imageFile1}" class="img-fluid" alt="shop men">
                         </div>
                         <div class="carousel-item det_imageWrapper">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${imageFile2}" class="img-fluid" alt="Shop image">
+                        <img src="${URL}/storage/product_image/${imageFile2}" class="img-fluid" alt="Shop image">
                         </div>
                         <div class="carousel-item det_imageWrapper">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${imageFile3}" class="img-fluid"  alt="Shop image">
+                        <img src="${URL}/storage/product_image/${imageFile3}" class="img-fluid"  alt="Shop image">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
