@@ -309,4 +309,36 @@ class ProductCrud extends Controller
             ], 500);
         }
     }
+
+    public function deleteProduct($product_id)
+    {
+        try {
+            $product = Product::where('id', $product_id)->first();
+            if ($product == "") {
+                return response()->json([
+                    'status' => true,
+                    'message' => 'Product not found'
+                ], 200);
+            }
+
+            $image_name = $product->productimages[0]['imagedirectory'];
+            Storage::delete('public/thumbnail_image/'.$image_name);
+
+            $product->productimages()->delete();
+            $product->productfeatures()->delete();
+            $product->productprices()->delete();
+            $product->delete();
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Product deleted'
+            ], 200);
+        } catch (Exception $e) {
+            return response()->json([
+                'status' => FALSE,
+                'message' => 'Unable to delete product',
+                'error' => 'An error occured: ' . $e->getMessage(),
+            ], 500);
+        }
+    }
 }
