@@ -83,10 +83,24 @@
 </main>
 
 {{-- STORE CARD SECTION --}}
+<div id="products_result"></div>
 <section class="container-fluid store-wrapper glass-margin">
-    <header class="d-flex flex-wrap flex-row justify-content-between align-items-center store-heading">
-        <h1>Discover our store</h1>
-        <div class="sort-wrapper d-flex flex-row flex-wrap align-items-center justify-content-evenly">
+    <header class="d-flex flex-wrap flex-row justify-content-between align-items-baseline store-heading">
+        <div class="d-flex flex-row align-items-center justify-content-center category_heading">
+            <ul class="nav nav-pills nav-pill-head-wrapper mb-3 d-md-flex justify-content-center align-items-center" id="pills-tab" role="tablist">
+                <li class="nav-item nav-but" role="presentation">
+                  <button class="nav-link pill-button active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Men</button>
+                </li>
+                <li class="nav-item nav-but" role="presentation">
+                  <button class="nav-link pill-button" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Women</button>
+                </li>
+                <li class="nav-item nav-but" role="presentation">
+                  <button class="nav-link pill-button" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Kids</button>
+                </li>
+              </ul>
+            
+        </div>  
+              <div class="sort-wrapper d-flex flex-row flex-wrap align-items-center justify-content-evenly">
             <label for="">Sort by:</label>
             <select name="sort">
                 <option value="popularity">Relevance</option>
@@ -109,6 +123,7 @@
                 <img class="img-fluid" src="{{asset('customImages/toggle-icon.png')}}" alt="toggle icon">
                 <p class="hide_close">Hide filters</p>
             </div>
+            
         </header>
     
         <div class="accordion" id="accordionExample">
@@ -175,27 +190,14 @@
           </div>
     </div>
     <div class="eb-tab right_product">
-        <div class="d-flex flex-row align-items-center justify-content-center category_heading">
-            <p id="show_filter">Show filters</p>
-            <ul class="nav nav-pills nav-pill-head-wrapper mb-3 d-md-flex justify-content-center align-items-center" id="pills-tab" role="tablist">
-                <li class="nav-item nav-but" role="presentation">
-                  <button class="nav-link pill-button active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Men</button>
-                </li>
-                <li class="nav-item nav-but" role="presentation">
-                  <button class="nav-link pill-button" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Women</button>
-                </li>
-                <li class="nav-item nav-but" role="presentation">
-                  <button class="nav-link pill-button" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Kids</button>
-                </li>
-              </ul>
-            
-        </div>
-    
-    
+        <p id="show_filter">Show filters</p>
+        
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane card-paginat fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <div class="d-flex flex-sm-row flex-sm-wrap justify-content-between align-items-center productsData" id="paginated-list" data-current-page="1" aria-live="polite">
-                   
+                <div class="container-fluid">
+                   <div class="row gap-1 productsData justify-content-evenly" id="paginated-list" data-current-page="1" aria-live="polite">
+
+                   </div>
                 </div>
                 {{-- Paginated button --}}
                 {{-- <div class="d-flex flex-row flex-wrap justify-content-evenly pagination-button-wrapper">
@@ -366,7 +368,7 @@
             leftSide.classList.add('closeSideNav');
             toggleOpen.style.display = 'block';
             leftSide.classList.remove('openSideNav');
-            rightProduct.style.marginLeft = 'unset'
+            // rightProduct.style.marginLeft = 'unset'
 
         }
         toggleClose.addEventListener('click', triggerSide);
@@ -376,7 +378,7 @@
             leftSide.classList.add('openSideNav');
             toggleOpen.style.display = 'none';
             leftSide.classList.remove('closeSideNav');
-            rightProduct.style.marginLeft = '2rem'
+            // rightProduct.style.marginLeft = '2rem'
 
         }
         toggleOpen.addEventListener('click', triggerSideClose);
@@ -400,6 +402,7 @@
 
       const displaySearchResult = () =>{
         if(testVar !== null ){
+            window.location.href = "#products_result"
         // alert(testVar) 
          // USING JQUERY AND AJAX
          $(function(){
@@ -495,46 +498,48 @@
 					for (var i = 0; i < dataArr.length; i++) {
 						htmlMen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
-                     
-                       
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner car_image_wrapper">
-                        <div class="carousel-item active">
-                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
-                        </div>
-                    </div>
-                    </div>
-                    
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>${dataArr[i].name}</h4>
-                            <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
-                                <p>₦${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                
+                                <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                                 
+                                   
+                                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner car_image_wrapper">
+                                    <div class="carousel-item active">
+                                    <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                <div class="shop-card-heading">
+                                    <div>
+                                        <h4>${dataArr[i].name}</h4>
+                                        <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                                    </div>
+                                    <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                                    <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                                        <div class="price-child d-flex flex-row">
+                                            <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                            <p>₦${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                        </div>
+                                        <div onclick="addToCart()">
+                                          
+                                          <button type="button" class="shop-card-button">
+                                              <img
+                                              src="{{ asset('customImages/buyIcon.png') }}"
+                                              />
+                                              View
+                                          </button>
+                                          </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div onclick="addToCart()">
-                              
-                              <button type="button" class="shop-card-button">
-                                  <img
-                                  src="{{ asset('customImages/buyIcon.png') }}"
-                                  />
-                                  View
-                              </button>
-                              </div>
-                        </div>
-                    </div>
-                </div>
+                        
                 `;
 					}
 					$("#paginated-list").html(htmlMen);
@@ -550,7 +555,7 @@
 					for (var i = 0; i < womenProducts.length; i++) {
 						htmlWomen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
@@ -592,7 +597,7 @@
 					for (var i = 0; i < kidsProducts.length; i++) {
 						htmlKids += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
@@ -738,7 +743,7 @@
 					for (var i = 0; i < dataArr.length; i++) {
 						htmlMen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
                      
                        
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -793,7 +798,7 @@
 					for (var i = 0; i < womenProducts.length; i++) {
 						htmlWomen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
@@ -835,7 +840,7 @@
 					for (var i = 0; i < kidsProducts.length; i++) {
 						htmlKids += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
@@ -983,7 +988,7 @@
 					for (var i = 0; i < dataArr.length; i++) {
 						htmlMen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
                      
                        
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -1038,7 +1043,7 @@
 					for (var i = 0; i < womenProducts.length; i++) {
 						htmlWomen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
+                    <div class="shop-card col-sm-4 col-md-6 col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
@@ -1080,7 +1085,7 @@
 					for (var i = 0; i < kidsProducts.length; i++) {
 						htmlKids += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
@@ -1224,7 +1229,7 @@
 					for (var i = 0; i < dataArr.length; i++) {
 						htmlMen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                    <div class="shop-card col-sm-4 col-md-6 col-sm-4 col-md-6 e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
                      
                        
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -1279,7 +1284,7 @@
 					for (var i = 0; i < womenProducts.length; i++) {
 						htmlWomen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
@@ -1321,7 +1326,7 @@
 					for (var i = 0; i < kidsProducts.length; i++) {
 						htmlKids += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
+                    <div class="shop-card col-sm-4 col-md-6 col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
@@ -1467,7 +1472,7 @@
 					for (var i = 0; i < dataArr.length; i++) {
 						htmlMen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
                      
                        
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -1522,7 +1527,7 @@
 					for (var i = 0; i < womenProducts.length; i++) {
 						htmlWomen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
@@ -1564,7 +1569,7 @@
 					for (var i = 0; i < kidsProducts.length; i++) {
 						htmlKids += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
@@ -1885,46 +1890,47 @@
 					for (var i = 0; i < menProducts.length; i++) {
 						htmlMen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${menProducts[i].id}>
-                     
-                       
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner car_image_wrapper">
-                        <div class="carousel-item active">
-                        <img src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
-                        </div>
-                    </div>
-                    </div>
-                    
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>${menProducts[i].name}</h4>
-                            <p data="date-updated">Updated ${ new Date(menProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
-                                <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                
+                                <div class="col-sm-4 col-md-6 shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${menProducts[i].id})" data-id=${menProducts[i].id}>
+                                 
+                                   
+                                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner car_image_wrapper">
+                                    <div class="carousel-item active">
+                                    <img src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                <div class="shop-card-heading">
+                                    <div>
+                                        <h4>${menProducts[i].name}</h4>
+                                        <p data="date-updated">Updated ${ new Date(menProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                                    </div>
+                                    <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                                    <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                                        <div class="price-child d-flex flex-row">
+                                            <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                            <p>₦${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                        </div>
+                                        <div onclick="addToCart()">
+                                          
+                                          <button type="button" class="shop-card-button">
+                                              <img
+                                              src="{{ asset('customImages/buyIcon.png') }}"
+                                              />
+                                              View
+                                          </button>
+                                          </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div onclick="addToCart()">
-                              
-                              <button type="button" class="shop-card-button">
-                                  <img
-                                  src="{{ asset('customImages/buyIcon.png') }}"
-                                  />
-                                  View
-                              </button>
-                              </div>
-                        </div>
-                    </div>
-                </div>
                 `;
 					}
 					$("#paginated-list").html(htmlMen);
@@ -1940,7 +1946,8 @@
 					for (var i = 0; i < womenProducts.length; i++) {
 						htmlWomen += `
                 
-                        <div class="shop-card e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
+
+                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
                      
                        
                      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -1993,7 +2000,7 @@
 					for (var i = 0; i < kidsProducts.length; i++) {
 						htmlKids += `
                 
-                        <div class="shop-card e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
+                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
                      
                        
                      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">

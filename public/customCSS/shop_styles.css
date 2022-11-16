@@ -200,13 +200,13 @@
 }
 
 .sort-wrapper{
-    width: 40%;
-}
+    width: 35%;
+} 
 
 .sort-wrapper label{
     font-style: normal;
-    font-weight: 500;
-    font-size: 1.875rem;
+    font-weight: 600;
+    font-size: 1.2rem;
     line-height: 45px;
     color: #000000;
 }
@@ -221,13 +221,16 @@
 }
 
 .shop-card{
-    max-width: 18.65rem;
+    max-width: 19.65rem;
     height: auto;
     padding-bottom: 1rem;
     background: #FFFFFF;
     box-shadow: 0px 20px 24px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     margin-top: 2rem;
+    padding-left: unset!important;
+    padding-right: unset!important;
+
     /* cursor: pointer; */
 }
 .shop-card-heading{
@@ -496,7 +499,7 @@
     }
     /* Shop men, women tabs style */
     .shop-card{
-        width: 100%;
+        width: 100%!important;
         margin-top: 2rem;
         height: auto;
         padding-bottom: 1rem;
@@ -515,15 +518,16 @@
         width: 100%!important;
     }
   .right_product{
-    width: 100%;
+    width: 100%!important;
     margin-top: 9rem;
     margin-left: unset;
     margin-right: unset;
   }
   .productsData{
-    flex-direction: column!important;
-    align-items: center!important;
-    justify-content: center!important;
+
+}
+.category_heading{
+    margin-left: unset!important;
 }
 }
 
@@ -556,10 +560,10 @@
     }
     .store-heading{
         /* margin: 0 auto; */
-        display: flex!important;
+        /* display: flex!important;
         flex-direction: column!important;
         justify-content: center!important;
-        align-items: center!important;
+        align-items: center!important; */
     }
     .store-heading h1{
         font-size: 2.5rem!important;
@@ -610,10 +614,10 @@
     }
     .store-heading{
         /* margin: 0 auto; */
-        display: flex!important;
+        /* display: flex!important;
         flex-direction: column!important;
         justify-content: center!important;
-        align-items: center!important;
+        align-items: center!important; */
     }
     .store-heading h1{
         font-size: 2.5rem!important;
@@ -703,7 +707,7 @@
   }
 
   .left_product {
-    width: 25%;
+    width: 20%;
     height: auto;
     min-height: 48vmin;
     max-height: 25vmax;
@@ -712,8 +716,8 @@
   }
 
   .right_product{
-    width: 65%;
-    margin-left: 2rem;
+    width: 75%;
+    /* margin-left: 2rem; */
   }
 
   .hide_filter{
@@ -748,7 +752,7 @@
   }
 
   .openSideNav{
-    width: 25%!important;
+    width: 20%!important;
     transition: .5s;
   }
 
@@ -770,7 +774,8 @@
 
   .category_heading{
     max-width: 100rem!important;
-    margin: 0 auto;
+    margin-left: -5rem;
+    /* margin: 0 auto; */
   }
 
   .shop_display{
