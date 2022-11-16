@@ -94,16 +94,15 @@ const URL= '{{ env('APP_URL') }}';
 // console.log(productID);
 const loaderContainer = document.querySelector('.loader-container');
 const cartItem = JSON.parse(sessionStorage.getItem('cartItem'));
-// console.log(cartItem);
+console.log(cartItem);
+console.log('yes');
+
 // console.log(productId);
 let newCart = cartItem.filter(element =>{
   return element !== null;
 });
 
-let cartQuantity = cartItem.reduce(
-                    (sum,eve)=>sum+Number(eve.quantity),0
-            );
-  console.log(cartQuantity);
+
 // console.log(newCart);
 // const cartItems = JSON.parse(cartItem);
 // console.log(cartItems.price);
@@ -114,7 +113,7 @@ let data = newCart.length;
 // console.log(data);
 let totalPrice = document.querySelector('.total-price');
 
-totalCartItem.innerHTML = totalCartQuant
+totalCartItem.innerHTML = sessionStorage.getItem('totalCartItem') || 0;
 
 
 
@@ -264,12 +263,19 @@ const deleteProduct = (id) => {
                 console.log(updateFromDelete);
                 sessionStorage.setItem('cartItem', JSON.stringify(updateFromDelete));
                 
-                let cartDeleteQuanti = cartItem.reduce(
+                console.log(cartItem);
+                
+                setTimeout(() => {
+                  let cartItems = JSON.parse(sessionStorage.getItem('cartItem'));
+                  console.log(cartItems);
+                let cartQuantDel = cartItems.reduce(
                     (sum,eve)=>sum+Number(eve.quantity),0
-                );
-              console.log(cartDeleteQuanti);
-              sessionStorage.setItem('totalCartItem', cartDeleteQuanti);  
+            );
+              console.log(cartQuantDel);
 
+              sessionStorage.setItem('totalCartItem', cartQuantDel);  
+
+                }, 2000);
                 Swal.fire({
                         icon: 'success',
                         title: 'Product deleted successfully',
@@ -281,7 +287,7 @@ const deleteProduct = (id) => {
                 // renderCartItem();
 
                 location.reload();
-
+          
            
 }
 
@@ -348,6 +354,9 @@ const hideLoading = () => {
         let itemNew = cartItem.find(el=> el.id === id)
         itemNew.quantity = quantity
         sessionStorage.setItem('cartItem', JSON.stringify(newCart));
+       
+
+        
         let cartUpdateQuanti = cartItem.reduce(
                     (sum,eve)=>sum+Number(eve.quantity),0
                 );
