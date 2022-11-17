@@ -83,10 +83,24 @@
 </main>
 
 {{-- STORE CARD SECTION --}}
+<div id="products_result"></div>
 <section class="container-fluid store-wrapper glass-margin">
-    <header class="d-flex flex-wrap flex-row justify-content-between align-items-center store-heading">
-        <h1>Discover our store</h1>
-        <div class="sort-wrapper d-flex flex-row flex-wrap align-items-center justify-content-evenly">
+    <header class="d-flex flex-wrap flex-row justify-content-between align-items-baseline store-heading">
+        <div class="d-flex flex-row align-items-center justify-content-center category_heading">
+            <ul class="nav nav-pills nav-pill-head-wrapper mb-3 d-md-flex justify-content-center align-items-center" id="pills-tab" role="tablist">
+                <li class="nav-item nav-but" role="presentation">
+                  <button class="nav-link pill-button active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Men</button>
+                </li>
+                <li class="nav-item nav-but" role="presentation">
+                  <button class="nav-link pill-button" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Women</button>
+                </li>
+                <li class="nav-item nav-but" role="presentation">
+                  <button class="nav-link pill-button" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Kids</button>
+                </li>
+              </ul>
+            
+        </div>  
+              <div class="sort-wrapper d-flex flex-row flex-wrap align-items-center justify-content-evenly">
             <label for="">Sort by:</label>
             <select name="sort">
                 <option value="popularity">Relevance</option>
@@ -102,6 +116,7 @@
 
 {{-- The tabs pills nav --}}
 <section class="container-fluid d-flex flex-row flex-wrap  shop_display">
+    {{-- Desktop product filter --}}
     <div class="left_product">
         <header class="hide_filter d-flex flex-row justify-content-between align-items-baseline">
             <h2>Filters</h2>
@@ -109,6 +124,7 @@
                 <img class="img-fluid" src="{{asset('customImages/toggle-icon.png')}}" alt="toggle icon">
                 <p class="hide_close">Hide filters</p>
             </div>
+            
         </header>
     
         <div class="accordion" id="accordionExample">
@@ -119,9 +135,9 @@
                 </button>
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <section class="colours_wrapper d-flex flex-row flex-wrap justify-content-evenly">                   
-                 
+                <div class="accordion-body container-fluid">
+                    <section class="colours_wrapper row" >                   
+          
                        </section>
                 </div>
               </div>
@@ -133,12 +149,9 @@
                 </button>
               </h2>
               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <section class="colours_wrapper shape_wrapper d-flex flex-row justify-content-evenly">
-                        {{-- <div class="colours_wrapper--left">
-                            <p>Oval</p>
-                            <p>Round</p>
-                        </div> --}}
+                <div class="accordion-body container-fluid">
+                    <section class="colours_wrapper shape_wrapper row">
+                       
 
                        </section>
                 </div>
@@ -151,11 +164,9 @@
                   </button>
                 </h2>
                 <div id="collapseTwoJ" class="accordion-collapse collapse" aria-labelledby="headingTwoJ" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                      <section class="colours_wrapper glass_wrapper d-flex flex-row flex-wrap justify-content-evenly" style="max-width: 13rem!important">
-                         
-              
-              
+                  <div class="accordion-body container-fluid">
+                      <section class="colours_wrapper glass_wrapper row">
+ 
                          </section>
                   </div>
                 </div>
@@ -168,7 +179,7 @@
               </h2>
               <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <section class="colours_wrapper gender_wrapper d-flex flex-row justify-content-evenly">
+                    <section class="colours_wrapper gender_wrapper row align-items-baseline">
             
                        </section>
                 </div>
@@ -176,28 +187,90 @@
             </div>
           </div>
     </div>
-    <div class="eb-tab right_product">
-        <div class="d-flex flex-row align-items-center justify-content-center category_heading">
-            <p id="show_filter">Show filters</p>
-            <ul class="nav nav-pills nav-pill-head-wrapper mb-3 d-md-flex justify-content-center align-items-center" id="pills-tab" role="tablist">
-                <li class="nav-item nav-but" role="presentation">
-                  <button class="nav-link pill-button active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Men</button>
-                </li>
-                <li class="nav-item nav-but" role="presentation">
-                  <button class="nav-link pill-button" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Women</button>
-                </li>
-                <li class="nav-item nav-but" role="presentation">
-                  <button class="nav-link pill-button" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Kids</button>
-                </li>
-              </ul>
+
+    {{-- Mobile product filter --}}
+    <div class="left_product mobile_product">
+        <header class="hide_filter d-flex flex-row justify-content-between align-items-baseline">
+            <h2>Filters</h2>
+            <div id="hide_close_mobile" class="d-flex flex-row align-items-baseline justify-content-evenly toggleIcon">
+                <img class="img-fluid" src="{{asset('customImages/toggle-icon.png')}}" alt="toggle icon">
+                <p class="hide_close">Toggle filters</p>
+            </div>
             
-        </div>
+        </header>
     
-    
+        <div class="accordion toggle_accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Color
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body container-fluid">
+                    <section class="colours_mobile_wrapper row justify-content-center" >                   
+          
+                       </section>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Face Shape
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body container-fluid">
+                    <section class="colours_mobile_wrapper shape_mobile_wrapper row justify-content-center">
+                       
+
+                       </section>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwoJ">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoJ" aria-expanded="false" aria-controls="collapseTwoJ">
+                    Glass
+                  </button>
+                </h2>
+                <div id="collapseTwoJ" class="accordion-collapse collapse" aria-labelledby="headingTwoJ" data-bs-parent="#accordionExample">
+                  <div class="accordion-body container-fluid">
+                      <section class="colours_mobile_wrapper glass_mobile_wrapper row justify-content-center">
+ 
+                         </section>
+                  </div>
+                </div>
+              </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Gender
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <section class="colours_mobile_wrapper gender_mobile_wrapper row align-items-baseline 
+                    justify-content-center">
+            
+                       </section>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    {{-- End of mobile product filter --}}
+
+    <div class="eb-tab right_product">
+        <p id="show_filter">Show filters</p>
+        
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane card-paginat fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <div class="d-flex flex-sm-row flex-sm-wrap justify-content-between align-items-center productsData" id="paginated-list" data-current-page="1" aria-live="polite">
-                   
+                <div class="container-fluid">
+                   <div class="row productsData justify-content-between" id="paginated-list" data-current-page="1" aria-live="polite">
+
+                   </div>
                 </div>
                 {{-- Paginated button --}}
                 {{-- <div class="d-flex flex-row flex-wrap justify-content-evenly pagination-button-wrapper">
@@ -266,6 +339,8 @@
 
     <script type="text/javascript">
     let toggleClose = document.getElementById('hide_close');
+    let toggleMobileClose = document.getElementById('hide_close_mobile');
+    let accordionMobile = document.querySelector('.toggle_accordion');
     let leftSide = document.querySelector('.left_product');
     let toggleOpen = document.getElementById('show_filter');
     let totalCartItem = document.querySelector('.total-items-in-cart');
@@ -278,6 +353,14 @@
    let glassItems = document.querySelector('.glass_wrapper');
    let shopContainer = document.querySelector('.shop_display');
    let rightProduct = document.querySelector('.right_product');
+
+//    Mobile
+   let colorMobileItems = document.querySelector('.colours_mobile_wrapper');
+   let shapeMobileItems = document.querySelector('.shape_mobile_wrapper');
+   let genderMobileItems = document.querySelector('.gender_mobile_wrapper');
+   let glassMobileItems = document.querySelector('.glass_mobile_wrapper');
+   let shopMobileContainer = document.querySelector('.shop_mobile_display');
+
    let testVar = null
     // console.log(testVar);
     let bo = true;
@@ -342,10 +425,23 @@
         showGender();
     }
 
+   
     // SEARCH PRODUCT FEATURE
+    let inputData = document.getElementById('search');
+    inputData.addEventListener('keyup',  function(e){
+            if(e.key === 'Enter'){
+                searchProduct();
+            }
+        });
+
     const searchProduct = () =>{
-        let inputData = document.getElementById('search');
-        alert(inputData.value)
+     
+
+        if(inputData !== ''){
+            testVar = `?search_query=${inputData.value}`;
+        }
+        console.log(testVar);
+        displaySearchResult()
     }
     
 
@@ -355,7 +451,7 @@
             leftSide.classList.add('closeSideNav');
             toggleOpen.style.display = 'block';
             leftSide.classList.remove('openSideNav');
-            rightProduct.style.marginLeft = 'unset'
+            // rightProduct.style.marginLeft = 'unset'
 
         }
         toggleClose.addEventListener('click', triggerSide);
@@ -365,7 +461,7 @@
             leftSide.classList.add('openSideNav');
             toggleOpen.style.display = 'none';
             leftSide.classList.remove('closeSideNav');
-            rightProduct.style.marginLeft = '2rem'
+            // rightProduct.style.marginLeft = '2rem'
 
         }
         toggleOpen.addEventListener('click', triggerSideClose);
@@ -376,7 +472,21 @@
         window.location.href = "/details"
         // alert(id);
     }
- 
+    let sidebarState = false;
+    // TOGGLE THE FILTER ON MOBILE
+    const triggerMobileSide = () =>{
+        console.log(sidebarState);
+        if(sidebarState === false){
+        accordionMobile.classList.add('openMobileSideNav');
+        accordionMobile.classList.remove('closeMobileSideNav');
+            sidebarState = true
+        }else{
+            accordionMobile.classList.add('closeMobileSideNav');
+            accordionMobile.classList.remove('openMobileSideNav');
+            sidebarState = false
+        }
+    }
+    toggleMobileClose.addEventListener('click', triggerMobileSide);
 
       const displayLoading = () => {
       loaderContainer.style.display = 'block';
@@ -385,6 +495,252 @@
       const hideLoading = () => {
           loaderContainer.style.display = 'none';
       };
+
+
+      const displaySearchResult = () =>{
+        if(testVar !== null ){
+            window.location.href = "#products_result"
+        // alert(testVar) 
+         // USING JQUERY AND AJAX
+         $(function(){
+    // Declare some global variables
+        let page = 1,
+		pagelimit = 18,
+		totalrecord = 0;
+        const baseURL= '{{ env('APP_URL') }}'
+      displayLoading();
+
+        fetchSearch();
+
+        // handling the prev-btn
+	$(".prev-btn").on("click", function(){
+		if (page > 1) {
+			page--;
+			fetchSearch();
+		}
+        
+		// console.log("Prev Page: " + page);
+	});
+   
+  
+
+    
+	// handling the next-btn
+	$(".next-btn").on("click", function(){
+		if (page * pagelimit < totalrecord) {
+			page++;
+			fetchSearch();
+		}
+		// console.log("Next Page: " + page);
+	});
+
+ 
+        // Fetch the product data using Ajax
+        function fetchSearch() {
+            console.log(testVar);
+		// ajax() method to make api calls
+		$.ajax({
+			url: `${baseURL}/api/product-list${testVar===null ? '' : testVar}`,
+			type: "GET",
+			data: {
+				page: page,
+				pagelimit: pagelimit
+			},
+			success: function(data) {
+              hideLoading();
+				console.log(data);
+                console.log(data.products_list.data);
+
+				if (data) {
+					let dataArr =  data.products_list.data;
+					totalrecord = data.products_list.total;
+                    let currentPage = data.products_list.current_page;
+            
+                    const productItems = document.querySelector('.productsData');
+                    const productItemsWomen = document.querySelector('.productsDataWomen');
+                    const productItemsKids = document.querySelector('.productsDatakids');
+                   
+                    // Format price
+                    const formatter = new Intl.NumberFormat('en-NG', {
+                    style: 'currency',
+                    currency: 'NGN',
+                    });
+
+
+                    // Get data for Men, women and kids
+                    // MEN
+                    const menProducts = dataArr.filter(menProduct => menProduct.productcategory_id === 1
+            );
+                    // console.log(menProducts);
+                    // WOMEN
+                    // Get women data
+
+                    const womenProducts = dataArr.filter(womenProduct => womenProduct.productcategory_id === 2);
+                    // console.log(womenProducts);
+
+                    // KIDS
+                      // Get Kids data
+                    const kidsProducts = dataArr.filter(kidProduct => kidProduct.productcategory_id === 3);
+                    // console.log(kidsProducts);
+
+                    // DISPLAY MEN
+                    let defaultImg = 'foremost_shopimage_1667983695.png'
+                    let htmlMen;
+
+                    dataArr.length <= 0 
+                    ?
+                    htmlMen = `<h4 class="no_productText text-center">No product found..<h4>`
+                    :
+				     htmlMen = "";
+					for (var i = 0; i < dataArr.length; i++) {
+						htmlMen += `
+                
+                                
+                                <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                                 
+                                   
+                                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner car_image_wrapper">
+                                    <div class="carousel-item active">
+                                    <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid image_style" alt="Shop image">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid image_style"  alt="Shop image">
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                <div class="shop-card-heading">
+                                    <div>
+                                        <h4>${dataArr[i].name}</h4>
+                                        <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                                    </div>
+                                    <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                                    <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                                        <div class="price-child d-flex flex-row">
+                                            <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                            <p>₦${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                        </div>
+                                        <div onclick="addToCart()">
+                                          
+                                          <button type="button" class="shop-card-button">
+                                              <img
+                                              src="{{ asset('customImages/buyIcon.png') }}"
+                                              />
+                                              View
+                                          </button>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                `;
+					}
+					$("#paginated-list").html(htmlMen);
+
+                     // DISPLAY WOMEN
+                     let htmlWomen;
+
+                    womenProducts.length <= 0 
+                    ?
+                    htmlWomen =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    :
+					htmlWomen = "";
+					for (var i = 0; i < womenProducts.length; i++) {
+						htmlWomen += `
+                
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
+                      <img class="img-fluid image_style
+                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                      "
+                       src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
+                    <div class="shop-card-heading">
+                        <div>
+                            <h4>${womenProducts[i].name}</h4>
+                            <p data="date-updated">Updated July 2022</p>
+                        </div>
+                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                            <div class="price-child d-flex flex-row">
+                                <p>N4,999</p>
+                                <p>N9,000</p>
+                            </div>
+                            <div onclick="addToCart()">
+                              
+                              <button type="button" class="shop-card-button">
+                                  <img
+                                  src="{{ asset('customImages/buyIcon.png') }}"
+                                  />
+                                  View
+                              </button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+					}
+					$("#paginated-listWomen").html(htmlWomen);
+                    let htmlKids;
+
+                    kidsProducts.length <= 0 
+                    ?
+                    htmlKids =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    :
+                    htmlKids = "";
+					for (var i = 0; i < kidsProducts.length; i++) {
+						htmlKids += `
+                
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
+                      <img class="img-fluid image_style
+                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                      "
+                       src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
+                    <div class="shop-card-heading">
+                        <div>
+                            <h4>${kidsProducts[i].name}</h4>
+                            <p data="date-updated">Updated July 2022</p>
+                        </div>
+                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                            <div class="price-child d-flex flex-row">
+                                <p>N4,999</p>
+                                <p>N9,000</p>
+                            </div>
+                            <div onclick="addToCart()">
+                              
+                              <button type="button" class="shop-card-button">
+                                  <img
+                                  src="{{ asset('customImages/buyIcon.png') }}"
+                                  />
+                                  View
+                              </button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+					}
+					$("#paginated-listKids").html(htmlKids);
+
+                            }
+                        },
+			error: function(jqXHR, textStatus, errorThrown) {
+              hideLoading();
+				console.log(jqXHR);
+				console.log(textStatus);
+				console.log(errorThrown);
+			}
+		});
+	}
+    
+        });
+    }
+      }
+      
+
 
       function doCheck(){
         if(testVar !== null ){
@@ -483,19 +839,19 @@
 					for (var i = 0; i < dataArr.length; i++) {
 						htmlMen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
                      
                        
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner car_image_wrapper">
                         <div class="carousel-item active">
-                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
                         </div>
                         <div class="carousel-item">
-                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid image_style" alt="Shop image">
                         </div>
                         <div class="carousel-item">
-                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid image_style"  alt="Shop image">
                         </div>
                     </div>
                     </div>
@@ -538,8 +894,8 @@
 					for (var i = 0; i < womenProducts.length; i++) {
 						htmlWomen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
-                      <img class="img-fluid
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
+                      <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
@@ -580,8 +936,8 @@
 					for (var i = 0; i < kidsProducts.length; i++) {
 						htmlKids += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
-                      <img class="img-fluid
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
+                      <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
@@ -728,19 +1084,19 @@
 					for (var i = 0; i < dataArr.length; i++) {
 						htmlMen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
                      
                        
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner car_image_wrapper">
                         <div class="carousel-item active">
-                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
                         </div>
                         <div class="carousel-item">
-                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid image_style" alt="Shop image">
                         </div>
                         <div class="carousel-item">
-                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid image_style"  alt="Shop image">
                         </div>
                     </div>
                     </div>
@@ -783,8 +1139,8 @@
 					for (var i = 0; i < womenProducts.length; i++) {
 						htmlWomen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
-                      <img class="img-fluid
+                    <div class="shop-card col-sm-4 col-md-6 col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
+                      <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
@@ -825,8 +1181,8 @@
 					for (var i = 0; i < kidsProducts.length; i++) {
 						htmlKids += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
-                      <img class="img-fluid
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
+                      <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
@@ -969,19 +1325,19 @@
 					for (var i = 0; i < dataArr.length; i++) {
 						htmlMen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                    <div class="shop-card col-sm-4 col-md-6 col-sm-4 col-md-6 e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
                      
                        
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner car_image_wrapper">
                         <div class="carousel-item active">
-                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
                         </div>
                         <div class="carousel-item">
-                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid image_style" alt="Shop image">
                         </div>
                         <div class="carousel-item">
-                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid image_style"  alt="Shop image">
                         </div>
                     </div>
                     </div>
@@ -1024,8 +1380,8 @@
 					for (var i = 0; i < womenProducts.length; i++) {
 						htmlWomen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
-                      <img class="img-fluid
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
+                      <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
@@ -1066,8 +1422,8 @@
 					for (var i = 0; i < kidsProducts.length; i++) {
 						htmlKids += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
-                      <img class="img-fluid
+                    <div class="shop-card col-sm-4 col-md-6 col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
+                      <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
@@ -1212,19 +1568,19 @@
 					for (var i = 0; i < dataArr.length; i++) {
 						htmlMen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
                      
                        
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner car_image_wrapper">
                         <div class="carousel-item active">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
                         </div>
                         <div class="carousel-item">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid image_style" alt="Shop image">
                         </div>
                         <div class="carousel-item">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid image_style"  alt="Shop image">
                         </div>
                     </div>
                     </div>
@@ -1267,8 +1623,8 @@
 					for (var i = 0; i < womenProducts.length; i++) {
 						htmlWomen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
-                      <img class="img-fluid
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
+                      <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
@@ -1309,8 +1665,8 @@
 					for (var i = 0; i < kidsProducts.length; i++) {
 						htmlKids += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
-                      <img class="img-fluid
+                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
+                      <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
@@ -1448,11 +1804,45 @@
                     :
                     colorId.map(element =>{
                         return colorItems.innerHTML += `
-                        <div class="colours_wrapper--left">
+                        
+                            <div class="col-sm-4 col-md-6">
                             <div onclick="filterColor( ${element.id})" class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
-                            <i class="fa fa-square fa-lg" style="color: ${element.color}; "></i>
+                                <i class="fa fa-square fa-lg" style="color: ${element.color}; "></i>
                                 <p>${element.color}</p>
                             </div>
+                                
+                            </div>
+                        `;
+                    })
+
+                    color_category.map(el=>{
+                       if(colorId.find(object=>{
+                        if(object.id === el.id && object.color === el.color){
+                            object++
+                            return true;
+                        }else{
+                            return false;
+                        }
+                       })){
+
+                       }else{
+                        colorId.push(el);
+                       }
+
+                    })
+                    colorMobileItems < 1
+                    ?
+                    colorMobileItems.innerHTML = "No color category found"
+                    :
+                    colorId.map(element =>{
+                        return colorMobileItems.innerHTML += `
+                        
+                            <div class="col-sm-4 col-md-6">
+                            <div onclick="filterColor( ${element.id})" class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
+                                <i class="fa fa-square fa-lg" style="color: ${element.color}; "></i>
+                                <p>${element.color}</p>
+                            </div>
+                                
                             </div>
                         `;
                     })
@@ -1495,8 +1885,39 @@
                     :
                     shapeId.map(elem =>{
                         return shapeItems.innerHTML += `
-                        <div class="colours_wrapper--left">
-                            <div onclick="filterShape(${elem.id})" class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
+                        <div class="row col-sm-6 col-md-4 justify-content-evenly">
+                            <div onclick="filterShape(${elem.id})" class="color_container d-flex flex-row align-items-baseline justify-content-between">
+                                <p>${elem.shape}</p>
+                            </div>
+                            </div>
+                        `;
+                    })
+
+                    shape_category.map(el=>{
+                       if(shapeId.find(object=>{
+                        if(object.id === el.id && object.shape === el.shape){
+                            object++
+                            return true;
+                        }else{
+                            return false;
+                        }
+                       })){
+
+                       }else{
+                        shapeId.push(el);
+                       }
+
+                    })
+                    // console.log(uniqueShape);
+
+                    shapeMobileItems < 1
+                    ?
+                    shapeMobileItems.innerHTML = "No face shape category found"
+                    :
+                    shapeId.map(elem =>{
+                        return shapeMobileItems.innerHTML += `
+                        <div class="row col-sm-6 col-md-4 justify-content-evenly">
+                            <div onclick="filterShape(${elem.id})" class="color_container d-flex flex-row align-items-baseline justify-content-between">
                                 <p>${elem.shape}</p>
                             </div>
                             </div>
@@ -1539,10 +1960,36 @@
                     :
                     genderId.map(elem =>{
                         return genderItems.innerHTML += `
-                        <div class="colours_wrapper--left">
-                            <div onclick="filterGender(${elem.id})" class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
-                                <p>${elem.gender}</p>
+                            <div class="color_container col-sm-4 col-md-6">
+                                <p onclick="filterGender(${elem.id})">${elem.gender}</p>
                             </div>
+                        `;
+                    })
+
+                    gender_category.map(el=>{
+                       if(genderId.find(object=>{
+                        if(object.id === el.id && object.gender === el.gender){
+                            object++
+                            return true;
+                        }else{
+                            return false;
+                        }
+                       })){
+
+                       }else{
+                        genderId.push(el);
+                       }
+
+                    })
+
+                    genderMobileItems < 1
+                    ?
+                    genderMobileItems.innerHTML = "No gender category found"
+                    :
+                    genderId.map(elem =>{
+                        return genderMobileItems.innerHTML += `
+                            <div class="color_container col-sm-4 col-md-6">
+                                <p onclick="filterGender(${elem.id})">${elem.gender}</p>
                             </div>
                         `;
                     })
@@ -1582,9 +2029,39 @@
                     :
                     glassId.map(elem =>{
                         return glassItems.innerHTML += `
-                        <div class="colours_wrapper--left">
-                                <div onclick="filterGlasses(${elem.id})" class="color_container">
-                                    <p>${elem.glass}</p>
+                        <div class="colours_wrapper--left col-sm-4 col-md-6">
+                                <div class="color_container">
+                                    <p onclick="filterGlasses(${elem.id})">${elem.glass}</p>
+                                </div>
+                                
+                            </div>
+                        `;
+                    })
+            
+                    glass_category.map(el=>{
+                       if(glassId.find(object=>{
+                        if(object.id === el.id && object.glass === el.glass){
+                            object++
+                            return true;
+                        }else{
+                            return false;
+                        }
+                       })){
+
+                       }else{
+                        glassId.push(el);
+                       }
+
+                    })
+                    glassMobileItems < 1
+                    ?
+                    glassMobileItems.innerHTML = "No glass category found"
+                    :
+                    glassId.map(elem =>{
+                        return glassMobileItems.innerHTML += `
+                        <div class="colours_wrapper--left col-sm-4 col-md-6">
+                                <div class="color_container">
+                                    <p onclick="filterGlasses(${elem.id})">${elem.glass}</p>
                                 </div>
                                 
                             </div>
@@ -1630,46 +2107,36 @@
 					for (var i = 0; i < menProducts.length; i++) {
 						htmlMen += `
                 
-                    <div class="shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${menProducts[i].id}>
-                     
-                       
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner car_image_wrapper">
-                        <div class="carousel-item active">
-                        <img src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
-                        </div>
-                    </div>
-                    </div>
-                    
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>${menProducts[i].name}</h4>
-                            <p data="date-updated">Updated ${ new Date(menProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
-                                <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                
+                    <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${menProducts[i].id}>
+                                    <img class="img-fluid image_style
+                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                       src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
+                                
+                                <div class="shop-card-heading">
+                                    <div>
+                                        <h4>${menProducts[i].name}</h4>
+                                        <p data="date-updated">Updated ${ new Date(menProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                                    </div>
+                                    <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                                    <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                                        <div class="price-child d-flex flex-row">
+                                            <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                            <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                        </div>
+                                        <div onclick="addToCart()">
+                                          
+                                          <button type="button" class="shop-card-button">
+                                              <img
+                                              src="{{ asset('customImages/buyIcon.png') }}"
+                                              />
+                                              View
+                                          </button>
+                                          </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div onclick="addToCart()">
-                              
-                              <button type="button" class="shop-card-button">
-                                  <img
-                                  src="{{ asset('customImages/buyIcon.png') }}"
-                                  />
-                                  View
-                              </button>
-                              </div>
-                        </div>
-                    </div>
-                </div>
+
                 `;
 					}
 					$("#paginated-list").html(htmlMen);
@@ -1685,23 +2152,12 @@
 					for (var i = 0; i < womenProducts.length; i++) {
 						htmlWomen += `
                 
-                        <div class="shop-card e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
-                     
-                       
-                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                     <div class="carousel-inner car_image_wrapper">
-                         <div class="carousel-item active">
-                         <img src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
-                         </div>
-                         <div class="carousel-item">
-                         <img src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
-                         </div>
-                         <div class="carousel-item">
-                         <img src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
-                         </div>
-                     </div>
-                     </div>
-                     
+
+                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
+                            <img
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                            src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
+
                      <div class="shop-card-heading">
                          <div>
                              <h4>${womenProducts[i].name}</h4>
@@ -1738,22 +2194,12 @@
 					for (var i = 0; i < kidsProducts.length; i++) {
 						htmlKids += `
                 
-                        <div class="shop-card e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
-                     
-                       
-                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                     <div class="carousel-inner car_image_wrapper">
-                         <div class="carousel-item active">
-                         <img src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
-                         </div>
-                         <div class="carousel-item">
-                         <img src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
-                         </div>
-                         <div class="carousel-item">
-                         <img src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
-                         </div>
-                     </div>
-                     </div>
+                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
+                            <img 
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                            src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[0].imagedirectory : defaultImg}"
+                             class="img-fluid image_style " alt="shop men">
+     
                      
                      <div class="shop-card-heading">
                          <div>
