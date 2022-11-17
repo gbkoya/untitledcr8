@@ -170,7 +170,7 @@
     background: rgba(217, 217, 217, 0.3);
 }
 
-.glass-wrapper{
+.glass-wrapper, .glass_mobile_wrapper{
     width: 90%;
     margin: 0 auto;
 }
@@ -201,6 +201,7 @@
 
 .sort-wrapper{
     width: 35%;
+    margin-right: -5%;
 } 
 
 .sort-wrapper label{
@@ -221,7 +222,7 @@
 }
 
 .shop-card{
-    max-width: 19.65rem;
+    max-width: 20.65rem;
     height: auto;
     padding-bottom: 1rem;
     background: #FFFFFF;
@@ -434,6 +435,11 @@
     max-width: 10rem;
     min-height: 3vh!important;
 }
+
+.mobile_product{
+    display: none;
+    background-color: unset!important;
+}
 /* RESPONSIVENESS */
 @media(max-width: 414px){
     .search-wrapper{
@@ -516,18 +522,32 @@
     }
     .left_product{
         width: 100%!important;
+        display: none;
+        z-index: 1!important;
+    }
+
+    /* Mobile product filter */
+    .mobile_product{
+        display: block!important;
+    }
+
+    .toggle_accordion{
+        display: none;
     }
   .right_product{
     width: 100%!important;
-    margin-top: 9rem;
-    margin-left: unset;
-    margin-right: unset;
+    margin-top: -3rem;
+    margin-left: unset!important;
+    margin-right: unset!important;
   }
   .productsData{
-
+    margin: 0 auto;
 }
 .category_heading{
     margin-left: unset!important;
+}
+#show_filter{
+    display: none!important;
 }
 }
 
@@ -706,7 +726,7 @@
     background: #F58634!important;
   }
 
-  .left_product {
+  .left_product, .desktop_product {
     width: 20%;
     height: auto;
     min-height: 48vmin;
@@ -717,7 +737,7 @@
 
   .right_product{
     width: 75%;
-    /* margin-left: 2rem; */
+    margin-left: 2rem;
   }
 
   .hide_filter{
@@ -733,22 +753,36 @@
     cursor: pointer;
   }
 
-  .colours_wrapper--left .color_container{
+ .color_container{
     cursor: pointer;
+    max-width: 9rem!important;
   }
 
   .colours_wrapper--left .color_container p{
     margin-left: .5rem;
-  }
-  
-  .color_container{}
- 
+  } 
 
   .closeSideNav {
     width: 0;
     transition: .5s;
     overflow-x: hidden;
     padding: unset;
+  }
+
+  .closeMobileSideNav {
+    display: none;
+    height: 0;
+    transition: 1s!important;
+    overflow-y: hidden;
+    padding: unset;
+  }
+
+  .openMobileSideNav{
+    width: 100%!important;
+    transition: height 700s linear;
+    display: block;
+    transition: .5s;
+    
   }
 
   .openSideNav{

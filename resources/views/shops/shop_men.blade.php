@@ -116,6 +116,7 @@
 
 {{-- The tabs pills nav --}}
 <section class="container-fluid d-flex flex-row flex-wrap  shop_display">
+    {{-- Desktop product filter --}}
     <div class="left_product">
         <header class="hide_filter d-flex flex-row justify-content-between align-items-baseline">
             <h2>Filters</h2>
@@ -134,9 +135,9 @@
                 </button>
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <section class="colours_wrapper d-flex flex-row flex-wrap justify-content-evenly" >                   
-                 
+                <div class="accordion-body container-fluid">
+                    <section class="colours_wrapper row" >                   
+          
                        </section>
                 </div>
               </div>
@@ -148,12 +149,9 @@
                 </button>
               </h2>
               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <section class="colours_wrapper shape_wrapper d-flex flex-row justify-content-evenly">
-                        {{-- <div class="colours_wrapper--left">
-                            <p>Oval</p>
-                            <p>Round</p>
-                        </div> --}}
+                <div class="accordion-body container-fluid">
+                    <section class="colours_wrapper shape_wrapper row">
+                       
 
                        </section>
                 </div>
@@ -166,8 +164,8 @@
                   </button>
                 </h2>
                 <div id="collapseTwoJ" class="accordion-collapse collapse" aria-labelledby="headingTwoJ" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                      <section class="colours_wrapper glass_wrapper d-flex flex-row flex-wrap justify-content-evenly" style="max-width: 13rem!important">
+                  <div class="accordion-body container-fluid">
+                      <section class="colours_wrapper glass_wrapper row">
  
                          </section>
                   </div>
@@ -181,7 +179,7 @@
               </h2>
               <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <section class="colours_wrapper gender_wrapper d-flex flex-row justify-content-evenly">
+                    <section class="colours_wrapper gender_wrapper row align-items-baseline">
             
                        </section>
                 </div>
@@ -189,13 +187,88 @@
             </div>
           </div>
     </div>
+
+    {{-- Mobile product filter --}}
+    <div class="left_product mobile_product">
+        <header class="hide_filter d-flex flex-row justify-content-between align-items-baseline">
+            <h2>Filters</h2>
+            <div id="hide_close_mobile" class="d-flex flex-row align-items-baseline justify-content-evenly toggleIcon">
+                <img class="img-fluid" src="{{asset('customImages/toggle-icon.png')}}" alt="toggle icon">
+                <p class="hide_close">Toggle filters</p>
+            </div>
+            
+        </header>
+    
+        <div class="accordion toggle_accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Color
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body container-fluid">
+                    <section class="colours_mobile_wrapper row justify-content-center" >                   
+          
+                       </section>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Face Shape
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body container-fluid">
+                    <section class="colours_mobile_wrapper shape_mobile_wrapper row justify-content-center">
+                       
+
+                       </section>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwoJ">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoJ" aria-expanded="false" aria-controls="collapseTwoJ">
+                    Glass
+                  </button>
+                </h2>
+                <div id="collapseTwoJ" class="accordion-collapse collapse" aria-labelledby="headingTwoJ" data-bs-parent="#accordionExample">
+                  <div class="accordion-body container-fluid">
+                      <section class="colours_mobile_wrapper glass_mobile_wrapper row justify-content-center">
+ 
+                         </section>
+                  </div>
+                </div>
+              </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Gender
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <section class="colours_mobile_wrapper gender_mobile_wrapper row align-items-baseline 
+                    justify-content-center">
+            
+                       </section>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    {{-- End of mobile product filter --}}
+
     <div class="eb-tab right_product">
         <p id="show_filter">Show filters</p>
         
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane card-paginat fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 <div class="container-fluid">
-                   <div class="row gap-1 productsData justify-content-evenly" id="paginated-list" data-current-page="1" aria-live="polite">
+                   <div class="row productsData justify-content-between" id="paginated-list" data-current-page="1" aria-live="polite">
 
                    </div>
                 </div>
@@ -266,6 +339,8 @@
 
     <script type="text/javascript">
     let toggleClose = document.getElementById('hide_close');
+    let toggleMobileClose = document.getElementById('hide_close_mobile');
+    let accordionMobile = document.querySelector('.toggle_accordion');
     let leftSide = document.querySelector('.left_product');
     let toggleOpen = document.getElementById('show_filter');
     let totalCartItem = document.querySelector('.total-items-in-cart');
@@ -278,6 +353,14 @@
    let glassItems = document.querySelector('.glass_wrapper');
    let shopContainer = document.querySelector('.shop_display');
    let rightProduct = document.querySelector('.right_product');
+
+//    Mobile
+   let colorMobileItems = document.querySelector('.colours_mobile_wrapper');
+   let shapeMobileItems = document.querySelector('.shape_mobile_wrapper');
+   let genderMobileItems = document.querySelector('.gender_mobile_wrapper');
+   let glassMobileItems = document.querySelector('.glass_mobile_wrapper');
+   let shopMobileContainer = document.querySelector('.shop_mobile_display');
+
    let testVar = null
     // console.log(testVar);
     let bo = true;
@@ -389,7 +472,21 @@
         window.location.href = "/details"
         // alert(id);
     }
- 
+    let sidebarState = false;
+    // TOGGLE THE FILTER ON MOBILE
+    const triggerMobileSide = () =>{
+        console.log(sidebarState);
+        if(sidebarState === false){
+        accordionMobile.classList.add('openMobileSideNav');
+        accordionMobile.classList.remove('closeMobileSideNav');
+            sidebarState = true
+        }else{
+            accordionMobile.classList.add('closeMobileSideNav');
+            accordionMobile.classList.remove('openMobileSideNav');
+            sidebarState = false
+        }
+    }
+    toggleMobileClose.addEventListener('click', triggerMobileSide);
 
       const displayLoading = () => {
       loaderContainer.style.display = 'block';
@@ -559,8 +656,7 @@
                       <img class="img-fluid
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
-                       src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
-                    </a>
+                       src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
                     <div class="shop-card-heading">
                         <div>
                             <h4>${womenProducts[i].name}</h4>
@@ -1708,11 +1804,45 @@
                     :
                     colorId.map(element =>{
                         return colorItems.innerHTML += `
-                        <div class="colours_wrapper--left">
+                        
+                            <div class="col-sm-4 col-md-6">
                             <div onclick="filterColor( ${element.id})" class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
-                            <i class="fa fa-square fa-lg" style="color: ${element.color}; "></i>
+                                <i class="fa fa-square fa-lg" style="color: ${element.color}; "></i>
                                 <p>${element.color}</p>
                             </div>
+                                
+                            </div>
+                        `;
+                    })
+
+                    color_category.map(el=>{
+                       if(colorId.find(object=>{
+                        if(object.id === el.id && object.color === el.color){
+                            object++
+                            return true;
+                        }else{
+                            return false;
+                        }
+                       })){
+
+                       }else{
+                        colorId.push(el);
+                       }
+
+                    })
+                    colorMobileItems < 1
+                    ?
+                    colorMobileItems.innerHTML = "No color category found"
+                    :
+                    colorId.map(element =>{
+                        return colorMobileItems.innerHTML += `
+                        
+                            <div class="col-sm-4 col-md-6">
+                            <div onclick="filterColor( ${element.id})" class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
+                                <i class="fa fa-square fa-lg" style="color: ${element.color}; "></i>
+                                <p>${element.color}</p>
+                            </div>
+                                
                             </div>
                         `;
                     })
@@ -1755,8 +1885,39 @@
                     :
                     shapeId.map(elem =>{
                         return shapeItems.innerHTML += `
-                        <div class="colours_wrapper--left">
-                            <div onclick="filterShape(${elem.id})" class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
+                        <div class="row col-sm-6 col-md-4 justify-content-evenly">
+                            <div onclick="filterShape(${elem.id})" class="color_container d-flex flex-row align-items-baseline justify-content-between">
+                                <p>${elem.shape}</p>
+                            </div>
+                            </div>
+                        `;
+                    })
+
+                    shape_category.map(el=>{
+                       if(shapeId.find(object=>{
+                        if(object.id === el.id && object.shape === el.shape){
+                            object++
+                            return true;
+                        }else{
+                            return false;
+                        }
+                       })){
+
+                       }else{
+                        shapeId.push(el);
+                       }
+
+                    })
+                    // console.log(uniqueShape);
+
+                    shapeMobileItems < 1
+                    ?
+                    shapeMobileItems.innerHTML = "No face shape category found"
+                    :
+                    shapeId.map(elem =>{
+                        return shapeMobileItems.innerHTML += `
+                        <div class="row col-sm-6 col-md-4 justify-content-evenly">
+                            <div onclick="filterShape(${elem.id})" class="color_container d-flex flex-row align-items-baseline justify-content-between">
                                 <p>${elem.shape}</p>
                             </div>
                             </div>
@@ -1799,10 +1960,36 @@
                     :
                     genderId.map(elem =>{
                         return genderItems.innerHTML += `
-                        <div class="colours_wrapper--left">
-                            <div onclick="filterGender(${elem.id})" class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
-                                <p>${elem.gender}</p>
+                            <div class="color_container col-sm-4 col-md-6">
+                                <p onclick="filterGender(${elem.id})">${elem.gender}</p>
                             </div>
+                        `;
+                    })
+
+                    gender_category.map(el=>{
+                       if(genderId.find(object=>{
+                        if(object.id === el.id && object.gender === el.gender){
+                            object++
+                            return true;
+                        }else{
+                            return false;
+                        }
+                       })){
+
+                       }else{
+                        genderId.push(el);
+                       }
+
+                    })
+
+                    genderMobileItems < 1
+                    ?
+                    genderMobileItems.innerHTML = "No gender category found"
+                    :
+                    genderId.map(elem =>{
+                        return genderMobileItems.innerHTML += `
+                            <div class="color_container col-sm-4 col-md-6">
+                                <p onclick="filterGender(${elem.id})">${elem.gender}</p>
                             </div>
                         `;
                     })
@@ -1842,9 +2029,39 @@
                     :
                     glassId.map(elem =>{
                         return glassItems.innerHTML += `
-                        <div class="colours_wrapper--left">
-                                <div onclick="filterGlasses(${elem.id})" class="color_container">
-                                    <p>${elem.glass}</p>
+                        <div class="colours_wrapper--left col-sm-4 col-md-6">
+                                <div class="color_container">
+                                    <p onclick="filterGlasses(${elem.id})">${elem.glass}</p>
+                                </div>
+                                
+                            </div>
+                        `;
+                    })
+            
+                    glass_category.map(el=>{
+                       if(glassId.find(object=>{
+                        if(object.id === el.id && object.glass === el.glass){
+                            object++
+                            return true;
+                        }else{
+                            return false;
+                        }
+                       })){
+
+                       }else{
+                        glassId.push(el);
+                       }
+
+                    })
+                    glassMobileItems < 1
+                    ?
+                    glassMobileItems.innerHTML = "No glass category found"
+                    :
+                    glassId.map(elem =>{
+                        return glassMobileItems.innerHTML += `
+                        <div class="colours_wrapper--left col-sm-4 col-md-6">
+                                <div class="color_container">
+                                    <p onclick="filterGlasses(${elem.id})">${elem.glass}</p>
                                 </div>
                                 
                             </div>
@@ -1891,22 +2108,10 @@
 						htmlMen += `
                 
                                 
-                                <div class="col-sm-4 col-md-6 shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${menProducts[i].id})" data-id=${menProducts[i].id}>
-                                 
-                                   
-                                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner car_image_wrapper">
-                                    <div class="carousel-item active">
-                                    <img src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
-                                    </div>
-                                    <div class="carousel-item">
-                                    <img src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
-                                    </div>
-                                    <div class="carousel-item">
-                                    <img src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
-                                    </div>
-                                </div>
-                                </div>
+                    <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${menProducts[i].id}>
+                                    <img class="img-fluid
+                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                       src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
                                 
                                 <div class="shop-card-heading">
                                     <div>
@@ -1931,6 +2136,7 @@
                                     </div>
                                 </div>
                             </div>
+
                 `;
 					}
 					$("#paginated-list").html(htmlMen);
@@ -1948,22 +2154,10 @@
                 
 
                         <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
-                     
-                       
-                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                     <div class="carousel-inner car_image_wrapper">
-                         <div class="carousel-item active">
-                         <img src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
-                         </div>
-                         <div class="carousel-item">
-                         <img src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
-                         </div>
-                         <div class="carousel-item">
-                         <img src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
-                         </div>
-                     </div>
-                     </div>
-                     
+                            <img
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                            src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+
                      <div class="shop-card-heading">
                          <div>
                              <h4>${womenProducts[i].name}</h4>
@@ -2001,21 +2195,10 @@
 						htmlKids += `
                 
                         <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
-                     
-                       
-                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                     <div class="carousel-inner car_image_wrapper">
-                         <div class="carousel-item active">
-                         <img src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
-                         </div>
-                         <div class="carousel-item">
-                         <img src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
-                         </div>
-                         <div class="carousel-item">
-                         <img src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
-                         </div>
-                     </div>
-                     </div>
+                            <img 
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                            src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+     
                      
                      <div class="shop-card-heading">
                          <div>
