@@ -59,7 +59,9 @@ onload="displayName();">
                       <li><a class="dropdown-item archware-nav-title-drop" href="#">Orders</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <li id="triggerLogout"
-                      style="cursor: pointer"><span class="dropdown-item">Logout</span></li> 
+                      style="cursor: pointer">
+                      {{-- <span class="dropdown-item">Logout</span> --}}
+                    </li> 
                     </ul>
                   </div>
 
@@ -81,8 +83,16 @@ onload="displayName();">
 
 
 <!-- THE SCRIPT TO CONTROL THE STATE OF THE NAVBAR -->
-<script type="text/javascript">
 
+<script type="text/javascript">
+    const baseURL= '{{ env('APP_URL') }}'
+    let tokenDetect = localStorage.getItem('token');
+    console.log(tokenDetect);
+    let logId = document.getElementById('triggerLogout');
+
+    if(tokenDetect){
+        logId.innerHTML += `<span class="dropdown-item">Log Out</span>`
+    }
 
     // Declare and store all variables globally
     const getNav = document.querySelector('#navMain');
@@ -98,11 +108,6 @@ onload="displayName();">
     }
     window.addEventListener('scroll', triggerNav);
 
-    
-</script>
-
-<script type="text/javascript">
-    const baseURL= '{{ env('APP_URL') }}'
 
 // LOGOUT
  const handleLogout = () =>{
@@ -152,9 +157,8 @@ onload="displayName();">
 
     document.getElementById('triggerLogout').addEventListener('click', handleLogout);
 
-</script>
 
-<script type="text/javascript">
+
     let userEmail = localStorage.getItem('email');
     console.log(userEmail);
 
@@ -170,3 +174,4 @@ let welcomeName = document.querySelector('.welcome-name');
 
 displayName();
 </script>
+

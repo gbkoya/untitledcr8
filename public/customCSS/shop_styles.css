@@ -447,7 +447,7 @@
         padding: .8rem;
     }
     .search-shop-image {
-        left: 84%;
+        left: 84%!important;
         top: 40%;
     }
     .search-wrapper input[type="search"]::placeholder{
@@ -854,4 +854,9 @@
     margin-left: .5rem;
     margin-right: .5rem;
     font-size: 1rem;
+}
+
+.image_style{
+    width: 100%;
+    height: 28vh;
 }

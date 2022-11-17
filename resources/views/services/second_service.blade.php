@@ -5,7 +5,8 @@
 @section('image'){{ asset('customImages/Logo.png') }}@stop
 
 @section('content')
-
+<!-- Sub nav -->
+@include('inc.sub-nav')
     <section class="container-fluid hero-section e-service-section need-glass-back-img">
         <div class="service-hero-copy">
             <h1>

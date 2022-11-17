@@ -5,7 +5,7 @@
 
 /* HERO SECTION STYLES */
 .hero-section{
- background-image: url("../customImages/heroImage.png"); 
+ background-image: url("../customImages/shop-men-hero.png"); 
  background-size: cover;
  background-repeat: no-repeat;
  width: 100%;
@@ -42,12 +42,12 @@
 }
 
 .e-service-section{
-    background-image: url("../customImages/heroImage.png"); 
+    background-image: url("../customImages/first-service-hero.png"); 
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
     height: auto;
-    margin-top: 3rem;
+    margin-top: -.2rem;
     padding: 11rem 0 10rem 0;
 }
 

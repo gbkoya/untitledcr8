@@ -602,13 +602,13 @@
                                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner car_image_wrapper">
                                     <div class="carousel-item active">
-                                    <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                                    <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
                                     </div>
                                     <div class="carousel-item">
-                                    <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                                    <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid image_style" alt="Shop image">
                                     </div>
                                     <div class="carousel-item">
-                                    <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                                    <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid image_style"  alt="Shop image">
                                     </div>
                                 </div>
                                 </div>
@@ -653,7 +653,7 @@
 						htmlWomen += `
                 
                     <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
-                      <img class="img-fluid
+                      <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
@@ -694,7 +694,7 @@
 						htmlKids += `
                 
                     <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
-                      <img class="img-fluid
+                      <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
@@ -845,13 +845,13 @@
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner car_image_wrapper">
                         <div class="carousel-item active">
-                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
                         </div>
                         <div class="carousel-item">
-                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid image_style" alt="Shop image">
                         </div>
                         <div class="carousel-item">
-                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid image_style"  alt="Shop image">
                         </div>
                     </div>
                     </div>
@@ -895,7 +895,7 @@
 						htmlWomen += `
                 
                     <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
-                      <img class="img-fluid
+                      <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
@@ -937,7 +937,7 @@
 						htmlKids += `
                 
                     <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
-                      <img class="img-fluid
+                      <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
@@ -1090,13 +1090,13 @@
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner car_image_wrapper">
                         <div class="carousel-item active">
-                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
                         </div>
                         <div class="carousel-item">
-                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid image_style" alt="Shop image">
                         </div>
                         <div class="carousel-item">
-                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid image_style"  alt="Shop image">
                         </div>
                     </div>
                     </div>
@@ -1140,7 +1140,7 @@
 						htmlWomen += `
                 
                     <div class="shop-card col-sm-4 col-md-6 col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
-                      <img class="img-fluid
+                      <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
@@ -1182,7 +1182,7 @@
 						htmlKids += `
                 
                     <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
-                      <img class="img-fluid
+                      <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
@@ -1331,13 +1331,13 @@
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner car_image_wrapper">
                         <div class="carousel-item active">
-                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
                         </div>
                         <div class="carousel-item">
-                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid image_style" alt="Shop image">
                         </div>
                         <div class="carousel-item">
-                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid image_style"  alt="Shop image">
                         </div>
                     </div>
                     </div>
@@ -1381,7 +1381,7 @@
 						htmlWomen += `
                 
                     <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
-                      <img class="img-fluid
+                      <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
@@ -1423,7 +1423,7 @@
 						htmlKids += `
                 
                     <div class="shop-card col-sm-4 col-md-6 col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
-                      <img class="img-fluid
+                      <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
@@ -1574,13 +1574,13 @@
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner car_image_wrapper">
                         <div class="carousel-item active">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
                         </div>
                         <div class="carousel-item">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid" alt="Shop image">
+                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid image_style" alt="Shop image">
                         </div>
                         <div class="carousel-item">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid"  alt="Shop image">
+                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid image_style"  alt="Shop image">
                         </div>
                     </div>
                     </div>
@@ -1624,7 +1624,7 @@
 						htmlWomen += `
                 
                     <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
-                      <img class="img-fluid
+                      <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
@@ -1666,7 +1666,7 @@
 						htmlKids += `
                 
                     <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
-                      <img class="img-fluid
+                      <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                       "
                        src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
@@ -2109,7 +2109,7 @@
                 
                                 
                     <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${menProducts[i].id}>
-                                    <img class="img-fluid
+                                    <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                        src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
                                 
@@ -2122,7 +2122,7 @@
                                     <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
                                         <div class="price-child d-flex flex-row">
                                             <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
-                                            <p>₦${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                            <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
                                         </div>
                                         <div onclick="addToCart()">
                                           
@@ -2156,7 +2156,7 @@
                         <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
                             <img
                             data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                            src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                            src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
 
                      <div class="shop-card-heading">
                          <div>
@@ -2197,7 +2197,8 @@
                         <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
                             <img 
                             data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                            src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid" alt="shop men">
+                            src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[0].imagedirectory : defaultImg}"
+                             class="img-fluid image_style " alt="shop men">
      
                      
                      <div class="shop-card-heading">
