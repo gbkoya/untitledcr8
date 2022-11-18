@@ -82,6 +82,37 @@
 {{-- END OF THE GLASS SECTION AFTER HERO --}}
 </main>
 
+<section class="container-fluid">
+
+{{-- HERO SUB NAV --}}
+<nav class="hero-sub-nav container-fluid" id="hero-sub-nav">
+    <ul class="">
+        <li class="relevance hero-link">Relevance</li>
+        <li class="arrivals hero-link">New Arrivals</li>
+        <li class="rated hero-link">Top Rated</li>
+        <li class="filter hero-link">Filter</li>
+
+    </ul>
+</nav>
+
+<div class="container-fluid e-hero-content">
+    <div id="relevance">
+        <h1>I am for relevance</h1>
+    </div>
+    <div id="arrival">
+        <h1>I am for New Arrivals</h1>
+    </div>
+    <div id="rated">
+        <h1>I am for Top Rated</h1>
+    </div>
+    <div id="filter" class="container-fluid">
+
+    </div>
+</div>
+</section>
+
+{{-- END OF HERO SUB NAV --}}
+
 {{-- STORE CARD SECTION --}}
 <div id="products_result"></div>
 <section class="container-fluid store-wrapper glass-margin">
@@ -381,6 +412,62 @@
     }else{
         authButtons.innerHTML = ""
     } 
+    
+    // TAB SCRIPT HERE
+    let heroLinks = document.querySelectorAll('.hero-link');
+    let relevanceContent = document.getElementById('relevance');
+    let arrivalContent = document.getElementById('arrival');
+    // let filterContent = document.getElementById('arrival');
+
+    let rated = document.getElementById('rated');
+    let heroContainer = document.getElementById('hero-sub-nav');
+    let relevanceClass = document.querySelector('.relevance');
+    let arrivalsClass = document.querySelector('.arrivals');
+    let ratedClass = document.querySelector('.rated');
+    // let filterClass = document.querySelector('.filter');
+
+    console.log(heroContainer.id);
+    console.log(arrivalContent.id);
+    console.log(relevanceContent.id);
+
+    console.log(heroLinks);
+    heroLinks.forEach(ele=>{
+        const switchTab = () =>{
+            
+            if(ele.innerHTML === 'Relevance'){
+                relevanceClass.classList.add('hero-active');
+                arrivalsClass.classList.remove('hero-active');
+                ratedClass.classList.remove('hero-active');
+                
+
+                relevanceContent.style.display = 'block';
+                rated.style.display = 'none';
+                arrivalContent.style.display = 'none';
+ 
+            }else if(ele.innerHTML === 'New Arrivals'){
+                arrivalsClass.classList.add('hero-active');
+                relevanceClass.classList.remove('hero-active');
+                ratedClass.classList.remove('hero-active');
+
+                arrivalContent.style.display = 'block';
+                relevanceContent.style.display = 'none';
+                rated.style.display = 'none';
+            }else if(ele.innerHTML === 'Top Rated'){
+                ratedClass.classList.add('hero-active');
+                relevanceClass.classList.remove('hero-active');
+                arrivalsClass.classList.remove('hero-active');
+              
+                relevanceContent.style.display = 'none';
+                rated.style.display = 'block';
+                arrivalContent.style.display = 'none';
+                relevanceContent.style.display = 'none'
+            }else{
+                ele.classList.remove('hero-active');
+            }
+            // alert(ele.innerHTML)
+        }       
+ ele.addEventListener('click', switchTab)
+    })
     
       
  
