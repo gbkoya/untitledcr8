@@ -29,24 +29,28 @@
     class="img-fluid search-shop-image"
     src="{{ asset('customImages/arrow-right.png') }}"/>
         </div>   
-        <div class="button-container">
-          
-           {{-- <a href="/try-it"><button class="try-it" type="button">Try it On</button></a> --}}
+        <div class="d-flex flex-row">
+            <div class="button-container">
+              
+               {{-- <a href="/try-it"><button class="try-it" type="button">Try it On</button></a> --}}
+            </div>
+                {{-- <button type="button" class="">
+                    <img
+                    src="{{ asset('customImages/buyIcon.png') }}"
+                    />
+                    CART
+                </button> --}}
+                <li class="right-nav-button-shop-wrapper">
+                <button type="button" class="shop-button">
+                    <img
+                    class="img-fluid"
+                    src="{{ asset('customImages/buyIcon.png') }}"
+                    />
+                   CART <span class="total-items-in-cart"></span>
+                </button>
+            </li>
+
         </div>
-            {{-- <button type="button" class="">
-                <img
-                src="{{ asset('customImages/buyIcon.png') }}"
-                />
-                CART
-            </button> --}}
-            <li class="right-nav-button-shop-wrapper">
-            <button type="button" class="shop-button">
-                <img
-                src="{{ asset('customImages/buyIcon.png') }}"
-                />
-               CART <span class="total-items-in-cart"></span>
-            </button>
-        </li>
 {{-- </div>  --}}
 </nav>
 <div class="service-hero-copy shop-top-hero">
@@ -87,23 +91,111 @@
 {{-- HERO SUB NAV --}}
 <nav class="hero-sub-nav container-fluid" id="hero-sub-nav">
     <ul class="">
-        <li class="relevance hero-link">Relevance</li>
+        <li class="relevance hero-link hero-active">Relevance</li>
         <li class="arrivals hero-link">New Arrivals</li>
         <li class="rated hero-link">Top Rated</li>
-        <li class="filter hero-link">Filter</li>
+        <div id="hide_close_mobile" class="d-flex flex-row align-items-baseline justify-content-evenly toggleIcon">
+            <p class="hide_close"> Filters</p>
+        </div>
+        {{-- <li class="filter hide_close_mobile hero-link">Filter</li> --}}
 
     </ul>
 </nav>
 
 <div class="container-fluid e-hero-content">
+    
     <div id="relevance">
-        <h1>I am for relevance</h1>
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Product view</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Try it on</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">Product</div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"></div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+          </div>
+
+        <div class="eb-tab right_product">
+            <p id="show_filter">Show filters</p>
+            
+              <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane card-paginat fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="container-fluid">
+                       <div class="row productsData justify-content-between" id="paginated-list" data-current-page="1" aria-live="polite">
+    
+                       </div>
+                    </div>
+                    {{-- Paginated button --}}
+                    {{-- <div class="d-flex flex-row flex-wrap justify-content-evenly pagination-button-wrapper">
+                        <button class="paginated-first-button" type="button">
+                            1
+                        </button>
+                        <button class="paginated-first-button" type="button">
+                            2
+                        </button>
+                        <button class="paginated-first-button second" type="button">
+                            3
+                        </button>
+                        <button class="paginated-first-button second" type="button">
+                            4
+                        </button>
+                        ...
+                        <button class="paginated-first-button second" type="button">
+                            10
+                        </button>
+                        <button class="paginated-first-button second" type="button">
+                            Next
+                        </button>
+                    </div> --}}
+          
+                </div>
+        
+                {{-- Women content here --}}
+                <div class="tab-pane fade card-paginat" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div class="d-flex flex-row flex-wrap justify-content-evenly productsDataWomen" id="paginated-listWomen">
+                       
+                    </div> 
+                </div>
+        
+                {{-- Kids content here --}}
+                <div class="tab-pane fade card-paginat" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <div class="d-flex flex-row flex-wrap justify-content-evenly productsDatakids" id="paginated-listKids">
+                    </div>
+                </div>
+        
+                {{-- PAGINATION HERE --}}
+                {{-- <nav aria-label="Page navigation example">
+                    
+            <div class="nav-btn-container">
+                <button class="prev-btn">Prev</button>
+                <ul>
+        
+                </ul>
+                <button class="next-btn">Next</button>
+            </div>
+            </nav> --}}
+            <div class="container-fluid d-flex flex-sm-row justify-content-center" style="margin-top: 3rem">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li class="page-item nav-link-pagina prev-btn" ><a class="page-link">Previous</a></li>
+                  
+                      <li class="page-item  nav-link-pagina next-btn" style="margin-left: .5rem"><a class="page-link">Next</a></li>
+                    </ul>
+                  </nav>
+                </div>
+            </div>
+               
+        </div>
     </div>
     <div id="arrival">
-        <h1>I am for New Arrivals</h1>
+        <h3>No new arrivals available</h3>
     </div>
     <div id="rated">
-        <h1>I am for Top Rated</h1>
+        <h3>No top rated</h3>
     </div>
     <div id="filter" class="container-fluid">
 
@@ -117,8 +209,8 @@
 <div id="products_result"></div>
 <section class="container-fluid store-wrapper glass-margin">
     <header class="d-flex flex-wrap flex-row justify-content-between align-items-baseline store-heading">
-        <div class="d-flex flex-row align-items-center justify-content-center category_heading">
-            <ul class="nav nav-pills nav-pill-head-wrapper mb-3 d-md-flex justify-content-center align-items-center" id="pills-tab" role="tablist">
+        <div class=" category_heading">
+            <ul class="nav nav-pills nav-pill-head-wrapper  " id="pills-tab" role="tablist">
                 <li class="nav-item nav-but" role="presentation">
                   <button class="nav-link pill-button active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Men</button>
                 </li>
@@ -221,14 +313,14 @@
 
     {{-- Mobile product filter --}}
     <div class="left_product mobile_product">
-        <header class="hide_filter d-flex flex-row justify-content-between align-items-baseline">
+        {{-- <header class="hide_filter d-flex flex-row justify-content-between align-items-baseline">
             <h2>Filters</h2>
             <div id="hide_close_mobile" class="d-flex flex-row align-items-baseline justify-content-evenly toggleIcon">
                 <img class="img-fluid" src="{{asset('customImages/toggle-icon.png')}}" alt="toggle icon">
                 <p class="hide_close">Toggle filters</p>
             </div>
             
-        </header>
+        </header> --}}
     
         <div class="accordion toggle_accordion" id="accordionExample">
             <div class="accordion-item">
@@ -293,77 +385,7 @@
     </div>
     {{-- End of mobile product filter --}}
 
-    <div class="eb-tab right_product">
-        <p id="show_filter">Show filters</p>
-        
-          <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane card-paginat fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <div class="container-fluid">
-                   <div class="row productsData justify-content-between" id="paginated-list" data-current-page="1" aria-live="polite">
-
-                   </div>
-                </div>
-                {{-- Paginated button --}}
-                {{-- <div class="d-flex flex-row flex-wrap justify-content-evenly pagination-button-wrapper">
-                    <button class="paginated-first-button" type="button">
-                        1
-                    </button>
-                    <button class="paginated-first-button" type="button">
-                        2
-                    </button>
-                    <button class="paginated-first-button second" type="button">
-                        3
-                    </button>
-                    <button class="paginated-first-button second" type="button">
-                        4
-                    </button>
-                    ...
-                    <button class="paginated-first-button second" type="button">
-                        10
-                    </button>
-                    <button class="paginated-first-button second" type="button">
-                        Next
-                    </button>
-                </div> --}}
-      
-            </div>
-    
-            {{-- Women content here --}}
-            <div class="tab-pane fade card-paginat" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                <div class="d-flex flex-row flex-wrap justify-content-evenly productsDataWomen" id="paginated-listWomen">
-                   
-                </div> 
-            </div>
-    
-            {{-- Kids content here --}}
-            <div class="tab-pane fade card-paginat" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                <div class="d-flex flex-row flex-wrap justify-content-evenly productsDatakids" id="paginated-listKids">
-                </div>
-            </div>
-    
-            {{-- PAGINATION HERE --}}
-            {{-- <nav aria-label="Page navigation example">
-                
-        <div class="nav-btn-container">
-            <button class="prev-btn">Prev</button>
-            <ul>
-    
-            </ul>
-            <button class="next-btn">Next</button>
-        </div>
-        </nav> --}}
-        <div class="container-fluid d-flex flex-sm-row justify-content-center" style="margin-top: 3rem">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                  <li class="page-item nav-link-pagina prev-btn" ><a class="page-link">Previous</a></li>
-              
-                  <li class="page-item  nav-link-pagina next-btn" style="margin-left: .5rem"><a class="page-link">Next</a></li>
-                </ul>
-              </nav>
-            </div>
-        </div>
-           
-    </div>
+  
 </section>
 
 </body>
@@ -2191,25 +2213,25 @@
                     htmlMen =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
 				     htmlMen = "";
-					for (var i = 0; i < menProducts.length; i++) {
+					for (var i = 0; i < dataArr.length; i++) {
 						htmlMen += `
                 
                                 
-                    <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${menProducts[i].id}>
+                    <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
                                     <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                       src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
+                       src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
                                 
                                 <div class="shop-card-heading">
                                     <div>
-                                        <h4>${menProducts[i].name}</h4>
-                                        <p data="date-updated">Updated ${ new Date(menProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                                        <h4>${dataArr[i].name}</h4>
+                                        <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
                                     </div>
                                     <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
                                     <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
                                         <div class="price-child d-flex flex-row">
-                                            <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
-                                            <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                            <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                            <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
                                         </div>
                                         <div onclick="addToCart()">
                                           
@@ -2236,25 +2258,25 @@
                     htmlWomen =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
 					htmlWomen = "";
-					for (var i = 0; i < womenProducts.length; i++) {
+					for (var i = 0; i < dataArr.length; i++) {
 						htmlWomen += `
                 
 
-                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
+                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
                             <img
                             data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                            src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
+                            src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
 
                      <div class="shop-card-heading">
                          <div>
-                             <h4>${womenProducts[i].name}</h4>
-                             <p data="date-updated">Updated ${ new Date(womenProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                             <h4>${dataArr[i].name}</h4>
+                             <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
                          </div>
                          <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
                          <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
                              <div class="price-child d-flex flex-row">
-                                 <p>${formatter.format(womenProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
-                                 <p>${formatter.format(womenProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                 <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                 <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
                              </div>
                              <div onclick="addToCart()">
                                
@@ -2278,26 +2300,26 @@
                     htmlKids = `<h4 class="no_productText text-center">No product found..<h4>`
                     :
                     htmlKids = "";
-					for (var i = 0; i < kidsProducts.length; i++) {
+					for (var i = 0; i < dataArr.length; i++) {
 						htmlKids += `
                 
-                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
+                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
                             <img 
                             data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                            src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[0].imagedirectory : defaultImg}"
+                            src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}"
                              class="img-fluid image_style " alt="shop men">
      
                      
                      <div class="shop-card-heading">
                          <div>
-                             <h4>${kidsProducts[i].name}</h4>
-                             <p data="date-updated">Updated ${ new Date(kidsProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                             <h4>${dataArr[i].name}</h4>
+                             <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
                          </div>
                          <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
                          <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
                              <div class="price-child d-flex flex-row">
-                                 <p>${formatter.format(kidsProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
-                                 <p>${formatter.format(kidsProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                 <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                 <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
                              </div>
                              <div onclick="addToCart()">
                                

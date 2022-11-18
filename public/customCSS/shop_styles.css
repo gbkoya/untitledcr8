@@ -473,6 +473,8 @@
     }
     .shop-button{
         margin-top: .7rem!important;
+        padding: 1rem 1.5rem!important;
+        font-size: .7rem!important;
     }
     .e-shop-copy{
         margin-left: 0;
@@ -543,7 +545,7 @@
     }
   .right_product{
     width: 100%!important;
-    margin-top: -3rem;
+    /* margin-top: -3rem; */
     margin-left: unset!important;
     margin-right: unset!important;
   }
@@ -552,6 +554,7 @@
 }
 .category_heading{
     margin-left: unset!important;
+    display: none;
 }
 #show_filter{
     display: none!important;
@@ -595,11 +598,64 @@ nav#hero-sub-nav.hero-sub-nav.container-fluid{
     display: block;
 }
 
-#relevance, 
+/* #relevance,  */
 #arrival,
 #rated
 {
     display: none;
+}
+
+.sort-wrapper{
+    display: none!important;
+}
+
+.nav-pill-head-wrapper{
+    display: flex!important;
+    flex-direction: row!important;
+}
+
+.pill-button{
+    font-size: .9rem;
+}
+
+.nav-pills .nav-link.active{
+    color: #fff;
+    /* width: 80%; */
+    padding: 0 2rem;
+    height: 6.5vh;
+    background: #6B809B;
+    border-radius: 80px;
+}
+
+ul#pills-tab.nav.nav-pills.nav-pill-head-wrapper.mb-3.d-md-flex.justify-content-center{
+    margin: unset!important;
+}
+
+.nav-pills{
+    margin-left: unset!important;
+}
+
+.mobile_product{
+    margin-top: -11rem;
+}
+
+.right_product{
+    /* margin-top: -8rem; */
+}
+
+.button-wrapper{
+    flex-wrap: nowrap;
+}
+
+.button-wrapper a .login, .button-wrapper a .signup{
+    padding: .8rem 1.7rem;
+    font-size: .8rem;
+}
+
+.mobile-but-style{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 }
 
@@ -709,6 +765,7 @@ nav#hero-sub-nav.hero-sub-nav.container-fluid{
     .pagination-button-wrapper{
         width: 50%;
     }
+    
  }
 
  /* Large Screens */
