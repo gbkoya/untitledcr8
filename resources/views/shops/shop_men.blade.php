@@ -311,6 +311,78 @@
           </div>
     </div>
 
+    <div class="eb-tab right_product">
+        <p id="show_filter">Show filters</p>
+        
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane card-paginat fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="container-fluid">
+                   <div class="row productsData justify-content-between" id="paginated-list" data-current-page="1" aria-live="polite">
+
+                   </div>
+                </div>
+                {{-- Paginated button --}}
+                {{-- <div class="d-flex flex-row flex-wrap justify-content-evenly pagination-button-wrapper">
+                    <button class="paginated-first-button" type="button">
+                        1
+                    </button>
+                    <button class="paginated-first-button" type="button">
+                        2
+                    </button>
+                    <button class="paginated-first-button second" type="button">
+                        3
+                    </button>
+                    <button class="paginated-first-button second" type="button">
+                        4
+                    </button>
+                    ...
+                    <button class="paginated-first-button second" type="button">
+                        10
+                    </button>
+                    <button class="paginated-first-button second" type="button">
+                        Next
+                    </button>
+                </div> --}}
+      
+            </div>
+    
+            {{-- Women content here --}}
+            <div class="tab-pane fade card-paginat" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="d-flex flex-row flex-wrap justify-content-evenly productsDataWomen" id="paginated-listWomen">
+                   
+                </div> 
+            </div>
+    
+            {{-- Kids content here --}}
+            <div class="tab-pane fade card-paginat" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <div class="d-flex flex-row flex-wrap justify-content-evenly productsDatakids" id="paginated-listKids">
+                </div>
+            </div>
+    
+            {{-- PAGINATION HERE --}}
+            {{-- <nav aria-label="Page navigation example">
+                
+        <div class="nav-btn-container">
+            <button class="prev-btn">Prev</button>
+            <ul>
+    
+            </ul>
+            <button class="next-btn">Next</button>
+        </div>
+        </nav> --}}
+        <div class="container-fluid d-flex flex-sm-row justify-content-center" style="margin-top: 3rem">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item nav-link-pagina prev-btn" ><a class="page-link">Previous</a></li>
+              
+                  <li class="page-item  nav-link-pagina next-btn" style="margin-left: .5rem"><a class="page-link">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+        </div>
+           
+    </div>
+
     {{-- Mobile product filter --}}
     <div class="left_product mobile_product">
         {{-- <header class="hide_filter d-flex flex-row justify-content-between align-items-baseline">
@@ -385,7 +457,7 @@
     </div>
     {{-- End of mobile product filter --}}
 
-  
+   
 </section>
 
 </body>
