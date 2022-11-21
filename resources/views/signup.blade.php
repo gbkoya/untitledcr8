@@ -15,7 +15,41 @@
     <div class="spinner"></div>
   </div>
 
-  <div class="login-ik card justify-content-center mt-5">
+
+{{-- Sub nav --}}
+<nav class="d-flex sub-nav-style flex-row align-items-center flex-wrap container-fluid justify-content-evenly">
+  {{-- <div class="d-flex flex-row"> --}}
+  <div class="row d-sm-flex search-wrapper-sub">
+      <input type="search"
+      placeholder="Search for eyewear, lenses and frames"
+      />
+      <img 
+      class="img-fluid search-shop-image"
+      src="{{ asset('customImages/arrow-right.png') }}"/>
+          </div>   
+
+           <div class="button-container">
+        
+          </div>
+              {{-- <button type="button" class="">
+                  <img
+                  src="{{ asset('customImages/buyIcon.png') }}"
+                  />
+                  CART
+              </button> --}}
+              <li class="right-nav-button-shop-wrapper">
+              <button type="button" class="shop-button">
+                  <img
+                  src="{{ asset('customImages/buyIcon.png') }}"
+                  />
+                 CART <span class="total-items-in-cart">0</span>
+              </button>
+          </li>
+  {{-- </div>  --}}
+  </nav>
+
+
+  <div class="login-ik card justify-content-center ">
     <div class="container my-5 py-5">
       <div class="container col-lg-5 col-md-7 my-5 py-5 i-login-backg">
 
@@ -87,7 +121,19 @@
         let toggleDisplay = document.querySelector('.e-toggle-display ');
         let inputField = document.querySelector('.passwordInput');
         const url= '{{ env('APP_URL') }}'
-
+        let tokenStatus = localStorage.getItem('token');
+        //console.log(tokenStatus);
+        let authButtons = document.querySelector('.button-container');
+        console.log(authButtons);
+        if(!tokenStatus){
+            authButtons.innerHTML += `
+            <div class="d-sm-flex flex-sm-row align-items-center flex-wrap button-wrapper but-wrapper-mobile">
+              <a href="/login"><button class="login" type="button">Log In</button></a>
+            </div>
+        `;
+        }else{
+            authButtons.innerHTML = ""
+        } 
 
         function hidePassword(){
           toggleHide.style.display = 'block'

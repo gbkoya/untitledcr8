@@ -54,13 +54,19 @@
 
     <section class="container pt-5">
         <div class="row col-lg-11">
-            <div class="col-lg-4">
-                <img class="img-fluid image-size-middle-ika" src="{{ asset('customImages/Frame 93.png') }}" alt="">
-               <div class="products">
+            <div class="col-lg-4 ">
+                <div class="image_slidedeta">
+
+                </div>
+                {{-- <img class="img-fluid image-size-middle-ika" src="{{ asset('customImages/Frame 93.png') }}" alt=""> --}}
+   
+                <div class="products">
 
                </div>
                 <button class="mt-3" style="font-weight: 500;font-size: 16px;line-height: 19px;color: #FFFFFF;
-                width: 119px;height: 45px;background: #F58634;border-radius: 5px;"> TRY IT ON</button>
+                width: 119px;height: 45px;background: #F58634;border-radius: 5px;
+                border: none;" onclick="capturePhoto()"> TRY IT ON</button>
+                {{-- <video id="video" width="320" height="240" autoplay></video> --}}
             </div>
             <div class="col-lg-6 mx-5 mt-5 details-sect-right-ika">
                 <div class="main-price">
@@ -75,17 +81,14 @@
                 </div>
                 <button class="mt-4" type="button" style="width: 100%;height: 56px;border-radius: 5px;
                 background: #F58634;font-weight: 600;font-size: 20px;line-height: 24px;
-                color:#FFFF" onclick="addToCart()">
+                color:#FFFF; border: none;" onclick="addToCart()">
                     <img src="{{ asset('customImages/buyIcon.png') }}" class='pt-1 px-3' style="float: left">
                     ADD TO CART
                 </button>
 
                 <div class="mt-4" style="font-weight: 500;font-size: 20px;line-height: 30px;color: rgba(107, 128, 155, 0.8);">
                 Details</div>
-                <div class="mt-3" style="font-weight: 500;font-size: 15px;line-height: 34px;letter-spacing: 0.01em;color: rgba(107, 128, 155, 0.8);">"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum 
-                    deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, 
-                    similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem 
-                    rerum facilis est et expedita 
+                <div class="mt-3 dynamic_details" style="font-weight: 500;font-size: 15px;line-height: 34px;letter-spacing: 0.01em;color: rgba(107, 128, 155, 0.8);">
                 </div>
 
             </div>
@@ -96,6 +99,7 @@
 <script type="text/javascript">
 let cartItems =  JSON.parse(sessionStorage.getItem('cartItem') || '[]');
 // alert(cartItems);
+let imageSlide = document.querySelector('.image_slidedeta');
 const productId = localStorage.getItem('productId');
 const URL= '{{ env('APP_URL') }}';
 const loaderContainer = document.querySelector('.loader-container');
@@ -109,6 +113,7 @@ const quantVal = document.querySelector('.quantity');
 let totalCartItem = document.querySelector('.total-items-in-cart');
 cartTot = sessionStorage.getItem('totalCartItem') || 0
 totalCartItem.innerHTML = cartTot;
+let dynamDetails = document.querySelector('.dynamic_details');
 
 let allProducts = sessionStorage.getItem('cartItem');
 // console.log(allProducts);
@@ -130,7 +135,10 @@ quantVal.innerText = data;
 //     }
 // }
 
-
+const capturePhoto = () =>{
+    // alert('working')
+    // let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+}
 const displayLoading = () => {
       loaderContainer.style.display = 'block';
       };
@@ -165,6 +173,7 @@ const hideLoading = () => {
               const data = await response.json();
             //   console.log(data);
               let productDetail = data.product
+              console.log(productDetail);
               let productName = productDetail.map(product => product.name);
             //   console.log(productName[0]);
               let productPrice = productDetail.map(product => product.productprices);
@@ -174,6 +183,26 @@ const hideLoading = () => {
               let priceDetail = productPrice[0].map(productP => productP.product_price);
             //   console.log(priceDetail[0]);
 
+            let imageFile1 = productDetail.map(elem=>{
+                return elem.productimages[0].imagedirectory;
+            });
+            // console.log(imageFile1[0]);
+
+            let imageFile2 = productDetail.map(elem=>{
+                return elem.productimages[1].imagedirectory;
+            });
+            // console.log(imageFile2[0]);
+
+            let imageFile3 = productDetail.map(elem=>{
+                return elem.productimages[2].imagedirectory;
+            });
+            // console.log(imageFile3[3]);
+               // Format price
+               const formatter = new Intl.NumberFormat('en-NG', {
+                    style: 'currency',
+                    currency: 'NGN',
+                    });
+
             //Display the product name
             //   console.log(productsName, productName[0]);
               productsName.innerHTML = `
@@ -181,21 +210,55 @@ const hideLoading = () => {
                 ${productName[0]}
                 </div>
               `;
+              productDetail
+              imageSlide.innerHTML = `
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner details-Image">
+                        <div class="carousel-item active det_imageWrapper">
+                        <img src="${URL}/storage/product_image/${imageFile1}" class="img-fluid" alt="shop men">
+                        </div>
+                        <div class="carousel-item det_imageWrapper">
+                        <img src="${URL}/storage/product_image/${imageFile2}" class="img-fluid" alt="Shop image">
+                        </div>
+                        <div class="carousel-item det_imageWrapper">
+                        <img src="${URL}/storage/product_image/${imageFile3}" class="img-fluid"  alt="Shop image">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    </div>`;
 
             //   Display the product price
             // console.log(priceItem, priceDetail[0]);
             priceItem.innerHTML = `
             <div  class="pt-4 " style="font-weight: 600;font-size: 28px;line-height: 180%;letter-spacing: -0.01em;color: #6B809B;">
-               ₦${priceDetail[0]}
+               ${formatter.format(priceDetail[0]).replace(/(\.|,)00$/g, '')}
                 </div>
             `;
 
             // Display the actual price
             actualProductP.innerHTML = `
             <div style="margin-top:-15px;font-weight: 300;font-size: 15px;line-height: 180%;letter-spacing: -0.01em;color: rgba(0, 0, 0, 0.3);">
-                ₦${priceDetail[0]}
+                ${formatter.format(priceDetail[0]).replace(/(\.|,)00$/g, '')}
                 </div>            
             `;
+                let featureArr = productDetail.map((ele, i)=> {
+                    return ele.productfeatures[i].features
+                })
+                console.log(featureArr[0]);
+                featureArr[0] === null
+                // console.log('no details found');
+                ?
+                dynamDetails.innerHTML = "No details found"
+                :
+                dynamDetails.innerHTML = `${featureArr}`
+
                 //   hideLoading();
               return data;
         } catch(error){
@@ -224,6 +287,8 @@ const hideLoading = () => {
                 console.log(product_id);
                 let name = result.product[0].name;
                 let price = JSON.stringify(productPrice);
+                let imageP =  result.product[0].productimages[0].imagedirectory
+                console.log(imageP);
                 let quantity = JSON.stringify(1);
                 let quantN = cartItems.find(elemee => elemee.id === product_id);
                 // let quantO = quantN.quantity;
@@ -247,7 +312,7 @@ const hideLoading = () => {
                   sessionStorage.setItem('cartItem', JSON.stringify(newCartItems));
                 console.log('item already exits');
                 } else {
-                    const item = {id: product_id, name: name, price: productPrice};
+                    const item = {id: product_id, name: name, price: productPrice, imagedirectory: imageP};
                     console.log(item);
                     console.log(quantity);
                     cartItems.push({
@@ -330,15 +395,7 @@ const hideLoading = () => {
       }
 
             getCartProduct();
-            // window.addEventListener('load', (event) => {
-            //     if(sessionStorage.getItem("cartItem")){
-            //         let cart = sessionStorage.getItem('cartItem');
-            //         alert(cart);
-            //         sessionStorage.setItem(cart);
-            //     }
-
-            //     // alert('finish loading', JSON.stringify(cart));
-            // });
+          
 </script>
 
 
