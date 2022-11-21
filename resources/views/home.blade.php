@@ -10,7 +10,60 @@
 <body>
     <main>
         <div style=" background-image: url(../customImages/Group68.png); background: #DEE3E9" >
+            <section
+                class="container d-flex flex-flow flex-wrap justify-content-center align-items-center e-margin-top block-display-tab section-top">
+                <div class="archware-content-text archwarejo-width-bottom-head pt-2">
+                    <h2 class="big-title text-title-mobile">
+                        We offer Premium <span class="orange-color">eye care</span> solutions
+                    </h2>
+                    <p class="pt-3 text-black-paragraph">
+                        Foremost International Eye Clinic is a leading provider of optometry services. With friendly and experienced
+                        optometrists,
+                        we provide a comprehensive range of eye care services.
+                    </p>
+                    <a href="/first-service" class="py-3">
+                        <button class="small-mobile-long-button archware-button-default">
+                            Get Started
+                        </button>
+                    </a>
+                </div>
 
+                <div class="archwarejo-width-top-head">
+                    <img class="img-fluid image-width-tab image-min-height-mobile" src="/customImages/We offer Premium.png">
+                    {{-- <div class="">
+                        <div class="container justify-content-center">
+                            <div class="row">
+                                <div class="gallery-rule">
+                                    <hr class="container gray-rule" />
+                                    <hr class="container orange-rule" />
+                                    <hr class="container gray-rule" />
+                                    <hr class="container gray-rule" />
+                                    <hr class="container gray-rule" />
+                                    <hr class="container gray-rule" />
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+                    <div class="e-our-offer d-sm-flex flex-row align-items-center justify-content-evenly">
+                        <div class="e-our-offer-child d-flex flex-column align-items-center justify-content-center">
+                            <img class="img-fluid" src="/customImages/eye-cleaner.png" alt="Eye clinic image">
+                            <p>Modern Eye Clinic</p>
+                        </div>
+                        <div class="e-our-offer-child d-flex flex-column justify-content-center align-items-center">
+                            <img class="img-fluid" src="/customImages/personnel.png" alt="Eye clinic image">
+                            <p>Expert Personnel</p>
+                        </div>
+                        <div class="e-our-offer-discount justify-content-center d-flex flex-column align-items-center">
+                            <img class="img-fluid" src="/customImages/eye-check.png" alt="Eye check image">
+                            <p>Discounted Eye checkups</p>
+                        </div>
+                        <div class="e-our-offer-child d-flex justify-content-center flex-column align-items-center">
+                            <img class="img-fluid" src="/customImages/hotline.png" alt="Eye check image">
+                            <p>24 Hour Hotline</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
 
         {{-- ABOUT US SECTION --}}
