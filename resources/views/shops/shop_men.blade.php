@@ -29,7 +29,7 @@
     class="img-fluid search-shop-image"
     src="{{ asset('customImages/arrow-right.png') }}"/>
         </div>   
-        <div class="d-flex flex-row">
+        <div class="d-flex flex-row shop_buttonWrapper">
             <div class="button-container">
               
                {{-- <a href="/try-it"><button class="try-it" type="button">Try it On</button></a> --}}
@@ -42,6 +42,32 @@
                 </button> --}}
                 <li class="right-nav-button-shop-wrapper">
                 <button type="button" class="shop-button">
+                    <img
+                    class="img-fluid"
+                    src="{{ asset('customImages/buyIcon.png') }}"
+                    />
+                   CART <span class="total-items-in-cart"></span>
+                </button>
+            </li>
+
+        </div>
+
+        {{-- MOBILE SUBNAV BUTTONS --}}
+        <div class="shop_buttonWrapperMobile">
+            <div class="button-container">
+            </div>
+            <div class="button-containerMobile">
+             
+                {{-- <a href="/try-it"><button class="try-it" type="button">Try it On</button></a> --}}
+             </div>
+                {{-- <button type="button" class="">
+                    <img
+                    src="{{ asset('customImages/buyIcon.png') }}"
+                    />
+                    CART
+                </button> --}}
+                <li class="right-nav-button-shop-wrapper">
+                <button type="button" class="shopButton_mobile">
                     <img
                     class="img-fluid"
                     src="{{ asset('customImages/buyIcon.png') }}"
@@ -86,7 +112,7 @@
 {{-- END OF THE GLASS SECTION AFTER HERO --}}
 </main>
 
-<section class="container-fluid">
+<section class="container-fluid mobile_productsWrapper">
 
 {{-- HERO SUB NAV --}}
 <nav class="hero-sub-nav container-fluid" id="hero-sub-nav">
@@ -101,25 +127,99 @@
 
     </ul>
 </nav>
+{{-- Mobile product filter --}}
+<div class="left_product mobile_product">
+    {{-- <header class="hide_filter d-flex flex-row justify-content-between align-items-baseline">
+        <h2>Filters</h2>
+        <div id="hide_close_mobile" class="d-flex flex-row align-items-baseline justify-content-evenly toggleIcon">
+            <img class="img-fluid" src="{{asset('customImages/toggle-icon.png')}}" alt="toggle icon">
+            <p class="hide_close">Toggle filters</p>
+        </div>
+        
+    </header> --}}
 
+    <div class="accordion toggle_accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Color
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body container-fluid">
+                <section class="colours_mobile_wrapper row justify-content-center" >                   
+      
+                   </section>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Face Shape
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body container-fluid">
+                <section class="colours_mobile_wrapper shape_mobile_wrapper row justify-content-center">
+                   
+
+                   </section>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwoJ">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoJ" aria-expanded="false" aria-controls="collapseTwoJ">
+                Glass
+              </button>
+            </h2>
+            <div id="collapseTwoJ" class="accordion-collapse collapse" aria-labelledby="headingTwoJ" data-bs-parent="#accordionExample">
+              <div class="accordion-body container-fluid">
+                  <section class="colours_mobile_wrapper glass_mobile_wrapper row justify-content-center">
+
+                     </section>
+              </div>
+            </div>
+          </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Gender
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <section class="colours_mobile_wrapper gender_mobile_wrapper row align-items-baseline 
+                justify-content-center">
+        
+                   </section>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+{{-- End of mobile product filter --}}
 <div class="container-fluid e-hero-content">
     
+     
+
     <div id="relevance">
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        {{-- <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
               <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Product view</button>
             </li>
             <li class="nav-item" role="presentation">
               <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Try it on</button>
             </li>
-          </ul>
-          <div class="tab-content" id="pills-tabContent">
+          </ul> --}}
+          {{-- <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">Product</div>
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"></div>
             <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
-          </div>
-
-        <div class="eb-tab right_product">
+          </div> --}}
+          {{-- <h1>I am relevance</h1> --}}
+          <div class="eb-tab right_product mob_right_product">
             <p id="show_filter">Show filters</p>
             
               <div class="tab-content" id="pills-tabContent">
@@ -154,18 +254,6 @@
           
                 </div>
         
-                {{-- Women content here --}}
-                <div class="tab-pane fade card-paginat" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                    <div class="d-flex flex-row flex-wrap justify-content-evenly productsDataWomen" id="paginated-listWomen">
-                       
-                    </div> 
-                </div>
-        
-                {{-- Kids content here --}}
-                <div class="tab-pane fade card-paginat" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                    <div class="d-flex flex-row flex-wrap justify-content-evenly productsDatakids" id="paginated-listKids">
-                    </div>
-                </div>
         
                 {{-- PAGINATION HERE --}}
                 {{-- <nav aria-label="Page navigation example">
@@ -190,6 +278,9 @@
             </div>
                
         </div>
+    
+       
+    
     </div>
     <div id="arrival">
         <h3>No new arrivals available</h3>
@@ -200,6 +291,8 @@
     <div id="filter" class="container-fluid">
 
     </div>
+
+    
 </div>
 </section>
 
@@ -311,13 +404,14 @@
           </div>
     </div>
 
-    <div class="eb-tab right_product">
+    {{-- DESKTOP PRODUCT CARDS --}}
+    <div class="eb-tab right_product right_productDesktop">
         <p id="show_filter">Show filters</p>
         
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane card-paginat fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 <div class="container-fluid">
-                   <div class="row productsData justify-content-between" id="paginated-list" data-current-page="1" aria-live="polite">
+                   <div class="row productsDataDesktop justify-content-between" id="paginated-listDesktop" data-current-page="1" aria-live="polite">
 
                    </div>
                 </div>
@@ -348,14 +442,14 @@
     
             {{-- Women content here --}}
             <div class="tab-pane fade card-paginat" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                <div class="d-flex flex-row flex-wrap justify-content-evenly productsDataWomen" id="paginated-listWomen">
+                <div class="d-flex flex-row flex-wrap justify-content-evenly productsDataDesktopWomen" id="paginated-listWomenDesktop">
                    
                 </div> 
             </div>
     
             {{-- Kids content here --}}
             <div class="tab-pane fade card-paginat" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                <div class="d-flex flex-row flex-wrap justify-content-evenly productsDatakids" id="paginated-listKids">
+                <div class="d-flex flex-row flex-wrap justify-content-evenly productsDataDesktopkids" id="paginated-listKidsDesktop">
                 </div>
             </div>
     
@@ -383,81 +477,9 @@
            
     </div>
 
-    {{-- Mobile product filter --}}
-    <div class="left_product mobile_product">
-        {{-- <header class="hide_filter d-flex flex-row justify-content-between align-items-baseline">
-            <h2>Filters</h2>
-            <div id="hide_close_mobile" class="d-flex flex-row align-items-baseline justify-content-evenly toggleIcon">
-                <img class="img-fluid" src="{{asset('customImages/toggle-icon.png')}}" alt="toggle icon">
-                <p class="hide_close">Toggle filters</p>
-            </div>
-            
-        </header> --}}
-    
-        <div class="accordion toggle_accordion" id="accordionExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Color
-                </button>
-              </h2>
-              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body container-fluid">
-                    <section class="colours_mobile_wrapper row justify-content-center" >                   
-          
-                       </section>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Face Shape
-                </button>
-              </h2>
-              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                <div class="accordion-body container-fluid">
-                    <section class="colours_mobile_wrapper shape_mobile_wrapper row justify-content-center">
-                       
-
-                       </section>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwoJ">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoJ" aria-expanded="false" aria-controls="collapseTwoJ">
-                    Glass
-                  </button>
-                </h2>
-                <div id="collapseTwoJ" class="accordion-collapse collapse" aria-labelledby="headingTwoJ" data-bs-parent="#accordionExample">
-                  <div class="accordion-body container-fluid">
-                      <section class="colours_mobile_wrapper glass_mobile_wrapper row justify-content-center">
- 
-                         </section>
-                  </div>
-                </div>
-              </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Gender
-                </button>
-              </h2>
-              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <section class="colours_mobile_wrapper gender_mobile_wrapper row align-items-baseline 
-                    justify-content-center">
-            
-                       </section>
-                </div>
-              </div>
-            </div>
-          </div>
-    </div>
-    {{-- End of mobile product filter --}}
-
    
+
+    
 </section>
 
 </body>
@@ -506,6 +528,21 @@
     }else{
         authButtons.innerHTML = ""
     } 
+
+
+
+    let authButtonsMobile = document.querySelector('.button-containerMobile');
+    console.log(authButtonsMobile);
+    if(!tokenStatus){
+        authButtonsMobile.innerHTML += `
+            <a href="/login"><button class="mobile-login" type="button">Login</button></a>
+            <a href="/signup"><button class="mobile-login" type="button">Signup</button></a>
+    `;
+    }else{
+        authButtonsMobile.innerHTML = ""
+    } 
+
+    
     
     // TAB SCRIPT HERE
     let heroLinks = document.querySelectorAll('.hero-link');
@@ -737,10 +774,14 @@
 					totalrecord = data.products_list.total;
                     let currentPage = data.products_list.current_page;
             
-                    const productItems = document.querySelector('.productsData');
-                    const productItemsWomen = document.querySelector('.productsDataWomen');
-                    const productItemsKids = document.querySelector('.productsDatakids');
+                    let productItems = document.querySelector('.productsData');
+                    let productItemsWomen = document.querySelector('.productsDataWomen');
+                    let productItemsKids = document.querySelector('.productsDatakids');
                    
+                    let productItemsDesktop = document.querySelector('.productsDataDesktop');
+                    let productItemsWomenDesktop = document.querySelector('.productsDataDesktopWomen');
+                    let productItemsKidsDesktop = document.querySelector('.productsDataDesktopkids');
+                    
                     // Format price
                     const formatter = new Intl.NumberFormat('en-NG', {
                     style: 'currency',
@@ -764,35 +805,26 @@
                     const kidsProducts = dataArr.filter(kidProduct => kidProduct.productcategory_id === 3);
                     // console.log(kidsProducts);
 
-                    // DISPLAY MEN
-                    let defaultImg = 'foremost_shopimage_1667983695.png'
-                    let htmlMen;
+
+
+
+                     // DISPLAY MEN MOBILE
+                     let defaultImg = 'foremost_shopimage_1667983695.png'
+                    // let htmlMen;
 
                     dataArr.length <= 0 
                     ?
-                    htmlMen = `<h4 class="no_productText text-center">No product found..<h4>`
+                    productItems =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
-				     htmlMen = "";
+				     productItems = "";
 					for (var i = 0; i < dataArr.length; i++) {
-						htmlMen += `
+						productItems += `
                 
                                 
-                                <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
-                                 
-                                   
-                                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner car_image_wrapper">
-                                    <div class="carousel-item active">
-                                    <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
-                                    </div>
-                                    <div class="carousel-item">
-                                    <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid image_style" alt="Shop image">
-                                    </div>
-                                    <div class="carousel-item">
-                                    <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid image_style"  alt="Shop image">
-                                    </div>
-                                </div>
-                                </div>
+                    <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                                    <img class="img-fluid image_style
+                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                       src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
                                 
                                 <div class="shop-card-heading">
                                     <div>
@@ -803,7 +835,7 @@
                                     <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
                                         <div class="price-child d-flex flex-row">
                                             <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
-                                            <p>₦${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                            <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
                                         </div>
                                         <div onclick="addToCart()">
                                           
@@ -817,94 +849,139 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                 `;
 					}
-					$("#paginated-list").html(htmlMen);
+					$("#paginated-list").html(productItems);
+
+                    // DISPLAY MEN DESKTOP
+                    menProducts.length <= 0 
+                    ?
+                    productItemsDesktop =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    :
+				     productItemsDesktop = "";
+					for (var i = 0; i < menProducts.length; i++) {
+						productItemsDesktop += `
+                
+                                
+                    <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${menProducts[i].id}>
+                                    <img class="img-fluid image_style
+                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                       src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
+                                
+                                <div class="shop-card-heading">
+                                    <div>
+                                        <h4>${menProducts[i].name}</h4>
+                                        <p data="date-updated">Updated ${ new Date(menProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                                    </div>
+                                    <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                                    <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                                        <div class="price-child d-flex flex-row">
+                                            <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                            <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                        </div>
+                                        <div onclick="addToCart()">
+                                          
+                                          <button type="button" class="shop-card-button">
+                                              <img
+                                              src="{{ asset('customImages/buyIcon.png') }}"
+                                              />
+                                              View
+                                          </button>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                `;
+					}
+					$("#paginated-listDesktop").html(productItemsDesktop);
+
 
                      // DISPLAY WOMEN
-                     let htmlWomen;
 
                     womenProducts.length <= 0 
                     ?
-                    htmlWomen =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    productItemsWomenDesktop =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
-					htmlWomen = "";
+					productItemsWomenDesktop = "";
 					for (var i = 0; i < womenProducts.length; i++) {
-						htmlWomen += `
-                
-                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
-                      <img class="img-fluid image_style
-                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                      "
-                       src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>${womenProducts[i].name}</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <div onclick="addToCart()">
-                              
-                              <button type="button" class="shop-card-button">
-                                  <img
-                                  src="{{ asset('customImages/buyIcon.png') }}"
-                                  />
-                                  View
-                              </button>
-                              </div>
-                        </div>
-                    </div>
-                </div>
+						productItemsWomenDesktop += `
+                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
+                            <img
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                            src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
+
+                     <div class="shop-card-heading">
+                         <div>
+                             <h4>${womenProducts[i].name}</h4>
+                             <p data="date-updated">Updated ${ new Date(womenProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                         </div>
+                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                         <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                             <div class="price-child d-flex flex-row">
+                                 <p>${formatter.format(womenProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                 <p>${formatter.format(womenProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                             </div>
+                             <div onclick="addToCart()">
+                               
+                               <button type="button" class="shop-card-button">
+                                   <img
+                                   src="{{ asset('customImages/buyIcon.png') }}"
+                                   />
+                                   View
+                               </button>
+                               </div>
+                         </div>
+                     </div>
+                 </div>
                 `;
 					}
-					$("#paginated-listWomen").html(htmlWomen);
-                    let htmlKids;
-
+					$("#paginated-listWomenDesktop").html(productItemsWomenDesktop);
+                    
+                    
                     kidsProducts.length <= 0 
                     ?
-                    htmlKids =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    productItemsKidsDesktop = `<h4 class="no_productText text-center">No product found..<h4>`
                     :
-                    htmlKids = "";
+                    productItemsKidsDesktop = "";
 					for (var i = 0; i < kidsProducts.length; i++) {
-						htmlKids += `
+						productItemsKidsDesktop += `
                 
-                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
-                      <img class="img-fluid image_style
-                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                      "
-                       src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>${kidsProducts[i].name}</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <div onclick="addToCart()">
-                              
-                              <button type="button" class="shop-card-button">
-                                  <img
-                                  src="{{ asset('customImages/buyIcon.png') }}"
-                                  />
-                                  View
-                              </button>
-                              </div>
-                        </div>
-                    </div>
-                </div>
+                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
+                            <img 
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                            src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[0].imagedirectory : defaultImg}"
+                             class="img-fluid image_style " alt="shop men">
+     
+                     
+                     <div class="shop-card-heading">
+                         <div>
+                             <h4>${kidsProducts[i].name}</h4>
+                             <p data="date-updated">Updated ${ new Date(kidsProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                         </div>
+                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                         <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                             <div class="price-child d-flex flex-row">
+                                 <p>${formatter.format(kidsProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                 <p>${formatter.format(kidsProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                             </div>
+                             <div onclick="addToCart()">
+                               
+                               <button type="button" class="shop-card-button">
+                                   <img
+                                   src="{{ asset('customImages/buyIcon.png') }}"
+                                   />
+                                   View
+                               </button>
+                               </div>
+                         </div>
+                     </div>
+                 </div>
                 `;
 					}
-					$("#paginated-listKids").html(htmlKids);
+					$("#paginated-listKidsDesktop").html(productItemsKidsDesktop);
+
 
                             }
                         },
@@ -981,9 +1058,13 @@
 					totalrecord = data.products_list.total;
                     let currentPage = data.products_list.current_page;
             
-                    const productItems = document.querySelector('.productsData');
-                    const productItemsWomen = document.querySelector('.productsDataWomen');
-                    const productItemsKids = document.querySelector('.productsDatakids');
+                    let productItems = document.querySelector('.productsData');
+                    let productItemsWomen = document.querySelector('.productsDataWomen');
+                    let productItemsKids = document.querySelector('.productsDatakids');
+
+                    let productItemsDesktop = document.querySelector('.productsDataDesktop');
+                    let productItemsWomenDesktop = document.querySelector('.productsDataDesktopWomen');
+                    let productItemsKidsDesktop = document.querySelector('.productsDataDesktopkids');
                    
                     // Format price
                     const formatter = new Intl.NumberFormat('en-NG', {
@@ -994,160 +1075,197 @@
 
                     // Get data for Men, women and kids
                     // MEN
-                    const menProducts = dataArr.filter(menProduct => menProduct.productcategory_id === 1
+                    const menProducts = dataArr.filter(menProduct => menProduct.gender_categories_id === 1
             );
                     // console.log(menProducts);
                     // WOMEN
                     // Get women data
 
-                    const womenProducts = dataArr.filter(womenProduct => womenProduct.productcategory_id === 2);
+                    const womenProducts = dataArr.filter(womenProduct => womenProduct.gender_categories_id === 2);
                     // console.log(womenProducts);
 
                     // KIDS
                       // Get Kids data
-                    const kidsProducts = dataArr.filter(kidProduct => kidProduct.productcategory_id === 3);
+                    const kidsProducts = dataArr.filter(kidProduct => kidProduct.gender_categories_id === 3);
                     // console.log(kidsProducts);
 
                     // DISPLAY MEN
+                    // MOBILE
+                    // DISPLAY MEN MOBILE
                     let defaultImg = 'foremost_shopimage_1667983695.png'
-                    let htmlMen;
+                    // let htmlMen;
 
                     dataArr.length <= 0 
                     ?
-                    htmlMen = `<h4 class="no_productText text-center">No product found..<h4>`
+                    productItems =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
-				     htmlMen = "";
+				     productItems = "";
 					for (var i = 0; i < dataArr.length; i++) {
-						htmlMen += `
+						productItems += `
                 
-                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
-                     
-                       
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner car_image_wrapper">
-                        <div class="carousel-item active">
-                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid image_style" alt="Shop image">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid image_style"  alt="Shop image">
-                        </div>
-                    </div>
-                    </div>
-                    
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>${dataArr[i].name}</h4>
-                            <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
-                                <p>₦${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                
+                    <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                                    <img class="img-fluid image_style
+                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                       src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
+                                
+                                <div class="shop-card-heading">
+                                    <div>
+                                        <h4>${dataArr[i].name}</h4>
+                                        <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                                    </div>
+                                    <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                                    <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                                        <div class="price-child d-flex flex-row">
+                                            <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                            <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                        </div>
+                                        <div onclick="addToCart()">
+                                          
+                                          <button type="button" class="shop-card-button">
+                                              <img
+                                              src="{{ asset('customImages/buyIcon.png') }}"
+                                              />
+                                              View
+                                          </button>
+                                          </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div onclick="addToCart()">
-                              
-                              <button type="button" class="shop-card-button">
-                                  <img
-                                  src="{{ asset('customImages/buyIcon.png') }}"
-                                  />
-                                  View
-                              </button>
-                              </div>
-                        </div>
-                    </div>
-                </div>
+
                 `;
 					}
-					$("#paginated-list").html(htmlMen);
+					$("#paginated-list").html(productItems);
+
+
+
+                    // DESKPTOP
+                    menProducts.length <= 0 
+                    ?
+                    productItemsDesktop =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    :
+				     productItemsDesktop = "";
+					for (var i = 0; i < menProducts.length; i++) {
+						productItemsDesktop += `
+                
+                                
+                    <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${menProducts[i].id}>
+                                    <img class="img-fluid image_style
+                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                       src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
+                                
+                                <div class="shop-card-heading">
+                                    <div>
+                                        <h4>${menProducts[i].name}</h4>
+                                        <p data="date-updated">Updated ${ new Date(menProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                                    </div>
+                                    <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                                    <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                                        <div class="price-child d-flex flex-row">
+                                            <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                            <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                        </div>
+                                        <div onclick="addToCart()">
+                                          
+                                          <button type="button" class="shop-card-button">
+                                              <img
+                                              src="{{ asset('customImages/buyIcon.png') }}"
+                                              />
+                                              View
+                                          </button>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                `;
+					}
+					$("#paginated-listDesktop").html(productItemsDesktop);
+
 
                      // DISPLAY WOMEN
-                     let htmlWomen;
 
                     womenProducts.length <= 0 
                     ?
-                    htmlWomen =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    productItemsWomenDesktop =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
-					htmlWomen = "";
+					productItemsWomenDesktop = "";
 					for (var i = 0; i < womenProducts.length; i++) {
-						htmlWomen += `
-                
-                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
-                      <img class="img-fluid image_style
-                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                      "
-                       src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
-                    </a>
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>${womenProducts[i].name}</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <div onclick="addToCart()">
-                              
-                              <button type="button" class="shop-card-button">
-                                  <img
-                                  src="{{ asset('customImages/buyIcon.png') }}"
-                                  />
-                                  View
-                              </button>
-                              </div>
-                        </div>
-                    </div>
-                </div>
+						productItemsWomenDesktop += `
+                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
+                            <img
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                            src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
+
+                     <div class="shop-card-heading">
+                         <div>
+                             <h4>${womenProducts[i].name}</h4>
+                             <p data="date-updated">Updated ${ new Date(womenProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                         </div>
+                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                         <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                             <div class="price-child d-flex flex-row">
+                                 <p>${formatter.format(womenProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                 <p>${formatter.format(womenProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                             </div>
+                             <div onclick="addToCart()">
+                               
+                               <button type="button" class="shop-card-button">
+                                   <img
+                                   src="{{ asset('customImages/buyIcon.png') }}"
+                                   />
+                                   View
+                               </button>
+                               </div>
+                         </div>
+                     </div>
+                 </div>
                 `;
 					}
-					$("#paginated-listWomen").html(htmlWomen);
-                    let htmlKids;
-
+					$("#paginated-listWomenDesktop").html(productItemsWomenDesktop);
+                    
+                    
                     kidsProducts.length <= 0 
                     ?
-                    htmlKids =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    productItemsKidsDesktop = `<h4 class="no_productText text-center">No product found..<h4>`
                     :
-                    htmlKids = "";
+                    productItemsKidsDesktop = "";
 					for (var i = 0; i < kidsProducts.length; i++) {
-						htmlKids += `
+						productItemsKidsDesktop += `
                 
-                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
-                      <img class="img-fluid image_style
-                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                      "
-                       src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>${kidsProducts[i].name}</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <div onclick="addToCart()">
-                              
-                              <button type="button" class="shop-card-button">
-                                  <img
-                                  src="{{ asset('customImages/buyIcon.png') }}"
-                                  />
-                                  View
-                              </button>
-                              </div>
-                        </div>
-                    </div>
-                </div>
+                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
+                            <img 
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                            src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[0].imagedirectory : defaultImg}"
+                             class="img-fluid image_style " alt="shop men">
+     
+                     
+                     <div class="shop-card-heading">
+                         <div>
+                             <h4>${kidsProducts[i].name}</h4>
+                             <p data="date-updated">Updated ${ new Date(kidsProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                         </div>
+                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                         <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                             <div class="price-child d-flex flex-row">
+                                 <p>${formatter.format(kidsProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                 <p>${formatter.format(kidsProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                             </div>
+                             <div onclick="addToCart()">
+                               
+                               <button type="button" class="shop-card-button">
+                                   <img
+                                   src="{{ asset('customImages/buyIcon.png') }}"
+                                   />
+                                   View
+                               </button>
+                               </div>
+                         </div>
+                     </div>
+                 </div>
                 `;
 					}
-					$("#paginated-listKids").html(htmlKids);
+					$("#paginated-listKidsDesktop").html(productItemsKidsDesktop);
 
                             }
                         },
@@ -1225,11 +1343,15 @@
 					totalrecord = data.products_list.total;
                     let currentPage = data.products_list.current_page;
         
+                    let productItems = document.querySelector('.productsData');
+                    let productItemsWomen = document.querySelector('.productsDataWomen');
+                    let productItemsKids = document.querySelector('.productsDatakids');
+
             
-                    const productItems = document.querySelector('.productsData');
-                    const productItemsWomen = document.querySelector('.productsDataWomen');
-                    const productItemsKids = document.querySelector('.productsDatakids');
-                   
+                    let productItemsDesktop = document.querySelector('.productsDataDesktop');
+                    let productItemsWomenDesktop = document.querySelector('.productsDataDesktopWomen');
+                    let productItemsKidsDesktop = document.querySelector('.productsDataDesktopkids');
+                    
                     // Format price
                     const formatter = new Intl.NumberFormat('en-NG', {
                     style: 'currency',
@@ -1239,160 +1361,195 @@
 
                     // Get data for Men, women and kids
                     // MEN
-                    const menProducts = dataArr.filter(menProduct => menProduct.productcategory_id === 1
+                    const menProducts = dataArr.filter(menProduct => menProduct.gender_categories_id === 1
             );
                     // console.log(menProducts);
                     // WOMEN
                     // Get women data
 
-                    const womenProducts = dataArr.filter(womenProduct => womenProduct.productcategory_id === 2);
+                    const womenProducts = dataArr.filter(womenProduct => womenProduct.gender_categories_id === 2);
                     // console.log(womenProducts);
 
                     // KIDS
                       // Get Kids data
-                    const kidsProducts = dataArr.filter(kidProduct => kidProduct.productcategory_id === 3);
+                    const kidsProducts = dataArr.filter(kidProduct => kidProduct.gender_categories_id === 3);
                     // console.log(kidsProducts);
 
-                    // DISPLAY MEN
+                    // DISPLAY MEN MOBILE
                     let defaultImg = 'foremost_shopimage_1667983695.png'
-                    let htmlMen;
+                    // let htmlMen;
 
                     dataArr.length <= 0 
                     ?
-                    htmlMen =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    productItems =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
-				     htmlMen = "";
+				     productItems = "";
 					for (var i = 0; i < dataArr.length; i++) {
-						htmlMen += `
+						productItems += `
                 
-                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
-                     
-                       
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner car_image_wrapper">
-                        <div class="carousel-item active">
-                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid image_style" alt="Shop image">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid image_style"  alt="Shop image">
-                        </div>
-                    </div>
-                    </div>
-                    
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>${dataArr[i].name}</h4>
-                            <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
-                                <p>₦${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                
+                    <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                                    <img class="img-fluid image_style
+                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                       src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
+                                
+                                <div class="shop-card-heading">
+                                    <div>
+                                        <h4>${dataArr[i].name}</h4>
+                                        <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                                    </div>
+                                    <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                                    <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                                        <div class="price-child d-flex flex-row">
+                                            <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                            <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                        </div>
+                                        <div onclick="addToCart()">
+                                          
+                                          <button type="button" class="shop-card-button">
+                                              <img
+                                              src="{{ asset('customImages/buyIcon.png') }}"
+                                              />
+                                              View
+                                          </button>
+                                          </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div onclick="addToCart()">
-                              
-                              <button type="button" class="shop-card-button">
-                                  <img
-                                  src="{{ asset('customImages/buyIcon.png') }}"
-                                  />
-                                  View
-                              </button>
-                              </div>
-                        </div>
-                    </div>
-                </div>
+
                 `;
 					}
-					$("#paginated-list").html(htmlMen);
+					$("#paginated-list").html(productItems);
+
+
+
+                    // DISPLAY MEN DESKTOP
+                    menProducts.length <= 0 
+                    ?
+                    productItemsDesktop =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    :
+				     productItemsDesktop = "";
+					for (var i = 0; i < menProducts.length; i++) {
+						productItemsDesktop += `
+                
+                                
+                    <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${menProducts[i].id}>
+                                    <img class="img-fluid image_style
+                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                       src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
+                                
+                                <div class="shop-card-heading">
+                                    <div>
+                                        <h4>${menProducts[i].name}</h4>
+                                        <p data="date-updated">Updated ${ new Date(menProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                                    </div>
+                                    <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                                    <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                                        <div class="price-child d-flex flex-row">
+                                            <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                            <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                        </div>
+                                        <div onclick="addToCart()">
+                                          
+                                          <button type="button" class="shop-card-button">
+                                              <img
+                                              src="{{ asset('customImages/buyIcon.png') }}"
+                                              />
+                                              View
+                                          </button>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                `;
+					}
+					$("#paginated-listDesktop").html(productItemsDesktop);
+
 
                      // DISPLAY WOMEN
-                     let htmlWomen;
 
                     womenProducts.length <= 0 
                     ?
-                    htmlWomen =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    productItemsWomenDesktop =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
-					htmlWomen = "";
+					productItemsWomenDesktop = "";
 					for (var i = 0; i < womenProducts.length; i++) {
-						htmlWomen += `
-                
-                    <div class="shop-card col-sm-4 col-md-6 col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
-                      <img class="img-fluid image_style
-                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                      "
-                       src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
-                    </a>
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>${womenProducts[i].name}</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <div onclick="addToCart()">
-                              
-                              <button type="button" class="shop-card-button">
-                                  <img
-                                  src="{{ asset('customImages/buyIcon.png') }}"
-                                  />
-                                  View
-                              </button>
-                              </div>
-                        </div>
-                    </div>
-                </div>
+						productItemsWomenDesktop += `
+                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
+                            <img
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                            src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
+
+                     <div class="shop-card-heading">
+                         <div>
+                             <h4>${womenProducts[i].name}</h4>
+                             <p data="date-updated">Updated ${ new Date(womenProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                         </div>
+                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                         <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                             <div class="price-child d-flex flex-row">
+                                 <p>${formatter.format(womenProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                 <p>${formatter.format(womenProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                             </div>
+                             <div onclick="addToCart()">
+                               
+                               <button type="button" class="shop-card-button">
+                                   <img
+                                   src="{{ asset('customImages/buyIcon.png') }}"
+                                   />
+                                   View
+                               </button>
+                               </div>
+                         </div>
+                     </div>
+                 </div>
                 `;
 					}
-					$("#paginated-listWomen").html(htmlWomen);
-                    let htmlKids;
-
+					$("#paginated-listWomenDesktop").html(productItemsWomenDesktop);
+                    
+                    
                     kidsProducts.length <= 0 
                     ?
-                    htmlKids =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    productItemsKidsDesktop = `<h4 class="no_productText text-center">No product found..<h4>`
                     :
-                    htmlKids = "";
+                    productItemsKidsDesktop = "";
 					for (var i = 0; i < kidsProducts.length; i++) {
-						htmlKids += `
+						productItemsKidsDesktop += `
                 
-                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
-                      <img class="img-fluid image_style
-                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                      "
-                       src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>${kidsProducts[i].name}</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <div onclick="addToCart()">
-                              
-                              <button type="button" class="shop-card-button">
-                                  <img
-                                  src="{{ asset('customImages/buyIcon.png') }}"
-                                  />
-                                  View
-                              </button>
-                              </div>
-                        </div>
-                    </div>
-                </div>
+                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
+                            <img 
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                            src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[0].imagedirectory : defaultImg}"
+                             class="img-fluid image_style " alt="shop men">
+     
+                     
+                     <div class="shop-card-heading">
+                         <div>
+                             <h4>${kidsProducts[i].name}</h4>
+                             <p data="date-updated">Updated ${ new Date(kidsProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                         </div>
+                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                         <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                             <div class="price-child d-flex flex-row">
+                                 <p>${formatter.format(kidsProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                 <p>${formatter.format(kidsProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                             </div>
+                             <div onclick="addToCart()">
+                               
+                               <button type="button" class="shop-card-button">
+                                   <img
+                                   src="{{ asset('customImages/buyIcon.png') }}"
+                                   />
+                                   View
+                               </button>
+                               </div>
+                         </div>
+                     </div>
+                 </div>
                 `;
 					}
-					$("#paginated-listKids").html(htmlKids);
+					$("#paginated-listKidsDesktop").html(productItemsKidsDesktop);
 
                             }
                         },
@@ -1459,18 +1616,22 @@
 			success: function(data) {
               hideLoading();
 				console.log(data);
+				console.log('Gender data');
                 console.log(data.products_list.data);
 
 				if (data) {
 					let dataArr =  data.products_list.data;
 					totalrecord = data.products_list.total;
                     let currentPage = data.products_list.current_page;
-        
                     
-                    const productItems = document.querySelector('.productsData');
-                    const productItemsWomen = document.querySelector('.productsDataWomen');
-                    const productItemsKids = document.querySelector('.productsDatakids');
-                   
+                    let productItems = document.querySelector('.productsData');
+                    let productItemsWomen = document.querySelector('.productsDataWomen');
+                    let productItemsKids = document.querySelector('.productsDatakids');
+                  
+                    let productItemsDesktop = document.querySelector('.productsDataDesktop');
+                    let productItemsWomenDesktop = document.querySelector('.productsDataDesktopWomen');
+                    let productItemsKidsDesktop = document.querySelector('.productsDataDesktopkids');
+                    
                     // Format price
                     const formatter = new Intl.NumberFormat('en-NG', {
                     style: 'currency',
@@ -1480,160 +1641,193 @@
 
                     // Get data for Men, women and kids
                     // MEN
-                    const menProducts = dataArr.filter(menProduct => menProduct.productcategory_id === 1
+                    const menProducts = dataArr.filter(menProduct => menProduct.gender_categories_id === 1
             );
                     // console.log(menProducts);
                     // WOMEN
                     // Get women data
 
-                    const womenProducts = dataArr.filter(womenProduct => womenProduct.productcategory_id === 2);
+                    const womenProducts = dataArr.filter(womenProduct => womenProduct.gender_categories_id === 2);
                     // console.log(womenProducts);
 
                     // KIDS
                       // Get Kids data
-                    const kidsProducts = dataArr.filter(kidProduct => kidProduct.productcategory_id === 3);
+                    const kidsProducts = dataArr.filter(kidProduct => kidProduct.gender_categories_id === 3);
                     // console.log(kidsProducts);
 
-                    // DISPLAY MEN
+                    // DISPLAY MEN MOBILE
                     let defaultImg = 'foremost_shopimage_1667983695.png'
-                    let htmlMen;
+                    // let htmlMen;
 
                     dataArr.length <= 0 
                     ?
-                    htmlMen =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    productItems =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
-				     htmlMen = "";
+				     productItems = "";
 					for (var i = 0; i < dataArr.length; i++) {
-						htmlMen += `
+						productItems += `
                 
-                    <div class="shop-card col-sm-4 col-md-6 col-sm-4 col-md-6 e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
-                     
-                       
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner car_image_wrapper">
-                        <div class="carousel-item active">
-                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid image_style" alt="Shop image">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="baseURL/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid image_style"  alt="Shop image">
-                        </div>
-                    </div>
-                    </div>
-                    
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>${dataArr[i].name}</h4>
-                            <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
-                                <p>₦${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                
+                    <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                                    <img class="img-fluid image_style
+                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                       src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
+                                
+                                <div class="shop-card-heading">
+                                    <div>
+                                        <h4>${dataArr[i].name}</h4>
+                                        <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                                    </div>
+                                    <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                                    <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                                        <div class="price-child d-flex flex-row">
+                                            <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                            <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                        </div>
+                                        <div onclick="addToCart()">
+                                          
+                                          <button type="button" class="shop-card-button">
+                                              <img
+                                              src="{{ asset('customImages/buyIcon.png') }}"
+                                              />
+                                              View
+                                          </button>
+                                          </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div onclick="addToCart()">
-                              
-                              <button type="button" class="shop-card-button">
-                                  <img
-                                  src="{{ asset('customImages/buyIcon.png') }}"
-                                  />
-                                  View
-                              </button>
-                              </div>
-                        </div>
-                    </div>
-                </div>
+
                 `;
 					}
-					$("#paginated-list").html(htmlMen);
+					$("#paginated-list").html(productItems);
+
+                    // DISPLAY MEN DESKTOP
+                    menProducts.length <= 0 
+                    ?
+                    productItemsDesktop =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    :
+				     productItemsDesktop = "";
+					for (var i = 0; i < menProducts.length; i++) {
+						productItemsDesktop += `
+                
+                                
+                    <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${menProducts[i].id}>
+                                    <img class="img-fluid image_style
+                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                       src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
+                                
+                                <div class="shop-card-heading">
+                                    <div>
+                                        <h4>${menProducts[i].name}</h4>
+                                        <p data="date-updated">Updated ${ new Date(menProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                                    </div>
+                                    <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                                    <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                                        <div class="price-child d-flex flex-row">
+                                            <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                            <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                        </div>
+                                        <div onclick="addToCart()">
+                                          
+                                          <button type="button" class="shop-card-button">
+                                              <img
+                                              src="{{ asset('customImages/buyIcon.png') }}"
+                                              />
+                                              View
+                                          </button>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                `;
+					}
+					$("#paginated-listDesktop").html(productItemsDesktop);
+
 
                      // DISPLAY WOMEN
-                     let htmlWomen;
 
                     womenProducts.length <= 0 
                     ?
-                    htmlWomen =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    productItemsWomenDesktop =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
-					htmlWomen = "";
+					productItemsWomenDesktop = "";
 					for (var i = 0; i < womenProducts.length; i++) {
-						htmlWomen += `
-                
-                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
-                      <img class="img-fluid image_style
-                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                      "
-                       src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
-                    </a>
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>${womenProducts[i].name}</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <div onclick="addToCart()">
-                              
-                              <button type="button" class="shop-card-button">
-                                  <img
-                                  src="{{ asset('customImages/buyIcon.png') }}"
-                                  />
-                                  View
-                              </button>
-                              </div>
-                        </div>
-                    </div>
-                </div>
+						productItemsWomenDesktop += `
+                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
+                            <img
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                            src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
+
+                     <div class="shop-card-heading">
+                         <div>
+                             <h4>${womenProducts[i].name}</h4>
+                             <p data="date-updated">Updated ${ new Date(womenProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                         </div>
+                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                         <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                             <div class="price-child d-flex flex-row">
+                                 <p>${formatter.format(womenProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                 <p>${formatter.format(womenProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                             </div>
+                             <div onclick="addToCart()">
+                               
+                               <button type="button" class="shop-card-button">
+                                   <img
+                                   src="{{ asset('customImages/buyIcon.png') }}"
+                                   />
+                                   View
+                               </button>
+                               </div>
+                         </div>
+                     </div>
+                 </div>
                 `;
 					}
-					$("#paginated-listWomen").html(htmlWomen);
-                    let htmlKids;
-
+					$("#paginated-listWomenDesktop").html(productItemsWomenDesktop);
+                    
+                    
                     kidsProducts.length <= 0 
                     ?
-                    htmlKids =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    productItemsKidsDesktop = `<h4 class="no_productText text-center">No product found..<h4>`
                     :
-                    htmlKids = "";
+                    productItemsKidsDesktop = "";
 					for (var i = 0; i < kidsProducts.length; i++) {
-						htmlKids += `
+						productItemsKidsDesktop += `
                 
-                    <div class="shop-card col-sm-4 col-md-6 col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
-                      <img class="img-fluid image_style
-                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                      "
-                       src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>${kidsProducts[i].name}</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <div onclick="addToCart()">
-                              
-                              <button type="button" class="shop-card-button">
-                                  <img
-                                  src="{{ asset('customImages/buyIcon.png') }}"
-                                  />
-                                  View
-                              </button>
-                              </div>
-                        </div>
-                    </div>
-                </div>
+                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
+                            <img 
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                            src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[0].imagedirectory : defaultImg}"
+                             class="img-fluid image_style " alt="shop men">
+     
+                     
+                     <div class="shop-card-heading">
+                         <div>
+                             <h4>${kidsProducts[i].name}</h4>
+                             <p data="date-updated">Updated ${ new Date(kidsProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                         </div>
+                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                         <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                             <div class="price-child d-flex flex-row">
+                                 <p>${formatter.format(kidsProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                 <p>${formatter.format(kidsProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                             </div>
+                             <div onclick="addToCart()">
+                               
+                               <button type="button" class="shop-card-button">
+                                   <img
+                                   src="{{ asset('customImages/buyIcon.png') }}"
+                                   />
+                                   View
+                               </button>
+                               </div>
+                         </div>
+                     </div>
+                 </div>
                 `;
 					}
-					$("#paginated-listKids").html(htmlKids);
+					$("#paginated-listKidsDesktop").html(productItemsKidsDesktop);
 
                             }
                         },
@@ -1702,17 +1896,22 @@
 			success: function(data) {
               hideLoading();
 				console.log(data);
+				console.log('Glass data');
                 console.log(data.products_list.data);
 
 				if (data) {
 					let dataArr =  data.products_list.data;
 					totalrecord = data.products_list.total;
                     let currentPage = data.products_list.current_page;
-        
-                    
-                    const productItems = document.querySelector('.productsData');
-                    const productItemsWomen = document.querySelector('.productsDataWomen');
-                    const productItemsKids = document.querySelector('.productsDatakids');
+ 
+
+                    let productItems = document.querySelector('.productsData');
+                    let productItemsWomen = document.querySelector('.productsDataWomen');
+                    let productItemsKids = document.querySelector('.productsDatakids');
+
+                    let productItemsDesktop = document.querySelector('.productsDataDesktop');
+                    let productItemsWomenDesktop = document.querySelector('.productsDataDesktopWomen');
+                    let productItemsKidsDesktop = document.querySelector('.productsDataDesktopkids');
                    
                     // Format price
                     const formatter = new Intl.NumberFormat('en-NG', {
@@ -1723,160 +1922,195 @@
 
                     // Get data for Men, women and kids
                     // MEN
-                    const menProducts = dataArr.filter(menProduct => menProduct.productcategory_id === 1
+                    const menProducts = dataArr.filter(menProduct => menProduct.gender_categories_id === 1
             );
                     // console.log(menProducts);
                     // WOMEN
                     // Get women data
 
-                    const womenProducts = dataArr.filter(womenProduct => womenProduct.productcategory_id === 2);
+                    const womenProducts = dataArr.filter(womenProduct => womenProduct.gender_categories_id === 2);
                     // console.log(womenProducts);
 
                     // KIDS
                       // Get Kids data
-                    const kidsProducts = dataArr.filter(kidProduct => kidProduct.productcategory_id === 3);
+                    const kidsProducts = dataArr.filter(kidProduct => kidProduct.gender_categories_id === 3);
                     // console.log(kidsProducts);
 
-                    // DISPLAY MEN
+                    // DISPLAY MEN MOBILE
                     let defaultImg = 'foremost_shopimage_1667983695.png'
-                    let htmlMen;
+                    // let htmlMen;
 
                     dataArr.length <= 0 
                     ?
-                    htmlMen =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    productItems =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
-				     htmlMen = "";
+				     productItems = "";
 					for (var i = 0; i < dataArr.length; i++) {
-						htmlMen += `
+						productItems += `
                 
-                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
-                     
-                       
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner car_image_wrapper">
-                        <div class="carousel-item active">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid image_style" alt="Shop image">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="http://127.0.0.1:8000/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid image_style"  alt="Shop image">
-                        </div>
-                    </div>
-                    </div>
-                    
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>${dataArr[i].name}</h4>
-                            <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
-                                <p>₦${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                
+                    <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                                    <img class="img-fluid image_style
+                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                       src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
+                                
+                                <div class="shop-card-heading">
+                                    <div>
+                                        <h4>${dataArr[i].name}</h4>
+                                        <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                                    </div>
+                                    <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                                    <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                                        <div class="price-child d-flex flex-row">
+                                            <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                            <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                        </div>
+                                        <div onclick="addToCart()">
+                                          
+                                          <button type="button" class="shop-card-button">
+                                              <img
+                                              src="{{ asset('customImages/buyIcon.png') }}"
+                                              />
+                                              View
+                                          </button>
+                                          </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div onclick="addToCart()">
-                              
-                              <button type="button" class="shop-card-button">
-                                  <img
-                                  src="{{ asset('customImages/buyIcon.png') }}"
-                                  />
-                                  View
-                              </button>
-                              </div>
-                        </div>
-                    </div>
-                </div>
+
                 `;
 					}
-					$("#paginated-list").html(htmlMen);
+					$("#paginated-list").html(productItems);
+
+
+
+                    // DISPLAY MEN DESKTOP
+                    menProducts.length <= 0 
+                    ?
+                    productItemsDesktop =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    :
+				     productItemsDesktop = "";
+					for (var i = 0; i < menProducts.length; i++) {
+						productItemsDesktop += `
+                
+                                
+                    <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${menProducts[i].id}>
+                                    <img class="img-fluid image_style
+                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                       src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
+                                
+                                <div class="shop-card-heading">
+                                    <div>
+                                        <h4>${menProducts[i].name}</h4>
+                                        <p data="date-updated">Updated ${ new Date(menProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                                    </div>
+                                    <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                                    <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                                        <div class="price-child d-flex flex-row">
+                                            <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                            <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                        </div>
+                                        <div onclick="addToCart()">
+                                          
+                                          <button type="button" class="shop-card-button">
+                                              <img
+                                              src="{{ asset('customImages/buyIcon.png') }}"
+                                              />
+                                              View
+                                          </button>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                `;
+					}
+					$("#paginated-listDesktop").html(productItemsDesktop);
+
 
                      // DISPLAY WOMEN
-                     let htmlWomen;
 
                     womenProducts.length <= 0 
                     ?
-                    htmlWomen =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    productItemsWomenDesktop =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
-					htmlWomen = "";
+					productItemsWomenDesktop = "";
 					for (var i = 0; i < womenProducts.length; i++) {
-						htmlWomen += `
-                
-                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
-                      <img class="img-fluid image_style
-                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                      "
-                       src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
-                    </a>
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>${womenProducts[i].name}</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <div onclick="addToCart()">
-                              
-                              <button type="button" class="shop-card-button">
-                                  <img
-                                  src="{{ asset('customImages/buyIcon.png') }}"
-                                  />
-                                  View
-                              </button>
-                              </div>
-                        </div>
-                    </div>
-                </div>
+						productItemsWomenDesktop += `
+                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
+                            <img
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                            src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
+
+                     <div class="shop-card-heading">
+                         <div>
+                             <h4>${womenProducts[i].name}</h4>
+                             <p data="date-updated">Updated ${ new Date(womenProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                         </div>
+                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                         <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                             <div class="price-child d-flex flex-row">
+                                 <p>${formatter.format(womenProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                 <p>${formatter.format(womenProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                             </div>
+                             <div onclick="addToCart()">
+                               
+                               <button type="button" class="shop-card-button">
+                                   <img
+                                   src="{{ asset('customImages/buyIcon.png') }}"
+                                   />
+                                   View
+                               </button>
+                               </div>
+                         </div>
+                     </div>
+                 </div>
                 `;
 					}
-					$("#paginated-listWomen").html(htmlWomen);
-                    let htmlKids;
-
+					$("#paginated-listWomenDesktop").html(productItemsWomenDesktop);
+                    
+                    
                     kidsProducts.length <= 0 
                     ?
-                    htmlKids =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    productItemsKidsDesktop = `<h4 class="no_productText text-center">No product found..<h4>`
                     :
-                    htmlKids = "";
+                    productItemsKidsDesktop = "";
 					for (var i = 0; i < kidsProducts.length; i++) {
-						htmlKids += `
+						productItemsKidsDesktop += `
                 
-                    <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
-                      <img class="img-fluid image_style
-                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                      "
-                       src="{{asset('customImages/shopimage.png')}}" alt="Shop image"/> 
-                    <div class="shop-card-heading">
-                        <div>
-                            <h4>${kidsProducts[i].name}</h4>
-                            <p data="date-updated">Updated July 2022</p>
-                        </div>
-                        <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                        <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                            <div class="price-child d-flex flex-row">
-                                <p>N4,999</p>
-                                <p>N9,000</p>
-                            </div>
-                            <div onclick="addToCart()">
-                              
-                              <button type="button" class="shop-card-button">
-                                  <img
-                                  src="{{ asset('customImages/buyIcon.png') }}"
-                                  />
-                                  View
-                              </button>
-                              </div>
-                        </div>
-                    </div>
-                </div>
+                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
+                            <img 
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                            src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[0].imagedirectory : defaultImg}"
+                             class="img-fluid image_style " alt="shop men">
+     
+                     
+                     <div class="shop-card-heading">
+                         <div>
+                             <h4>${kidsProducts[i].name}</h4>
+                             <p data="date-updated">Updated ${ new Date(kidsProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                         </div>
+                         <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                         <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                             <div class="price-child d-flex flex-row">
+                                 <p>${formatter.format(kidsProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                 <p>${formatter.format(kidsProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                             </div>
+                             <div onclick="addToCart()">
+                               
+                               <button type="button" class="shop-card-button">
+                                   <img
+                                   src="{{ asset('customImages/buyIcon.png') }}"
+                                   />
+                                   View
+                               </button>
+                               </div>
+                         </div>
+                     </div>
+                 </div>
                 `;
 					}
-					$("#paginated-listKids").html(htmlKids);
+					$("#paginated-listKidsDesktop").html(productItemsKidsDesktop);
 
                             }
                         },
@@ -2249,9 +2483,13 @@
                         `;
                     })
             
-                    const productItems = document.querySelector('.productsData');
-                    const productItemsWomen = document.querySelector('.productsDataWomen');
-                    const productItemsKids = document.querySelector('.productsDatakids');
+                    let productItems = document.querySelector('.productsData');
+                    let productItemsWomen = document.querySelector('.productsDataWomen');
+                    let productItemsKids = document.querySelector('.productsDatakids');
+
+                    let productItemsDesktop = document.querySelector('.productsDataDesktop');
+                    let productItemsWomenDesktop = document.querySelector('.productsDataDesktopWomen');
+                    let productItemsKidsDesktop = document.querySelector('.productsDataDesktopkids');
                    
                     // Format price
                     const formatter = new Intl.NumberFormat('en-NG', {
@@ -2276,17 +2514,17 @@
                     const kidsProducts = dataArr.filter(kidProduct => kidProduct.gender_categories_id === 3);
                     console.log(kidsProducts);
 
-                    // DISPLAY MEN
+                    // DISPLAY MEN MOBILE
                     let defaultImg = 'foremost_shopimage_1667983695.png'
-                    let htmlMen;
+                    // let htmlMen;
 
                     dataArr.length <= 0 
                     ?
-                    htmlMen =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    productItems =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
-				     htmlMen = "";
+				     productItems = "";
 					for (var i = 0; i < dataArr.length; i++) {
-						htmlMen += `
+						productItems += `
                 
                                 
                     <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
@@ -2320,35 +2558,80 @@
 
                 `;
 					}
-					$("#paginated-list").html(htmlMen);
+					$("#paginated-list").html(productItems);
+
+
+                     // DISPLAY MEN DESKTOP
+                    //  let defaultImg = 'foremost_shopimage_1667983695.png'
+                    // let htmlMen;
+
+                    menProducts.length <= 0 
+                    ?
+                    productItemsDesktop =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    :
+				     productItemsDesktop = "";
+					for (var i = 0; i < menProducts.length; i++) {
+						productItemsDesktop += `
+                
+                                
+                    <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${menProducts[i].id}>
+                                    <img class="img-fluid image_style
+                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
+                       src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
+                                
+                                <div class="shop-card-heading">
+                                    <div>
+                                        <h4>${menProducts[i].name}</h4>
+                                        <p data="date-updated">Updated ${ new Date(menProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                                    </div>
+                                    <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                                    <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                                        <div class="price-child d-flex flex-row">
+                                            <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                            <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                        </div>
+                                        <div onclick="addToCart()">
+                                          
+                                          <button type="button" class="shop-card-button">
+                                              <img
+                                              src="{{ asset('customImages/buyIcon.png') }}"
+                                              />
+                                              View
+                                          </button>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                `;
+					}
+					$("#paginated-listDesktop").html(productItemsDesktop);
+
 
                      // DISPLAY WOMEN
-                     let htmlWomen;
 
                     womenProducts.length <= 0 
                     ?
-                    htmlWomen =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    productItemsWomenDesktop =  `<h4 class="no_productText text-center">No product found..<h4>`
                     :
-					htmlWomen = "";
-					for (var i = 0; i < dataArr.length; i++) {
-						htmlWomen += `
-                
-
-                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+					productItemsWomenDesktop = "";
+					for (var i = 0; i < womenProducts.length; i++) {
+						productItemsWomenDesktop += `
+                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
                             <img
                             data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                            src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
+                            src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
 
                      <div class="shop-card-heading">
                          <div>
-                             <h4>${dataArr[i].name}</h4>
-                             <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                             <h4>${womenProducts[i].name}</h4>
+                             <p data="date-updated">Updated ${ new Date(womenProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
                          </div>
                          <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
                          <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
                              <div class="price-child d-flex flex-row">
-                                 <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
-                                 <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                 <p>${formatter.format(womenProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                 <p>${formatter.format(womenProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
                              </div>
                              <div onclick="addToCart()">
                                
@@ -2364,34 +2647,34 @@
                  </div>
                 `;
 					}
-					$("#paginated-listWomen").html(htmlWomen);
-                    let htmlKids;
-
+					$("#paginated-listWomenDesktop").html(productItemsWomenDesktop);
+                    
+                    
                     kidsProducts.length <= 0 
                     ?
-                    htmlKids = `<h4 class="no_productText text-center">No product found..<h4>`
+                    productItemsKidsDesktop = `<h4 class="no_productText text-center">No product found..<h4>`
                     :
-                    htmlKids = "";
-					for (var i = 0; i < dataArr.length; i++) {
-						htmlKids += `
+                    productItemsKidsDesktop = "";
+					for (var i = 0; i < kidsProducts.length; i++) {
+						productItemsKidsDesktop += `
                 
-                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                        <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
                             <img 
                             data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                            src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}"
+                            src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[0].imagedirectory : defaultImg}"
                              class="img-fluid image_style " alt="shop men">
      
                      
                      <div class="shop-card-heading">
                          <div>
-                             <h4>${dataArr[i].name}</h4>
-                             <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                             <h4>${kidsProducts[i].name}</h4>
+                             <p data="date-updated">Updated ${ new Date(kidsProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
                          </div>
                          <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
                          <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
                              <div class="price-child d-flex flex-row">
-                                 <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
-                                 <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                 <p>${formatter.format(kidsProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                 <p>${formatter.format(kidsProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
                              </div>
                              <div onclick="addToCart()">
                                
@@ -2407,7 +2690,7 @@
                  </div>
                 `;
 					}
-					$("#paginated-listKids").html(htmlKids);
+					$("#paginated-listKidsDesktop").html(productItemsKidsDesktop);
 
                             }
                     //                      // GET AND DISPLAY PAGE NUMBERS

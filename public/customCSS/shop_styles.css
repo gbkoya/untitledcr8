@@ -447,6 +447,10 @@
 .e-hero-content{
     display: none;
 }
+
+.shop_buttonWrapperMobile{
+    display: none!important;
+}
 /* RESPONSIVENESS */
 @media(max-width: 414px){
     .search-wrapper{
@@ -532,7 +536,6 @@
     .left_product{
         width: 100%!important;
         display: none;
-        z-index: 1!important;
     }
 
     /* Mobile product filter */
@@ -636,7 +639,18 @@ ul#pills-tab.nav.nav-pills.nav-pill-head-wrapper.mb-3.d-md-flex.justify-content-
 }
 
 .mobile_product{
-    margin-top: -11rem;
+    margin-top: -1rem;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: auto;
+    right: auto;
+    z-index: 1!important;
+
+}
+
+.mobile_productsWrapper{
+    position: relative!important;
 }
 
 .right_product{
@@ -656,6 +670,55 @@ ul#pills-tab.nav.nav-pills.nav-pill-head-wrapper.mb-3.d-md-flex.justify-content-
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+}
+
+.mob_right_product{
+    margin-top: -2rem;
+}
+
+.right_productDesktop{
+    display: none;
+}
+
+.shop_buttonWrapper{
+    display: none!important;
+}
+
+.shop_buttonWrapperMobile{
+    /* display: block!important; */
+    margin-left: unset!important;
+    margin-right: unset!important;
+    display: flex!important;
+    flex-direction: row!important;
+    justify-content: center!important;
+    align-items: center!important;
+}
+
+.mobile-login{
+    padding: .7rem 1.5rem;
+    background: #6B809B;
+    border-radius: 25px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: .875;
+    line-height: 19px;
+    text-align: center;
+    color: #FDFDFD;
+    border: none;
+}
+
+.shopButton_mobile{
+    padding: .8rem 1rem;
+    height: auto;
+    background: #F58634;
+    border-radius: 25px;
+    border: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 18px;
+    color: #FFFFFF;
+    display: flex;
 }
 }
 
