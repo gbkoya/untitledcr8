@@ -10,80 +10,27 @@
 <body>
     <main>
         <div style=" background-image: url(../customImages/Group68.png); background: #DEE3E9" >
-            <section
-                class="container d-flex flex-flow flex-wrap justify-content-center align-items-center e-margin-top block-display-tab section-top">
-                <div class="archware-content-text archwarejo-width-bottom-head pt-2">
-                    <h2 class="big-title text-title-mobile">
-                        We offer Premium <span class="orange-color">eye care</span> solutions
-                    </h2>
-                    <p class="pt-3 text-black-paragraph">
-                        Foremost International Eye Clinic is a leading provider of optometry services. With friendly and experienced
-                        optometrists,
-                        we provide a comprehensive range of eye care services.
-                    </p>
-                    <a href="/first-service" class="py-3">
-                        <button class="small-mobile-long-button archware-button-default">
-                            Get Started
-                        </button>
-                    </a>
-                </div>
-    
-                <div class="archwarejo-width-top-head">
-                    <img class="img-fluid image-width-tab image-min-height-mobile" src="/customImages/We offer Premium.png">
-                    {{-- <div class="">
-                        <div class="container justify-content-center">
-                            <div class="row">
-                                <div class="gallery-rule">
-                                    <hr class="container gray-rule" />
-                                    <hr class="container orange-rule" />
-                                    <hr class="container gray-rule" />
-                                    <hr class="container gray-rule" />
-                                    <hr class="container gray-rule" />
-                                    <hr class="container gray-rule" />
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
-                    <div class="e-our-offer d-sm-flex flex-row align-items-center justify-content-evenly">
-                        <div class="e-our-offer-child d-flex flex-column align-items-center justify-content-center">
-                            <img class="img-fluid" src="/customImages/eye-cleaner.png" alt="Eye clinic image">
-                            <p>Modern Eye Clinic</p>
-                        </div>
-                        <div class="e-our-offer-child d-flex flex-column justify-content-center align-items-center">
-                            <img class="img-fluid" src="/customImages/personnel.png" alt="Eye clinic image">
-                            <p>Expert Personnel</p>
-                        </div>
-                        <div class="e-our-offer-discount justify-content-center d-flex flex-column align-items-center">
-                            <img class="img-fluid" src="/customImages/eye-check.png" alt="Eye check image">
-                            <p>Discounted Eye checkups</p>
-                        </div>
-                        <div class="e-our-offer-child d-flex justify-content-center flex-column align-items-center">
-                            <img class="img-fluid" src="/customImages/hotline.png" alt="Eye check image">
-                            <p>24 Hour Hotline</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
         </div>
-    
+
         {{-- ABOUT US SECTION --}}
        <section class="container-fluid d-flex flex-row flex-wrap justify-content-between align-items-center e-aboutus-home">
         <div class="e-aboutus-img">
             <img class="img-fluid"
-            src="/customImages/doctor smiley thumb.png"/>  
+            src="/customImages/doctor smiley thumb.png"/>
         </div>
         <div
     class="e-abouts-home-right">
     <h2 class="text-top-about-us">About Us</h2>
     <p class="text-white-paragraph">
         Foremost International Eye Clinic is one of the most prestigious eye care centers in Africa.
-         We offer innovative eye care solutions, and quality services to our clients through cutting-edge 
+         We offer innovative eye care solutions, and quality services to our clients through cutting-edge
          technologies and excellent service delivery. thereby enhancing their long-term vision and
         productivity.
     </p>
     <p class="text-white-paragraph">
         We offer a complete range of treatments including vision correction surgeries,
-         comprehensive eye examinations, 
+         comprehensive eye examinations,
         health awareness programs, contact lens services, and many more.
     </p>
     <p class="text-white-paragraph">
@@ -101,7 +48,7 @@
             Read More
         </button>
     </a>
-</div> 
+</div>
        </section>
         {{-- END OF ABOUT US --}}
 
@@ -115,8 +62,8 @@
                 </div>
             </div>
         </section>
-    
-    
+
+
         <section class="container-fluid mt-2 pt-2">
             <div class="d-flex flex-row flex-wrap justify-content-center">
                 <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
@@ -158,11 +105,11 @@
                 </div>
             </div>
         </section>
-    
+
         <section class="my-3 py-3">
             <div class="container justify-content-center">
                 <div class="row">
-    
+
                     <a href="/first-service" class="py-3" style="text-align:center;">
                         <button class="small-mobile-long-button archware-button-default">
                             Read More
@@ -171,7 +118,7 @@
                 </div>
             </div>
         </section>
-    
+
         {{-- NEED GLASS SECTION --}}
         <section class="container-fluid hero-section glass-margin need-glass-back-img">
             <div class="hero-section-copy text-center">
@@ -179,7 +126,7 @@
                 <p>
                     Get the Best Single Vision Prescription Glasses in 3-5 Business Days at an Affordable Rate.
                 </p>
-    
+
                 <a href="/shop">
                 <button type="button" class="small-mobile-long-button button-margin-top foremost-button-border">
                     <img src="{{ asset('customImages/buyIcon.png') }}" />
@@ -189,7 +136,7 @@
             </div>
         </section>
         {{-- END OF NEED GLASS SECTION --}}
-    
+
         <section class="about-us-margin">
             <div class="container justify-content-center">
                 <div class="row">
@@ -200,7 +147,7 @@
                 </div>
             </div>
         </section>
-    
+
         <section class="container-fluid mt-2 pt-2">
             <div class="d-flex flex-row flex-wrap justify-content-center">
                 <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
@@ -213,12 +160,12 @@
                             Here are a few tips and tricks to help you find the right pair of glasses
                         </p>
                     </div>
-                    <div class="e-shedule-button d-flex flex-row justify-content-start"> 
+                    <div class="e-shedule-button d-flex flex-row justify-content-start">
                         <a href="" class="foremost-blog-read-more">
                             Read more
                     </a>
-                    </div> 
-    
+                    </div>
+
                 </div>
                 <div class="card col-lg-3 mx-3 remove-shadow-mobile" style="box-shadow:13px 13px 13px #e0e0e0;">
                     <img src="/customImages/few tips 2.png" class="card-img-top" alt="...">
@@ -230,11 +177,11 @@
                             Here are a few tips and tricks to help you find the right pair of glasses
                         </p>
                     </div>
-                    <div class="e-shedule-button d-flex flex-row justify-content-start"> 
+                    <div class="e-shedule-button d-flex flex-row justify-content-start">
                         <a href="" class="foremost-blog-read-more">
                             Read more
                     </a>
-                    </div> 
+                    </div>
                 </div>
 
 
@@ -248,16 +195,16 @@
                             Here are a few tips and tricks to help you find the right pair of glasses
                         </p>
                     </div>
-                    <div class="e-shedule-button d-flex flex-row justify-content-start"> 
+                    <div class="e-shedule-button d-flex flex-row justify-content-start">
                         <a href="" class="foremost-blog-read-more">
                             Read more
                     </a>
-                    </div> 
+                    </div>
                 </div>
 
             </div>
         </section>
-    
+
         <div class="my-3 py-3">
             <div class="container justify-content-center">
                 <div class="row">
@@ -270,7 +217,7 @@
                 </div>
             </div>
         </div>
-  
+
 
     {{-- GALLERY SECTION --}}
      <section class="gallery-section">
@@ -282,7 +229,7 @@
               <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
               <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-   
+
           <!-- The slideshow/carousel -->
           <div class="carousel-inner">
               <!-- First slide -->
@@ -290,28 +237,28 @@
                   {{-- First galery view --}}
                   <section class="container-fluid d-sm-flex flex-sm-row flex-wrap justify-content-center" style="margin-top: 2rem">
                       <div class="e-gallery-left e-hover-change">
-              
+
                       </div>
                       <div class="e-gallery-middle e-hover-change">
-                          
+
                       </div>
                       <div class="e-gallery-right e-hover-change">
-                          
+
                       </div>
                    </section>
               </div>
-   
+
               <!-- Second slide -->
               <div class="carousel-item">
                   <section class="container-fluid d-sm-flex flex-sm-row flex-wrap justify-content-center" style="margin-top: 2rem">
                       <div class="e-gallery-left e-hover-change">
-              
+
                       </div>
                       <div class="e-gallery-middle e-hover-change">
-                          
+
                       </div>
                       <div class="e-gallery-right e-hover-change">
-                          
+
                       </div>
                    </section>
               </div>
@@ -319,17 +266,17 @@
               <div class="carousel-item">
                   <section class="container-fluid d-sm-flex flex-sm-row flex-wrap justify-content-center" style="margin-top: 2rem">
                       <div class="e-gallery-left e-hover-change">
-              
+
                       </div>
                       <div class="e-gallery-middle e-hover-change">
-                          
+
                       </div>
                       <div class="e-gallery-right e-hover-change">
-                          
+
                       </div>
                    </section>
               </div>
-   
+
               <!-- Left and right controls/icons -->
               {{-- <button class="carousel-control-prev" type="button" data-bs-target="#demoTwo" data-bs-slide="prev">
                   <!-- <span class="carousel-control-prev-icon" style="color: blue;"></span> -->
@@ -340,7 +287,7 @@
                   <!-- <span class="carousel-control-next-icon"></span> -->
               </button>
           </div>
-  
+
      </section>
     {{-- END OF GALLERY SECTION --}}
 
@@ -396,7 +343,7 @@
                                 </div>
 
                             </div>
-                        {{-- Third --}} 
+                        {{-- Third --}}
                           {{-- Second --}}
                           <div class="first-testimonial testimonial-mobile">
                             <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
@@ -628,7 +575,7 @@
         // END OF CONTACT API INTEGRATION
     </script>
 </body>
-  
+
 
 
 @endsection
