@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0" id="navMain"
+<nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom nav_mobile shadow-0" id="navMain"
 onload="displayName();">
     <div class="container-fluid">
         <a class="navbar-brand colored-logo" href="/" style="margin-left: 4%;">
@@ -13,12 +13,23 @@ onload="displayName();">
             aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button> --}}
-        <button class="navbar-toggler hamburger-icon hamburger-mobile" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation" >
-            <i class="fas fa-bars"></i>
-        </button>
+       
+        <div class="d-flex flex-row align-items-center gap-2">
 
+            <button class="navbar-toggler hamburger-icon hamburger-mobile" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation" >
+                <i class="fas fa-bars"></i>
+            </button>
+            <img class="img-fluid search-iconNav" src="{{ asset('customImages/search.svg') }}" alt="search icon">
+            <div class="e-cart-wrapper">
+                <a href="#">
+                    <img src="{{ asset('customImages/Cart.svg') }}"  alt="cart icon">
+                    <p class="total-number-of-items cart-quant">0</p>
+                </a>
+            </div>
+           
+        </div>
         <div class="collapse navbar-collapse right-nav" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto nav-links-a" style="">
                 <li class="nav-item px-3">
@@ -80,6 +91,19 @@ onload="displayName();">
         </div>
     </div>
 </nav>
+<div class="container-fluid card mobile_search">
+    <div class="row d-sm-flex search-wrapperMobile">
+        <input type="search"
+        class="mobile_searchBord"
+        id="search"
+        placeholder="Search for eyewear, lenses and frames"
+        />
+        <img 
+        onclick="searchProduct()"
+        class="img-fluid search-shop-image"
+        src="{{ asset('customImages/arrow-right.png') }}"/>
+            </div>  
+    </div>
 
 
 <!-- THE SCRIPT TO CONTROL THE STATE OF THE NAVBAR -->
@@ -173,5 +197,23 @@ let welcomeName = document.querySelector('.welcome-name');
  }
 
 displayName();
+
+// SCRIPT TO TOGGLE THE SEACH FIELD
+let searchFieldState = false;
+
+let searchIcon = document.querySelector('.search-iconNav');
+let searchField = document.querySelector('.mobile_search');
+
+const toggleSearchField = () =>{
+    if(searchField.style.display === 'none'){
+        searchField.style.display = 'block';
+    }else{
+        searchField.style.display = 'none';
+    }
+    // console.log(searchField);
+}
+
+searchIcon.addEventListener('click', toggleSearchField)
+
 </script>
 

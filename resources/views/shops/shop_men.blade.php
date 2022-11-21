@@ -19,7 +19,7 @@
 {{-- Sub nav --}}
 <nav class="d-flex flex-row align-items-center flex-wrap container-fluid justify-content-evenly">
 {{-- <div class="d-flex flex-row"> --}}
-<div class="row d-sm-flex search-wrapper">
+<div class="row d-sm-flex search-wrapper desktop_search">
     <input type="search"
     id="search"
     placeholder="Search for eyewear, lenses and frames"

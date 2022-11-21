@@ -76,6 +76,10 @@ nav button[type="button"]{
     display: none;
 }
 
+.e-cart-wrapper{
+    display: none;
+}
+
 .nav-link-text{
     color: #000000!important;
 }
@@ -136,6 +140,10 @@ ul li a:nth-child(2) {
     font-weight: 600;
     margin-left: -1em;
 }
+
+.mobile_search{
+    display: none;
+}
 @media (max-width: 1200px) {
    
 }
@@ -181,13 +189,45 @@ ul li a:nth-child(2) {
     }
     .hamburger-mobile{
         display: block;
-        margin-right: 3%!important;
+        margin-right: .5rem!important;
     }
-
+    .search-iconNav{
+        cursor: pointer;
+    }
+.nav_mobile{
+    padding-right: 1rem!important;
+}
 .right-nav{
     margin-left: 0;
 }
 
+.e-cart-wrapper{
+    position: relative;
+    display: block;
+}
+
+.cart-quant{
+    position: absolute!important;
+    top: -0.8rem;
+    right: -0.1rem;
+    color: #6B809B;
+}
+
+.colored-logo{
+    margin-left: 0!important;
+    width: 30%!important;
+}
+
+.mobile_search{
+    /* display: block; */
+    position: absolute;
+    top: 5rem;
+    z-index: 1;
+}
+
+.mobile_searchBord{
+    border:#000000;
+}
 }
 
 /* Large screen size responsive style */
