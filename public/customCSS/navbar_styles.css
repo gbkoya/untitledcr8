@@ -144,6 +144,23 @@ ul li a:nth-child(2) {
 .mobile_search{
     display: none;
 }
+
+.showProfile{
+    display: none!important;
+}
+
+.search-iconNav{
+    display: none;
+}
+
+.mobile_dropdownNav{
+    display: none;
+}
+
+.showSearch{
+    display: none!important;
+  }
+
 @media (max-width: 1200px) {
    
 }
@@ -227,6 +244,34 @@ ul li a:nth-child(2) {
 
 .mobile_searchBord{
     border:#000000;
+}
+
+.search-iconNav{
+    display: block;
+}
+
+.mobile_dropdownNav{
+    display: block;
+    margin-top: 1rem;
+}
+
+.e-drop-nav{
+    display: none;
+}
+
+.showSearch{
+    display: block!important;
+  }
+
+.showProfile{
+    display: block!important;
+}
+
+.singup-category{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 8rem;
+    padding-top: 1rem;
 }
 }
 

@@ -13,11 +13,24 @@
       <div class="spinner"></div>
     </div>
 
-<main>
+<main class="shop_main">
+    {{-- SIGNUP AND CATEGORIES --}}
+    <section class="card singup-category d-flex flex-row justify-content-between">
+        <div>
+            <h2>Welcome</h2>
+            <div>
+                <a href="">Login</a>  | <a href="">Signup</a> 
+            </div>
+        </div>
+        <div class="s-close-modal">
+            <img class="img-fluid" src="{{ asset('customImages/close.png') }}" alt="close image">
+        </div>
+    </section>
+
 {{-- HERO SECTION --}}
 <section class="container-fluid shop-hero">
 {{-- Sub nav --}}
-<nav class="d-flex flex-row align-items-center flex-wrap container-fluid justify-content-evenly">
+<nav class="d-flex flex-row align-items-center flex-wrap container-fluid justify-content-evenly sub-nav-mobile">
 {{-- <div class="d-flex flex-row"> --}}
 <div class="row d-sm-flex search-wrapper desktop_search">
     <input type="search"
@@ -298,113 +311,112 @@
 
 {{-- END OF HERO SUB NAV --}}
 
-{{-- STORE CARD SECTION --}}
+{{-- SHOP CARD SECTION --}}
 <div id="products_result"></div>
-<section class="container-fluid store-wrapper glass-margin">
-    <header class="d-flex flex-wrap flex-row justify-content-between align-items-baseline store-heading">
-        <div class=" category_heading">
-            <ul class="nav nav-pills nav-pill-head-wrapper  " id="pills-tab" role="tablist">
-                <li class="nav-item nav-but" role="presentation">
-                  <button class="nav-link pill-button active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Men</button>
-                </li>
-                <li class="nav-item nav-but" role="presentation">
-                  <button class="nav-link pill-button" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Women</button>
-                </li>
-                <li class="nav-item nav-but" role="presentation">
-                  <button class="nav-link pill-button" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Kids</button>
-                </li>
-              </ul>
-            
-        </div>  
-              <div class="sort-wrapper d-flex flex-row flex-wrap align-items-center justify-content-evenly">
-            <label for="">Sort by:</label>
-            <select name="sort">
-                <option value="popularity">Relevance</option>
-                <option value="popularity">New Arrivals</option>
-                <option value="popularity">Best Sellers</option>
-                <option value="popularity">Top Rated</option>
-                <option value="popularity">New Arrivals</option>
-                <option value="popularity">On Sale</option>
-            </select>
+<section class="container-fluid store-wrapper d-flex flex-row">
+ {{-- Desktop product filter --}}
+ <div class="left_product">
+    <header class="hide_filter d-flex flex-row justify-content-between align-items-baseline">
+        <h2>Filters</h2>
+        <div id="hide_close" class="d-flex flex-row align-items-baseline justify-content-evenly toggleIcon">
+            <img class="img-fluid" src="{{asset('customImages/toggle-icon.png')}}" alt="toggle icon">
+            <p class="hide_close">Hide filters</p>
         </div>
+        
     </header>
-</section>
 
-{{-- The tabs pills nav --}}
-<section class="container-fluid d-flex flex-row flex-wrap  shop_display">
-    {{-- Desktop product filter --}}
-    <div class="left_product">
-        <header class="hide_filter d-flex flex-row justify-content-between align-items-baseline">
-            <h2>Filters</h2>
-            <div id="hide_close" class="d-flex flex-row align-items-baseline justify-content-evenly toggleIcon">
-                <img class="img-fluid" src="{{asset('customImages/toggle-icon.png')}}" alt="toggle icon">
-                <p class="hide_close">Hide filters</p>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Color
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body container-fluid">
+                <section class="colours_wrapper row" >                   
+      
+                   </section>
             </div>
-            
-        </header>
-    
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Color
-                </button>
-              </h2>
-              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body container-fluid">
-                    <section class="colours_wrapper row" >                   
-          
-                       </section>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Face Shape
-                </button>
-              </h2>
-              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                <div class="accordion-body container-fluid">
-                    <section class="colours_wrapper shape_wrapper row">
-                       
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Face Shape
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body container-fluid">
+                <section class="colours_wrapper shape_wrapper row">
+                   
 
-                       </section>
-                </div>
-              </div>
+                   </section>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwoJ">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoJ" aria-expanded="false" aria-controls="collapseTwoJ">
-                    Glass
-                  </button>
-                </h2>
-                <div id="collapseTwoJ" class="accordion-collapse collapse" aria-labelledby="headingTwoJ" data-bs-parent="#accordionExample">
-                  <div class="accordion-body container-fluid">
-                      <section class="colours_wrapper glass_wrapper row">
- 
-                         </section>
-                  </div>
-                </div>
-              </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Gender
-                </button>
-              </h2>
-              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <section class="colours_wrapper gender_wrapper row align-items-baseline">
-            
-                       </section>
-                </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwoJ">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoJ" aria-expanded="false" aria-controls="collapseTwoJ">
+                Glass
+              </button>
+            </h2>
+            <div id="collapseTwoJ" class="accordion-collapse collapse" aria-labelledby="headingTwoJ" data-bs-parent="#accordionExample">
+              <div class="accordion-body container-fluid">
+                  <section class="colours_wrapper glass_wrapper row">
+
+                     </section>
               </div>
             </div>
           </div>
-    </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Gender
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <section class="colours_wrapper gender_wrapper row align-items-baseline">
+        
+                   </section>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
 
-    {{-- DESKTOP PRODUCT CARDS --}}
+    {{-- RIGHT --}}
+    <section class="right_shopCard">
+        <header class="d-flex flex-row justify-content-between align-items-center store-heading">
+            <div class=" category_heading">
+                <ul class="nav nav-pills nav-pill-head-wrapper  " id="pills-tab" role="tablist">
+                    <li class="nav-item nav-but" role="presentation">
+                      <button class="nav-link pill-button active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Men</button>
+                    </li>
+                    <li class="nav-item nav-but" role="presentation">
+                      <button class="nav-link pill-button" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Women</button>
+                    </li>
+                    <li class="nav-item nav-but" role="presentation">
+                      <button class="nav-link pill-button" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Kids</button>
+                    </li>
+                  </ul>
+                
+            </div>  
+                  <div class="sort-wrapper d-flex flex-row align-items-center justify-content-evenly">
+                <label for="">Sort by:</label>
+                <select name="sort">
+                    <option value="popularity">Relevance</option>
+                    <option value="popularity">New Arrivals</option>
+                    <option value="popularity">Best Sellers</option>
+                    <option value="popularity">Top Rated</option>
+                    <option value="popularity">New Arrivals</option>
+                    <option value="popularity">On Sale</option>
+                </select>
+            </div>
+        </header>
+
+        {{-- DESKTOP PRODUCT CARDS --}}
     <div class="eb-tab right_product right_productDesktop">
         <p id="show_filter">Show filters</p>
         
@@ -476,6 +488,14 @@
         </div>
            
     </div>
+    </section>
+</section>
+
+{{-- The tabs pills nav --}}
+<section class="container-fluid  shop_display">
+   
+
+    
 
    
 
@@ -508,16 +528,36 @@
    let glassMobileItems = document.querySelector('.glass_mobile_wrapper');
    let shopMobileContainer = document.querySelector('.shop_mobile_display');
 
+    let toggleCategory = document.getElementById('slidToggle');
+    let mobileNavCategory = document.querySelector('.singup-category');
+    console.log(toggleCategory);
+
+    let vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    console.log(vw);
+
+    const toggleCategoryMobile = () => {
+        console.log(mobileNavCategory);
+        if(mobileNavCategory.style.display === 'none'){
+            mobileNavCategory.style.display = 'block';
+            mobileNavCategory.classList.add('showProfile');
+        }else{
+            mobileNavCategory.style.display = 'none';
+            mobileNavCategory.classList.remove('showProfile');
+        }
+        
+    }
+
+    toggleCategory.addEventListener('click', toggleCategoryMobile)
    let testVar = null
     // console.log(testVar);
     let bo = true;
    let formattedDate = new Date('2022-11-09T08:48:15.000000Z').toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"}) 
-    console.log(formattedDate);
+    // console.log(formattedDate);
    // "Friday, Jul 2, 2021"
    let tokenStatus = localStorage.getItem('token');
 //    console.log(tokenStatus);
     let authButtons = document.querySelector('.button-container');
-    console.log(authButtons);
+    // console.log(authButtons);
     if(!tokenStatus){
         authButtons.innerHTML += `
         <div class="d-sm-flex flex-sm-row align-items-center flex-wrap button-wrapper but-wrapper-mobile">
@@ -827,7 +867,7 @@
                        src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
                                 
                                 <div class="shop-card-heading">
-                                    <div>
+                                    <div class="card_nameMobile">
                                         <h4>${dataArr[i].name}</h4>
                                         <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
                                     </div>
@@ -839,7 +879,7 @@
                                         </div>
                                         <div onclick="addToCart()">
                                           
-                                          <button type="button" class="shop-card-button">
+                                          <button type="button" class="shop-card-button e_shopcardbutton">
                                               <img
                                               src="{{ asset('customImages/buyIcon.png') }}"
                                               />
@@ -1110,7 +1150,7 @@
                        src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
                                 
                                 <div class="shop-card-heading">
-                                    <div>
+                                    <div class="card_nameMobile">
                                         <h4>${dataArr[i].name}</h4>
                                         <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
                                     </div>
@@ -1122,7 +1162,7 @@
                                         </div>
                                         <div onclick="addToCart()">
                                           
-                                          <button type="button" class="shop-card-button">
+                                          <button type="button" class="shop-card-button e_shopcardbutton">
                                               <img
                                               src="{{ asset('customImages/buyIcon.png') }}"
                                               />
@@ -1394,7 +1434,7 @@
                        src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
                                 
                                 <div class="shop-card-heading">
-                                    <div>
+                                    <div class="card_nameMobile">
                                         <h4>${dataArr[i].name}</h4>
                                         <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
                                     </div>
@@ -1406,7 +1446,7 @@
                                         </div>
                                         <div onclick="addToCart()">
                                           
-                                          <button type="button" class="shop-card-button">
+                                          <button type="button" class="shop-card-button e_shopcardbutton">
                                               <img
                                               src="{{ asset('customImages/buyIcon.png') }}"
                                               />
@@ -1674,7 +1714,7 @@
                        src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
                                 
                                 <div class="shop-card-heading">
-                                    <div>
+                                    <div class="card_nameMobile">
                                         <h4>${dataArr[i].name}</h4>
                                         <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
                                     </div>
@@ -1686,7 +1726,7 @@
                                         </div>
                                         <div onclick="addToCart()">
                                           
-                                          <button type="button" class="shop-card-button">
+                                          <button type="button" class="shop-card-button e_shopcardbutton">
                                               <img
                                               src="{{ asset('customImages/buyIcon.png') }}"
                                               />
@@ -1955,7 +1995,7 @@
                        src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
                                 
                                 <div class="shop-card-heading">
-                                    <div>
+                                    <div class="card_nameMobile">
                                         <h4>${dataArr[i].name}</h4>
                                         <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
                                     </div>
@@ -1967,7 +2007,7 @@
                                         </div>
                                         <div onclick="addToCart()">
                                           
-                                          <button type="button" class="shop-card-button">
+                                          <button type="button" class="shop-card-button e_shopcardbutton">
                                               <img
                                               src="{{ asset('customImages/buyIcon.png') }}"
                                               />
@@ -2527,25 +2567,26 @@
 						productItems += `
                 
                                 
-                    <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                    <div class="col-sm-6 col-md-6 shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
                                     <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                        src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
                                 
                                 <div class="shop-card-heading">
-                                    <div>
+                                    <div class="card_nameMobile">
                                         <h4>${dataArr[i].name}</h4>
                                         <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
                                     </div>
                                     <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
                                     <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                                        
                                         <div class="price-child d-flex flex-row">
                                             <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
                                             <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
                                         </div>
                                         <div onclick="addToCart()">
                                           
-                                          <button type="button" class="shop-card-button">
+                                          <button type="button" class="shop-card-button e_shopcardbutton">
                                               <img
                                               src="{{ asset('customImages/buyIcon.png') }}"
                                               />

@@ -76,6 +76,11 @@ onload="displayName();">
                     </ul>
                   </div>
 
+                  <li class="nav-item px-3 mobile_dropdownNav" 
+                  id="slidToggle"
+                    ><i class="fa fa-user fa-xl"></i>
+                  </li>
+
                 <li class="button-wrapper">
                     <a href="/shop">
                         <button type="button" class="buy-button">
@@ -207,8 +212,10 @@ let searchField = document.querySelector('.mobile_search');
 const toggleSearchField = () =>{
     if(searchField.style.display === 'none'){
         searchField.style.display = 'block';
+        searchField.classList.add('showSearch')
     }else{
         searchField.style.display = 'none';
+        searchField.classList.remove('showSearch')
     }
     // console.log(searchField);
 }

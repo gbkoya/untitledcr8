@@ -195,8 +195,8 @@
 
 /* Store card section */
 .store-wrapper{
-    margin-top: 2rem;
-    padding: 0 6rem;
+    /* margin-top: 2rem; */
+    /* padding: 0 6rem; */
 }
 
 .car_image_wrapper{
@@ -205,7 +205,8 @@
 }
 
 .store-heading{
-
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .store-heading h1{
@@ -217,8 +218,7 @@
 }
 
 .sort-wrapper{
-    width: 35%;
-    margin-right: -5%;
+    width: 40%;
 } 
 
 .sort-wrapper label{
@@ -468,8 +468,76 @@
 .shop_buttonWrapperMobile{
     display: none!important;
 }
+
+.singup-category{
+    display: none!important;
+}
 /* RESPONSIVENESS */
 @media(max-width: 414px){
+    .sub-nav-mobile{
+        display: none!important;
+    }
+
+    .shop-card{
+    max-width: 10rem;
+    min-height: 13vh!important;
+    padding-bottom: unset!important;
+    }
+
+    .showSearch{
+        display: block!important;
+    }
+
+    .card_nameMobile{
+        min-height: 5rem;
+    }
+
+    .price_wrapper{
+        position: relative!important;
+    }
+
+    .productsData{
+        /* justify-content: unset!important; */
+        /* display: flex!important; */
+    }
+
+    .mobile_productsWrapper{
+        padding-left: unset!important;
+        padding-right: unset!important;
+    }
+
+    .price-child p{
+        margin-top: 3rem;
+        color: #F58634!important;
+        text-align: left!important;
+    }
+
+    .shop-hero{
+        margin-top: -3rem;
+        padding-top: 3rem;
+    }
+
+    .shop-card-heading p[data="date-updated"]{
+        display: none;
+    }
+
+    .star-rating{
+        display: none!important;
+    }
+
+    .e_shopcardbutton{
+        display: none;
+    }
+
+    .singup-category{
+        position: absolute;
+        z-index: 120000;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-bottom: 8rem;
+        padding-top: 1rem;
+    }
+
     .search-wrapper{
         width: 100%;
         padding: .8rem;
@@ -925,13 +993,18 @@ ul#pills-tab.nav.nav-pills.nav-pill-head-wrapper.mb-3.d-md-flex.justify-content-
     height: auto;
     min-height: 48vmin;
     max-height: 25vmax;
-    background: rgba(217, 217, 217, 0.3);
+    background: rgba(240, 240, 240, 0.81);
     padding: .5rem;
   }
 
   .right_product{
-    width: 75%;
+    width: 90%;
     margin-left: 2rem;
+  }
+
+  .right_shopCard{
+    width: 80%;
+    margin-top: 3rem;
   }
 
   .hide_filter{
@@ -979,6 +1052,10 @@ ul#pills-tab.nav.nav-pills.nav-pill-head-wrapper.mb-3.d-md-flex.justify-content-
     
   }
 
+  .showSearch{
+    display: none;
+  }
+
   .openSideNav{
     width: 20%!important;
     transition: .5s;
@@ -1002,7 +1079,7 @@ ul#pills-tab.nav.nav-pills.nav-pill-head-wrapper.mb-3.d-md-flex.justify-content-
 
   .category_heading{
     max-width: 100rem!important;
-    margin-left: -5rem;
+    /* margin-left: -5rem; */
     /* margin: 0 auto; */
   }
 
