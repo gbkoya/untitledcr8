@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0" id="navMain"
+<nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom nav_mobile shadow-0" id="navMain"
 onload="displayName();">
     <div class="container-fluid">
         <a class="navbar-brand colored-logo" href="/" style="margin-left: 4%;">
@@ -13,12 +13,26 @@ onload="displayName();">
             aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button> --}}
-        <button class="navbar-toggler hamburger-icon hamburger-mobile" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation" >
-            <i class="fas fa-bars"></i>
-        </button>
+       
+        <div class="d-flex flex-row align-items-center gap-2">
 
+            <button class="navbar-toggler hamburger-icon hamburger-mobile" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation" >
+                <i class="fas fa-bars"></i>
+            </button>
+            <img class="img-fluid search-iconNav" src="{{ asset('customImages/search.svg') }}" alt="search icon">
+            <div class="e-cart-wrapper">
+                <a href="/cart" class="position-relative">
+                    <img src="{{ asset('customImages/Cart.svg') }}"  alt="cart icon">
+                    {{-- <p class="total-number-of-items cart-quant"><span>0</span></p> --}}
+                    <span class="total-no-items-in-cart position-absolute top-0 start-100 translate-middle badge rounded-pill cart-quant">
+                        
+                       </span>
+                </a>
+            </div>
+           
+        </div>
         <div class="collapse navbar-collapse right-nav" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto nav-links-a" style="">
                 <li class="nav-item px-3">
@@ -60,10 +74,117 @@ onload="displayName();">
                       <li><hr class="dropdown-divider"></li>
                       <li id="triggerLogout"
                       style="cursor: pointer">
-                      {{-- <span class="dropdown-item">Logout</span> --}}
                     </li> 
                     </ul>
                   </div>
+
+                  <li class="nav-item px-3 mobile_dropdownNav" 
+                  data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"
+                  {{-- id="slidToggle" --}}
+                    ><i class="fa fa-user fa-xl"></i>
+                  </li>
+                  <li>
+                    {{-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button> --}}
+
+                    <div class="offcanvas offcanvas-start category-desktop" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                    <div class="offcanvas-header">
+                        {{-- <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5> --}}
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body drawerContent-wrapper">
+                        <h3 class="slideCat-heading">Welcome</h3>
+                        <div class="d-flex flex-row gap-2 mobile_loginDraw button-containerMobile">
+                           
+                        </div>
+                        <ul class="" style="list-style-type: none" class="logout-wrapperSlider">
+                            {{-- <li><a class="dropdown-item" href="#">Orders</a></li> --}}
+                            <li id="triggerLogoutMobile"
+                            style="cursor: pointer;" class="logout-slider">
+                            {{-- <span class="dropdown-item">Logout</span> --}}
+                          </li> 
+                            <li><hr class=""></li>
+                           
+                          </ul>
+                    {{-- </a> --}}
+{{-- Mobile product filter --}}
+<div class="container-fluid" style="position: relative; right: 3%; ">
+    <div class="left_product mobile_product sliderDrawer_product">
+        {{-- <header class="hide_filter d-flex flex-row justify-content-between align-items-baseline">
+            <h2>Filters</h2>
+            <div id="hide_close_mobile" class="d-flex flex-row align-items-baseline justify-content-evenly toggleIcon">
+                <img class="img-fluid" src="{{asset('customImages/toggle-icon.png')}}" alt="toggle icon">
+                <p class="hide_close">Toggle filters</p>
+            </div>
+            
+        </header> --}}
+    
+        <div class="accordion" id="accordionSlider">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button"  type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Color
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionSlider">
+                <div class="accordion-body container-fluid">
+                    <section onclick="redirectToResult()" class="colours_slide_wrapper row justify-content-center" >                   
+          
+                       </section>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Face Shape
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionSlider">
+                <div class="accordion-body container-fluid">
+                    <section onclick="redirectToResult()" class="colours_slide_wrapper shape_slide_wrapper row justify-content-center">
+                       
+    
+                       </section>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwoJ">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoJ" aria-expanded="false" aria-controls="collapseTwoJ">
+                    Glass
+                  </button>
+                </h2>
+                <div id="collapseTwoJ" class="accordion-collapse collapse" aria-labelledby="headingTwoJ" data-bs-parent="#accordionSlider">
+                  <div class="accordion-body container-fluid">
+                      <section onclick="redirectToResult()" class="colours_slide_wrapper  glass_slide_wrapper  row justify-content-center">
+    
+                         </section>
+                  </div>
+                </div>
+              </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Gender
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionSlider">
+                <div class="accordion-body">
+                    <section onclick="redirectToResult()" class="colours_slide_wrapper gender_slide_wrapper row align-items-baseline 
+                    justify-content-center">
+            
+                       </section>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+</div>
+{{-- End of mobile product filter --}}
+                    </div>
+                    </div>
+                  </li>
 
                 <li class="button-wrapper">
                     <a href="/shop">
@@ -80,6 +201,19 @@ onload="displayName();">
         </div>
     </div>
 </nav>
+<div class="container-fluid card mobile_search">
+    <div class="row d-sm-flex search-wrapperMobile">
+        <input type="search"
+        class="mobile_searchBord"
+        id="search"
+        placeholder="Search for eyewear, lenses and frames"
+        />
+        <img 
+        onclick="searchProduct()"
+        class="img-fluid search-shop-image"
+        src="{{ asset('customImages/arrow-right.png') }}"/>
+            </div>  
+    </div>
 
 
 <!-- THE SCRIPT TO CONTROL THE STATE OF THE NAVBAR -->
@@ -92,6 +226,13 @@ onload="displayName();">
 
     if(tokenDetect){
         logId.innerHTML += `<span class="dropdown-item">Log Out</span>`
+    }
+
+    // For mobile
+    let logIdMobile = document.getElementById('triggerLogoutMobile');
+
+    if(tokenDetect){
+        logIdMobile.innerHTML += `<span class="dropdown-item">Log Out</span>`
     }
 
     // Declare and store all variables globally
@@ -158,6 +299,7 @@ onload="displayName();">
     document.getElementById('triggerLogout').addEventListener('click', handleLogout);
 
 
+    
 
     let userEmail = localStorage.getItem('email');
     console.log(userEmail);
@@ -173,5 +315,95 @@ let welcomeName = document.querySelector('.welcome-name');
  }
 
 displayName();
+
+// SCRIPT TO TOGGLE THE SEACH FIELD
+let searchFieldState = false;
+
+let searchIcon = document.querySelector('.search-iconNav');
+let searchField = document.querySelector('.mobile_search');
+
+const toggleSearchField = () =>{
+    if(searchField.style.display === 'none'){
+        searchField.style.display = 'block';
+        searchField.classList.add('showSearch')
+    }else{
+        searchField.style.display = 'none';
+        searchField.classList.remove('showSearch')
+    }
+    // console.log(searchField);
+}
+
+searchIcon.addEventListener('click', toggleSearchField)
+
+
+let tokenStatusMobile = localStorage.getItem('token');
+//    console.log(tokenStatusMobile);
+    let authButtonsMobile = document.querySelector('.button-containerMobile');
+    console.log(authButtonsMobile);
+    if(!tokenStatusMobile){
+        authButtonsMobile.innerHTML += `
+        <a href="/login"> <p>Login</p></a>
+            |
+        <a href="/signup"> <p>Signup</p></a>
+`;
+    }else{
+        authButtonsMobile.innerHTML = ""
+    } 
+
+    // NAV SLIDER CATEGORIES
+// LOGOUT
+const handleLogoutMobile = () =>{
+    // alert('working')
+        let token = localStorage.getItem('token');
+        // alert(token);
+        function handleErrors(response) {
+      if (!response.ok) {
+          throw Error(response.statusText);
+      }
+      return response;
+        }
+    fetch(`${baseURL}/api/auth/logout`, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+            // 'Access-Control-Allow-Origin': 'https://foremosteyeclinic.com'
+        },
+        referrer: 'no-referrer'
+    })
+    .then(handleErrors)
+    .then(function(response){
+        console.log(response);
+        Swal.fire({
+                icon: 'success',
+                title: "User logged out!",
+                showConfirmButton: false,
+                timer: 2000,
+                  })
+        localStorage.removeItem('token');
+        localStorage.removeItem('email');
+        setTimeout(() => {        
+            window.location.href = "/login"
+        }, 1500);
+    }).catch(function(err){
+        Swal.fire({
+                      icon: 'error',
+                      title: "Failed to logout user!",
+                      showConfirmButton: false,
+                      timer: 2000,
+                  })
+        console.warn('Something went wrong.', err);
+    })
+        
+    }
+    
+
+    document.getElementById('triggerLogoutMobile').addEventListener('click', handleLogoutMobile);
+    
+    let totalCartItemMobile = document.querySelector('.total-no-items-in-cart');
+    let totalCartQuantMobile = sessionStorage.getItem('totalCartItem') || 0;
+    // alert('working')
+    totalCartItemMobile.innerHTML = totalCartQuantMobile;
+    // alert(totalCartItem);
+
 </script>
 

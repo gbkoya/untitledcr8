@@ -13,19 +13,21 @@
       <div class="spinner"></div>
     </div>
 
-<main>
+<main class="shop_main">
+    
+
 {{-- HERO SECTION --}}
 <section class="container-fluid shop-hero">
 {{-- Sub nav --}}
-<nav class="d-flex flex-row align-items-center flex-wrap container-fluid justify-content-evenly">
+<nav class="d-flex flex-row align-items-center flex-wrap container-fluid justify-content-evenly sub-nav-mobile">
 {{-- <div class="d-flex flex-row"> --}}
-<div class="row d-sm-flex search-wrapper">
+<div class="row d-sm-flex search-wrapper desktop_search">
     <input type="search"
-    id="search"
+    id="searchDesktop"
     placeholder="Search for eyewear, lenses and frames"
     />
     <img 
-    onclick="searchProduct()"
+    onclick="searchProductDesktop()"
     class="img-fluid search-shop-image"
     src="{{ asset('customImages/arrow-right.png') }}"/>
         </div>   
@@ -113,7 +115,8 @@
 </main>
 
 <section class="container-fluid mobile_productsWrapper">
-
+    <div id="products_resultMobile"></div>
+    <div></div>
 {{-- HERO SUB NAV --}}
 <nav class="hero-sub-nav container-fluid" id="hero-sub-nav">
     <ul class="">
@@ -138,14 +141,14 @@
         
     </header> --}}
 
-    <div class="accordion toggle_accordion" id="accordionExample">
+    <div class="accordion toggle_accordion" id="accordionRelevance">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
               Color
             </button>
           </h2>
-          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionRelevance">
             <div class="accordion-body container-fluid">
                 <section class="colours_mobile_wrapper row justify-content-center" >                   
       
@@ -159,7 +162,7 @@
               Face Shape
             </button>
           </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionRelevance">
             <div class="accordion-body container-fluid">
                 <section class="colours_mobile_wrapper shape_mobile_wrapper row justify-content-center">
                    
@@ -174,7 +177,7 @@
                 Glass
               </button>
             </h2>
-            <div id="collapseTwoJ" class="accordion-collapse collapse" aria-labelledby="headingTwoJ" data-bs-parent="#accordionExample">
+            <div id="collapseTwoJ" class="accordion-collapse collapse" aria-labelledby="headingTwoJ" data-bs-parent="#accordionRelevance">
               <div class="accordion-body container-fluid">
                   <section class="colours_mobile_wrapper glass_mobile_wrapper row justify-content-center">
 
@@ -188,7 +191,7 @@
               Gender
             </button>
           </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionRelevance">
             <div class="accordion-body">
                 <section class="colours_mobile_wrapper gender_mobile_wrapper row align-items-baseline 
                 justify-content-center">
@@ -201,8 +204,6 @@
 </div>
 {{-- End of mobile product filter --}}
 <div class="container-fluid e-hero-content">
-    
-     
 
     <div id="relevance">
         {{-- <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -220,7 +221,7 @@
           </div> --}}
           {{-- <h1>I am relevance</h1> --}}
           <div class="eb-tab right_product mob_right_product">
-            <p id="show_filter">Show filters</p>
+            {{-- <p id="show_filter">Show filters</p> --}}
             
               <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane card-paginat fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -298,123 +299,125 @@
 
 {{-- END OF HERO SUB NAV --}}
 
-{{-- STORE CARD SECTION --}}
+{{-- SHOP CARD SECTION --}}
 <div id="products_result"></div>
-<section class="container-fluid store-wrapper glass-margin">
-    <header class="d-flex flex-wrap flex-row justify-content-between align-items-baseline store-heading">
-        <div class=" category_heading">
-            <ul class="nav nav-pills nav-pill-head-wrapper  " id="pills-tab" role="tablist">
-                <li class="nav-item nav-but" role="presentation">
-                  <button class="nav-link pill-button active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Men</button>
-                </li>
-                <li class="nav-item nav-but" role="presentation">
-                  <button class="nav-link pill-button" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Women</button>
-                </li>
-                <li class="nav-item nav-but" role="presentation">
-                  <button class="nav-link pill-button" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Kids</button>
-                </li>
-              </ul>
-            
-        </div>  
-              <div class="sort-wrapper d-flex flex-row flex-wrap align-items-center justify-content-evenly">
-            <label for="">Sort by:</label>
-            <select name="sort">
-                <option value="popularity">Relevance</option>
-                <option value="popularity">New Arrivals</option>
-                <option value="popularity">Best Sellers</option>
-                <option value="popularity">Top Rated</option>
-                <option value="popularity">New Arrivals</option>
-                <option value="popularity">On Sale</option>
-            </select>
+<section class="container-fluid store-wrapper d-flex flex-row justify-content-evenly">
+ {{-- Desktop product filter --}}
+ <div class="left_productDesktop">
+    <header class="hide_filter d-flex flex-row justify-content-between align-items-baseline">
+        <h2>Filters</h2>
+        <div id="hide_close" class="d-flex flex-row align-items-baseline justify-content-evenly toggleIcon">
+            <img class="img-fluid" src="{{asset('customImages/toggle-icon.png')}}" alt="toggle icon">
+            <p class="hide_close">Hide filters</p>
         </div>
+        
     </header>
-</section>
 
-{{-- The tabs pills nav --}}
-<section class="container-fluid d-flex flex-row flex-wrap  shop_display">
-    {{-- Desktop product filter --}}
-    <div class="left_product">
-        <header class="hide_filter d-flex flex-row justify-content-between align-items-baseline">
-            <h2>Filters</h2>
-            <div id="hide_close" class="d-flex flex-row align-items-baseline justify-content-evenly toggleIcon">
-                <img class="img-fluid" src="{{asset('customImages/toggle-icon.png')}}" alt="toggle icon">
-                <p class="hide_close">Hide filters</p>
+    <div class="accordion" id="accordionDesktop">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Color
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionDesktop">
+            <div class="accordion-body container-fluid">
+                <section class="colours_wrapper row" >                   
+      
+                   </section>
             </div>
-            
-        </header>
-    
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Color
-                </button>
-              </h2>
-              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body container-fluid">
-                    <section class="colours_wrapper row" >                   
-          
-                       </section>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Face Shape
-                </button>
-              </h2>
-              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                <div class="accordion-body container-fluid">
-                    <section class="colours_wrapper shape_wrapper row">
-                       
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Face Shape
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionDesktop">
+            <div class="accordion-body container-fluid">
+                <section class="colours_wrapper shape_wrapper row">
+                   
 
-                       </section>
-                </div>
-              </div>
+                   </section>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwoJ">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoJ" aria-expanded="false" aria-controls="collapseTwoJ">
-                    Glass
-                  </button>
-                </h2>
-                <div id="collapseTwoJ" class="accordion-collapse collapse" aria-labelledby="headingTwoJ" data-bs-parent="#accordionExample">
-                  <div class="accordion-body container-fluid">
-                      <section class="colours_wrapper glass_wrapper row">
- 
-                         </section>
-                  </div>
-                </div>
-              </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Gender
-                </button>
-              </h2>
-              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <section class="colours_wrapper gender_wrapper row align-items-baseline">
-            
-                       </section>
-                </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwoJ">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoJ" aria-expanded="false" aria-controls="collapseTwoJ">
+                Glass
+              </button>
+            </h2>
+            <div id="collapseTwoJ" class="accordion-collapse collapse" aria-labelledby="headingTwoJ" data-bs-parent="#accordionDesktop">
+              <div class="accordion-body container-fluid">
+                  <section class="colours_wrapper glass_wrapper row">
+
+                     </section>
               </div>
             </div>
           </div>
-    </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Gender
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionDesktop">
+            <div class="accordion-body">
+                <section class="colours_wrapper gender_wrapper row align-items-baseline">
+        
+                   </section>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
 
-    {{-- DESKTOP PRODUCT CARDS --}}
+    {{-- RIGHT --}}
+    <section class="right_shopCard">
+        <header class="d-flex flex-row justify-content-between align-items-center store-heading">
+            <div class=" category_heading">
+                <div>
+                <p id="show_filter">Show filters</p>
+                <ul class="nav nav-pills nav-pill-head-wrapper  " id="pills-tab" role="tablist">
+                    
+                    <li class="nav-item nav-but" role="presentation">
+                        <button class="nav-link pill-button active" id="pills-men-tab" data-bs-toggle="pill" data-bs-target="#pills-men" type="button" role="tab" aria-controls="pills-men" aria-selected="true">Men</button>
+                      </li>
+                    <li class="nav-item nav-but" role="presentation">
+                      <button class="nav-link pill-button" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Women</button>
+                    </li>
+                    <li class="nav-item nav-but" role="presentation">
+                      <button class="nav-link pill-button" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Kids</button>
+                    </li>
+                  </ul>
+                </div>
+                
+            </div>  
+                  <div class="sort-wrapper d-flex flex-row align-items-center justify-content-evenly">
+                <label for="">Sort by:</label>
+                <select name="sort">
+                    <option value="popularity">Relevance</option>
+                    <option value="popularity">New Arrivals</option>
+                    <option value="popularity">Best Sellers</option>
+                    <option value="popularity">Top Rated</option>
+                    <option value="popularity">New Arrivals</option>
+                    <option value="popularity">On Sale</option>
+                </select>
+            </div>
+        </header>
+
+        {{-- DESKTOP PRODUCT CARDS --}}
     <div class="eb-tab right_product right_productDesktop">
-        <p id="show_filter">Show filters</p>
         
           <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane card-paginat fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            {{-- <div class="tab-pane card-paginat fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 <div class="container-fluid">
                    <div class="row productsDataDesktop justify-content-between" id="paginated-listDesktop" data-current-page="1" aria-live="polite">
 
                    </div>
-                </div>
+                </div> --}}
                 {{-- Paginated button --}}
                 {{-- <div class="d-flex flex-row flex-wrap justify-content-evenly pagination-button-wrapper">
                     <button class="paginated-first-button" type="button">
@@ -438,18 +441,24 @@
                     </button>
                 </div> --}}
       
+            {{-- </div> --}}
+
+            <div class="tab-pane fade card-pagina show active" id="pills-men" role="tabpanel" aria-labelledby="pills-men-tab">
+                <div class="productsDataDesktop row justify-content-start gap-3" id="paginated-listDesktop" data-current-page="1" aria-live="polite">
+
+                </div> 
             </div>
     
             {{-- Women content here --}}
             <div class="tab-pane fade card-paginat" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                <div class="d-flex flex-row flex-wrap justify-content-evenly productsDataDesktopWomen" id="paginated-listWomenDesktop">
+                <div class="row justify-content-start gap-3 productsDataDesktopWomen" id="paginated-listWomenDesktop">
                    
                 </div> 
             </div>
     
             {{-- Kids content here --}}
             <div class="tab-pane fade card-paginat" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                <div class="d-flex flex-row flex-wrap justify-content-evenly productsDataDesktopkids" id="paginated-listKidsDesktop">
+                <div class="row justify-content-start gap-3 productsDataDesktopkids" id="paginated-listKidsDesktop">
                 </div>
             </div>
     
@@ -476,6 +485,14 @@
         </div>
            
     </div>
+    </section>
+</section>
+
+{{-- The tabs pills nav --}}
+<section class="container-fluid  shop_display">
+   
+
+    
 
    
 
@@ -489,10 +506,12 @@
     let toggleMobileClose = document.getElementById('hide_close_mobile');
     let accordionMobile = document.querySelector('.toggle_accordion');
     let leftSide = document.querySelector('.left_product');
+    let leftSideMobile = document.querySelector('.left_productDesktop');
     let toggleOpen = document.getElementById('show_filter');
     let totalCartItem = document.querySelector('.total-items-in-cart');
     let totalCartQuant = sessionStorage.getItem('totalCartItem') || 0;
     totalCartItem.innerHTML = totalCartQuant;
+  
    const loaderContainer = document.querySelector('.loader-container');
    let colorItems = document.querySelector('.colours_wrapper');
    let shapeItems = document.querySelector('.shape_wrapper');
@@ -508,16 +527,43 @@
    let glassMobileItems = document.querySelector('.glass_mobile_wrapper');
    let shopMobileContainer = document.querySelector('.shop_mobile_display');
 
+//    Slider
+   let colorSlideItems = document.querySelector('.colours_slide_wrapper');
+   let shapeSlideItems = document.querySelector('.shape_slide_wrapper');
+   let genderSlideItems = document.querySelector('.gender_slide_wrapper');
+   let glassSlideItems = document.querySelector('.glass_slide_wrapper');
+   let shopSlideContainer = document.querySelector('.shop_slide_display');
+
+    // let toggleCategory = document.getElementById('slidToggle');
+    // let mobileNavCategory = document.querySelector('.singup-category');
+    // console.log(toggleCategory);
+
+    let vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    console.log(vw);
+
+    // const toggleCategoryMobile = () => {
+    //     console.log(mobileNavCategory);
+    //     if(mobileNavCategory.style.display === 'none'){
+    //         mobileNavCategory.style.display = 'block';
+    //         mobileNavCategory.classList.add('showProfile');
+    //     }else{
+    //         mobileNavCategory.style.display = 'none';
+    //         mobileNavCategory.classList.remove('showProfile');
+    //     }
+        
+    // }
+
+    // toggleCategory.addEventListener('click', toggleCategoryMobile)
    let testVar = null
     // console.log(testVar);
     let bo = true;
    let formattedDate = new Date('2022-11-09T08:48:15.000000Z').toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"}) 
-    console.log(formattedDate);
+    // console.log(formattedDate);
    // "Friday, Jul 2, 2021"
    let tokenStatus = localStorage.getItem('token');
 //    console.log(tokenStatus);
     let authButtons = document.querySelector('.button-container');
-    console.log(authButtons);
+    // console.log(authButtons);
     if(!tokenStatus){
         authButtons.innerHTML += `
         <div class="d-sm-flex flex-sm-row align-items-center flex-wrap button-wrapper but-wrapper-mobile">
@@ -531,16 +577,16 @@
 
 
 
-    let authButtonsMobile = document.querySelector('.button-containerMobile');
-    console.log(authButtonsMobile);
-    if(!tokenStatus){
-        authButtonsMobile.innerHTML += `
-            <a href="/login"><button class="mobile-login" type="button">Login</button></a>
-            <a href="/signup"><button class="mobile-login" type="button">Signup</button></a>
-    `;
-    }else{
-        authButtonsMobile.innerHTML = ""
-    } 
+    // let authButtonsMobile = document.querySelector('.button-containerMobile');
+    // console.log(authButtonsMobile);
+    // if(!tokenStatus){
+    //     authButtonsMobile.innerHTML += `
+    //         <a href="/login"><button class="mobile-login" type="button">Login</button></a>
+    //         <a href="/signup"><button class="mobile-login" type="button">Signup</button></a>
+    // `;
+    // }else{
+    //     authButtonsMobile.innerHTML = ""
+    // } 
 
     
     
@@ -645,6 +691,7 @@
 
    
     // SEARCH PRODUCT FEATURE
+    // Mobile
     let inputData = document.getElementById('search');
     inputData.addEventListener('keyup',  function(e){
             if(e.key === 'Enter'){
@@ -653,7 +700,6 @@
         });
 
     const searchProduct = () =>{
-     
 
         if(inputData !== ''){
             testVar = `?search_query=${inputData.value}`;
@@ -661,14 +707,31 @@
         console.log(testVar);
         displaySearchResult()
     }
-    
+
+    // Desktop
+    let inputDataDesktop = document.getElementById('searchDesktop');
+    inputDataDesktop.addEventListener('keyup',  function(e){
+            if(e.key === 'Enter'){
+                
+                searchProductDesktop();
+            }
+        });
+
+    const searchProductDesktop = () =>{
+        if(inputDataDesktop !== ''){
+            testVar = `?search_query=${inputDataDesktop.value}`;
+
+        }
+        console.log(testVar);
+        displaySearchResDesktop()
+    }
 
         // LOGIC TO TOGGLE OPEN AND CLOSE THE LEFT FILTER
         const triggerSide = () => {
-            shopContainer.classList.add('justify-content-evenly');
-            leftSide.classList.add('closeSideNav');
+            shopContainer.classList.add('justify-content-center');
+            leftSideMobile.classList.add('closeSideNav');
             toggleOpen.style.display = 'block';
-            leftSide.classList.remove('openSideNav');
+            leftSideMobile.classList.remove('openSideNav');
             // rightProduct.style.marginLeft = 'unset'
 
         }
@@ -676,9 +739,9 @@
 
         const triggerSideClose = () =>{
             shopContainer.classList.remove('justify-content-evenly');
-            leftSide.classList.add('openSideNav');
+            leftSideMobile.classList.add('openSideNav');
             toggleOpen.style.display = 'none';
-            leftSide.classList.remove('closeSideNav');
+            leftSideMobile.classList.remove('closeSideNav');
             // rightProduct.style.marginLeft = '2rem'
 
         }
@@ -717,7 +780,7 @@
 
       const displaySearchResult = () =>{
         if(testVar !== null ){
-            window.location.href = "#products_result"
+            window.location.href = "#products_resultMobile"
         // alert(testVar) 
          // USING JQUERY AND AJAX
          $(function(){
@@ -774,14 +837,10 @@
 					totalrecord = data.products_list.total;
                     let currentPage = data.products_list.current_page;
             
-                    let productItems = document.querySelector('.productsData');
-                    let productItemsWomen = document.querySelector('.productsDataWomen');
-                    let productItemsKids = document.querySelector('.productsDatakids');
+                    const productItems = document.querySelector('.productsData');
+                    const productItemsWomen = document.querySelector('.productsDataWomen');
+                    const productItemsKids = document.querySelector('.productsDatakids');
                    
-                    let productItemsDesktop = document.querySelector('.productsDataDesktop');
-                    let productItemsWomenDesktop = document.querySelector('.productsDataDesktopWomen');
-                    let productItemsKidsDesktop = document.querySelector('.productsDataDesktopkids');
-                    
                     // Format price
                     const formatter = new Intl.NumberFormat('en-NG', {
                     style: 'currency',
@@ -805,20 +864,179 @@
                     const kidsProducts = dataArr.filter(kidProduct => kidProduct.productcategory_id === 3);
                     // console.log(kidsProducts);
 
-
-
-
-                     // DISPLAY MEN MOBILE
-                     let defaultImg = 'foremost_shopimage_1667983695.png'
-                    // let htmlMen;
+                    // DISPLAY MEN
+                    let defaultImg = 'foremost_shopimage_1667983695.png'
+                    let htmlMen;
 
                     dataArr.length <= 0 
                     ?
-                    productItems =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    htmlMen = `<h4 class="no_productText text-center">No product found..<h4>`
                     :
-				     productItems = "";
+				     htmlMen = "";
 					for (var i = 0; i < dataArr.length; i++) {
-						productItems += `
+						htmlMen += `
+                
+                                
+                                <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                                 
+                                   
+                                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner car_image_wrapper">
+                                    <div class="carousel-item active">
+                                    <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[1].imagedirectory : defaultImg}" class="img-fluid image_style" alt="Shop image">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[2].imagedirectory : defaultImg}" class="img-fluid image_style"  alt="Shop image">
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                <div class="shop-card-heading">
+                                    <div>
+                                        <h4>${dataArr[i].name}</h4>
+                                        <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
+                                    </div>
+                                    <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
+                                    <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                                        <div class="price-child d-flex flex-row align-items-center justify-content-between flex-wrap">
+                                            <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                            <p>₦${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
+                                        </div>
+                                        <div onclick="addToCart()">
+                                          
+                                          <button type="button" class="shop-card-button">
+                                              <img
+                                              src="{{ asset('customImages/buyIcon.png') }}"
+                                              />
+                                              View
+                                          </button>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                `;
+					}
+					$("#paginated-list").html(htmlMen);
+
+                            }
+                        },
+			error: function(jqXHR, textStatus, errorThrown) {
+              hideLoading();
+				console.log(jqXHR);
+				console.log(textStatus);
+				console.log(errorThrown);
+			}
+		});
+	}
+    
+        });
+    }
+      }
+      
+    //   DISPLAY SEARCH RESULT ON DESKTOP
+    const displaySearchResDesktop = () =>{
+
+        if(testVar !== null ){
+            window.location.href = "#products_result"
+        // alert(testVar) 
+         // USING JQUERY AND AJAX
+         $(function(){
+    // Declare some global variables
+        let page = 1,
+		pagelimit = 18,
+		totalrecord = 0;
+        const baseURL= '{{ env('APP_URL') }}'
+      displayLoading();
+
+        fetchSearchResDesktop();
+
+        // handling the prev-btn
+	$(".prev-btn").on("click", function(){
+		if (page > 1) {
+			page--;
+			fetchSearchResDesktop();
+		}
+        
+		// console.log("Prev Page: " + page);
+	});
+
+    
+	// handling the next-btn
+	$(".next-btn").on("click", function(){
+		if (page * pagelimit < totalrecord) {
+			page++;
+			fetchSearchResDesktop();
+		}
+		// console.log("Next Page: " + page);
+	});
+
+ 
+        // Fetch the product data using Ajax
+        function fetchSearchResDesktop() {
+            console.log(testVar);
+		// ajax() method to make api calls
+		$.ajax({
+			url: `${baseURL}/api/product-list${testVar===null ? '' : testVar}`,
+			type: "GET",
+			data: {
+				page: page,
+				pagelimit: pagelimit
+			},
+			success: function(data) {
+              hideLoading();
+              console.log('result');
+				console.log(data);
+                console.log(data.products_list.data);
+
+				if (data) {
+					let dataArr =  data.products_list.data;
+					totalrecord = data.products_list.total;
+                    let currentPage = data.products_list.current_page;
+
+                    let productItemsDesktop = document.querySelector('.productsDataDesktop');
+                    let productItemsWomenDesktop = document.querySelector('.productsDataDesktopWomen');
+                    let productItemsKidsDesktop = document.querySelector('.productsDataDesktopkids');
+                   
+                    // Format price
+                    const formatter = new Intl.NumberFormat('en-NG', {
+                    style: 'currency',
+                    currency: 'NGN',
+                    });
+
+
+                    // Get data for Men, women and kids
+                    // MEN
+                    const menProducts = dataArr.filter(menProduct => menProduct.gender_categories_id === 1
+            );
+                    // console.log(menProducts);
+                    // WOMEN
+                    // Get women data
+
+                    const womenProducts = dataArr.filter(womenProduct => womenProduct.gender_categories_id === 2);
+                    // console.log(womenProducts);
+
+                    // KIDS
+                      // Get Kids data
+                    const kidsProducts = dataArr.filter(kidProduct => kidProduct.gender_categories_id === 3);
+                    // console.log(kidsProducts);
+
+                    // DISPLAY MEN
+                    let defaultImg = 'foremost_shopimage_1667983695.png'
+                    // DISPLAY MEN DESKTOP
+                    //  let defaultImg = 'foremost_shopimage_1667983695.png'
+                    // let htmlMen;
+
+                    menProducts.length <= 0 
+                    ?
+                    productItemsDesktop =  `<h4 class="no_productText text-center">No product found..<h4>`
+                    :
+				     productItemsDesktop = "";
+					for (var i = 0; i < menProducts.length; i++) {
+						productItemsDesktop += `
                 
                                 
                     <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
@@ -852,52 +1070,7 @@
 
                 `;
 					}
-					$("#paginated-list").html(productItems);
-
-                    // DISPLAY MEN DESKTOP
-                    menProducts.length <= 0 
-                    ?
-                    productItemsDesktop =  `<h4 class="no_productText text-center">No product found..<h4>`
-                    :
-				     productItemsDesktop = "";
-					for (var i = 0; i < menProducts.length; i++) {
-						productItemsDesktop += `
-                
-                                
-                    <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${menProducts[i].id}>
-                                    <img class="img-fluid image_style
-                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                       src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
-                                
-                                <div class="shop-card-heading">
-                                    <div>
-                                        <h4>${menProducts[i].name}</h4>
-                                        <p data="date-updated">Updated ${ new Date(menProducts[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
-                                    </div>
-                                    <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
-                                    <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
-                                        <div class="price-child d-flex flex-row">
-                                            <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
-                                            <p>${formatter.format(menProducts[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
-                                        </div>
-                                        <div onclick="addToCart()">
-                                          
-                                          <button type="button" class="shop-card-button">
-                                              <img
-                                              src="{{ asset('customImages/buyIcon.png') }}"
-                                              />
-                                              View
-                                          </button>
-                                          </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                `;
-					}
 					$("#paginated-listDesktop").html(productItemsDesktop);
-
-
                      // DISPLAY WOMEN
 
                     womenProducts.length <= 0 
@@ -997,7 +1170,7 @@
         });
     }
       }
-      
+    
 
 
       function doCheck(){
@@ -1110,7 +1283,7 @@
                        src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
                                 
                                 <div class="shop-card-heading">
-                                    <div>
+                                    <div class="card_nameMobile">
                                         <h4>${dataArr[i].name}</h4>
                                         <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
                                     </div>
@@ -1122,7 +1295,7 @@
                                         </div>
                                         <div onclick="addToCart()">
                                           
-                                          <button type="button" class="shop-card-button">
+                                          <button type="button" class="shop-card-button e_shopcardbutton">
                                               <img
                                               src="{{ asset('customImages/buyIcon.png') }}"
                                               />
@@ -1394,7 +1567,7 @@
                        src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
                                 
                                 <div class="shop-card-heading">
-                                    <div>
+                                    <div class="card_nameMobile">
                                         <h4>${dataArr[i].name}</h4>
                                         <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
                                     </div>
@@ -1406,7 +1579,7 @@
                                         </div>
                                         <div onclick="addToCart()">
                                           
-                                          <button type="button" class="shop-card-button">
+                                          <button type="button" class="shop-card-button e_shopcardbutton">
                                               <img
                                               src="{{ asset('customImages/buyIcon.png') }}"
                                               />
@@ -1674,7 +1847,7 @@
                        src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
                                 
                                 <div class="shop-card-heading">
-                                    <div>
+                                    <div class="card_nameMobile">
                                         <h4>${dataArr[i].name}</h4>
                                         <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
                                     </div>
@@ -1686,7 +1859,7 @@
                                         </div>
                                         <div onclick="addToCart()">
                                           
-                                          <button type="button" class="shop-card-button">
+                                          <button type="button" class="shop-card-button e_shopcardbutton">
                                               <img
                                               src="{{ asset('customImages/buyIcon.png') }}"
                                               />
@@ -1955,7 +2128,7 @@
                        src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
                                 
                                 <div class="shop-card-heading">
-                                    <div>
+                                    <div class="card_nameMobile">
                                         <h4>${dataArr[i].name}</h4>
                                         <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
                                     </div>
@@ -1967,7 +2140,7 @@
                                         </div>
                                         <div onclick="addToCart()">
                                           
-                                          <button type="button" class="shop-card-button">
+                                          <button type="button" class="shop-card-button e_shopcardbutton">
                                               <img
                                               src="{{ asset('customImages/buyIcon.png') }}"
                                               />
@@ -2213,6 +2386,7 @@
                        }
 
                     })
+
                     colorItems < 1
                     ?
                     colorItems.innerHTML = "No color category found"
@@ -2245,12 +2419,30 @@
                        }
 
                     })
+
                     colorMobileItems < 1
                     ?
                     colorMobileItems.innerHTML = "No color category found"
                     :
                     colorId.map(element =>{
                         return colorMobileItems.innerHTML += `
+                        
+                            <div class="col-sm-4 col-md-6">
+                            <div onclick="filterColor( ${element.id})" class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
+                                <i class="fa fa-square fa-lg" style="color: ${element.color}; "></i>
+                                <p>${element.color}</p>
+                            </div>
+                                
+                            </div>
+                        `;
+                    })
+
+                    colorSlideItems < 1
+                    ?
+                    colorSlideItems.innerHTML = "No color category found"
+                    :
+                    colorId.map(element =>{
+                        return colorSlideItems.innerHTML += `
                         
                             <div class="col-sm-4 col-md-6">
                             <div onclick="filterColor( ${element.id})" class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
@@ -2339,6 +2531,20 @@
                         `;
                     })
 
+                    shapeSlideItems < 1
+                    ?
+                    shapeSlideItems.innerHTML = "No face shape category found"
+                    :
+                    shapeId.map(elem =>{
+                        return shapeSlideItems.innerHTML += `
+                        <div class="row col-sm-6 col-md-4 justify-content-evenly">
+                            <div onclick="filterShape(${elem.id})" class="color_container d-flex flex-row align-items-baseline justify-content-between">
+                                <p>${elem.shape}</p>
+                            </div>
+                            </div>
+                        `;
+                    })
+
                     // GET AN DISPLAY GENDER FROM THE DATABASE
                     let genderArr = dataArr.map(genderA=>{
                         return genderA.gendercategory
@@ -2409,6 +2615,18 @@
                         `;
                     })
 
+                    genderSlideItems < 1
+                    ?
+                    genderSlideItems.innerHTML = "No gender category found"
+                    :
+                    genderId.map(elem =>{
+                        return genderSlideItems.innerHTML += `
+                            <div class="color_container col-sm-4 col-md-6">
+                                <p onclick="filterGender(${elem.id})">${elem.gender}</p>
+                            </div>
+                        `;
+                    })
+
                     // GET AND DISPLAY GLASS CATEGORIES FROM THE DATABASE
                     let glassArr = dataArr.map(glassA=>{
                         return glassA.glasscategory
@@ -2468,12 +2686,28 @@
                        }
 
                     })
+
                     glassMobileItems < 1
                     ?
                     glassMobileItems.innerHTML = "No glass category found"
                     :
                     glassId.map(elem =>{
                         return glassMobileItems.innerHTML += `
+                        <div class="colours_wrapper--left col-sm-4 col-md-6">
+                                <div class="color_container">
+                                    <p onclick="filterGlasses(${elem.id})">${elem.glass}</p>
+                                </div>
+                                
+                            </div>
+                        `;
+                    })
+
+                    glassSlideItems < 1
+                    ?
+                    glassSlideItems.innerHTML = "No glass category found"
+                    :
+                    glassId.map(elem =>{
+                        return glassSlideItems.innerHTML += `
                         <div class="colours_wrapper--left col-sm-4 col-md-6">
                                 <div class="color_container">
                                     <p onclick="filterGlasses(${elem.id})">${elem.glass}</p>
@@ -2527,25 +2761,26 @@
 						productItems += `
                 
                                 
-                    <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                    <div class="col-sm-6 col-md-6 shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
                                     <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                        src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
                                 
                                 <div class="shop-card-heading">
-                                    <div>
+                                    <div class="card_nameMobile">
                                         <h4>${dataArr[i].name}</h4>
                                         <p data="date-updated">Updated ${ new Date(dataArr[i].updated_at).toLocaleDateString('en-us', {  year:"numeric", month:"short", day:"numeric"})}</p>
                                     </div>
                                     <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
                                     <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
+                                        
                                         <div class="price-child d-flex flex-row">
                                             <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
                                             <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
                                         </div>
                                         <div onclick="addToCart()">
                                           
-                                          <button type="button" class="shop-card-button">
+                                          <button type="button" class="shop-card-button e_shopcardbutton">
                                               <img
                                               src="{{ asset('customImages/buyIcon.png') }}"
                                               />
@@ -2561,7 +2796,7 @@
 					$("#paginated-list").html(productItems);
 
 
-                     // DISPLAY MEN DESKTOP
+                 // DISPLAY MEN DESKTOP
                     //  let defaultImg = 'foremost_shopimage_1667983695.png'
                     // let htmlMen;
 
@@ -2606,8 +2841,6 @@
                 `;
 					}
 					$("#paginated-listDesktop").html(productItemsDesktop);
-
-
                      // DISPLAY WOMEN
 
                     womenProducts.length <= 0 
@@ -2734,6 +2967,16 @@
 
     
         });
+        let canvasSlider = document.querySelector('.category-desktop');
+        
+        window.addEventListener('load', console.log(canvasSlider))
+        const redirectToResult = () =>{
+            if(testVar !== null ){
+                window.location.href = "#products_resultMobile"
+                // console.log(canvasSlider);
+                canvasSlider.classList.remove('show');
+            }
+        }
            
           </script>
 
