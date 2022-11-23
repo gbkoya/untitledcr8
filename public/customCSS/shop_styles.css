@@ -187,7 +187,7 @@
     background: rgba(217, 217, 217, 0.3);
 }
 
-.glass-wrapper, .glass_mobile_wrapper{
+.glass-wrapper, .glass_mobile_wrapper, .glass_slide_wrapper{
     width: 90%;
     margin: 0 auto;
 }
@@ -478,6 +478,7 @@
 }
 /* RESPONSIVENESS */
 @media(max-width: 414px){
+    .sliderDrawer_product{}
     .image_style{
         height: 18vh!important;
     }
@@ -644,7 +645,7 @@
         width: 100%;
         padding: .5rem!important;
     }
-    .left_product{
+    .left_product, .left_productDesktop{
         width: 100%!important;
         display: none;
     }
@@ -1009,7 +1010,7 @@ ul#pills-tab.nav.nav-pills.nav-pill-head-wrapper.mb-3.d-md-flex.justify-content-
     background: #F58634!important;
   }
 
-  .left_product, .desktop_product {
+  .left_product, .left_productDesktop, .desktop_product {
     width: 20%;
     height: auto;
     min-height: 48vmin;

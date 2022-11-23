@@ -115,7 +115,8 @@
 </main>
 
 <section class="container-fluid mobile_productsWrapper">
-
+    <div id="products_resultMobile"></div>
+    <div></div>
 {{-- HERO SUB NAV --}}
 <nav class="hero-sub-nav container-fluid" id="hero-sub-nav">
     <ul class="">
@@ -140,14 +141,14 @@
         
     </header> --}}
 
-    <div class="accordion toggle_accordion" id="accordionExample">
+    <div class="accordion toggle_accordion" id="accordionRelevance">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
               Color
             </button>
           </h2>
-          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionRelevance">
             <div class="accordion-body container-fluid">
                 <section class="colours_mobile_wrapper row justify-content-center" >                   
       
@@ -161,7 +162,7 @@
               Face Shape
             </button>
           </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionRelevance">
             <div class="accordion-body container-fluid">
                 <section class="colours_mobile_wrapper shape_mobile_wrapper row justify-content-center">
                    
@@ -176,7 +177,7 @@
                 Glass
               </button>
             </h2>
-            <div id="collapseTwoJ" class="accordion-collapse collapse" aria-labelledby="headingTwoJ" data-bs-parent="#accordionExample">
+            <div id="collapseTwoJ" class="accordion-collapse collapse" aria-labelledby="headingTwoJ" data-bs-parent="#accordionRelevance">
               <div class="accordion-body container-fluid">
                   <section class="colours_mobile_wrapper glass_mobile_wrapper row justify-content-center">
 
@@ -190,7 +191,7 @@
               Gender
             </button>
           </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionRelevance">
             <div class="accordion-body">
                 <section class="colours_mobile_wrapper gender_mobile_wrapper row align-items-baseline 
                 justify-content-center">
@@ -204,7 +205,6 @@
 {{-- End of mobile product filter --}}
 <div class="container-fluid e-hero-content">
 
-    <div id="products_resultMobile"></div>
     <div id="relevance">
         {{-- <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
@@ -221,7 +221,7 @@
           </div> --}}
           {{-- <h1>I am relevance</h1> --}}
           <div class="eb-tab right_product mob_right_product">
-            <p id="show_filter">Show filters</p>
+            {{-- <p id="show_filter">Show filters</p> --}}
             
               <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane card-paginat fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -301,9 +301,9 @@
 
 {{-- SHOP CARD SECTION --}}
 <div id="products_result"></div>
-<section class="container-fluid store-wrapper d-flex flex-row">
+<section class="container-fluid store-wrapper d-flex flex-row justify-content-evenly">
  {{-- Desktop product filter --}}
- <div class="left_product">
+ <div class="left_productDesktop">
     <header class="hide_filter d-flex flex-row justify-content-between align-items-baseline">
         <h2>Filters</h2>
         <div id="hide_close" class="d-flex flex-row align-items-baseline justify-content-evenly toggleIcon">
@@ -313,14 +313,14 @@
         
     </header>
 
-    <div class="accordion" id="accordionExample">
+    <div class="accordion" id="accordionDesktop">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
               Color
             </button>
           </h2>
-          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionDesktop">
             <div class="accordion-body container-fluid">
                 <section class="colours_wrapper row" >                   
       
@@ -334,7 +334,7 @@
               Face Shape
             </button>
           </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionDesktop">
             <div class="accordion-body container-fluid">
                 <section class="colours_wrapper shape_wrapper row">
                    
@@ -349,7 +349,7 @@
                 Glass
               </button>
             </h2>
-            <div id="collapseTwoJ" class="accordion-collapse collapse" aria-labelledby="headingTwoJ" data-bs-parent="#accordionExample">
+            <div id="collapseTwoJ" class="accordion-collapse collapse" aria-labelledby="headingTwoJ" data-bs-parent="#accordionDesktop">
               <div class="accordion-body container-fluid">
                   <section class="colours_wrapper glass_wrapper row">
 
@@ -363,7 +363,7 @@
               Gender
             </button>
           </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionDesktop">
             <div class="accordion-body">
                 <section class="colours_wrapper gender_wrapper row align-items-baseline">
         
@@ -378,6 +378,8 @@
     <section class="right_shopCard">
         <header class="d-flex flex-row justify-content-between align-items-center store-heading">
             <div class=" category_heading">
+                <div>
+                <p id="show_filter">Show filters</p>
                 <ul class="nav nav-pills nav-pill-head-wrapper  " id="pills-tab" role="tablist">
                     
                     <li class="nav-item nav-but" role="presentation">
@@ -390,6 +392,7 @@
                       <button class="nav-link pill-button" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Kids</button>
                     </li>
                   </ul>
+                </div>
                 
             </div>  
                   <div class="sort-wrapper d-flex flex-row align-items-center justify-content-evenly">
@@ -407,7 +410,6 @@
 
         {{-- DESKTOP PRODUCT CARDS --}}
     <div class="eb-tab right_product right_productDesktop">
-        <p id="show_filter">Show filters</p>
         
           <div class="tab-content" id="pills-tabContent">
             {{-- <div class="tab-pane card-paginat fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -504,6 +506,7 @@
     let toggleMobileClose = document.getElementById('hide_close_mobile');
     let accordionMobile = document.querySelector('.toggle_accordion');
     let leftSide = document.querySelector('.left_product');
+    let leftSideMobile = document.querySelector('.left_productDesktop');
     let toggleOpen = document.getElementById('show_filter');
     let totalCartItem = document.querySelector('.total-items-in-cart');
     let totalCartQuant = sessionStorage.getItem('totalCartItem') || 0;
@@ -522,6 +525,13 @@
    let genderMobileItems = document.querySelector('.gender_mobile_wrapper');
    let glassMobileItems = document.querySelector('.glass_mobile_wrapper');
    let shopMobileContainer = document.querySelector('.shop_mobile_display');
+
+//    Slider
+   let colorSlideItems = document.querySelector('.colours_slide_wrapper');
+   let shapeSlideItems = document.querySelector('.shape_slide_wrapper');
+   let genderSlideItems = document.querySelector('.gender_slide_wrapper');
+   let glassSlideItems = document.querySelector('.glass_slide_wrapper');
+   let shopSlideContainer = document.querySelector('.shop_slide_display');
 
     // let toggleCategory = document.getElementById('slidToggle');
     // let mobileNavCategory = document.querySelector('.singup-category');
@@ -566,16 +576,16 @@
 
 
 
-    let authButtonsMobile = document.querySelector('.button-containerMobile');
-    console.log(authButtonsMobile);
-    if(!tokenStatus){
-        authButtonsMobile.innerHTML += `
-            <a href="/login"><button class="mobile-login" type="button">Login</button></a>
-            <a href="/signup"><button class="mobile-login" type="button">Signup</button></a>
-    `;
-    }else{
-        authButtonsMobile.innerHTML = ""
-    } 
+    // let authButtonsMobile = document.querySelector('.button-containerMobile');
+    // console.log(authButtonsMobile);
+    // if(!tokenStatus){
+    //     authButtonsMobile.innerHTML += `
+    //         <a href="/login"><button class="mobile-login" type="button">Login</button></a>
+    //         <a href="/signup"><button class="mobile-login" type="button">Signup</button></a>
+    // `;
+    // }else{
+    //     authButtonsMobile.innerHTML = ""
+    // } 
 
     
     
@@ -717,11 +727,10 @@
 
         // LOGIC TO TOGGLE OPEN AND CLOSE THE LEFT FILTER
         const triggerSide = () => {
-            alert('working')
-            shopContainer.classList.add('justify-content-evenly');
-            leftSide.classList.add('closeSideNav');
+            shopContainer.classList.add('justify-content-center');
+            leftSideMobile.classList.add('closeSideNav');
             toggleOpen.style.display = 'block';
-            leftSide.classList.remove('openSideNav');
+            leftSideMobile.classList.remove('openSideNav');
             // rightProduct.style.marginLeft = 'unset'
 
         }
@@ -729,9 +738,9 @@
 
         const triggerSideClose = () =>{
             shopContainer.classList.remove('justify-content-evenly');
-            leftSide.classList.add('openSideNav');
+            leftSideMobile.classList.add('openSideNav');
             toggleOpen.style.display = 'none';
-            leftSide.classList.remove('closeSideNav');
+            leftSideMobile.classList.remove('closeSideNav');
             // rightProduct.style.marginLeft = '2rem'
 
         }
@@ -2376,6 +2385,7 @@
                        }
 
                     })
+
                     colorItems < 1
                     ?
                     colorItems.innerHTML = "No color category found"
@@ -2408,12 +2418,30 @@
                        }
 
                     })
+
                     colorMobileItems < 1
                     ?
                     colorMobileItems.innerHTML = "No color category found"
                     :
                     colorId.map(element =>{
                         return colorMobileItems.innerHTML += `
+                        
+                            <div class="col-sm-4 col-md-6">
+                            <div onclick="filterColor( ${element.id})" class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
+                                <i class="fa fa-square fa-lg" style="color: ${element.color}; "></i>
+                                <p>${element.color}</p>
+                            </div>
+                                
+                            </div>
+                        `;
+                    })
+
+                    colorSlideItems < 1
+                    ?
+                    colorSlideItems.innerHTML = "No color category found"
+                    :
+                    colorId.map(element =>{
+                        return colorSlideItems.innerHTML += `
                         
                             <div class="col-sm-4 col-md-6">
                             <div onclick="filterColor( ${element.id})" class="color_container d-flex flex-row align-items-baseline justify-content-evenly">
@@ -2502,6 +2530,20 @@
                         `;
                     })
 
+                    shapeSlideItems < 1
+                    ?
+                    shapeSlideItems.innerHTML = "No face shape category found"
+                    :
+                    shapeId.map(elem =>{
+                        return shapeSlideItems.innerHTML += `
+                        <div class="row col-sm-6 col-md-4 justify-content-evenly">
+                            <div onclick="filterShape(${elem.id})" class="color_container d-flex flex-row align-items-baseline justify-content-between">
+                                <p>${elem.shape}</p>
+                            </div>
+                            </div>
+                        `;
+                    })
+
                     // GET AN DISPLAY GENDER FROM THE DATABASE
                     let genderArr = dataArr.map(genderA=>{
                         return genderA.gendercategory
@@ -2572,6 +2614,18 @@
                         `;
                     })
 
+                    genderSlideItems < 1
+                    ?
+                    genderSlideItems.innerHTML = "No gender category found"
+                    :
+                    genderId.map(elem =>{
+                        return genderSlideItems.innerHTML += `
+                            <div class="color_container col-sm-4 col-md-6">
+                                <p onclick="filterGender(${elem.id})">${elem.gender}</p>
+                            </div>
+                        `;
+                    })
+
                     // GET AND DISPLAY GLASS CATEGORIES FROM THE DATABASE
                     let glassArr = dataArr.map(glassA=>{
                         return glassA.glasscategory
@@ -2631,12 +2685,28 @@
                        }
 
                     })
+
                     glassMobileItems < 1
                     ?
                     glassMobileItems.innerHTML = "No glass category found"
                     :
                     glassId.map(elem =>{
                         return glassMobileItems.innerHTML += `
+                        <div class="colours_wrapper--left col-sm-4 col-md-6">
+                                <div class="color_container">
+                                    <p onclick="filterGlasses(${elem.id})">${elem.glass}</p>
+                                </div>
+                                
+                            </div>
+                        `;
+                    })
+
+                    glassSlideItems < 1
+                    ?
+                    glassSlideItems.innerHTML = "No glass category found"
+                    :
+                    glassId.map(elem =>{
+                        return glassSlideItems.innerHTML += `
                         <div class="colours_wrapper--left col-sm-4 col-md-6">
                                 <div class="color_container">
                                     <p onclick="filterGlasses(${elem.id})">${elem.glass}</p>
@@ -2896,6 +2966,16 @@
 
     
         });
+        let canvasSlider = document.querySelector('.category-desktop');
+        
+        window.addEventListener('load', console.log(canvasSlider))
+        const redirectToResult = () =>{
+            if(testVar !== null ){
+                window.location.href = "#products_resultMobile"
+                // console.log(canvasSlider);
+                canvasSlider.classList.remove('show');
+            }
+        }
            
           </script>
 
