@@ -26,9 +26,9 @@ onload="displayName();">
                 <a href="/cart" class="position-relative">
                     <img src="{{ asset('customImages/Cart.svg') }}"  alt="cart icon">
                     {{-- <p class="total-number-of-items cart-quant"><span>0</span></p> --}}
-                    <span class="total-number-of-items position-absolute top-0 start-100 translate-middle badge rounded-pill cart-quant">
-                        0
-                        <span class="visually-hidden">unread messages</span>
+                    <span class="total-no-items-in-cart position-absolute top-0 start-100 translate-middle badge rounded-pill cart-quant">
+                        
+                       </span>
                 </a>
             </div>
            
@@ -398,7 +398,12 @@ const handleLogoutMobile = () =>{
     
 
     document.getElementById('triggerLogoutMobile').addEventListener('click', handleLogoutMobile);
-
+    
+    let totalCartItemMobile = document.querySelector('.total-no-items-in-cart');
+    let totalCartQuantMobile = sessionStorage.getItem('totalCartItem') || 0;
+    // alert('working')
+    totalCartItemMobile.innerHTML = totalCartQuantMobile;
+    // alert(totalCartItem);
 
 </script>
 
