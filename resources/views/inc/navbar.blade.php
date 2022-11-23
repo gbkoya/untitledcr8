@@ -66,19 +66,45 @@ onload="displayName();">
                     ><i class="fa fa-user fa-xl"></i>
                 </li>
                   <li class="greetings"><span class="welcome-name"> </span></li>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="z-index: 1000">
+                    {{-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="z-index: 1000">
                       <li><a class="dropdown-item archware-nav-title-drop" href="#">Orders</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <li id="triggerLogout"
                       style="cursor: pointer">
-                      {{-- <span class="dropdown-item">Logout</span> --}}
                     </li> 
-                    </ul>
+                    </ul> --}}
                   </div>
 
                   <li class="nav-item px-3 mobile_dropdownNav" 
-                  id="slidToggle"
+                  data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"
+                  {{-- id="slidToggle" --}}
                     ><i class="fa fa-user fa-xl"></i>
+                  </li>
+                  <li>
+                    {{-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button> --}}
+
+                    <div class="offcanvas offcanvas-start category-desktop" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                    <div class="offcanvas-header">
+                        {{-- <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5> --}}
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <h3 class="slideCat-heading">Welcome</h3>
+                        <div class="d-flex flex-row gap-3 mobile_loginDraw button-containerMobile">
+                           
+                        </div>
+                        <ul class="" style="list-style-type: none">
+                            <li><a class="dropdown-item" href="#">Orders</a></li>
+                            <li><hr class=""></li>
+                            <li id="triggerLogout"
+                            style="cursor: pointer">
+                            {{-- <span class="dropdown-item">Logout</span> --}}
+                          </li> 
+                          </ul>
+                    </a>
+
+                    </div>
+                    </div>
                   </li>
 
                 <li class="button-wrapper">
@@ -222,5 +248,19 @@ const toggleSearchField = () =>{
 
 searchIcon.addEventListener('click', toggleSearchField)
 
+
+let tokenStatusMobile = localStorage.getItem('token');
+//    console.log(tokenStatusMobile);
+    let authButtonsMobile = document.querySelector('.button-containerMobile');
+    console.log(authButtonsMobile);
+    if(!tokenStatusMobile){
+        authButtonsMobile.innerHTML += `
+        <a href="/login"> <p>Login</p></a>
+            |
+        <a href="/signup"> <p>Signup</p></a>
+`;
+    }else{
+        authButtonsMobile.innerHTML = ""
+    } 
 </script>
 

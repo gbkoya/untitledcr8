@@ -120,9 +120,9 @@ nav button[type="button"]{
 .nav > #nav-check {
     display: none;
 }
-ul li a:nth-child(2) {
+/* ul li a:nth-child(2) {
     display: none;
-}
+} */
 
 .nav .nav-links ul a i {
     background-color: #fff;
@@ -201,6 +201,27 @@ ul li a:nth-child(2) {
 }
 
 @media(max-width: 414px){
+    .mobile_loginDraw{
+        margin-top: 2rem;
+    }
+
+    .slideCat-heading{
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+
+    .mobile_loginDraw a{
+        text-decoration: none;
+    }
+
+    .mobile_loginDraw a p{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 22px;
+        color: #000000;
+    }
+
     .dropdown-style{
         width: 100%!important;
     }

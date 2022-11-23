@@ -14,18 +14,7 @@
     </div>
 
 <main class="shop_main">
-    {{-- SIGNUP AND CATEGORIES --}}
-    <section class="card singup-category d-flex flex-row justify-content-between">
-        <div>
-            <h2>Welcome</h2>
-            <div>
-                <a href="">Login</a>  | <a href="">Signup</a> 
-            </div>
-        </div>
-        <div class="s-close-modal">
-            <img class="img-fluid" src="{{ asset('customImages/close.png') }}" alt="close image">
-        </div>
-    </section>
+    
 
 {{-- HERO SECTION --}}
 <section class="container-fluid shop-hero">
@@ -534,26 +523,26 @@
    let glassMobileItems = document.querySelector('.glass_mobile_wrapper');
    let shopMobileContainer = document.querySelector('.shop_mobile_display');
 
-    let toggleCategory = document.getElementById('slidToggle');
-    let mobileNavCategory = document.querySelector('.singup-category');
-    console.log(toggleCategory);
+    // let toggleCategory = document.getElementById('slidToggle');
+    // let mobileNavCategory = document.querySelector('.singup-category');
+    // console.log(toggleCategory);
 
     let vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
     console.log(vw);
 
-    const toggleCategoryMobile = () => {
-        console.log(mobileNavCategory);
-        if(mobileNavCategory.style.display === 'none'){
-            mobileNavCategory.style.display = 'block';
-            mobileNavCategory.classList.add('showProfile');
-        }else{
-            mobileNavCategory.style.display = 'none';
-            mobileNavCategory.classList.remove('showProfile');
-        }
+    // const toggleCategoryMobile = () => {
+    //     console.log(mobileNavCategory);
+    //     if(mobileNavCategory.style.display === 'none'){
+    //         mobileNavCategory.style.display = 'block';
+    //         mobileNavCategory.classList.add('showProfile');
+    //     }else{
+    //         mobileNavCategory.style.display = 'none';
+    //         mobileNavCategory.classList.remove('showProfile');
+    //     }
         
-    }
+    // }
 
-    toggleCategory.addEventListener('click', toggleCategoryMobile)
+    // toggleCategory.addEventListener('click', toggleCategoryMobile)
    let testVar = null
     // console.log(testVar);
     let bo = true;
@@ -728,6 +717,7 @@
 
         // LOGIC TO TOGGLE OPEN AND CLOSE THE LEFT FILTER
         const triggerSide = () => {
+            alert('working')
             shopContainer.classList.add('justify-content-evenly');
             leftSide.classList.add('closeSideNav');
             toggleOpen.style.display = 'block';

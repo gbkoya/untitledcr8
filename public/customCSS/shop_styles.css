@@ -472,11 +472,32 @@
 .singup-category{
     display: none!important;
 }
+
+.category-desktop{
+    display: none!important;
+}
 /* RESPONSIVENESS */
 @media(max-width: 414px){
+    .image_style{
+        height: 18vh!important;
+    }
+    .category-desktop{
+        display: block!important;
+    }
+
     .sub-nav-mobile{
         display: none!important;
     }
+
+    .det_imageWrapper{
+        max-width: 100%;
+        height: 20rem;
+    }
+
+    .det-subNavMobile{
+        display: none!important;
+    }
+    
 
     .shop-card{
     max-width: 10rem;
@@ -507,7 +528,7 @@
     }
 
     .price-child p{
-        margin-top: 3rem;
+        margin-top: 1rem;
         color: #F58634!important;
         text-align: left!important;
     }
