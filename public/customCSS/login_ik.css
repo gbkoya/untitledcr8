@@ -434,6 +434,11 @@ max-height: 700px !important;
     .payment-forms{
       width: 100% !important;
     }
+
+    .cart-total-price{
+      margin-right: unset!important;
+      
+    }
   }
   
 

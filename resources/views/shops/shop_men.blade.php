@@ -301,7 +301,7 @@
 
 {{-- SHOP CARD SECTION --}}
 <div id="products_result"></div>
-<section class="container-fluid store-wrapper d-flex flex-row justify-content-evenly">
+<section class="container-fluid store-wrapper d-flex flex-row flex-wrap justify-content-evenly">
  {{-- Desktop product filter --}}
  <div class="left_productDesktop">
     <header class="hide_filter d-flex flex-row justify-content-between align-items-baseline">
@@ -376,7 +376,7 @@
 
     {{-- RIGHT --}}
     <section class="right_shopCard">
-        <header class="d-flex flex-row justify-content-between align-items-center store-heading">
+        <header class="d-flex flex-row flex-wrap justify-content-between align-items-center store-heading">
             <div class=" category_heading">
                 <div>
                 <p id="show_filter">Show filters</p>
@@ -395,7 +395,7 @@
                 </div>
                 
             </div>  
-                  <div class="sort-wrapper d-flex flex-row align-items-center justify-content-evenly">
+                  <div class="sort-wrapper d-flex flex-row flex-wrap align-items-center justify-content-evenly">
                 <label for="">Sort by:</label>
                 <select name="sort">
                     <option value="popularity">Relevance</option>
