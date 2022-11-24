@@ -47,7 +47,7 @@ landscape.')
   {{-- </main> --}}
 
   <section class="container">
-    <h2 style="text-align: center;"><b>Cart</b></h2>
+    <h2 style="text-align: center;" class="mt-5"><b>Cart</b></h2>
 
     <div class=" container d-flex flex-row justify-content-between  pt-4 col-lg-10">
       <img class="" src="{{ asset('customImages/Group 188.png') }}" />
