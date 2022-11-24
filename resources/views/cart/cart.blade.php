@@ -44,7 +44,7 @@ landscape.')
     {{-- </div>  --}}
   </nav>
   {{-- </section> --}}
-  </main>
+  {{-- </main> --}}
 
   <section class="container">
     <h2 style="text-align: center;"><b>Cart</b></h2>
@@ -215,7 +215,7 @@ const renderCartItem = () => {
   
           <div class="delete-icon" onclick="getProduct()"><img class="img-fluid" src="{{ asset('customImages/trash vector.png') }}" alt="Delete icon"></div>
         </div>
-        <div class="d-flex align-items-baseline justify-content-end" style="text-align: right; margin-right: 18%">
+        <div class="d-flex align-items-baseline cart-total-price justify-content-end" style="text-align: right; margin-right: 18%">
         <div style="font-weight: 600;">Total Price:</div>
         <div class="pt-2 total-price " style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);
         margin-left: 2rem">
@@ -257,25 +257,27 @@ const deleteProduct = (id) => {
   console.log(id);
         // displayLoading();
   
-                  let updateFromDelete = cartItem.filter(newCa=>{
+                  let updateFromDelete = newCart.filter(newCa=>{
                   return newCa.id !== id;
                 });
                 console.log(updateFromDelete);
                 sessionStorage.setItem('cartItem', JSON.stringify(updateFromDelete));
                 
                 console.log(cartItem);
-                
-                setTimeout(() => {
-                  let cartItems = JSON.parse(sessionStorage.getItem('cartItem'));
-                  console.log(cartItems);
-                let cartQuantDel = cartItems.reduce(
+                let cartQuantDel = updateFromDelete.reduce(
                     (sum,eve)=>sum+Number(eve.quantity),0
-            );
+              );
               console.log(cartQuantDel);
 
-              sessionStorage.setItem('totalCartItem', cartQuantDel);  
+              sessionStorage.setItem('totalCartItem', cartQuantDel);                
+                setTimeout(() => {
 
-                }, 2000);
+                  // console.log(cartQuantDel);
+                  // console.log(cartQuantDel);
+                  alert();
+          
+
+                }, 4000);
                 Swal.fire({
                         icon: 'success',
                         title: 'Product deleted successfully',
