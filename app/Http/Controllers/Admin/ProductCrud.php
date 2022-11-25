@@ -44,17 +44,15 @@ class ProductCrud extends Controller
                     'name'              => 'required',
                     'product_price'     => 'required',
                     'cat_select'        => 'required',
-                    'cat_name_gender'          => 'required',
-                    'cat_name_size'          => 'required',
+                    'cat_name_gender'   => 'required',
+                    'cat_name_size'     => 'required',
                 ]
             );
 
             if ($validateUser->fails()) {
-                return response()->json([
-                    'status' => false,
-                    'message' => 'validation error',
-                    'errors' => $validateUser->errors()
-                ], 400);
+                return redirect()->back()->with([
+                    'error' => $validateUser->errors(),
+                ]);
             }
 
             $status = null;
@@ -149,15 +147,11 @@ class ProductCrud extends Controller
                 }
             }
 
-            return response()->json([
-                'status' => true,
-                'message' => 'Product added'
-            ], 200);
+            return redirect()->back()->with([
+                'success' => 'Product added'
+            ]);
         } catch (Exception $e) {
-            return response()->json([
-                'status' => FALSE,
-                'error' => 'An error occured: ' . $e->getMessage(),
-            ], 500);
+            return back()->with('error', 'An error occured: ' . $e->getMessage());
         }
     }
 
@@ -200,11 +194,9 @@ class ProductCrud extends Controller
             );
 
             if ($validateUser->fails()) {
-                return response()->json([
-                    'status' => false,
-                    'message' => 'validation error',
-                    'errors' => $validateUser->errors()
-                ], 400);
+                return redirect()->back()->with([
+                    'error' => $validateUser->errors(),
+                ]);
             }
 
             $status = null;
@@ -298,15 +290,13 @@ class ProductCrud extends Controller
                 }
             }
 
-            return response()->json([
-                'status' => true,
-                'message' => 'Product updated'
-            ], 200);
+            return redirect()->back()->with([
+                'success' => 'Product updated'
+            ]);
         } catch (Exception $e) {
-            return response()->json([
-                'status' => FALSE,
-                'error' => 'An error occured: ' . $e->getMessage(),
-            ], 500);
+            return redirect()->back()->with([
+                'success' => 'An error occured: ' . $e->getMessage()
+            ]);
         }
     }
 
@@ -322,7 +312,7 @@ class ProductCrud extends Controller
             }
 
             $image_name = $product->productimages[0]['imagedirectory'];
-            Storage::delete('public/thumbnail_image/'.$image_name);
+            Storage::delete('public/thumbnail_image/' . $image_name);
 
             $product->productimages()->delete();
             $product->productfeatures()->delete();
