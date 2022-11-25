@@ -10,24 +10,28 @@
         src="{{ asset('customImages/arrow-right.png') }}"/>
             </div>   
 
-             <div class="button-container">
+
+            <div class="d-flex flex-row justify-content-center gap-3 sub-navbuttonWrapper">
+                <div class="button-container">
           
+                </div>
+                    {{-- <button type="button" class="">
+                        <img
+                        src="{{ asset('customImages/buyIcon.png') }}"
+                        />
+                        CART
+                    </button> --}}
+                    <li class="right-nav-button-shop-wrapper">
+                    <button type="button" class="shop-button">
+                        <img
+                        src="{{ asset('customImages/buyIcon.png') }}"
+                        />
+                       CART <span class="total-items-in-cart">0</span>
+                    </button>
+                </li>
+        {{-- </div>  --}}
             </div>
-                {{-- <button type="button" class="">
-                    <img
-                    src="{{ asset('customImages/buyIcon.png') }}"
-                    />
-                    CART
-                </button> --}}
-                <li class="right-nav-button-shop-wrapper">
-                <button type="button" class="shop-button">
-                    <img
-                    src="{{ asset('customImages/buyIcon.png') }}"
-                    />
-                   CART <span class="total-items-in-cart">0</span>
-                </button>
-            </li>
-    {{-- </div>  --}}
+             
     </nav>
 
     <script type="text/javascript">
