@@ -298,7 +298,7 @@ class ProductController extends Controller
                 $request->all(),
                 [
                     'name'              => 'required',
-                    // 'imagedirectory'   => 'image|nullable|max:5120',
+                    'imagedirectory'   => 'image|nullable|max:5120|required',
                     'product_price'     => 'required',
                     'cat_select'        => 'required',
                     'cat_name'          => 'required'
