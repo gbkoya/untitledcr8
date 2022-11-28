@@ -755,6 +755,14 @@
         window.location.href = "/details"
         // alert(id);
     }
+
+    // function getIdMobile(id){
+    //     alert('working');
+    // }
+
+    // let touchTrigger = document.querySelector('.e-card-linkMobile');
+    // touchTrigger.addEventListener('click', alert('working'))
+
     let sidebarState = false;
     // TOGGLE THE FILTER ON MOBILE
     const triggerMobileSide = () =>{
@@ -2763,10 +2771,10 @@
 						productItems += `
                 
                                 
-                    <div class="col-sm-6 col-md-6 shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                    <div class="col-sm-6 col-md-6 shop-card e-card-link e-card-linkMobile" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
                                     <img class="img-fluid image_style
-                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                       src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
+                                title="View details"
+                       src="${baseURL}/storage/product_image/${dataArr[i].productimages[0].imagedirectory }" alt="Shop image"/> 
                                 
                                 <div class="shop-card-heading">
                                     <div class="card_nameMobile">
@@ -2814,7 +2822,7 @@
                     <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${menProducts[i].id}>
                                     <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                       src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
+                       src="${baseURL}/storage/product_image/${menProducts[i].productimages[0].imagedirectory}" alt="Shop image"/> 
                                 
                                 <div class="shop-card-heading">
                                     <div>
@@ -2855,7 +2863,7 @@
                         <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
                             <img
                             data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                            src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
+                            src="${baseURL}/storage/product_image/${womenProducts[i].productimages[0].imagedirectory}" class="img-fluid image_style" alt="shop men">
 
                      <div class="shop-card-heading">
                          <div>
@@ -2896,7 +2904,7 @@
                         <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
                             <img 
                             data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                            src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[0].imagedirectory : defaultImg}"
+                            src="${baseURL}/storage/product_image/${ kidsProducts[i].productimages[0].imagedirectory }"
                              class="img-fluid image_style " alt="shop men">
      
                      

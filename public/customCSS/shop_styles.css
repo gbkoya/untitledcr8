@@ -248,6 +248,7 @@
     margin-top: 2rem;
     padding-left: unset!important;
     padding-right: unset!important;
+    cursor: pointer;
 
     /* cursor: pointer; */
 }
