@@ -502,6 +502,8 @@
 </body>
 
     <script type="text/javascript">
+    let defaultImg = 'foremost_shopimage_1667983695.png';
+    console.log(defaultImg);
     let toggleClose = document.getElementById('hide_close');
     let toggleMobileClose = document.getElementById('hide_close_mobile');
     let accordionMobile = document.querySelector('.toggle_accordion');
@@ -539,7 +541,7 @@
     // console.log(toggleCategory);
 
     let vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-    console.log(vw);
+    // console.log(vw);
 
     // const toggleCategoryMobile = () => {
     //     console.log(mobileNavCategory);
@@ -603,11 +605,11 @@
     let ratedClass = document.querySelector('.rated');
     // let filterClass = document.querySelector('.filter');
 
-    console.log(heroContainer.id);
-    console.log(arrivalContent.id);
-    console.log(relevanceContent.id);
+    // console.log(heroContainer.id);
+    // console.log(arrivalContent.id);
+    // console.log(relevanceContent.id);
 
-    console.log(heroLinks);
+    // console.log(heroLinks);
     heroLinks.forEach(ele=>{
         const switchTab = () =>{
             
@@ -654,10 +656,10 @@
         }else{
             testVar += `&color_id[0]=${id}`;
         }
-        console.log(testVar);
+        // console.log(testVar);
         doCheck();
       }
-      console.log(testVar);
+    //   console.log(testVar);
 
     const filterShape = (id) =>{
         if(testVar === null ){
@@ -665,7 +667,7 @@
         }else{
             testVar += `&shape_id[0]=${id}`;
         }
-        console.log(testVar);
+        // console.log(testVar);
         showShape();
     }
 
@@ -675,7 +677,7 @@
         }else {
             testVar += `&glass_id[0]=${id}`;
         }
-        console.log(testVar);
+        // console.log(testVar);
         showGlass();
     }
 
@@ -685,7 +687,7 @@
         }else {
             testVar += `&gender_id[0]=${id}`;
         }
-        console.log(testVar);
+        // console.log(testVar);
         showGender();
     }
 
@@ -704,7 +706,7 @@
         if(inputData !== ''){
             testVar = `?search_query=${inputData.value}`;
         }
-        console.log(testVar);
+        // console.log(testVar);
         displaySearchResult()
     }
 
@@ -722,7 +724,7 @@
             testVar = `?search_query=${inputDataDesktop.value}`;
 
         }
-        console.log(testVar);
+        // console.log(testVar);
         displaySearchResDesktop()
     }
 
@@ -753,10 +755,18 @@
         window.location.href = "/details"
         // alert(id);
     }
+
+    // function getIdMobile(id){
+    //     alert('working');
+    // }
+
+    // let touchTrigger = document.querySelector('.e-card-linkMobile');
+    // touchTrigger.addEventListener('click', alert('working'))
+
     let sidebarState = false;
     // TOGGLE THE FILTER ON MOBILE
     const triggerMobileSide = () =>{
-        console.log(sidebarState);
+        // console.log(sidebarState);
         if(sidebarState === false){
         accordionMobile.classList.add('openMobileSideNav');
         accordionMobile.classList.remove('closeMobileSideNav');
@@ -818,7 +828,7 @@
  
         // Fetch the product data using Ajax
         function fetchSearch() {
-            console.log(testVar);
+            // console.log(testVar);
 		// ajax() method to make api calls
 		$.ajax({
 			url: `${baseURL}/api/product-list${testVar===null ? '' : testVar}`,
@@ -829,8 +839,8 @@
 			},
 			success: function(data) {
               hideLoading();
-				console.log(data);
-                console.log(data.products_list.data);
+				// console.log(data);
+                // console.log(data.products_list.data);
 
 				if (data) {
 					let dataArr =  data.products_list.data;
@@ -865,7 +875,7 @@
                     // console.log(kidsProducts);
 
                     // DISPLAY MEN
-                    let defaultImg = 'foremost_shopimage_1667983695.png'
+                    // let defaultImg = 'foremost_shopimage_1667983695.png'
                     let htmlMen;
 
                     dataArr.length <= 0 
@@ -926,9 +936,9 @@
                         },
 			error: function(jqXHR, textStatus, errorThrown) {
               hideLoading();
-				console.log(jqXHR);
-				console.log(textStatus);
-				console.log(errorThrown);
+				// console.log(jqXHR);
+				// console.log(textStatus);
+				// console.log(errorThrown);
 			}
 		});
 	}
@@ -977,7 +987,7 @@
  
         // Fetch the product data using Ajax
         function fetchSearchResDesktop() {
-            console.log(testVar);
+            // console.log(testVar);
 		// ajax() method to make api calls
 		$.ajax({
 			url: `${baseURL}/api/product-list${testVar===null ? '' : testVar}`,
@@ -988,9 +998,9 @@
 			},
 			success: function(data) {
               hideLoading();
-              console.log('result');
-				console.log(data);
-                console.log(data.products_list.data);
+            //   console.log('result');
+				// console.log(data);
+                // console.log(data.products_list.data);
 
 				if (data) {
 					let dataArr =  data.products_list.data;
@@ -1025,7 +1035,7 @@
                     // console.log(kidsProducts);
 
                     // DISPLAY MEN
-                    let defaultImg = 'foremost_shopimage_1667983695.png'
+                    // let defaultImg = 'foremost_shopimage_1667983695.png'
                     // DISPLAY MEN DESKTOP
                     //  let defaultImg = 'foremost_shopimage_1667983695.png'
                     // let htmlMen;
@@ -1160,9 +1170,9 @@
                         },
 			error: function(jqXHR, textStatus, errorThrown) {
               hideLoading();
-				console.log(jqXHR);
-				console.log(textStatus);
-				console.log(errorThrown);
+				// console.log(jqXHR);
+				// console.log(textStatus);
+				// console.log(errorThrown);
 			}
 		});
 	}
@@ -1212,7 +1222,7 @@
  
         // Fetch the product data using Ajax
         function fetchColor() {
-            console.log(testVar);
+            // console.log(testVar);
 		// ajax() method to make api calls
 		$.ajax({
 			url: `${baseURL}/api/product-list${testVar===null ? '' : testVar}`,
@@ -1223,8 +1233,8 @@
 			},
 			success: function(data) {
               hideLoading();
-				console.log(data);
-                console.log(data.products_list.data);
+				// console.log(data);
+                // console.log(data.products_list.data);
 
 				if (data) {
 					let dataArr =  data.products_list.data;
@@ -1265,7 +1275,7 @@
                     // DISPLAY MEN
                     // MOBILE
                     // DISPLAY MEN MOBILE
-                    let defaultImg = 'foremost_shopimage_1667983695.png'
+                    // let defaultImg = 'foremost_shopimage_1667983695.png'
                     // let htmlMen;
 
                     dataArr.length <= 0 
@@ -1444,9 +1454,9 @@
                         },
 			error: function(jqXHR, textStatus, errorThrown) {
               hideLoading();
-				console.log(jqXHR);
-				console.log(textStatus);
-				console.log(errorThrown);
+				// console.log(jqXHR);
+				// console.log(textStatus);
+				// console.log(errorThrown);
 			}
 		});
 	}
@@ -1497,7 +1507,7 @@
  
         // Fetch the product data using Ajax
         function fetchShape() {
-            console.log(testVar);
+            // console.log(testVar);
 		// ajax() method to make api calls
 		$.ajax({
 			url: `${baseURL}/api/product-list${testVar===null ? '' : testVar}`,
@@ -1508,8 +1518,8 @@
 			},
 			success: function(data) {
               hideLoading();
-				console.log(data);
-                console.log(data.products_list.data);
+				// console.log(data);
+                // console.log(data.products_list.data);
 
 				if (data) {
 					let dataArr =  data.products_list.data;
@@ -1549,7 +1559,7 @@
                     // console.log(kidsProducts);
 
                     // DISPLAY MEN MOBILE
-                    let defaultImg = 'foremost_shopimage_1667983695.png'
+                    // let defaultImg = 'foremost_shopimage_1667983695.png'
                     // let htmlMen;
 
                     dataArr.length <= 0 
@@ -1728,9 +1738,9 @@
                         },
 			error: function(jqXHR, textStatus, errorThrown) {
               hideLoading();
-				console.log(jqXHR);
-				console.log(textStatus);
-				console.log(errorThrown);
+				// console.log(jqXHR);
+				// console.log(textStatus);
+				// console.log(errorThrown);
 			}
 		});
 	}
@@ -1777,7 +1787,7 @@
  
         // Fetch the product data using Ajax
         function fetchGender() {
-            console.log(testVar);
+            // console.log(testVar);
 		// ajax() method to make api calls
 		$.ajax({
 			url: `${baseURL}/api/product-list${testVar===null ? '' : testVar}`,
@@ -1788,9 +1798,9 @@
 			},
 			success: function(data) {
               hideLoading();
-				console.log(data);
-				console.log('Gender data');
-                console.log(data.products_list.data);
+				// console.log(data);
+				// console.log('Gender data');
+                // console.log(data.products_list.data);
 
 				if (data) {
 					let dataArr =  data.products_list.data;
@@ -1829,7 +1839,7 @@
                     // console.log(kidsProducts);
 
                     // DISPLAY MEN MOBILE
-                    let defaultImg = 'foremost_shopimage_1667983695.png'
+                    // let defaultImg = 'foremost_shopimage_1667983695.png'
                     // let htmlMen;
 
                     dataArr.length <= 0 
@@ -2006,9 +2016,9 @@
                         },
 			error: function(jqXHR, textStatus, errorThrown) {
               hideLoading();
-				console.log(jqXHR);
-				console.log(textStatus);
-				console.log(errorThrown);
+				// console.log(jqXHR);
+				// console.log(textStatus);
+				// console.log(errorThrown);
 			}
 		});
 	}
@@ -2057,7 +2067,7 @@
  
         // Fetch the product data using Ajax
         function fetchGlass() {
-            console.log(testVar);
+            // console.log(testVar);
 		// ajax() method to make api calls
 		$.ajax({
 			url: `${baseURL}/api/product-list${testVar===null ? '' : testVar}`,
@@ -2068,8 +2078,8 @@
 			},
 			success: function(data) {
               hideLoading();
-				console.log(data);
-				console.log('Glass data');
+				// console.log(data);
+				// console.log('Glass data');
                 console.log(data.products_list.data);
 
 				if (data) {
@@ -2110,7 +2120,7 @@
                     // console.log(kidsProducts);
 
                     // DISPLAY MEN MOBILE
-                    let defaultImg = 'foremost_shopimage_1667983695.png'
+                    // let defaultImg = 'foremost_shopimage_1667983695.png'
                     // let htmlMen;
 
                     dataArr.length <= 0 
@@ -2749,7 +2759,7 @@
                     console.log(kidsProducts);
 
                     // DISPLAY MEN MOBILE
-                    let defaultImg = 'foremost_shopimage_1667983695.png'
+                    // let defaultImg = 'foremost_shopimage_1667983695.png'
                     // let htmlMen;
 
                     dataArr.length <= 0 
@@ -2761,10 +2771,10 @@
 						productItems += `
                 
                                 
-                    <div class="col-sm-6 col-md-6 shop-card e-card-link" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
+                    <div class="col-sm-6 col-md-6 shop-card e-card-link e-card-linkMobile" onclick="getId(${dataArr[i].id})" data-id=${dataArr[i].id}>
                                     <img class="img-fluid image_style
-                      data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                       src="${baseURL}/storage/product_image/${dataArr[i].productimages !== '' ? dataArr[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
+                                title="View details"
+                       src="${baseURL}/storage/product_image/${dataArr[i].productimages[0].imagedirectory }" alt="Shop image"/> 
                                 
                                 <div class="shop-card-heading">
                                     <div class="card_nameMobile">
@@ -2774,7 +2784,7 @@
                                     <li class="star-rating d-flex align-items-center"><span>4.4</span> <img src="{{asset('customImages/ratings.png')}}" alt=""><span>(576)</span></li>
                                     <div class="price d-flex flex-row flex-wrap align-items-baseline justify-content-between">
                                         
-                                        <div class="price-child d-flex flex-row">
+                                        <div class="price-child d-flex flex-row align-items-center">
                                             <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
                                             <p>${formatter.format(dataArr[i].productprices[0].product_price).replace(/(\.|,)00$/g, '')}</p>
                                         </div>
@@ -2812,7 +2822,7 @@
                     <div class="col-sm-4 col-md-6 shop-card e-card-link" onclick="getId(${menProducts[i].id})" data-id=${menProducts[i].id}>
                                     <img class="img-fluid image_style
                       data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                       src="${baseURL}/storage/product_image/${menProducts[i].productimages !== '' ? menProducts[i].productimages[0].imagedirectory : defaultImg}" alt="Shop image"/> 
+                       src="${baseURL}/storage/product_image/${menProducts[i].productimages[0].imagedirectory}" alt="Shop image"/> 
                                 
                                 <div class="shop-card-heading">
                                     <div>
@@ -2853,7 +2863,7 @@
                         <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${womenProducts[i].id})" data-id=${womenProducts[i].id}>
                             <img
                             data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                            src="${baseURL}/storage/product_image/${womenProducts[i].productimages !== '' ? womenProducts[i].productimages[0].imagedirectory : defaultImg}" class="img-fluid image_style" alt="shop men">
+                            src="${baseURL}/storage/product_image/${womenProducts[i].productimages[0].imagedirectory}" class="img-fluid image_style" alt="shop men">
 
                      <div class="shop-card-heading">
                          <div>
@@ -2894,7 +2904,7 @@
                         <div class="shop-card col-sm-4 col-md-6 e-card-link" onclick="getId(${kidsProducts[i].id})" data-id=${kidsProducts[i].id}>
                             <img 
                             data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
-                            src="${baseURL}/storage/product_image/${kidsProducts[i].productimages !== '' ? kidsProducts[i].productimages[0].imagedirectory : defaultImg}"
+                            src="${baseURL}/storage/product_image/${ kidsProducts[i].productimages[0].imagedirectory }"
                              class="img-fluid image_style " alt="shop men">
      
                      

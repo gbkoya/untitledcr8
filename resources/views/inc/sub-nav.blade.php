@@ -1,5 +1,5 @@
 {{-- Sub nav --}}
-<nav class="d-flex sub-nav-style flex-row align-items-center flex-wrap container-fluid justify-content-evenly">
+<nav class="d-flex sub-nav-style flex-row align-items-center flex-wrap container-fluid justify-content-evenly sub-nav-mobile">
     {{-- <div class="d-flex flex-row"> --}}
     <div class="row d-sm-flex search-wrapper-sub">
         <input type="search"

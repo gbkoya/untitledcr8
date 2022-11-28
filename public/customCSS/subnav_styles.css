@@ -7,6 +7,7 @@
     background: #A6A7A8;
 }
 
+
 .search-wrapper-sub{
     width: 35%;
     /* height: 62px; */
@@ -130,6 +131,12 @@
 
  
 
+}
+
+@media(max-width: 660px){
+    .sub-nav-mobile{
+        display: none!important;
+    }
 }
 
 @media(max-width: 414px){
