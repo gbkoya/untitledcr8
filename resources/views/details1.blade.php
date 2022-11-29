@@ -61,7 +61,27 @@
                 {{-- <img class="img-fluid image-size-middle-ika" src="{{ asset('customImages/Frame 93.png') }}" alt=""> --}}
    
                 <div class="products">
-
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner details-Image">
+                            {{-- <div class="carousel-item active det_imageWrapper">
+                            <img src="{{ asset('customImages/Frame 106.png') }}" class="img-fluid" alt="shop men">
+                            </div>
+                            <div class="carousel-item det_imageWrapper">
+                            <img src="{{ asset('customImages/Frame 106.png') }}" class="img-fluid" alt="Shop image">
+                            </div>
+                            <div class="carousel-item det_imageWrapper">
+                            <img src="{{ asset('customImages/Frame 106.png') }}" class="img-fluid"  alt="Shop image">
+                            </div> --}}
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                </div>
                 <button class="mt-3" style="font-weight: 500;font-size: 16px;line-height: 19px;color: #FFFFFF;
                 width: 119px;height: 45px;background: #F58634;border-radius: 5px;
@@ -211,28 +231,28 @@ const hideLoading = () => {
                 </div>
               `;
               productDetail
-              imageSlide.innerHTML = `
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner details-Image">
-                        <div class="carousel-item active det_imageWrapper">
-                        <img src="${URL}/storage/product_image/${imageFile1}" class="img-fluid" alt="shop men">
-                        </div>
-                        <div class="carousel-item det_imageWrapper">
-                        <img src="${URL}/storage/product_image/${imageFile2}" class="img-fluid" alt="Shop image">
-                        </div>
-                        <div class="carousel-item det_imageWrapper">
-                        <img src="${URL}/storage/product_image/${imageFile3}" class="img-fluid"  alt="Shop image">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                    </div>`;
+            //   imageSlide.innerHTML = `
+            //     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            //         <div class="carousel-inner details-Image">
+            //             <div class="carousel-item active det_imageWrapper">
+            //             <img src="${URL}/storage/product_image/${imageFile1}" class="img-fluid" alt="shop men">
+            //             </div>
+            //             <div class="carousel-item det_imageWrapper">
+            //             <img src="${URL}/storage/product_image/${imageFile2}" class="img-fluid" alt="Shop image">
+            //             </div>
+            //             <div class="carousel-item det_imageWrapper">
+            //             <img src="${URL}/storage/product_image/${imageFile3}" class="img-fluid"  alt="Shop image">
+            //             </div>
+            //         </div>
+            //         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            //             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            //             <span class="visually-hidden">Previous</span>
+            //         </button>
+            //         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            //             <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            //             <span class="visually-hidden">Next</span>
+            //         </button>
+            //     </div>`;
 
             //   Display the product price
             // console.log(priceItem, priceDetail[0]);
