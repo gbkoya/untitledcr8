@@ -215,7 +215,25 @@ const hideLoading = () => {
 
                 product_images.forEach(function (elemImg, indexImg, arraImg) {
                     let product_image = arraImg[indexImg].imagedirectory
-                    // console.log(product_image)
+
+                    imageSlide.innerHTML = `
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner details-Image">
+                            <div class="carousel-item active det_imageWrapper">
+                            <img src="${URL}/storage/product_image/${product_image}" class="img-fluid" alt="shop men">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>`;
+
+                    // console.log(priceItem, priceDetail[0]);
                 })
             })
 
@@ -244,7 +262,7 @@ const hideLoading = () => {
                 ${productName[0]}
                 </div>
               `;
-              productDetail
+            //   productDetail
             //   imageSlide.innerHTML = `
             //     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             //         <div class="carousel-inner details-Image">
