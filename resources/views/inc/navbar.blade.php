@@ -219,6 +219,12 @@ onload="displayName();">
 <!-- THE SCRIPT TO CONTROL THE STATE OF THE NAVBAR -->
 
 <script type="text/javascript">
+   let totalCartItemMobile = document.querySelector('.total-no-items-in-cart');
+    let totalCartQuantMobile = sessionStorage.getItem('totalCartItem') || 0;
+    let dataMobile = localStorage.getItem('totalCartItemMobile');
+    // alert(totalCartItemMobile);
+    // console.log(dataMobile);
+    // totalCartItemMobile.innerText = dataMobile;
     const baseURL= '{{ env('APP_URL') }}'
     let tokenDetect = localStorage.getItem('token');
     console.log(tokenDetect);
@@ -399,10 +405,7 @@ const handleLogoutMobile = () =>{
 
     document.getElementById('triggerLogoutMobile').addEventListener('click', handleLogoutMobile);
     
-    let totalCartItemMobile = document.querySelector('.total-no-items-in-cart');
-    let totalCartQuantMobile = sessionStorage.getItem('totalCartItem') || 0;
-    // alert('working')
-    totalCartItemMobile.innerHTML = totalCartQuantMobile;
+ 
     // alert(totalCartItem);
 
 </script>
