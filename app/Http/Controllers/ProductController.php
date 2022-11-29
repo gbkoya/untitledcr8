@@ -368,17 +368,13 @@ class ProductController extends Controller
 
             $file = $request->file('imagedirectory');
             foreach ($file as $key => $value) {
-                // \Log::info('Client name: <br>' . $value->getClientOriginalName());
 
                 if ($request->hasFile('imagedirectory')) {
                     $fileNameWithExt    = $value->getClientOriginalName();
-                    // $fileNameWithExt    = $request->file('imagedirectory')->getClientOriginalName();
                     $filename           = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
                     $extension          = $value->getClientOriginalExtension();
-                    // $extension          = $request->file('imagedirectory')->getClientOriginalExtension();
                     $imagedirectory     = 'foremost_' . $filename . '_' . time() . '.' . $extension;
                     $img                = \Image::make($value)->encode('jpg', 30);
-                    // $img                = \Image::make($request->file('imagedirectory'))->encode('jpg', 30);
                     Storage::put('public/product_image/' . $imagedirectory, $img->__toString());
                 } else {
                     $imagedirectory = "noimage.jpg";
@@ -386,13 +382,10 @@ class ProductController extends Controller
 
                 if ($request->hasFile('imagedirectory')) {
                     $fileNameWithExt    = $value->getClientOriginalName();
-                    // $fileNameWithExt    = $request->file('imagedirectory')->getClientOriginalName();
                     $filename           = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
                     $extension          = $value->getClientOriginalExtension();
-                    // $extension          = $request->file('imagedirectory')->getClientOriginalExtension();
                     $thumbnaildirectory = 'foremost_' . $filename . '_' . time() . '.' . $extension;
                     $img                = \Image::make($value)->encode('jpg', 30);
-                    // $img                = \Image::make($request->file('imagedirectory'))->encode('jpg', 30);
                     Storage::put('public/thumbnail_image/' . $thumbnaildirectory, $img->__toString());
                 } else {
                     $thumbnaildirectory = "noimage.jpg";

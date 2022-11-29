@@ -13,7 +13,7 @@
     <div class="loader-container">
         <div class="spinner"></div>
       </div>
-  
+
             {{-- Sub nav --}}
 <nav class="d-flex flex-row align-items-center flex-wrap container-fluid justify-content-evenly det-subNavMobile">
     {{-- <div class="d-flex flex-row"> --}}
@@ -21,10 +21,10 @@
         <input type="search"
         placeholder="Search for eyewear, lenses and frames"
         />
-        <img 
+        <img
         class="img-fluid search-shop-image"
         src="{{ asset('customImages/arrow-right.png') }}"/>
-            </div>   
+            </div>
             <div class="d-sm-flex flex-sm-row align-items-center flex-wrap button-wrapper but-wrapper-mobile">
                 <a href="/login"><button class="login" type="button">Log In</button></a>
                 <a href="/signup"><button class="signup" type="button">Sign Up</button></a>
@@ -59,7 +59,7 @@
 
                 </div>
                 {{-- <img class="img-fluid image-size-middle-ika" src="{{ asset('customImages/Frame 93.png') }}" alt=""> --}}
-   
+
                 <div class="products">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner details-Image">
@@ -144,14 +144,14 @@ quantVal.innerText = data;
 //     data = data + 1;
 //     quantVal.innerText = data;
 //     // alert(data + 1)
-// } 
+// }
 // const decrement = () =>{
 //     if(data > 0){
 //         data = data - 1;
 //         quantVal.innerText = data
 //         console.log(data);
 //     }else{
-        
+
 //     }
 // }
 
@@ -166,7 +166,7 @@ const displayLoading = () => {
 const hideLoading = () => {
           loaderContainer.style.display = 'none';
       };
-   
+
 
 // console.log(productId);
 
@@ -174,7 +174,7 @@ const hideLoading = () => {
  const getProduct = async (id) => {
     // alert(productId);
     //   displayLoading();
-    
+
           function handleErrors(response) {
               if (!response.ok) {
                   throw Error(response.statusText);
@@ -193,7 +193,7 @@ const hideLoading = () => {
               const data = await response.json();
             //   console.log(data);
               let productDetail = data.product
-              console.log(productDetail);
+            //   console.log(productDetail);
               let productName = productDetail.map(product => product.name);
             //   console.log(productName[0]);
               let productPrice = productDetail.map(product => product.productprices);
@@ -203,11 +203,24 @@ const hideLoading = () => {
               let priceDetail = productPrice[0].map(productP => productP.product_price);
             //   console.log(priceDetail[0]);
 
-            let imageFile1 = productDetail.map(elem=>{
-                return elem.productimages[0].imagedirectory;
-            });
-            // console.log(imageFile1[0]);
+            /*
+             * Commented out by Joy for test
+                let imageFile1 = productDetail.map(elem=>{
+                    return elem.productimages[0].imagedirectory;
+                });
+            */
 
+            productDetail.forEach(function (elem, index, arra) {
+                let product_images = arra[0].productimages
+
+                product_images.forEach(function (elemImg, indexImg, arraImg) {
+                    let product_image = arraImg[indexImg].imagedirectory
+                    console.log(product_image)
+                })
+            })
+
+            /*
+             * Commented out by Joy for test
             let imageFile2 = productDetail.map(elem=>{
                 return elem.productimages[1].imagedirectory;
             });
@@ -216,6 +229,7 @@ const hideLoading = () => {
             let imageFile3 = productDetail.map(elem=>{
                 return elem.productimages[2].imagedirectory;
             });
+            */
             // console.log(imageFile3[3]);
                // Format price
                const formatter = new Intl.NumberFormat('en-NG', {
@@ -266,7 +280,7 @@ const hideLoading = () => {
             actualProductP.innerHTML = `
             <div style="margin-top:-15px;font-weight: 300;font-size: 15px;line-height: 180%;letter-spacing: -0.01em;color: rgba(0, 0, 0, 0.3);">
                 ${formatter.format(priceDetail[0]).replace(/(\.|,)00$/g, '')}
-                </div>            
+                </div>
             `;
                 let featureArr = productDetail.map((ele, i)=> {
                     return ele.productfeatures[i].features
@@ -285,15 +299,15 @@ const hideLoading = () => {
           console.log(error);
           // console.log(errorMessage);
                 //   hideLoading();
-                
-        }  
-      
+
+        }
+
       }
       getProduct();
       const dataPromise = getProduct();
-  
 
-     
+
+
     // API integration to add to cart
         const addToCart = async (id) =>{
             displayLoading()
@@ -323,10 +337,10 @@ const hideLoading = () => {
                         return element.id !== product_id
                     });
                     console.log(identifiedItem);
-                 
-                    
+
+
                   let newQuantity = changeNumberOfUnits(++quantN.quantity, product_id);
-                  console.log(newQuantity); 
+                  console.log(newQuantity);
                   let newCartItems = [...identifiedItem, newQuantity]
                   console.log(newCartItems);
                   sessionStorage.setItem('cartItem', JSON.stringify(newCartItems));
@@ -357,9 +371,9 @@ const hideLoading = () => {
                             title: 'Product added to cart',
                             showConfirmButton: false,
                             timer: 2000,
-    
+
                         })
-            
+
             }
 
             // CHANGE QUANTITY
@@ -374,7 +388,7 @@ const hideLoading = () => {
         // GET CART ITEMS
         // API INTEGRATION TO GET A SINCLE SHOP PRODUCT
  const getCartProduct = async () => {
-    
+
           function handleErrors(response) {
               if (!response.ok) {
                   throw Error(response.statusText);
@@ -404,18 +418,18 @@ const hideLoading = () => {
 
             //     sessionStorage.setItem('cartItem', JSON.stringify(cartItems))
             // }
-            
-             
+
+
               return data;
         } catch(error){
           console.log(error);
-                
-        }  
-      
+
+        }
+
       }
 
             getCartProduct();
-          
+
 </script>
 
 
