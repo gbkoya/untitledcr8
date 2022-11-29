@@ -215,7 +215,7 @@ const hideLoading = () => {
 
                 product_images.forEach(function (elemImg, indexImg, arraImg) {
                     let product_image = arraImg[indexImg].imagedirectory
-                    console.log(product_image)
+                    // console.log(product_image)
                 })
             })
 
