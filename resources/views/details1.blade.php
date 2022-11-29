@@ -13,6 +13,11 @@
     <div class="loader-container">
         <div class="spinner"></div>
       </div>
+      
+
+      <span class="total-no-items-in-cart position-absolute top-0 start-100 translate-middle badge rounded-pill cart-quant">
+                        
+    </span>
 
             {{-- Sub nav --}}
 <nav class="d-flex flex-row align-items-center flex-wrap container-fluid justify-content-evenly det-subNavMobile">
@@ -118,6 +123,8 @@
 
 <script type="text/javascript">
 let cartItems =  JSON.parse(sessionStorage.getItem('cartItem') || '[]');
+let previousCounter = sessionStorage.getItem('totalCartItem');
+totalCartItemMobile.innerText = previousCounter || 0
 // alert(cartItems);
 let imageSlide = document.querySelector('.image_slidedeta');
 const productId = localStorage.getItem('productId');
@@ -140,6 +147,13 @@ let allProducts = sessionStorage.getItem('cartItem');
 
 let data = sessionStorage.getItem('totalCartItem') || 0;
 quantVal.innerText = data;
+
+console.log('before cart mobile');
+
+console.log(totalCartItemMobile);
+
+
+
 // const increment = () =>{
 //     data = data + 1;
 //     quantVal.innerText = data;
@@ -382,7 +396,10 @@ const hideLoading = () => {
                 console.log(cartQuantity);
                 totalCartItem.innerHTML = cartQuantity;
                 quantVal.innerHTML = cartQuantity;
+                let dataMob = cartQuantity 
+                totalCartItemMobile.innerText = dataMob;
                 sessionStorage.setItem('totalCartItem', cartQuantity);
+                localStorage.setItem('totalCartItemMobile', cartQuantity);
                 // window.location.href = "/cart"
                         Swal.fire({
                             icon: 'success',
