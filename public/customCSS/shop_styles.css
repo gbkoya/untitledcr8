@@ -1267,7 +1267,9 @@ ul#pills-tab.nav.nav-pills.nav-pill-head-wrapper.mb-3.d-md-flex.justify-content-
     }
 
     .subtotal-card{
-        padding: .2rem .875rem;
+        padding: .2rem .9rem!important;
+        margin-right: .5rem;
+        margin-left: .5rem;
         margin-top: -2rem;
     }
 

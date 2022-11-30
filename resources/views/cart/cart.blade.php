@@ -88,6 +88,8 @@ let cartDisplay = document.querySelector('.cart-display');
  let totalCartItem = document.querySelector('.total-items-in-cart');
   // totalCartItem.innerHTML = 0;
   const quantVal = document.querySelector('.quantity');
+  let previousCounter = sessionStorage.getItem('totalCartItem');
+  totalCartItemMobile.innerText = previousCounter || 0
 // console.log(quantVal);
 const URL= '{{ env('APP_URL') }}';
 // const productID = localStorage.getItem('productId');

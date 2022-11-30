@@ -120,6 +120,8 @@
     {{-- END OF STORE CARD SECTION --}}
 
     <script type="text/javascript">
+    let previousCounter = sessionStorage.getItem('totalCartItem');
+    totalCartItemMobile.innerText = previousCounter || 0
         var input = document.querySelector("#phone_number");
         window.intlTelInput(input, {
             separateDialCode: true,
