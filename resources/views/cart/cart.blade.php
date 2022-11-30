@@ -55,21 +55,21 @@ landscape.')
       <table class="table">
         <thead>
           <tr>
-            <th scope="col" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Item(s)</th>
-            <th scope="col"style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Quantity</th>
-            <th scope="col"style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Price </th>
-            <th scope="col"style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;"></th>
+            <th scope="col font-sm-gb" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Item(s)</th>
+            <th scope="col font-sm-gb"style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Quantity</th>
+            <th scope="col font-sm-gb"style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Price </th>
+            <th scope="col font-sm-gb"style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;"></th>
           </tr>
         </thead>
         <tbody>
           
           <tr style="margin-top: 70px;">
             <td>
-              <div class="d-flex">
+              <div class="d-flex flex-wrap">
                 <div>
                   <img class="img-fluid" src="{{ asset('customImages/Frame 106.png') }}" />
                 </div>
-                <div style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color: rgba(107, 128, 155, 0.8);">
+                <div class="font-sm-gb" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color: rgba(107, 128, 155, 0.8);">
                   Anti blu ray radiation,<br> computer glasses
                 </div>
               </div>
@@ -81,17 +81,17 @@ landscape.')
 
               </form>
             </td>
-            <td class="pt-3" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color: rgba(107, 128, 155, 0.8);">₦4,999</td>
-            <td><div><img class="img-fluid pt-2" src="{{ asset('customImages/trash vector.png') }}" alt=""></div></td>
+            <td class="pt-3 font-sm-gb" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color: rgba(107, 128, 155, 0.8);">₦4,999</td>
+            <td><div><img class="pt-2" src="{{ asset('customImages/trash vector.png') }}" alt=""></div></td>
             
           </tr>
           </div>
         </tbody>
       </table>
       <div class="d-flex my-3" style="margin-left: auto; margin-right:10%">
-      <div class="pt-2" style="font-weight: 500;
+      <div class="pt-2 font-sm-gb" style="font-weight: 500;
       font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">Total Price:</div>
-      <div class="pt-2 px-2 small-screen-font" style="font-weight: 500;
+      <div class="pt-2 px-2 font-sm-gb" style="font-weight: 500;
       font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">₦4,999</div>
       </div>
     </div>
