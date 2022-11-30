@@ -60,6 +60,13 @@ line-height: 36px;
     font-size: 30px;
 }
 
+@media(max-width: 414px){
+    .e-try-nav{
+        display: none!important;
+    }
+    
+}
+
 @media (max-width: 990px) {
 .i-try-img{
     align-items: center;
@@ -76,6 +83,7 @@ line-height: 36px;
 .i-try-see{
     font-size: medium !important;
 }
+
 
 }
     

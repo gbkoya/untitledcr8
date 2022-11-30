@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Events\UserRegistered;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -63,8 +64,6 @@ class AuthController extends Controller
         *      @OA\Response(response=404, description="Resource Not Found"),
         * )
     */
-
-
     public function createUser(Request $request)
     {
         try {
@@ -84,7 +83,7 @@ class AuthController extends Controller
                     'status' => false,
                     'message' => 'validation error',
                     'errors' => $validateUser->errors()
-                ], 401);
+                ], 400);
             }
 
             $user = User::create([
@@ -93,6 +92,8 @@ class AuthController extends Controller
                 'email' => $request->email,
                 'password' => Hash::make($request->password)
             ]);
+
+            event(new UserRegistered($user));
 
             return response()->json([
                 'status' => true,
@@ -111,7 +112,7 @@ class AuthController extends Controller
      * Login The User
      * @param Request $request
      * @return User
-     */
+    */
 
     /**
         * @OA\Post(
@@ -167,7 +168,7 @@ class AuthController extends Controller
                     'status' => false,
                     'message' => 'validation error',
                     'errors' => $validateUser->errors()
-                ], 401);
+                ], 400);
             }
 
             if (!Auth::attempt($request->only(['email', 'password']))) {

@@ -1,3 +1,6 @@
+@section('description', 'Foremost Eye Clinic is a leading provider of optometry services on a mission to cover the whole continent with technology-based eye care services.')
+@section('title', 'Foremost - Africa\'s Most Innovative Eye Clinic')
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -38,7 +41,8 @@
 
   <!-- Styles -->
   <link href="/css/app.css" rel="stylesheet">
-  <link rel="stylesheet" href="/customCSS/foremost_style.css">
+  <link rel="stylesheet" href="./customCSS/foremost_style.css">
+  {{-- <link rel="stylesheet" href="/customCSS/foremost_style.css"> --}}
   <link rel="stylesheet" href="/customCSS/foremoststyles_jo.css">
   <link rel="stylesheet" href="/customCSS/navbar_styles.css">
   <link rel="stylesheet" href="/customCSS/about_styles.css">
@@ -51,6 +55,9 @@
   <link rel="stylesheet" href="/customCSS/tryit_styles.css">
   <link rel="stylesheet" href="{{ asset('customCSS/teleinput.css') }}">
   <link rel="stylesheet" href="/customCSS/blogpost_styles.css">
+
+  <link rel="stylesheet" href="/customCSS/blogpost_styles.css">
+  <link rel="stylesheet" href="/customCSS/subnav_styles.css">
 
   <!-- Material icon -->
   <link href="/css/material-icons.min.css" rel="stylesheet">
@@ -66,6 +73,13 @@
   <script src="/customJS/contact.js"></script>
   <script src="/customJS/telephoneinput.js"></script>
   <script src="/customJS/signupscript.js"></script>
+  <script src="/customJS/signupscript.js"></script>
+  <script src="/customJS/API.js"></script>
+
+
+
+  {{-- Axios --}}
+  <script src="./node_modules/axios/dist/axios.min.js"></script>
 
 </head>
 
@@ -83,7 +97,7 @@
 
   @yield('scripts')
 
-  <script src="//code.tidio.co/0upkplnmbr89fgyuhfhnzra7ntt9xfya.js" async></script>
+  {{-- <script src="//code.tidio.co/0upkplnmbr89fgyuhfhnzra7ntt9xfya.js" async></script> --}}
 
   <!-- Aos animate library -->
   <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">

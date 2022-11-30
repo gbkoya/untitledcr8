@@ -50,24 +50,24 @@ landscape.')
     <img class="" src="{{ asset('customImages/Group 191.png') }}" />
   </div>
 
-  <div class="container card my-5 col-md-10">
+  <div class="container checkout_card card my-5 col-md-10">
 
-    <div class="row justify-content-center my-5 ">
-      <button style="background: #FAFAFA;border: 1px solid #F58634;" class="col-lg-6 py-3 mx-4"> Pickup </button>
-      <button style="background: #F58634; color:#FAFAFA; border:none" class="col-lg-6 mt-4 py-3 mx-4"> Delivery</button>
+    <div class="row justify-content-center my-5 checkout_buttonWrap">
+     <a href="#" class="text-center"> <button type="button" style=""> Pickup </button></a>
+     <a class="text-center" href="/checkout2"><button type="button" class=""> Delivery</button></a>
     </div>
 
   </div>
   <div class="container col-lg-10 d-flex justify-content-between">
     <div class=" py-3 pb-5">
       <button class="small-mobile-long-button small-screen-font" style="background: rgba(0, 0, 0, 0.2);border-radius: 4.67259px;font-weight: 700;font-size: 18.6904px;
-                line-height: 140%;color: #6B809B; padding: 0.8em 3em; border:none">Back
+                line-height: 140%;color: #6B809B; padding: 0.2em 3em; border:none">Back
 
       </button>
     </div>
     <div class=" py-3  pb-5">
       <button class="small-mobile-long-button small-screen-font" style="background: #F58634;border-radius: 4.67259px;font-weight: 700;font-size: 18.6904px;
-                line-height: 140%;color: #ffffff; padding: 0.8em 3em; float:right; border:none">Pay with Card
+                line-height: 140%;color: #ffffff; padding: 0.2em 3em; float:right; border:none">Next
 
       </button>
     </div>

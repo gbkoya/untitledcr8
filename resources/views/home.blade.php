@@ -1,19 +1,17 @@
 @extends('layouts.app')
 
-@section('description', 'Foremost Eye Clinic is a leading provider of optometry services.')
-@section('title', 'Foremost - Africa\'s Most Innovative Eye Clinic')
 @section('article:section', 'Home')
 @section('url', 'https://foremost-website.herokuapp.com')
 @section('image'){{ asset('customImages/Logo.png') }}@stop
 
 @section('content')
-
+<!-- Sub nav -->
+@include('inc.sub-nav')
 <body>
     <main>
-
         <div style=" background-image: url(../customImages/Group68.png); background: #DEE3E9" class="mt-5">
-
-            <section class="container d-flex flex-flow flex-wrap justify-content-center align-items-center e-margin-top block-display-tab section-top">
+            <section
+                class="container d-flex flex-flow flex-wrap justify-content-center align-items-center e-margin-top block-display-tab section-top">
                 <div class="archware-content-text archwarejo-width-bottom-head pt-2">
                     <h2 class="big-title text-title-mobile">
                         We offer Premium <span class="orange-color">eye care</span> solutions
@@ -69,40 +67,42 @@
         </div>
 
         {{-- ABOUT US SECTION --}}
-        <section class="container-fluid d-flex flex-row flex-wrap justify-content-between align-items-center e-aboutus-home">
-            <div class="e-aboutus-img">
-                <img class="img-fluid" src="/customImages/doctor smiley thumb.png" />
-            </div>
-            <div class="e-abouts-home-right">
-                <h2 class="text-top-about-us">About Us</h2>
-                <p class="text-white-paragraph">
-                    Foremost International Eye Clinic is one of the most prestigious eye care centers in Africa.
-                    We offer innovative eye care solutions, and quality services to our clients through cutting-edge
-                    technologies and excellent service delivery. thereby enhancing their long-term vision and
-                    productivity.
-                </p>
-                <p class="text-white-paragraph">
-                    We offer a complete range of treatments including vision correction surgeries,
-                    comprehensive eye examinations,
-                    health awareness programs, contact lens services, and many more.
-                </p>
-                <p class="text-white-paragraph">
-                    Our optometrists and ophthalmic assistants are experts in their fields, possessing many years of experience
-                    in the field of eye care, thus enabling us to provide patients with the highest quality of care in a
-                    cost-effective manner.
-                </p>
-                <p class="text-white-paragraph">
-                    At Foremost eye clinic, our goal is to provide comprehensive vision care services while ensuring that the
-                    best possible vision can be achieved by our patients.
-                </p>
+       <section class="container-fluid d-flex flex-row flex-wrap justify-content-between align-items-center e-aboutus-home">
+        <div class="e-aboutus-img">
+            <img class="img-fluid"
+            src="/customImages/doctor smiley thumb.png"/>
+        </div>
+        <div
+    class="e-abouts-home-right">
+    <h2 class="text-top-about-us">About Us</h2>
+    <p class="text-white-paragraph">
+        Foremost International Eye Clinic is one of the most prestigious eye care centers in Africa.
+         We offer innovative eye care solutions, and quality services to our clients through cutting-edge
+         technologies and excellent service delivery. thereby enhancing their long-term vision and
+        productivity.
+    </p>
+    <p class="text-white-paragraph">
+        We offer a complete range of treatments including vision correction surgeries,
+         comprehensive eye examinations,
+        health awareness programs, contact lens services, and many more.
+    </p>
+    <p class="text-white-paragraph">
+        Our optometrists and ophthalmic assistants are experts in their fields, possessing many years of experience
+        in the field of eye care, thus enabling us to provide patients with the highest quality of care in a
+        cost-effective manner.
+    </p>
+    <p class="text-white-paragraph">
+        At Foremost eye clinic, our goal is to provide comprehensive vision care services while ensuring that the
+        best possible vision can be achieved by our patients.
+    </p>
 
-                <a href="/about" class="py-3">
-                    <button class="small-mobile-long-button archware-button-default">
-                        Read More
-                    </button>
-                </a>
-            </div>
-        </section>
+    <a href="/about" class="py-3">
+        <button class="small-mobile-long-button archware-button-default">
+            Read More
+        </button>
+    </a>
+</div> 
+       </section>
         {{-- END OF ABOUT US --}}
 
         <section class="about-us-margin">
@@ -216,7 +216,7 @@
                     <div class="e-shedule-button d-flex flex-row justify-content-start">
                         <a href="" class="foremost-blog-read-more">
                             Read more
-                        </a>
+                    </a>
                     </div>
 
                 </div>
@@ -233,7 +233,7 @@
                     <div class="e-shedule-button d-flex flex-row justify-content-start">
                         <a href="" class="foremost-blog-read-more">
                             Read more
-                        </a>
+                    </a>
                     </div>
                 </div>
 
@@ -251,7 +251,7 @@
                     <div class="e-shedule-button d-flex flex-row justify-content-start">
                         <a href="" class="foremost-blog-read-more">
                             Read more
-                        </a>
+                    </a>
                     </div>
                 </div>
 
@@ -272,77 +272,77 @@
         </div>
 
 
-        {{-- GALLERY SECTION --}}
-        <section class="gallery-section">
-            <h1 class="text-center">Our Gallery</h1>
-            <!-- THE CAROUSEL -->
-            <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators gallery-indicator">
-                    <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
+    {{-- GALLERY SECTION --}}
+     <section class="gallery-section">
+        <h1 class="text-center">Our Gallery</h1>
+        <!-- THE CAROUSEL -->
+        <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators gallery-indicator">
+              <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
 
-                <!-- The slideshow/carousel -->
-                <div class="carousel-inner">
-                    <!-- First slide -->
-                    <div class="carousel-item active">
-                        {{-- First galery view --}}
-                        <section class="container-fluid d-sm-flex flex-sm-row flex-wrap justify-content-center" style="margin-top: 2rem">
-                            <div class="e-gallery-left e-hover-change">
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+              <!-- First slide -->
+              <div class="carousel-item active">
+                  {{-- First galery view --}}
+                  <section class="container-fluid d-sm-flex flex-sm-row flex-wrap justify-content-center" style="margin-top: 2rem">
+                      <div class="e-gallery-left e-hover-change">
 
-                            </div>
-                            <div class="e-gallery-middle e-hover-change">
+                      </div>
+                      <div class="e-gallery-middle e-hover-change">
 
-                            </div>
-                            <div class="e-gallery-right e-hover-change">
+                      </div>
+                      <div class="e-gallery-right e-hover-change">
 
-                            </div>
-                        </section>
-                    </div>
+                      </div>
+                   </section>
+              </div>
 
-                    <!-- Second slide -->
-                    <div class="carousel-item">
-                        <section class="container-fluid d-sm-flex flex-sm-row flex-wrap justify-content-center" style="margin-top: 2rem">
-                            <div class="e-gallery-left e-hover-change">
+              <!-- Second slide -->
+              <div class="carousel-item">
+                  <section class="container-fluid d-sm-flex flex-sm-row flex-wrap justify-content-center" style="margin-top: 2rem">
+                      <div class="e-gallery-left e-hover-change">
 
-                            </div>
-                            <div class="e-gallery-middle e-hover-change">
+                      </div>
+                      <div class="e-gallery-middle e-hover-change">
 
-                            </div>
-                            <div class="e-gallery-right e-hover-change">
+                      </div>
+                      <div class="e-gallery-right e-hover-change">
 
-                            </div>
-                        </section>
-                    </div>
-                    <!-- Third slide -->
-                    <div class="carousel-item">
-                        <section class="container-fluid d-sm-flex flex-sm-row flex-wrap justify-content-center" style="margin-top: 2rem">
-                            <div class="e-gallery-left e-hover-change">
+                      </div>
+                   </section>
+              </div>
+              <!-- Third slide -->
+              <div class="carousel-item">
+                  <section class="container-fluid d-sm-flex flex-sm-row flex-wrap justify-content-center" style="margin-top: 2rem">
+                      <div class="e-gallery-left e-hover-change">
 
-                            </div>
-                            <div class="e-gallery-middle e-hover-change">
+                      </div>
+                      <div class="e-gallery-middle e-hover-change">
 
-                            </div>
-                            <div class="e-gallery-right e-hover-change">
+                      </div>
+                      <div class="e-gallery-right e-hover-change">
 
-                            </div>
-                        </section>
-                    </div>
+                      </div>
+                   </section>
+              </div>
 
-                    <!-- Left and right controls/icons -->
-                    {{-- <button class="carousel-control-prev" type="button" data-bs-target="#demoTwo" data-bs-slide="prev">
+              <!-- Left and right controls/icons -->
+              {{-- <button class="carousel-control-prev" type="button" data-bs-target="#demoTwo" data-bs-slide="prev">
                   <!-- <span class="carousel-control-prev-icon" style="color: blue;"></span> -->
                   <img class="img-fluid" src="{{ asset('customImages/Vector.svg') }}">
-                    </button> --}}
-                    <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
-                        <img class="img-fluid" src="{{ asset('customImages/arrow-carousel-right.png') }}">
-                        <!-- <span class="carousel-control-next-icon"></span> -->
-                    </button>
-                </div>
+              </button> --}}
+              <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+                  <img class="img-fluid" src="{{ asset('customImages/arrow-carousel-right.png') }}">
+                  <!-- <span class="carousel-control-next-icon"></span> -->
+              </button>
+          </div>
 
-        </section>
-        {{-- END OF GALLERY SECTION --}}
+     </section>
+    {{-- END OF GALLERY SECTION --}}
 
         {{-- TESTIMONIALS SECTION --}}
         <section class="testimonial glass-margin container-fluid">
@@ -396,23 +396,21 @@
                                 </div>
 
                             </div>
-                            {{-- Third --}}
-                            {{-- Second --}}
-                            <div class="first-testimonial testimonial-mobile">
-                                <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
-                                <div class="testimonial-content">
-                                    <p class="body-copy">
-                                        They have a conducive environment and friendly
-                                        staff. I love their customer service and I highly
-                                        recommend them.
-                                    </p>
-                                    <div class="d-flex flex-row justify-content-end">
-                                        <p class="author">
-                                            . Obadiah Anthony
-                                        </p>
-                                    </div>
-                                </div>
-
+                        {{-- Third --}}
+                          {{-- Second --}}
+                          <div class="first-testimonial testimonial-mobile">
+                            <img src="/customImages/testimonial-contentwrap.png" alt="testimonial wrap">
+                            <div class="testimonial-content">
+                                <p class="body-copy">
+                                    They have a conducive environment and friendly
+                                    staff. I love their customer service and I highly
+                                    recommend them.
+                                </p>
+                                <div class="d-flex flex-row justify-content-end">
+                                <p class="author">
+                                    . Obadiah Anthony
+                                </p>
+                            </div>
                             </div>
 
                         </div>

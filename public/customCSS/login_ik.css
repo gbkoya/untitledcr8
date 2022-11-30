@@ -435,15 +435,9 @@ max-height: 700px !important;
       width: 100% !important;
     }
 
-    .font-sm-gb{
-      font-size: 1rem !important;
-    }
-    .btn-sm-gb{
-      padding: 0.5rem 1.5rem !important;
-    }
-
-    .font-bg-gb{
-      font-size: 2.5rem !important;
+    .cart-total-price{
+      margin-right: unset!important;
+      
     }
   }
   
@@ -471,3 +465,51 @@ max-height: 700px !important;
   .e-toggle-hide{
     display: none;
   }
+
+  /* LOADER STYLE */
+  .loader-container {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.81)
+    url("https://media.giphy.com/media/8agqybiK5LW8qrG3vJ/giphy.gif") center
+        no-repeat;
+    z-index: 1;
+    display: none;
+}
+
+.checkout_buttonWrap a:nth-child(1) button[type="button"]{
+  background: #FAFAFA;
+  border: 1px solid #F58634;
+  padding: 1rem 10rem;
+}
+
+.checkout_buttonWrap a:nth-child(2) button[type="button"]{
+  padding: 1rem 10rem;
+  background:  #F58634; 
+  border: 1px solid #F58634;
+  color:#FAFAFA;
+  margin-top: 1rem;
+}
+
+.checkout_card{
+  cursor: unset;
+}
+
+.checkout2_form{
+  position: relative;
+}
+
+.checkout2_but{
+  position: absolute;
+  right: .3%;
+  top: 29rem;
+}
+
+.back_but{
+  padding-left: 7rem;
+}
+
+#checkoutForm{
+  padding-left: 14%;
+}

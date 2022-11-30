@@ -1,9 +1,7 @@
 @extends('layouts.app')
-@section('description',
-    'Archware - Africa\'s Leading Software Development Company
-    Software development company helping businesses and individuals take advantage of the benefits of the global technology
-    landscape.')
-@section('title', 'Archware - Excellent Tech-based Solutions For Your Business')
+@section('description', 'Foremost Eye Clinic is a leading provider of optometry services.')
+@section('title', 'Foremost - Africa\'s Most Innovative Eye Clinic')
+
 @section('article:section', 'Home')
 @section('url', 'www.archwareltd.com')
 @section('image'){{ asset('customImages/Logo.svg') }}@stop
@@ -17,7 +15,7 @@
         <div class="hero-section-copy container-xxl col-lg-7" style="">
             <h1>Your Experience is<br> Our Top Priority</h1>
             <p>We are focused on providing world class eye care services through the deployment
-                of cutting edge technologies and empathetic but highly professional workforce 
+                of cutting edge technologies and empathetic but highly professional workforce
                 that put your mind to rest.
             </p>
         </div>
@@ -35,8 +33,8 @@
             </div>
             <div class="miss-statement">
                 <h2>Mission Statement</h2>
-                <p>We provide innovative eye health services to Africans through 
-                    cutting edge technologies and excellent service delivery, thereby enhancing 
+                <p>We provide innovative eye health services to Africans through
+                    cutting edge technologies and excellent service delivery, thereby enhancing
                     their long-term vision and productivity.</p>
             </div>
             <div class="core-val">
@@ -83,15 +81,15 @@
         <div class=" d-flex flex-ro flex-wrap justify-content-between align-items-center why-wrapper">
             <div class="why-choose-left">
                 <h1>Why Choose Us?</h1>
-                <p>At Foremost International Eye Clinic, we guarantee maximum satisfaction and an invaluable 
-                    experience. We recognize that the vision requires specialized and quality care. Therefore we 
+                <p>At Foremost International Eye Clinic, we guarantee maximum satisfaction and an invaluable
+                    experience. We recognize that the vision requires specialized and quality care. Therefore we
                     offer personalized and tailored care services to meet our patients’unique needs and expectations.</p>
 
-                <p>We carry out Advanced Diagnostic Tests using the latest technology and ultra-modern laboratory 
-                    equipment to ensure our patients get first class treatment with maximum comfort and top-level 
+                <p>We carry out Advanced Diagnostic Tests using the latest technology and ultra-modern laboratory
+                    equipment to ensure our patients get first class treatment with maximum comfort and top-level
                     precision.</p>
 
-                <p>We have a team of highly experienced specialists (ophthalmologists and optometrists) who are top 
+                <p>We have a team of highly experienced specialists (ophthalmologists and optometrists) who are top
                     rated professionals in quality eye care services delivery.></p>
 
                 <p>We enjoin you to schedule an appointment with our doctors today to have a taste of our
@@ -348,7 +346,7 @@
 
      <!-- CONTACT US SECTION -->
      @include('inc.contactForm')
-     
+
         <!-- END OF CONTACT US SECTION -->
 
     </main>
@@ -382,6 +380,6 @@
         }
 
         window.addEventListener('scroll', triggerCounter);
-    
+
     </script>
 @endsection

@@ -349,3 +349,15 @@
         margin-bottom: -350%;
     }
 }
+
+
+/* Ebuka Fix */
+.e-blog-hero{
+    background-image: url("../customImages/carousel-blog.png"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    margin-top: 3rem;
+    padding: 7rem 0 10rem 0;
+}

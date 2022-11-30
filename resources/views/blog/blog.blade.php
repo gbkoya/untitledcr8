@@ -1,10 +1,8 @@
 @extends('layouts.app')
 
-@section('description',
-'Archware - Africa\'s Leading Software Development Company
-Software development company helping businesses and individuals take advantage of the benefits of the global technology
-landscape.')
-@section('title', 'Archware - Excellent Tech-based Solutions For Your Business')
+@section('description', 'Foremost Eye Clinic is a leading provider of optometry services.')
+@section('title', 'Foremost - Africa\'s Most Innovative Eye Clinic')
+
 @section('article:section', 'Home')
 @section('url', 'www.archwareltd.com')
 @section('image'){{ asset('customImages/Logo.svg') }}@stop
@@ -12,18 +10,23 @@ landscape.')
 @section('content')
 
 
-<section class="mt-5 pt-5 img-fluid" style="  background-image: url(../customImages/carousel.png);">
-    <div class="container  pt-5">
-        <div class="container">
-            <h2 style="font-weight: 600;font-size: 68.2222px;line-height: 117.2%;letter-spacing: -0.01em;text-transform: capitalize;
-        color: #FFFFFF;">the effects <br> of screen use<br> on my child</h2>
+<main>
+    {{-- HERO SECTION --}}
+    <section class="container-fluid e-blog-hero">
+    {{-- Sub nav --}}
+     <div class="service-hero-copy shop-top-hero">
+                <h1>
+                    The effects of screen use on my child
+                </h1>
+                <button type="button" class="buy-button-shop">
+                    READ MORE
+                </button>
+            </div>
+    </section>
+    {{-- END OF HERO SECTION --}}
 
-            <button class="my-5" style="background: #F58634;border-radius: 5px; padding:1rem 1.5rem; border:none; color:#FFFFFF">Read More</button>
-        </div>
-</section>
-
-<div class="container">
-    <div class="d-flex flex-row flex-wrap card mt-5" style="background: #FAFAFA;box-shadow: 0px 18.1217px 20.3869px rgba(0, 0, 0, 0.05);border-radius: 11.7948px;">
+<div class="container glass-margin">
+    <div class="d-flex flex-row flex-wrap card" style="background: #FAFAFA;box-shadow: 0px 18.1217px 20.3869px rgba(0, 0, 0, 0.05);border-radius: 11.7948px;">
         <div class="col-lg-4">
             <img class="img-fluid" src="{{ asset('customImages/Frame 75@3x.png') }}" alt="" style="margin: 0px ;">
         </div>
@@ -155,47 +158,28 @@ landscape.')
     </div>
 </div>
 
-
-
-<div class="container d-flex flex-row flex-wrap justify-content-evenly mt-5">
-    <div class="col-md-7 d-flex flex-wrap justify-content-evenly justify-content-center">
-        <button class="paginated-first-button" type="button">
-            1
-        </button>
-        <button class="paginated-first-button" type="button">
-            2
-        </button>
-        <button class="paginated-first-button second" type="button">
-            3
-        </button>
-        <button class="paginated-first-button second" type="button">
-            4
-        </button>
-        <button class="paginated-first-button second" type="button">
-            5
-        </button>
-        <button class="paginated-first-button second" type="button">
-            6
-        </button>
-        <button class="paginated-first-button second" type="button">
-            7
-        </button>
-        <button class="paginated-first-button second" type="button">
-            8
-        </button>
-        <button class="paginated-first-button second" type="button">
-            9
-        </button>
-        ...
-        <button class="paginated-first-button second" type="button">
-            50
-        </button>
-        <button class="paginated-first-button second" type="button">
-            Next
-        </button>
-    </div>
-</div>
-
+ {{-- Paginated button --}}
+            <div class="d-flex flex-row flex-wrap justify-content-evenly pagination-button-wrapper">
+                <button class="paginated-first-button" type="button">
+                    1
+                </button>
+                <button class="paginated-first-button" type="button">
+                    2
+                </button>
+                <button class="paginated-first-button second" type="button">
+                    3
+                </button>
+                <button class="paginated-first-button second" type="button">
+                    4
+                </button>
+                ...
+                <button class="paginated-first-button second" type="button">
+                    10
+                </button>
+                <button class="paginated-first-button second" type="button">
+                    Next
+                </button>
+            </div>
 
 
 

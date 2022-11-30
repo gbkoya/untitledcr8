@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\ProductCrud;
+use App\Http\Controllers\ProtectedRoutes;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +18,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+
+Route::get('admin/product-index', [ProductCrud::class, 'productIndex']) ->name('productIndex');
+Route::post('admin/save-product', [ProductCrud::class, 'storeProduct']) ->name('storeProduct');
+Route::get('admin/edit-product/{product:id}', [ProductCrud::class, 'editProduct']) ->name('editProduct');
+Route::put('admin/update-product/{product:id}', [ProductCrud::class, 'updateProduct']) ->name('updateProduct');
+Route::delete('admin/delete-product/{product:id}', [ProductCrud::class, 'deleteProduct']) ->name('deleteProduct');
 
 Route::get('/about', function () {
     return view('about');
@@ -49,9 +58,7 @@ Route::get('/blog-post', function () {
     return view('blog_post.first_blog_post');
 });
 
-Route::get('/pay-with-card', function () {
-    return view('pay-with-card');
-});
+Route::get('pay-with-card', [ProtectedRoutes::class, 'payWithCard']) ->name('payWithCard');
 
 Route::get('/checkout3', function () {
     return view('checkout3');
@@ -63,7 +70,7 @@ Route::get('/test', function () {
 Route::get('/signup', function () {
     return view('signup');
 });
-Route::get('/details1', function () {
+Route::get('/details', function () {
     return view('details1');
 });
 Route::get('/details2', function () {
@@ -71,7 +78,7 @@ Route::get('/details2', function () {
 });
 Route::get('/login', function () {
     return view('login');
-});
+})->name('login');
 
 Route::get('/cart', function () {
     return view('cart.cart');
@@ -82,6 +89,10 @@ Route::get('/checkout1', function () {
 });
 Route::get('/checkout2', function () {
     return view('2ndcheckout');
+});
+
+Route::get('/pagination', function () {
+    return view('pagination');
 });
 
 
