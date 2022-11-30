@@ -873,6 +873,11 @@ ul#pills-tab.nav.nav-pills.nav-pill-head-wrapper.mb-3.d-md-flex.justify-content-
 .price{
      margin-top: -3rem;
 }
+
+.cart_imageWrapper {
+    max-width: 6rem;
+    min-height: 3vh!important;
+}
 }
 
 /* Ipad screen */
@@ -1228,4 +1233,58 @@ ul#pills-tab.nav.nav-pills.nav-pill-head-wrapper.mb-3.d-md-flex.justify-content-
 .image_style{
     width: 100%;
     height: 30vh;
+}
+
+.cart-card{
+    /* max-width: 20%!important; */
+}
+
+.subtotal-card{
+    max-width: 68rem!important;
+    padding: .2rem .875rem;
+    /* margin-top: -2rem; */
+    margin: -2rem auto;
+}
+
+.checkout-buttons{
+    margin-top: 2rem;
+}
+
+.counter-icon{
+    margin-left: 2rem;
+}
+
+.price-val{
+    margin-left: 2rem;
+}
+
+
+/* CART STYLES */
+@media(max-width: 414px){
+    .cart-stepper img{
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .subtotal-card{
+        padding: .2rem .9rem!important;
+        margin-right: .5rem;
+        margin-left: .5rem;
+        margin-top: -2rem;
+    }
+
+    .counter-icon{
+         margin-top: 1rem;
+         margin-left: unset;
+    }
+
+    .price-val, .delete-icon{
+        margin-top: 1rem;
+        margin-left: unset;
+    }
+
+    .cart-card{
+        /* padding-left: unset!important;
+        padding-right: unset; */
+    }
 }

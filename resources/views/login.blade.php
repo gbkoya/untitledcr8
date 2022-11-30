@@ -89,6 +89,8 @@
   </div>
 
   <script type="text/javascript">
+      let previousCounter = sessionStorage.getItem('totalCartItem');
+      totalCartItemMobile.innerText = previousCounter || 0
       // Toggle password display
         // Declare the variables globally
         let toggleHide = document.querySelector('.e-toggle-hide');

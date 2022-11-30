@@ -49,7 +49,7 @@ landscape.')
   <section class="container">
     <h2 style="text-align: center;" class="mt-5"><b>Cart</b></h2>
 
-    <div class=" container d-flex flex-row justify-content-between  pt-4 col-lg-10">
+    <div class="cart-stepper container d-flex flex-row justify-content-between  pt-4 col-lg-10">
       <img class="" src="{{ asset('customImages/Group 188.png') }}" />
       <img class="" src="{{ asset('customImages/Group 189.png') }}" />
       <img class="" src="{{ asset('customImages/Group 190.png') }}" />
@@ -62,7 +62,7 @@ landscape.')
     
    
 
-    <div class="container col-lg-10 d-flex justify-content-between">
+    <div class="container checkout-buttons col-lg-10 d-flex justify-content-between">
       <div class=" py-3 pb-5">
         <button onclick="redirectPage()" class="small-mobile-long-button small-screen-font" style="background: rgba(0, 0, 0, 0.2);border-radius: 4.67259px;font-weight: 700;font-size: 18.6904px;
                 line-height: 140%;color: #6B809B; padding: 0.8em 3em; border:none">Continue Shopping
@@ -88,6 +88,8 @@ let cartDisplay = document.querySelector('.cart-display');
  let totalCartItem = document.querySelector('.total-items-in-cart');
   // totalCartItem.innerHTML = 0;
   const quantVal = document.querySelector('.quantity');
+  let previousCounter = sessionStorage.getItem('totalCartItem');
+  totalCartItemMobile.innerText = previousCounter || 0
 // console.log(quantVal);
 const URL= '{{ env('APP_URL') }}';
 // const productID = localStorage.getItem('productId');
@@ -178,7 +180,7 @@ const renderCartItem = () => {
       </div>
   
   
-      <div class="container card my-5 col-md-10" style="padding-top: 1rem; padding-bottom: 1rem;">
+      <div class="container cart-card card my-5 col-md-10" style="padding-top: 1rem; padding-bottom: 1rem;">
         <div class="d-flex flex-row justify-content-between">
           <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Item(s)</div>
           <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Quantity</div>
@@ -190,9 +192,9 @@ const renderCartItem = () => {
           </div>
         <div class=" pt-5 col-lg-10 d-flex flex-wrap justify-content-between align-items-center">
          
-        <div class="d-flex flex-wrap flex-row align-items-center">
+        <div class="d-flex flex-row align-items-center">
           <div class="cart_imageWrapper">
-            <img class="img-fluid" src="http://127.0.0.1:8000/storage/product_image/${el.imagedirectory}" alt="product image"/>
+            <img class="img-fluid" src="${URL}/storage/product_image/${el.imagedirectory}" alt="product image"/>
             </div>
   
           <div class="px-2 small-screen-font item-name" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color: rgba(107, 128, 155, 0.8);">
@@ -200,8 +202,9 @@ const renderCartItem = () => {
             </div>
         </div>
   
+        
   
-          <form>
+          <form class="counter-icon">
   
             <div class="d-flex flex-row flex-wrap align-items-center quantity-button">
               <button type="button" onclick="decrement(${el.price}, ${dataCart}, ${el.id})">-</button>
@@ -214,18 +217,25 @@ const renderCartItem = () => {
           <div class=" small-screen-font price-val" style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">${formatter.format(el.price).replace(/(\.|,)00$/g, '')}</div>
   
           <div class="delete-icon" onclick="getProduct()"><img class="img-fluid" src="{{ asset('customImages/trash vector.png') }}" alt="Delete icon"></div>
-        </div>
+
+
         <div class="d-flex align-items-baseline cart-total-price justify-content-end" style="text-align: right; margin-right: 18%">
-        <div style="font-weight: 600;">Total Price:</div>
-        <div class="pt-2 total-price " style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);
-        margin-left: 2rem">
+       
+  
+      
+    </section>
+    
+    <div class="card subtotal-card">
+        <div class="d-flex flex-row justify-content-between align-items-center">
+
+          <div style="font-weight: 600;">Sub total:</div>
+          <div class=" total-price " style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">
           ${formatter.format(el.price * dataCart).replace(/(\.|,)00$/g, '')}
           </div>
         </div>
-  
-      </div>
-      
-    </section>
+
+        <p>Delivery fees not included yet.</p>
+        </div>
     `;
     
   })

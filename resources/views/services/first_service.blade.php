@@ -224,6 +224,9 @@
 
 
     <script src="/customJS/galleryscript.js"></script>
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+    let previousCounter = sessionStorage.getItem('totalCartItem');
+    totalCartItemMobile.innerText = previousCounter || 0
+    </script>
 
 @endsection

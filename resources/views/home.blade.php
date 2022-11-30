@@ -565,7 +565,8 @@
 
     function handleSumbit(event) {
     event.preventDefault();
-
+    let previousCounter = sessionStorage.getItem('totalCartItem');
+    totalCartItemMobile.innerText = previousCounter || 0
     // Get all the input field and store them in their unique variable each
     let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;

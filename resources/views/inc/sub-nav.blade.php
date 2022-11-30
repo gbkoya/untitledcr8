@@ -35,6 +35,12 @@
     </nav>
 
     <script type="text/javascript">
+    let totalNoCartItems = document.querySelector('.total-items-in-cart');
+    let previousHCounter = sessionStorage.getItem('totalCartItem');
+    console.log(previousHCounter);
+    totalNoCartItems.innerText = previousHCounter || 0
+
+
     let tokenStatus = localStorage.getItem('token');
 //    console.log(tokenStatus);
     let authButtons = document.querySelector('.button-container');
