@@ -1277,6 +1277,10 @@ ul#pills-tab.nav.nav-pills.nav-pill-head-wrapper.mb-3.d-md-flex.justify-content-
          margin-top: 1rem;
          margin-left: unset;
     }
+    .buttons-down {
+        position: absolute;
+        margin-bottom: -7em;
+    }
 
     .price-val, .delete-icon{
         margin-top: 1rem;
