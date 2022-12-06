@@ -192,49 +192,43 @@ const renderCartItem = () => {
         <div class="col-lg-10 d-flex flex-wrap justify-content-between align-items-center">
 
         <div class="d-flex flex-row align-items-center">
-          <div class="cart_imageWrapper">
-            <img class="img-fluid" src="${URL}/storage/product_image/${el.imagedirectory}" alt="product image"/>
+            <div class="cart_imageWrapper">
+                <img class="img-fluid" src="${URL}/storage/product_image/${el.imagedirectory}" alt="product image"/>
             </div>
 
-          <div class="px-2 small-screen-font item-name" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color: rgba(107, 128, 155, 0.8);">
-            <h4>${el.name}</h4>
+            <div class="px-2 small-screen-font item-name" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color: rgba(107, 128, 155, 0.8);">
+                <h4>${el.name}</h4>
             </div>
+            n.nnn
         </div>
 
-
-
-          <form class="counter-icon">
-
+        <form class="counter-icon">
             <div class="d-flex flex-row flex-wrap align-items-center quantity-button">
-              <button type="button" onclick="decrement(${el.price}, ${dataCart}, ${el.id})">-</button>
-              <span class="quantity">${dataCart}</span>
-              <button type="button" onclick="increment(${el.price}, ${dataCart}, ${el.id})">+</button>
-          </div>
+                <button type="button" onclick="decrement(${el.price}, ${dataCart}, ${el.id})">-</button>
+                <span class="quantity">${dataCart}</span>
+                <button type="button" onclick="increment(${el.price}, ${dataCart}, ${el.id})">+</button>
+            </div>
+        </form>
 
-          </form>
+        <div class=" small-screen-font price-val" style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">${formatter.format(el.price).replace(/(\.|,)00$/g, '')}</div>
 
-          <div class=" small-screen-font price-val" style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">${formatter.format(el.price).replace(/(\.|,)00$/g, '')}</div>
+        <div class="delete-icon" onclick="getProduct()"><img class="img-fluid" src="{{ asset('customImages/trash vector.png') }}" alt="Delete icon"></div>
 
-          <div class="delete-icon" onclick="getProduct()"><img class="img-fluid" src="{{ asset('customImages/trash vector.png') }}" alt="Delete icon"></div>
-
-
-        <div class="d-flex align-items-baseline cart-total-price justify-content-end" style="text-align: right; margin-right: 18%">
-
+        <div class="d-flex align-items-baseline cart-total-price justify-content-end" style="text-align: right; margin-right: 18%"></div>
 
 
     </section>
 
     <div class="card subtotal-card">
         <div class="d-flex flex-row justify-content-between align-items-center">
-
-          <div style="font-weight: 600;">Sub total:</div>
-          <div class=" total-price " style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">
-          ${formatter.format(el.price * dataCart).replace(/(\.|,)00$/g, '')}
-          </div>
+            <div style="font-weight: 600;">Sub total:</div>
+            <div class=" total-price " style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">
+                ${formatter.format(el.price * dataCart).replace(/(\.|,)00$/g, '')}
+            </div>
         </div>
 
         <p>Delivery fees not included yet.</p>
-        </div>
+    </div>
     `;
 
   })
