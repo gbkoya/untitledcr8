@@ -183,12 +183,10 @@ const renderCartItem = () => {
       <div class="container cart-card card my-5 col-md-10" style="padding-top: 1rem; padding-bottom: 1rem;">
         <div class="item-tab-none-display">
             <div class="d-flex flex-row justify-content-between">
-            <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Item(s)</div>
-            <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Quantity</div>
-            <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Price </div>
-            <div></div>
+                <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Item(s)</div>
+                <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Quantity</div>
+                <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Price </div>
             </div>
-
             <div class="" style="border: 1px solid rgba(0, 0, 0, 0.5);"></div>
         </div>
         <div class="col-lg-10 d-flex flex-wrap justify-content-between align-items-center">
