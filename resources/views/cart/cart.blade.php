@@ -59,8 +59,8 @@ landscape.')
     <div class="cart-display">
 
     </div>
-    
-   
+
+
 
     <div class="container checkout-buttons col-lg-10 d-flex justify-content-between">
       <div class=" py-3 pb-5">
@@ -135,7 +135,7 @@ const increment = (price, quantity, id) =>{
 
     }, 2000);
     // alert(data + 1)
-} 
+}
 
 const decrement = (price, quantity, id) =>{
   console.log(`yes ${price}, ${quantity}, ${id}`);
@@ -146,7 +146,7 @@ const decrement = (price, quantity, id) =>{
         updateCart(price, quantity - 1, id);
       }, 2000);
     }else{
-        
+
     }
 }
 
@@ -163,7 +163,7 @@ const renderCartItem = () => {
 
   // incremen();
     return cartDisplay.innerHTML += `
-  
+
     <section class="container-fluid cart_wrapper">
 
       <!-- Modal -->
@@ -172,59 +172,60 @@ const renderCartItem = () => {
         <div class="text-center button_wrap">
         <button onclick="cancelModal()" type="button">
           Cancel
-        </button> 
+        </button>
         <button type="button" onclick="deleteProduct(${el.id})">
           Delete
-        </button>   
+        </button>
         </div>
       </div>
-  
-  
+
+
       <div class="container cart-card card my-5 col-md-10" style="padding-top: 1rem; padding-bottom: 1rem;">
-        <div class="d-flex flex-row justify-content-between">
-          <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Item(s)</div>
-          <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Quantity</div>
-          <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Price </div>
-          <div></div>
+        <div class="item-tab-none-display">
+            <div class="d-flex flex-row justify-content-between">
+            <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Item(s)</div>
+            <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Quantity</div>
+            <div class=" small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color:#000000;">Price </div>
+            <div></div>
+            </div>
+
+            <div class="" style="border: 1px solid rgba(0, 0, 0, 0.5);"></div>
         </div>
-  
-        <div class="" style="border: 1px solid rgba(0, 0, 0, 0.5);">
-          </div>
-        <div class=" pt-5 col-lg-10 d-flex flex-wrap justify-content-between align-items-center">
-         
+        <div class="col-lg-10 d-flex flex-wrap justify-content-between align-items-center">
+
         <div class="d-flex flex-row align-items-center">
           <div class="cart_imageWrapper">
             <img class="img-fluid" src="${URL}/storage/product_image/${el.imagedirectory}" alt="product image"/>
             </div>
-  
+
           <div class="px-2 small-screen-font item-name" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color: rgba(107, 128, 155, 0.8);">
             <h4>${el.name}</h4>
             </div>
         </div>
-  
-        
-  
+
+
+
           <form class="counter-icon">
-  
+
             <div class="d-flex flex-row flex-wrap align-items-center quantity-button">
               <button type="button" onclick="decrement(${el.price}, ${dataCart}, ${el.id})">-</button>
               <span class="quantity">${dataCart}</span>
               <button type="button" onclick="increment(${el.price}, ${dataCart}, ${el.id})">+</button>
           </div>
-  
+
           </form>
-  
+
           <div class=" small-screen-font price-val" style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">${formatter.format(el.price).replace(/(\.|,)00$/g, '')}</div>
-  
+
           <div class="delete-icon" onclick="getProduct()"><img class="img-fluid" src="{{ asset('customImages/trash vector.png') }}" alt="Delete icon"></div>
 
 
         <div class="d-flex align-items-baseline cart-total-price justify-content-end" style="text-align: right; margin-right: 18%">
-       
-  
-      
+
+
+
     </section>
-    
+
     <div class="card subtotal-card">
         <div class="d-flex flex-row justify-content-between align-items-center">
 
@@ -237,13 +238,13 @@ const renderCartItem = () => {
         <p>Delivery fees not included yet.</p>
         </div>
     `;
-    
+
   })
 }
 
 renderCartItem();
 // cartDisplay.innerText =+ `
-  
+
 // `;
 let modalToggle = document.querySelector('.e-card-modal');
 
@@ -266,26 +267,26 @@ const redirectPage = () => {
 const deleteProduct = (id) => {
   console.log(id);
         // displayLoading();
-  
+
                   let updateFromDelete = newCart.filter(newCa=>{
                   return newCa.id !== id;
                 });
                 console.log(updateFromDelete);
                 sessionStorage.setItem('cartItem', JSON.stringify(updateFromDelete));
-                
+
                 console.log(cartItem);
                 let cartQuantDel = updateFromDelete.reduce(
                     (sum,eve)=>sum+Number(eve.quantity),0
               );
               console.log(cartQuantDel);
 
-              sessionStorage.setItem('totalCartItem', cartQuantDel);                
+              sessionStorage.setItem('totalCartItem', cartQuantDel);
                 setTimeout(() => {
 
                   // console.log(cartQuantDel);
                   // console.log(cartQuantDel);
                   alert();
-          
+
 
                 }, 4000);
                 Swal.fire({
@@ -299,8 +300,8 @@ const deleteProduct = (id) => {
                 // renderCartItem();
 
                 location.reload();
-          
-           
+
+
 }
 
 // const deleteProduct = (id) =>{
@@ -314,7 +315,7 @@ const displayLoading = () => {
 const hideLoading = () => {
           loaderContainer.style.display = 'none';
       };
-   
+
 
  // API INTEGRATION TO GET A SINCLE SHOP PRODUCT
  const getCartProduct = async () => {
@@ -340,12 +341,12 @@ const hideLoading = () => {
             console.log(error);
 
           }
-      
+
       }
       getCartProduct();
 
 
-      
+
       // API INTEGRATION TO UPDATE CART
       const updateCart = async (price, quantity, id) =>{
         console.log(`updating ${price}, ${quantity}, ${id}`);
@@ -366,14 +367,14 @@ const hideLoading = () => {
         let itemNew = cartItem.find(el=> el.id === id)
         itemNew.quantity = quantity
         sessionStorage.setItem('cartItem', JSON.stringify(newCart));
-       
 
-        
+
+
         let cartUpdateQuanti = cartItem.reduce(
                     (sum,eve)=>sum+Number(eve.quantity),0
                 );
               // console.log(cartQuantity);
-      sessionStorage.setItem('totalCartItem', cartUpdateQuanti);  
+      sessionStorage.setItem('totalCartItem', cartUpdateQuanti);
 
 
                     hideLoading();
@@ -397,7 +398,7 @@ const hideLoading = () => {
         console.log(cartItem);
             displayLoading()
                 // alert(`product added to cart ${data},`)
-           
+
         function handleErrors(response) {
             if (!response.ok) {
                 throw Error(response.statusText);
@@ -445,6 +446,6 @@ const hideLoading = () => {
               }
             }
 
-    
+
 </script>
   @endsection

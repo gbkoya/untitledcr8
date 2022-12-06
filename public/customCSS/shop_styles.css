@@ -1283,6 +1283,9 @@ ul#pills-tab.nav.nav-pills.nav-pill-head-wrapper.mb-3.d-md-flex.justify-content-
         /* margin-left: unset; */
         margin-left: 6em;
     }
+    .item-tab-none-display {
+        display: none !important;
+    }
 
     .cart-card{
         /* padding-left: unset!important;
