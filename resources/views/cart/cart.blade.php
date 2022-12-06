@@ -199,7 +199,6 @@ const renderCartItem = () => {
             <div class="px-2 small-screen-font item-name" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color: rgba(107, 128, 155, 0.8);">
                 <h4>${el.name}</h4>
             </div>
-            n.nnn
         </div>
 
         <form class="counter-icon">
