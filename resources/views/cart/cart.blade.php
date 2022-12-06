@@ -183,6 +183,8 @@
                                     </div>
                                     <div class="" style="border: 1px solid rgba(0, 0, 0, 0.5);"></div>
                                 </div>
+
+
                                 <div class="col-lg-10 d-flex flex-wrap justify-content-between align-items-center">
                                     <div class="d-flex flex-row align-items-center">
                                         <div class="cart_imageWrapper">
@@ -192,6 +194,11 @@
                                             <h4>${el.name}</h4>
                                         </div>
                                     </div>
+                                </div>
+
+
+
+                                <div class="col-lg-10 d-flex flex-wrap justify-content-between align-items-center">
 
                                     <form class="counter-icon">
                                         <div class="d-flex flex-row flex-wrap align-items-center quantity-button">
@@ -205,6 +212,7 @@
                                     <div class="delete-icon" onclick="getProduct()"><img class="img-fluid" src="{{ asset('customImages/trash vector.png') }}" alt="Delete icon"></div>
                                     <div class="d-flex align-items-baseline cart-total-price justify-content-end" style="text-align: right; margin-right: 18%"></div>
                                 </div>
+
                             </div>
                         </section>
 
