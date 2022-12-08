@@ -13,7 +13,7 @@ onload="displayName();">
             aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button> --}}
-       
+
         <div class="d-flex flex-row align-items-center gap-2">
 
             <button class="navbar-toggler hamburger-icon hamburger-mobile" type="button" data-bs-toggle="collapse"
@@ -27,11 +27,11 @@ onload="displayName();">
                     <img src="{{ asset('customImages/Cart.svg') }}"  alt="cart icon">
                     {{-- <p class="total-number-of-items cart-quant"><span>0</span></p> --}}
                     <span class="total-no-items-in-cart position-absolute top-0 start-100 translate-middle badge rounded-pill cart-quant">
-                        
+
                        </span>
                 </a>
             </div>
-           
+
         </div>
         <div class="collapse navbar-collapse right-nav" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto nav-links-a" style="">
@@ -64,7 +64,7 @@ onload="displayName();">
                       Hello, <span class="welcome-name"></span><br>
                       Account
                     </li> --}}
-                    <li class="dropdown-toggle nav-item" 
+                    <li class="dropdown-toggle nav-item"
                     id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
                     ><i class="fa fa-user fa-xl"></i>
                 </li>
@@ -74,11 +74,11 @@ onload="displayName();">
                       <li><hr class="dropdown-divider"></li>
                       <li id="triggerLogout"
                       style="cursor: pointer">
-                    </li> 
+                    </li>
                     </ul>
                   </div>
 
-                  <li class="nav-item px-3 mobile_dropdownNav" 
+                  <li class="nav-item px-3 mobile_dropdownNav"
                   data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"
                   {{-- id="slidToggle" --}}
                     ><i class="fa fa-user fa-xl"></i>
@@ -94,16 +94,16 @@ onload="displayName();">
                     <div class="offcanvas-body drawerContent-wrapper">
                         <h3 class="slideCat-heading">Welcome</h3>
                         <div class="d-flex flex-row gap-2 mobile_loginDraw button-containerMobile">
-                           
+
                         </div>
                         <ul class="" style="list-style-type: none" class="logout-wrapperSlider">
                             {{-- <li><a class="dropdown-item" href="#">Orders</a></li> --}}
                             <li id="triggerLogoutMobile"
                             style="cursor: pointer;" class="logout-slider">
                             {{-- <span class="dropdown-item">Logout</span> --}}
-                          </li> 
+                          </li>
                             <li><hr class=""></li>
-                           
+
                           </ul>
                     {{-- </a> --}}
 {{-- Mobile product filter --}}
@@ -115,9 +115,9 @@ onload="displayName();">
                 <img class="img-fluid" src="{{asset('customImages/toggle-icon.png')}}" alt="toggle icon">
                 <p class="hide_close">Toggle filters</p>
             </div>
-            
+
         </header> --}}
-    
+
         <div class="accordion" id="accordionSlider">
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
@@ -127,8 +127,8 @@ onload="displayName();">
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionSlider">
                 <div class="accordion-body container-fluid">
-                    <section onclick="redirectToResult()" class="colours_slide_wrapper row justify-content-center" >                   
-          
+                    <section onclick="redirectToResult()" class="colours_slide_wrapper row justify-content-center" >
+
                        </section>
                 </div>
               </div>
@@ -142,8 +142,8 @@ onload="displayName();">
               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionSlider">
                 <div class="accordion-body container-fluid">
                     <section onclick="redirectToResult()" class="colours_slide_wrapper shape_slide_wrapper row justify-content-center">
-                       
-    
+
+
                        </section>
                 </div>
               </div>
@@ -157,7 +157,7 @@ onload="displayName();">
                 <div id="collapseTwoJ" class="accordion-collapse collapse" aria-labelledby="headingTwoJ" data-bs-parent="#accordionSlider">
                   <div class="accordion-body container-fluid">
                       <section onclick="redirectToResult()" class="colours_slide_wrapper  glass_slide_wrapper  row justify-content-center">
-    
+
                          </section>
                   </div>
                 </div>
@@ -170,9 +170,9 @@ onload="displayName();">
               </h2>
               <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionSlider">
                 <div class="accordion-body">
-                    <section onclick="redirectToResult()" class="colours_slide_wrapper gender_slide_wrapper row align-items-baseline 
+                    <section onclick="redirectToResult()" class="colours_slide_wrapper gender_slide_wrapper row align-items-baseline
                     justify-content-center">
-            
+
                        </section>
                 </div>
               </div>
@@ -208,18 +208,22 @@ onload="displayName();">
         id="search"
         placeholder="Search for eyewear, lenses and frames"
         />
-        <img 
+        <img
         onclick="searchProduct()"
         class="img-fluid search-shop-image"
         src="{{ asset('customImages/arrow-right.png') }}"/>
-            </div>  
+            </div>
     </div>
 
 
 <!-- THE SCRIPT TO CONTROL THE STATE OF THE NAVBAR -->
 
 <script type="text/javascript">
-   let totalCartItemMobile = document.querySelector('.total-no-items-in-cart');
+   let totalCartItemMobile = document.querySelector('.total-no-items-in-cart')
+
+   let itemsCartCountTotal =  Object.keys(JSON.parse(sessionStorage.getItem('cartItem'))).length
+   console.log(itemsCartCountTotal);
+
     let totalCartQuantMobile = sessionStorage.getItem('totalCartItem') || 0;
     let dataMobile = localStorage.getItem('totalCartItemMobile');
     // alert(totalCartItemMobile);
@@ -286,7 +290,7 @@ onload="displayName();">
                   })
         localStorage.removeItem('token');
         localStorage.removeItem('email');
-        setTimeout(() => {        
+        setTimeout(() => {
             window.location.href = "/login"
         }, 1500);
     }).catch(function(err){
@@ -298,14 +302,14 @@ onload="displayName();">
                   })
         console.warn('Something went wrong.', err);
     })
-        
+
     }
-    
+
 
     document.getElementById('triggerLogout').addEventListener('click', handleLogout);
 
 
-    
+
 
     let userEmail = localStorage.getItem('email');
     console.log(userEmail);
@@ -354,7 +358,7 @@ let tokenStatusMobile = localStorage.getItem('token');
 `;
     }else{
         authButtonsMobile.innerHTML = ""
-    } 
+    }
 
     // NAV SLIDER CATEGORIES
 // LOGOUT
@@ -387,7 +391,7 @@ const handleLogoutMobile = () =>{
                   })
         localStorage.removeItem('token');
         localStorage.removeItem('email');
-        setTimeout(() => {        
+        setTimeout(() => {
             window.location.href = "/login"
         }, 1500);
     }).catch(function(err){
@@ -399,13 +403,13 @@ const handleLogoutMobile = () =>{
                   })
         console.warn('Something went wrong.', err);
     })
-        
+
     }
-    
+
 
     document.getElementById('triggerLogoutMobile').addEventListener('click', handleLogoutMobile);
-    
- 
+
+
     // alert(totalCartItem);
 
 </script>
