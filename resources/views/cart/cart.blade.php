@@ -166,6 +166,18 @@
                     // incremen();
                     return cartDisplay.innerHTML += `
                         <section class="container-fluid cart_wrapper">
+
+                            <div class="card subtotal-card">
+                                <div class="d-flex flex-row justify-content-between align-items-center">
+                                    <div style="font-weight: 600;">Sub total:</div>
+                                    <div class=" total-price " style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">
+                                        ${formatter.format(el.price * dataCart).replace(/(\.|,)00$/g, '')}
+                                    </div>
+                                </div>
+
+                                <p>Delivery fees not included yet.</p>
+                            </div>
+
                             <!-- Modal -->
                             <div class="card e-card-modal modal fade">
                                 <h2>Do you want to delete this product?</h2>
@@ -215,17 +227,6 @@
 
                             </div>
                         </section>
-
-                        <div class="card subtotal-card">
-                            <div class="d-flex flex-row justify-content-between align-items-center">
-                                <div style="font-weight: 600;">Sub total:</div>
-                                <div class=" total-price " style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">
-                                    ${formatter.format(el.price * dataCart).replace(/(\.|,)00$/g, '')}
-                                </div>
-                            </div>
-
-                            <p>Delivery fees not included yet.</p>
-                        </div>
                     `;
                 })
             }
@@ -362,6 +363,7 @@
 
 
                 hideLoading();
+                /* remove alert on update
                 Swal.fire({
                     icon: 'success',
                     title: 'Cart updated successfully!',
@@ -369,6 +371,7 @@
                     timer: 2000,
 
                 })
+                */
                 location.reload();
             }
 
