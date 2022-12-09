@@ -263,9 +263,7 @@
                 sessionStorage.setItem('cartItem', JSON.stringify(updateFromDelete));
 
                 console.log(cartItem);
-                let cartQuantDel = updateFromDelete.reduce(
-                    (sum, eve) => sum + Number(eve.quantity), 0
-                );
+                let cartQuantDel = updateFromDelete.length;
                 console.log(cartQuantDel);
 
                 sessionStorage.setItem('totalCartItem', cartQuantDel);
