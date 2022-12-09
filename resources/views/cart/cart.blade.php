@@ -355,11 +355,11 @@
 
 
 
-                let cartUpdateQuanti = cartItem.reduce(
-                    (sum, eve) => sum + Number(eve.quantity), 0
-                );
+                // let cartUpdateQuanti = cartItem.reduce(
+                //     (sum, eve) => sum + Number(eve.quantity), 0
+                // );
                 // console.log(cartQuantity);
-                sessionStorage.setItem('totalCartItem', cartUpdateQuanti);
+                // sessionStorage.setItem('totalCartItem', cartUpdateQuanti);
 
 
                 hideLoading();
