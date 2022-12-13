@@ -79,6 +79,8 @@ landscape.')
 
 
 <script>
+  let previousCounter = sessionStorage.getItem('totalCartItem');
+  totalCartItemMobile.innerText = previousCounter || 0
   let buttons = document.querySelectorAll(".btn-group .btn");
   buttons.forEach(button => {
     button.addEventListener("click", () => {

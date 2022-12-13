@@ -104,6 +104,8 @@
     </main>
 
     <script type="text/javascript">
+    let previousCounter = sessionStorage.getItem('totalCartItem');
+    totalCartItemMobile.innerText = previousCounter || 0
         // CONTACT API INTEGRATION HERE
         document.getElementById('sendData').addEventListener('submit', handleSumbit);
       

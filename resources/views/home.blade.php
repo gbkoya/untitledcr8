@@ -561,15 +561,16 @@
         // CONTACT API INTEGRATION HERE
         document.getElementById('sendData').addEventListener('submit', handleSumbit);
 
-        function handleSumbit(event) {
-            event.preventDefault();
-
-            // Get all the input field and store them in their unique variable each
-            let name = document.getElementById('name').value;
-            let email = document.getElementById('email').value;
-            let phonenumber = document.getElementById('phonenumber').value;
-            let date = document.getElementById('date').value;
-            let message = document.getElementById('message').value;
+    function handleSumbit(event) {
+    event.preventDefault();
+    let previousCounter = sessionStorage.getItem('totalCartItem');
+    totalCartItemMobile.innerText = previousCounter || 0
+    // Get all the input field and store them in their unique variable each
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let phonenumber = document.getElementById('phonenumber').value;
+    let date = document.getElementById('date').value;
+    let message = document.getElementById('message').value;
 
             let contactData = {
                 name,

@@ -99,7 +99,7 @@
                 </div>
                 <div class="d-flex flex-row flex-wrap align-items-center quantity-button">
                     {{-- <button type="button" onclick="decrement()">-</button> --}}
-                    <span class="quantity"></span>
+                    {{-- <span class="quantity"></span> --}}
                     {{-- <button type="button" onclick="increment()">+</button> --}}
                 </div>
                 <button class="mt-4" type="button" style="width: 100%;height: 56px;border-radius: 5px;
@@ -143,8 +143,8 @@ let dynamDetails = document.querySelector('.dynamic_details');
 let allProducts = sessionStorage.getItem('cartItem');
 // console.log(allProducts);
 
-let data = sessionStorage.getItem('totalCartItem') || 0;
-quantVal.innerText = data;
+// let data = sessionStorage.getItem('totalCartItem') || 0;
+// quantVal.innerText = data;
 
 console.log('before cart mobile');
 
@@ -391,13 +391,18 @@ const hideLoading = () => {
                 let cartQuantity = cartItems.reduce(
                     (sum,eve)=>sum+Number(eve.quantity),0
                 );
+
+                let newCartQuantity = cartItems.length;
+                console.log('new cart item');
+                console.log(newCartQuantity);
+
                 console.log(cartQuantity);
-                totalCartItem.innerHTML = cartQuantity;
-                quantVal.innerHTML = cartQuantity;
-                let dataMob = cartQuantity 
+                totalCartItem.innerHTML = newCartQuantity;
+                // quantVal.innerHTML = newCartQuantity;
+                let dataMob = newCartQuantity 
                 totalCartItemMobile.innerText = dataMob;
-                sessionStorage.setItem('totalCartItem', cartQuantity);
-                localStorage.setItem('totalCartItemMobile', cartQuantity);
+                sessionStorage.setItem('totalCartItem', newCartQuantity);
+                localStorage.setItem('totalCartItemMobile', newCartQuantity);
                 // window.location.href = "/cart"
                         Swal.fire({
                             icon: 'success',

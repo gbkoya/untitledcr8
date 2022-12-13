@@ -502,6 +502,8 @@
 </body>
 
     <script type="text/javascript">
+    let previousCounter = sessionStorage.getItem('totalCartItem');
+    totalCartItemMobile.innerText = previousCounter || 0
     let defaultImg = 'foremost_shopimage_1667983695.png';
     console.log(defaultImg);
     let toggleClose = document.getElementById('hide_close');
