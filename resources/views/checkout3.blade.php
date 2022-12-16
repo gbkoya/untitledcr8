@@ -46,19 +46,19 @@ landscape.')
 
     <div class=" container d-flex flex-row justify-content-between  pt-4 col-lg-10">
         <img class="m" src="{{ asset('customImages/Group 188.png') }}" />
-        <img class="" src="{{ asset('customImages/Group 189.png') }}" />
-        <img class="" src="{{ asset('customImages/Group 190.png') }}" />
-        <img class="" src="{{ asset('customImages/Group 191.png') }}" />
+        <img class="" src="{{ asset('customImages/Group 189b.png') }}" />
+        <img class="" src="{{ asset('customImages/Group 190b.png') }}" />
+        <img class="" src="{{ asset('customImages/Group 191b.png') }}" />
     </div>
 
     <div class="container card my-5 col-md-10">
-        <div class="container pt-5 col-lg-10 d-flex flex-wrap justify-content-center">
+        <div class="container pt-5 col-lg d-flex flex-wrap justify-content-center">
             <img class="" src="{{ asset('customImages/Frame 106.png') }}" />
 
-            <div class="px-2 small-screen-font" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color: rgba(107, 128, 155, 0.8);">
+            <div class="px-2 small-screen-font justify-content-between" style="font-weight: 500;font-size: 19.4667px;line-height: 140%;color: rgba(107, 128, 155, 0.8);">
                 Anti blu ray radiation,<br> computer glasses</div>
 
-             <input style="height: 47px;" type="number" class="form-control" id="exampleInputPassword1" placeholder="">
+             <input style="height: 47px; max-width: 400px;" type="number" min="1" class="mx-5" id="exampleInputPassword1" placeholder="">
             
 
             <div class="pt-2 small-screen-font" style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">₦4,999</div>

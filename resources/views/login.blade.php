@@ -13,7 +13,7 @@
   </div>
 
 {{-- Sub nav --}}
-<nav class="d-flex sub-nav-style flex-row align-items-center flex-wrap container-fluid justify-content-evenly">
+ <nav class="d-flex sub-nav-style flex-row align-items-center flex-wrap container-fluid justify-content-evenly">
   {{-- <div class="d-flex flex-row"> --}}
   <div class="row d-sm-flex search-wrapper-sub">
       <input type="search"
@@ -24,10 +24,10 @@
       src="{{ asset('customImages/arrow-right.png') }}"/>
           </div>   
 
-           <div class="button-container">
+          <!-- <div class="button-container">
         
           </div>
-              {{-- <button type="button" class="">
+          {{-- <button type="button" class="">
                   <img
                   src="{{ asset('customImages/buyIcon.png') }}"
                   />
@@ -40,13 +40,13 @@
                   />
                  CART <span class="total-items-in-cart">0</span>
               </button>
-          </li>
+          </li> -->
   {{-- </div>  --}}
   </nav>
 
 
   <div class="login-ik card justify-content-center">
-    <div class="container my-5 py-5">
+    <div class="container my-5 py-5 reduce-space-gb">
       <div class="container col-lg-5 col-md-7 my-5 py-5 i-login-backg">
 
         <h2 class="i-login-head">Log In</h2>
@@ -54,7 +54,7 @@
           {{-- <a class="ml-1 btn" href="{{ url('auth/facebook') }}" style="margin-top: 0px !important;background: #F58634; width: 40%; color: #ffffff;padding: .7rem .2rem; border-radius: 25px;" id="btn-fblogin">
             <i class="fab fa-facebook" aria-hidden="true"></i> Login with Facebook
           </a> --}}
-          <a class="ml-1 btn" href="{{ url('auth/facebook') }}" style="margin-top: 0px !important;background: #F58634; width: 40%; color: #ffffff; padding: .7rem; .2rem; border-radius: 25px;" id="btn-fblogin">
+          <a class="ml-1 btn" href="{{ url('auth/facebook') }}" style="margin-top: 0px !important;background: #F58634; width: 200px; color: #ffffff; padding: .7rem .2rem; border-radius: 25px;" id="btn-fblogin">
             <i class="fab fa-google" aria-hidden="true"></i> Login with Google
         </a>
         </div>
