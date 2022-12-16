@@ -439,6 +439,12 @@ max-height: 700px !important;
       margin-right: unset!important;
       
     }
+
+    .reduce-space-gb{
+      margin-top: -50px !important;
+      margin-bottom:-50px !important;
+      padding: 0px !important;
+    }
   }
   
 
