@@ -13,10 +13,10 @@
     <div class="loader-container">
         <div class="spinner"></div>
       </div>
-      
+
 
       <span class="total-no-items-in-cart position-absolute top-0 start-100 translate-middle badge rounded-pill cart-quant">
-                        
+
     </span>
 
             {{-- Sub nav --}}
@@ -102,12 +102,19 @@
                     {{-- <span class="quantity"></span> --}}
                     {{-- <button type="button" onclick="increment()">+</button> --}}
                 </div>
-                <button class="mt-4" type="button" style="width: 100%;height: 56px;border-radius: 5px;
+                {{-- <button class="mt-4" type="button" style="width: 100%;height: 56px;border-radius: 5px;
                 background: #F58634;font-weight: 600;font-size: 20px;line-height: 24px;
                 color:#FFFF">
                     <img src="{{ asset('customImages/buyIcon.png') }}" class='pt-1 px-3' style="float: left">
                     ADD TO CART
-                </button>
+                </button> --}}
+
+                <button class="mt-4" type="button" style="width: 100%;height: 56px;border-radius: 5px;
+                 background: #F58634;font-weight: 600;font-size: 20px;line-height: 24px; color:#FFFFFF;
+                border: none;" onclick="addToCart()">
+                     <img src="{{ asset('customImages/buyIcon.png') }}" class='pt-1 px-3' style="float: left">
+                     ADD TO CART
+                 </button>
 
                 <div class="mt-4" style="font-weight: 500;font-size: 20px;line-height: 30px;color: rgba(107, 128, 155, 0.8);">
                 Details</div>
@@ -399,7 +406,7 @@ const hideLoading = () => {
                 console.log(cartQuantity);
                 totalCartItem.innerHTML = newCartQuantity;
                 // quantVal.innerHTML = newCartQuantity;
-                let dataMob = newCartQuantity 
+                let dataMob = newCartQuantity
                 totalCartItemMobile.innerText = dataMob;
                 sessionStorage.setItem('totalCartItem', newCartQuantity);
                 localStorage.setItem('totalCartItemMobile', newCartQuantity);
