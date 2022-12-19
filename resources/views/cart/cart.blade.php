@@ -124,32 +124,13 @@
 
             // quantVal.innerText = data;
             const increment = (price, quantity, id) => {
-                console.log(`yes ${price}, ${quantity}, ${id}`);
-                // data =+ data + 1;
-                // // quantVal.innerText = data;
-                // sumPrice = price * data;
-
-                // totalPrice.innerHTML = `
-            // ${sumPrice}
-            // `;
-                // totalCartItem.innerHTML = data;
-                setTimeout(() => {
-                    updateCart(price, quantity + 1, id);
-
-                }, 2000);
-                // alert(data + 1)
+                updateCart(price, quantity + 1, id)
             }
 
             const decrement = (price, quantity, id) => {
-                console.log(`yes ${price}, ${quantity}, ${id}`);
-
                 if (quantity > 1) {
                     totalCartItem.innerHTML = data;
-                    setTimeout(() => {
-                        updateCart(price, quantity - 1, id);
-                    }, 2000);
-                } else {
-
+                    updateCart(price, quantity - 1, id);
                 }
             }
 
@@ -170,7 +151,7 @@
                             <div class="card subtotal-card">
                                 <div class="d-flex flex-row justify-content-between align-items-center">
                                     <div style="font-weight: 600;">Sub total:</div>
-                                    <div class=" total-price " style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">
+                                    <div class="total-price" style="font-weight: 500;font-size: 20px;line-height: 180%;letter-spacing: -0.01em;color: rgba(107, 128, 155, 0.8);">
                                         ${formatter.format(el.price * dataCart).replace(/(\.|,)00$/g, '')}
                                     </div>
                                 </div>
@@ -332,14 +313,6 @@
 
             // API INTEGRATION TO UPDATE CART
             const updateCart = async (price, quantity, id) => {
-                console.log(`updating ${price}, ${quantity}, ${id}`);
-
-                // displayLoading();
-                // alert(data);
-                // alert(`product added to cart ${data},`)
-                console.log(newCart);
-                sessionStorage.setItem('cartItem', JSON.stringify(newCart));
-
                 price = JSON.stringify(price);
                 quantity = JSON.stringify(quantity);
 
@@ -349,28 +322,13 @@
                 }
                 let itemNew = cartItem.find(el => el.id === id)
                 itemNew.quantity = quantity
-                sessionStorage.setItem('cartItem', JSON.stringify(newCart));
+                sessionStorage.setItem('cartItem', JSON.stringify(newCart))
 
-
-
-                // let cartUpdateQuanti = cartItem.reduce(
-                //     (sum, eve) => sum + Number(eve.quantity), 0
-                // );
-                // console.log(cartQuantity);
-                // sessionStorage.setItem('totalCartItem', cartUpdateQuanti);
-
-
-                hideLoading();
-                /* remove alert on update
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Cart updated successfully!',
-                    showConfirmButton: false,
-                    timer: 2000,
-
-                })
-                */
-                location.reload();
+                window.addEventListener(
+                    'storage',
+                    renderCartItem(),
+                    false,
+                )
             }
 
             // API integration to save cart data to the database
