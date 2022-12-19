@@ -248,14 +248,7 @@
                 console.log(cartQuantDel);
 
                 sessionStorage.setItem('totalCartItem', cartQuantDel);
-                setTimeout(() => {
-
-                    // console.log(cartQuantDel);
-                    // console.log(cartQuantDel);
-                    alert();
-
-
-                }, 4000);
+                alert();
                 Swal.fire({
                     icon: 'success',
                     title: 'Product deleted successfully',
@@ -264,9 +257,13 @@
 
                 })
                 cancelModal();
-                // renderCartItem();
 
-                location.reload();
+                window.addEventListener(
+                    'storage',
+                    renderCartItem(),
+                    false,
+                )
+
             }
 
             // const deleteProduct = (id) =>{
