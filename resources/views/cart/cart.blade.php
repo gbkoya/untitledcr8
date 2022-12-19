@@ -322,8 +322,13 @@
                 }
                 let itemNew = cartItem.find(el => el.id === id)
                 itemNew.quantity = quantity
-
                 sessionStorage.setItem('cartItem', JSON.stringify(newCart))
+
+                window.addEventListener(
+                    'storage',
+                    renderCartItem(),
+                    false,
+                )
             }
 
             // API integration to save cart data to the database
