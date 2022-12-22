@@ -24,23 +24,25 @@
       src="{{ asset('customImages/arrow-right.png') }}"/>
           </div>   
 
-          <!-- <div class="button-container">
+           <div class="button-container noshow">
         
           </div>
-          {{-- <button type="button" class="">
+          
+          {{-- <button type="button" >
                   <img
                   src="{{ asset('customImages/buyIcon.png') }}"
                   />
                   CART
               </button> --}}
               <li class="right-nav-button-shop-wrapper">
-              <button type="button" class="shop-button">
+              <button type="button" class="shop-button noshow">
                   <img
                   src="{{ asset('customImages/buyIcon.png') }}"
                   />
                  CART <span class="total-items-in-cart">0</span>
               </button>
-          </li> -->
+          </li> 
+          
   {{-- </div>  --}}
   </nav>
 
@@ -97,7 +99,7 @@
         let toggleDisplay = document.querySelector('.e-toggle-display ');
         let inputField = document.querySelector('.passwordInput');
         let res = document.getElementById("loginForm"); // Store the form id in a res variable
-        const url= '{{ env('APP_URL') }}'
+        const url= "{{ env('APP_URL') }}"
 
         let tokenStatus = localStorage.getItem('token');
     //console.log(tokenStatus);

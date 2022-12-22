@@ -56,7 +56,7 @@
                 <img class="" src="{{ asset('customImages/Group 191.png') }}" />
             </div>
 
-            <div class="cart-display">
+            <div class="cart-display mt-5">
 
             </div>
 
