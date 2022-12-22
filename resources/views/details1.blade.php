@@ -89,7 +89,7 @@
                     </div>
                </div>
                 <button class="mt-3" style="font-weight: 500;font-size: 16px;line-height: 19px;color: #FFFFFF;
-                width: 119px;height: 45px;background: #F58634;border-radius: 5px;"> TRY IT ON</button>
+                width: 119px;height: 45px;background: #F58634;border-radius: 5px; border:none"> TRY IT ON</button>
             </div>
             <div class="col-lg-6 mx-5 mt-5 details-sect-right-ika">
                 <div class="main-price">
@@ -105,14 +105,14 @@
                 {{-- <button class="mt-4" type="button" style="width: 100%;height: 56px;border-radius: 5px;
                 background: #F58634;font-weight: 600;font-size: 20px;line-height: 24px;
                 color:#FFFF">
-                    <img src="{{ asset('customImages/buyIcon.png') }}" class='pt-1 px-3' style="float: left">
+                    <img src="{{ asset('customImages/buyIcon.png') }}" class='pt-1 px-3'>
                     ADD TO CART
                 </button> --}}
 
                 <button class="mt-4" type="button" style="width: 100%;height: 56px;border-radius: 5px;
                  background: #F58634;font-weight: 600;font-size: 20px;line-height: 24px; color:#FFFFFF;
                 border: none;" onclick="addToCart()">
-                     <img src="{{ asset('customImages/buyIcon.png') }}" class='pt-1 px-3' style="float: left">
+                     <img src="{{ asset('customImages/buyIcon.png') }}" class='pt-1 px-3' style="margin-top: -5px;">
                      ADD TO CART
                  </button>
 

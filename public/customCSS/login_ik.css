@@ -445,8 +445,14 @@ max-height: 700px !important;
       margin-bottom:-50px !important;
       padding: 0px !important;
     }
+  
   }
   
+  @media (max-width:412px){
+    .noshow{
+      display: none !important;
+    } 
+  }
 
   /* Ebuka fix */
   .sign-button{
