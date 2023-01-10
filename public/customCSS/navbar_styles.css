@@ -11,7 +11,7 @@ nav{
 }
 
 .archware-nav-title{
-    color: #000000!important;
+    
     font-style: normal;
     font-weight: 400;
     font-size: .83rem;
@@ -34,7 +34,7 @@ nav{
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #F58634;
+    
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
   }

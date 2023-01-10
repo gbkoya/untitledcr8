@@ -42,7 +42,7 @@
                     <a class="nav-link archware-nav-title" href="/services">Services</a>
                 </li> -->
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="/about">About Us</a>
+                        <a class="nav-link" href="/">About Us</a>
                     </li>
                     <li class="nav-item mx-2">
                         <a class="nav-link " href="/">Blog</a>
