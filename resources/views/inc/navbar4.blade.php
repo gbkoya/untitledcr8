@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse right-nav" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto nav-links-a" style="">
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="/ourservices">
+                        <a class="nav-link" href="/checkout3">
 
                             <body>Services</body>
                         </a>
@@ -36,13 +36,13 @@
 
 
                     <li class="nav-item mx-2">
-                        <a class="nav-link " href="/ourwork">Our Work</a>
+                        <a class="nav-link " href="/about">Our Work</a>
                     </li>
                     <!-- <li class="nav-item px-3">
                     <a class="nav-link archware-nav-title" href="/services">Services</a>
                 </li> -->
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="/about">About Us</a>
+                        <a class="nav-link" href="/">About Us</a>
                     </li>
                     <li class="nav-item mx-2">
                         <a class="nav-link " href="/">Blog</a>

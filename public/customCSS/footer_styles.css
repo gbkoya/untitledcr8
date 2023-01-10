@@ -1,103 +1,21 @@
-.footer-section{
-    background-color: #3F5675;
-    height: auto!important;
-    padding: 2rem 0;
-}
+.copyright-txt{
+    font-weight: 400;
+font-size: 16px;
+line-height: 18px;
 
-.footer-section .input-wrapper{
-    position: relative;
-}
+color: #FFFFFF;
 
-.e-footer-about{
-    max-width: 28rem;
-    text-align: justify;
-}
-
-.footer-section .search-image{
-    /* width: 21.34px; */
-    max-width: 3.085rem;
-    height: 17.36px;
-    position: absolute;
-    top: 30%;
-    right: 26%;
-    cursor: pointer;
-}
-
-.footer-section form input[type="search"]{
-    /* width: 90%!important; */
-    max-width: 41.4375rem;
-    height: 62px;
-}
-
-.footer-section form input[type="search"]::placeholder{
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 147.9%;
-    color: #041E4A;
-}
-
-.footer-divider{
-    max-width: 1000px;
-    height: 0px;
-    margin: 2.5rem auto 0 auto;
-    border: 1px solid #FFFFFF;
-}
-
-.bottom-copy{
-    margin-top: 2.8rem;
-}
-
-.bottom-copy h5, .bottom-copy h6{
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1rem;
-    line-height: 26px;
-    letter-spacing: -0.01em;
-    color: #FFFFFF;
-}
-
-.bottom-copy h5{
-    max-width: 32rem;
-    margin: 0 auto;
-}
-
-.bottom-copy span:nth-child(-1n + 3){
-    border-right: .2rem solid #FFFFFF;
-    padding-right: .875rem;
-}
-.bottom-copy h6{
-    margin-top: .8rem;
 }
 
 @media(max-width: 375px){
-    .footer-section .search-image{
-        /* width: 21.34px; */
-        right: 5%;
-    }
-    .e-footer-about{
-        text-align: left;
-        width: 100%;
-    }
-    .e-footer-pages{
-        margin-top: 2rem;
-    }
-    .footer-section form input[type="search"]{
-        width: 100%!important;
-    }
+   
 }
 
 /* Ipad screen */
 @media(min-width: 540px) and (max-width: 912px){
-    .footer-section .search-image{
-        /* width: 21.34px; */
-        right: 5%;
-    }
+   
 }
 
 @media(min-width: 912px) and (max-width: 1280px){
-    .footer-section .search-image{
-        /* width: 21.34px; */
-        right: 20%;
-    }
+ 
 }

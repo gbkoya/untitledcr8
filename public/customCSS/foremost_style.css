@@ -1,3 +1,295 @@
+body {
+            
+    background-color: white;
+    color: black;
+   
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+
+
+
+
+.u-ft{
+font-weight: 400;
+font-size: 28px;
+line-height: 125%;
+text-align: justify;
+}
+
+.what-txt{
+font-weight: 700;
+font-size: 24px;
+line-height: 28px;
+}
+.core-v-txt{
+font-style: normal;
+font-weight: 700;
+font-size: 96px;
+line-height: 110px;
+padding-left: 50px;
+}
+
+.cv-txt{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 125%;
+}
+
+.h2-txt{
+font-weight: 700;
+font-size: 48px;
+line-height: 55px;
+}
+
+.under-txt{
+font-weight: 400;
+font-size: 24px;
+line-height: 28px;
+}
+
+.orange-button{
+width: 528px;
+height: 92px;
+background: #FB8500;
+border-radius: 62px;
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 28px;
+color: #FDFFFC;
+border: none;
+
+}
+
+.launch-txt{
+font-weight: 700;
+font-size: 24px;
+line-height: 28px;
+}
+
+.request-txt{
+ font-weight: 400;
+font-size: 64px;
+line-height: 125%;
+}
+
+.contact-txt{
+font-weight: 700;
+font-size: 32px;
+line-height: 37px;
+}
+
+.input-forms{
+    background: rgba(253, 255, 252, 0.27);
+    height: 67px;
+    width: 95%;
+    border: #FFFFFF;
+    
+}
+
+.input-textarea{
+    background: rgba(253, 255, 252, 0.27);
+    max-width: 95%;
+    border: none;
+    
+}
+
+.input-forms-txt{
+    font-weight: 400;
+font-size: 18px;
+line-height: 21px;
+color: #FDFFFC;
+
+}
+
+.contact-txt{
+    font-weight: 700;
+font-size: 32px;
+line-height: 37px;
+/* identical to box height */
+
+
+color: #FFFFFF;
+
+}
+.bg-img{
+    background-image: url("../customImages/Rectangle 18.png")
+   
+}
+
+.dm-txt{
+font-weight: 700;
+font-size: 48px;
+line-height: 55px;
+}
+
+.dm2-txt{
+font-weight: 400;
+font-size: 24px;
+line-height: 28px;
+}
+
+.dm-sm-txt{
+font-weight: 700;
+font-size: 24px;
+line-height: 28px;
+}
+
+.dm2-sm-txt{
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 18px;
+}
+
+.un-text{
+     background: #000; 
+     font-weight: 700;
+     font-size: 64px;
+     line-height: 74px;
+     color: #ffffff;
+     padding-top: 202px;
+}
+
+.un-text2{
+    background: #000; 
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 74px;
+    color: #ffffff;
+    margin-top: 10px;
+    padding-top: 81px;
+    padding-bottom: 81px;
+}
+
+.un-text-dark{
+    color: #000; 
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 74px;
+    background: #ffffff;
+    margin-top: -202px ;
+    padding-top: 202px;
+    padding-bottom: 292px;
+    margin-left: -3rem;
+    margin-right: -3rem;
+}
+
+.un-text-dark2{
+    color: #000; 
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 74px;
+    background: #ffffff;
+    margin-top: -75px ;
+    padding-top: 81px;
+    padding-bottom: 81px;
+    margin-left: -3rem;
+    margin-right: -3rem;
+}
+
+
+/* slider */
+.arrow-img{
+    position: absolute;
+    font-size: 1px;
+    
+    height: 0px;
+    width: 0px;
+    border-radius:20px ;
+    border: none;
+    color: #e6e5ee;
+
+}
+.arrow-img-2{
+    position:absolute;
+    right: 2%;
+    margin-top: 13%;
+    height: 50px;
+    width: 50px;
+    border-radius:20px ;
+    border: none;
+    color: #0A033C;
+    font-weight: 900;
+    font-size: x-large;
+
+}
+
+
+.overflow-shit {
+    overflow-x: hidden;
+}
+
+
+.prev {
+    transform: rotate(-180deg);
+}
+
+.next:hover {
+    text-shadow: 2px 2px 2px rgb(200, 200, 200);
+}
+
+.prev:hover {
+    text-shadow: 2px -2px 2px rgb(200, 200, 200);
+}
+
+.item {
+    flex: 1 0 25%;
+}
+
+@media (max-width: 1024px) {
+    .item {
+        flex: 1 0 33%;
+    }
+}
+
+@media (max-width: 768px) {
+    .item {
+        flex: 1 0 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .item {
+        flex: 1 0 100%;
+    }
+}
+/* slider */
+
+.shop-card{
+    max-width: 18rem;
+    height: auto;
+    padding-bottom: 1rem;
+    background: #FFFFFF;
+    box-shadow: 0px 20px 50px rgba(18, 17, 39, 0.08);
+    border-radius: 12px;
+   
+    
+}
+
+.fit-screen{
+    width: 99.1% !important;
+}
+
+.shop-card-heading{
+    margin: .5rem .8rem;
+}
+
+.sizing-gb{
+width: 286px;
+}
+
+.accelerate-text{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 37px;
+}
+
 @media (min-width: 1198px) {
 
 }
@@ -11,15 +303,136 @@
 
 @media (max-width: 990px) {
 
+    .big-text{
+        font-size: 1.5rem !important;
+    }
+    .medium-text{
+        font-size: 1.2rem !important;
+    }
+    .small-text{
+        font-size: 0.9rem !important;
+    }
+
+    .orange-button{
+        width: fit-content;
+        height: fit-content;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .no-margin{
+        margin: 0px !important;
+            }
+
+    .no-margin-x{
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        }
+    .no-padding{
+        padding-left: 0px !important;
+        padding-right: 0px !important;
 }
 
+.un-text{
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    align-items: center !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.right-btn{
+    float:right; 
+    margin-right:30px;
+}
+.un-text2{
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    align-items: center !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.un-text-dark{
+    
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.un-text-dark2{
+    
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+
+.core-v-txt{
+    line-height: 40px !important;
+
+}
+
+.u-ft{
+    line-height: 28px !important;
+}
+
+.seperate{
+    margin-top: 5% !important;
+}
+
+.cv-txt{
+margin-top: 5%!important;
+line-height: 28px !important;
+text-align: justify;
+}
+
+.h2-txt{
+    line-height: 20px !important;
+}
+
+.under-txt{
+    text-align:justify ;
+}
+}
 @media (max-width: 769px) {
 
 }
 
 @media (max-width: 576px) {
+.right-btn{
+    float: left !important;
+}
+.un-text{
+width: 100% !important;
+}
+
+.u-ft{
+    margin-top: 5% !important;
+    }
+
+.input-forms{
+    width: 102.5% !important;
+}
+
+.reduce-size{
+    width: 70% !important;
+    height: 70% !important;
+}
+
+.reduce-size2{
+    width: 50% !important;
+    height: 50% !important;
+    margin-top: 3%;
+}
+.fit-screen{
+    width:96% !important;
+}
 
 }
+
+
+    
 
 @media (max-width: 414px) {
 

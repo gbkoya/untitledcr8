@@ -42,18 +42,10 @@
   <!-- Styles -->
   <link href="/css/app.css" rel="stylesheet">
   <link rel="stylesheet" href="./customCSS/foremost_style.css">
-  {{-- <link rel="stylesheet" href="/customCSS/foremost_style.css"> --}}
   <link rel="stylesheet" href="/customCSS/foremoststyles_jo.css">
   <link rel="stylesheet" href="/customCSS/navbar_styles.css">
   <link rel="stylesheet" href="/customCSS/about_styles.css">
   <link rel="stylesheet" href="/customCSS/footer_styles.css">
-  <link rel="stylesheet" href="/customCSS/login_ik.css">
-  <link rel="stylesheet" href="/customCSS/kellystyle.css">
-  <link rel="stylesheet" href="/customCSS/gallerystyle.css">
-  <link rel="stylesheet" href="/customCSS/shop_styles.css">
-  <link rel="stylesheet" href="/customCSS/shop_styles.css">
-  <link rel="stylesheet" href="/customCSS/tryit_styles.css">
-  <link rel="stylesheet" href="{{ asset('customCSS/teleinput.css') }}">
   <link rel="stylesheet" href="/customCSS/blogpost_styles.css">
 
   <link rel="stylesheet" href="/customCSS/blogpost_styles.css">
